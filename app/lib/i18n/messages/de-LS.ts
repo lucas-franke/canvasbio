@@ -6,11 +6,12 @@ export const deLS: Messages = {
   nav: {
     label: "Haupt-Menü",
     home: "Start-Seite",
-    back: "Zurück",
-    backToStart: "Zurück zur Start-Seite",
     people: "Die Frauen",
     about: "Über diese Internet-Seite",
     accessibility: "Barriere-Freiheit",
+    imprint: "Impressum",
+    privacy: "Daten-Schutz",
+    legal: "Rechtliches",
     search: "Suchen",
     menu: "Menü",
     closeMenu: "Menü schließen",
@@ -39,6 +40,9 @@ export const deLS: Messages = {
     dark: "Dunkel",
   },
   start: {
+    onThisDay: "An diesem Tag",
+    anniversary: (kind: "born" | "died", years: number, date: string | null) =>
+      `${date ? `Am ${date}` : "Heute"} vor ${years} Jahren ${kind === "born" ? "geboren" : "gestorben"}`,
     portraitsLabel: "Bilder von den Frauen",
   },
   people: {
@@ -51,6 +55,8 @@ export const deLS: Messages = {
   },
   search: {
     title: "Suche",
+    suggestions: "Diese Frauen passen",
+    clearName: "Eingabe löschen",
     close: "Suche zu-machen",
     name: "Name von der Frau",
     show: (n: number) => (n === 0 ? "Keine Frau gefunden" : n === 1 ? "1 Frau zeigen" : `${n} Frauen zeigen`),
@@ -59,6 +65,7 @@ export const deLS: Messages = {
     reset: "Alles löschen",
     results: (n: number) => `Gefunden: ${n}`,
     change: "Suche ändern",
+    filters: (n: number) => `Auswahl (${n})`,
     nameChip: (q: string) => `Name: ${q}`,
     removeFilter: (label: string) => `${label} löschen`,
     empty: "Keine Frau gefunden",
@@ -89,6 +96,12 @@ export const deLS: Messages = {
   },
   detail: {
     close: "Schließen",
+    more: "Mehr Frauen",
+    previous: "Frau davor",
+    next: "Nächste Frau",
+    randomAnother: "Noch eine Frau per Zufall",
+    share: "Teilen",
+    linkCopied: "Der Link ist kopiert",
     sections: "Teile",
     portraitCredit: "Bild",
     license: "Lizenz",

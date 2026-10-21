@@ -54,6 +54,12 @@ export const colorTokensSchema = z.object({
 export type ColorTokens = z.infer<typeof colorTokensSchema>;
 
 export const siteConfigSchema = z.object({
+  /**
+   * Public address of the site, e.g. "https://example.org". Optional; when set, pages get
+   * absolute canonical/share URLs and biographies a preview image for shared links.
+   */
+  siteUrl: z.url().optional(),
+
   brand: z.object({
     /** Project name, used in <title> and meta tags. */
     name: localized,
@@ -92,14 +98,21 @@ export const siteConfigSchema = z.object({
     about: z.record(localeCode, z.string().regex(/^[a-z0-9-]+$/)),
     /** Accessibility statement (Erklärung zur Barrierefreiheit). */
     accessibility: z.record(localeCode, z.string().regex(/^[a-z0-9-]+$/)),
+    /** Legal notice (Impressum, § 5 DDG). */
+    imprint: z.record(localeCode, z.string().regex(/^[a-z0-9-]+$/)),
+    /** Privacy policy (Datenschutzerklärung, Art. 13 DSGVO). */
+    privacy: z.record(localeCode, z.string().regex(/^[a-z0-9-]+$/)),
   }),
 
   /**
-   * Who runs the site. Used in the accessibility statement (placeholders {{organisation}},
-   * {{contactEmail}}, {{statementDate}} in content/pages/*.md).
+   * Who runs the site. Fills the placeholders in content/pages/*.md: {{organisation}},
+   * {{operatorBlock}} (name, address, phone, e-mail), {{contactEmail}}, {{statementDate}}.
    */
   operator: z.object({
     organisation: localized,
+    /** Postal address, one line per entry. */
+    address: z.array(z.string().min(1)).min(1),
+    phone: z.string().optional(),
     /** Feedback contact for accessibility barriers (required by BITV 2.0 / EU 2016/2102). */
     contactEmail: z.email(),
     /** Date of the last review of the accessibility statement, ISO "YYYY-MM-DD". */
@@ -122,6 +135,8 @@ export const siteConfigSchema = z.object({
       .object({ shadow: hexColor, highlight: hexColor })
       .default({ shadow: "#1e140c", highlight: "#eedab8" }),
     tileEdge: z.enum(["torn", "none"]),
+    /** Very light paper grain on the page background (archival look). */
+    paperTexture: z.boolean().default(false),
   }),
 
   start: z.object({
@@ -171,6 +186,11 @@ export const siteConfigSchema = z.object({
     wrap: z.boolean(),
     minZoom: z.number().positive(),
     maxZoom: z.number().positive(),
+    /**
+     * Share of tiles shown slightly larger (0–0.3), favouring less prominent people: breaks
+     * the uniform grid into a livelier collage. 0 turns it off.
+     */
+    featuredShare: z.number().min(0).max(0.3).default(0),
   }),
 
   features: z.object({

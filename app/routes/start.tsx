@@ -1,18 +1,25 @@
-import { ChevronRight, Quote } from "lucide-react";
-import { Link } from "react-router";
+import { ChevronRight, Quote, Shuffle } from "lucide-react";
+import { useMemo } from "react";
+import { Link, useNavigate } from "react-router";
 
 import type { Route } from "./+types/start";
 import { SearchDrawer } from "~/components/search/search-drawer";
 import { BottomNav, NavPill, NavTextLink } from "~/components/shell/nav";
 import { MenuDrawer } from "~/components/shell/menu-drawer";
 import { StageMosaic, mosaicOrder } from "~/components/shell/stage-mosaic";
+import { Portrait } from "~/components/portrait";
 import { Button } from "~/components/ui/button";
 import { siteConfig } from "~/lib/config";
+import { anniversaries } from "~/lib/content/anniversary";
 import { content } from "~/lib/content/index.server";
+import { usePeopleIndex } from "~/lib/content/people-index";
+import { useHydrated } from "~/lib/hooks";
 import { useLocale, useMessages } from "~/lib/i18n";
 import { localeConfig, localeFromPathname, pagePath, switchLocalePath } from "~/lib/i18n/locale";
-import { localize } from "~/lib/i18n/localize";
+import { htmlLangFor, localize } from "~/lib/i18n/localize";
 import { pageMeta } from "~/lib/meta";
+import { readSeen } from "~/lib/preferences";
+import { pickRandom } from "~/lib/random";
 
 const EASY_LANGUAGE = "de-LS";
 
@@ -21,11 +28,12 @@ export async function loader({ request }: Route.LoaderArgs) {
   const people = await content.listPeople(locale);
   return {
     mosaic: mosaicOrder(people, 70).map(({ slug, image }) => ({ slug, image })),
+    count: people.length,
   };
 }
 
 export function meta({ location }: Route.MetaArgs) {
-  return pageMeta({ locale: localeFromPathname(location.pathname) });
+  return pageMeta({ locale: localeFromPathname(location.pathname), path: location.pathname });
 }
 
 export default function Start({ loaderData }: Route.ComponentProps) {
@@ -43,7 +51,10 @@ export default function Start({ loaderData }: Route.ComponentProps) {
     <div className="relative min-h-dvh bg-stage">
       <StageMosaic items={loaderData.mosaic} />
 
-      <main id="main" className="relative grid min-h-dvh place-items-center px-4 pt-6 pb-32 sm:px-8">
+      <main
+        id="main"
+        className="relative grid min-h-dvh place-items-center px-4 pt-6 pb-32 sm:px-8 lg:pt-28 lg:pb-12"
+      >
         <section
           aria-labelledby="start-title"
           className="flex w-full max-w-2xl flex-col gap-8 rounded-card bg-surface p-6 shadow-2xl sm:gap-12 sm:p-12 lg:p-16"
@@ -53,6 +64,7 @@ export default function Start({ loaderData }: Route.ComponentProps) {
               {t(start.title)}
             </h1>
             <p className="font-heading text-subline text-balance text-emphasis">{t(start.subtitle)}</p>
+            <p className="text-body-sm text-muted-text">{m.people.count(loaderData.count)}</p>
           </header>
 
           {start.quote && (
@@ -81,7 +93,10 @@ export default function Start({ loaderData }: Route.ComponentProps) {
                 </span>
               </Link>
             </Button>
+            {features.randomBio && <RandomStart />}
           </div>
+
+          <OnThisDay />
         </section>
       </main>
 
@@ -90,12 +105,13 @@ export default function Start({ loaderData }: Route.ComponentProps) {
         start={
           <NavPill bare>
             <MenuDrawer />
+            {/* Leichte Sprache also on phones: whoever needs it should find it right away. */}
+            {hasEasyLanguage && (
+              <NavTextLink to={switchLocalePath("/", easyTarget)} lang={easyTargetConfig.htmlLang}>
+                {easyTargetConfig.label}
+              </NavTextLink>
+            )}
             <div className="hidden items-center gap-3 lg:flex">
-              {hasEasyLanguage && (
-                <NavTextLink to={switchLocalePath("/", easyTarget)} lang={easyTargetConfig.htmlLang}>
-                  {easyTargetConfig.label}
-                </NavTextLink>
-              )}
               <NavTextLink to={pagePath(locale, "about")}>{m.nav.about}</NavTextLink>
               <NavTextLink to={pagePath(locale, "people")}>{m.nav.people}</NavTextLink>
             </div>
@@ -108,5 +124,77 @@ export default function Start({ loaderData }: Route.ComponentProps) {
         }
       />
     </div>
+  );
+}
+
+/** Secondary entry: straight into a (weighted) random biography. */
+function RandomStart() {
+  const locale = useLocale();
+  const m = useMessages();
+  const navigate = useNavigate();
+  const { index } = usePeopleIndex(locale);
+  return (
+    <Button
+      variant="outline"
+      size="lg"
+      onClick={() => {
+        const person = index && pickRandom(index.people, { seen: readSeen() });
+        navigate(person ? pagePath(locale, "people", person.slug) : pagePath(locale, "people"));
+      }}
+    >
+      {m.random.label}
+      <Shuffle aria-hidden="true" />
+    </Button>
+  );
+}
+
+/**
+ * Who was born or died on this day (or in the next days). Computed in the browser: the
+ * pre-rendered page doesn't know the date it is read on.
+ */
+function OnThisDay() {
+  const locale = useLocale();
+  const m = useMessages();
+  const hydrated = useHydrated();
+  const { index } = usePeopleIndex(locale);
+  const items = useMemo(
+    () => (hydrated && index ? anniversaries(index.people, new Date(), 6).slice(0, 2) : []),
+    [hydrated, index],
+  );
+  if (items.length === 0) return null;
+
+  const dayFormat = new Intl.DateTimeFormat(htmlLangFor(locale), { day: "numeric", month: "long" });
+  return (
+    <section aria-labelledby="on-this-day" className="flex flex-col gap-3 border-t border-line pt-6">
+      <h2 id="on-this-day" className="font-sans text-body-sm font-medium tracking-normal text-muted-text">
+        {m.start.onThisDay}
+      </h2>
+      <ul className="flex flex-col gap-1">
+        {items.map(({ person, kind, years, inDays, date }) => (
+          <li key={`${person.slug}-${kind}`}>
+            <Link
+              to={pagePath(locale, "people", person.slug)}
+              className="-mx-2 flex min-h-14 items-center gap-3 rounded-xl px-2 py-1 hover:bg-emphasis/5"
+            >
+              <span className="size-12 shrink-0 overflow-hidden rounded-md">
+                <Portrait
+                  slug={person.slug}
+                  image={person.image}
+                  alt=""
+                  sizes="48px"
+                  className="size-full object-cover"
+                />
+              </span>
+              <span className="flex min-w-0 flex-col">
+                <span className="font-medium text-emphasis">{person.name.display}</span>
+                <span className="text-body-sm text-muted-text">
+                  {m.start.anniversary(kind, years, inDays === 0 ? null : dayFormat.format(date))}
+                </span>
+              </span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }

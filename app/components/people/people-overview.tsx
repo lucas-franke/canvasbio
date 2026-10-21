@@ -98,14 +98,15 @@ export function PeopleOverview({
           className="mx-auto mb-6 max-w-[57rem]"
         />
       )}
-      {groups.length > 0 && <AlphaIndex available={new Set(groups.map((g) => g.letter))} />}
+      {/* Jumping by letter only helps in longer lists (e.g. not for a handful of results). */}
+      {(hits ?? index.people).length >= 15 && <AlphaIndex available={new Set(groups.map((g) => g.letter))} />}
       <div className="mx-auto mt-6 flex max-w-[57rem] flex-col gap-10">
         {groups.map(({ letter, items }) => (
           <section key={letter} aria-labelledby={letterAnchor(letter)}>
             <h2
               id={letterAnchor(letter)}
               tabIndex={-1}
-              className="scroll-mt-36 border-b border-brand px-2 pb-2 text-h2 text-brand focus-target @xl:scroll-mt-40"
+              className="scroll-mt-36 border-b border-brand px-2 pb-2 text-h2 text-brand focus-target lg:scroll-mt-60 @xl:scroll-mt-40"
             >
               {letter}
             </h2>

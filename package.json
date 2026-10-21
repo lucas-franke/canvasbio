@@ -3,8 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "npm run build:images && react-router dev",
-    "build": "npm run check:contrast && npm run validate:content && npm run build:images && react-router build && tsx scripts/compress-build.ts",
+    "dev": "npm run build:images && npm run build:icons && react-router dev",
+    "build": "npm run check:contrast && npm run validate:content && npm run build:images && npm run build:icons && react-router build && tsx scripts/compress-build.ts",
     "preview": "sirv build/client --single __spa-fallback.html --brotli --gzip",
     "typecheck": "react-router typegen && tsc",
     "lint": "eslint .",
@@ -17,7 +17,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "e2e": "playwright test",
-    "validate": "npm run typecheck && npm run lint && npm run check:contrast && npm run validate:content && npm run test"
+    "validate": "npm run typecheck && npm run lint && npm run check:contrast && npm run validate:content && npm run test",
+    "build:icons": "tsx scripts/build-icons.ts"
   },
   "dependencies": {
     "@fontsource/ibm-plex-sans": "^5.3.0",

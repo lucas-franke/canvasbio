@@ -8,6 +8,7 @@ import {
   nameMatches,
   normalize,
   parseSearch,
+  suggestPeople,
   searchSuffix,
   toSearchParams,
   wordMatches,
@@ -113,5 +114,32 @@ describe("filterPeople", () => {
   it("matches places by their label, accent-insensitively", () => {
     expect(search("", { place: ["munchen"] })).toEqual(["Helene Müller"]);
     expect(search("", { place: ["königs"] })).toEqual(["Clara Zetkin"]);
+  });
+});
+
+describe("suggestPeople", () => {
+  const people = [
+    { name: { display: "Clara Zetkin", sort: "Zetkin, Clara" }, prominence: 0.9 },
+    { name: { display: "Clara Schumann", sort: "Schumann, Clara" }, prominence: 0.5 },
+    { name: { display: "Klara Lövey", sort: "Lövey, Klara" }, prominence: 0.1 },
+    { name: { display: "Anna Clarke", sort: "Clarke, Anna" }, prominence: 0.95 },
+  ];
+  const names = (q: string) => suggestPeople(people, q).map((p) => p.name.display);
+
+  it("needs two characters", () => {
+    expect(names("c")).toEqual([]);
+  });
+
+  it("ranks name starts first, then word starts, then typos", () => {
+    // "Klara" is one typo away and comes last.
+    expect(names("clar")).toEqual(["Clara Zetkin", "Clara Schumann", "Anna Clarke", "Klara Lövey"]);
+    expect(names("zetkin")).toEqual(["Clara Zetkin"]);
+    expect(names("klara")[0]).toBe("Klara Lövey");
+    // Typo tolerance reaches "Clara" from "klara" (one edit) after the exact match.
+    expect(names("klara")).toContain("Clara Zetkin");
+  });
+
+  it("limits the list", () => {
+    expect(suggestPeople(people, "cla", 2)).toHaveLength(2);
   });
 });

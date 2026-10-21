@@ -1,6 +1,6 @@
 import { cn } from "cn";
 import { X } from "lucide-react";
-import { useId, useRef, type ReactNode } from "react";
+import { useId, useRef, useState, type ReactNode } from "react";
 
 import { Button } from "~/components/ui/button";
 import { siteConfig } from "~/lib/config";
@@ -45,6 +45,8 @@ interface SearchSummaryProps {
   labels: FacetLabels;
   /** Extra controls next to the title, e.g. previous/next match on the canvas. */
   actions?: ReactNode;
+  /** On phones, fold the filter chips behind a "Filter (n)" button (floating on the canvas). */
+  collapsible?: boolean;
   className?: string;
 }
 
@@ -52,9 +54,18 @@ interface SearchSummaryProps {
  * "Ergebnisse (n)" with the active filters as removable chips, "Suche ändern" and reset
  * (Figma "Ergebnisse"). Shown above the list and floating on the canvas.
  */
-export function SearchSummary({ state, count, labels, actions, className }: SearchSummaryProps) {
+export function SearchSummary({
+  state,
+  count,
+  labels,
+  actions,
+  collapsible = false,
+  className,
+}: SearchSummaryProps) {
   const m = useMessages();
   const headingId = useId();
+  const chipsId = useId();
+  const [chipsOpen, setChipsOpen] = useState(false);
   const heading = useRef<HTMLHeadingElement>(null);
   const applySearch = useApplySearch();
   const filters = activeFilters(state, labels, m.search.nameChip);
@@ -80,11 +91,23 @@ export function SearchSummary({ state, count, labels, actions, className }: Sear
         <Button size="sm" variant="outline" onClick={() => setSearchPanelOpen(true)}>
           {m.search.change}
         </Button>
+        {collapsible && (
+          <Button
+            size="sm"
+            variant="ghost"
+            aria-expanded={chipsOpen}
+            aria-controls={chipsId}
+            onClick={() => setChipsOpen((open) => !open)}
+            className="sm:hidden"
+          >
+            {m.search.filters(filters.length)}
+          </Button>
+        )}
       </div>
 
       {count === 0 && <p className="text-body-sm">{m.search.emptyHint}</p>}
 
-      <ul className="flex flex-wrap gap-2">
+      <ul id={chipsId} className={cn("flex flex-wrap gap-2", collapsible && !chipsOpen && "max-sm:hidden")}>
         {filters.map((filter) => (
           <li key={filter.label}>
             <button

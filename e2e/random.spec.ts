@@ -1,5 +1,7 @@
 import { expect, test, type Page } from "@playwright/test";
 
+import { openCanvasControls } from "./helpers";
+
 const waitForCanvas = (page: Page) => page.locator("[data-cell]").first().waitFor({ state: "attached" });
 
 test("random biography from the canvas: the tile pulses, then the biography opens", async ({ page }) => {
@@ -40,9 +42,11 @@ test("no random button when the search has no results", async ({ page }) => {
 
 test("hide names: names disappear visually, stay accessible, and the choice is remembered", async ({
   page,
+  isMobile,
 }) => {
   await page.goto("/personen");
   await waitForCanvas(page);
+  await openCanvasControls(page, isMobile);
   const toggle = page.getByRole("button", { name: "Namen ausblenden" });
   await expect(toggle).toHaveAttribute("aria-pressed", "false");
   await toggle.click();
@@ -61,6 +65,7 @@ test("hide names: names disappear visually, stay accessible, and the choice is r
 
   await page.reload();
   await waitForCanvas(page);
+  await openCanvasControls(page, isMobile);
   await expect(page.getByRole("button", { name: "Namen ausblenden" })).toHaveAttribute(
     "aria-pressed",
     "true",

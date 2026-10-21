@@ -15,6 +15,7 @@ import {
 import { siteConfig } from "~/lib/config";
 import { useLocale, useMessages } from "~/lib/i18n";
 import { pagePath, parsePath, switchLocaleHash, switchLocalePath, type Page } from "~/lib/i18n/locale";
+import { SPLIT_VIEW_QUERY, useMediaQuery } from "~/lib/hooks";
 import { useTheme, type ThemeChoice } from "~/lib/theme/use-theme";
 import { NavIconButton } from "./nav";
 
@@ -30,6 +31,10 @@ function Section({ title, children }: { title: string; children: ReactNode }) {
   );
 }
 
+/** Side panel from `lg` (menu from the left, search from the right). */
+export const SIDE_SHEET =
+  "h-full w-full max-w-md data-[vaul-drawer-direction=left]:rounded-r-card data-[vaul-drawer-direction=left]:sm:max-w-md data-[vaul-drawer-direction=right]:rounded-l-card data-[vaul-drawer-direction=right]:sm:max-w-md";
+
 const itemClass =
   "flex min-h-12 items-center rounded-xl px-4 text-label font-medium text-emphasis hover:bg-emphasis/5 aria-[current=page]:bg-brand aria-[current=page]:text-brand-foreground";
 
@@ -40,6 +45,8 @@ export function MenuDrawer() {
   const { pathname, search, hash } = useLocation();
   const current = parsePath(pathname).page;
   const [theme, setTheme] = useTheme();
+  // Desktop: the nav is at the top, so the menu slides in from the left instead of up.
+  const desktop = useMediaQuery(SPLIT_VIEW_QUERY, false);
   const close = () => setOpen(false);
 
   const pages: { page: Page; label: string }[] = [
@@ -50,11 +57,16 @@ export function MenuDrawer() {
   ];
 
   return (
-    <Drawer open={open} onOpenChange={setOpen}>
+    <Drawer open={open} onOpenChange={setOpen} direction={desktop ? "left" : "bottom"}>
       <DrawerTrigger asChild>
         <NavIconButton label={m.nav.menu} icon={<Menu />} labelSide="end" />
       </DrawerTrigger>
-      <DrawerContent className="mx-auto max-h-[90dvh] w-full rounded-t-card bg-surface text-text md:max-w-lg">
+      <DrawerContent
+        className={cn(
+          "bg-surface text-text",
+          desktop ? SIDE_SHEET : "mx-auto max-h-[90dvh] w-full rounded-t-card md:max-w-lg",
+        )}
+      >
         <div className="flex items-center justify-between px-6 pt-2">
           <DrawerTitle className="font-heading text-h2 font-normal text-emphasis">{m.nav.menu}</DrawerTitle>
           <DrawerClose
@@ -121,7 +133,7 @@ export function MenuDrawer() {
                     value={choice}
                     className={cn(
                       "min-h-12 rounded-xl px-2 text-body-sm font-medium text-emphasis hover:bg-emphasis/5",
-                      "data-[state=checked]:bg-emphasis data-[state=checked]:text-surface",
+                      "data-[state=checked]:bg-brand data-[state=checked]:text-brand-foreground",
                     )}
                   >
                     {m.theme[choice]}
@@ -130,6 +142,23 @@ export function MenuDrawer() {
               </RadioGroupPrimitive.Root>
             </Section>
           )}
+
+          <nav aria-label={m.nav.legal} className="border-t border-line pt-4">
+            <ul className="flex flex-wrap gap-x-6 gap-y-1">
+              {(["imprint", "privacy"] as const).map((page) => (
+                <li key={page}>
+                  <Link
+                    to={pagePath(locale, page)}
+                    onClick={close}
+                    aria-current={current === page ? "page" : undefined}
+                    className="inline-flex min-h-11 items-center rounded-sm text-body-sm text-text underline underline-offset-4 hover:decoration-2 aria-[current=page]:font-semibold"
+                  >
+                    {m.nav[page]}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
       </DrawerContent>
     </Drawer>

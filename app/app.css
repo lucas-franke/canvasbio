@@ -95,8 +95,13 @@
 
   html {
     @apply bg-page font-sans text-text;
-    /* Keyboard focus that scrolls the page stops above the nav and the random button (WCAG 2.4.11). */
+    /* Keyboard focus that scrolls the page stops clear of the nav and the random button (WCAG 2.4.11). */
     scroll-padding-bottom: 11rem;
+
+    @media (min-width: 64rem) {
+      scroll-padding-top: 7rem;
+      scroll-padding-bottom: 6rem;
+    }
     -webkit-tap-highlight-color: transparent;
     text-size-adjust: 100%;
   }
@@ -229,7 +234,16 @@
 .canvas-tile-name {
   font-size: calc(clamp(12px, 18px * var(--s), 21px) / var(--s));
   line-height: 1.2;
-  padding: calc(28px / var(--s)) calc(10px / var(--s)) calc(8px / var(--s));
+  padding: calc(20px / var(--s)) calc(10px / var(--s)) calc(8px / var(--s));
+}
+
+/* Life years under the name: the era at a glance, without opening the biography. */
+.canvas-tile-years {
+  display: block;
+  margin-top: calc(2px / var(--s));
+  font-size: calc(clamp(11px, 14px * var(--s), 16px) / var(--s));
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
 }
 
 /* Long names end with an ellipsis after three lines (the full name stays the link text). */
@@ -260,9 +274,18 @@
   /* Search: matches are lifted, the others fade back but keep their place (context). */
   transition: transform 300ms ease;
 
+  /* Featured: slightly larger (the gap leaves room, neighbours aren't covered). */
+  &[data-featured] {
+    transform: scale(1.12);
+  }
+
   &[data-match="hit"] {
     transform: scale(1.06);
     filter: drop-shadow(0 calc(6px / var(--s)) calc(10px / var(--s)) rgb(0 0 0 / 0.35));
+  }
+
+  &[data-featured][data-match="hit"] {
+    transform: scale(1.12);
   }
 
   &[data-match="miss"] [data-vt-portrait] {
@@ -382,4 +405,32 @@
   ::view-transition-new(*) {
     animation: none !important;
   }
+}
+
+/* Navigation next to an open biography: icons only (labels stay as accessible names). */
+[data-nav-compact] .nav-label {
+  @media (min-width: 64rem) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+[data-nav-compact] .nav-icon-action {
+  @media (min-width: 64rem) {
+    padding-inline: 0;
+  }
+}
+
+/*
+ * Paper grain (theme.paperTexture): a faint, tiled noise on page backgrounds. Its opacity
+ * is tiny, so text contrast is practically unchanged.
+ */
+[data-paper] [class*="bg-page"],
+[data-paper] body {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22180%22%20height%3D%22180%22%3E%3Cfilter%20id%3D%22n%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.85%22%20numOctaves%3D%223%22%20stitchTiles%3D%22stitch%22%2F%3E%3CfeColorMatrix%20values%3D%220%200%200%200%200.35%200%200%200%200%200.25%200%200%200%200%200.15%200%200%200%200.07%200%22%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23n)%22%2F%3E%3C%2Fsvg%3E");
 }

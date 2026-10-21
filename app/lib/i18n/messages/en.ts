@@ -5,11 +5,12 @@ export const en: Messages = {
   nav: {
     label: "Main navigation",
     home: "Home",
-    back: "Back",
-    backToStart: "Back to the home page",
     people: "Biographies",
     about: "About the project",
     accessibility: "Accessibility",
+    imprint: "Legal notice",
+    privacy: "Privacy",
+    legal: "Legal",
     search: "Search",
     menu: "Menu",
     closeMenu: "Close menu",
@@ -38,6 +39,9 @@ export const en: Messages = {
     dark: "Dark",
   },
   start: {
+    onThisDay: "On this day",
+    anniversary: (kind: "born" | "died", years: number, date: string | null) =>
+      `${kind === "born" ? "Born" : "Died"} ${years} years ago ${date ? `on ${date}` : "today"}`,
     portraitsLabel: "Portraits from the collection",
   },
   people: {
@@ -50,6 +54,8 @@ export const en: Messages = {
   },
   search: {
     title: "Search",
+    suggestions: "Matching people",
+    clearName: "Clear input",
     close: "Close search",
     name: "Search by name",
     show: (n: number) => (n === 0 ? "No matches" : n === 1 ? "Show 1 result" : `Show ${n} results`),
@@ -57,6 +63,7 @@ export const en: Messages = {
     reset: "Reset",
     results: (n: number) => `Results (${n})`,
     change: "Change search",
+    filters: (n: number) => `Filters (${n})`,
     nameChip: (q: string) => `Name: ${q}`,
     removeFilter: (label: string) => `Remove filter “${label}”`,
     empty: "No people found",
@@ -87,6 +94,12 @@ export const en: Messages = {
   },
   detail: {
     close: "Close",
+    more: "More biographies",
+    previous: "Previous",
+    next: "Next",
+    randomAnother: "Another random biography",
+    share: "Share",
+    linkCopied: "Link copied",
     sections: "Sections",
     portraitCredit: "Image",
     license: "License",

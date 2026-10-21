@@ -25,7 +25,7 @@ import {
   seededShuffle,
 } from "~/lib/canvas/layout";
 import type { Cell, Direction } from "~/lib/canvas/layout";
-import { tornEdgeCss, tornVariant } from "~/lib/canvas/torn-edge";
+import { tornVariant } from "~/lib/canvas/torn-edge";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import { RANDOM_BUTTON_BOTTOM, RandomButton } from "~/components/people/random-button";
@@ -44,7 +44,7 @@ import { sizesFor, staticView, useCamera, type CanvasView } from "./use-camera";
 
 const { canvas: config, theme } = siteConfig;
 const limits = { minZoom: config.minZoom, maxZoom: config.maxZoom };
-const tornCss = theme.tileEdge === "torn" ? tornEdgeCss() : "";
+const tornEdges = theme.tileEdge === "torn";
 
 const cellId = ({ col, row }: Cell) => `${col}:${row}`;
 const sameCell = (a: Cell | null, b: Cell | null) => a?.col === b?.col && a?.row === b?.row;
@@ -112,6 +112,12 @@ export function InfiniteCanvas({
   // Mixed, but the same on every visit.
   const ordered = useMemo(() => seededShuffle(people, "canvas"), [people]);
   const indexBySlug = useMemo(() => new Map(ordered.map((p, i) => [p.slug, i])), [ordered]);
+  // Featured (larger) tiles: every n-th person of the mixed order, if not among the best known.
+  const featured = useMemo(() => {
+    if (config.featuredShare <= 0) return new Set<string>();
+    const step = Math.max(2, Math.round(1 / config.featuredShare));
+    return new Set(ordered.filter((p, i) => i % step === 0 && p.prominence <= 0.7).map((p) => p.slug));
+  }, [ordered]);
   const layout = useMemo(
     () =>
       createLayout(ordered.length, {
@@ -451,7 +457,6 @@ export function InfiniteCanvas({
       data-hide-names={(siteConfig.features.hideNames && namesHidden) || undefined}
       className="relative h-full overflow-clip"
     >
-      {tornCss && <style>{tornCss}</style>}
       <p id={hintId} className="sr-only">
         {m.canvas.hint}
       </p>
@@ -489,8 +494,9 @@ export function InfiniteCanvas({
                 tabbable={tabbable}
                 active={person.slug === activeSlug}
                 match={hitSet ? hitSet.has(person.slug) : undefined}
+                featured={featured.has(person.slug)}
                 sizes={sizes}
-                edgeClass={tornCss ? `torn-edge-${tornVariant(cell.col, cell.row)}` : undefined}
+                edgeClass={tornEdges ? `torn-edge-${tornVariant(cell.col, cell.row)}` : undefined}
               />
             ))}
           </ul>
@@ -500,11 +506,12 @@ export function InfiniteCanvas({
       <script dangerouslySetInnerHTML={{ __html: firstPaintScript(layout, limits, STORAGE_PREFIX) }} />
 
       {hits && (
-        <div ref={summaryRef} className="absolute inset-x-3 top-19 z-20 mx-auto max-w-xl sm:top-24">
+        <div ref={summaryRef} className="absolute inset-x-3 top-19 z-20 mx-auto max-w-xl sm:top-24 lg:top-28">
           <SearchSummary
             state={search}
             count={hits.length}
             labels={facetLabels}
+            collapsible
             actions={
               hits.length > 0 && (
                 <div className="flex gap-1">

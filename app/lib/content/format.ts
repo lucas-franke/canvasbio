@@ -28,6 +28,13 @@ export function formatPartialDate(date: string, locale: string): string {
 /** Year part of a partial date, e.g. "1831-09-20" → "1831". */
 export const yearOf = (date: string) => date.match(/^-?\d{4}/)?.[0] ?? date;
 
+/** Life span as years, e.g. "1857–1933", "1857–" (no death date) or "" (no dates). */
+export function lifeYears(born?: { date?: string }, died?: { date?: string }): string {
+  const from = born?.date ? yearOf(born.date) : "";
+  const to = died?.date ? yearOf(died.date) : "";
+  return from || to ? `${from}–${to}` : "";
+}
+
 const NAME_PARTICLES = new Set([
   "von",
   "van",

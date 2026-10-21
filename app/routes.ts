@@ -11,7 +11,7 @@ import siteConfig from "../site.config";
  */
 const localeRoutes = siteConfig.locales.flatMap(({ code, prefix }) => {
   const at = (...segments: string[]) => [prefix, ...segments].filter(Boolean).join("/");
-  const { people, list, about, accessibility } = siteConfig.paths;
+  const { people, list, about, accessibility, imprint, privacy } = siteConfig.paths;
   return [
     prefix
       ? route(prefix, "routes/start.tsx", { id: `start:${code}` })
@@ -23,6 +23,8 @@ const localeRoutes = siteConfig.locales.flatMap(({ code, prefix }) => {
     ]),
     route(at(about[code]), "routes/page.tsx", { id: `about:${code}` }),
     route(at(accessibility[code]), "routes/page.tsx", { id: `accessibility:${code}` }),
+    route(at(imprint[code]), "routes/page.tsx", { id: `imprint:${code}` }),
+    route(at(privacy[code]), "routes/page.tsx", { id: `privacy:${code}` }),
     // Static JSON with the overview data, loaded by biography pages in the browser.
     route(peopleDataPath(code).slice(1), "routes/people-data.ts", { id: `people-data:${code}` }),
   ];

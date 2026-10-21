@@ -1,7 +1,11 @@
 import { siteConfig } from "~/lib/config";
 import type { SiteConfig } from "~/lib/config/schema";
 
-export type Page = "start" | "people" | "about" | "accessibility";
+export type Page = "start" | "people" | "about" | "accessibility" | "imprint" | "privacy";
+
+/** Text pages from content/pages, rendered by routes/page.tsx. */
+export const TEXT_PAGES = ["about", "accessibility", "imprint", "privacy"] as const;
+export type TextPage = (typeof TEXT_PAGES)[number];
 
 export interface ParsedPath {
   locale: string;
@@ -26,7 +30,7 @@ export function parsePath(pathname: string, config: SiteConfig = siteConfig): Pa
   if (segments.length === 0) return { locale, page: "start", rest: [] };
 
   const [first, ...rest] = segments;
-  for (const page of ["people", "about", "accessibility"] as const) {
+  for (const page of ["people", ...TEXT_PAGES] as const) {
     if (config.paths[page][locale] === first) return { locale, page, rest };
   }
   return { locale, page: null, rest: segments };

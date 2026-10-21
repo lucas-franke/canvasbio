@@ -8,9 +8,10 @@ Die Demo-Inhalte zeigen Pionierinnen der Frauenbewegung (1850–1950) aus Wikida
 
 - **Bildwand:** endlos in alle Richtungen, Ziehen mit Nachgleiten, Pinch- und Mausrad-Zoom; ohne Ziehen per Zoom-Knöpfe und Steuerkreuz; per Tastatur mit Pfeiltasten. Vorgerendert, damit sie sofort erscheint.
 - **Liste:** alphabetisch mit A–Z-Sprungmarken.
-- **Biografie:** als Spalte neben der Übersicht (ab 1024 px), sonst als Vollbild-Dialog; Tabs Biografie, Lebensgeschichte, Lebenslauf mit teilbaren Links (`#lebenslauf`).
-- **Suche und Filter:** Name (tippfehlertolerant), Ort, Facetten aus der Konfiguration; Treffer werden in der Bildwand hervorgehoben, Zustand steht in der URL.
+- **Biografie:** als Spalte neben der Übersicht (ab 1024 px), sonst als Vollbild-Dialog mit Porträt am Anfang; Name, Schließen, Teilen und Tabs bleiben beim Scrollen sichtbar; Tabs Biografie, Lebensgeschichte, Lebenslauf mit teilbaren Links (`#lebenslauf`); am Ende vorherige/nächste Biografie und „Noch eine zufällige“.
+- **Suche und Filter:** Name (tippfehlertolerant, mit direkten Personen-Vorschlägen beim Tippen), Ort, Facetten aus der Konfiguration; Treffer werden in der Bildwand hervorgehoben, Zustand steht in der URL.
 - **Zufällige Biografie:** bevorzugt weniger bekannte und noch nicht geöffnete Personen.
+- **Startseite:** Umfang der Sammlung, Einstieg per Zufall und „An diesem Tag“ (wer heute oder in den nächsten Tagen Geburts- oder Todestag hat).
 - **Namen ausblenden**, **hell/dunkel**, **Sprachen** inkl. Leichter Sprache, Übergänge mit der View Transitions API (abschaltbar über „Bewegung reduzieren“).
 
 ## Voraussetzungen
@@ -35,18 +36,19 @@ Die Demo-Inhalte zeigen Pionierinnen der Frauenbewegung (1850–1950) aus Wikida
 
 Alles Projektspezifische steht in einer typisierten Datei. Sie wird beim Laden geprüft; Fehler (fehlende Übersetzung, zu geringer Kontrast, ungültige Werte) brechen den Build mit einer verständlichen Meldung ab.
 
-| Abschnitt                  | Inhalt                                                                                                                            |
-| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| `brand`                    | Name, Wortmarke, Beschreibung (Meta-Tags)                                                                                         |
-| `locales`, `defaultLocale` | Sprachen mit URL-Präfix; `contentRequired: false` für Sprachen, in denen nicht jede Biografie vorliegen muss (Leichte Sprache)    |
-| `paths`                    | Übersetzte URL-Segmente (`/personen`, `/en/people` …)                                                                             |
-| `operator`                 | Betreiber, Kontakt-E-Mail für Barrieren, Datum der Barrierefreiheitserklärung                                                     |
-| `theme`                    | Farb-Tokens hell/dunkel, Schriften, Radius, Bildtönung (`sepia`, `grayscale`, `none`), Kachelrand                                 |
-| `start`                    | Titel, Untertitel, Zitat und Button der Startseite                                                                                |
-| `facets`                   | Filter der Suche: `multi` (Chips) oder `autocomplete` (Freitext mit Vorschlägen), jeweils mit Beschriftung und optionalem Hinweis |
-| `detail.tabs`              | Tabs der Biografie und ihre URL-Namen                                                                                             |
-| `canvas`                   | Kachelgröße, Abstand, Versatz, Endlos-Wiederholung, Zoom-Grenzen                                                                  |
-| `features`                 | Zufällige Biografie, Namen ausblenden, Leichte Sprache, Theme-Umschalter                                                          |
+| Abschnitt                  | Inhalt                                                                                                                                           |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `siteUrl`                  | Öffentliche Adresse (optional). Aktiviert kanonische URLs und Vorschaubilder beim Teilen von Biografien                                          |
+| `brand`                    | Name, Wortmarke, Beschreibung (Meta-Tags)                                                                                                        |
+| `locales`, `defaultLocale` | Sprachen mit URL-Präfix; `contentRequired: false` für Sprachen, in denen nicht jede Biografie vorliegen muss (Leichte Sprache)                   |
+| `paths`                    | Übersetzte URL-Segmente (`/personen`, `/en/people` …)                                                                                            |
+| `operator`                 | Betreiber mit Anschrift, Telefon (optional), Kontakt-E-Mail und Datum der Barrierefreiheitserklärung; füllt Impressum, Datenschutz und Erklärung |
+| `theme`                    | Farb-Tokens hell/dunkel, Schriften, Radius, Bildtönung (`sepia`, `grayscale`, `none`), Kachelrand, Papierstruktur (`paperTexture`)               |
+| `start`                    | Titel, Untertitel, Zitat und Button der Startseite                                                                                               |
+| `facets`                   | Filter der Suche: `multi` (Chips) oder `autocomplete` (Freitext mit Vorschlägen), jeweils mit Beschriftung und optionalem Hinweis                |
+| `detail.tabs`              | Tabs der Biografie und ihre URL-Namen                                                                                                            |
+| `canvas`                   | Kachelgröße, Abstand, Versatz, Endlos-Wiederholung, Zoom-Grenzen, Anteil hervorgehobener Kacheln (`featuredShare`)                               |
+| `features`                 | Zufällige Biografie, Namen ausblenden, Leichte Sprache, Theme-Umschalter                                                                         |
 
 Alle Texte sind pro Sprache anzugeben (`{ de: "…", en: "…" }`). UI-Texte, die nicht projektspezifisch sind, liegen in `app/lib/i18n/messages/`.
 
@@ -58,7 +60,7 @@ Bei geänderten `theme.fonts` die Imports in `app/theme/fonts.ts` austauschen (s
 
 Biografien, Porträts und Filterwerte in `content/` ersetzen – Format in [content/README.md](content/README.md). Die Porträts werden beim Build in alle Größen und Formate umgerechnet.
 
-Textseiten liegen in `content/pages/<seite>.<sprache>.md`: „Über das Projekt“ (`about`) und die Erklärung zur Barrierefreiheit (`accessibility`). Platzhalter wie `{{organisation}}`, `{{contactEmail}}` und `{{statementDate}}` werden aus `operator` befüllt.
+Textseiten liegen in `content/pages/<seite>.<sprache>.md`: „Über das Projekt“ (`about`), Erklärung zur Barrierefreiheit (`accessibility`), Impressum (`imprint`) und Datenschutzerklärung (`privacy`). Platzhalter wie `{{organisation}}`, `{{operatorBlock}}` (Name, Anschrift, Telefon, E-Mail), `{{contactEmail}}` und `{{statementDate}}` werden aus `operator` befüllt. Impressum und Datenschutz sind Vorlagen ohne Rechtsberatung; Hinweise stehen als Kommentar in den Dateien.
 
 ### 4. Barrierefreiheit
 
@@ -68,7 +70,7 @@ Textseiten liegen in `content/pages/<seite>.<sprache>.md`: „Über das Projekt�
 
 ### 5. Vor dem Livegang
 
-- [ ] `operator.contactEmail` auf eine echte, betreute Adresse setzen
+- [ ] `operator` mit echten Angaben füllen (Anschrift, betreute Kontakt-E-Mail); Impressum und Datenschutzerklärung prüfen lassen
 - [ ] Erklärung zur Barrierefreiheit geprüft und datiert
 - [ ] Bildrechte und Lizenzangaben aller Porträts geprüft
 - [ ] Leichte-Sprache-Texte von einer Prüfgruppe geprüft

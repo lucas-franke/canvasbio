@@ -29,4 +29,4 @@ export function RandomButton({ onClick, className }: { onClick: () => void; clas
  * Shared by canvas (absolute) and list (sticky).
  */
 export const RANDOM_BUTTON_BOTTOM =
-  "bottom-[calc(max(0.75rem,env(safe-area-inset-bottom))+4.75rem)] sm:bottom-27";
+  "bottom-[calc(max(0.75rem,env(safe-area-inset-bottom))+4.75rem)] sm:bottom-27 lg:bottom-8";

@@ -67,6 +67,8 @@ const prefersReducedMotion = () => window.matchMedia("(prefers-reduced-motion: r
  * above it (bottom) and the canvas controls (right).
  */
 function insetsFor({ width }: Size): Insets {
+  // From lg the navigation is at the top and only the random button sits at the bottom.
+  if (window.matchMedia("(min-width: 64rem)").matches) return { top: 112, right: 88, bottom: 104, left: 12 };
   const small = width < 640;
   return { top: small ? 76 : 96, right: small ? 64 : 88, bottom: small ? 144 : 180, left: 12 };
 }

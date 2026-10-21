@@ -95,3 +95,33 @@ test("unknown person shows the not-found page", async ({ page }) => {
   await page.goto("/personen/gibt-es-nicht");
   await expect(page.getByRole("heading", { level: 1, name: "Seite nicht gefunden" })).toBeVisible();
 });
+
+test("on phones closing and the tabs stay in reach while reading", async ({ page, isMobile }) => {
+  test.skip(!isMobile, "the sticky bar matters in the full-screen dialog");
+  await page.goto("/personen/clara-zetkin#geschichte");
+  await page.locator('[role="dialog"]').evaluate((el) => el.scrollTo(0, 2000));
+  await expect(page.getByRole("link", { name: "Schließen" })).toBeInViewport();
+  await expect(page.getByRole("tablist", { name: "Abschnitte" })).toBeInViewport();
+});
+
+test("if the overview data can't be loaded, an error with retry is shown", async ({ page, isMobile }) => {
+  test.skip(isMobile, "the overview is behind the dialog on phones");
+  await page.route("**/data/people-de.json", (route) => route.abort());
+  await page.goto("/personen/clara-zetkin");
+  const alert = page.getByRole("alert").filter({ hasText: "Die Übersicht konnte nicht geladen werden" });
+  await expect(alert).toBeVisible();
+  await page.unroute("**/data/people-de.json");
+  await alert.getByRole("button", { name: "Erneut versuchen" }).click();
+  await expect(page.locator("[data-cell]").first()).toBeAttached();
+});
+
+test("previous and next continue in list order", async ({ page }) => {
+  await page.goto("/personen/liste?q=clara");
+  await expect(page.getByRole("heading", { name: /^Ergebnisse/ })).toBeVisible();
+  await page.getByRole("link", { name: "Clara Zetkin", exact: true }).click();
+  const more = page.getByRole("navigation", { name: "Weitere Biografien" });
+  // Within the search results: the next one is also a "Clara".
+  await more.getByRole("link", { name: /Nächste/ }).click();
+  await expect(page).toHaveURL(/\/personen\/[a-z-]+\?q=clara$/);
+  await expect(page.getByRole("heading", { level: 1 })).toContainText(/Clara|Klara|Klára/);
+});

@@ -9,6 +9,7 @@ import { content } from "~/lib/content/index.server";
 import { renderMarkdown } from "~/lib/content/markdown.server";
 import { messagesFor } from "~/lib/i18n";
 import { localeFromPathname } from "~/lib/i18n/locale";
+import { portraitUrl } from "~/lib/content/images";
 import { pageMeta } from "~/lib/meta";
 import type { PeopleLayoutContext } from "./people-layout";
 
@@ -35,10 +36,22 @@ export async function loader({ request, params }: Route.LoaderArgs) {
   return { person, storyHtml, tags, locale };
 }
 
-export function meta({ loaderData }: Route.MetaArgs) {
+export function meta({ loaderData, location }: Route.MetaArgs) {
   if (!loaderData) return [];
   const { person, locale } = loaderData;
-  return pageMeta({ title: person.name.display, description: person.text.summary.join(" · "), locale });
+  const width = Math.min(1280, person.image.width);
+  return pageMeta({
+    title: person.name.display,
+    description: person.text.summary.join(" · "),
+    locale,
+    path: location.pathname,
+    image: {
+      path: portraitUrl(person.slug, "full", 1280, "webp", person.image.hash),
+      alt: person.text.portraitAlt,
+      width,
+      height: Math.round((width * person.image.height) / person.image.width),
+    },
+  });
 }
 
 /**
@@ -54,6 +67,6 @@ export function ErrorBoundary() {
 }
 
 export default function Person({ loaderData }: Route.ComponentProps) {
-  const { closeHref } = useOutletContext<PeopleLayoutContext>();
-  return <PersonDetail {...loaderData} closeHref={closeHref} />;
+  const { closeHref, sequence, hrefFor } = useOutletContext<PeopleLayoutContext>();
+  return <PersonDetail {...loaderData} closeHref={closeHref} sequence={sequence} hrefFor={hrefFor} />;
 }

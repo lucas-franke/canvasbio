@@ -16,9 +16,11 @@ import { messagesFor } from "~/lib/i18n";
 import { localeFromPathname } from "~/lib/i18n/locale";
 import { htmlLangFor } from "~/lib/i18n/localize";
 import { pageMeta } from "~/lib/meta";
+import { tornEdgeCss } from "~/lib/canvas/torn-edge";
 import { themeToCss } from "~/lib/theme/css";
 
-const themeCss = themeToCss(siteConfig.theme);
+// Theme tokens, plus the torn-edge masks for portraits (canvas, list, biography).
+const themeCss = themeToCss(siteConfig.theme) + (siteConfig.theme.tileEdge === "torn" ? tornEdgeCss() : "");
 
 /** Applies a stored light/dark choice before first paint to avoid a flash. */
 const themeInitScript = `try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}`;
@@ -28,7 +30,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const locale = localeFromPathname(useLocation().pathname);
 
   return (
-    <html lang={htmlLangFor(locale)} suppressHydrationWarning>
+    <html
+      lang={htmlLangFor(locale)}
+      data-paper={siteConfig.theme.paperTexture || undefined}
+      suppressHydrationWarning
+    >
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -43,6 +49,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
           media="(prefers-color-scheme: dark)"
           content={siteConfig.theme.colors.dark.page}
         />
+        {/* Generated from the brand by scripts/build-icons.ts. */}
+        <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
         <style dangerouslySetInnerHTML={{ __html: themeCss }} />
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <Meta />

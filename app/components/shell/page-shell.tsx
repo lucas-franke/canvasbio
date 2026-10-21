@@ -1,5 +1,5 @@
 import { cn } from "cn";
-import { ArrowLeft } from "lucide-react";
+import { House } from "lucide-react";
 import type { ReactNode } from "react";
 import { Link } from "react-router";
 
@@ -21,15 +21,21 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
   return (
     <header
       className={cn(
-        "flex justify-center px-4",
-        overlay ? "pointer-events-none absolute inset-x-0 top-0 z-10" : "pt-6 sm:pt-10",
+        // Next to an open biography the overview column is narrow: the nav pills (with home)
+        // are enough there, the wordmark would collide with them.
+        "flex justify-center px-4 lg:@max-lg:hidden",
+        overlay
+          ? "pointer-events-none absolute inset-x-0 top-0 z-10"
+          : // Desktop: a sticky band behind the top navigation, so content doesn't scroll under it.
+            "pt-6 sm:pt-10 lg:sticky lg:top-0 lg:z-30 lg:h-24 lg:items-center lg:bg-page/95 lg:pt-0 lg:backdrop-blur-sm",
       )}
     >
       <Link
         to={pagePath(locale, "start")}
         aria-label={`${localize(siteConfig.brand.wordmark, locale)} – ${m.nav.home}`}
         className={cn(
-          "rounded-sm wordmark text-[clamp(1.75rem,1.4rem+1.5vw,2.5rem)] text-brand",
+          // Sized by the column (container), which is narrow next to an open biography.
+          "rounded-sm wordmark text-[clamp(1.5rem,0.9rem+3cqw,2.5rem)] text-brand",
           overlay &&
             "pointer-events-auto rounded-b-card bg-page px-5 pt-4 pb-3 shadow-[0_2px_4px_rgb(0_0_0/0.15)] sm:px-7 sm:pt-6",
         )}
@@ -72,16 +78,11 @@ export function PageShell({ children, navEnd, aside, inert = false, fullBleed = 
       </div>
       <BottomNav
         inert={inert}
+        besideAside={Boolean(aside)}
         label={m.nav.label}
         start={
           <NavPill>
-            <NavIconLink
-              to={pagePath(locale, "start")}
-              label={m.nav.back}
-              aria-label={m.nav.backToStart}
-              icon={<ArrowLeft />}
-              labelSide="end"
-            />
+            <NavIconLink to={pagePath(locale, "start")} label={m.nav.home} icon={<House />} labelSide="end" />
             <MenuDrawer />
           </NavPill>
         }

@@ -31,7 +31,7 @@ test("name search on the canvas highlights the match and counts live", async ({ 
 test("field filter narrows the list; typos and umlauts are forgiven", async ({ page }) => {
   await page.goto("/personen/liste");
   const dialog = await openPanel(page);
-  await dialog.getByText("Politik", { exact: true }).click();
+  await dialog.locator("label", { hasText: "Politik" }).click();
   await expect(dialog.getByRole("checkbox", { name: "Politik" })).toBeChecked();
   await submit(dialog).click();
   await expect(page).toHaveURL(/\/personen\/liste\?field=politics$/);
@@ -105,4 +105,25 @@ test("previous/next match move through the results on the canvas", async ({ page
   await expect(page.getByText(/^Treffer 2 von \d+: /)).toBeAttached();
   await page.getByRole("button", { name: "Vorheriger Treffer" }).click();
   await expect(page.getByText(/^Treffer 1 von \d+: /)).toBeAttached();
+});
+
+test("typing a name suggests people to open directly", async ({ page }) => {
+  await page.goto("/personen/liste");
+  const dialog = await openPanel(page);
+  await dialog.getByLabel("Nach Namen suchen").fill("zetk");
+  const suggestions = dialog.getByRole("region", { name: "Passende Personen" });
+  await suggestions.getByRole("link", { name: /Clara Zetkin/ }).click();
+  await expect(page).toHaveURL(/\/personen\/clara-zetkin$/);
+  await expect(page.getByRole("dialog", { name: "Suche" })).toHaveCount(0);
+});
+
+test("filter chips show how many people each would find", async ({ page }) => {
+  await page.goto("/personen/liste");
+  const dialog = await openPanel(page);
+  const politics = dialog.locator("label", { hasText: "Politik" });
+  const before = Number(await politics.locator("span").last().textContent());
+  expect(before).toBeGreaterThan(10);
+  // Narrowing by name updates the counts live.
+  await dialog.getByLabel("Nach Namen suchen").fill("zetkin");
+  await expect(politics.locator("span").last()).toHaveText("1");
 });

@@ -1,18 +1,30 @@
 import { cn } from "cn";
 import { Check, Search, X } from "lucide-react";
 import { useEffect, useId, useMemo, useRef, useState, type FormEvent } from "react";
+import { Link } from "react-router";
 
 import { LoadFailed } from "~/components/people/load-failed";
+import { Portrait } from "~/components/portrait";
+import { SIDE_SHEET } from "~/components/shell/menu-drawer";
 import { NavIconButton } from "~/components/shell/nav";
 import { Button } from "~/components/ui/button";
 import { Drawer, DrawerClose, DrawerContent, DrawerTitle, DrawerTrigger } from "~/components/ui/drawer";
 import { siteConfig } from "~/lib/config";
+import { SPLIT_VIEW_QUERY, useMediaQuery } from "~/lib/hooks";
 import type { FacetConfig } from "~/lib/config/schema";
+import { lifeYears } from "~/lib/content/format";
 import { usePeopleIndex, type PeopleIndex } from "~/lib/content/people-index";
 import { useLocale, useMessages } from "~/lib/i18n";
+import { pagePath } from "~/lib/i18n/locale";
 import { localize } from "~/lib/i18n/localize";
-import { emptySearch, filterPeople, type SearchState } from "~/lib/search/search";
-import { setSearchPanelOpen, useApplySearch, useSearch, useSearchPanelOpen } from "~/lib/search/use-search";
+import { emptySearch, filterPeople, suggestPeople, type SearchState } from "~/lib/search/search";
+import {
+  setSearchPanelOpen,
+  useApplySearch,
+  useSearch,
+  useSearchPanelOpen,
+  useSearchSuffix,
+} from "~/lib/search/use-search";
 
 const fieldClass =
   "min-h-12 w-full rounded-xl border-2 border-control bg-surface px-4 text-body text-emphasis placeholder:text-muted-text";
@@ -24,14 +36,19 @@ const fieldClass =
 export function SearchDrawer() {
   const m = useMessages();
   const open = useSearchPanelOpen();
+  // Desktop: "Suche" is at the top right, so the panel slides in from the right.
+  const desktop = useMediaQuery(SPLIT_VIEW_QUERY, false);
 
   return (
-    <Drawer open={open} onOpenChange={setSearchPanelOpen}>
+    <Drawer open={open} onOpenChange={setSearchPanelOpen} direction={desktop ? "right" : "bottom"}>
       <DrawerTrigger asChild>
         <NavIconButton label={m.nav.search} icon={<Search />} data-search-trigger />
       </DrawerTrigger>
       <DrawerContent
-        className="mx-auto max-h-[90dvh] w-full rounded-t-card bg-surface text-text md:max-w-xl"
+        className={cn(
+          "bg-surface text-text",
+          desktop ? SIDE_SHEET : "mx-auto max-h-[90dvh] w-full rounded-t-card md:max-w-xl",
+        )}
         aria-describedby={undefined}
         // The name field gets focus, not the close button.
         onOpenAutoFocus={(event) => {
@@ -88,6 +105,26 @@ function SearchForm({ index }: { index: PeopleIndex }) {
     return () => clearTimeout(timer);
   }, [count]);
 
+  // Per chip: how many people the search would find with that value, given the other inputs.
+  const facetCounts = useMemo(() => {
+    const counts: Record<string, Record<string, number>> = {};
+    for (const facet of siteConfig.facets) {
+      if (facet.type !== "multi") continue;
+      counts[facet.key] = Object.fromEntries(
+        Object.keys(index.facetLabels[facet.key] ?? {}).map((value) => [
+          value,
+          filterPeople(
+            index.people,
+            { ...draft, facets: { ...draft.facets, [facet.key]: [value] } },
+            siteConfig.facets,
+            index.facetLabels,
+          ).length,
+        ]),
+      );
+    }
+    return counts;
+  }, [index, draft]);
+
   const setFacet = (key: string, values: string[]) =>
     setDraft((state) => ({ ...state, facets: { ...state.facets, [key]: values } }));
 
@@ -105,17 +142,33 @@ function SearchForm({ index }: { index: PeopleIndex }) {
           <label htmlFor="search-name" className="text-label font-medium text-emphasis">
             {m.search.name}
           </label>
-          <input
-            ref={nameInput}
-            id="search-name"
-            type="search"
-            enterKeyHint="search"
-            autoComplete="off"
-            spellCheck={false}
-            value={draft.q}
-            onChange={(event) => setDraft((state) => ({ ...state, q: event.target.value }))}
-            className={fieldClass}
-          />
+          <div className="relative">
+            <input
+              ref={nameInput}
+              id="search-name"
+              type="search"
+              enterKeyHint="search"
+              autoComplete="off"
+              spellCheck={false}
+              value={draft.q}
+              onChange={(event) => setDraft((state) => ({ ...state, q: event.target.value }))}
+              className={cn(fieldClass, "pr-12 [&::-webkit-search-cancel-button]:appearance-none")}
+            />
+            {draft.q && (
+              <button
+                type="button"
+                aria-label={m.search.clearName}
+                onClick={() => {
+                  setDraft((state) => ({ ...state, q: "" }));
+                  nameInput.current?.focus();
+                }}
+                className="absolute inset-y-0.5 right-0.5 grid w-11 place-items-center rounded-xl text-muted-text hover:text-emphasis"
+              >
+                <X aria-hidden="true" className="size-5" />
+              </button>
+            )}
+          </div>
+          <PersonSuggestions index={index} query={draft.q} />
         </div>
 
         {siteConfig.facets.map((facet) =>
@@ -124,6 +177,7 @@ function SearchForm({ index }: { index: PeopleIndex }) {
               key={facet.key}
               facet={facet}
               labels={index.facetLabels[facet.key] ?? {}}
+              counts={facetCounts[facet.key] ?? {}}
               selected={draft.facets[facet.key] ?? []}
               onChange={(values) => setFacet(facet.key, values)}
             />
@@ -161,14 +215,63 @@ function SearchForm({ index }: { index: PeopleIndex }) {
   );
 }
 
+/**
+ * Type-ahead: the people whose name matches what is typed, to open one directly. Most
+ * searches look for one person; the filters below are for exploring.
+ */
+function PersonSuggestions({ index, query }: { index: PeopleIndex; query: string }) {
+  const m = useMessages();
+  const locale = useLocale();
+  const suffix = useSearchSuffix();
+  const headingId = useId();
+  const people = useMemo(() => suggestPeople(index.people, query), [index, query]);
+  if (people.length === 0) return null;
+
+  return (
+    <section aria-labelledby={headingId} className="flex flex-col gap-1 pt-1">
+      <h3 id={headingId} className="font-sans text-body-sm font-medium tracking-normal text-muted-text">
+        {m.search.suggestions}
+      </h3>
+      <ul className="flex flex-col">
+        {people.map((person) => (
+          <li key={person.slug}>
+            <Link
+              to={pagePath(locale, "people", person.slug) + suffix}
+              onClick={() => setSearchPanelOpen(false)}
+              className="flex min-h-12 items-center gap-3 rounded-xl px-2 py-1 hover:bg-emphasis/5"
+            >
+              <span className="size-10 shrink-0 overflow-hidden rounded-md">
+                <Portrait
+                  slug={person.slug}
+                  image={person.image}
+                  alt=""
+                  sizes="40px"
+                  className="size-full object-cover"
+                />
+              </span>
+              <span className="flex min-w-0 flex-col">
+                <span className="truncate font-medium text-emphasis">{person.name.display}</span>
+                <span className="text-body-xs text-muted-text">{lifeYears(person.born, person.died)}</span>
+              </span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
 function MultiFacet({
   facet,
   labels,
+  counts,
   selected,
   onChange,
 }: {
   facet: FacetConfig;
   labels: Record<string, string>;
+  /** Results with this value, given the other inputs. */
+  counts: Record<string, number>;
   selected: string[];
   onChange: (values: string[]) => void;
 }) {
@@ -181,6 +284,7 @@ function MultiFacet({
       <div className="flex flex-wrap gap-2">
         {options.map(([value, label]) => {
           const checked = selected.includes(value);
+          const count = counts[value] ?? 0;
           return (
             <label
               key={value}
@@ -189,7 +293,9 @@ function MultiFacet({
                 "has-[:focus-visible]:shadow-[0_0_0_6px_var(--c-focus-halo)] has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-focus",
                 checked
                   ? "border-brand bg-brand text-brand-foreground"
-                  : "border-control text-emphasis hover:bg-emphasis/5",
+                  : count === 0
+                    ? "border-dashed border-control text-muted-text hover:bg-emphasis/5"
+                    : "border-control text-emphasis hover:bg-emphasis/5",
               )}
             >
               <input
@@ -203,6 +309,7 @@ function MultiFacet({
               {/* The check mark shows the state without relying on colour (WCAG 1.4.1). */}
               {checked && <Check aria-hidden="true" className="-ml-1 size-4" />}
               {label}
+              <span className="text-body-xs tabular-nums">{count}</span>
             </label>
           );
         })}

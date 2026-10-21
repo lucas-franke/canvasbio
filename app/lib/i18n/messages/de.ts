@@ -8,11 +8,12 @@ export const de = {
   nav: {
     label: "Hauptnavigation",
     home: "Startseite",
-    back: "Zurück",
-    backToStart: "Zurück zur Startseite",
     people: "Biografien",
     about: "Über das Projekt",
     accessibility: "Barrierefreiheit",
+    imprint: "Impressum",
+    privacy: "Datenschutz",
+    legal: "Rechtliches",
     search: "Suche",
     menu: "Menü",
     closeMenu: "Menü schließen",
@@ -41,6 +42,9 @@ export const de = {
     dark: "Dunkel",
   },
   start: {
+    onThisDay: "An diesem Tag",
+    anniversary: (kind: "born" | "died", years: number, date: string | null) =>
+      `${date ? `Am ${date}` : "Heute"} vor ${years} Jahren ${kind === "born" ? "geboren" : "gestorben"}`,
     portraitsLabel: "Porträts aus der Sammlung",
   },
   people: {
@@ -53,6 +57,8 @@ export const de = {
   },
   search: {
     title: "Suche",
+    suggestions: "Passende Personen",
+    clearName: "Eingabe löschen",
     close: "Suche schließen",
     name: "Nach Namen suchen",
     show: (n: number) =>
@@ -62,6 +68,7 @@ export const de = {
     reset: "Zurücksetzen",
     results: (n: number) => `Ergebnisse (${n})`,
     change: "Suche ändern",
+    filters: (n: number) => `Filter (${n})`,
     nameChip: (q: string) => `Name: ${q}`,
     removeFilter: (label: string) => `Filter „${label}“ entfernen`,
     empty: "Keine Personen gefunden",
@@ -92,6 +99,12 @@ export const de = {
   },
   detail: {
     close: "Schließen",
+    more: "Weitere Biografien",
+    previous: "Vorherige",
+    next: "Nächste",
+    randomAnother: "Noch eine zufällige Biografie",
+    share: "Teilen",
+    linkCopied: "Link kopiert",
     sections: "Abschnitte",
     portraitCredit: "Bild",
     license: "Lizenz",

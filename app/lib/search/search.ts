@@ -124,6 +124,39 @@ export function nameMatches(query: string, name: string): boolean {
   return queryWords.every((q) => nameWords.some((w) => wordMatches(q, w)));
 }
 
+/**
+ * People for the type-ahead list under the name field, best first: the name starts with the
+ * query ("clara z…"), then every query word starts a name word, then typo matches. Ties go
+ * to the better known person, then alphabetically. Needs at least two characters.
+ */
+export function suggestPeople<T extends { name: { display: string; sort: string }; prominence: number }>(
+  people: readonly T[],
+  query: string,
+  limit = 5,
+): T[] {
+  const q = normalize(query.trim());
+  if (q.length < 2) return [];
+  const queryWords = tokenize(query);
+  const rank = (person: T) => {
+    const display = normalize(person.name.display);
+    if (display.startsWith(q)) return 0;
+    const words = tokenize(`${person.name.display} ${person.name.sort}`);
+    if (queryWords.every((qw) => words.some((w) => w.startsWith(qw)))) return 1;
+    return nameMatches(query, `${person.name.display} ${person.name.sort}`) ? 2 : -1;
+  };
+  return people
+    .map((person) => ({ person, score: rank(person) }))
+    .filter(({ score }) => score >= 0)
+    .sort(
+      (a, b) =>
+        a.score - b.score ||
+        b.person.prominence - a.person.prominence ||
+        a.person.name.sort.localeCompare(b.person.name.sort),
+    )
+    .slice(0, limit)
+    .map(({ person }) => person);
+}
+
 /** Labels of facet values, per facet: `labels.place.berlin === "Berlin"`. */
 export type FacetLabels = Record<string, Record<string, string>>;
 

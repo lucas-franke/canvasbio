@@ -1,17 +1,27 @@
-import { Quote, X } from "lucide-react";
+import { cn } from "cn";
+import { ArrowLeft, ArrowRight, Quote, Shuffle, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 
 import { Portrait } from "~/components/portrait";
+import { ShareButton } from "./share-button";
+import { Button } from "~/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
 import { siteConfig } from "~/lib/config";
-import type { PersonDetail as PersonDetailData } from "~/lib/content/adapter";
+import type { PersonDetail as PersonDetailData, PersonListItem } from "~/lib/content/adapter";
 import { useHydrated } from "~/lib/hooks";
 import { useMessages } from "~/lib/i18n";
 import { localeConfig } from "~/lib/i18n/locale";
 import { htmlLangFor, localize } from "~/lib/i18n/localize";
+import { tornEdgeClass } from "~/lib/canvas/torn-edge";
+import { readSeen } from "~/lib/preferences";
+import { pickRandom } from "~/lib/random";
 import { PERSON_HEADING_ID } from "./ids";
 
 type TabId = (typeof siteConfig.detail.tabs)[number]["id"];
+
+/** Height of the sticky bar in px (h-16); the tabs stick right below it. */
+const BAR_HEIGHT = 64;
 
 interface PersonDetailProps {
   person: Omit<PersonDetailData, "story">;
@@ -20,6 +30,9 @@ interface PersonDetailProps {
   /** Locale of the page (the text may be in another one if not translated). */
   locale: string;
   closeHref: string;
+  /** People in overview order, for previous/next and another random one (null while loading). */
+  sequence?: PersonListItem[] | null;
+  hrefFor?: (slug: string) => string;
 }
 
 /** Tab ↔ URL hash, e.g. "#lebenslauf". The first tab has no hash. */
@@ -41,7 +54,15 @@ function useTabFromHash(locale: string): [TabId, (tab: TabId) => void] {
   return [tab, select];
 }
 
-export function PersonDetail({ person, storyHtml, tags, locale, closeHref }: PersonDetailProps) {
+export function PersonDetail({
+  person,
+  storyHtml,
+  tags,
+  locale,
+  closeHref,
+  sequence,
+  hrefFor,
+}: PersonDetailProps) {
   const m = useMessages();
   const [tab, setTab] = useTabFromHash(locale);
   const { text } = person;
@@ -49,16 +70,40 @@ export function PersonDetail({ person, storyHtml, tags, locale, closeHref }: Per
   const fallback = person.locale !== locale;
   const textLang = fallback ? htmlLangFor(person.locale) : undefined;
 
+  // The compact name in the sticky bar appears once the big heading has scrolled away.
+  const heading = useRef<HTMLHeadingElement>(null);
+  const [headingVisible, setHeadingVisible] = useState(true);
+  useEffect(() => {
+    const element = heading.current;
+    if (!element) return;
+    const observer = new IntersectionObserver(([entry]) => setHeadingVisible(entry!.isIntersecting), {
+      rootMargin: `-${BAR_HEIGHT}px 0px 0px 0px`,
+    });
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <article className="flex min-h-full flex-col gap-6 px-5 pt-5 pb-28 sm:px-10 sm:pt-8 lg:pb-36">
-      <div className="flex justify-end">
+    <article className="@container flex min-h-full flex-col gap-6 px-5 pb-28 sm:px-10 lg:pb-16">
+      {/* Sticky bar: closing (and the name) stay in reach while reading a long story. */}
+      <div className="sticky top-0 z-20 -mx-5 flex h-16 items-center gap-3 bg-surface/95 px-5 backdrop-blur-sm sm:-mx-10 sm:px-10">
+        <p
+          aria-hidden="true"
+          className={cn(
+            "min-w-0 flex-1 truncate font-heading text-h3 text-emphasis transition-opacity duration-200",
+            headingVisible ? "opacity-0" : "opacity-100",
+          )}
+        >
+          {person.name.display}
+        </p>
+        <ShareButton title={person.name.display} />
         <Link
           to={closeHref}
           preventScrollReset
           viewTransition
-          className="group/close inline-flex items-center gap-3 rounded-full pl-4 text-label font-medium text-emphasis"
+          className="group/close inline-flex shrink-0 items-center gap-3 rounded-full text-label font-medium text-emphasis sm:pl-4"
         >
-          {m.detail.close}
+          <span className="sr-only sm:not-sr-only">{m.detail.close}</span>
           <span
             aria-hidden="true"
             className="grid size-12 place-items-center rounded-full border-2 border-emphasis group-hover/close:bg-emphasis group-hover/close:text-surface"
@@ -68,16 +113,33 @@ export function PersonDetail({ person, storyHtml, tags, locale, closeHref }: Per
         </Link>
       </div>
 
-      <header className="flex flex-col gap-3">
-        <h1 id={PERSON_HEADING_ID} tabIndex={-1} className="text-h1 focus-target">
+      {/* Phones: the biography opens with the portrait (desktop shows it next to the facts). */}
+      <div className="relative -mx-5 -mt-6 sm:-mx-10 lg:hidden">
+        <Portrait
+          slug={person.slug}
+          image={person.image}
+          kind="full"
+          alt={text.portraitAlt}
+          sizes="100vw"
+          loading="eager"
+          className="block aspect-4/3 max-h-[45dvh] w-full object-cover object-[50%_25%]"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 -bottom-px h-1/2 bg-linear-to-t from-surface from-15% via-surface/60 to-transparent"
+        />
+      </div>
+
+      <header className="relative -mt-10 flex flex-col gap-3 lg:mt-0">
+        <h1 ref={heading} id={PERSON_HEADING_ID} tabIndex={-1} className="text-h1 focus-target">
           {person.name.display}
         </h1>
         {tags.length > 0 && (
-          <ul className="flex flex-wrap gap-2">
+          <ul className="flex flex-wrap gap-1.5">
             {tags.map((tag) => (
               <li
                 key={tag}
-                className="rounded-lg border border-control px-2.5 py-1 text-body-sm text-emphasis"
+                className="rounded-lg border border-control px-2 py-0.5 text-body-xs text-emphasis"
               >
                 {tag}
               </li>
@@ -93,13 +155,15 @@ export function PersonDetail({ person, storyHtml, tags, locale, closeHref }: Per
       )}
 
       <Tabs value={tab} onValueChange={(value) => setTab(value as TabId)}>
-        <TabsList aria-label={m.detail.sections}>
-          {siteConfig.detail.tabs.map((t) => (
-            <TabsTrigger key={t.id} value={t.id}>
-              {localize(t.label, locale)}
-            </TabsTrigger>
-          ))}
-        </TabsList>
+        <div className="sticky top-16 z-10 -mx-5 bg-surface/95 px-5 py-2 backdrop-blur-sm sm:-mx-10 sm:px-10">
+          <TabsList aria-label={m.detail.sections}>
+            {siteConfig.detail.tabs.map((t) => (
+              <TabsTrigger key={t.id} value={t.id}>
+                {localize(t.label, locale)}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+        </div>
 
         {siteConfig.detail.tabs.map((t) => (
           // All panels stay in the HTML (search engines, no-JS); inactive ones are hidden.
@@ -111,7 +175,71 @@ export function PersonDetail({ person, storyHtml, tags, locale, closeHref }: Per
           </TabsContent>
         ))}
       </Tabs>
+
+      {sequence && hrefFor && <MoreBiographies slug={person.slug} sequence={sequence} hrefFor={hrefFor} />}
     </article>
+  );
+}
+
+/**
+ * Keeps the exploration going at the end of a biography: previous and next in the order of
+ * the overview (or of the search results), and another random biography.
+ */
+function MoreBiographies({
+  slug,
+  sequence,
+  hrefFor,
+}: {
+  slug: string;
+  sequence: PersonListItem[];
+  hrefFor: (slug: string) => string;
+}) {
+  const m = useMessages();
+  const navigate = useNavigate();
+  const position = sequence.findIndex((p) => p.slug === slug);
+  if (sequence.length < 2) return null;
+  // Not in the current results (e.g. opened via a link): start from the beginning.
+  const previous =
+    position < 0 ? sequence.at(-1)! : sequence[(position - 1 + sequence.length) % sequence.length]!;
+  const next = position < 0 ? sequence[0]! : sequence[(position + 1) % sequence.length]!;
+
+  const linkClass =
+    "group/more flex min-h-16 flex-col justify-center gap-0.5 rounded-xl border border-line px-4 py-3 hover:bg-emphasis/5";
+  return (
+    <nav aria-label={m.detail.more} className="mt-4 flex flex-col gap-3 border-t border-line pt-6">
+      <div className="grid gap-3 @md:grid-cols-2">
+        <Link to={hrefFor(previous.slug)} preventScrollReset viewTransition className={linkClass}>
+          <span className="flex items-center gap-1.5 text-body-sm text-muted-text">
+            <ArrowLeft aria-hidden="true" className="size-4" />
+            {m.detail.previous}
+          </span>
+          <span className="font-heading text-h3 text-emphasis">{previous.name.display}</span>
+        </Link>
+        <Link
+          to={hrefFor(next.slug)}
+          preventScrollReset
+          viewTransition
+          className={cn(linkClass, "@md:items-end @md:text-right")}
+        >
+          <span className="flex items-center gap-1.5 text-body-sm text-muted-text">
+            {m.detail.next}
+            <ArrowRight aria-hidden="true" className="size-4" />
+          </span>
+          <span className="font-heading text-h3 text-emphasis">{next.name.display}</span>
+        </Link>
+      </div>
+      <Button
+        variant="outline"
+        className="self-start"
+        onClick={() => {
+          const person = pickRandom(sequence, { seen: readSeen(), exclude: slug });
+          if (person) navigate(hrefFor(person.slug), { preventScrollReset: true, viewTransition: true });
+        }}
+      >
+        <Shuffle aria-hidden="true" />
+        {m.detail.randomAnother}
+      </Button>
+    </nav>
   );
 }
 
@@ -149,8 +277,15 @@ function FactsPanel({ person }: { person: PersonDetailProps["person"] }) {
         </div>
 
         <figure className="flex w-full max-w-64 flex-col gap-2 @2xl/facts:w-72 @2xl/facts:max-w-none @2xl/facts:shrink-0">
-          {/* Target of the portrait morph from the overview (app/lib/view-transition.ts). */}
-          <div data-vt-detail-portrait>
+          {/* Target of the portrait morph from the overview (app/lib/view-transition.ts).
+              On phones the portrait is at the top of the biography; the credit stays here. */}
+          <div
+            data-vt-detail-portrait
+            className={cn(
+              "hidden lg:block",
+              siteConfig.theme.tileEdge === "torn" && tornEdgeClass(person.slug),
+            )}
+          >
             <Portrait
               slug={person.slug}
               image={person.image}
@@ -211,13 +346,15 @@ function StoryPanel({ person, storyHtml }: { person: PersonDetailProps["person"]
 
 function TimelinePanel({ timeline }: { timeline: { date: string; event: string }[] }) {
   return (
-    <ol className="@container/timeline flex flex-col">
+    // A vertical line with a marker per entry: the order in time is visible at a glance.
+    <ol className="ml-1.5 flex flex-col border-l-2 border-line">
       {timeline.map((entry, i) => (
-        <li
-          key={`${entry.date}-${i}`}
-          className="grid gap-1 border-b border-line py-3 @lg/timeline:grid-cols-[11rem_1fr] @lg/timeline:gap-6"
-        >
-          <span className="font-medium text-emphasis">{entry.date}</span>
+        <li key={`${entry.date}-${i}`} className="relative flex flex-col gap-0.5 py-3 pl-6">
+          <span
+            aria-hidden="true"
+            className="absolute top-[1.15rem] -left-[0.4375rem] size-3 rounded-full bg-brand ring-4 ring-surface"
+          />
+          <span className="font-medium text-brand">{entry.date}</span>
           <span>{entry.event}</span>
         </li>
       ))}

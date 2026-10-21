@@ -7,6 +7,7 @@ import { PERSON_HEADING_ID } from "~/components/detail/ids";
 import { ViewToggle } from "~/components/people/view-toggle";
 import { PageShell } from "~/components/shell/page-shell";
 import { siteConfig } from "~/lib/config";
+import type { PersonListItem } from "~/lib/content/adapter";
 import { usePeopleIndex } from "~/lib/content/people-index";
 import { SPLIT_VIEW_QUERY, useMediaQuery } from "~/lib/hooks";
 import { useLocale, useMessages } from "~/lib/i18n";
@@ -20,6 +21,9 @@ import { afterViewTransition, markPortraitTarget } from "~/lib/view-transition";
 export interface PeopleLayoutContext {
   closeHref: string;
   modal: boolean;
+  /** People in overview order (search results when searching), for previous/next; null while loading. */
+  sequence: PersonListItem[] | null;
+  hrefFor: (slug: string) => string;
 }
 
 /**
@@ -119,7 +123,19 @@ export default function PeopleLayout() {
     if (slug) markSeen(slug);
   }, [slug]);
 
-  const context: PeopleLayoutContext = { closeHref: overviewHref, modal };
+  const hrefFor = (personSlug: string) => pagePath(locale, "people", personSlug) + suffix;
+  const context: PeopleLayoutContext = {
+    closeHref: overviewHref,
+    modal,
+    sequence: hits ?? index?.people ?? null,
+    hrefFor,
+  };
+
+  // Another person opened in the column: start reading at the top.
+  const asideRef = useRef<HTMLElement>(null);
+  useLayoutEffect(() => {
+    asideRef.current?.scrollTo({ top: 0 });
+  }, [slug]);
 
   return (
     <PageShell
@@ -129,6 +145,7 @@ export default function PeopleLayout() {
       aside={
         isDetail && (
           <section
+            ref={asideRef}
             aria-labelledby={PERSON_HEADING_ID}
             role={modal ? "dialog" : undefined}
             aria-modal={modal || undefined}
@@ -145,7 +162,7 @@ export default function PeopleLayout() {
           index={index}
           view={view}
           activeSlug={slug}
-          hrefFor={(personSlug) => pagePath(locale, "people", personSlug) + suffix}
+          hrefFor={hrefFor}
           listHref={listPath(locale) + suffix}
           search={search}
           hits={hits}

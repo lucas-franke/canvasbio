@@ -1,6 +1,8 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test, type Page } from "@playwright/test";
 
+import { openCanvasControls } from "./helpers";
+
 /** WCAG 2.2 AA, including the 2.1/2.2 additions (e.g. target-size). */
 const wcagTags = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"];
 
@@ -22,6 +24,9 @@ const routes = [
   "/barrierefreiheit",
   "/en/accessibility",
   "/leichte-sprache/barrierefreiheit",
+  "/impressum",
+  "/datenschutz",
+  "/en/legal-notice",
   "/gibt-es-nicht",
   "/styleguide",
 ];
@@ -70,7 +75,7 @@ for (const path of routes) {
 }
 
 /** Interactive states (panels, search, preferences), each checked in light and dark. */
-const states: { name: string; run: (page: Page) => Promise<void> }[] = [
+const states: { name: string; run: (page: Page, isMobile: boolean) => Promise<void> }[] = [
   ...["/personen?field=politics", "/personen/liste?q=clara&field=politics", "/personen/liste?q=xyzxyz"].map(
     (path) => ({
       name: `search results ${path}`,
@@ -82,9 +87,10 @@ const states: { name: string; run: (page: Page) => Promise<void> }[] = [
   ),
   {
     name: "canvas with hidden names",
-    run: async (page) => {
+    run: async (page, isMobile) => {
       await page.addInitScript(() => localStorage.setItem("hide-names", "1"));
       await page.goto("/personen");
+      await openCanvasControls(page, isMobile);
       await expect(page.getByRole("button", { name: "Namen ausblenden" })).toHaveAttribute(
         "aria-pressed",
         "true",
@@ -101,8 +107,9 @@ const states: { name: string; run: (page: Page) => Promise<void> }[] = [
   },
   {
     name: "canvas with open direction pad",
-    run: async (page) => {
+    run: async (page, isMobile) => {
       await page.goto("/personen");
+      await openCanvasControls(page, isMobile);
       await page.getByRole("button", { name: "Verschieben" }).click();
       await expect(page.getByRole("button", { name: "Nach links" })).toBeVisible();
     },
@@ -119,9 +126,9 @@ const states: { name: string; run: (page: Page) => Promise<void> }[] = [
 
 for (const state of states) {
   for (const colorScheme of ["light", "dark"] as const) {
-    test(`axe: ${state.name} (${colorScheme}) has no WCAG 2.2 AA violations`, async ({ page }) => {
+    test(`axe: ${state.name} (${colorScheme}) has no WCAG 2.2 AA violations`, async ({ page, isMobile }) => {
       await page.emulateMedia({ colorScheme });
-      await state.run(page);
+      await state.run(page, isMobile);
       await expectNoViolations(page);
     });
   }

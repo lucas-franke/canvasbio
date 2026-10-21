@@ -14,9 +14,15 @@ export function NotFoundContent({ headingId }: { headingId?: string }) {
         {m.notFound.title}
       </h1>
       <p>{m.notFound.text}</p>
-      <Link to={pagePath(locale, "start")} className={buttonVariants()}>
-        {m.notFound.toStart}
-      </Link>
+      {/* Ways on: the collection itself, the start page; the search is in the navigation. */}
+      <div className="flex flex-wrap gap-3">
+        <Link to={pagePath(locale, "people")} className={buttonVariants()}>
+          {m.nav.people}
+        </Link>
+        <Link to={pagePath(locale, "start")} className={buttonVariants({ variant: "outline" })}>
+          {m.notFound.toStart}
+        </Link>
+      </div>
     </div>
   );
 }

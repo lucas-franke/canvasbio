@@ -11,7 +11,7 @@ export async function loader({ request }: Route.LoaderArgs) {
 
 export function meta({ location }: Route.MetaArgs) {
   const locale = localeFromPathname(location.pathname);
-  return pageMeta({ title: messagesFor(locale).people.title, locale });
+  return pageMeta({ title: messagesFor(locale).people.title, locale, path: location.pathname });
 }
 
 export default function People() {

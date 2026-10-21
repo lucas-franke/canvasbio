@@ -6,6 +6,9 @@ import { defineSiteConfig } from "./app/lib/config/schema.ts";
  * plus the `content/` folder. See README for details.
  */
 export default defineSiteConfig({
+  // Public address once deployed (enables share previews and canonical URLs), e.g.:
+  // siteUrl: "https://ihre-stimme.example.org",
+
   brand: {
     name: { de: "Ihre Stimme", en: "Her Voice", "de-LS": "Ihre Stimme" },
     wordmark: { de: "Ihre Stimme", en: "Her Voice", "de-LS": "Ihre Stimme" },
@@ -36,6 +39,8 @@ export default defineSiteConfig({
     list: { de: "liste", en: "list", "de-LS": "liste" },
     about: { de: "ueber", en: "about", "de-LS": "ueber" },
     accessibility: { de: "barrierefreiheit", en: "accessibility", "de-LS": "barrierefreiheit" },
+    imprint: { de: "impressum", en: "legal-notice", "de-LS": "impressum" },
+    privacy: { de: "datenschutz", en: "privacy", "de-LS": "datenschutz" },
   },
 
   operator: {
@@ -44,7 +49,8 @@ export default defineSiteConfig({
       en: "Demo project “Her Voice”",
       "de-LS": "Das Projekt „Ihre Stimme“",
     },
-    // Replace with a real, monitored address before going live.
+    // Demo values: replace with the real operator before going live.
+    address: ["Musterstraße 1", "12345 Musterstadt"],
     contactEmail: "barrierefreiheit@example.org",
     statementDate: "2026-10-21",
   },
@@ -97,6 +103,7 @@ export default defineSiteConfig({
     imageTreatment: "sepia",
     imageTones: { shadow: "#1e140c", highlight: "#eedab8" },
     tileEdge: "torn",
+    paperTexture: true,
   },
 
   start: {
@@ -163,6 +170,7 @@ export default defineSiteConfig({
     wrap: true,
     minZoom: 0.4,
     maxZoom: 2.5,
+    featuredShare: 0.14,
   },
 
   features: {

@@ -16,3 +16,7 @@
 # Generated images
 /public/portraits/
 /.generated/
+
+# Generated icons (scripts/build-icons.ts)
+/public/icons/
+/public/site.webmanifest

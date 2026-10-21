@@ -1,5 +1,7 @@
 import { expect, test, type Page } from "@playwright/test";
 
+import { navPillBoxes, openCanvasControls, overlaps } from "./helpers";
+
 /** Camera as written to the world element: translate(-x·s, -y·s) scale(s). */
 async function camera(page: Page) {
   const transform = await page.locator(".canvas-world").evaluate((el) => (el as HTMLElement).style.transform);
@@ -57,18 +59,13 @@ test("arrow keys move between portraits, the camera follows, Enter opens, focus 
   expect(await focused.getAttribute("data-cell")).not.toBe(first);
   await expect(focused).toHaveAttribute("tabindex", "0");
 
-  // The focused tile ends up fully visible and clear of the bottom navigation (WCAG 2.4.11).
+  // The focused tile ends up fully visible and clear of the navigation (WCAG 2.4.11).
   await page.waitForTimeout(400);
   const viewport = page.viewportSize()!;
   const box = (await focused.boundingBox())!;
-  const nav = (await page
-    .getByRole("navigation", { name: "Hauptnavigation" })
-    .locator("> div")
-    .first()
-    .boundingBox())!;
   expect(box.x).toBeGreaterThanOrEqual(0);
   expect(box.x + box.width).toBeLessThanOrEqual(viewport.width);
-  expect(box.y + box.height).toBeLessThanOrEqual(nav.y);
+  for (const pill of await navPillBoxes(page)) expect(overlaps(box, pill)).toBe(false);
 
   const slug = await focused.getAttribute("data-person");
   await page.keyboard.press("Enter");
@@ -119,8 +116,9 @@ test("dragging pans without opening a biography; a tap opens one", async ({ page
   await expect(page).toHaveURL(new RegExp(`/personen/${slug}$`));
 });
 
-test("zoom buttons and the direction pad work without dragging (WCAG 2.5.7)", async ({ page }) => {
+test("zoom buttons and the direction pad work without dragging (WCAG 2.5.7)", async ({ page, isMobile }) => {
   await openCanvas(page);
+  await openCanvasControls(page, isMobile);
   const start = await camera(page);
   await page.getByRole("button", { name: "Vergrößern" }).click();
   await expect.poll(async () => (await camera(page)).scale).toBeGreaterThan(start.scale);

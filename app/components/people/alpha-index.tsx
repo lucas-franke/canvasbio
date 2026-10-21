@@ -77,7 +77,7 @@ export function AlphaIndex({ available }: { available: Set<string> }) {
   };
 
   return (
-    <nav aria-label={m.alphabet.label} className="sticky top-2 z-30 mx-auto w-full max-w-[57rem]">
+    <nav aria-label={m.alphabet.label} className="sticky top-2 z-30 mx-auto w-full max-w-[57rem] lg:top-26">
       <div className="hidden overflow-hidden rounded-xl border-2 border-control bg-surface shadow-sm @xl:block">
         <LetterGrid
           available={available}

@@ -61,6 +61,13 @@ export function tornEdgeCss(): string {
   }).join("\n");
 }
 
+/** Mask class for a portrait outside the canvas, stable per person. */
+export function tornEdgeClass(slug: string): string {
+  let hash = 0;
+  for (let i = 0; i < slug.length; i++) hash = (hash * 31 + slug.charCodeAt(i)) | 0;
+  return `torn-edge-${((hash % TORN_VARIANTS) + TORN_VARIANTS) % TORN_VARIANTS}`;
+}
+
 /** Variant for a cell: stable per position, varied between neighbours. */
 export function tornVariant(col: number, row: number): number {
   return (((col * 7 + row * 3) % TORN_VARIANTS) + TORN_VARIANTS) % TORN_VARIANTS;

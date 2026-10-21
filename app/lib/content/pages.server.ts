@@ -22,8 +22,15 @@ export interface StaticPage {
 /** Operator details from site.config.ts, so page texts stay reusable across projects. */
 function fillPlaceholders(source: string, locale: string): string {
   const { operator } = siteConfig;
+  const organisation = localize(operator.organisation, locale);
+  const email = `[${operator.contactEmail}](mailto:${operator.contactEmail})`;
+  // Markdown hard line breaks (two spaces) keep the address lines together.
+  const operatorBlock = [organisation, ...operator.address, operator.phone, email]
+    .filter(Boolean)
+    .join("  \n");
   const values: Record<string, string> = {
-    organisation: localize(operator.organisation, locale),
+    organisation,
+    operatorBlock,
     contactEmail: operator.contactEmail,
     statementDate: formatPartialDate(operator.statementDate, locale),
   };
