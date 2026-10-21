@@ -1,0 +1,60 @@
+{
+  "slug": "mathilde-blind",
+  "name": {
+    "display": "Mathilde Blind",
+    "sort": "Blind, Mathilde"
+  },
+  "born": {
+    "date": "1841-03-21",
+    "place": "mannheim"
+  },
+  "died": {
+    "date": "1896-11-26",
+    "place": "london"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Lucy Madox Brown",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mathilde_Blind.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "mannheim",
+      "london"
+    ]
+  },
+  "prominence": 0.51,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q526994",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Mathilde Blind",
+      "url": "https://de.wikipedia.org/wiki/Mathilde_Blind",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mathilde Blind",
+      "url": "https://en.wikipedia.org/wiki/Mathilde_Blind",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q526994"
+}

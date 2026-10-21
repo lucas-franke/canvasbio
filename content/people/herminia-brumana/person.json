@@ -1,0 +1,60 @@
+{
+  "slug": "herminia-brumana",
+  "name": {
+    "display": "Herminia Brumana",
+    "sort": "Brumana, Herminia"
+  },
+  "born": {
+    "date": "1897-09-12",
+    "place": "piguee"
+  },
+  "died": {
+    "date": "1954-01-09",
+    "place": "buenos-aires"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "H. Wilhemm, 1935",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Herminia_Brumana.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "piguee",
+      "buenos-aires"
+    ]
+  },
+  "prominence": 0.4,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5895863",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Herminia Brumana",
+      "url": "https://de.wikipedia.org/wiki/Herminia_Brumana",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Herminia Brumana",
+      "url": "https://en.wikipedia.org/wiki/Herminia_Brumana",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5895863"
+}

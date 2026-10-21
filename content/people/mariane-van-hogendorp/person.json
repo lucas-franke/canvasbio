@@ -1,0 +1,61 @@
+{
+  "slug": "mariane-van-hogendorp",
+  "name": {
+    "display": "Mariane van Hogendorp",
+    "sort": "Hogendorp, Mariane van"
+  },
+  "born": {
+    "date": "1834-08-01",
+    "place": "the-hague"
+  },
+  "died": {
+    "date": "1909-09-17",
+    "place": "lausanne"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mariane_van_Hogendorp.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "social"
+    ],
+    "place": [
+      "the-hague",
+      "lausanne"
+    ]
+  },
+  "prominence": 0.28,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2178531",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Mariane van Hogendorp",
+      "url": "https://de.wikipedia.org/wiki/Mariane_van_Hogendorp",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mariane van Hogendorp",
+      "url": "https://en.wikipedia.org/wiki/Mariane_van_Hogendorp",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2178531"
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "clara-gertrud-wichmann",
+  "name": {
+    "display": "Clara Gertrud Wichmann",
+    "sort": "Wichmann, Clara Gertrud"
+  },
+  "born": {
+    "date": "1885-08-17",
+    "place": "hamburg"
+  },
+  "died": {
+    "date": "1922-02-15",
+    "place": "the-hague"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1922",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clara_Wichmann.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "science"
+    ],
+    "place": [
+      "hamburg",
+      "the-hague"
+    ]
+  },
+  "prominence": 0.34,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q1095182",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Clara Gertrud Wichmann",
+      "url": "https://de.wikipedia.org/wiki/Clara_Gertrud_Wichmann",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Clara Wichmann",
+      "url": "https://en.wikipedia.org/wiki/Clara_Wichmann",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q1095182"
+}

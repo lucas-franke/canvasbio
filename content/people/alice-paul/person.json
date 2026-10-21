@@ -1,0 +1,60 @@
+{
+  "slug": "alice-paul",
+  "name": {
+    "display": "Alice Paul",
+    "sort": "Paul, Alice"
+  },
+  "born": {
+    "date": "1885-01-11",
+    "place": "mount-laurel"
+  },
+  "died": {
+    "date": "1977-07-09",
+    "place": "moorestown"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown, 1928",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alice_stokes_Paul.jpg"
+  },
+  "facets": {
+    "field": [
+      "science"
+    ],
+    "place": [
+      "mount-laurel",
+      "moorestown"
+    ]
+  },
+  "prominence": 0.72,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q127328",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Alice Paul",
+      "url": "https://de.wikipedia.org/wiki/Alice_Paul",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Alice Paul",
+      "url": "https://en.wikipedia.org/wiki/Alice_Paul",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q127328"
+}

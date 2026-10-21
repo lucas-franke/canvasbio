@@ -1,0 +1,60 @@
+{
+  "slug": "harriet-morison",
+  "name": {
+    "display": "Harriet Morison",
+    "sort": "Morison, Harriet"
+  },
+  "born": {
+    "date": "1862-06",
+    "place": "magherafelt"
+  },
+  "died": {
+    "date": "1925-08-19",
+    "place": "new-lynn"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "New Zealand Department of Labour, 1911",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Harriet_Russell_Morison.jpg"
+  },
+  "facets": {
+    "field": [
+      "social"
+    ],
+    "place": [
+      "magherafelt",
+      "new-lynn"
+    ]
+  },
+  "prominence": 0.2,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q16031097",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Harriet Morison",
+      "url": "https://de.wikipedia.org/wiki/Harriet_Morison",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Harriet Morison",
+      "url": "https://en.wikipedia.org/wiki/Harriet_Morison",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q16031097"
+}

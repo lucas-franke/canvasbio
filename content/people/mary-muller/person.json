@@ -1,0 +1,60 @@
+{
+  "slug": "mary-muller",
+  "name": {
+    "display": "Mary Muller",
+    "sort": "Muller, Mary"
+  },
+  "born": {
+    "date": "1819-09-22",
+    "place": "london"
+  },
+  "died": {
+    "date": "1901-07-18",
+    "place": "blenheim"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "photo from 1900, author not known, Image edited",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mary_Ann_M%C3%BCller.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "london",
+      "blenheim"
+    ]
+  },
+  "prominence": 0.42,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q544586",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Mary Ann Müller",
+      "url": "https://de.wikipedia.org/wiki/Mary_Ann_M%C3%BCller",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mary Müller",
+      "url": "https://en.wikipedia.org/wiki/Mary_M%C3%BCller",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q544586"
+}

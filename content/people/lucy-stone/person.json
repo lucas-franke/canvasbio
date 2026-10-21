@@ -1,0 +1,60 @@
+{
+  "slug": "lucy-stone",
+  "name": {
+    "display": "Lucy Stone",
+    "sort": "Stone, Lucy"
+  },
+  "born": {
+    "date": "1818-08-13",
+    "place": "west-brookfield"
+  },
+  "died": {
+    "date": "1893-10-19",
+    "place": "dorchester"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1840",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lucy_stone.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "west-brookfield",
+      "dorchester"
+    ]
+  },
+  "prominence": 0.68,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q452281",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Lucy Stone",
+      "url": "https://de.wikipedia.org/wiki/Lucy_Stone",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Lucy Stone",
+      "url": "https://en.wikipedia.org/wiki/Lucy_Stone",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q452281"
+}

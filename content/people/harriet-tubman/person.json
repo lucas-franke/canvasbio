@@ -1,0 +1,61 @@
+{
+  "slug": "harriet-tubman",
+  "name": {
+    "display": "Harriet Tubman",
+    "sort": "Tubman, Harriet"
+  },
+  "born": {
+    "date": "1821",
+    "place": "dorchester-county"
+  },
+  "died": {
+    "date": "1913-03-10",
+    "place": "auburn"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Horatio Seymour Squyer, 1885",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Harriet_Tubman_(circa_1885).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "medicine"
+    ],
+    "place": [
+      "dorchester-county",
+      "auburn"
+    ]
+  },
+  "prominence": 0.89,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q102870",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Harriet Tubman",
+      "url": "https://de.wikipedia.org/wiki/Harriet_Tubman",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Harriet Tubman",
+      "url": "https://en.wikipedia.org/wiki/Harriet_Tubman",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q102870"
+}

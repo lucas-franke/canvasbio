@@ -1,0 +1,61 @@
+{
+  "slug": "margaret-fuller",
+  "name": {
+    "display": "Margaret Fuller",
+    "sort": "Fuller, Margaret"
+  },
+  "born": {
+    "date": "1810-05-23",
+    "place": "cambridge"
+  },
+  "died": {
+    "date": "1850-07-19",
+    "place": "fire-island"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Chappel, 1872",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Margaret_Fuller_by_Chappel.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "science"
+    ],
+    "place": [
+      "cambridge",
+      "fire-island"
+    ]
+  },
+  "prominence": 0.75,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q257953",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Margaret Fuller",
+      "url": "https://de.wikipedia.org/wiki/Margaret_Fuller",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Margaret Fuller",
+      "url": "https://en.wikipedia.org/wiki/Margaret_Fuller",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q257953"
+}

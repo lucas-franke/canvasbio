@@ -1,0 +1,59 @@
+{
+  "slug": "elisabeth-dmitrieff",
+  "name": {
+    "display": "Elisabeth Dmitrieff",
+    "sort": "Dmitrieff, Elisabeth"
+  },
+  "born": {
+    "date": "1851-11-01",
+    "place": "tver-oblast"
+  },
+  "died": {
+    "place": "moscow"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Photographer : Alphonse Liébert (1827–1913), 1871",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elisabeth_Dmitrieff.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "tver-oblast",
+      "moscow"
+    ]
+  },
+  "prominence": 0.48,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2707971",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Elisabeth Dmitrieff",
+      "url": "https://de.wikipedia.org/wiki/Elisabeth_Dmitrieff",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Elisabeth Dmitrieff",
+      "url": "https://en.wikipedia.org/wiki/Elisabeth_Dmitrieff",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2707971"
+}

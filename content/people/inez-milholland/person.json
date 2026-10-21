@@ -1,0 +1,60 @@
+{
+  "slug": "inez-milholland",
+  "name": {
+    "display": "Inez Milholland",
+    "sort": "Milholland, Inez"
+  },
+  "born": {
+    "date": "1886-08-06",
+    "place": "brooklyn"
+  },
+  "died": {
+    "date": "1916-11-25",
+    "place": "good-samaritan-hospital"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1917",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Inez_Milholland.jpg"
+  },
+  "facets": {
+    "field": [
+      "science"
+    ],
+    "place": [
+      "brooklyn",
+      "good-samaritan-hospital"
+    ]
+  },
+  "prominence": 0.53,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q3798454",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Inez Milholland",
+      "url": "https://de.wikipedia.org/wiki/Inez_Milholland",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Inez Milholland",
+      "url": "https://en.wikipedia.org/wiki/Inez_Milholland",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q3798454"
+}

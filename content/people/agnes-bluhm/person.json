@@ -1,0 +1,60 @@
+{
+  "slug": "agnes-bluhm",
+  "name": {
+    "display": "Agnes Bluhm",
+    "sort": "Bluhm, Agnes"
+  },
+  "born": {
+    "date": "1862-01-09",
+    "place": "constantinople"
+  },
+  "died": {
+    "date": "1943-11-12",
+    "place": "beelitz"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1886",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Agnes_Bluhm_1886.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "constantinople",
+      "beelitz"
+    ]
+  },
+  "prominence": 0.34,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q104421",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Agnes Bluhm",
+      "url": "https://de.wikipedia.org/wiki/Agnes_Bluhm",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Agnes Bluhm",
+      "url": "https://en.wikipedia.org/wiki/Agnes_Bluhm",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q104421"
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "esther-hobart-morris",
+  "name": {
+    "display": "Esther Hobart Morris",
+    "sort": "Morris, Esther Hobart"
+  },
+  "born": {
+    "date": "1814-08-08",
+    "place": "tioga-county"
+  },
+  "died": {
+    "date": "1902-04-03",
+    "place": "cheyenne"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1902",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Esther_Morris_cph.3a02555.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "tioga-county",
+      "cheyenne"
+    ]
+  },
+  "prominence": 0.45,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q499505",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Esther Hobart Morris",
+      "url": "https://de.wikipedia.org/wiki/Esther_Hobart_Morris",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Esther Hobart Morris",
+      "url": "https://en.wikipedia.org/wiki/Esther_Hobart_Morris",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q499505"
+}

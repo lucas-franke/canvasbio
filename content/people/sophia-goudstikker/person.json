@@ -1,0 +1,61 @@
+{
+  "slug": "sophia-goudstikker",
+  "name": {
+    "display": "Sophia Goudstikker",
+    "sort": "Goudstikker, Sophia"
+  },
+  "born": {
+    "date": "1865-01-15",
+    "place": "rotterdam"
+  },
+  "died": {
+    "date": "1924-03-20",
+    "place": "munich"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Atelier Elvira (Selbstauslöser Sophia Goudstikker?), 1896",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sophia_Goudstikker_crop_1898.jpg"
+  },
+  "facets": {
+    "field": [
+      "science",
+      "arts"
+    ],
+    "place": [
+      "rotterdam",
+      "munich"
+    ]
+  },
+  "prominence": 0.42,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2302636",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Sophia Goudstikker",
+      "url": "https://de.wikipedia.org/wiki/Sophia_Goudstikker",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Sophia Goudstikker",
+      "url": "https://en.wikipedia.org/wiki/Sophia_Goudstikker",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2302636"
+}

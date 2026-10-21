@@ -1,0 +1,60 @@
+{
+  "slug": "lillian-dove-willcox",
+  "name": {
+    "display": "Lillian Dove-Willcox",
+    "sort": "Dove-Willcox, Lillian"
+  },
+  "born": {
+    "date": "1875-01-25",
+    "place": "bedminster"
+  },
+  "died": {
+    "date": "1963",
+    "place": "ealing"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Colonel Linley Blathwayt who died in 1919, 1911",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Suffragette_Lillian_Dove-Willcox_1911.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "bedminster",
+      "ealing"
+    ]
+  },
+  "prominence": 0.15,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q51374609",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Lillian Dove-Willcox",
+      "url": "https://de.wikipedia.org/wiki/Lillian_Dove-Willcox",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Lillian Dove-Willcox",
+      "url": "https://en.wikipedia.org/wiki/Lillian_Dove-Willcox",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q51374609"
+}

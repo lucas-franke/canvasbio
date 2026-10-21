@@ -1,0 +1,60 @@
+{
+  "slug": "florence-haig",
+  "name": {
+    "display": "Florence Haig",
+    "sort": "Haig, Florence"
+  },
+  "born": {
+    "date": "1856",
+    "place": "berwickshire"
+  },
+  "died": {
+    "date": "1952",
+    "place": "county-of-london"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Colonel Linley Blathwayt, 1911",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Florence_Haig_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "arts"
+    ],
+    "place": [
+      "berwickshire",
+      "county-of-london"
+    ]
+  },
+  "prominence": 0.28,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q47107589",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Florence Haig",
+      "url": "https://de.wikipedia.org/wiki/Florence_Haig",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Florence Haig",
+      "url": "https://en.wikipedia.org/wiki/Florence_Haig",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q47107589"
+}

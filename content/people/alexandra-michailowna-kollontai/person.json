@@ -1,0 +1,62 @@
+{
+  "slug": "alexandra-michailowna-kollontai",
+  "name": {
+    "display": "Alexandra Michailowna Kollontai",
+    "sort": "Kollontai, Alexandra Michailowna"
+  },
+  "born": {
+    "date": "1872-03-19",
+    "place": "saint-petersburg"
+  },
+  "died": {
+    "date": "1952-03-09",
+    "place": "bahia-blanca"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown (Sovfoto), 1946",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alexandra_Kollontai_1946.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "science"
+    ],
+    "place": [
+      "saint-petersburg",
+      "bahia-blanca"
+    ]
+  },
+  "prominence": 0.84,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q179558",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Alexandra Michailowna Kollontai",
+      "url": "https://de.wikipedia.org/wiki/Alexandra_Michailowna_Kollontai",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Alexandra Kollontai",
+      "url": "https://en.wikipedia.org/wiki/Alexandra_Kollontai",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q179558"
+}

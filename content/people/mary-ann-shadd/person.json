@@ -1,0 +1,61 @@
+{
+  "slug": "mary-ann-shadd",
+  "name": {
+    "display": "Mary Ann Shadd",
+    "sort": "Shadd, Mary Ann"
+  },
+  "born": {
+    "date": "1823-10-09",
+    "place": "wilmington"
+  },
+  "died": {
+    "date": "1893-06-05",
+    "place": "washington-d-c"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1850",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mary_Ann_Shadd.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "science"
+    ],
+    "place": [
+      "wilmington",
+      "washington-d-c"
+    ]
+  },
+  "prominence": 0.5,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q3850435",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Mary Ann Shadd Cary",
+      "url": "https://de.wikipedia.org/wiki/Mary_Ann_Shadd_Cary",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mary Ann Shadd",
+      "url": "https://en.wikipedia.org/wiki/Mary_Ann_Shadd",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q3850435"
+}

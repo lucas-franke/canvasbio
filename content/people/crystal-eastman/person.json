@@ -1,0 +1,61 @@
+{
+  "slug": "crystal-eastman",
+  "name": {
+    "display": "Crystal Eastman",
+    "sort": "Eastman, Crystal"
+  },
+  "born": {
+    "date": "1881-06-25",
+    "place": "middlesex-county"
+  },
+  "died": {
+    "date": "1928-07-08",
+    "place": "erie"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unbekannt",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:CrystalEastman.jpeg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "science"
+    ],
+    "place": [
+      "middlesex-county",
+      "erie"
+    ]
+  },
+  "prominence": 0.61,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q4945589",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Crystal Eastman",
+      "url": "https://de.wikipedia.org/wiki/Crystal_Eastman",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Crystal Eastman",
+      "url": "https://en.wikipedia.org/wiki/Crystal_Eastman",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q4945589"
+}

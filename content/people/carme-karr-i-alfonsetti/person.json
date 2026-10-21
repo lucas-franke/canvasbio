@@ -1,0 +1,60 @@
+{
+  "slug": "carme-karr-i-alfonsetti",
+  "name": {
+    "display": "Carme Karr i Alfonsetti",
+    "sort": "Alfonsetti, Carme Karr i"
+  },
+  "born": {
+    "date": "1865-03-16",
+    "place": "barcelona"
+  },
+  "died": {
+    "date": "1943-12-29",
+    "place": "barcelona"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Originally by Feminal. Digital by Biblioteca Virtual Miguel de Cervantes, 1909",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Carme_Karr_i_Alfonsetti.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "arts"
+    ],
+    "place": [
+      "barcelona"
+    ]
+  },
+  "prominence": 0.42,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q4892657",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Carme Karr",
+      "url": "https://de.wikipedia.org/wiki/Carme_Karr",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Carmen Karr",
+      "url": "https://en.wikipedia.org/wiki/Carmen_Karr",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q4892657"
+}

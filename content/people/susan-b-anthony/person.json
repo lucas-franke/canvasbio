@@ -1,0 +1,60 @@
+{
+  "slug": "susan-b-anthony",
+  "name": {
+    "display": "Susan B. Anthony",
+    "sort": "Anthony, Susan B."
+  },
+  "born": {
+    "date": "1820-02-15",
+    "place": "adams"
+  },
+  "died": {
+    "date": "1906-03-13",
+    "place": "rochester"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1893",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:SB_Anthony_from_WoC.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "adams",
+      "rochester"
+    ]
+  },
+  "prominence": 0.86,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q192245",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Susan B. Anthony",
+      "url": "https://de.wikipedia.org/wiki/Susan_B._Anthony",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Susan B. Anthony",
+      "url": "https://en.wikipedia.org/wiki/Susan_B._Anthony",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q192245"
+}

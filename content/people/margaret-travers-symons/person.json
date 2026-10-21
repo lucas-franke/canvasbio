@@ -1,0 +1,60 @@
+{
+  "slug": "margaret-travers-symons",
+  "name": {
+    "display": "Margaret Travers Symons",
+    "sort": "Symons, Margaret Travers"
+  },
+  "born": {
+    "date": "1879-08-18",
+    "place": "paddington"
+  },
+  "died": {
+    "date": "1951",
+    "place": "united-kingdom"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1908",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Margaret_Travers_Symons_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "paddington",
+      "united-kingdom"
+    ]
+  },
+  "prominence": 0.25,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q57262570",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Margaret Travers Symons",
+      "url": "https://de.wikipedia.org/wiki/Margaret_Travers_Symons",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Margaret Travers Symons",
+      "url": "https://en.wikipedia.org/wiki/Margaret_Travers_Symons",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q57262570"
+}

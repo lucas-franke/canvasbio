@@ -1,0 +1,60 @@
+{
+  "slug": "marie-zakrzewska",
+  "name": {
+    "display": "Marie Zakrzewska",
+    "sort": "Zakrzewska, Marie"
+  },
+  "born": {
+    "date": "1829-09-06",
+    "place": "berlin"
+  },
+  "died": {
+    "date": "1902-05-12",
+    "place": "jamaica-plain"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unidentified painter, 1860",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maria_Zakrzewska.jpg"
+  },
+  "facets": {
+    "field": [
+      "medicine"
+    ],
+    "place": [
+      "berlin",
+      "jamaica-plain"
+    ]
+  },
+  "prominence": 0.49,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q276312",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Marie Zakrzewska",
+      "url": "https://de.wikipedia.org/wiki/Marie_Zakrzewska",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Marie Elizabeth Zakrzewska",
+      "url": "https://en.wikipedia.org/wiki/Marie_Elizabeth_Zakrzewska",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q276312"
+}

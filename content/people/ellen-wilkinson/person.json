@@ -1,0 +1,62 @@
+{
+  "slug": "ellen-wilkinson",
+  "name": {
+    "display": "Ellen Wilkinson",
+    "sort": "Wilkinson, Ellen"
+  },
+  "born": {
+    "date": "1891-10-08",
+    "place": "ardwick"
+  },
+  "died": {
+    "date": "1947-02-06",
+    "place": "st-mary-s-hospital"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Bassano Ltd, 1924",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ellen_Cicely_Wilkinson.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "social"
+    ],
+    "place": [
+      "ardwick",
+      "st-mary-s-hospital"
+    ]
+  },
+  "prominence": 0.55,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q332751",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Ellen Wilkinson",
+      "url": "https://de.wikipedia.org/wiki/Ellen_Wilkinson",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ellen Wilkinson",
+      "url": "https://en.wikipedia.org/wiki/Ellen_Wilkinson",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q332751"
+}

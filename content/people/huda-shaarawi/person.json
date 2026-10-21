@@ -1,0 +1,61 @@
+{
+  "slug": "huda-shaarawi",
+  "name": {
+    "display": "Huda Shaarawi",
+    "sort": "Shaarawi, Huda"
+  },
+  "born": {
+    "date": "1879-06-23",
+    "place": "minya"
+  },
+  "died": {
+    "date": "1947-12-12",
+    "place": "cairo"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "AnonymousUnknown author, 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Huda_Sha%27arawi1.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing"
+    ],
+    "place": [
+      "minya",
+      "cairo"
+    ]
+  },
+  "prominence": 0.72,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2423343",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Hudā Schaʿrāwī",
+      "url": "https://de.wikipedia.org/wiki/Hud%C4%81_Scha%CA%BFr%C4%81w%C4%AB",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Huda Sha'arawi",
+      "url": "https://en.wikipedia.org/wiki/Huda_Sha'arawi",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2423343"
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "rosalind-howard",
+  "name": {
+    "display": "Rosalind Howard",
+    "sort": "Howard, Rosalind"
+  },
+  "born": {
+    "date": "1845-02-20",
+    "place": "london"
+  },
+  "died": {
+    "date": "1921-08-12",
+    "place": "london"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Frederic Leighton, 1850",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rosalind,_9th_Countess_of_Carlisle.jpg"
+  },
+  "facets": {
+    "field": [
+      "social"
+    ],
+    "place": [
+      "london"
+    ]
+  },
+  "prominence": 0.31,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q7367232",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Rosalind Howard",
+      "url": "https://de.wikipedia.org/wiki/Rosalind_Howard",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Rosalind Howard, Countess of Carlisle",
+      "url": "https://en.wikipedia.org/wiki/Rosalind_Howard%2C_Countess_of_Carlisle",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q7367232"
+}

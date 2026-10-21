@@ -1,0 +1,60 @@
+{
+  "slug": "emily-davison",
+  "name": {
+    "display": "Emily Davison",
+    "sort": "Davison, Emily"
+  },
+  "born": {
+    "date": "1867-10-11",
+    "place": "blackheath"
+  },
+  "died": {
+    "date": "1913-06-08",
+    "place": "epsom"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Andrew William Dron (1864-1935);[1] Restored by Adam Cuerden, 1910",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emily_Wilding_Davison_by_Andrew_William_Dron.jpg"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "blackheath",
+      "epsom"
+    ]
+  },
+  "prominence": 0.67,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q254858",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Emily Davison",
+      "url": "https://de.wikipedia.org/wiki/Emily_Davison",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Emily Davison",
+      "url": "https://en.wikipedia.org/wiki/Emily_Davison",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q254858"
+}

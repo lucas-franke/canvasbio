@@ -1,0 +1,60 @@
+{
+  "slug": "charlotte-klein",
+  "name": {
+    "display": "Charlotte Klein",
+    "sort": "Klein, Charlotte"
+  },
+  "born": {
+    "date": "1834-10-29",
+    "place": "helsingor"
+  },
+  "died": {
+    "date": "1915-03-09",
+    "place": "frederiksberg"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1913",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Charlotte_Klein_(1834-1915).jpg"
+  },
+  "facets": {
+    "field": [
+      "arts"
+    ],
+    "place": [
+      "helsingor",
+      "frederiksberg"
+    ]
+  },
+  "prominence": 0.2,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q61062488",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Charlotte Klein",
+      "url": "https://de.wikipedia.org/wiki/Charlotte_Klein",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Charlotte Klein",
+      "url": "https://en.wikipedia.org/wiki/Charlotte_Klein",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q61062488"
+}

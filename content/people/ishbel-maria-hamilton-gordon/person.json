@@ -1,0 +1,61 @@
+{
+  "slug": "ishbel-maria-hamilton-gordon",
+  "name": {
+    "display": "Ishbel Maria Hamilton-Gordon",
+    "sort": "Hamilton-Gordon, Ishbel Maria"
+  },
+  "born": {
+    "date": "1857-03-14",
+    "place": "london"
+  },
+  "died": {
+    "date": "1939-04-18",
+    "place": "rubislaw-den-nursing-home-including-gatepiers-and-walls-27-rubislaw-den-north-aberdeen"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "W J Byrne and Co, Richmond, England",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lady_Ishbel_Aberdeen_1899_IIAV_15541.TIF"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "social"
+    ],
+    "place": [
+      "london",
+      "rubislaw-den-nursing-home-including-gatepiers-and-walls-27-rubislaw-den-north-aberdeen"
+    ]
+  },
+  "prominence": 0.4,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q527226",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Ishbel Maria Hamilton-Gordon",
+      "url": "https://de.wikipedia.org/wiki/Ishbel_Maria_Hamilton-Gordon",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ishbel Hamilton-Gordon, Marchioness of Aberdeen and Temair",
+      "url": "https://en.wikipedia.org/wiki/Ishbel_Hamilton-Gordon%2C_Marchioness_of_Aberdeen_and_Temair",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q527226"
+}

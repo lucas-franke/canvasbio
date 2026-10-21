@@ -1,0 +1,60 @@
+{
+  "slug": "marion-gilchrist",
+  "name": {
+    "display": "Marion Gilchrist",
+    "sort": "Gilchrist, Marion"
+  },
+  "born": {
+    "date": "1864-02-05",
+    "place": "bothwell"
+  },
+  "died": {
+    "date": "1952-09-07",
+    "place": "glasgow"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1894",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marion_Gilchrist_(doctor)_1894.jpg"
+  },
+  "facets": {
+    "field": [
+      "medicine"
+    ],
+    "place": [
+      "bothwell",
+      "glasgow"
+    ]
+  },
+  "prominence": 0.2,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6765205",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Marion Gilchrist",
+      "url": "https://de.wikipedia.org/wiki/Marion_Gilchrist",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Marion Gilchrist (doctor)",
+      "url": "https://en.wikipedia.org/wiki/Marion_Gilchrist_(doctor)",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6765205"
+}

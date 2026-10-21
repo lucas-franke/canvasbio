@@ -1,0 +1,61 @@
+{
+  "slug": "mathilde-wurm",
+  "name": {
+    "display": "Mathilde Wurm",
+    "sort": "Wurm, Mathilde"
+  },
+  "born": {
+    "date": "1874-09-30",
+    "place": "frankfurt"
+  },
+  "died": {
+    "date": "1935-04-01",
+    "place": "london"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1919",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mathilde_Wurm.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing"
+    ],
+    "place": [
+      "frankfurt",
+      "london"
+    ]
+  },
+  "prominence": 0.25,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q1645097",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Mathilde Wurm",
+      "url": "https://de.wikipedia.org/wiki/Mathilde_Wurm",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mathilde Wurm",
+      "url": "https://en.wikipedia.org/wiki/Mathilde_Wurm",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q1645097"
+}

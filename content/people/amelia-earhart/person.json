@@ -1,0 +1,60 @@
+{
+  "slug": "amelia-earhart",
+  "name": {
+    "display": "Amelia Earhart",
+    "sort": "Earhart, Amelia"
+  },
+  "born": {
+    "date": "1897-07-24",
+    "place": "atchison"
+  },
+  "died": {
+    "date": "1939-01-05",
+    "place": "howland-island"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "NBC Photo-NBC Radio, 1935",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Amelia_Earhart_1935.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "atchison",
+      "howland-island"
+    ]
+  },
+  "prominence": 0.93,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q3355",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Amelia Earhart",
+      "url": "https://de.wikipedia.org/wiki/Amelia_Earhart",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Amelia Earhart",
+      "url": "https://en.wikipedia.org/wiki/Amelia_Earhart",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q3355"
+}

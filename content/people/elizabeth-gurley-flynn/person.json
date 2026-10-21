@@ -1,0 +1,62 @@
+{
+  "slug": "elizabeth-gurley-flynn",
+  "name": {
+    "display": "Elizabeth Gurley Flynn",
+    "sort": "Flynn, Elizabeth Gurley"
+  },
+  "born": {
+    "date": "1890-08-07",
+    "place": "concord"
+  },
+  "died": {
+    "date": "1964-09-05",
+    "place": "moscow"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1948",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flynn,_Elizabeth_Gurley_Edit.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "social"
+    ],
+    "place": [
+      "concord",
+      "moscow"
+    ]
+  },
+  "prominence": 0.67,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q463265",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Elizabeth Gurley Flynn",
+      "url": "https://de.wikipedia.org/wiki/Elizabeth_Gurley_Flynn",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Elizabeth Gurley Flynn",
+      "url": "https://en.wikipedia.org/wiki/Elizabeth_Gurley_Flynn",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q463265"
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "jeannette-rankin",
+  "name": {
+    "display": "Jeannette Rankin",
+    "sort": "Rankin, Jeannette"
+  },
+  "born": {
+    "date": "1880-06-11",
+    "place": "missoula"
+  },
+  "died": {
+    "date": "1973-05-18",
+    "place": "carmel-by-the-sea"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Adam Cuerden, 1917",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jeannette_Rankin,_Bain_News_Service,_facing_front_-_crop.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "social"
+    ],
+    "place": [
+      "missoula",
+      "carmel-by-the-sea"
+    ]
+  },
+  "prominence": 0.72,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q232407",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Jeannette Rankin",
+      "url": "https://de.wikipedia.org/wiki/Jeannette_Rankin",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Jeannette Rankin",
+      "url": "https://en.wikipedia.org/wiki/Jeannette_Rankin",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q232407"
+}

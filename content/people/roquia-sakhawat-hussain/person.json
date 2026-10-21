@@ -1,0 +1,61 @@
+{
+  "slug": "roquia-sakhawat-hussain",
+  "name": {
+    "display": "Roquia Sakhawat Hussain",
+    "sort": "Hussain, Roquia Sakhawat"
+  },
+  "born": {
+    "date": "1880-12-09",
+    "place": "rangpur-division"
+  },
+  "died": {
+    "date": "1932-12-09",
+    "place": "kolkata"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1932",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Begum_Rokeya.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "social"
+    ],
+    "place": [
+      "rangpur-division",
+      "kolkata"
+    ]
+  },
+  "prominence": 0.7,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q467083",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Rokeya Sakhawat Hussain",
+      "url": "https://de.wikipedia.org/wiki/Rokeya_Sakhawat_Hussain",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Begum Rokeya",
+      "url": "https://en.wikipedia.org/wiki/Begum_Rokeya",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q467083"
+}

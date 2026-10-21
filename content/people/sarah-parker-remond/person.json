@@ -1,0 +1,61 @@
+{
+  "slug": "sarah-parker-remond",
+  "name": {
+    "display": "Sarah Parker Remond",
+    "sort": "Remond, Sarah Parker"
+  },
+  "born": {
+    "date": "1824-06-06",
+    "place": "salem"
+  },
+  "died": {
+    "date": "1894-12-13",
+    "place": "rome"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1860",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sarah_Parker_Remond_UCL_photo.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "medicine"
+    ],
+    "place": [
+      "salem",
+      "rome"
+    ]
+  },
+  "prominence": 0.43,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q4794162",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Sarah Parker Remond",
+      "url": "https://de.wikipedia.org/wiki/Sarah_Parker_Remond",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Sarah Parker Remond",
+      "url": "https://en.wikipedia.org/wiki/Sarah_Parker_Remond",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q4794162"
+}

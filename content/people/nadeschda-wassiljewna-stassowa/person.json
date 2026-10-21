@@ -1,0 +1,60 @@
+{
+  "slug": "nadeschda-wassiljewna-stassowa",
+  "name": {
+    "display": "Nadeschda Wassiljewna Stassowa",
+    "sort": "Stassowa, Nadeschda Wassiljewna"
+  },
+  "born": {
+    "date": "1822-06-12",
+    "place": "pushkin"
+  },
+  "died": {
+    "date": "1895-09-27",
+    "place": "saint-petersburg"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Ilya Repin, 1884",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nadezhda_Stasova_by_Repin.jpg"
+  },
+  "facets": {
+    "field": [
+      "social"
+    ],
+    "place": [
+      "pushkin",
+      "saint-petersburg"
+    ]
+  },
+  "prominence": 0.49,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q15076218",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Nadeschda Wassiljewna Stassowa",
+      "url": "https://de.wikipedia.org/wiki/Nadeschda_Wassiljewna_Stassowa",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Nadezhda Stasova",
+      "url": "https://en.wikipedia.org/wiki/Nadezhda_Stasova",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q15076218"
+}

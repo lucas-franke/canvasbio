@@ -1,0 +1,61 @@
+{
+  "slug": "lucia-true-ames-mead",
+  "name": {
+    "display": "Lucia True Ames Mead",
+    "sort": "Mead, Lucia True Ames"
+  },
+  "born": {
+    "date": "1856-05-05",
+    "place": "boscawen"
+  },
+  "died": {
+    "date": "1936-11-01",
+    "place": "brookline"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lucia-ames-mead.png"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education"
+    ],
+    "place": [
+      "boscawen",
+      "brookline"
+    ]
+  },
+  "prominence": 0.25,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q27633363",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Lucia True Ames Mead",
+      "url": "https://de.wikipedia.org/wiki/Lucia_True_Ames_Mead",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Lucia Ames Mead",
+      "url": "https://en.wikipedia.org/wiki/Lucia_Ames_Mead",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q27633363"
+}

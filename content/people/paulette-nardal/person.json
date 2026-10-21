@@ -1,0 +1,60 @@
+{
+  "slug": "paulette-nardal",
+  "name": {
+    "display": "Paulette Nardal",
+    "sort": "Nardal, Paulette"
+  },
+  "born": {
+    "date": "1896-10-12",
+    "place": "le-francois"
+  },
+  "died": {
+    "date": "1985-02-16",
+    "place": "fort-de-france"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1920",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paulette_Nardal.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "le-francois",
+      "fort-de-france"
+    ]
+  },
+  "prominence": 0.48,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q3372640",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Paulette Nardal",
+      "url": "https://de.wikipedia.org/wiki/Paulette_Nardal",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Paulette Nardal",
+      "url": "https://en.wikipedia.org/wiki/Paulette_Nardal",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q3372640"
+}

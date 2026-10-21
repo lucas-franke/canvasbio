@@ -1,0 +1,385 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "./styles/shadcn.css";
+
+/*
+ * All colors, fonts and the radius come from site.config.ts as --c-* / --font-*-family
+ * custom properties (see app/lib/theme/css.ts). Never hard-code brand values here.
+ */
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@theme inline {
+  /* Project tokens */
+  --color-page: var(--c-page);
+  --color-surface: var(--c-surface);
+  --color-stage: var(--c-stage);
+  --color-stage-foreground: var(--c-stage-foreground);
+  --color-text: var(--c-text);
+  --color-emphasis: var(--c-emphasis);
+  --color-muted-text: var(--c-muted);
+  --color-brand: var(--c-accent);
+  --color-brand-foreground: var(--c-accent-foreground);
+  --color-brand-on-stage: var(--c-accent-on-stage);
+  --color-line: var(--c-border);
+  --color-control: var(--c-border-control);
+  --color-nav: var(--c-nav);
+  --color-nav-foreground: var(--c-nav-foreground);
+  --color-focus: var(--c-focus);
+  --color-focus-halo: var(--c-focus-halo);
+
+  /* shadcn/ui semantic variables, mapped onto the project tokens */
+  --color-background: var(--c-page);
+  --color-foreground: var(--c-text);
+  --color-card: var(--c-surface);
+  --color-card-foreground: var(--c-text);
+  --color-popover: var(--c-surface);
+  --color-popover-foreground: var(--c-text);
+  --color-primary: var(--c-accent);
+  --color-primary-foreground: var(--c-accent-foreground);
+  --color-secondary: var(--c-surface);
+  --color-secondary-foreground: var(--c-emphasis);
+  --color-muted: var(--c-page);
+  --color-muted-foreground: var(--c-muted);
+  --color-accent: var(--c-page);
+  --color-accent-foreground: var(--c-emphasis);
+  --color-destructive: var(--c-accent);
+  --color-border: var(--c-border);
+  --color-input: var(--c-border-control);
+  --color-ring: var(--c-focus);
+
+  --font-heading: var(--font-heading-family);
+  --font-sans: var(--font-body-family);
+  --font-wordmark: var(--font-wordmark-family);
+
+  --radius-sm: calc(var(--radius) * 0.5);
+  --radius-md: calc(var(--radius) * 0.75);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.5);
+  --radius-2xl: calc(var(--radius) * 2);
+  --radius-card: calc(var(--radius) * 2.666);
+
+  /*
+   * Type scale from the Figma variables (designed for 1920px kiosks),
+   * scaled fluidly from phone (360px) to desktop (1440px).
+   */
+  --text-h1: clamp(2rem, 1.6rem + 1.8vw, 3rem);
+  --text-h1--line-height: 1.15;
+  --text-h1--letter-spacing: -0.04em;
+  --text-h2: clamp(1.5rem, 1.3rem + 0.9vw, 2rem);
+  --text-h2--line-height: 1.15;
+  --text-h2--letter-spacing: -0.04em;
+  --text-subline: clamp(1.25rem, 1.1rem + 0.7vw, 1.75rem);
+  --text-subline--line-height: 1.15;
+  --text-subline--letter-spacing: -0.04em;
+  --text-h3: clamp(1.25rem, 1.15rem + 0.45vw, 1.5rem);
+  --text-h3--line-height: 1.25;
+  --text-h3--letter-spacing: -0.03em;
+  --text-body: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-body--line-height: 1.55;
+  --text-body--letter-spacing: -0.01em;
+  --text-body-sm: clamp(0.9375rem, 0.9rem + 0.15vw, 1rem);
+  --text-body-sm--line-height: 1.55;
+  --text-body-sm--letter-spacing: -0.01em;
+  --text-body-xs: 0.875rem;
+  --text-body-xs--line-height: 1.5;
+  --text-label: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-label--line-height: 1.2;
+  --text-label--letter-spacing: -0.01em;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply bg-page font-sans text-text;
+    /* Keyboard focus that scrolls the page stops above the nav and the random button (WCAG 2.4.11). */
+    scroll-padding-bottom: 11rem;
+    -webkit-tap-highlight-color: transparent;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    @apply min-h-dvh bg-page text-body text-text antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-heading font-normal text-emphasis;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  /*
+   * Focus indicator (WCAG 2.4.7 / 2.4.13): a solid ring plus a contrasting halo,
+   * so it stays visible on light pages, dark stage, nav pills and accent buttons.
+   */
+  :focus-visible {
+    outline: 3px solid var(--c-focus);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 6px var(--c-focus-halo);
+  }
+
+  /* Windows High Contrast / forced colors: rely on the system outline. */
+  @media (forced-colors: active) {
+    :focus-visible {
+      outline: 3px solid CanvasText;
+      box-shadow: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Rendered Markdown (about page, life stories). */
+@utility prose-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 68ch;
+
+  & h2 {
+    @apply mt-6 text-h2;
+  }
+  & h3 {
+    @apply mt-4 text-h3;
+  }
+  & h4,
+  & h5,
+  & h6 {
+    @apply mt-2 font-sans text-label font-semibold text-emphasis;
+  }
+  & a {
+    @apply rounded-sm text-brand underline decoration-1 underline-offset-[0.2em] hover:decoration-2;
+  }
+  & ul {
+    @apply flex list-disc flex-col gap-2 pl-6;
+  }
+  & ol {
+    @apply flex list-decimal flex-col gap-2 pl-6;
+  }
+  & strong {
+    @apply font-semibold text-emphasis;
+  }
+  & sup a {
+    @apply px-0.5 no-underline;
+  }
+  & .footnotes {
+    @apply mt-8 border-t border-line pt-6 text-body-sm;
+  }
+}
+
+@utility wordmark {
+  font-family: var(--font-wordmark);
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  line-height: 1;
+}
+
+/*
+ * Programmatic focus targets (headings with tabindex="-1" that receive focus when a
+ * biography opens or after a jump). They aren't interactive, so no focus indicator.
+ */
+@utility focus-target {
+  outline: none;
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+/* Visually hidden until focused (skip links). */
+@utility skip-link {
+  position: absolute;
+  inset-inline-start: 1rem;
+  top: 1rem;
+  z-index: 100;
+  transform: translateY(-200%);
+  @apply rounded-full bg-nav px-5 py-3 text-label font-medium text-nav-foreground;
+
+  &:focus-visible {
+    transform: none;
+  }
+}
+
+/*
+ * Infinite canvas. Tiles live in the scaled world, so sizes that must stay constant on
+ * screen (name, focus ring) are divided by the zoom factor --s, set by the camera.
+ */
+.canvas-world {
+  --s: 1;
+}
+
+.canvas-tile-name {
+  font-size: calc(clamp(12px, 18px * var(--s), 21px) / var(--s));
+  line-height: 1.2;
+  padding: calc(28px / var(--s)) calc(10px / var(--s)) calc(8px / var(--s));
+}
+
+/* Long names end with an ellipsis after three lines (the full name stays the link text). */
+.canvas-tile-label {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.canvas-tile {
+  &:focus-visible {
+    outline-width: calc(3px / var(--s));
+    outline-offset: calc(2px / var(--s));
+    box-shadow: 0 0 0 calc(6px / var(--s)) var(--c-focus-halo);
+  }
+
+  /* Open biography: accent frame, distinct from the focus ring. */
+  &[data-active] {
+    outline: calc(4px / var(--s)) solid var(--c-accent);
+    outline-offset: calc(3px / var(--s));
+  }
+
+  &[data-active]:focus-visible {
+    outline-color: var(--c-focus);
+  }
+
+  /* Search: matches are lifted, the others fade back but keep their place (context). */
+  transition: transform 300ms ease;
+
+  &[data-match="hit"] {
+    transform: scale(1.06);
+    filter: drop-shadow(0 calc(6px / var(--s)) calc(10px / var(--s)) rgb(0 0 0 / 0.35));
+  }
+
+  &[data-match="miss"] [data-vt-portrait] {
+    opacity: 0.18;
+    filter: grayscale(1);
+  }
+
+  /* Faded names would be unreadable (contrast): hide them; the link keeps its name. */
+  &[data-match="miss"] .canvas-tile-name {
+    opacity: 0;
+  }
+
+  /* Long-press shows the name (see below) instead of the link preview. */
+  -webkit-touch-callout: none;
+
+  /* "Zufällige Biografie": the chosen tile pulses before it opens. */
+  &[data-pulse] {
+    animation: tile-pulse 550ms ease-in-out;
+  }
+}
+
+@keyframes tile-pulse {
+  40% {
+    transform: scale(1.12);
+  }
+}
+
+/*
+ * "Namen ausblenden": names appear on hover, keyboard focus and long-press (:active), and
+ * for the open biography and search matches. Screen readers always get them (opacity only).
+ */
+[data-hide-names] .canvas-tile-name {
+  opacity: 0;
+  transition: opacity 150ms ease;
+}
+
+[data-hide-names]
+  .canvas-tile:is(:hover, :focus-visible, :active, [data-active], [data-match="hit"])
+  .canvas-tile-name {
+  opacity: 1;
+}
+
+/*
+ * View transitions between overview and biography (links with `viewTransition`).
+ * Layers: root (cross-fade), detail-panel, person-portrait (shared element, see
+ * app/lib/view-transition.ts), site-nav (stays put on top).
+ */
+@keyframes vt-slide-in-left {
+  from {
+    transform: translateX(-100%);
+  }
+}
+@keyframes vt-slide-out-left {
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes vt-slide-in-up {
+  from {
+    transform: translateY(100%);
+  }
+}
+@keyframes vt-slide-out-down {
+  to {
+    transform: translateY(100%);
+  }
+}
+
+::view-transition-group(*) {
+  animation-duration: 380ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 220ms;
+}
+
+/* Small screens: the biography is a sheet that slides up and back down. */
+::view-transition-new(detail-panel):only-child {
+  animation: vt-slide-in-up 380ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+::view-transition-old(detail-panel):only-child {
+  animation: vt-slide-out-down 260ms cubic-bezier(0.4, 0, 1, 1);
+}
+
+/* Split view: the biography column slides in from the left edge. */
+@media (min-width: 64rem) {
+  ::view-transition-new(detail-panel):only-child {
+    animation-name: vt-slide-in-left;
+  }
+  ::view-transition-old(detail-panel):only-child {
+    animation-name: vt-slide-out-left;
+  }
+
+  /* The nav floats above the column (on small screens the sheet covers it, as after the transition). */
+  ::view-transition-group(site-nav) {
+    z-index: 2;
+  }
+}
+
+/* Switching between two biographies: a quick cross-fade inside the column. */
+::view-transition-old(detail-panel),
+::view-transition-new(detail-panel) {
+  animation-duration: 200ms;
+}
+
+/* The portrait flies above the sliding column. */
+::view-transition-group(person-portrait) {
+  z-index: 1;
+  animation-duration: 420ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}

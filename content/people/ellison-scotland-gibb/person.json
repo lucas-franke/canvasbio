@@ -1,0 +1,60 @@
+{
+  "slug": "ellison-scotland-gibb",
+  "name": {
+    "display": "Ellison Scotland Gibb",
+    "sort": "Gibb, Ellison Scotland"
+  },
+  "born": {
+    "date": "1879-03-06",
+    "place": "glasgow"
+  },
+  "died": {
+    "date": "1970",
+    "place": "ayr"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1912",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ellison_Gibb_and_Frances_Parker.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "glasgow",
+      "ayr"
+    ]
+  },
+  "prominence": 0.15,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q56063557",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Ellison Scotland Gibb",
+      "url": "https://de.wikipedia.org/wiki/Ellison_Scotland_Gibb",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ellison Scotland Gibb",
+      "url": "https://en.wikipedia.org/wiki/Ellison_Scotland_Gibb",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q56063557"
+}

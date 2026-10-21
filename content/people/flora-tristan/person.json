@@ -1,0 +1,62 @@
+{
+  "slug": "flora-tristan",
+  "name": {
+    "display": "Flora Tristan",
+    "sort": "Tristan, Flora"
+  },
+  "born": {
+    "date": "1803-04-07",
+    "place": "paris"
+  },
+  "died": {
+    "date": "1844-11-14",
+    "place": "bordeaux"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Jules Laure, 1847",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flora_Tristan_par_Jules_Laure.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "science"
+    ],
+    "place": [
+      "paris",
+      "bordeaux"
+    ]
+  },
+  "prominence": 0.67,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q254068",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Flora Tristan",
+      "url": "https://de.wikipedia.org/wiki/Flora_Tristan",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Flora Tristan",
+      "url": "https://en.wikipedia.org/wiki/Flora_Tristan",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q254068"
+}

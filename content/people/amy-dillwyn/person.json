@@ -1,0 +1,59 @@
+{
+  "slug": "amy-dillwyn",
+  "name": {
+    "display": "Amy Dillwyn",
+    "sort": "Dillwyn, Amy"
+  },
+  "born": {
+    "date": "1845-05-16",
+    "place": "swansea"
+  },
+  "died": {
+    "date": "1935-12-13",
+    "place": "swansea"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Llyfrgell Genedlaethol Cymru / The National Library of Wales from Wales/Cymru, 1853",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Harry_and_Amy_Dillwyn_(children_of_Lewis_Llewelyn_Dillwyn)_by_M._D._1853_(3947813464).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "swansea"
+    ]
+  },
+  "prominence": 0.25,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q4749165",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Amy Dillwyn",
+      "url": "https://de.wikipedia.org/wiki/Amy_Dillwyn",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Amy Dillwyn",
+      "url": "https://en.wikipedia.org/wiki/Amy_Dillwyn",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q4749165"
+}

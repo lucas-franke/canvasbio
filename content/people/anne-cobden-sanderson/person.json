@@ -1,0 +1,60 @@
+{
+  "slug": "anne-cobden-sanderson",
+  "name": {
+    "display": "Anne Cobden-Sanderson",
+    "sort": "Cobden-Sanderson, Anne"
+  },
+  "born": {
+    "date": "1853-03-26",
+    "place": "london"
+  },
+  "died": {
+    "date": "1926-11-02",
+    "place": "hammersmith"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1907",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anne_Cobden-Sanderson_1907_in_USA.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "london",
+      "hammersmith"
+    ]
+  },
+  "prominence": 0.34,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q18670741",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Anne Cobden-Sanderson",
+      "url": "https://de.wikipedia.org/wiki/Anne_Cobden-Sanderson",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Anne Cobden-Sanderson",
+      "url": "https://en.wikipedia.org/wiki/Anne_Cobden-Sanderson",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q18670741"
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "emily-rosaline-orme",
+  "name": {
+    "display": "Emily Rosaline Orme",
+    "sort": "Orme, Emily Rosaline"
+  },
+  "born": {
+    "date": "1835-05-02",
+    "place": "regent-s-park"
+  },
+  "died": {
+    "date": "1915-12-10",
+    "place": "edinburgh"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Dante Rossetti",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emily_Rosaline_Orme_by_Dante_Rossetti.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "regent-s-park",
+      "edinburgh"
+    ]
+  },
+  "prominence": 0.09,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q60862911",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Emily Rosaline Orme",
+      "url": "https://de.wikipedia.org/wiki/Emily_Rosaline_Orme",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Emily Rosaline Orme",
+      "url": "https://en.wikipedia.org/wiki/Emily_Rosaline_Orme",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q60862911"
+}

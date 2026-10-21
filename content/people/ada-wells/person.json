@@ -1,0 +1,61 @@
+{
+  "slug": "ada-wells",
+  "name": {
+    "display": "Ada Wells",
+    "sort": "Wells, Ada"
+  },
+  "born": {
+    "date": "1863-04-29",
+    "place": "oxfordshire"
+  },
+  "died": {
+    "date": "1933-03-22",
+    "place": "christchurch"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Standish & Preece",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ada_Wells,_early_1930s.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "education"
+    ],
+    "place": [
+      "oxfordshire",
+      "christchurch"
+    ]
+  },
+  "prominence": 0.34,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q255491",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Ada Wells",
+      "url": "https://de.wikipedia.org/wiki/Ada_Wells",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ada Wells",
+      "url": "https://en.wikipedia.org/wiki/Ada_Wells",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q255491"
+}

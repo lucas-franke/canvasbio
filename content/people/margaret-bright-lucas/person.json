@@ -1,0 +1,60 @@
+{
+  "slug": "margaret-bright-lucas",
+  "name": {
+    "display": "Margaret Bright Lucas",
+    "sort": "Lucas, Margaret Bright"
+  },
+  "born": {
+    "date": "1818-07-14",
+    "place": "rochdale"
+  },
+  "died": {
+    "date": "1890-02-04",
+    "place": "london"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Ida Husted Harper, 1898",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Margaret-bright-lucas.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "rochdale",
+      "london"
+    ]
+  },
+  "prominence": 0.25,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6759209",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Margaret Bright Lucas",
+      "url": "https://de.wikipedia.org/wiki/Margaret_Bright_Lucas",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Margaret Bright Lucas",
+      "url": "https://en.wikipedia.org/wiki/Margaret_Bright_Lucas",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6759209"
+}

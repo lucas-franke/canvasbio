@@ -1,0 +1,60 @@
+{
+  "slug": "irena-krzywicka",
+  "name": {
+    "display": "Irena Krzywicka",
+    "sort": "Krzywicka, Irena"
+  },
+  "born": {
+    "date": "1899-05-28",
+    "place": "yeniseysk"
+  },
+  "died": {
+    "date": "1994-07-12",
+    "place": "bures-sur-yvette"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1939",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Irena_Krzywicka_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "yeniseysk",
+      "bures-sur-yvette"
+    ]
+  },
+  "prominence": 0.49,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6068819",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Irena Krzywicka",
+      "url": "https://de.wikipedia.org/wiki/Irena_Krzywicka",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Irena Krzywicka",
+      "url": "https://en.wikipedia.org/wiki/Irena_Krzywicka",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6068819"
+}

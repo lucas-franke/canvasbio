@@ -1,0 +1,60 @@
+{
+  "slug": "marie-calm",
+  "name": {
+    "display": "Marie Calm",
+    "sort": "Calm, Marie"
+  },
+  "born": {
+    "date": "1832-04-03",
+    "place": "bad-arolsen"
+  },
+  "died": {
+    "date": "1887-02-22",
+    "place": "kassel"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "original uploader was Rbraunwa at en.wikipedia",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marie_Calm.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "bad-arolsen",
+      "kassel"
+    ]
+  },
+  "prominence": 0.4,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q74629",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Marie Calm",
+      "url": "https://de.wikipedia.org/wiki/Marie_Calm",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Marie Calm",
+      "url": "https://en.wikipedia.org/wiki/Marie_Calm",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q74629"
+}

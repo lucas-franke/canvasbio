@@ -1,0 +1,60 @@
+{
+  "slug": "randi-blehr",
+  "name": {
+    "display": "Randi Blehr",
+    "sort": "Blehr, Randi"
+  },
+  "born": {
+    "date": "1851-02-12",
+    "place": "bergen"
+  },
+  "died": {
+    "date": "1928-06-13",
+    "place": "oslo"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Nasjonalbiblioteket",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrett_av_Randi_Marie_Blehr,_1899_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "bergen",
+      "oslo"
+    ]
+  },
+  "prominence": 0.46,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q4939507",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Randi Blehr",
+      "url": "https://de.wikipedia.org/wiki/Randi_Blehr",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Randi Blehr",
+      "url": "https://en.wikipedia.org/wiki/Randi_Blehr",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q4939507"
+}

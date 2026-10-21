@@ -1,0 +1,60 @@
+{
+  "slug": "louise-wright",
+  "name": {
+    "display": "Louise Wright",
+    "sort": "Wright, Louise"
+  },
+  "born": {
+    "date": "1861-01-30",
+    "place": "fleckeby"
+  },
+  "died": {
+    "date": "1935-04-15",
+    "place": "gentofte-parish"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Wismer, Christian Peter Lauritz (1843-), 1873",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Louise_Wright.png"
+  },
+  "facets": {
+    "field": [
+      "social"
+    ],
+    "place": [
+      "fleckeby",
+      "gentofte-parish"
+    ]
+  },
+  "prominence": 0.25,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q60575788",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Louise Wright",
+      "url": "https://de.wikipedia.org/wiki/Louise_Wright",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Louise Wright (activist)",
+      "url": "https://en.wikipedia.org/wiki/Louise_Wright_(activist)",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q60575788"
+}

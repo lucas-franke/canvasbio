@@ -1,0 +1,60 @@
+{
+  "slug": "florence-canning",
+  "name": {
+    "display": "Florence Canning",
+    "sort": "Canning, Florence"
+  },
+  "born": {
+    "date": "1863-05-19",
+    "place": "hereford"
+  },
+  "died": {
+    "date": "1914-12-24",
+    "place": "brighton"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Colonel Linley Blathwayt who died in 1919, 1911",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Suffragette_Florence_Canning_1911_prob_by_Blathwayt.jpg"
+  },
+  "facets": {
+    "field": [
+      "arts"
+    ],
+    "place": [
+      "hereford",
+      "brighton"
+    ]
+  },
+  "prominence": 0.09,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q70228326",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Florence Canning",
+      "url": "https://de.wikipedia.org/wiki/Florence_Canning",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Florence Canning",
+      "url": "https://en.wikipedia.org/wiki/Florence_Canning",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q70228326"
+}

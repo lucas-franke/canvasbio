@@ -1,0 +1,60 @@
+{
+  "slug": "henrica-iliohan",
+  "name": {
+    "display": "Henrica Iliohan",
+    "sort": "Iliohan, Henrica"
+  },
+  "born": {
+    "date": "1850-05-03",
+    "place": "vorden"
+  },
+  "died": {
+    "date": "1921-07-01",
+    "place": "oakland"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unbekannt",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:HENRICA_ILIOHAN_A_woman_of_the_century_(page_419_crop).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "vorden",
+      "oakland"
+    ]
+  },
+  "prominence": 0.15,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q43236081",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Henrica Iliohan",
+      "url": "https://de.wikipedia.org/wiki/Henrica_Iliohan",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Henrica Iliohan",
+      "url": "https://en.wikipedia.org/wiki/Henrica_Iliohan",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q43236081"
+}

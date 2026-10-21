@@ -1,0 +1,108 @@
+import { expect, test, type Page } from "@playwright/test";
+
+const openPanel = async (page: Page) => {
+  await page.getByRole("button", { name: "Suche", exact: true }).click();
+  const dialog = page.getByRole("dialog", { name: "Suche" });
+  await expect(dialog).toBeVisible();
+  return dialog;
+};
+
+const submit = (dialog: ReturnType<Page["getByRole"]>) => dialog.locator('button[type="submit"]');
+
+test("name search on the canvas highlights the match and counts live", async ({ page }) => {
+  await page.goto("/personen");
+  await page.locator("[data-cell]").first().waitFor({ state: "attached" });
+  const dialog = await openPanel(page);
+  await expect(dialog.getByLabel("Nach Namen suchen")).toBeFocused();
+  await dialog.getByLabel("Nach Namen suchen").fill("zetkin");
+  await expect(submit(dialog)).toHaveText("1 Ergebnis anzeigen");
+  await submit(dialog).click();
+
+  await expect(page).toHaveURL(/\/personen\?q=zetkin$/);
+  await expect(page.getByRole("heading", { name: "Ergebnisse (1)" })).toBeVisible();
+  await expect(page.locator("#main").getByRole("status").first()).toHaveText("1 Person gefunden");
+  // The match is lifted and becomes the tile in the tab order; the rest is dimmed.
+  const hit = page.locator('[data-person="clara-zetkin"]');
+  await expect(hit).toHaveAttribute("data-match", "hit");
+  await expect(hit).toHaveAttribute("tabindex", "0");
+  await expect(page.locator('[data-match="miss"]').first()).toBeAttached();
+});
+
+test("field filter narrows the list; typos and umlauts are forgiven", async ({ page }) => {
+  await page.goto("/personen/liste");
+  const dialog = await openPanel(page);
+  await dialog.getByText("Politik", { exact: true }).click();
+  await expect(dialog.getByRole("checkbox", { name: "Politik" })).toBeChecked();
+  await submit(dialog).click();
+  await expect(page).toHaveURL(/\/personen\/liste\?field=politics$/);
+
+  const heading = page.getByRole("heading", { name: /^Ergebnisse \(\d+\)$/ });
+  await expect(heading).toBeVisible();
+  const rows = page.locator("article[data-vt-item]");
+  const count = await rows.count();
+  expect(count).toBeGreaterThan(5);
+  await expect(page.getByRole("heading", { name: `Ergebnisse (${count})` })).toBeVisible();
+  for (const tags of await rows.locator("ul").allTextContents()) expect(tags).toContain("Politik");
+
+  await page.goto("/personen/liste?q=zetkni");
+  await expect(page.getByRole("link", { name: "Clara Zetkin", exact: true })).toBeVisible();
+  await page.goto("/personen/liste?q=stuerzl");
+  await expect(page.getByRole("link", { name: "Adele Stürzl", exact: true })).toBeVisible();
+});
+
+test("place filter matches the place names", async ({ page }) => {
+  await page.goto("/personen/liste?place=Berlin");
+  await expect(page.getByRole("button", { name: "Filter „Berlin“ entfernen" })).toBeVisible();
+  await expect(page.locator("article[data-vt-item]").first()).toBeVisible();
+});
+
+test("removing a filter chip updates the results and keeps focus in the bar", async ({ page }) => {
+  await page.goto("/personen/liste?q=clara&field=politics");
+  await page.getByRole("button", { name: "Filter „Politik“ entfernen" }).click();
+  await expect(page).toHaveURL(/\/personen\/liste\?q=clara$/);
+  await expect(page.getByRole("heading", { name: /^Ergebnisse \(\d+\)$/ })).toBeFocused();
+
+  await page.getByRole("button", { name: "Filter „Name: clara“ entfernen" }).click();
+  await expect(page).toHaveURL(/\/personen\/liste$/);
+  await expect(page.getByRole("button", { name: "Suche", exact: true })).toBeFocused();
+});
+
+test("no results: message and reset", async ({ page }) => {
+  await page.goto("/personen/liste?q=xyzxyz");
+  await expect(page.getByRole("heading", { name: "Keine Personen gefunden" })).toBeVisible();
+  await expect(page.locator("article[data-vt-item]")).toHaveCount(0);
+  await page.getByRole("button", { name: "Suche zurücksetzen" }).click();
+  await expect(page).toHaveURL(/\/personen\/liste$/);
+  await expect(page.locator("article[data-vt-item]")).toHaveCount(200);
+});
+
+test("the search survives opening and closing a biography and switching views", async ({ page }) => {
+  await page.goto("/personen/liste?q=zetkin");
+  // The pre-rendered list is unfiltered; wait until the search applies after hydration.
+  await expect(page.getByRole("heading", { name: "Ergebnisse (1)" })).toBeVisible();
+  await page.getByRole("link", { name: "Clara Zetkin", exact: true }).click();
+  await expect(page).toHaveURL(/\/personen\/clara-zetkin\?q=zetkin$/);
+  await page.getByRole("link", { name: "Schließen" }).click();
+  await expect(page).toHaveURL(/\/personen\/liste\?q=zetkin$/);
+  await page.getByRole("group", { name: "Ansicht" }).getByRole("link", { name: "Bilder" }).click();
+  await expect(page).toHaveURL(/\/personen\?q=zetkin$/);
+});
+
+test("searching from the start page opens the overview", async ({ page }) => {
+  await page.goto("/");
+  const dialog = await openPanel(page);
+  await dialog.getByLabel("Nach Namen suchen").fill("dohm");
+  await submit(dialog).click();
+  await expect(page).toHaveURL(/\/personen\?q=dohm$/);
+});
+
+test("previous/next match move through the results on the canvas", async ({ page }) => {
+  await page.goto("/personen?field=politics");
+  await page.locator("[data-cell]").first().waitFor({ state: "attached" });
+  await page.getByRole("button", { name: "Nächster Treffer" }).click();
+  await expect(page.getByText(/^Treffer 1 von \d+: /)).toBeAttached();
+  await page.getByRole("button", { name: "Nächster Treffer" }).click();
+  await expect(page.getByText(/^Treffer 2 von \d+: /)).toBeAttached();
+  await page.getByRole("button", { name: "Vorheriger Treffer" }).click();
+  await expect(page.getByText(/^Treffer 1 von \d+: /)).toBeAttached();
+});

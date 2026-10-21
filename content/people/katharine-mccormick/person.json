@@ -1,0 +1,60 @@
+{
+  "slug": "katharine-mccormick",
+  "name": {
+    "display": "Katharine McCormick",
+    "sort": "McCormick, Katharine"
+  },
+  "born": {
+    "date": "1875-08-27",
+    "place": "dexter"
+  },
+  "died": {
+    "date": "1967-12-28",
+    "place": "boston"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Bain, 1913",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Katharine_McCormick_on_April_22,_1913.png"
+  },
+  "facets": {
+    "field": [
+      "science"
+    ],
+    "place": [
+      "dexter",
+      "boston"
+    ]
+  },
+  "prominence": 0.42,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6376216",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Katharine McCormick",
+      "url": "https://de.wikipedia.org/wiki/Katharine_McCormick",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Katharine McCormick",
+      "url": "https://en.wikipedia.org/wiki/Katharine_McCormick",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6376216"
+}

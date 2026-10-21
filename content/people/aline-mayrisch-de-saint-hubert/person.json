@@ -1,0 +1,61 @@
+{
+  "slug": "aline-mayrisch-de-saint-hubert",
+  "name": {
+    "display": "Aline Mayrisch-de Saint-Hubert",
+    "sort": "Saint-Hubert, Aline Mayrisch-de"
+  },
+  "born": {
+    "date": "1874-08-22",
+    "place": "luxembourg"
+  },
+  "died": {
+    "date": "1947-01-20",
+    "place": "cabris"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Hofatelier Elvira, 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aline_de_Saint-Hubert.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "social"
+    ],
+    "place": [
+      "luxembourg",
+      "cabris"
+    ]
+  },
+  "prominence": 0.38,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2837058",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Aline Mayrisch de Saint-Hubert",
+      "url": "https://de.wikipedia.org/wiki/Aline_Mayrisch_de_Saint-Hubert",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Aline Mayrisch de Saint-Hubert",
+      "url": "https://en.wikipedia.org/wiki/Aline_Mayrisch_de_Saint-Hubert",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2837058"
+}

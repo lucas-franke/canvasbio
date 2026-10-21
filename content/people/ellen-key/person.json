@@ -1,0 +1,61 @@
+{
+  "slug": "ellen-key",
+  "name": {
+    "display": "Ellen Key",
+    "sort": "Key, Ellen"
+  },
+  "born": {
+    "date": "1849-12-11",
+    "place": "gladhammar-church-parish"
+  },
+  "died": {
+    "date": "1926-04-25",
+    "place": "vaestra-tollstad-church-parish"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Becker & Maass / Marie Boehm, 1910",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portr%C3%A4tt_av_f%C3%B6rfattarinnan_Ellen_Key_(1849_-1926)_-_Nordiska_Museet_-_NMA.0055617.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education"
+    ],
+    "place": [
+      "gladhammar-church-parish",
+      "vaestra-tollstad-church-parish"
+    ]
+  },
+  "prominence": 0.71,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q238443",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Ellen Key",
+      "url": "https://de.wikipedia.org/wiki/Ellen_Key",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ellen Key",
+      "url": "https://en.wikipedia.org/wiki/Ellen_Key",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q238443"
+}

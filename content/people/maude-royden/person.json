@@ -1,0 +1,60 @@
+{
+  "slug": "maude-royden",
+  "name": {
+    "display": "Maude Royden",
+    "sort": "Royden, Maude"
+  },
+  "born": {
+    "date": "1876-11-23",
+    "place": "mossley-hill"
+  },
+  "died": {
+    "date": "1956-07-30",
+    "place": "hampstead"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Elliott & Fry, 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maude_Royden_01.JPG"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "mossley-hill",
+      "hampstead"
+    ]
+  },
+  "prominence": 0.36,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6792312",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Maude Royden",
+      "url": "https://de.wikipedia.org/wiki/Maude_Royden",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Maude Royden",
+      "url": "https://en.wikipedia.org/wiki/Maude_Royden",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6792312"
+}

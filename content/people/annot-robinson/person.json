@@ -1,0 +1,61 @@
+{
+  "slug": "annot-robinson",
+  "name": {
+    "display": "Annot Robinson",
+    "sort": "Robinson, Annot"
+  },
+  "born": {
+    "date": "1874-06-08",
+    "place": "montrose"
+  },
+  "died": {
+    "date": "1925-09-29",
+    "place": "perth"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "unknown and not creditted, 1910",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Annot_Robinson.jpg"
+  },
+  "facets": {
+    "field": [
+      "education",
+      "social"
+    ],
+    "place": [
+      "montrose",
+      "perth"
+    ]
+  },
+  "prominence": 0.25,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q18935990",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Annot Robinson",
+      "url": "https://de.wikipedia.org/wiki/Annot_Robinson",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Annot Robinson",
+      "url": "https://en.wikipedia.org/wiki/Annot_Robinson",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q18935990"
+}

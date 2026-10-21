@@ -1,0 +1,60 @@
+{
+  "slug": "marie-souvestre",
+  "name": {
+    "display": "Marie Souvestre",
+    "sort": "Souvestre, Marie"
+  },
+  "born": {
+    "date": "1835-04-28",
+    "place": "brest"
+  },
+  "died": {
+    "date": "1905-03-30",
+    "place": "surrey"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "unbekannter Künstler, 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marie_Souvestre.jpg"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "brest",
+      "surrey"
+    ]
+  },
+  "prominence": 0.38,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q275400",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Marie Souvestre",
+      "url": "https://de.wikipedia.org/wiki/Marie_Souvestre",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Marie Souvestre",
+      "url": "https://en.wikipedia.org/wiki/Marie_Souvestre",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q275400"
+}

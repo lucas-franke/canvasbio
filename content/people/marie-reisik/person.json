@@ -1,0 +1,62 @@
+{
+  "slug": "marie-reisik",
+  "name": {
+    "display": "Marie Reisik",
+    "sort": "Reisik, Marie"
+  },
+  "born": {
+    "date": "1887-02-06",
+    "place": "kilingi-nomme"
+  },
+  "died": {
+    "date": "1941-08-03",
+    "place": "tallinn"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unattributed., 1910",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marie_Reisik_circa_1910.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "education"
+    ],
+    "place": [
+      "kilingi-nomme",
+      "tallinn"
+    ]
+  },
+  "prominence": 0.42,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q12369773",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Marie Reisik",
+      "url": "https://de.wikipedia.org/wiki/Marie_Reisik",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Marie Reisik",
+      "url": "https://en.wikipedia.org/wiki/Marie_Reisik",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q12369773"
+}

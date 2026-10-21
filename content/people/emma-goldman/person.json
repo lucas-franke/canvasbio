@@ -1,0 +1,64 @@
+{
+  "slug": "emma-goldman",
+  "name": {
+    "display": "Emma Goldman",
+    "sort": "Goldman, Emma"
+  },
+  "born": {
+    "date": "1869-06-27",
+    "place": "kaunas"
+  },
+  "died": {
+    "date": "1940-05-14",
+    "place": "toronto"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Takuma Kajiwara, 1911",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emma_Goldman_seated.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "medicine",
+      "science",
+      "social"
+    ],
+    "place": [
+      "kaunas",
+      "toronto"
+    ]
+  },
+  "prominence": 0.93,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q79969",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Emma Goldman",
+      "url": "https://de.wikipedia.org/wiki/Emma_Goldman",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Emma Goldman",
+      "url": "https://en.wikipedia.org/wiki/Emma_Goldman",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q79969"
+}

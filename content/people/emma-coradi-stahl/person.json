@@ -1,0 +1,60 @@
+{
+  "slug": "emma-coradi-stahl",
+  "name": {
+    "display": "Emma Coradi-Stahl",
+    "sort": "Coradi-Stahl, Emma"
+  },
+  "born": {
+    "date": "1846-11-09",
+    "place": "dozwil"
+  },
+  "died": {
+    "date": "1912-04-08",
+    "place": "zurich"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1908",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emma_Coradi-Stahl.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "dozwil",
+      "zurich"
+    ]
+  },
+  "prominence": 0.25,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q27862845",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Emma Coradi-Stahl",
+      "url": "https://de.wikipedia.org/wiki/Emma_Coradi-Stahl",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Emma Coradi-Stahl",
+      "url": "https://en.wikipedia.org/wiki/Emma_Coradi-Stahl",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q27862845"
+}

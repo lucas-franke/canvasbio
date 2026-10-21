@@ -1,0 +1,60 @@
+{
+  "slug": "mary-phillips",
+  "name": {
+    "display": "Mary Phillips",
+    "sort": "Phillips, Mary"
+  },
+  "born": {
+    "date": "1880-07-15",
+    "place": "st-mary-bourne"
+  },
+  "died": {
+    "date": "1969-06-21",
+    "place": "hove"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Colonel Linley Blathwayt, 1909",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Suffragette_Mary_Phillips_1909._Blathwayt,_Col_Linley.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "st-mary-bourne",
+      "hove"
+    ]
+  },
+  "prominence": 0.31,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q27532783",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Mary Phillips",
+      "url": "https://de.wikipedia.org/wiki/Mary_Phillips",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mary Phillips (suffragette)",
+      "url": "https://en.wikipedia.org/wiki/Mary_Phillips_(suffragette)",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q27532783"
+}

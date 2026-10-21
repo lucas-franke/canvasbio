@@ -1,0 +1,58 @@
+{
+  "slug": "mary-jane-ward",
+  "name": {
+    "display": "Mary Jane Ward",
+    "sort": "Ward, Mary Jane"
+  },
+  "born": {
+    "date": "1851-06-06",
+    "place": "armagh"
+  },
+  "died": {
+    "date": "1933-03-14"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "J. E. Bliss, Cambridge, 1875",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mary_Ward,_Cambridge-based_Irish_suffragist.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "armagh"
+    ]
+  },
+  "prominence": 0.09,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q60796989",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Mary Ward (Frauenrechtlerin)",
+      "url": "https://de.wikipedia.org/wiki/Mary_Ward_(Frauenrechtlerin)",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mary Ward (suffragist)",
+      "url": "https://en.wikipedia.org/wiki/Mary_Ward_(suffragist)",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q60796989"
+}

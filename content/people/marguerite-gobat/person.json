@@ -1,0 +1,62 @@
+{
+  "slug": "marguerite-gobat",
+  "name": {
+    "display": "Marguerite Gobat",
+    "sort": "Gobat, Marguerite"
+  },
+  "born": {
+    "date": "1870-02-23",
+    "place": "delemont"
+  },
+  "died": {
+    "date": "1937-07-19",
+    "place": "evilard"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1910",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marguerite_Gobat_lisant.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education",
+      "social"
+    ],
+    "place": [
+      "delemont",
+      "evilard"
+    ]
+  },
+  "prominence": 0.2,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q19956541",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Marguerite Gobat",
+      "url": "https://de.wikipedia.org/wiki/Marguerite_Gobat",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Marguerite Gobat",
+      "url": "https://en.wikipedia.org/wiki/Marguerite_Gobat",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q19956541"
+}

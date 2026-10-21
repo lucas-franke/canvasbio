@@ -1,0 +1,62 @@
+{
+  "slug": "margaret-cole",
+  "name": {
+    "display": "Margaret Cole",
+    "sort": "Cole, Margaret"
+  },
+  "born": {
+    "date": "1893-05-06",
+    "place": "cambridge"
+  },
+  "died": {
+    "date": "1980-05-07",
+    "place": "goring-on-thames"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Stella Bowen, 1944",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Margaret_Cole_in_1944-45_by_Stella_Bowen_who_died_in_1947.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "science"
+    ],
+    "place": [
+      "cambridge",
+      "goring-on-thames"
+    ]
+  },
+  "prominence": 0.38,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6759288",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Margaret Cole",
+      "url": "https://de.wikipedia.org/wiki/Margaret_Cole",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Margaret Cole",
+      "url": "https://en.wikipedia.org/wiki/Margaret_Cole",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6759288"
+}

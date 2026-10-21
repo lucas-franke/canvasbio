@@ -1,0 +1,61 @@
+{
+  "slug": "dorothy-day",
+  "name": {
+    "display": "Dorothy Day",
+    "sort": "Day, Dorothy"
+  },
+  "born": {
+    "date": "1897-11-08",
+    "place": "brooklyn-heights"
+  },
+  "died": {
+    "date": "1980-11-29",
+    "place": "new-york-city"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown photographer, 1916",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dorothy_Day,_1916_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "social"
+    ],
+    "place": [
+      "brooklyn-heights",
+      "new-york-city"
+    ]
+  },
+  "prominence": 0.74,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q150281",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Dorothy Day",
+      "url": "https://de.wikipedia.org/wiki/Dorothy_Day",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Dorothy Day",
+      "url": "https://en.wikipedia.org/wiki/Dorothy_Day",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q150281"
+}

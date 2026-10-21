@@ -1,0 +1,60 @@
+{
+  "slug": "olena-kyssilewska",
+  "name": {
+    "display": "Olena Kyssilewska",
+    "sort": "Kyssilewska, Olena"
+  },
+  "born": {
+    "date": "1869-03-24",
+    "place": "monastyryska"
+  },
+  "died": {
+    "date": "1956-03-29",
+    "place": "ottawa"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anon_K_Y_Kysilevska_Olena.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "monastyryska",
+      "ottawa"
+    ]
+  },
+  "prominence": 0.45,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q8994469",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Olena Kyssilewska",
+      "url": "https://de.wikipedia.org/wiki/Olena_Kyssilewska",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Olena Kysilevska",
+      "url": "https://en.wikipedia.org/wiki/Olena_Kysilevska",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q8994469"
+}

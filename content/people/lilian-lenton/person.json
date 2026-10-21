@@ -1,0 +1,60 @@
+{
+  "slug": "lilian-lenton",
+  "name": {
+    "display": "Lilian Lenton",
+    "sort": "Lenton, Lilian"
+  },
+  "born": {
+    "date": "1891-01-05",
+    "place": "leicester"
+  },
+  "died": {
+    "date": "1972-10-28",
+    "place": "twickenham"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Home Office, 1912",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lilian-lenton.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "leicester",
+      "twickenham"
+    ]
+  },
+  "prominence": 0.31,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6547697",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Lilian Lenton",
+      "url": "https://de.wikipedia.org/wiki/Lilian_Lenton",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Lilian Lenton",
+      "url": "https://en.wikipedia.org/wiki/Lilian_Lenton",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6547697"
+}

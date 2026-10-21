@@ -1,0 +1,60 @@
+{
+  "slug": "nina-e-allender",
+  "name": {
+    "display": "Nina E. Allender",
+    "sort": "Allender, Nina E."
+  },
+  "born": {
+    "date": "1873-12-25",
+    "place": "auburn"
+  },
+  "died": {
+    "date": "1957-04-02",
+    "place": "plainfield"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Harris & Ewing, photographer, 1913",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nina_E._Allender_cropped.jpg"
+  },
+  "facets": {
+    "field": [
+      "arts"
+    ],
+    "place": [
+      "auburn",
+      "plainfield"
+    ]
+  },
+  "prominence": 0.36,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q15998924",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Nina E. Allender",
+      "url": "https://de.wikipedia.org/wiki/Nina_E._Allender",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Nina E. Allender",
+      "url": "https://en.wikipedia.org/wiki/Nina_E._Allender",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q15998924"
+}

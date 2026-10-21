@@ -1,0 +1,60 @@
+{
+  "slug": "sefiqa-gaspirali",
+  "name": {
+    "display": "Şefiqa Gaspıralı",
+    "sort": "Gaspıralı, Şefiqa"
+  },
+  "born": {
+    "date": "1886-10-14",
+    "place": "bakhchysarai"
+  },
+  "died": {
+    "date": "1975-08-31",
+    "place": "istanbul"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1901",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Safika_Gaspirali_(crop).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "bakhchysarai",
+      "istanbul"
+    ]
+  },
+  "prominence": 0.56,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q3760333",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Şefiqa Gaspıralı",
+      "url": "https://de.wikipedia.org/wiki/%C5%9Eefiqa_Gasp%C4%B1ral%C4%B1",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Şefiqa Gaspıralı",
+      "url": "https://en.wikipedia.org/wiki/%C5%9Eefiqa_Gasp%C4%B1ral%C4%B1",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q3760333"
+}

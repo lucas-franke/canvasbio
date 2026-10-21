@@ -1,0 +1,61 @@
+{
+  "slug": "phil-van-heerdt-tot-eversberg-quarles-van-ufford",
+  "name": {
+    "display": "Phil van Heerdt tot Eversberg-Quarles van Ufford",
+    "sort": "Ufford, Phil van Heerdt tot Eversberg-Quarles van"
+  },
+  "born": {
+    "date": "1862-12-05",
+    "place": "ketandan"
+  },
+  "died": {
+    "date": "1939-12-02",
+    "place": "the-hague"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1938",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Phil_van_Heerdt_tot_Eversberg-Quarles_van_Ufford.jpg"
+  },
+  "facets": {
+    "field": [
+      "arts",
+      "social"
+    ],
+    "place": [
+      "ketandan",
+      "the-hague"
+    ]
+  },
+  "prominence": 0.15,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q41783094",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): P. van Heerdt tot Eversberg-Quarles van Ufford",
+      "url": "https://de.wikipedia.org/wiki/P._van_Heerdt_tot_Eversberg-Quarles_van_Ufford",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): P. van Heerdt tot Eversberg-Quarles van Ufford",
+      "url": "https://en.wikipedia.org/wiki/P._van_Heerdt_tot_Eversberg-Quarles_van_Ufford",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q41783094"
+}

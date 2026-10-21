@@ -1,0 +1,61 @@
+{
+  "slug": "marie-charlotte-carmichael-stopes",
+  "name": {
+    "display": "Marie Charlotte Carmichael Stopes",
+    "sort": "Stopes, Marie Charlotte Carmichael"
+  },
+  "born": {
+    "date": "1880-10-15",
+    "place": "edinburgh"
+  },
+  "died": {
+    "date": "1958-10-02",
+    "place": "dorking"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1904",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marie_Stopes.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "science"
+    ],
+    "place": [
+      "edinburgh",
+      "dorking"
+    ]
+  },
+  "prominence": 0.71,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q442231",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Marie Stopes",
+      "url": "https://de.wikipedia.org/wiki/Marie_Stopes",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Marie Stopes",
+      "url": "https://en.wikipedia.org/wiki/Marie_Stopes",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q442231"
+}

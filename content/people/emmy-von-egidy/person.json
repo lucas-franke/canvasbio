@@ -1,0 +1,61 @@
+{
+  "slug": "emmy-von-egidy",
+  "name": {
+    "display": "Emmy von Egidy",
+    "sort": "Egidy, Emmy von"
+  },
+  "born": {
+    "date": "1872-04-05",
+    "place": "pirna"
+  },
+  "died": {
+    "date": "1946-12-01",
+    "place": "weimar"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1911",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emmy_von_Egidy.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "arts"
+    ],
+    "place": [
+      "pirna",
+      "weimar"
+    ]
+  },
+  "prominence": 0.28,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q1339022",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Emmy von Egidy",
+      "url": "https://de.wikipedia.org/wiki/Emmy_von_Egidy",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Emmy von Egidy",
+      "url": "https://en.wikipedia.org/wiki/Emmy_von_Egidy",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q1339022"
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "marie-naylor",
+  "name": {
+    "display": "Marie Naylor",
+    "sort": "Naylor, Marie"
+  },
+  "born": {
+    "date": "1856",
+    "place": "london"
+  },
+  "died": {
+    "date": "1940-10-30",
+    "place": "london"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Linley Blathwayt, 1909",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marie_Naylor_by_Linley_Blathwayt.jpg"
+  },
+  "facets": {
+    "field": [
+      "arts"
+    ],
+    "place": [
+      "london"
+    ]
+  },
+  "prominence": 0.28,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q52291586",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Marie Naylor",
+      "url": "https://de.wikipedia.org/wiki/Marie_Naylor",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Marie Naylor",
+      "url": "https://en.wikipedia.org/wiki/Marie_Naylor",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q52291586"
+}

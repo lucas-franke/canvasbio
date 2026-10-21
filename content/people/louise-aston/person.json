@@ -1,0 +1,60 @@
+{
+  "slug": "louise-aston",
+  "name": {
+    "display": "Louise Aston",
+    "sort": "Aston, Louise"
+  },
+  "born": {
+    "date": "1814-11-26",
+    "place": "groeningen"
+  },
+  "died": {
+    "date": "1871-12-21",
+    "place": "wangen-im-allgaeu"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Johann Baptist Reiter, 1890",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Louise_Aston,_by_Johann_Baptist_Reiter.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "groeningen",
+      "wangen-im-allgaeu"
+    ]
+  },
+  "prominence": 0.5,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q67888",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Louise Aston",
+      "url": "https://de.wikipedia.org/wiki/Louise_Aston",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Luise Aston",
+      "url": "https://en.wikipedia.org/wiki/Luise_Aston",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q67888"
+}

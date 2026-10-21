@@ -1,0 +1,62 @@
+{
+  "slug": "madeleine-pelletier",
+  "name": {
+    "display": "Madeleine Pelletier",
+    "sort": "Pelletier, Madeleine"
+  },
+  "born": {
+    "date": "1874-05-18",
+    "place": "paris"
+  },
+  "died": {
+    "date": "1939-12-29",
+    "place": "epinay-sur-orge"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Henri Manuel, 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Madeleine_Pelletier_1.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "medicine"
+    ],
+    "place": [
+      "paris",
+      "epinay-sur-orge"
+    ]
+  },
+  "prominence": 0.56,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q528793",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Madeleine Pelletier",
+      "url": "https://de.wikipedia.org/wiki/Madeleine_Pelletier",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Madeleine Pelletier",
+      "url": "https://en.wikipedia.org/wiki/Madeleine_Pelletier",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q528793"
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "helene-scheu-riesz",
+  "name": {
+    "display": "Helene Scheu-Riesz",
+    "sort": "Scheu-Riesz, Helene"
+  },
+  "born": {
+    "date": "1880-09-18",
+    "place": "olomouc"
+  },
+  "died": {
+    "date": "1970-01-08",
+    "place": "vienna"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Georg Fayer(1892 – 5 November 1950), 1939",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Scheu-Riess,_Helene,_by_Fayer,_Wien_03.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "olomouc",
+      "vienna"
+    ]
+  },
+  "prominence": 0.31,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q1350058",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Helene Scheu-Riesz",
+      "url": "https://de.wikipedia.org/wiki/Helene_Scheu-Riesz",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Helene Scheu-Riesz",
+      "url": "https://en.wikipedia.org/wiki/Helene_Scheu-Riesz",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q1350058"
+}

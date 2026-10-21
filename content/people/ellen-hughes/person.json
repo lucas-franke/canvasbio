@@ -1,0 +1,58 @@
+{
+  "slug": "ellen-hughes",
+  "name": {
+    "display": "Ellen Hughes",
+    "sort": "Hughes, Ellen"
+  },
+  "born": {
+    "date": "1862-05-18",
+    "place": "llanengan"
+  },
+  "died": {
+    "date": "1927-05-11"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Evan William Evans (1860-1925), 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Miss_Ellen_Hughes,_Llanengan.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "llanengan"
+    ]
+  },
+  "prominence": 0.25,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q23900939",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Ellen Hughes",
+      "url": "https://de.wikipedia.org/wiki/Ellen_Hughes",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ellen Hughes",
+      "url": "https://en.wikipedia.org/wiki/Ellen_Hughes",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q23900939"
+}

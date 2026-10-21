@@ -1,0 +1,60 @@
+{
+  "slug": "florence-dixie",
+  "name": {
+    "display": "Florence Dixie",
+    "sort": "Dixie, Florence"
+  },
+  "born": {
+    "date": "1855-05-24",
+    "place": "cummertrees"
+  },
+  "died": {
+    "date": "1905-11-07",
+    "place": "london"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1880",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lady_Florence_Dixie.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "cummertrees",
+      "london"
+    ]
+  },
+  "prominence": 0.45,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q529148",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Florence Dixie",
+      "url": "https://de.wikipedia.org/wiki/Florence_Dixie",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Lady Florence Dixie",
+      "url": "https://en.wikipedia.org/wiki/Lady_Florence_Dixie",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q529148"
+}

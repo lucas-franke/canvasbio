@@ -1,0 +1,60 @@
+{
+  "slug": "eva-gore-booth",
+  "name": {
+    "display": "Eva Gore-Booth",
+    "sort": "Gore-Booth, Eva"
+  },
+  "born": {
+    "date": "1870-05-22",
+    "place": "county-sligo"
+  },
+  "died": {
+    "date": "1926-06-30",
+    "place": "london"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1926",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eva_Selina_Laura_Gore-Booth_(c._late1880s).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "county-sligo",
+      "london"
+    ]
+  },
+  "prominence": 0.42,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5415056",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Eva Gore-Booth",
+      "url": "https://de.wikipedia.org/wiki/Eva_Gore-Booth",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Eva Gore-Booth",
+      "url": "https://en.wikipedia.org/wiki/Eva_Gore-Booth",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5415056"
+}

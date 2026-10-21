@@ -1,0 +1,62 @@
+{
+  "slug": "ramabai-dongre-medhavi",
+  "name": {
+    "display": "Ramabai Dongre Medhavi",
+    "sort": "Medhavi, Ramabai Dongre"
+  },
+  "born": {
+    "date": "1858-04-23",
+    "place": "mangaluru"
+  },
+  "died": {
+    "date": "1922-04-05",
+    "place": "pune-division"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Ramabai Sarasvati, Pandita, 1858-1922, 1922",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pandita_Ramabai_Sarasvati_1858-1922_front-page-portrait.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "science",
+      "social"
+    ],
+    "place": [
+      "mangaluru",
+      "pune-division"
+    ]
+  },
+  "prominence": 0.69,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q94889",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Ramabai Dongre Medhavi",
+      "url": "https://de.wikipedia.org/wiki/Ramabai_Dongre_Medhavi",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Pandita Ramabai",
+      "url": "https://en.wikipedia.org/wiki/Pandita_Ramabai",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q94889"
+}

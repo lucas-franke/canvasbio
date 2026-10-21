@@ -1,0 +1,59 @@
+{
+  "slug": "anna-alma-tadema",
+  "name": {
+    "display": "Anna Alma-Tadema",
+    "sort": "Alma-Tadema, Anna"
+  },
+  "born": {
+    "date": "1867-05-16",
+    "place": "london"
+  },
+  "died": {
+    "date": "1943-07-05",
+    "place": "london"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Lawrence Alma-Tadema, 1883",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Miss_Anna_Alma_Tadema,_by_Laurens_Alma_Tadema.jpg"
+  },
+  "facets": {
+    "field": [
+      "arts"
+    ],
+    "place": [
+      "london"
+    ]
+  },
+  "prominence": 0.46,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2770619",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Anna Alma-Tadema",
+      "url": "https://de.wikipedia.org/wiki/Anna_Alma-Tadema",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Anna Alma-Tadema",
+      "url": "https://en.wikipedia.org/wiki/Anna_Alma-Tadema",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2770619"
+}

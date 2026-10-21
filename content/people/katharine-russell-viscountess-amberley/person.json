@@ -1,0 +1,55 @@
+{
+  "slug": "katharine-russell-viscountess-amberley",
+  "name": {
+    "display": "Katharine Russell, Viscountess Amberley",
+    "sort": "Amberley, Katharine Russell, Viscountess"
+  },
+  "born": {
+    "date": "1842-04-03"
+  },
+  "died": {
+    "date": "1874-06-28"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Camille Silvy, 1860",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Viscountess_Amberley_cropped.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": []
+  },
+  "prominence": 0.31,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6376230",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Katharine Russell, Viscountess Amberley",
+      "url": "https://de.wikipedia.org/wiki/Katharine_Russell%2C_Viscountess_Amberley",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Katharine Russell, Viscountess Amberley",
+      "url": "https://en.wikipedia.org/wiki/Katharine_Russell%2C_Viscountess_Amberley",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6376230"
+}

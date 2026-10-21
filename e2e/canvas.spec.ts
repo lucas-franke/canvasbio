@@ -1,0 +1,206 @@
+import { expect, test, type Page } from "@playwright/test";
+
+/** Camera as written to the world element: translate(-x·s, -y·s) scale(s). */
+async function camera(page: Page) {
+  const transform = await page.locator(".canvas-world").evaluate((el) => (el as HTMLElement).style.transform);
+  const [, tx, ty, s] = /translate3d\((-?[\d.e-]+)px, (-?[\d.e-]+)px, 0px\) scale\(([\d.e-]+)\)/.exec(
+    transform,
+  )!;
+  return { tx: Number(tx), ty: Number(ty), scale: Number(s) };
+}
+
+/** Camera once inertia has stopped. */
+async function settledCamera(page: Page) {
+  let previous = await camera(page);
+  for (;;) {
+    await page.waitForTimeout(250);
+    const next = await camera(page);
+    if (next.tx === previous.tx && next.ty === previous.ty && next.scale === previous.scale) return next;
+    previous = next;
+  }
+}
+
+async function openCanvas(page: Page) {
+  await page.goto("/personen");
+  await page.locator("[data-cell]").first().waitFor({ state: "attached" });
+}
+
+const tabbableTile = (page: Page) => page.locator('[data-cell][tabindex="0"]');
+
+test("renders a window of the wall and exposes every person once", async ({ page }) => {
+  await openCanvas(page);
+  const tiles = await page.locator("[data-cell]").count();
+  expect(tiles).toBeGreaterThan(10);
+  expect(tiles).toBeLessThan(200);
+
+  const exposed = await page
+    .locator("[data-person]")
+    .evaluateAll((els) => els.map((e) => e.getAttribute("data-person")));
+  expect(new Set(exposed).size).toBe(exposed.length);
+  await expect(tabbableTile(page)).toHaveCount(1);
+  // Duplicates (wrap copies) are hidden from assistive tech and out of the tab order.
+  const hiddenFocusable = page.locator('li[aria-hidden="true"] a:not([tabindex="-1"])');
+  await expect(hiddenFocusable).toHaveCount(0);
+});
+
+test("arrow keys move between portraits, the camera follows, Enter opens, focus returns", async ({
+  page,
+}) => {
+  await openCanvas(page);
+  await tabbableTile(page).focus();
+  const first = await tabbableTile(page).getAttribute("data-cell");
+
+  for (let i = 0; i < 4; i++) await page.keyboard.press("ArrowRight");
+  for (let i = 0; i < 3; i++) await page.keyboard.press("ArrowDown");
+  const focused = page.locator("[data-cell]:focus");
+  await expect(focused).toHaveCount(1);
+  expect(await focused.getAttribute("data-cell")).not.toBe(first);
+  await expect(focused).toHaveAttribute("tabindex", "0");
+
+  // The focused tile ends up fully visible and clear of the bottom navigation (WCAG 2.4.11).
+  await page.waitForTimeout(400);
+  const viewport = page.viewportSize()!;
+  const box = (await focused.boundingBox())!;
+  const nav = (await page
+    .getByRole("navigation", { name: "Hauptnavigation" })
+    .locator("> div")
+    .first()
+    .boundingBox())!;
+  expect(box.x).toBeGreaterThanOrEqual(0);
+  expect(box.x + box.width).toBeLessThanOrEqual(viewport.width);
+  expect(box.y + box.height).toBeLessThanOrEqual(nav.y);
+
+  const slug = await focused.getAttribute("data-person");
+  await page.keyboard.press("Enter");
+  await expect(page).toHaveURL(new RegExp(`/personen/${slug}$`));
+  await expect(page.getByRole("heading", { level: 1 })).toBeFocused();
+
+  await page.keyboard.press("Escape");
+  await expect(page).toHaveURL(/\/personen$/);
+  await expect(page.locator(`[data-person="${slug}"]`)).toBeFocused();
+});
+
+test("+ and − on a focused portrait zoom", async ({ page }) => {
+  await openCanvas(page);
+  await tabbableTile(page).focus();
+  const before = (await camera(page)).scale;
+  await page.keyboard.press("+");
+  await expect.poll(async () => (await camera(page)).scale).toBeGreaterThan(before);
+  await page.keyboard.press("-");
+  await page.keyboard.press("-");
+  await expect.poll(async () => (await camera(page)).scale).toBeLessThan(before);
+});
+
+test("dragging pans without opening a biography; a tap opens one", async ({ page }) => {
+  await openCanvas(page);
+  const before = await camera(page);
+  const tile = (await tabbableTile(page).boundingBox())!;
+  const start = { x: tile.x + tile.width / 2, y: tile.y + tile.height / 2 };
+  await page.mouse.move(start.x, start.y);
+  await page.mouse.down();
+  await page.mouse.move(start.x - 150, start.y - 60, { steps: 8 });
+  await page.mouse.up();
+  const after = await settledCamera(page);
+  expect(page.url()).toMatch(/\/personen$/);
+  expect(after.tx).toBeLessThan(before.tx - 100);
+
+  // Tap the portrait closest to the middle of the screen.
+  const viewport = page.viewportSize()!;
+  const { slug, x, y } = await page.evaluate(({ width, height }) => {
+    const tiles = [...document.querySelectorAll("[data-person]")].map((el) => {
+      const r = el.getBoundingClientRect();
+      const x = r.x + r.width / 2;
+      const y = r.y + r.height / 2;
+      return { slug: el.getAttribute("data-person"), x, y, d: (x - width / 2) ** 2 + (y - height / 2) ** 2 };
+    });
+    return tiles.sort((a, b) => a.d - b.d)[0]!;
+  }, viewport);
+  await page.mouse.click(x, y);
+  await expect(page).toHaveURL(new RegExp(`/personen/${slug}$`));
+});
+
+test("zoom buttons and the direction pad work without dragging (WCAG 2.5.7)", async ({ page }) => {
+  await openCanvas(page);
+  const start = await camera(page);
+  await page.getByRole("button", { name: "Vergrößern" }).click();
+  await expect.poll(async () => (await camera(page)).scale).toBeGreaterThan(start.scale);
+  await page.getByRole("button", { name: "Verkleinern" }).click();
+  await page.getByRole("button", { name: "Verkleinern" }).click();
+  await expect.poll(async () => (await camera(page)).scale).toBeLessThan(start.scale);
+
+  const toggle = page.getByRole("button", { name: "Verschieben" });
+  await toggle.click();
+  await expect(toggle).toHaveAttribute("aria-expanded", "true");
+  const before = await camera(page);
+  await page.getByRole("button", { name: "Nach rechts" }).click();
+  await expect.poll(async () => (await camera(page)).tx).toBeLessThan(before.tx - 50);
+  await page.getByRole("button", { name: "Nach unten" }).click();
+  await expect.poll(async () => (await camera(page)).ty).toBeLessThan(before.ty - 50);
+});
+
+test("wheel pans and Ctrl + wheel zooms (desktop)", async ({ page, isMobile }) => {
+  test.skip(isMobile, "no mouse wheel on phones");
+  await openCanvas(page);
+  const before = await camera(page);
+  await page.mouse.move(600, 400);
+  await page.mouse.wheel(0, 200);
+  await expect.poll(async () => (await camera(page)).ty).toBeLessThan(before.ty - 100);
+  expect(await page.evaluate(() => window.scrollY)).toBe(0);
+
+  await page.keyboard.down("Control");
+  await page.mouse.wheel(0, -200);
+  await page.keyboard.up("Control");
+  await expect.poll(async () => (await camera(page)).scale).toBeGreaterThan(before.scale);
+});
+
+test("the position survives a reload", async ({ page }) => {
+  await openCanvas(page);
+  await page.mouse.move(300, 400);
+  await page.mouse.down();
+  await page.mouse.move(100, 250, { steps: 6 });
+  await page.mouse.up();
+  const before = await settledCamera(page);
+  await page.reload();
+  await page.locator("[data-cell]").first().waitFor({ state: "attached" });
+  const after = await camera(page);
+  expect(after.tx).toBeCloseTo(before.tx, 0);
+  expect(after.ty).toBeCloseTo(before.ty, 0);
+});
+
+test("skip link leads from the canvas to the list view", async ({ page }) => {
+  await openCanvas(page);
+  const skip = page.getByRole("link", { name: "Zur Listenansicht" });
+  await expect(skip).not.toBeInViewport();
+  await skip.focus();
+  await expect(skip).toBeInViewport();
+  await skip.press("Enter");
+  await expect(page).toHaveURL(/\/personen\/liste$/);
+});
+
+test.describe("without JavaScript", () => {
+  test.use({ javaScriptEnabled: false });
+
+  test("shows the pre-rendered centre of the wall and the way to the full list", async ({ page }) => {
+    await page.goto("/personen");
+    const tiles = page.locator("[data-cell]");
+    expect(await tiles.count()).toBeGreaterThan(30);
+    // The pre-rendered tiles are real links to the biographies.
+    await expect(tiles.first()).toHaveAttribute("href", /^\/personen\/[a-z0-9-]+$/);
+    await page.getByRole("group", { name: "Ansicht" }).getByRole("link", { name: "Liste" }).click();
+    await expect(page.locator("article[data-vt-item]")).toHaveCount(200);
+  });
+});
+
+test("the pre-rendered wall is already zoomed for the screen: no jump at hydration", async ({ page }) => {
+  await page.goto("/personen");
+  // Transform as set by the inline script before hydration …
+  const beforeHydration = await page
+    .locator(".canvas-world")
+    .evaluate((el) => (el as HTMLElement).style.transform);
+  await page.waitForLoadState("networkidle");
+  const after = await page.locator(".canvas-world").evaluate((el) => (el as HTMLElement).style.transform);
+  // … and after the canvas took over: the same scale (the camera may differ by rounding only).
+  const scale = (t: string) => Number(/scale\(([\d.]+)\)/.exec(t)?.[1]);
+  expect(scale(beforeHydration)).toBeGreaterThan(0);
+  expect(Math.abs(scale(after) - scale(beforeHydration))).toBeLessThan(0.001);
+});

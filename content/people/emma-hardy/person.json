@@ -1,0 +1,60 @@
+{
+  "slug": "emma-hardy",
+  "name": {
+    "display": "Emma Hardy",
+    "sort": "Hardy, Emma"
+  },
+  "born": {
+    "date": "1840-11-24",
+    "place": "plymouth"
+  },
+  "died": {
+    "date": "1912-11-27",
+    "place": "dorchester"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1912",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emma_Lavinia_Gifford.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "plymouth",
+      "dorchester"
+    ]
+  },
+  "prominence": 0.28,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q14567754",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Emma Gifford",
+      "url": "https://de.wikipedia.org/wiki/Emma_Gifford",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Emma Gifford",
+      "url": "https://en.wikipedia.org/wiki/Emma_Gifford",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q14567754"
+}

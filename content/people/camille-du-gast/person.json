@@ -1,0 +1,59 @@
+{
+  "slug": "camille-du-gast",
+  "name": {
+    "display": "Camille du Gast",
+    "sort": "Gast, Camille du"
+  },
+  "born": {
+    "date": "1868-05-30",
+    "place": "paris"
+  },
+  "died": {
+    "date": "1942-04-24",
+    "place": "paris"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "unknown - 110 year old publicity photo - at Library of congress",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Camille_du_Gast_-_presumed_c.1890s_Full_body_publicity_picture_for_a_piano_recital.jpg"
+  },
+  "facets": {
+    "field": [
+      "medicine"
+    ],
+    "place": [
+      "paris"
+    ]
+  },
+  "prominence": 0.43,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2935120",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Camille du Gast",
+      "url": "https://de.wikipedia.org/wiki/Camille_du_Gast",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Camille du Gast",
+      "url": "https://en.wikipedia.org/wiki/Camille_du_Gast",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2935120"
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "johanna-naber",
+  "name": {
+    "display": "Johanna Naber",
+    "sort": "Naber, Johanna"
+  },
+  "born": {
+    "date": "1859-03-25",
+    "place": "haarlem"
+  },
+  "died": {
+    "date": "1941-05-30",
+    "place": "the-hague"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author (anonymously published in 1938)",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Johanna_Naber_omstreeks_1898_8105.tif"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "science"
+    ],
+    "place": [
+      "haarlem",
+      "the-hague"
+    ]
+  },
+  "prominence": 0.36,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q1696989",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Johanna Naber",
+      "url": "https://de.wikipedia.org/wiki/Johanna_Naber",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Johanna Naber",
+      "url": "https://en.wikipedia.org/wiki/Johanna_Naber",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q1696989"
+}

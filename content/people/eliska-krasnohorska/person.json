@@ -1,0 +1,61 @@
+{
+  "slug": "eliska-krasnohorska",
+  "name": {
+    "display": "Eliška Krásnohorská",
+    "sort": "Krásnohorská, Eliška"
+  },
+  "born": {
+    "date": "1847-11-18",
+    "place": "prague"
+  },
+  "died": {
+    "date": "1926-11-26",
+    "place": "new-town"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Jan Vilímek (1860–1938), 1890",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eli%C5%A1ka_Kr%C3%A1snohorsk%C3%A1_%E2%80%93_Jan_Vil%C3%ADmek_%E2%80%93_%C4%8Cesk%C3%A9_album.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education"
+    ],
+    "place": [
+      "prague",
+      "new-town"
+    ]
+  },
+  "prominence": 0.59,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q274171",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Eliška Krásnohorská",
+      "url": "https://de.wikipedia.org/wiki/Eli%C5%A1ka_Kr%C3%A1snohorsk%C3%A1",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Eliška Krásnohorská",
+      "url": "https://en.wikipedia.org/wiki/Eli%C5%A1ka_Kr%C3%A1snohorsk%C3%A1",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q274171"
+}

@@ -1,0 +1,62 @@
+{
+  "slug": "clara-zetkin",
+  "name": {
+    "display": "Clara Zetkin",
+    "sort": "Zetkin, Clara"
+  },
+  "born": {
+    "date": "1857-07-05",
+    "place": "koenigshain-wiederau"
+  },
+  "died": {
+    "date": "1933-06-20",
+    "place": "arkhangelskoye"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1923",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:C_Zetkin_1.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "education"
+    ],
+    "place": [
+      "koenigshain-wiederau",
+      "arkhangelskoye"
+    ]
+  },
+  "prominence": 0.89,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q75823",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Clara Zetkin",
+      "url": "https://de.wikipedia.org/wiki/Clara_Zetkin",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Clara Zetkin",
+      "url": "https://en.wikipedia.org/wiki/Clara_Zetkin",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q75823"
+}

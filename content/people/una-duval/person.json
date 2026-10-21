@@ -1,0 +1,60 @@
+{
+  "slug": "una-duval",
+  "name": {
+    "display": "Una Duval",
+    "sort": "Duval, Una"
+  },
+  "born": {
+    "date": "1880",
+    "place": "upper-norwood"
+  },
+  "died": {
+    "date": "1975-02-24",
+    "place": "london"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Ethel Wright, 1912",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Una_Duval_Lovre_and_Honour_and_not_Obey_by_Ethel_Wright_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "upper-norwood",
+      "london"
+    ]
+  },
+  "prominence": 0.28,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q18917602",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Una Duval",
+      "url": "https://de.wikipedia.org/wiki/Una_Duval",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Una Duval",
+      "url": "https://en.wikipedia.org/wiki/Una_Duval",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q18917602"
+}

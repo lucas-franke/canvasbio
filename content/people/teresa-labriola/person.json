@@ -1,0 +1,62 @@
+{
+  "slug": "teresa-labriola",
+  "name": {
+    "display": "Teresa Labriola",
+    "sort": "Labriola, Teresa"
+  },
+  "born": {
+    "date": "1873-02-17",
+    "place": "naples"
+  },
+  "died": {
+    "date": "1941-02-06",
+    "place": "rome"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "No photographer credited in original source., 1921",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Teresa_Labriola_1921.png"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education",
+      "science"
+    ],
+    "place": [
+      "naples",
+      "rome"
+    ]
+  },
+  "prominence": 0.4,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q20160426",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Teresa Labriola",
+      "url": "https://de.wikipedia.org/wiki/Teresa_Labriola",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Teresa Labriola",
+      "url": "https://en.wikipedia.org/wiki/Teresa_Labriola",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q20160426"
+}

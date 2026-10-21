@@ -1,0 +1,59 @@
+{
+  "slug": "bessie-hatton",
+  "name": {
+    "display": "Bessie Hatton",
+    "sort": "Hatton, Bessie"
+  },
+  "born": {
+    "date": "1867",
+    "place": "claines"
+  },
+  "died": {
+    "date": "1964-03-25"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Herbert Rose Barraud, 1890",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bessie-Hatton.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "arts"
+    ],
+    "place": [
+      "claines"
+    ]
+  },
+  "prominence": 0.31,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q50676513",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Bessie Hatton",
+      "url": "https://de.wikipedia.org/wiki/Bessie_Hatton",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Bessie Hatton",
+      "url": "https://en.wikipedia.org/wiki/Bessie_Hatton",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q50676513"
+}

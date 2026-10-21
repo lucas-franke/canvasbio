@@ -1,0 +1,62 @@
+{
+  "slug": "marie-juchacz",
+  "name": {
+    "display": "Marie Juchacz",
+    "sort": "Juchacz, Marie"
+  },
+  "born": {
+    "date": "1879-03-15",
+    "place": "gorzow-wielkopolski"
+  },
+  "died": {
+    "date": "1956-01-28",
+    "place": "duesseldorf"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unbekannt",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stamps_of_Germany_(BRD)_1969,_MiNr_596.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "medicine",
+      "arts"
+    ],
+    "place": [
+      "gorzow-wielkopolski",
+      "duesseldorf"
+    ]
+  },
+  "prominence": 0.46,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q85820",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Marie Juchacz",
+      "url": "https://de.wikipedia.org/wiki/Marie_Juchacz",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Marie Juchacz",
+      "url": "https://en.wikipedia.org/wiki/Marie_Juchacz",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q85820"
+}

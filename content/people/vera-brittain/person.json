@@ -1,0 +1,62 @@
+{
+  "slug": "vera-brittain",
+  "name": {
+    "display": "Vera Brittain",
+    "sort": "Brittain, Vera"
+  },
+  "born": {
+    "date": "1893-12-29",
+    "place": "newcastle-under-lyme"
+  },
+  "died": {
+    "date": "1970-03-29",
+    "place": "wimbledon"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Noelbabar, 1918",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vera_Brittain.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "medicine",
+      "social"
+    ],
+    "place": [
+      "newcastle-under-lyme",
+      "wimbledon"
+    ]
+  },
+  "prominence": 0.67,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q450802",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Vera Brittain",
+      "url": "https://de.wikipedia.org/wiki/Vera_Brittain",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Vera Brittain",
+      "url": "https://en.wikipedia.org/wiki/Vera_Brittain",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q450802"
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "marguerite-coppin",
+  "name": {
+    "display": "Marguerite Coppin",
+    "sort": "Coppin, Marguerite"
+  },
+  "born": {
+    "date": "1867-02-02",
+    "place": "saint-josse-ten-noode"
+  },
+  "died": {
+    "date": "1947-11-07",
+    "place": "clevedon"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Photographer J. Hermans, Bruges., 1908",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Les_muses_fran%C3%A7aises_1908_Marguerite_Coppin.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education"
+    ],
+    "place": [
+      "saint-josse-ten-noode",
+      "clevedon"
+    ]
+  },
+  "prominence": 0.4,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q15407112",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Marguerite Coppin",
+      "url": "https://de.wikipedia.org/wiki/Marguerite_Coppin",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Marguerite Coppin",
+      "url": "https://en.wikipedia.org/wiki/Marguerite_Coppin",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q15407112"
+}

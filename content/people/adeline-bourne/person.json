@@ -1,0 +1,58 @@
+{
+  "slug": "adeline-bourne",
+  "name": {
+    "display": "Adeline Bourne",
+    "sort": "Bourne, Adeline"
+  },
+  "born": {
+    "date": "1873-01-08",
+    "place": "presidencies-and-provinces-in-british-india"
+  },
+  "died": {
+    "date": "1965-02-08"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Dover Street Studios, 1912 via Naomi Paxton, 1912",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Adeline-Bourne-1912_via_Naomi-Paxton.jpg"
+  },
+  "facets": {
+    "field": [
+      "arts"
+    ],
+    "place": [
+      "presidencies-and-provinces-in-british-india"
+    ]
+  },
+  "prominence": 0.15,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q65486223",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Adeline Bourne",
+      "url": "https://de.wikipedia.org/wiki/Adeline_Bourne",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Adeline Bourne",
+      "url": "https://en.wikipedia.org/wiki/Adeline_Bourne",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q65486223"
+}

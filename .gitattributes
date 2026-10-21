@@ -1,0 +1,9 @@
+# Line endings: LF everywhere (Prettier, frontmatter parsing), also on Windows checkouts.
+* text=auto eol=lf
+
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.webp binary
+*.avif binary
+*.woff2 binary

@@ -1,0 +1,59 @@
+{
+  "slug": "emilie-gourd",
+  "name": {
+    "display": "Emilie Gourd",
+    "sort": "Gourd, Emilie"
+  },
+  "born": {
+    "date": "1879-12-19",
+    "place": "geneva"
+  },
+  "died": {
+    "date": "1946-01-04",
+    "place": "geneva"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Koncern Ilustrowany Kurier Codzienny, 1935",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emilie_Gourd_Wizyta_szwajcarskiej_dzia%C5%82aczki_feministycznej_Emilii_Gourd_w_siedzibie_IKC_w_Krakowie_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "geneva"
+    ]
+  },
+  "prominence": 0.38,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q1337318",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Emilie Gourd",
+      "url": "https://de.wikipedia.org/wiki/Emilie_Gourd",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Emilie Gourd",
+      "url": "https://en.wikipedia.org/wiki/Emilie_Gourd",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q1337318"
+}

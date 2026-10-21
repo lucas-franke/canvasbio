@@ -1,0 +1,60 @@
+{
+  "slug": "mary-collin",
+  "name": {
+    "display": "Mary Collin",
+    "sort": "Collin, Mary"
+  },
+  "born": {
+    "date": "1860-04-01",
+    "place": "cambridge"
+  },
+  "died": {
+    "date": "1955-07-22",
+    "place": "cardiff"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Mrs C. Blackeney Ward, 1924 (she died in 1939), 1924",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mary_Collin_by_C._Blackeney_Ward_1924.jpg"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "cambridge",
+      "cardiff"
+    ]
+  },
+  "prominence": 0.09,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q18819659",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Mary Collin",
+      "url": "https://de.wikipedia.org/wiki/Mary_Collin",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mary Collin",
+      "url": "https://en.wikipedia.org/wiki/Mary_Collin",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q18819659"
+}

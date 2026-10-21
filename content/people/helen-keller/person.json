@@ -1,0 +1,61 @@
+{
+  "slug": "helen-keller",
+  "name": {
+    "display": "Helen Keller",
+    "sort": "Keller, Helen"
+  },
+  "born": {
+    "date": "1880-06-27",
+    "place": "ivy-green"
+  },
+  "died": {
+    "date": "1968-06-01",
+    "place": "easton"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Los Angeles Times; restored by User:Rhododendrites, 1920",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Helen_Keller_circa_1920_-_restored.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "social"
+    ],
+    "place": [
+      "ivy-green",
+      "easton"
+    ]
+  },
+  "prominence": 0.99,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q38203",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Helen Keller",
+      "url": "https://de.wikipedia.org/wiki/Helen_Keller",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Helen Keller",
+      "url": "https://en.wikipedia.org/wiki/Helen_Keller",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q38203"
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "harriet-hanson-robinson",
+  "name": {
+    "display": "Harriet Hanson Robinson",
+    "sort": "Robinson, Harriet Hanson"
+  },
+  "born": {
+    "date": "1825-02-08",
+    "place": "boston"
+  },
+  "died": {
+    "date": "1911-12-22",
+    "place": "malden"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1843",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Harriet_Hanson_Robinson.png"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "boston",
+      "malden"
+    ]
+  },
+  "prominence": 0.36,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q16043789",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Harriet Hanson Robinson",
+      "url": "https://de.wikipedia.org/wiki/Harriet_Hanson_Robinson",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Harriet Hanson Robinson",
+      "url": "https://en.wikipedia.org/wiki/Harriet_Hanson_Robinson",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q16043789"
+}

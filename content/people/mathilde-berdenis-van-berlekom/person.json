@@ -1,0 +1,61 @@
+{
+  "slug": "mathilde-berdenis-van-berlekom",
+  "name": {
+    "display": "Mathilde Berdenis van Berlekom",
+    "sort": "Berlekom, Mathilde Berdenis van"
+  },
+  "born": {
+    "date": "1862-03-14",
+    "place": "middelburg"
+  },
+  "died": {
+    "date": "1952-04-22",
+    "place": "amsterdam"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Marie Heijermans, 1914",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:MathildeWibaut.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing"
+    ],
+    "place": [
+      "middelburg",
+      "amsterdam"
+    ]
+  },
+  "prominence": 0.15,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2149947",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Mathilde Wibaut",
+      "url": "https://de.wikipedia.org/wiki/Mathilde_Wibaut",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mathilde Berdenis van Berlekom",
+      "url": "https://en.wikipedia.org/wiki/Mathilde_Berdenis_van_Berlekom",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2149947"
+}

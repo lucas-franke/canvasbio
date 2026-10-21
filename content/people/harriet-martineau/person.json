@@ -1,0 +1,61 @@
+{
+  "slug": "harriet-martineau",
+  "name": {
+    "display": "Harriet Martineau",
+    "sort": "Martineau, Harriet"
+  },
+  "born": {
+    "date": "1802-06-12",
+    "place": "norwich"
+  },
+  "died": {
+    "date": "1876-06-27",
+    "place": "ambleside"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Richard Evans, 1834",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Harriet_Martineau_by_Richard_Evans.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "science"
+    ],
+    "place": [
+      "norwich",
+      "ambleside"
+    ]
+  },
+  "prominence": 0.74,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q234570",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Harriet Martineau",
+      "url": "https://de.wikipedia.org/wiki/Harriet_Martineau",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Harriet Martineau",
+      "url": "https://en.wikipedia.org/wiki/Harriet_Martineau",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q234570"
+}

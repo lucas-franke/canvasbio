@@ -1,0 +1,60 @@
+{
+  "slug": "adele-stuerzl",
+  "name": {
+    "display": "Adele Stürzl",
+    "sort": "Stürzl, Adele"
+  },
+  "born": {
+    "date": "1892-11-23",
+    "place": "vienna"
+  },
+  "died": {
+    "date": "1944-06-30",
+    "place": "munich-prison"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1942",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Adele_St%C3%BCrzl_Kriminalpolizeistelle_Innsbruck_ca1942.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "vienna",
+      "munich-prison"
+    ]
+  },
+  "prominence": 0.25,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q354512",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Adele Stürzl",
+      "url": "https://de.wikipedia.org/wiki/Adele_St%C3%BCrzl",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Adele Stürzl",
+      "url": "https://en.wikipedia.org/wiki/Adele_St%C3%BCrzl",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q354512"
+}

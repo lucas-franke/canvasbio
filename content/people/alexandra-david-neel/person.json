@@ -1,0 +1,61 @@
+{
+  "slug": "alexandra-david-neel",
+  "name": {
+    "display": "Alexandra David-Néel",
+    "sort": "David-Néel, Alexandra"
+  },
+  "born": {
+    "date": "1868-10-24",
+    "place": "saint-mande"
+  },
+  "died": {
+    "date": "1969-09-08",
+    "place": "digne-les-bains"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alexandra_David-N%C3%A9el,_also_know_as_Louise_Eugenie_Alexandrine_Marie_David_19th_century_(cropped).gif"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "arts"
+    ],
+    "place": [
+      "saint-mande",
+      "digne-les-bains"
+    ]
+  },
+  "prominence": 0.72,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q230456",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Alexandra David-Néel",
+      "url": "https://de.wikipedia.org/wiki/Alexandra_David-N%C3%A9el",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Alexandra David-Néel",
+      "url": "https://en.wikipedia.org/wiki/Alexandra_David-N%C3%A9el",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q230456"
+}

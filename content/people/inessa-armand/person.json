@@ -1,0 +1,61 @@
+{
+  "slug": "inessa-armand",
+  "name": {
+    "display": "Inessa Armand",
+    "sort": "Armand, Inessa"
+  },
+  "born": {
+    "date": "1874-04-26",
+    "place": "paris"
+  },
+  "died": {
+    "date": "1920-09-24",
+    "place": "nalchik"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1920",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Inessa_Armand_1920.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing"
+    ],
+    "place": [
+      "paris",
+      "nalchik"
+    ]
+  },
+  "prominence": 0.71,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q233514",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Inessa Armand",
+      "url": "https://de.wikipedia.org/wiki/Inessa_Armand",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Inessa Armand",
+      "url": "https://en.wikipedia.org/wiki/Inessa_Armand",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q233514"
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "anna-forstenheim",
+  "name": {
+    "display": "Anna Forstenheim",
+    "sort": "Forstenheim, Anna"
+  },
+  "born": {
+    "date": "1846-09-21",
+    "place": "zagreb"
+  },
+  "died": {
+    "date": "1889-10-09",
+    "place": "bad-voeslau"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1889",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anna_Forstenheim.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "zagreb",
+      "bad-voeslau"
+    ]
+  },
+  "prominence": 0.15,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q560429",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Anna Forstenheim",
+      "url": "https://de.wikipedia.org/wiki/Anna_Forstenheim",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Anna Forstenheim",
+      "url": "https://en.wikipedia.org/wiki/Anna_Forstenheim",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q560429"
+}

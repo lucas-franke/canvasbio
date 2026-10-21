@@ -1,0 +1,32 @@
+---
+summary:
+  - US-amerikanische Abolitionistin
+  - 1824–1894 · Salem
+portraitAlt: Porträt von Sarah Parker Remond
+facts:
+  - label: Geboren
+    value: 6. Juni 1824 in Salem
+  - label: Gestorben
+    value: 13. Dezember 1894 in Rom
+  - label: Wirkungsfeld
+    value: Ärztin, Autobiografin, Abolitionistin, Suffragette
+timeline:
+  - date: 6. Juni 1824
+    event: Geboren in Salem
+  - date: 13. Dezember 1894
+    event: Gestorben in Rom
+---
+
+Sarah Parker Remond (* 6. Juni 1826 in Salem, Massachusetts; † 13. Dezember 1894) war eine US-amerikanische Abolitionistin. Als Tochter freier Afroamerikaner in den Nordstaaten geboren, trat sie ab den 1840er Jahren in Neuengland als Rednerin und Aktivistin für die Abschaffung der Sklaverei in Erscheinung, unter anderem in Verbindung mit der American Anti-Slavery Society. Von 1859 bis 1865 lebte sie im Vereinigten Königreich, wo sie bald zu einer prominentesten Abolitionisten des Landes wurde. Nach einer kurzen Rückkehr in die Vereinigten Staaten zog sich Remond 1866 nach Italien zurück. Gerade in den USA überschnitt sich ihr Aktivismus auch mit der Frauenrechtsbewegung.
+
+## Leben
+
+Remond wurde 1826 als freier Afroamerikaner in Salem bei Boston geboren. Ihr Vater war mit zehn Jahren aus Curaçao in die Vereinigten Staaten eingewandert und war dort zu einem wohlhabenden Kaufmann aufgestiegen; ihre Mutter war die Tochter eines afroamerikanischen Veterans des Unabhängigkeitskriegs. Beide Elternteile engagierten sich in der Abolitionismusbewegung und unter ihren Geschwistern war der spätere Abolitionist Charles Lenox Remond (1810–1873). Sarah Remond besuchte zunächst eine öffentliche Schule in Salem, musste diese aber verlassen, als die Schulbehörde beschloss, afroamerikanische Kinder auszusperren. Die gesamte Familie zog daraufhin nach Newport, Rhode Island, und kehrte erst 1841 nach Massachusetts zurück, wo Remond selbst begann, sich in einigen lokalen abolitionistischen Gruppierungen zu engagieren. Ab 1842 trat sie gemeinsam mit ihrem Brider Charles für die Massachusetts Anti-Slavery Society als Rednerin in Erscheinung. 1846 trat sie in Opposition zum Mexikanisch-Amerikanischen Krieg auf.
+
+Neben den Reden waren auch Besuche an öffentlichen Auftritte Teil von Remonds Aktivismus, um dort die gesellschaftliche Rassentrennung praktisch herauszufordern. Im Mai 1853 erwarb Remond Eintrittskarten für den ersten Rang im Bostoner Howard Athenaeum für einen Auftritt der deutschen Opernsängerin Henriette Sontag, obgleich der Veranstalter Afroamerikaner nur in den Galerien zuließ. Remond wurde daher der Zutritt verwehrt, woraufhin sie den Veranstalter erfolgreich vor einem Bezirksgericht im Essex County verklagte. Ähnlich agierte sie einige Monate später auf einer Ausstellung in Philadelphia. 1856 unternahmen Sarah und Charles Remond gemeinsam mit Wendell Phillips, Abby Kelley, Susan B. Anthony und Stephen Symonds Foster eine Vortragsreise durch den Bundesstaat New York. 1858 wurde Remond von der American Anti-Slavery Society fest als Rednerin angestellt; im gleichen Jahr war sie Delegierte auf der National Women’s Right Convention. Zum Jahresende entschied sie sich jedoch, ins Vereinigte Königreich zu gehen, wo sie dem US-amerikanischen Rassismus entkommen, weiter für das Ende der Sklaverei kämpfen und sich parallel weiterbilden wollte. Am 28. Dezember 1858 verließ sie die USA mit Ziel England, wo sie sich am Bedford College einschrieb.
+
+Parallel unternahm Remond von 1859 bis 1861 eine große abolitionistische Vortragsreise durch England, Schottland und Irland. Da der britische Abolitionismus von Männern dominiert wurde, stach Remond heraus, zumal sie sich als US-amerikanische Lady präsentierte und detailliert von der sexualisierten Gewalt berichtete, die Sklavinnen im Süden der USA erlitten. Als eine der ersten Redner waren ihre Vorträge sowohl für Männern als auch Frauen zugänglich und Remond gelang es bald, sowohl in der Ober- als auch in der Unterschicht Gehör zu finden. Wohl aufgrund ihrer Beliebtheit im Vereinigten Königreich verweigerte ihr jedoch die US-Botschaft in London im November 1859 ein Visum für eine Reise nach Frankreich mit der Begründung, dass sie (auf Basis von Dred Scott v. Sandford) als Afroamerikanerin keine Staatsbürgerin der USA sei. Die Affäre wuchs sich zu einer diplomatischen Verstimmung zwischen Großbritannien und der US-Botschaft aus, während Remond letztlich im Vereinigten Königreich blieb. Nach dem Ausbruch des Sezessionskriegs 1861 verzichtete sie zunächst auch auf eine Rückkehr in die USA und engagierte sich stattdessen weiter in England.
+
+In London lebte Remond im Haushalt des abolitionistischen Politikers Peter Alfred Taylor und der Frauenrechtlerin Clementia Taylor. Gemeinsam mit den Taylors begründete Remond in den nächsten Jahren zwei abolitionistische Gruppierungen: 1859 war sie für einige Monate am London Emancipation Committee von Ellen und William Craft beteiligt. 1863 gründete Remond gemeinsam mit Clementia Taylor und einigen Mitstreiterinnen die Ladies’ London Emancipation Society, die eine Brücke zwischen Frauenbewegung und Abolitionismus zu schlagen versuchte. Unter anderem publizierte die Gruppe mit Unterstützung von Emily Faithfull über 12.000 Pamphlete, darunter auch ein Remond verfasster Text mit dem Titel The Negroes and Anglo-Africans as Freed Men and Soldiers. Nach dem Ende des Sezessionskriegs beteiligte sich Remond ferner gemeinsam mit Ellen Craft an einer Gruppe, die Hilfeleistungen für die befreiten Afroamerikaner in den Südstaaten leisten wollte. Ende 1865 kehrte Remond schließlich in die USA zurück und schloss sich dort der American Equal Rights Association an, einer Gruppe, die gleiche Bürgerrechte für alle Amerikaner forderte, darunter Afroamerikaner und Frauen.
+
+1866 zog Remond nach Florenz, wo sie eine medizinische Ausbildung am Ospedale di Santa Maria Nuova begann, die sie 1871 erfolgreich abschloss. Danach blieb sie als praktizierende Medizinerin in Florenz. 1877 heiratete sie einen Italiener namens Lazzaro Pintor. Später zog sie wohl nach Rom, wo sie möglicherweise gemeinsam mit ihrer Schwester Caroline lebte. Viele Details über ihr späteres Leben sind aber unbekannt. Remond starb Ende 1894 im Alter von 68 Jahren und liegt auf dem Protestantischen Friedhof in Rom begraben. Eine 2016 erschienene Biografie von Sirpa Salenius versucht, ein Licht auf Remonds Leben in Europa zu werfen, nicht zuletzt auf ihr Lebensende in Italien.

@@ -1,0 +1,60 @@
+{
+  "slug": "jane-cobden",
+  "name": {
+    "display": "Jane Cobden",
+    "sort": "Cobden, Jane"
+  },
+  "born": {
+    "date": "1851-04-28",
+    "place": "london"
+  },
+  "died": {
+    "date": "1947-07-07",
+    "place": "fernhurst"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Fradelle & Young (Life time: not applicable)",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jane_Cobden.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "london",
+      "fernhurst"
+    ]
+  },
+  "prominence": 0.43,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6151258",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Jane Cobden",
+      "url": "https://de.wikipedia.org/wiki/Jane_Cobden",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Jane Cobden",
+      "url": "https://en.wikipedia.org/wiki/Jane_Cobden",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6151258"
+}

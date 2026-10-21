@@ -1,0 +1,62 @@
+{
+  "slug": "jane-addams",
+  "name": {
+    "display": "Jane Addams",
+    "sort": "Addams, Jane"
+  },
+  "born": {
+    "date": "1860-09-06",
+    "place": "cedarville"
+  },
+  "died": {
+    "date": "1935-05-22",
+    "place": "chicago"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Harris Ewing, publisher, 1905",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:ADDAMS,_JANE_21664v_(cropped2).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "science",
+      "social"
+    ],
+    "place": [
+      "cedarville",
+      "chicago"
+    ]
+  },
+  "prominence": 0.87,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q180989",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Jane Addams",
+      "url": "https://de.wikipedia.org/wiki/Jane_Addams",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Jane Addams",
+      "url": "https://en.wikipedia.org/wiki/Jane_Addams",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q180989"
+}

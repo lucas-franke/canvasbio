@@ -1,0 +1,60 @@
+{
+  "slug": "jessie-mackaye",
+  "name": {
+    "display": "Jessie MacKaye",
+    "sort": "MacKaye, Jessie"
+  },
+  "born": {
+    "date": "1876",
+    "place": "chicago"
+  },
+  "died": {
+    "date": "1921-04-18",
+    "place": "east-river"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "The original uploader was Richard Arthur Norton (1958- ) at English Wikipedia.",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jessie_Belle_Hardy_Stubbs_MacKaye_(crop).jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "chicago",
+      "east-river"
+    ]
+  },
+  "prominence": 0.2,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q1688278",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Jessie Belle Hardy Stubbs MacKaye",
+      "url": "https://de.wikipedia.org/wiki/Jessie_Belle_Hardy_Stubbs_MacKaye",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Jessie Belle Hardy Stubbs MacKaye",
+      "url": "https://en.wikipedia.org/wiki/Jessie_Belle_Hardy_Stubbs_MacKaye",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q1688278"
+}

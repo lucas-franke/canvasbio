@@ -1,0 +1,65 @@
+{
+  "slug": "anita-augspurg",
+  "name": {
+    "display": "Anita Augspurg",
+    "sort": "Augspurg, Anita"
+  },
+  "born": {
+    "date": "1857-09-22",
+    "place": "verden"
+  },
+  "died": {
+    "date": "1943-12-20",
+    "place": "zurich"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Hofatelier Elvira, 1902",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anita_Augspurg.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "education",
+      "science",
+      "arts",
+      "social"
+    ],
+    "place": [
+      "verden",
+      "zurich"
+    ]
+  },
+  "prominence": 0.58,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q71410",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Anita Augspurg",
+      "url": "https://de.wikipedia.org/wiki/Anita_Augspurg",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Anita Augspurg",
+      "url": "https://en.wikipedia.org/wiki/Anita_Augspurg",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q71410"
+}

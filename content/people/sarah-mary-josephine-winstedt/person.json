@@ -1,0 +1,60 @@
+{
+  "slug": "sarah-mary-josephine-winstedt",
+  "name": {
+    "display": "Sarah Mary Josephine Winstedt",
+    "sort": "Winstedt, Sarah Mary Josephine"
+  },
+  "born": {
+    "date": "1886-04-04",
+    "place": "sixmilebridge"
+  },
+  "died": {
+    "date": "1972-09-09",
+    "place": "havant"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1936",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sarah_Winstedt_and_cigar_1936.jpg"
+  },
+  "facets": {
+    "field": [
+      "medicine"
+    ],
+    "place": [
+      "sixmilebridge",
+      "havant"
+    ]
+  },
+  "prominence": 0.28,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q28043906",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Sarah Winstedt",
+      "url": "https://de.wikipedia.org/wiki/Sarah_Winstedt",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Sarah Winstedt",
+      "url": "https://en.wikipedia.org/wiki/Sarah_Winstedt",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q28043906"
+}

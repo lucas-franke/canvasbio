@@ -1,0 +1,60 @@
+{
+  "slug": "nellie-bly",
+  "name": {
+    "display": "Nellie Bly",
+    "sort": "Bly, Nellie"
+  },
+  "born": {
+    "date": "1864-05-05",
+    "place": "burrell-township"
+  },
+  "died": {
+    "date": "1922-01-27",
+    "place": "new-york-city"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "H. J. Myers, photographer, 1890",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nellie_Bly_2.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "burrell-township",
+      "new-york-city"
+    ]
+  },
+  "prominence": 0.79,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q230299",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Nellie Bly",
+      "url": "https://de.wikipedia.org/wiki/Nellie_Bly",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Nellie Bly",
+      "url": "https://en.wikipedia.org/wiki/Nellie_Bly",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q230299"
+}

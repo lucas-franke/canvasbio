@@ -1,0 +1,61 @@
+{
+  "slug": "edith-cowan",
+  "name": {
+    "display": "Edith Cowan",
+    "sort": "Cowan, Edith"
+  },
+  "born": {
+    "date": "1861-08-02",
+    "place": "geraldton"
+  },
+  "died": {
+    "date": "1932-06-09",
+    "place": "subiaco"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown photographer, restored by Adam Cuerden, 1895",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Edith_Cowan_1900.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "social"
+    ],
+    "place": [
+      "geraldton",
+      "subiaco"
+    ]
+  },
+  "prominence": 0.54,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2376505",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Edith Cowan",
+      "url": "https://de.wikipedia.org/wiki/Edith_Cowan",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Edith Cowan",
+      "url": "https://en.wikipedia.org/wiki/Edith_Cowan",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2376505"
+}

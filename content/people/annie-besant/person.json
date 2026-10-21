@@ -1,0 +1,62 @@
+{
+  "slug": "annie-besant",
+  "name": {
+    "display": "Annie Besant",
+    "sort": "Besant, Annie"
+  },
+  "born": {
+    "date": "1847-10-01",
+    "place": "clapham"
+  },
+  "died": {
+    "date": "1933-09-20",
+    "place": "adyar"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1897",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Annie_Besant,_LoC.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "science"
+    ],
+    "place": [
+      "clapham",
+      "adyar"
+    ]
+  },
+  "prominence": 0.83,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q464318",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Annie Besant",
+      "url": "https://de.wikipedia.org/wiki/Annie_Besant",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Annie Besant",
+      "url": "https://en.wikipedia.org/wiki/Annie_Besant",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q464318"
+}

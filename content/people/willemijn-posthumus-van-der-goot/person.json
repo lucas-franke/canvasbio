@@ -1,0 +1,61 @@
+{
+  "slug": "willemijn-posthumus-van-der-goot",
+  "name": {
+    "display": "Willemijn Posthumus-van der Goot",
+    "sort": "Goot, Willemijn Posthumus-van der"
+  },
+  "born": {
+    "date": "1897-05-02",
+    "place": "pretoria"
+  },
+  "died": {
+    "date": "1989-01-16",
+    "place": "amsterdam"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown photographer, 1920",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:WillemijnPosthumusvanderGoot.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "science"
+    ],
+    "place": [
+      "pretoria",
+      "amsterdam"
+    ]
+  },
+  "prominence": 0.36,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2576811",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Willemijn Posthumus-van der Goot",
+      "url": "https://de.wikipedia.org/wiki/Willemijn_Posthumus-van_der_Goot",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Willemijn Posthumus-van der Goot",
+      "url": "https://en.wikipedia.org/wiki/Willemijn_Posthumus-van_der_Goot",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2576811"
+}

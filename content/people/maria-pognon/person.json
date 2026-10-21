@@ -1,0 +1,60 @@
+{
+  "slug": "maria-pognon",
+  "name": {
+    "display": "Maria Pognon",
+    "sort": "Pognon, Maria"
+  },
+  "born": {
+    "date": "1844-02-15",
+    "place": "honfleur"
+  },
+  "died": {
+    "date": "1925-04-17",
+    "place": "sydney"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Léopold-Émile Reutlinger, 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maria_Pognon.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "honfleur",
+      "sydney"
+    ]
+  },
+  "prominence": 0.4,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q21294794",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Maria Pognon",
+      "url": "https://de.wikipedia.org/wiki/Maria_Pognon",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Maria Pognon",
+      "url": "https://en.wikipedia.org/wiki/Maria_Pognon",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q21294794"
+}

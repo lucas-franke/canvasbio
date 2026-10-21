@@ -1,0 +1,63 @@
+{
+  "slug": "charlotte-perkins-gilman",
+  "name": {
+    "display": "Charlotte Perkins Gilman",
+    "sort": "Gilman, Charlotte Perkins"
+  },
+  "born": {
+    "date": "1860-07-03",
+    "place": "hartford"
+  },
+  "died": {
+    "date": "1935-08-17",
+    "place": "pasadena"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Hollinger, 1904",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Photo_of_Charlotte_Perkins_Gilman.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "science",
+      "arts",
+      "social"
+    ],
+    "place": [
+      "hartford",
+      "pasadena"
+    ]
+  },
+  "prominence": 0.75,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q287752",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Charlotte Perkins Gilman",
+      "url": "https://de.wikipedia.org/wiki/Charlotte_Perkins_Gilman",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Charlotte Perkins Gilman",
+      "url": "https://en.wikipedia.org/wiki/Charlotte_Perkins_Gilman",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q287752"
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "elizabeth-blackwell",
+  "name": {
+    "display": "Elizabeth Blackwell",
+    "sort": "Blackwell, Elizabeth"
+  },
+  "born": {
+    "date": "1821-02-03",
+    "place": "bristol"
+  },
+  "died": {
+    "date": "1910-05-31",
+    "place": "hastings"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown artist",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elizabeth_Blackwell_NLM_02.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "medicine"
+    ],
+    "place": [
+      "bristol",
+      "hastings"
+    ]
+  },
+  "prominence": 0.8,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q234572",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Elizabeth Blackwell (Medizinerin)",
+      "url": "https://de.wikipedia.org/wiki/Elizabeth_Blackwell_(Medizinerin)",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Elizabeth Blackwell",
+      "url": "https://en.wikipedia.org/wiki/Elizabeth_Blackwell",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q234572"
+}

@@ -1,0 +1,62 @@
+{
+  "slug": "ethel-smyth",
+  "name": {
+    "display": "Ethel Smyth",
+    "sort": "Smyth, Ethel"
+  },
+  "born": {
+    "date": "1858-04-22",
+    "place": "sidcup"
+  },
+  "died": {
+    "date": "1944-05-08",
+    "place": "woking"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Adam Cuerden, 1922",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ethel_Smyth.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "medicine",
+      "arts"
+    ],
+    "place": [
+      "sidcup",
+      "woking"
+    ]
+  },
+  "prominence": 0.65,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q236599",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Ethel Smyth",
+      "url": "https://de.wikipedia.org/wiki/Ethel_Smyth",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ethel Smyth",
+      "url": "https://en.wikipedia.org/wiki/Ethel_Smyth",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q236599"
+}

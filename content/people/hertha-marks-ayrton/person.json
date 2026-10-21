@@ -1,0 +1,61 @@
+{
+  "slug": "hertha-marks-ayrton",
+  "name": {
+    "display": "Hertha Marks Ayrton",
+    "sort": "Ayrton, Hertha Marks"
+  },
+  "born": {
+    "date": "1854-04-28",
+    "place": "portsea-island"
+  },
+  "died": {
+    "date": "1923-08-23",
+    "place": "lancing"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author,for en:Bain News Service (publisher), 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hertha_Ayrton_LCCN2014716701_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "science"
+    ],
+    "place": [
+      "portsea-island",
+      "lancing"
+    ]
+  },
+  "prominence": 0.7,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q17522",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Hertha Marks Ayrton",
+      "url": "https://de.wikipedia.org/wiki/Hertha_Marks_Ayrton",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Hertha Ayrton",
+      "url": "https://en.wikipedia.org/wiki/Hertha_Ayrton",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q17522"
+}

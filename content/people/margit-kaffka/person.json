@@ -1,0 +1,60 @@
+{
+  "slug": "margit-kaffka",
+  "name": {
+    "display": "Margit Kaffka",
+    "sort": "Kaffka, Margit"
+  },
+  "born": {
+    "date": "1880-06-10",
+    "place": "carei"
+  },
+  "died": {
+    "date": "1918-12-01",
+    "place": "budapest"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Aladár Székely, 1912",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kaffka_Margit.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "carei",
+      "budapest"
+    ]
+  },
+  "prominence": 0.55,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q287762",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Margit Kaffka",
+      "url": "https://de.wikipedia.org/wiki/Margit_Kaffka",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Margit Kaffka",
+      "url": "https://en.wikipedia.org/wiki/Margit_Kaffka",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q287762"
+}

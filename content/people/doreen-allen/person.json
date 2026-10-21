@@ -1,0 +1,60 @@
+{
+  "slug": "doreen-allen",
+  "name": {
+    "display": "Doreen Allen",
+    "sort": "Allen, Doreen"
+  },
+  "born": {
+    "date": "1879",
+    "place": "dartford"
+  },
+  "died": {
+    "date": "1963-06-18",
+    "place": "brighton"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown photographer c 1905, 1905",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Edith_Doreen_Allen_suffragette.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "dartford",
+      "brighton"
+    ]
+  },
+  "prominence": 0.31,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q84198235",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Doreen Allen",
+      "url": "https://de.wikipedia.org/wiki/Doreen_Allen",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Doreen Allen",
+      "url": "https://en.wikipedia.org/wiki/Doreen_Allen",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q84198235"
+}

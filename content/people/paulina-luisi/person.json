@@ -1,0 +1,62 @@
+{
+  "slug": "paulina-luisi",
+  "name": {
+    "display": "Paulina Luisi",
+    "sort": "Luisi, Paulina"
+  },
+  "born": {
+    "date": "1875-09-22",
+    "place": "colon"
+  },
+  "died": {
+    "date": "1950-07-16",
+    "place": "montevideo"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "William Belmont Parker, 1921",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paulina_Luisi.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "education",
+      "medicine"
+    ],
+    "place": [
+      "colon",
+      "montevideo"
+    ]
+  },
+  "prominence": 0.51,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q7154948",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Paulina Luisi",
+      "url": "https://de.wikipedia.org/wiki/Paulina_Luisi",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Paulina Luisi",
+      "url": "https://en.wikipedia.org/wiki/Paulina_Luisi",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q7154948"
+}

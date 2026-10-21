@@ -1,0 +1,60 @@
+{
+  "slug": "laura-clay",
+  "name": {
+    "display": "Laura Clay",
+    "sort": "Clay, Laura"
+  },
+  "born": {
+    "date": "1849-02-09",
+    "place": "white-hall"
+  },
+  "died": {
+    "date": "1941-06-29",
+    "place": "kentucky"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Bain Collection",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Laura_Clay_Kentucky.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "white-hall",
+      "kentucky"
+    ]
+  },
+  "prominence": 0.31,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6498802",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Laura Clay",
+      "url": "https://de.wikipedia.org/wiki/Laura_Clay",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Laura Clay",
+      "url": "https://en.wikipedia.org/wiki/Laura_Clay",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6498802"
+}

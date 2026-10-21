@@ -1,0 +1,60 @@
+{
+  "slug": "florence-norman",
+  "name": {
+    "display": "Florence Norman",
+    "sort": "Norman, Florence"
+  },
+  "born": {
+    "date": "1881",
+    "place": "greater-london"
+  },
+  "died": {
+    "date": "1964-03-01",
+    "place": "antibes"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1916",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lady_Florence_Norman.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "greater-london",
+      "antibes"
+    ]
+  },
+  "prominence": 0.2,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5460738",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Priscilla Norman",
+      "url": "https://de.wikipedia.org/wiki/Priscilla_Norman",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Priscilla Norman",
+      "url": "https://en.wikipedia.org/wiki/Priscilla_Norman",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5460738"
+}

@@ -1,0 +1,62 @@
+{
+  "slug": "andre-leo",
+  "name": {
+    "display": "André Léo",
+    "sort": "Léo, André"
+  },
+  "born": {
+    "date": "1824-08-18",
+    "place": "lusignan"
+  },
+  "died": {
+    "date": "1900-05-20",
+    "place": "saint-maurice"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Andreleo.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "science"
+    ],
+    "place": [
+      "lusignan",
+      "saint-maurice"
+    ]
+  },
+  "prominence": 0.55,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q458559",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): André Léo",
+      "url": "https://de.wikipedia.org/wiki/Andr%C3%A9_L%C3%A9o",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Victoire Léodile Béra",
+      "url": "https://en.wikipedia.org/wiki/Victoire_L%C3%A9odile_B%C3%A9ra",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q458559"
+}

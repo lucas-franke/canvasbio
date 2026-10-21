@@ -1,0 +1,60 @@
+{
+  "slug": "virginia-woolf",
+  "name": {
+    "display": "Virginia Woolf",
+    "sort": "Woolf, Virginia"
+  },
+  "born": {
+    "date": "1882-01-25",
+    "place": "london"
+  },
+  "died": {
+    "date": "1941-03-28",
+    "place": "lewes"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1927",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Virginia_Woolf_1927.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "london",
+      "lewes"
+    ]
+  },
+  "prominence": 1,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q40909",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Virginia Woolf",
+      "url": "https://de.wikipedia.org/wiki/Virginia_Woolf",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Virginia Woolf",
+      "url": "https://en.wikipedia.org/wiki/Virginia_Woolf",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q40909"
+}

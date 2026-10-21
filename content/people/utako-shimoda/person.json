@@ -1,0 +1,61 @@
+{
+  "slug": "utako-shimoda",
+  "name": {
+    "display": "Utako Shimoda",
+    "sort": "Shimoda, Utako"
+  },
+  "born": {
+    "date": "1854-09-29",
+    "place": "iwamura-domain"
+  },
+  "died": {
+    "date": "1936-10-08",
+    "place": "tokyo"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Utako_Shimoda.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education"
+    ],
+    "place": [
+      "iwamura-domain",
+      "tokyo"
+    ]
+  },
+  "prominence": 0.34,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q7902558",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Shimoda Utako",
+      "url": "https://de.wikipedia.org/wiki/Shimoda_Utako",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Utako Shimoda",
+      "url": "https://en.wikipedia.org/wiki/Utako_Shimoda",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q7902558"
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "catherine-booth",
+  "name": {
+    "display": "Catherine Booth",
+    "sort": "Booth, Catherine"
+  },
+  "born": {
+    "date": "1829-01-17",
+    "place": "ashbourne"
+  },
+  "died": {
+    "date": "1890-10-04",
+    "place": "clacton-on-sea"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Rudolf Cronau",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:185-catherine_booth_the_mother_of_the_salvation_army.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "ashbourne",
+      "clacton-on-sea"
+    ]
+  },
+  "prominence": 0.53,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q431614",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Catherine Booth",
+      "url": "https://de.wikipedia.org/wiki/Catherine_Booth",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Catherine Booth",
+      "url": "https://en.wikipedia.org/wiki/Catherine_Booth",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q431614"
+}

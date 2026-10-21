@@ -1,0 +1,60 @@
+{
+  "slug": "mary-richardson",
+  "name": {
+    "display": "Mary Richardson",
+    "sort": "Richardson, Mary"
+  },
+  "born": {
+    "date": "1889",
+    "place": "england"
+  },
+  "died": {
+    "date": "1961-11-07",
+    "place": "hastings"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Scotland Yard detective, specific photographer unknown, 1913",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mary_Raleigh_Richardson.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "england",
+      "hastings"
+    ]
+  },
+  "prominence": 0.5,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2482677",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Mary Richardson",
+      "url": "https://de.wikipedia.org/wiki/Mary_Richardson",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mary Richardson",
+      "url": "https://en.wikipedia.org/wiki/Mary_Richardson",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2482677"
+}

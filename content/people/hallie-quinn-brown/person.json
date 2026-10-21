@@ -1,0 +1,61 @@
+{
+  "slug": "hallie-quinn-brown",
+  "name": {
+    "display": "Hallie Quinn Brown",
+    "sort": "Brown, Hallie Quinn"
+  },
+  "born": {
+    "date": "1849-03-10",
+    "place": "pittsburgh"
+  },
+  "died": {
+    "date": "1949-09-16",
+    "place": "wilberforce"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Photographer not stated, 1897",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hallie_Q_Brown.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education"
+    ],
+    "place": [
+      "pittsburgh",
+      "wilberforce"
+    ]
+  },
+  "prominence": 0.43,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5642978",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Hallie Quinn Brown",
+      "url": "https://de.wikipedia.org/wiki/Hallie_Quinn_Brown",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Hallie Quinn Brown",
+      "url": "https://en.wikipedia.org/wiki/Hallie_Quinn_Brown",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5642978"
+}

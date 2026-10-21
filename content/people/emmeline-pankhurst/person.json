@@ -1,0 +1,61 @@
+{
+  "slug": "emmeline-pankhurst",
+  "name": {
+    "display": "Emmeline Pankhurst",
+    "sort": "Pankhurst, Emmeline"
+  },
+  "born": {
+    "date": "1858-07-15",
+    "place": "moss-side"
+  },
+  "died": {
+    "date": "1928-06-14",
+    "place": "hampstead"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Adam Cuerden, 1913",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emmeline_Pankhurst,_seated_(1913).jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing"
+    ],
+    "place": [
+      "moss-side",
+      "hampstead"
+    ]
+  },
+  "prominence": 0.83,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q211519",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Emmeline Pankhurst",
+      "url": "https://de.wikipedia.org/wiki/Emmeline_Pankhurst",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Emmeline Pankhurst",
+      "url": "https://en.wikipedia.org/wiki/Emmeline_Pankhurst",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q211519"
+}

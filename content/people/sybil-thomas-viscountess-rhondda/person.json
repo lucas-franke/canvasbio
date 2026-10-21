@@ -1,0 +1,60 @@
+{
+  "slug": "sybil-thomas-viscountess-rhondda",
+  "name": {
+    "display": "Sybil Thomas, Viscountess Rhondda",
+    "sort": "Rhondda, Sybil Thomas, Viscountess"
+  },
+  "born": {
+    "date": "1857-02-25",
+    "place": "brighton"
+  },
+  "died": {
+    "date": "1941-03-11",
+    "place": "newport"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Library of Congress http://lcweb2.loc.gov/cgi-bin/query/D?ils:7:./temp/~pp_hHKt::@@@mdb=fsaall,app,brum,detr,swann,look,gottscho,pan,horyd,genthe,var,cai,cd,hh,yan,lomax,ils,prok,brhc,nclc,matpc,iucpub,tgmi,lamb,hec",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sybil_Thomas,_Viscountess_Rhondda._(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "brighton",
+      "newport"
+    ]
+  },
+  "prominence": 0.34,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q7659535",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Sybil Thomas, Viscountess Rhondda",
+      "url": "https://de.wikipedia.org/wiki/Sybil_Thomas%2C_Viscountess_Rhondda",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Sybil Thomas, Viscountess Rhondda",
+      "url": "https://en.wikipedia.org/wiki/Sybil_Thomas%2C_Viscountess_Rhondda",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q7659535"
+}

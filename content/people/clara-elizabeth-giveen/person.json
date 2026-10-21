@@ -1,0 +1,58 @@
+{
+  "slug": "clara-elizabeth-giveen",
+  "name": {
+    "display": "Clara Elizabeth Giveen",
+    "sort": "Giveen, Clara Elizabeth"
+  },
+  "born": {
+    "date": "1887-05-22",
+    "place": "coleraine"
+  },
+  "died": {
+    "date": "1967-05-16"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "UK Government's Criminal Record Office c. 1914, 1914",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clara_Elizabeth_Giveen_1914.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "coleraine"
+    ]
+  },
+  "prominence": 0.25,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q52529297",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Clara Giveen",
+      "url": "https://de.wikipedia.org/wiki/Clara_Giveen",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Clara Giveen",
+      "url": "https://en.wikipedia.org/wiki/Clara_Giveen",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q52529297"
+}

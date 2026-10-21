@@ -1,0 +1,61 @@
+{
+  "slug": "ida-b-wells",
+  "name": {
+    "display": "Ida B. Wells",
+    "sort": "Wells, Ida B."
+  },
+  "born": {
+    "date": "1862-07-16",
+    "place": "holly-springs"
+  },
+  "died": {
+    "date": "1931-03-25",
+    "place": "chicago"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Adam Cuerden, 1893",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mary_Garrity_-_Ida_B._Wells-Barnett_-_Google_Art_Project_-_restoration_crop.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "science"
+    ],
+    "place": [
+      "holly-springs",
+      "chicago"
+    ]
+  },
+  "prominence": 0.72,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q289428",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Ida B. Wells",
+      "url": "https://de.wikipedia.org/wiki/Ida_B._Wells",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ida B. Wells",
+      "url": "https://en.wikipedia.org/wiki/Ida_B._Wells",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q289428"
+}

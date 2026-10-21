@@ -1,0 +1,60 @@
+{
+  "slug": "clementia-taylor",
+  "name": {
+    "display": "Clementia Taylor",
+    "sort": "Taylor, Clementia"
+  },
+  "born": {
+    "date": "1810-12-17",
+    "place": "brockdish"
+  },
+  "died": {
+    "date": "1908-04-11",
+    "place": "brighton"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Ida Husted Harper, 1898",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mentia-taylor.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "brockdish",
+      "brighton"
+    ]
+  },
+  "prominence": 0.31,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5131481",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Clementia Taylor",
+      "url": "https://de.wikipedia.org/wiki/Clementia_Taylor",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Clementia Taylor",
+      "url": "https://en.wikipedia.org/wiki/Clementia_Taylor",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5131481"
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "millicent-browne",
+  "name": {
+    "display": "Millicent Browne",
+    "sort": "Browne, Millicent"
+  },
+  "born": {
+    "date": "1881-12-25",
+    "place": "fulham"
+  },
+  "died": {
+    "date": "1975-02-08",
+    "place": "sutton-coldfield"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Linley Blathwayt, 1909",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Suffragette_Millicent_Browne_1909_by_Linley_Blathwayt.jpg"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "fulham",
+      "sutton-coldfield"
+    ]
+  },
+  "prominence": 0.09,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q51363230",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Millicent Browne",
+      "url": "https://de.wikipedia.org/wiki/Millicent_Browne",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Millicent Browne",
+      "url": "https://en.wikipedia.org/wiki/Millicent_Browne",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q51363230"
+}

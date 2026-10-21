@@ -1,0 +1,60 @@
+{
+  "slug": "josephine-conger-kaneko",
+  "name": {
+    "display": "Josephine Conger-Kaneko",
+    "sort": "Conger-Kaneko, Josephine"
+  },
+  "born": {
+    "date": "1875-05-05",
+    "place": "centralia"
+  },
+  "died": {
+    "date": "1934-07-28",
+    "place": "chicago"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Photographer not named., 1909",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Josephine_Conger-Kaneko_1909.png"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "centralia",
+      "chicago"
+    ]
+  },
+  "prominence": 0.28,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q16066809",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Josephine Conger-Kaneko",
+      "url": "https://de.wikipedia.org/wiki/Josephine_Conger-Kaneko",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Josephine Conger-Kaneko",
+      "url": "https://en.wikipedia.org/wiki/Josephine_Conger-Kaneko",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q16066809"
+}

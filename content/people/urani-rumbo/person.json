@@ -1,0 +1,61 @@
+{
+  "slug": "urani-rumbo",
+  "name": {
+    "display": "Urani Rumbo",
+    "sort": "Rumbo, Urani"
+  },
+  "born": {
+    "date": "1884",
+    "place": "stegopul"
+  },
+  "died": {
+    "date": "1936-03-26",
+    "place": "vlore"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1936",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Urani_Rumbo_(portret).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education"
+    ],
+    "place": [
+      "stegopul",
+      "vlore"
+    ]
+  },
+  "prominence": 0.57,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q7899648",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Urani Rumbo",
+      "url": "https://de.wikipedia.org/wiki/Urani_Rumbo",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Urani Rumbo",
+      "url": "https://en.wikipedia.org/wiki/Urani_Rumbo",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q7899648"
+}

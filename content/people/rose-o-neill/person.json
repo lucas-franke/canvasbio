@@ -1,0 +1,61 @@
+{
+  "slug": "rose-o-neill",
+  "name": {
+    "display": "Rose O'Neill",
+    "sort": "O'Neill, Rose"
+  },
+  "born": {
+    "date": "1874-06-25",
+    "place": "wilkes-barre"
+  },
+  "died": {
+    "date": "1944-04-06",
+    "place": "springfield"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Gertrude Käsebier, 1907",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rose_O%27Neill.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "arts"
+    ],
+    "place": [
+      "wilkes-barre",
+      "springfield"
+    ]
+  },
+  "prominence": 0.55,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q3442397",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Rose O’Neill",
+      "url": "https://de.wikipedia.org/wiki/Rose_O%E2%80%99Neill",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Rose O'Neill",
+      "url": "https://en.wikipedia.org/wiki/Rose_O'Neill",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q3442397"
+}

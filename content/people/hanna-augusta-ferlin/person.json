@@ -1,0 +1,58 @@
+{
+  "slug": "hanna-augusta-ferlin",
+  "name": {
+    "display": "Hanna Augusta Ferlin",
+    "sort": "Ferlin, Hanna Augusta"
+  },
+  "born": {
+    "date": "1870-08-15"
+  },
+  "died": {
+    "date": "1947-06-23",
+    "place": "faergelanda"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Hanna Ferlin (1870-1947), 1910",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hanna_Ferlin-crop.png"
+  },
+  "facets": {
+    "field": [
+      "arts"
+    ],
+    "place": [
+      "faergelanda"
+    ]
+  },
+  "prominence": 0.2,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q100741787",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Hanna Augusta Ferlin",
+      "url": "https://de.wikipedia.org/wiki/Hanna_Augusta_Ferlin",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Hanna Ferlin",
+      "url": "https://en.wikipedia.org/wiki/Hanna_Ferlin",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q100741787"
+}

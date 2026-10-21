@@ -1,0 +1,60 @@
+{
+  "slug": "josephine-butler",
+  "name": {
+    "display": "Josephine Butler",
+    "sort": "Butler, Josephine"
+  },
+  "born": {
+    "date": "1828-04-13",
+    "place": "glendale"
+  },
+  "died": {
+    "date": "1906-12-30",
+    "place": "wooler"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Josephine Butler, 1869",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Josphine_Butler_1869.jpg"
+  },
+  "facets": {
+    "field": [
+      "social"
+    ],
+    "place": [
+      "glendale",
+      "wooler"
+    ]
+  },
+  "prominence": 0.69,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q225863",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Josephine Butler",
+      "url": "https://de.wikipedia.org/wiki/Josephine_Butler",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Josephine Butler",
+      "url": "https://en.wikipedia.org/wiki/Josephine_Butler",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q225863"
+}

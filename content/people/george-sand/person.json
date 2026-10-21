@@ -1,0 +1,61 @@
+{
+  "slug": "george-sand",
+  "name": {
+    "display": "George Sand",
+    "sort": "Sand, George"
+  },
+  "born": {
+    "date": "1804-07-01",
+    "place": "paris"
+  },
+  "died": {
+    "date": "1876-06-08",
+    "place": "nohant-vic"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Auguste Charpentier, 1838",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:George_Sand.PNG"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "arts"
+    ],
+    "place": [
+      "paris",
+      "nohant-vic"
+    ]
+  },
+  "prominence": 0.94,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q3816",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): George Sand",
+      "url": "https://de.wikipedia.org/wiki/George_Sand",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): George Sand",
+      "url": "https://en.wikipedia.org/wiki/George_Sand",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q3816"
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "christabel-pankhurst",
+  "name": {
+    "display": "Christabel Pankhurst",
+    "sort": "Pankhurst, Christabel"
+  },
+  "born": {
+    "date": "1880-09-22",
+    "place": "trafford"
+  },
+  "died": {
+    "date": "1958-02-13",
+    "place": "santa-monica"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Agence de presse Meurisse, 1912",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:C.H._Pankhurst_a_Meurisse_1912.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "trafford",
+      "santa-monica"
+    ]
+  },
+  "prominence": 0.69,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q269863",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Christabel Pankhurst",
+      "url": "https://de.wikipedia.org/wiki/Christabel_Pankhurst",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Christabel Pankhurst",
+      "url": "https://en.wikipedia.org/wiki/Christabel_Pankhurst",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q269863"
+}

@@ -1,0 +1,62 @@
+{
+  "slug": "louisa-may-alcott",
+  "name": {
+    "display": "Louisa May Alcott",
+    "sort": "Alcott, Louisa May"
+  },
+  "born": {
+    "date": "1832-11-29",
+    "place": "germantown"
+  },
+  "died": {
+    "date": "1888-03-06",
+    "place": "roxbury"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Adam Cuerden, 1870",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Louisa_May_Alcott,_c._1870_-_Warren%27s_Portraits,_Boston.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education",
+      "medicine"
+    ],
+    "place": [
+      "germantown",
+      "roxbury"
+    ]
+  },
+  "prominence": 0.9,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q185696",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Louisa May Alcott",
+      "url": "https://de.wikipedia.org/wiki/Louisa_May_Alcott",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Louisa May Alcott",
+      "url": "https://en.wikipedia.org/wiki/Louisa_May_Alcott",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q185696"
+}

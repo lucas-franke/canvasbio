@@ -1,0 +1,60 @@
+{
+  "slug": "ellen-horup",
+  "name": {
+    "display": "Ellen Hørup",
+    "sort": "Hørup, Ellen"
+  },
+  "born": {
+    "date": "1871-12-29",
+    "place": "copenhagen"
+  },
+  "died": {
+    "date": "1953-03-25",
+    "place": "copenhagen"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Neuhaus, Even (6.2.1863-20.4.1946) fotograf, 1888",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ellen_H%C3%B8rup.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "social"
+    ],
+    "place": [
+      "copenhagen"
+    ]
+  },
+  "prominence": 0.28,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q16595296",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Ellen Hørup",
+      "url": "https://de.wikipedia.org/wiki/Ellen_H%C3%B8rup",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ellen Hørup",
+      "url": "https://en.wikipedia.org/wiki/Ellen_H%C3%B8rup",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q16595296"
+}

@@ -1,0 +1,62 @@
+{
+  "slug": "alice-ruehle-gerstel",
+  "name": {
+    "display": "Alice Rühle-Gerstel",
+    "sort": "Rühle-Gerstel, Alice"
+  },
+  "born": {
+    "date": "1894-03-24",
+    "place": "prague"
+  },
+  "died": {
+    "date": "1943-06-24",
+    "place": "mexico-city"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "AnonymousUnknown author, 1929",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alice_R%C3%BChle-Gerstelov%C3%A1.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "medicine",
+      "science"
+    ],
+    "place": [
+      "prague",
+      "mexico-city"
+    ]
+  },
+  "prominence": 0.43,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q86289",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Alice Rühle-Gerstel",
+      "url": "https://de.wikipedia.org/wiki/Alice_R%C3%BChle-Gerstel",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Alice Rühle-Gerstel",
+      "url": "https://en.wikipedia.org/wiki/Alice_R%C3%BChle-Gerstel",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q86289"
+}

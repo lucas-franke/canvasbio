@@ -1,0 +1,61 @@
+{
+  "slug": "louisa-garrett-anderson",
+  "name": {
+    "display": "Louisa Garrett Anderson",
+    "sort": "Anderson, Louisa Garrett"
+  },
+  "born": {
+    "date": "1873-07-28",
+    "place": "aldeburgh"
+  },
+  "died": {
+    "date": "1943-11-15",
+    "place": "brighton"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown photographer, 1914",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Louisa_Anderson.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "medicine"
+    ],
+    "place": [
+      "aldeburgh",
+      "brighton"
+    ]
+  },
+  "prominence": 0.53,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q542019",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Louisa Garrett Anderson",
+      "url": "https://de.wikipedia.org/wiki/Louisa_Garrett_Anderson",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Louisa Garrett Anderson",
+      "url": "https://en.wikipedia.org/wiki/Louisa_Garrett_Anderson",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q542019"
+}

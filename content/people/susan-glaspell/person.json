@@ -1,0 +1,61 @@
+{
+  "slug": "susan-glaspell",
+  "name": {
+    "display": "Susan Glaspell",
+    "sort": "Glaspell, Susan"
+  },
+  "born": {
+    "date": "1876-07-01",
+    "place": "davenport"
+  },
+  "died": {
+    "date": "1948-07-27",
+    "place": "provincetown"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1894",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sgc1894.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "arts"
+    ],
+    "place": [
+      "davenport",
+      "provincetown"
+    ]
+  },
+  "prominence": 0.58,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q468667",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Susan Glaspell",
+      "url": "https://de.wikipedia.org/wiki/Susan_Glaspell",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Susan Glaspell",
+      "url": "https://en.wikipedia.org/wiki/Susan_Glaspell",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q468667"
+}

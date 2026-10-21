@@ -1,0 +1,31 @@
+import { useSyncExternalStore } from "react";
+
+const noop = () => () => {};
+
+/** False during pre-rendering and hydration, true afterwards (avoids hydration mismatches). */
+export function useHydrated(): boolean {
+  return useSyncExternalStore(
+    noop,
+    () => true,
+    () => false,
+  );
+}
+
+/**
+ * Media query match. Returns `serverValue` during pre-rendering and hydration,
+ * then the real value — so the first client render matches the static HTML.
+ */
+export function useMediaQuery(query: string, serverValue = false): boolean {
+  return useSyncExternalStore(
+    (onChange) => {
+      const list = window.matchMedia(query);
+      list.addEventListener("change", onChange);
+      return () => list.removeEventListener("change", onChange);
+    },
+    () => window.matchMedia(query).matches,
+    () => serverValue,
+  );
+}
+
+/** Tailwind `lg` breakpoint: from here the detail view sits next to the overview instead of covering it. */
+export const SPLIT_VIEW_QUERY = "(min-width: 64rem)";

@@ -1,0 +1,59 @@
+{
+  "slug": "ruth-rowland-nichols",
+  "name": {
+    "display": "Ruth Rowland Nichols",
+    "sort": "Nichols, Ruth Rowland"
+  },
+  "born": {
+    "date": "1901-02-23",
+    "place": "new-york-city"
+  },
+  "died": {
+    "date": "1960-09-25",
+    "place": "new-york-city"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "National Photo Company Collection, 1929",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Miss_Ruth_Nichols,_3-19-29_LCCN2016843481.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "new-york-city"
+    ]
+  },
+  "prominence": 0.43,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q549028",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Ruth Rowland Nichols",
+      "url": "https://de.wikipedia.org/wiki/Ruth_Rowland_Nichols",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ruth Rowland Nichols",
+      "url": "https://en.wikipedia.org/wiki/Ruth_Rowland_Nichols",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q549028"
+}

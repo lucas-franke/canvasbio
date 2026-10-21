@@ -1,0 +1,60 @@
+{
+  "slug": "louisa-macdonald",
+  "name": {
+    "display": "Louisa Macdonald",
+    "sort": "Macdonald, Louisa"
+  },
+  "born": {
+    "date": "1858-12-10",
+    "place": "arbroath"
+  },
+  "died": {
+    "date": "1949-11-28",
+    "place": "london"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Madame Praeger, 1893",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Miss_Louisa_Macdonald,_Principal_of_the_Women%27s_College,_c1890s.jpg"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "arbroath",
+      "london"
+    ]
+  },
+  "prominence": 0.25,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q18390210",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Louisa Macdonald",
+      "url": "https://de.wikipedia.org/wiki/Louisa_Macdonald",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Louisa Macdonald",
+      "url": "https://en.wikipedia.org/wiki/Louisa_Macdonald",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q18390210"
+}

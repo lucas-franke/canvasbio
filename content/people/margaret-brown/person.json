@@ -1,0 +1,61 @@
+{
+  "slug": "margaret-brown",
+  "name": {
+    "display": "Margaret Brown",
+    "sort": "Brown, Margaret"
+  },
+  "born": {
+    "date": "1867-07-18",
+    "place": "hannibal"
+  },
+  "died": {
+    "date": "1932-10-26",
+    "place": "new-york-city"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Bain News Service; quick cleanup by Adam Cuerden, 1890",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Margaret_Brown,_3qtr_view,_with_chair.jpg"
+  },
+  "facets": {
+    "field": [
+      "arts",
+      "social"
+    ],
+    "place": [
+      "hannibal",
+      "new-york-city"
+    ]
+  },
+  "prominence": 0.72,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q229631",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Margaret Brown (Frauenrechtlerin)",
+      "url": "https://de.wikipedia.org/wiki/Margaret_Brown_(Frauenrechtlerin)",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Margaret Brown",
+      "url": "https://en.wikipedia.org/wiki/Margaret_Brown",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q229631"
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "harriette-r-shattuck",
+  "name": {
+    "display": "Harriette R. Shattuck",
+    "sort": "Shattuck, Harriette R."
+  },
+  "born": {
+    "date": "1850-12-04",
+    "place": "lowell"
+  },
+  "died": {
+    "date": "1937-03-24",
+    "place": "malden"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unbekannt",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:HARRIETTE_ROBINSON_SHATTUCK_A_woman_of_the_century_(page_657_crop).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "lowell",
+      "malden"
+    ]
+  },
+  "prominence": 0.2,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q18911281",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Harriette Robinson Shattuck",
+      "url": "https://de.wikipedia.org/wiki/Harriette_Robinson_Shattuck",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Harriette R. Shattuck",
+      "url": "https://en.wikipedia.org/wiki/Harriette_R._Shattuck",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q18911281"
+}

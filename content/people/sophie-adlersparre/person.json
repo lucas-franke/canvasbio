@@ -1,0 +1,58 @@
+{
+  "slug": "sophie-adlersparre",
+  "name": {
+    "display": "Sophie Adlersparre",
+    "sort": "Adlersparre, Sophie"
+  },
+  "born": {
+    "date": "1823-07-06"
+  },
+  "died": {
+    "date": "1895-06-27",
+    "place": "groedinge-parish"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Bertha Valerius (Swedish, 1824-) SE/NMF5365, 1860",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portr%C3%A4tt_av_friherrinnan_Karin_Sofie_Adlersparre_f._Leijonhufvud_(Esselde)_-_Nordiska_Museet_-_NMA.0041102.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "groedinge-parish"
+    ]
+  },
+  "prominence": 0.6,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q4346827",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Sophie Adlersparre (Frauenrechtlerin)",
+      "url": "https://de.wikipedia.org/wiki/Sophie_Adlersparre_(Frauenrechtlerin)",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Sophie Adlersparre",
+      "url": "https://en.wikipedia.org/wiki/Sophie_Adlersparre",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q4346827"
+}

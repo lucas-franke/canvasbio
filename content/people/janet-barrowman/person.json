@@ -1,0 +1,59 @@
+{
+  "slug": "janet-barrowman",
+  "name": {
+    "display": "Janet Barrowman",
+    "sort": "Barrowman, Janet"
+  },
+  "born": {
+    "date": "1879",
+    "place": "glasgow"
+  },
+  "died": {
+    "date": "1955",
+    "place": "glasgow"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "none given, 1912",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Helen_Crawfurd,_Janet_Barrowman,_Margaret_McPhun,_Mrs_A.A._Wilson,_Frances_McPhun,_Nancy_A._John_and_Annie_Swan.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "glasgow"
+    ]
+  },
+  "prominence": 0.2,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q60191540",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Janet Barrowman",
+      "url": "https://de.wikipedia.org/wiki/Janet_Barrowman",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Janet Barrowman",
+      "url": "https://en.wikipedia.org/wiki/Janet_Barrowman",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q60191540"
+}

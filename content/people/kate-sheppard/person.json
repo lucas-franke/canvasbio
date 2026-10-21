@@ -1,0 +1,62 @@
+{
+  "slug": "kate-sheppard",
+  "name": {
+    "display": "Kate Sheppard",
+    "sort": "Sheppard, Kate"
+  },
+  "born": {
+    "date": "1847-03-10",
+    "place": "liverpool"
+  },
+  "died": {
+    "date": "1934-07-13",
+    "place": "riccarton"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "H. H. Clifford, see https://collection.canterburymuseum.com/objects/243177/glass-plate-negative-kate-w-sheppard, 1901",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mrs._K._W._Sheppard_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "science"
+    ],
+    "place": [
+      "liverpool",
+      "riccarton"
+    ]
+  },
+  "prominence": 0.69,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q455072",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Kate Sheppard",
+      "url": "https://de.wikipedia.org/wiki/Kate_Sheppard",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Kate Sheppard",
+      "url": "https://en.wikipedia.org/wiki/Kate_Sheppard",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q455072"
+}

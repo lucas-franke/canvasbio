@@ -1,0 +1,60 @@
+{
+  "slug": "marjery-bryce",
+  "name": {
+    "display": "Marjery Bryce",
+    "sort": "Bryce, Marjery"
+  },
+  "born": {
+    "date": "1891-06-18",
+    "place": "marylebone"
+  },
+  "died": {
+    "date": "1973-06-08",
+    "place": "fulham"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Bain News Service, publisher, 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Margery_Bryce_LCCN2014718908.jpg"
+  },
+  "facets": {
+    "field": [
+      "arts"
+    ],
+    "place": [
+      "marylebone",
+      "fulham"
+    ]
+  },
+  "prominence": 0.2,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q70710411",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Marjery Bryce",
+      "url": "https://de.wikipedia.org/wiki/Marjery_Bryce",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Marjery Bryce",
+      "url": "https://en.wikipedia.org/wiki/Marjery_Bryce",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q70710411"
+}

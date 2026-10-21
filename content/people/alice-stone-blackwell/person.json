@@ -1,0 +1,60 @@
+{
+  "slug": "alice-stone-blackwell",
+  "name": {
+    "display": "Alice Stone Blackwell",
+    "sort": "Blackwell, Alice Stone"
+  },
+  "born": {
+    "date": "1857-09-14",
+    "place": "new-jersey"
+  },
+  "died": {
+    "date": "1950-03-15",
+    "place": "cambridge"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1880",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alice-stone-blackwell1.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "new-jersey",
+      "cambridge"
+    ]
+  },
+  "prominence": 0.6,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2646853",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Alice Stone Blackwell",
+      "url": "https://de.wikipedia.org/wiki/Alice_Stone_Blackwell",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Alice Stone Blackwell",
+      "url": "https://en.wikipedia.org/wiki/Alice_Stone_Blackwell",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2646853"
+}

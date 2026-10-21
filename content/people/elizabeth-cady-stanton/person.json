@@ -1,0 +1,61 @@
+{
+  "slug": "elizabeth-cady-stanton",
+  "name": {
+    "display": "Elizabeth Cady Stanton",
+    "sort": "Stanton, Elizabeth Cady"
+  },
+  "born": {
+    "date": "1815-11-12",
+    "place": "johnstown"
+  },
+  "died": {
+    "date": "1902-10-26",
+    "place": "new-york-city"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1880",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elizabeth_Stanton.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "arts"
+    ],
+    "place": [
+      "johnstown",
+      "new-york-city"
+    ]
+  },
+  "prominence": 0.82,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q465335",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Elizabeth Cady Stanton",
+      "url": "https://de.wikipedia.org/wiki/Elizabeth_Cady_Stanton",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Elizabeth Cady Stanton",
+      "url": "https://en.wikipedia.org/wiki/Elizabeth_Cady_Stanton",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q465335"
+}

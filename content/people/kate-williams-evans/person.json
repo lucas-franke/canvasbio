@@ -1,0 +1,60 @@
+{
+  "slug": "kate-williams-evans",
+  "name": {
+    "display": "Kate Williams Evans",
+    "sort": "Evans, Kate Williams"
+  },
+  "born": {
+    "date": "1866-10-01",
+    "place": "llansanffraid-ym-mechain"
+  },
+  "died": {
+    "date": "1961-02-02",
+    "place": "oswestry"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author The original uploader was Jack1956 at English Wikipedia., 1890",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kate_Williams_Evans_c1890.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "llansanffraid-ym-mechain",
+      "oswestry"
+    ]
+  },
+  "prominence": 0.28,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q64005542",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Kate Williams Evans",
+      "url": "https://de.wikipedia.org/wiki/Kate_Williams_Evans",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Kate Williams Evans",
+      "url": "https://en.wikipedia.org/wiki/Kate_Williams_Evans",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q64005542"
+}

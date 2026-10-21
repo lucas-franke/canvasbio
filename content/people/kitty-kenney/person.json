@@ -1,0 +1,60 @@
+{
+  "slug": "kitty-kenney",
+  "name": {
+    "display": "Kitty Kenney",
+    "sort": "Kenney, Kitty"
+  },
+  "born": {
+    "date": "1880",
+    "place": "england"
+  },
+  "died": {
+    "date": "1952",
+    "place": "united-states"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Linley Blathwayt 1910, 1910",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kitty_Kenney_standing_in_the_foxgloves_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "england",
+      "united-states"
+    ]
+  },
+  "prominence": 0.15,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q55648017",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Kitty Kenney",
+      "url": "https://de.wikipedia.org/wiki/Kitty_Kenney",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Kitty Kenney",
+      "url": "https://en.wikipedia.org/wiki/Kitty_Kenney",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q55648017"
+}

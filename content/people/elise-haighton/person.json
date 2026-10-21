@@ -1,0 +1,61 @@
+{
+  "slug": "elise-haighton",
+  "name": {
+    "display": "Elise Haighton",
+    "sort": "Haighton, Elise"
+  },
+  "born": {
+    "date": "1841-05-28",
+    "place": "amsterdam"
+  },
+  "died": {
+    "date": "1911-08-11",
+    "place": "the-hague"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elise_Haighton_Vrouwenlexicon.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education"
+    ],
+    "place": [
+      "amsterdam",
+      "the-hague"
+    ]
+  },
+  "prominence": 0.25,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q19059778",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Elise Haighton",
+      "url": "https://de.wikipedia.org/wiki/Elise_Haighton",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Elise Haighton",
+      "url": "https://en.wikipedia.org/wiki/Elise_Haighton",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q19059778"
+}

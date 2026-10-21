@@ -1,0 +1,60 @@
+{
+  "slug": "zona-gale",
+  "name": {
+    "display": "Zona Gale",
+    "sort": "Gale, Zona"
+  },
+  "born": {
+    "date": "1874-08-26",
+    "place": "portage"
+  },
+  "died": {
+    "date": "1938-12-27",
+    "place": "chicago"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Bain News Service, publisher, 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zona_Gale_LCCN2014687901_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "portage",
+      "chicago"
+    ]
+  },
+  "prominence": 0.55,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q219829",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Zona Gale",
+      "url": "https://de.wikipedia.org/wiki/Zona_Gale",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Zona Gale",
+      "url": "https://en.wikipedia.org/wiki/Zona_Gale",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q219829"
+}

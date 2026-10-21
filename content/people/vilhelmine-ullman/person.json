@@ -1,0 +1,60 @@
+{
+  "slug": "vilhelmine-ullman",
+  "name": {
+    "display": "Vilhelmine Ullman",
+    "sort": "Ullman, Vilhelmine"
+  },
+  "born": {
+    "date": "1816-03-16",
+    "place": "oslo"
+  },
+  "died": {
+    "date": "1915-04-28",
+    "place": "oslo"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Gustav Borgen",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrett_av_kvinnesaksforkjemper_Vilhelmine_Ullmann_-_no-nb_digifoto_20160302_00064_blds_08163_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education"
+    ],
+    "place": [
+      "oslo"
+    ]
+  },
+  "prominence": 0.28,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q12009815",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Vilhelmine Ullmann",
+      "url": "https://de.wikipedia.org/wiki/Vilhelmine_Ullmann",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Vilhelmine Ullmann",
+      "url": "https://en.wikipedia.org/wiki/Vilhelmine_Ullmann",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q12009815"
+}

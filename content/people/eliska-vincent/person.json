@@ -1,0 +1,60 @@
+{
+  "slug": "eliska-vincent",
+  "name": {
+    "display": "Eliska Vincent",
+    "sort": "Vincent, Eliska"
+  },
+  "born": {
+    "date": "1841-06-29",
+    "place": "mezieres-en-drouais"
+  },
+  "died": {
+    "date": "1914-02-19",
+    "place": "asnieres-sur-seine"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown photographer, 1904",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eliska_Vincent,_c._1904_(cropped).png"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "mezieres-en-drouais",
+      "asnieres-sur-seine"
+    ]
+  },
+  "prominence": 0.28,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q16058886",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Eliska Vincent",
+      "url": "https://de.wikipedia.org/wiki/Eliska_Vincent",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Eliska Vincent",
+      "url": "https://en.wikipedia.org/wiki/Eliska_Vincent",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q16058886"
+}
