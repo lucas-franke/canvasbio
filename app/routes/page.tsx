@@ -6,8 +6,8 @@ import { parsePath, TEXT_PAGES, type TextPage } from "~/lib/i18n/locale";
 import { pageMeta } from "~/lib/meta";
 
 /**
- * Text pages from content/pages/<page>.<locale>.md: "Über das Projekt", accessibility
- * statement, Impressum and Datenschutz. Which one follows from the (translated) URL.
+ * Text pages from content/pages/<page>.<locale>.md: about the project, accessibility
+ * statement, legal notice and privacy policy. Which one follows from the (translated) URL.
  */
 export async function loader({ request }: Route.LoaderArgs) {
   // Pre-rendering also requests "/ueber.data" (the data for client-side navigation).

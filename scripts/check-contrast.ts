@@ -14,15 +14,15 @@ for (const mode of ["light", "dark"] as const) {
     const mark = r.pass ? "✓" : "✗";
     const ratio = r.ratio.toFixed(2).padStart(5);
     const fg = Array.isArray(r.foreground) ? r.foreground.join("|") : r.foreground;
-    console.log(`  ${mark} ${ratio}:1 (min ${r.min}) ${fg} auf ${r.background} – ${r.usage}`);
+    console.log(`  ${mark} ${ratio}:1 (min ${r.min}) ${fg} on ${r.background} – ${r.usage}`);
     if (!r.pass) failed++;
   }
 }
 
 if (failed > 0) {
   console.error(
-    `\n${failed} Farbpaar(e) unterschreiten WCAG 2.2 AA. Bitte theme.colors in site.config.ts anpassen.`,
+    `\n${failed} colour pair(s) fall below WCAG 2.2 AA. Please adjust theme.colors in site.config.ts.`,
   );
   process.exit(1);
 }
-console.log("\nAlle Farbpaare erfüllen WCAG 2.2 AA.");
+console.log("\nAll colour pairs meet WCAG 2.2 AA.");

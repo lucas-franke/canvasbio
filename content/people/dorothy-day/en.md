@@ -13,6 +13,10 @@ facts:
 timeline:
   - date: November 8, 1897
     event: Born in Brooklyn Heights
+  - date: "1952"
+    event: "Publication: “The Long Loneliness”"
+  - date: "1963"
+    event: "Publication: “Loaves and Fishes: The Inspiring Story of the Catholic Worker Movement”"
   - date: "1971"
     event: "Award: Pacem in Terris Award"
   - date: "1971"

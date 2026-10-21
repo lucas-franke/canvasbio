@@ -9,12 +9,12 @@ import { z } from "zod";
  *   content/taxonomy.json               translated labels for facet values
  */
 
-export const slugSchema = z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/, "Slug: nur a-z, 0-9 und Bindestriche");
+export const slugSchema = z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/, "Slug: only a-z, 0-9 and hyphens");
 
 /** ISO date with the precision that is actually known: "1831", "1831-09" or "1831-09-20". */
 export const partialDateSchema = z
   .string()
-  .regex(/^-?\d{4}(-\d{2}(-\d{2})?)?$/, "Datum als JJJJ, JJJJ-MM oder JJJJ-MM-TT");
+  .regex(/^-?\d{4}(-\d{2}(-\d{2})?)?$/, "Date as YYYY, YYYY-MM or YYYY-MM-DD");
 
 const lifeEventSchema = z.object({
   date: partialDateSchema.optional(),
@@ -44,8 +44,19 @@ export const personSchema = z.object({
     credit: z.string().min(1),
     license: licenseSchema,
     sourceUrl: z.url(),
-    /** Focal point for square crops, 0–1 from top-left. Defaults to upper center (faces). */
-    focus: z.object({ x: z.number().min(0).max(1), y: z.number().min(0).max(1) }).optional(),
+    /**
+     * Square crops (tiles, list): focal point 0–1 from top-left, defaults to upper center
+     * (faces). `zoom` > 1 crops tighter, e.g. one person out of a group photo.
+     */
+    focus: z
+      .object({
+        x: z.number().min(0).max(1),
+        y: z.number().min(0).max(1),
+        zoom: z.number().min(1).max(5).optional(),
+      })
+      .optional(),
+    /** Chosen or cropped by hand: `npm run import:demo` keeps the image, credit and alt texts. */
+    curated: z.boolean().optional(),
   }),
   /** Facet values per facet key from site.config (keys into taxonomy). */
   facets: z.record(z.string(), z.array(slugSchema)),

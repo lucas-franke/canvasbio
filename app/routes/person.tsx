@@ -2,16 +2,20 @@ import { useOutletContext } from "react-router";
 
 import type { Route } from "./+types/person";
 import { PERSON_HEADING_ID } from "~/components/detail/ids";
-import { PersonDetail } from "~/components/detail/person-detail";
+import { PersonDetail, type RelatedPerson } from "~/components/detail/person-detail";
 import { NotFoundContent } from "~/components/not-found-content";
-import { siteConfig } from "~/lib/config";
 import { content } from "~/lib/content/index.server";
-import { renderMarkdown } from "~/lib/content/markdown.server";
+import { renderMarkdown, type Heading } from "~/lib/content/markdown.server";
+import { loadPeopleIndex } from "~/lib/content/people-index.server";
+import { relatedPeople } from "~/lib/content/related";
 import { messagesFor } from "~/lib/i18n";
 import { localeFromPathname } from "~/lib/i18n/locale";
 import { portraitUrl } from "~/lib/content/images";
 import { pageMeta } from "~/lib/meta";
 import type { PeopleLayoutContext } from "./people-layout";
+
+/** Average silent reading speed (German and English prose). */
+const WORDS_PER_MINUTE = 200;
 
 export async function loader({ request, params }: Route.LoaderArgs) {
   const locale = localeFromPathname(new URL(request.url).pathname);
@@ -20,20 +24,42 @@ export async function loader({ request, params }: Route.LoaderArgs) {
 
   const m = messagesFor(locale);
   const { story, ...person } = detail;
+  const headings: Heading[] = [];
   const storyHtml = await renderMarkdown(story, {
-    // Story headings start at ##; inside the "Lebensgeschichte" tab (h2) they become h3.
+    // Story headings start at ##; inside the life story tab (h2) they become h3.
     headingOffset: 1,
+    headingIdPrefix: "story-",
+    headings,
     footnoteLabel: m.detail.footnotes,
     footnoteBackLabel: m.detail.footnoteBack,
   });
 
-  const taxonomy = await content.getTaxonomy();
-  const tagFacet = siteConfig.facets.find((f) => f.type === "multi")?.key;
+  const { people, tagFacet, facetLabels } = await loadPeopleIndex(locale);
   const tags = (tagFacet ? (person.facets[tagFacet] ?? []) : [])
-    .map((value) => taxonomy[tagFacet!]?.[value]?.[locale])
+    .map((value) => facetLabels[tagFacet!]?.[value])
     .filter((label): label is string => Boolean(label));
 
-  return { person, storyHtml, tags, locale };
+  // Computed while pre-rendering: the links are in the HTML, the browser gets only four entries.
+  const related: RelatedPerson[] = relatedPeople(person, people).map(({ person: p, reasons }) => ({
+    slug: p.slug,
+    name: p.name,
+    born: p.born,
+    died: p.died,
+    image: p.image,
+    reasons: reasons
+      .slice(0, 2)
+      .map((r) => (r.kind === "era" ? m.detail.sameEra : (facetLabels[r.facet]?.[r.value] ?? r.value))),
+  }));
+
+  // A table of contents only pays off for longer stories with several sections.
+  const topLevel = Math.min(...headings.map((h) => h.level));
+  const outline = headings.filter((h) => h.level === topLevel);
+  const storyInfo = {
+    outline: outline.length >= 3 ? outline.map(({ id, text }) => ({ id, text })) : [],
+    readingMinutes: Math.max(1, Math.round(story.split(/\s+/).filter(Boolean).length / WORDS_PER_MINUTE)),
+  };
+
+  return { person, storyHtml, storyInfo, tags, related, locale };
 }
 
 export function meta({ loaderData, location }: Route.MetaArgs) {

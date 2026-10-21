@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: 29. Dezember 1893
     event: Geboren in Newcastle-under-Lyme
+  - date: "1933"
+    event: "Veröffentlichung: „Testament of Youth“"
   - date: 29. März 1970
     event: Gestorben in Wimbledon
 ---

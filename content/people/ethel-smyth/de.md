@@ -15,12 +15,22 @@ timeline:
     event: Geboren in Sidcup
   - date: "1877"
     event: "Ausbildung: Hochschule für Musik und Theater „Felix Mendelssohn Bartholdy“ Leipzig"
+  - date: "1884"
+    event: "Veröffentlichung: „Klaviertrio“"
+  - date: "1893"
+    event: "Veröffentlichung: „Messe in D“"
   - date: "1910"
     event: "Auszeichnung: Ehrendoktor der University of Durham"
+  - date: "1914"
+    event: "Veröffentlichung: „The Boatswain's Mate“"
   - date: "1922"
     event: "Auszeichnung: Dame Commander of the Order of the British Empire"
+  - date: "1923"
+    event: "Veröffentlichung: „Fête Galante“"
   - date: "1928"
     event: "Auszeichnung: Ehrendoktor der University of St Andrews"
+  - date: "1931"
+    event: "Veröffentlichung: „The Prison“"
   - date: 8. Mai 1944
     event: Gestorben in Woking
 ---

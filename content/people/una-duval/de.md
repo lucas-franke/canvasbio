@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: "1880"
     event: Geboren in Upper Norwood
+  - date: 13. Januar 1912
+    event: Heirat mit Victor Diederichs Duval
   - date: 24. Februar 1975
     event: Gestorben in London
 ---

@@ -13,6 +13,28 @@ facts:
 timeline:
   - date: 1. Juli 1804
     event: Geboren in Paris
+  - date: 10. Dezember 1822
+    event: Heirat mit Casimir Dudevant
+  - date: "1832"
+    event: "Veröffentlichung: „Indiana“"
+  - date: "1833"
+    event: "Veröffentlichung: „Lelia“"
+  - date: "1837"
+    event: "Veröffentlichung: „Mauprat“"
+  - date: "1842"
+    event: "Veröffentlichung: „A Winter in Majorca“"
+  - date: "1843"
+    event: "Veröffentlichung: „Consuelo“"
+  - date: "1845"
+    event: "Veröffentlichung: „Le Meunier d'Angibault“"
+  - date: "1846"
+    event: "Veröffentlichung: „La Mare au diable“"
+  - date: "1849"
+    event: "Veröffentlichung: „Die kleine Fadette“"
+  - date: "1853"
+    event: "Veröffentlichung: „Les Maîtres sonneurs“"
+  - date: "1855"
+    event: "Veröffentlichung: „Geschichte meines Lebens“"
   - date: 8. Juni 1876
     event: Gestorben in Nohant-Vic
 ---

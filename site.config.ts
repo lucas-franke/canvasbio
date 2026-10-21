@@ -37,6 +37,8 @@ export default defineSiteConfig({
     people: { de: "personen", en: "people", "de-LS": "personen" },
     /** Sub-path of the list view below the people page, e.g. "/personen/liste". */
     list: { de: "liste", en: "list", "de-LS": "liste" },
+    /** Sub-path of the timeline view ("Zeitstrahl"), e.g. "/personen/zeitstrahl". */
+    timeline: { de: "zeitstrahl", en: "timeline", "de-LS": "zeitstrahl" },
     about: { de: "ueber", en: "about", "de-LS": "ueber" },
     accessibility: { de: "barrierefreiheit", en: "accessibility", "de-LS": "barrierefreiheit" },
     imprint: { de: "impressum", en: "legal-notice", "de-LS": "impressum" },
@@ -96,8 +98,8 @@ export default defineSiteConfig({
     },
     fonts: {
       heading: '"IBM Plex Serif", ui-serif, Georgia, serif',
-      body: '"IBM Plex Sans", ui-sans-serif, system-ui, sans-serif',
-      wordmark: '"IBM Plex Sans", ui-sans-serif, system-ui, sans-serif',
+      body: '"IBM Plex Sans Variable", "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif',
+      wordmark: '"IBM Plex Sans Variable", "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif',
     },
     radius: 0.75,
     imageTreatment: "sepia",
@@ -163,14 +165,67 @@ export default defineSiteConfig({
     ],
   },
 
+  timeline: {
+    events: [
+      {
+        year: 1848,
+        label: {
+          de: "Seneca Falls: erste Frauenrechtskonvention in den USA",
+          en: "Seneca Falls: first women's rights convention in the US",
+          "de-LS": "In Amerika treffen sich Frauen. Sie fordern gleiche Rechte.",
+        },
+      },
+      {
+        year: 1893,
+        label: {
+          de: "Neuseeland: erstes landesweites Frauenwahlrecht",
+          en: "New Zealand: first nationwide women's suffrage",
+          "de-LS": "In Neuseeland dürfen Frauen als Erste wählen.",
+        },
+      },
+      {
+        year: 1906,
+        label: {
+          de: "Finnland: Frauen dürfen wählen und gewählt werden",
+          en: "Finland: women can vote and stand for election",
+          "de-LS": "In Finnland dürfen Frauen wählen. Und sie dürfen gewählt werden.",
+        },
+      },
+      {
+        year: 1918,
+        label: {
+          de: "Frauenwahlrecht in Deutschland",
+          en: "Women's suffrage in Germany",
+          "de-LS": "In Deutschland dürfen Frauen wählen.",
+        },
+      },
+      {
+        year: 1920,
+        label: {
+          de: "USA: Frauenwahlrecht im 19. Zusatzartikel",
+          en: "US: women's suffrage in the 19th Amendment",
+          "de-LS": "In Amerika dürfen Frauen wählen.",
+        },
+      },
+      {
+        year: 1971,
+        label: {
+          de: "Schweiz: Frauenwahlrecht auf Bundesebene",
+          en: "Switzerland: women's suffrage at federal level",
+          "de-LS": "In der Schweiz dürfen Frauen wählen.",
+        },
+      },
+    ],
+  },
+
   canvas: {
     tileSize: 240,
-    gap: 32,
+    gap: 48,
     rowOffset: 0.5,
     wrap: true,
     minZoom: 0.4,
     maxZoom: 2.5,
-    featuredShare: 0.14,
+    sizeVariance: 0.16,
   },
 
   features: {

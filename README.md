@@ -1,104 +1,137 @@
-# CanvasBio
+| Translated URL segments (`/personen`, `/en/people`, list and timeline views …)# CanvasBio
 
-White-Label-Vorlage für Biografie-Sammlungen: Personen als endlose Porträtwand (Infinite Canvas) und als Liste, mit Suche und Filtern, zufälliger Biografie und Detailansicht. Ausgelegt auf Touch und Mobile, bedienbar mit Maus und Tastatur, barrierefrei nach **WCAG 2.2 AA** ([Prüfbericht](docs/accessibility-audit.md)).
+White-label template for biography collections. People appear as an endless portrait wall (infinite canvas) and as a list. It includes search and filters, a random biography and a detail view. The template is designed for touch and mobile, works with mouse and keyboard, and is accessible to **WCAG 2.2 AA** ([audit report](docs/accessibility-audit.md), in German).
 
-Die Demo-Inhalte zeigen Pionierinnen der Frauenbewegung (1850–1950) aus Wikidata, Wikimedia Commons und Wikipedia, in Deutsch, Englisch und (teilweise) Leichter Sprache.
+The demo content shows pioneers of the women's movement (1850–1950) from Wikidata, Wikimedia Commons and Wikipedia. It is available in German, English and, for some people, German Easy Language (Leichte Sprache).
 
-## Funktionen
+## Features
 
-- **Bildwand:** endlos in alle Richtungen, Ziehen mit Nachgleiten, Pinch- und Mausrad-Zoom; ohne Ziehen per Zoom-Knöpfe und Steuerkreuz; per Tastatur mit Pfeiltasten. Vorgerendert, damit sie sofort erscheint.
-- **Liste:** alphabetisch mit A–Z-Sprungmarken.
-- **Biografie:** als Spalte neben der Übersicht (ab 1024 px), sonst als Vollbild-Dialog mit Porträt am Anfang; Name, Schließen, Teilen und Tabs bleiben beim Scrollen sichtbar; Tabs Biografie, Lebensgeschichte, Lebenslauf mit teilbaren Links (`#lebenslauf`); am Ende vorherige/nächste Biografie und „Noch eine zufällige“.
-- **Suche und Filter:** Name (tippfehlertolerant, mit direkten Personen-Vorschlägen beim Tippen), Ort, Facetten aus der Konfiguration; Treffer werden in der Bildwand hervorgehoben, Zustand steht in der URL.
-- **Zufällige Biografie:** bevorzugt weniger bekannte und noch nicht geöffnete Personen.
-- **Startseite:** Umfang der Sammlung, Einstieg per Zufall und „An diesem Tag“ (wer heute oder in den nächsten Tagen Geburts- oder Todestag hat).
-- **Namen ausblenden**, **hell/dunkel**, **Sprachen** inkl. Leichter Sprache, Übergänge mit der View Transitions API (abschaltbar über „Bewegung reduzieren“).
+- **Portrait wall:** endless in every direction.
+  - Drag with momentum; zoom with pinch or the mouse wheel.
+  - Without dragging: zoom buttons and a direction pad. With the keyboard: arrow keys.
+  - Pre-rendered so it appears immediately.
+  - First-time visitors get a short, dismissible hint on how to explore.
+  - Tiles vary slightly in size and position (`canvas.sizeVariance`) for a loose collage. Next to an open biography the wall blurs until you point at it.
+- **List:** alphabetical, with A–Z jump links.
+- **Timeline ("Zeitstrahl"):** people by year of birth, grouped by decade, each with a bar for their life span on a shared scale. Grid lines and key dates from the configuration (e.g. when women got the vote) run through the list; pointing at a person or opening one highlights who lived at the same time.
+- **Biography:**
+  - Opens as a column next to the overview from 1024 px; on smaller screens it is a full-screen dialog that starts with the portrait.
+  - Name, save, share, close and the tabs stay visible while scrolling.
+  - Tabs: biography, life story and timeline, each with a shareable link (`#lebenslauf` / `#timeline`).
+  - Life story with reading time and, for longer texts, a table of contents.
+  - At the end: related biographies (shared field, place or era), previous/next biography and "another random one".
+  - On phones, swipe the sheet down to close it. Printing gives all sections without navigation.
+- **Search and filters:**
+  - Name search tolerates typos and suggests matching people directly while typing.
+  - Filters for place (with suggestions and counts) and for the facets from the configuration.
+  - Matches are highlighted on the portrait wall, and the search state lives in the URL.
+- **Random biography:** favours lesser-known people and people not opened yet.
+- **Saved biographies ("Merkliste"):** "Save" in a biography adds the person to a list kept in the browser (no account, nothing sent anywhere). The menu links to it, the search panel offers it as a filter (`?saved=1`), and saved people are marked in the list.
+- **Start page:** size of the collection, a random entry point and "On this day" (people whose birthday or day of death is today or in the next few days).
+- **Also:** hide names, light/dark theme, languages including Easy Language. Transitions use the View Transitions API and are disabled with "reduce motion".
 
-## Voraussetzungen
+## Requirements
 
-- Node.js ≥ 22.22 (siehe `.nvmrc`)
+- Node.js ≥ 22.22 (see `.nvmrc`)
 - `npm install`
 
-## Befehle
+## Commands
 
-| Befehl                | Zweck                                                                                                                       |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| `npm run dev`         | Entwicklungsserver (erzeugt vorher fehlende Porträt-Varianten)                                                              |
-| `npm run build`       | Kontrast- und Inhaltsprüfung, Porträts, statischer Build mit Prerendering nach `build/client`, Brotli/Gzip-Vorkomprimierung |
-| `npm run preview`     | Statischen Build lokal ausliefern (mit Kompression)                                                                         |
-| `npm run validate`    | Typecheck, Lint, Kontrast, Inhalte, Unit-Tests                                                                              |
-| `npm run e2e`         | Playwright-Tests inkl. axe, Reflow, Textabstand, Fokus (Desktop, Android, iOS)                                              |
-| `npm run import:demo` | Demo-Inhalte neu aus Wikidata importieren                                                                                   |
+| Command               | Purpose                                                                                                            |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `npm run dev`         | Development server (generates missing portrait variants first)                                                     |
+| `npm run build`       | Contrast and content checks, portraits, static pre-rendered build into `build/client`, Brotli/Gzip pre-compression |
+| `npm run preview`     | Serve the static build locally (with compression)                                                                  |
+| `npm run validate`    | Typecheck, lint, contrast, content, unit tests                                                                     |
+| `npm run e2e`         | Playwright tests incl. axe, reflow, text spacing, focus (desktop, Android, iOS)                                    |
+| `npm run import:demo` | Re-import the demo content from Wikidata                                                                           |
 
-## Neues Projekt aus der Vorlage
+## New project from the template
 
-### 1. Konfiguration – `site.config.ts`
+### 1. Configuration – `site.config.ts`
 
-Alles Projektspezifische steht in einer typisierten Datei. Sie wird beim Laden geprüft; Fehler (fehlende Übersetzung, zu geringer Kontrast, ungültige Werte) brechen den Build mit einer verständlichen Meldung ab.
+Everything project-specific lives in one typed file. It is validated on load. Errors stop the build with a readable message, for example a missing translation, too little contrast or an invalid value.
 
-| Abschnitt                  | Inhalt                                                                                                                                           |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `siteUrl`                  | Öffentliche Adresse (optional). Aktiviert kanonische URLs und Vorschaubilder beim Teilen von Biografien                                          |
-| `brand`                    | Name, Wortmarke, Beschreibung (Meta-Tags)                                                                                                        |
-| `locales`, `defaultLocale` | Sprachen mit URL-Präfix; `contentRequired: false` für Sprachen, in denen nicht jede Biografie vorliegen muss (Leichte Sprache)                   |
-| `paths`                    | Übersetzte URL-Segmente (`/personen`, `/en/people` …)                                                                                            |
-| `operator`                 | Betreiber mit Anschrift, Telefon (optional), Kontakt-E-Mail und Datum der Barrierefreiheitserklärung; füllt Impressum, Datenschutz und Erklärung |
-| `theme`                    | Farb-Tokens hell/dunkel, Schriften, Radius, Bildtönung (`sepia`, `grayscale`, `none`), Kachelrand, Papierstruktur (`paperTexture`)               |
-| `start`                    | Titel, Untertitel, Zitat und Button der Startseite                                                                                               |
-| `facets`                   | Filter der Suche: `multi` (Chips) oder `autocomplete` (Freitext mit Vorschlägen), jeweils mit Beschriftung und optionalem Hinweis                |
-| `detail.tabs`              | Tabs der Biografie und ihre URL-Namen                                                                                                            |
-| `canvas`                   | Kachelgröße, Abstand, Versatz, Endlos-Wiederholung, Zoom-Grenzen, Anteil hervorgehobener Kacheln (`featuredShare`)                               |
-| `features`                 | Zufällige Biografie, Namen ausblenden, Leichte Sprache, Theme-Umschalter                                                                         |
+| Section                    | Content                                                                                                                                   |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `siteUrl`                  | Public address (optional). Enables canonical URLs and preview images when biographies are shared                                          |
+| `brand`                    | Name, wordmark, description (meta tags)                                                                                                   |
+| `locales`, `defaultLocale` | Languages with URL prefix; `contentRequired: false` for languages in which not every biography has to exist (Easy Language)               |
+| `paths`                    | Translated URL segments (`/personen`, `/en/people` …)                                                                                     |
+| `operator`                 | Operator with address, phone (optional), contact email and date of the accessibility statement; fills legal notice, privacy and statement |
+| `theme`                    | Colour tokens light/dark, fonts, radius, image tone (`sepia`, `grayscale`, `none`), tile edge, paper texture (`paperTexture`)             |
+| `start`                    | Title, subtitle, quote and button of the start page                                                                                       |
+| `facets`                   | Search filters: `multi` (chips) or `autocomplete` (free text with suggestions), each with a label and an optional hint                    |
+| `detail.tabs`              | Biography tabs and their URL names                                                                                                        |
+| `timeline`                 | Key dates of the subject, marked on the timeline axis and listed above it (`events`: year + label per language)                           |
+| `canvas`                   | Tile size, gap, offset, endless repetition, zoom limits, size variation of the tiles (`sizeVariance`)                                     |
+| `features`                 | Random biography, hide names, Easy Language, theme switch                                                                                 |
 
-Alle Texte sind pro Sprache anzugeben (`{ de: "…", en: "…" }`). UI-Texte, die nicht projektspezifisch sind, liegen in `app/lib/i18n/messages/`.
+All texts are given per language (`{ de: "…", en: "…" }`). UI texts that are not project-specific live in `app/lib/i18n/messages/`.
 
-### 2. Schriften
+### 2. Fonts
 
-Bei geänderten `theme.fonts` die Imports in `app/theme/fonts.ts` austauschen (selbst gehostet über Fontsource).
+If you change `theme.fonts`, swap the imports in `app/theme/fonts.ts` (self-hosted via Fontsource).
 
-### 3. Inhalte
+### 3. Content
 
-Biografien, Porträts und Filterwerte in `content/` ersetzen – Format in [content/README.md](content/README.md). Die Porträts werden beim Build in alle Größen und Formate umgerechnet.
+Replace the biographies, portraits and filter values in `content/`. The format is described in [content/README.md](content/README.md). The build converts the portraits into all sizes and formats.
 
-Textseiten liegen in `content/pages/<seite>.<sprache>.md`: „Über das Projekt“ (`about`), Erklärung zur Barrierefreiheit (`accessibility`), Impressum (`imprint`) und Datenschutzerklärung (`privacy`). Platzhalter wie `{{organisation}}`, `{{operatorBlock}}` (Name, Anschrift, Telefon, E-Mail), `{{contactEmail}}` und `{{statementDate}}` werden aus `operator` befüllt. Impressum und Datenschutz sind Vorlagen ohne Rechtsberatung; Hinweise stehen als Kommentar in den Dateien.
+Text pages live in `content/pages/<page>.<locale>.md`:
 
-### 4. Barrierefreiheit
+- about the project (`about`)
+- accessibility statement (`accessibility`)
+- legal notice (`imprint`)
+- privacy policy (`privacy`)
 
-1. `npm run validate` und `npm run e2e` – beide müssen grün sein.
-2. Den [Prüfbericht](docs/accessibility-audit.md) mit den eigenen Inhalten aktualisieren, Screenreader-Tests nach der [Protokollvorlage](docs/screenreader-protokoll.md) durchführen.
-3. Die Erklärung zur Barrierefreiheit anpassen: Rechtsgrundlage und Durchsetzungsverfahren (Hinweise als Kommentar in `content/pages/accessibility.de.md`), Stand der Vereinbarkeit, nicht barrierefreie Inhalte, Kontakt.
+Placeholders are filled from `operator`: `{{organisation}}`, `{{operatorBlock}}` (name, address, phone, email), `{{contactEmail}}` and `{{statementDate}}`. The legal notice and privacy policy are templates, not legal advice; notes are included as comments in the files.
 
-### 5. Vor dem Livegang
+### 4. Accessibility
 
-- [ ] `operator` mit echten Angaben füllen (Anschrift, betreute Kontakt-E-Mail); Impressum und Datenschutzerklärung prüfen lassen
-- [ ] Erklärung zur Barrierefreiheit geprüft und datiert
-- [ ] Bildrechte und Lizenzangaben aller Porträts geprüft
-- [ ] Leichte-Sprache-Texte von einer Prüfgruppe geprüft
-- [ ] Test auf echten Geräten (iPhone, Android): Gesten, Safe Areas, Bottom-Sheets
+1. Run `npm run validate` and `npm run e2e`; both must pass.
+2. Update the [audit report](docs/accessibility-audit.md) with your own content.
+3. Run screen reader tests using the [protocol template](docs/screenreader-protokoll.md). Both documents are in German.
+4. Adapt the accessibility statement. Cover the legal basis and enforcement procedure (notes as comments in `content/pages/accessibility.de.md`), the compliance status, non-accessible content and the contact.
+
+### 5. Before going live
+
+- [ ] Fill `operator` with real details (address, monitored contact email); have the legal notice and privacy policy reviewed
+- [ ] Accessibility statement reviewed and dated
+- [ ] Image rights and licence details of all portraits checked
+- [ ] Easy Language texts reviewed by a test group
+- [ ] Tested on real devices (iPhone, Android): gestures, safe areas, bottom sheets
 
 ## Hosting
 
-Der Build in `build/client` ist rein statisch (kein Server-Code) und läuft auf jedem Static Host (z. B. Netlify, Cloudflare Pages, nginx).
+The build in `build/client` is fully static (no server code) and runs on any static host (e.g. Netlify, Cloudflare Pages, nginx).
 
-- **Unbekannte URLs** auf `__spa-fallback.html` leiten (Status 404), z. B. nginx `error_page 404 /__spa-fallback.html;`.
-- **Caching:** `/assets/*` und `/portraits/*` tragen einen Inhalts-Hash bzw. Versionsparameter → `Cache-Control: public, max-age=31536000, immutable`. HTML und `/data/*.json` kurz oder ohne Cache.
-- **Kompression:** Neben jeder Textdatei liegen `.br` und `.gz`. nginx: `brotli_static on; gzip_static on;`. Hosts mit eigener Kompression ignorieren sie.
+- **Unknown URLs:** serve `__spa-fallback.html` with status 404, e.g. nginx `error_page 404 /__spa-fallback.html;`.
+- **Caching:**
+  - `/assets/*` and `/portraits/*` carry a content hash or version parameter → `Cache-Control: public, max-age=31536000, immutable`.
+  - HTML and `/data/*.json`: short or no cache.
+- **Compression:** every text file has a `.br` and `.gz` next to it. For nginx: `brotli_static on; gzip_static on;`. Hosts with their own compression ignore them.
 
-## Demo-Import
+## Demo import
 
-`npm run import:demo -- --limit 200` lädt Personen aus Wikidata, Porträts von Wikimedia Commons (nur gemeinfrei/CC0) und Lebensgeschichten aus Wikipedia. Wikimedia erwartet eine Kontaktangabe im User-Agent: `WIKIMEDIA_CONTACT=name@example.org npm run import:demo`. Antworten werden in `.cache/import` zwischengespeichert; handgeschriebene Dateien wie `de-LS.md` werden nicht überschrieben.
+`npm run import:demo -- --limit 200` loads:
 
-## Aufbau
+- people from Wikidata
+- portraits from Wikimedia Commons (public domain/CC0 only)
+- life stories from Wikipedia
 
-- `site.config.ts` – Projektkonfiguration
-- `app/` – React-Router-App (Framework-Modus, vollständig vorgerendert, `ssr: false`)
-  - `components/canvas` – Bildwand (Kamera, Gesten, Kacheln, Steuerung)
-  - `components/search`, `components/people`, `components/detail`, `components/shell` – Suche, Übersicht, Biografie, Rahmen
-  - `lib/canvas` – Layout- und Kamera-Mathematik (rein, getestet)
-  - `lib/search` – Suche und Filter (rein, getestet)
-  - `lib/content` – Inhaltsschema, Loader und Adapter (austauschbar gegen ein CMS)
-  - `lib/config`, `lib/theme`, `lib/i18n` – Konfigurationsschema, Theme-Tokens und Kontrastprüfung, Sprachen
-- `content/` – Biografien, Porträts, Textseiten
-- `scripts/` – Import, Bild-Pipeline, Prüf- und Build-Skripte
-- `e2e/` – Playwright-Tests
-- `docs/` – Prüfbericht Barrierefreiheit, Screenreader-Protokoll
+Wikimedia expects a contact in the User-Agent: `WIKIMEDIA_CONTACT=name@example.org npm run import:demo`. Responses are cached in `.cache/import`. Hand-written files such as `de-LS.md` are not overwritten.
+
+## Structure
+
+- `site.config.ts` – project configuration
+- `app/` – React Router app (framework mode, fully pre-rendered, `ssr: false`)
+  - `components/canvas` – portrait wall (camera, gestures, tiles, controls)
+  - `components/search`, `components/people`, `components/detail`, `components/shell` – search, overview, biography, shell
+  - `lib/canvas` – layout and camera maths (pure, tested)
+  - `lib/search` – search and filters (pure, tested)
+  - `lib/content` – content schema, loader and adapter (replaceable by a CMS)
+  - `lib/config`, `lib/theme`, `lib/i18n` – configuration schema, theme tokens and contrast check, languages
+- `content/` – biographies, portraits, text pages
+- `scripts/` – import, image pipeline, check and build scripts
+- `e2e/` – Playwright tests
+- `docs/` – accessibility audit report, screen reader protocol (German)

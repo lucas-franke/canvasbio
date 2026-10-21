@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: January 17, 1829
     event: Born in Ashbourne
+  - date: June 16, 1855
+    event: Marriage to William Booth
   - date: October 4, 1890
     event: Died in Clacton-on-Sea
 ---

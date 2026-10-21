@@ -15,8 +15,14 @@ timeline:
     event: Geboren in Portsea Island
   - date: "1877"
     event: "Ausbildung: Girton College"
+  - date: "1881"
+    event: "Tätig bei: Notting Hill and Ealing High School"
   - date: "1884"
     event: "Ausbildung: Finsbury Technical College"
+  - date: 6. Mai 1885
+    event: Heirat mit William Edward Ayrton
+  - date: "1902"
+    event: "Veröffentlichung: „The Electric Arc“"
   - date: "1906"
     event: "Auszeichnung: Hughes-Medaille"
   - date: 23. August 1923

@@ -28,15 +28,15 @@ export function createFsContentAdapter(
       const errors = content.issues.filter((i) => i.level === "error");
       if (errors.length > 0) {
         const list = errors.map((e) => `  ${e.file}: ${e.message}`).join("\n");
-        throw new Error(`Inhalte sind ungültig (npm run validate:content):\n${list}`);
+        throw new Error(`Content is invalid (npm run validate:content):\n${list}`);
       }
 
       const images: PortraitManifest = JSON.parse(await readFile(manifestFile, "utf8").catch(() => "{}"));
       const missing = [...content.people.keys()].filter((slug) => !images[slug]);
       if (missing.length > 0) {
         throw new Error(
-          `Porträts fehlen für ${missing.length} Person(en), z. B. ${missing.slice(0, 3).join(", ")}. ` +
-            "Bitte `npm run build:images` ausführen.",
+          `Portraits are missing for ${missing.length} people, e.g. ${missing.slice(0, 3).join(", ")}. ` +
+            "Please run `npm run build:images`.",
         );
       }
       return { ...content, images };

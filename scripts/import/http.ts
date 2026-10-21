@@ -40,9 +40,9 @@ async function request(url: string, accept: string, lane: Lane): Promise<Respons
     const retryable = res.status === 429 || res.status >= 500;
     const retryAfter = Number(res.headers.get("retry-after")) || 5 * 2 ** attempt;
     if (!retryable || attempt >= 4 || retryAfter > MAX_RETRY_WAIT_S) {
-      throw new Error(`HTTP ${res.status} für ${url.slice(0, 160)}`);
+      throw new Error(`HTTP ${res.status} for ${url.slice(0, 160)}`);
     }
-    console.warn(`  HTTP ${res.status}, neuer Versuch in ${retryAfter}s …`);
+    console.warn(`  HTTP ${res.status}, retrying in ${retryAfter}s …`);
     // Slow the whole lane down after a rate limit, not just this request.
     if (res.status === 429) lanes[lane].interval = Math.min(lanes[lane].interval * 2, 10_000);
     await sleep(retryAfter * 1000);

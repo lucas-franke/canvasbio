@@ -63,7 +63,7 @@ const sameView = (a: CanvasView | null, b: CanvasView) =>
 const prefersReducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 /**
- * Screen areas covered by the wordmark (top), the nav and the "Zufällige Biografie" button
+ * Screen areas covered by the wordmark (top), the nav and the random biography button
  * above it (bottom) and the canvas controls (right).
  */
 function insetsFor({ width }: Size): Insets {

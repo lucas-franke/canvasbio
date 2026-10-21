@@ -13,6 +13,10 @@ facts:
 timeline:
   - date: November 23, 1876
     event: Born in Mossley Hill
+  - date: "1919"
+    event: Member of World Brotherhood Federation
+  - date: October 2, 1944
+    event: Marriage to George William Hudson Shaw
   - date: July 30, 1956
     event: Died in Hampstead
 ---

@@ -58,7 +58,7 @@ test("tabs switch sections, sync the URL hash and support arrow keys", async ({ 
   await tabs.getByRole("tab", { name: "Lebenslauf" }).click();
   await expect(page).toHaveURL(/#lebenslauf$/);
   await expect(page.getByRole("tabpanel", { name: "Lebenslauf" })).toBeVisible();
-  await expect(page.getByRole("heading", { level: 2, name: "Biografie" })).toBeHidden();
+  await expect(page.getByRole("heading", { level: 2, name: "Biografie", exact: true })).toBeHidden();
 
   await tabs.getByRole("tab", { name: "Lebenslauf" }).focus();
   await page.keyboard.press("ArrowLeft");
@@ -124,4 +124,100 @@ test("previous and next continue in list order", async ({ page }) => {
   await more.getByRole("link", { name: /Nächste/ }).click();
   await expect(page).toHaveURL(/\/personen\/[a-z-]+\?q=clara$/);
   await expect(page.getByRole("heading", { level: 1 })).toContainText(/Clara|Klara|Klára/);
+});
+
+test("closing animation ends off screen and stays there (no flash)", async ({ page, browserName }) => {
+  test.skip(browserName !== "chromium", "checks the view transition animations in Chromium");
+  await page.goto("/personen/liste");
+  await page.getByRole("link", { name: "Clara Zetkin", exact: true }).click();
+  await expect(page.getByRole("heading", { level: 1, name: "Clara Zetkin" })).toBeFocused();
+  // Record the fill mode of the closing panel's animation once the transition is ready.
+  await page.evaluate(() => {
+    const start = document.startViewTransition.bind(document);
+    document.startViewTransition = ((...args: Parameters<typeof start>) => {
+      const transition = start(...args);
+      void transition.ready.then(() => {
+        (window as unknown as { fills: string[] }).fills = document
+          .getAnimations()
+          .filter((a) => (a.effect as KeyframeEffect).pseudoElement?.includes("old(detail-panel)"))
+          .map((a) => String(a.effect!.getComputedTiming().fill));
+      });
+      return transition;
+    }) as typeof document.startViewTransition;
+  });
+  await page.getByRole("link", { name: "Schließen" }).click();
+  const fills = await page.waitForFunction(() => (window as unknown as { fills?: string[] }).fills);
+  expect(await fills.jsonValue()).toEqual(["forwards"]);
+});
+
+test("related biographies link to people with something in common", async ({ page }) => {
+  await page.goto("/personen/liste");
+  await page.getByRole("link", { name: "Clara Zetkin", exact: true }).click();
+  await expect(heading(page, "Clara Zetkin")).toBeFocused();
+  const related = page.getByRole("region", { name: "Ähnliche Biografien" });
+  const links = related.getByRole("link");
+  await expect(links).toHaveCount(4);
+  // Each entry says why it is related (a shared field, place or era).
+  await expect(links.first()).toContainText(/\d{4}.*·/);
+  const name = (await links.first().locator(".font-heading").textContent())!;
+  await links.first().click();
+  await expect(heading(page, name)).toBeFocused();
+});
+
+test("life story shows reading time and a table of contents for longer stories", async ({ page }) => {
+  await page.goto("/personen/ada-wells#geschichte");
+  const panel = page.getByRole("tabpanel", { name: "Lebensgeschichte" });
+  // 742 words at 200 words per minute.
+  await expect(panel.getByText("4 Minuten Lesezeit")).toBeVisible();
+  const outline = panel.getByRole("navigation", { name: "Inhalt" });
+  const entries = outline.getByRole("link");
+  expect(await entries.count()).toBeGreaterThanOrEqual(3);
+
+  const target = (await entries.nth(1).textContent())!;
+  await entries.nth(1).click();
+  // Jumps without changing the tab (the hash selects tabs) and moves focus to the section.
+  await expect(page).toHaveURL(/#geschichte$/);
+  await expect(panel.getByRole("heading", { name: target, exact: true })).toBeFocused();
+  await expect(panel.getByRole("heading", { name: target, exact: true })).toBeInViewport();
+});
+
+test("printing a biography prints all sections without navigation", async ({ page, isMobile }) => {
+  test.skip(isMobile, "print layout is the same on every device");
+  await page.goto("/personen/clara-zetkin");
+  await expect(heading(page, "Clara Zetkin")).toBeVisible();
+  await page.emulateMedia({ media: "print" });
+  for (const name of ["Biografie", "Lebensgeschichte", "Lebenslauf"]) {
+    await expect(page.getByRole("heading", { level: 2, name, exact: true })).toBeVisible();
+  }
+  await expect(page.getByRole("navigation", { name: "Hauptnavigation" })).toBeHidden();
+  await expect(page.getByRole("tablist")).toBeHidden();
+  await expect(page.locator("#main")).toBeHidden();
+});
+
+test("swiping the biography sheet down closes it (phones)", async ({ page, browserName, isMobile }) => {
+  test.skip(!isMobile || browserName !== "chromium", "touch input via CDP (Chromium phone)");
+  await page.goto("/personen/liste");
+  await page.getByRole("link", { name: "Helen Keller", exact: true }).click();
+  const dialog = page.getByRole("dialog", { name: "Helen Keller" });
+  await expect(dialog).toBeVisible();
+
+  const cdp = await page.context().newCDPSession(page);
+  const touch = (type: "touchStart" | "touchMove" | "touchEnd", y: number) =>
+    cdp.send("Input.dispatchTouchEvent", {
+      type,
+      touchPoints: type === "touchEnd" ? [] : [{ x: 200, y }],
+    });
+  // A short pull springs back.
+  await touch("touchStart", 300);
+  await touch("touchMove", 315);
+  await touch("touchMove", 330);
+  await touch("touchEnd", 330);
+  await page.waitForTimeout(400);
+  await expect(dialog).toBeVisible();
+
+  await touch("touchStart", 300);
+  for (let y = 320; y <= 600; y += 40) await touch("touchMove", y);
+  await touch("touchEnd", 600);
+  await expect(page).toHaveURL(/\/personen\/liste$/);
+  await expect(dialog).toBeHidden();
 });

@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: July 1, 1876
     event: Born in Davenport
+  - date: "1913"
+    event: Marriage to George Cram Cook
   - date: "1931"
     event: "Award: Pulitzer Prize for Drama"
   - date: July 27, 1948

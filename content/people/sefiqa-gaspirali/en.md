@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: October 14, 1886
     event: Born in Bakhchysarai
+  - date: "1906"
+    event: Marriage to Nasib bey Yusifbeyli
   - date: August 31, 1975
     event: Died in Istanbul
 ---

@@ -5,7 +5,7 @@ import { z } from "zod";
  * provides one `site.config.ts` that must satisfy this schema.
  */
 
-const hexColor = z.string().regex(/^#[0-9a-fA-F]{6}$/, "Farben bitte als 6-stelliges Hex (#rrggbb) angeben");
+const hexColor = z.string().regex(/^#[0-9a-fA-F]{6}$/, "Colours must be 6-digit hex (#rrggbb)");
 
 const localeCode = z.string().regex(/^[a-z]{2}(-[A-Za-z]{2,})?$/);
 
@@ -95,12 +95,14 @@ export const siteConfigSchema = z.object({
   paths: z.object({
     people: z.record(localeCode, z.string().regex(/^[a-z0-9-]+$/)),
     list: z.record(localeCode, z.string().regex(/^[a-z0-9-]+$/)),
+    /** Timeline view below the people page. */
+    timeline: z.record(localeCode, z.string().regex(/^[a-z0-9-]+$/)),
     about: z.record(localeCode, z.string().regex(/^[a-z0-9-]+$/)),
-    /** Accessibility statement (Erklärung zur Barrierefreiheit). */
+    /** Accessibility statement (German: Erklärung zur Barrierefreiheit). */
     accessibility: z.record(localeCode, z.string().regex(/^[a-z0-9-]+$/)),
-    /** Legal notice (Impressum, § 5 DDG). */
+    /** Legal notice (German: Impressum, § 5 DDG). */
     imprint: z.record(localeCode, z.string().regex(/^[a-z0-9-]+$/)),
-    /** Privacy policy (Datenschutzerklärung, Art. 13 DSGVO). */
+    /** Privacy policy (German: Datenschutzerklärung, Art. 13 GDPR). */
     privacy: z.record(localeCode, z.string().regex(/^[a-z0-9-]+$/)),
   }),
 
@@ -157,7 +159,7 @@ export const siteConfigSchema = z.object({
       key: z
         .string()
         .regex(/^[a-z][a-zA-Z0-9]*$/)
-        .refine((key) => key !== "q", "„q“ ist für die Namenssuche reserviert"),
+        .refine((key) => key !== "q", '"q" is reserved for the name search'),
       type: z.enum(["multi", "autocomplete"]),
       label: localized,
       /** Short help text below the field. */
@@ -176,6 +178,16 @@ export const siteConfigSchema = z.object({
     ),
   }),
 
+  /**
+   * Timeline view: key dates of the collection's subject, marked on the time axis
+   * (e.g. when women got the vote). Optional; without events the axis shows only years.
+   */
+  timeline: z
+    .object({
+      events: z.array(z.object({ year: z.number().int(), label: localized })),
+    })
+    .default({ events: [] }),
+
   canvas: z.object({
     /** Tile edge length in CSS px at zoom 1. */
     tileSize: z.number().positive(),
@@ -187,10 +199,11 @@ export const siteConfigSchema = z.object({
     minZoom: z.number().positive(),
     maxZoom: z.number().positive(),
     /**
-     * Share of tiles shown slightly larger (0–0.3), favouring less prominent people: breaks
-     * the uniform grid into a livelier collage. 0 turns it off.
+     * Slight size and position variation of the tiles (0–0.3): each tile is drawn between
+     * (1 − sizeVariance) and full size, a little off-centre. Loosens the strict grid into a
+     * collage; 0 turns it off.
      */
-    featuredShare: z.number().min(0).max(0.3).default(0),
+    sizeVariance: z.number().min(0).max(0.3).default(0),
   }),
 
   features: z.object({
@@ -211,22 +224,22 @@ export function defineSiteConfig(input: SiteConfigInput): SiteConfig {
   const codes = config.locales.map((l) => l.code);
 
   if (!codes.includes(config.defaultLocale)) {
-    throw new Error(`defaultLocale "${config.defaultLocale}" fehlt in locales (${codes.join(", ")})`);
+    throw new Error(`defaultLocale "${config.defaultLocale}" is missing from locales (${codes.join(", ")})`);
   }
   const prefixes = config.locales.map((l) => l.prefix);
   if (new Set(prefixes).size !== prefixes.length) {
-    throw new Error(`locales[].prefix muss eindeutig sein (${prefixes.join(", ")})`);
+    throw new Error(`locales[].prefix must be unique (${prefixes.join(", ")})`);
   }
   const defaultPrefix = config.locales.find((l) => l.code === config.defaultLocale)!.prefix;
   if (defaultPrefix !== "" || prefixes.filter((p) => p === "").length !== 1) {
-    throw new Error("Nur die defaultLocale hat ein leeres prefix; alle anderen Sprachen brauchen eines");
+    throw new Error("Only the defaultLocale has an empty prefix; all other locales need one");
   }
   if (config.canvas.minZoom >= config.canvas.maxZoom) {
-    throw new Error("canvas.minZoom muss kleiner als canvas.maxZoom sein");
+    throw new Error("canvas.minZoom must be smaller than canvas.maxZoom");
   }
   const incomplete = findIncompleteTranslations(config, codes);
   if (incomplete.length > 0) {
-    throw new Error(`Übersetzungen fehlen in site.config:\n  ${incomplete.join("\n  ")}`);
+    throw new Error(`Missing translations in site.config:\n  ${incomplete.join("\n  ")}`);
   }
   return config;
 }

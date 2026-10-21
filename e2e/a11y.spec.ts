@@ -11,6 +11,8 @@ const routes = [
   "/personen",
   "/personen/liste",
   "/en/people/list",
+  "/personen/zeitstrahl",
+  "/en/people/timeline",
   "/leichte-sprache/personen",
   "/personen/clara-zetkin",
   "/en/people/helen-keller",
@@ -32,14 +34,14 @@ const routes = [
 ];
 
 /**
- * Runs axe in three passes. Content scrolls underneath the fixed bottom navigation, and axe's
- * target-size rule then reports whatever link happens to sit behind it at the current scroll
- * position. Being covered is SC 2.4.11 (handled via padding), not target size, so target size
+ * Runs axe in three passes. Content scrolls underneath the fixed bottom navigation and the
+ * floating random button, and axe's target-size rule then reports whatever link happens to sit
+ * behind them at the current scroll position. Being covered is SC 2.4.11 (handled via padding), not target size, so target size
  * is checked separately: content targets with the floating nav hidden, nav targets on their own.
  */
 async function expectNoViolations(page: Page) {
   const floatingNav =
-    'nav[aria-label="Hauptnavigation"], nav[aria-label="Main navigation"], nav[aria-label="Haupt-Menü"]';
+    'nav[aria-label="Hauptnavigation"], nav[aria-label="Main navigation"], nav[aria-label="Haupt-Menü"], [data-floating]';
   const all = await new AxeBuilder({ page }).withTags(wcagTags).disableRules(["target-size"]).analyze();
 
   const hideNav = await page.addStyleTag({ content: `${floatingNav} { visibility: hidden !important; }` });

@@ -2,7 +2,7 @@
 summary:
   - British suffragette
   - 1880–1952 · England
-portraitAlt: Portrait of Kitty Kenney
+portraitAlt: Kitty Kenney standing among flowering foxgloves in a garden, 1910
 facts:
   - label: Born
     value: 1880 in England

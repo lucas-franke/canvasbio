@@ -13,6 +13,10 @@ facts:
 timeline:
   - date: April 20, 1892
     event: Born in New York City
+  - date: "1915"
+    event: Marriage to Richard R. Peabody
+  - date: September 9, 1922
+    event: Marriage to Harry Crosby
   - date: January 24, 1970
     event: Died in Rome
 ---

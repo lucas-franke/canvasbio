@@ -12,6 +12,14 @@ export default defineConfig({
   use: {
     baseURL: `http://localhost:${port}`,
     trace: "on-first-retry",
+    // Visitors "have seen" the first-visit hint on the wall, so it doesn't cover tiles in
+    // unrelated tests; e2e/canvas.spec.ts tests the hint itself with empty storage.
+    storageState: {
+      cookies: [],
+      origins: [
+        { origin: `http://localhost:${port}`, localStorage: [{ name: "canvas-hint-done", value: "1" }] },
+      ],
+    },
   },
   // Tests run against the static production build, like the real deployment.
   webServer: {

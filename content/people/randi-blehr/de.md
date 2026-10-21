@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: 12. Februar 1851
     event: Geboren in Bergen
+  - date: 19. Juni 1876
+    event: Heirat mit Otto Albert Blehr
   - date: "1895"
     event: Vorsitzende des Norsk Kvinnesaksforening NKF
   - date: "1903"

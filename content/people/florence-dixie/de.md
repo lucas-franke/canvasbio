@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: 24. Mai 1855
     event: Geboren in Cummertrees
+  - date: 3. April 1875
+    event: Heirat mit Sir Alexander Dixie, 11th Baronet
   - date: 7. November 1905
     event: Gestorben in London
 ---

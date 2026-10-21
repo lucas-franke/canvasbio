@@ -2,7 +2,7 @@
 summary:
   - British suffragist and advocate of birth control
   - 1842–1874
-portraitAlt: Portrait of Katharine Russell, Viscountess Amberley
+portraitAlt: Katharine Russell, Viscountess Amberley, standing in a photo studio in front of a painted landscape, around 1860
 facts:
   - label: Born
     value: April 3, 1842
@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: April 3, 1842
     event: Born
+  - date: November 8, 1864
+    event: Marriage to John Russell, Viscount Amberley
   - date: June 28, 1874
     event: Died
 ---

@@ -13,6 +13,14 @@ facts:
 timeline:
   - date: 22. September 1880
     event: Geboren in Trafford
+  - date: "1908"
+    event: Gefangenschaft
+  - date: "1912"
+    event: "Wohnort: Paris"
+  - date: "1921"
+    event: "Wohnort: Kanada"
+  - date: "1925"
+    event: "Wohnort: Côte d’Azur"
   - date: "1936"
     event: "Auszeichnung: Dame Commander of the Order of the British Empire"
   - date: 13. Februar 1958

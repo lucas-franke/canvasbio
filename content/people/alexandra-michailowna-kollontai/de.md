@@ -31,6 +31,10 @@ timeline:
     event: "Auszeichnung: Orden vom Aztekischen Adler"
   - date: "1946"
     event: "Auszeichnung: Großkreuz des Sankt-Olav-Ordens"
+  - date: "1946"
+    event: "Nominiert für: Friedensnobelpreis"
+  - date: "1947"
+    event: "Nominiert für: Friedensnobelpreis"
   - date: 9. März 1952
     event: Gestorben in Bahía Blanca
 ---

@@ -13,6 +13,22 @@ facts:
 timeline:
   - date: 27. Juni 1880
     event: Geboren in Ivy Green
+  - date: Januar 1892
+    event: "Veröffentlichung: „The Frost King“"
+  - date: "1900"
+    event: "Wohnort: Coolidge Hill Road"
+  - date: "1903"
+    event: "Veröffentlichung: „The Story of My Life“"
+  - date: "1904"
+    event: "Wohnort: Dana Street"
+  - date: "1912"
+    event: "Mitglied: Industrial Workers of the World"
+  - date: "1933"
+    event: Bücherverbrennung 1933 in Deutschland
+  - date: "1954"
+    event: "Nominiert für: Friedensnobelpreis"
+  - date: "1958"
+    event: "Nominiert für: Friedensnobelpreis"
   - date: 14. September 1964
     event: "Auszeichnung: Presidential Medal of Freedom"
   - date: "1965"

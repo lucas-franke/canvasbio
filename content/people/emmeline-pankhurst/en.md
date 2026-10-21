@@ -13,12 +13,18 @@ facts:
 timeline:
   - date: July 15, 1858
     event: Born in Moss Side
+  - date: December 18, 1879
+    event: Marriage to Richard Pankhurst
   - date: "1898"
     event: Registrar
   - date: March 1, 1912
     event: "Award: Hunger Strike Medal"
+  - date: "1914"
+    event: "Publication: “My Own Story”"
   - date: "1917"
     event: Member of Women's Party
+  - date: "1925"
+    event: "Residence: French Riviera"
   - date: "1926"
     event: Member of Conservative Party
   - date: June 14, 1928

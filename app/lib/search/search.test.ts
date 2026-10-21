@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import type { FacetConfig } from "~/lib/config/schema";
 import type { PersonListItem } from "~/lib/content/adapter";
 import {
+  emptySearch,
   filterPeople,
   isSearchActive,
   nameMatches,
@@ -77,7 +78,7 @@ describe("name search", () => {
 
 describe("URL state", () => {
   it("round-trips through search parameters", () => {
-    const state = { q: "clara", facets: { field: ["politics", "writing"], place: ["Berlin"] } };
+    const state = { q: "clara", facets: { field: ["politics", "writing"], place: ["Berlin"] }, saved: true };
     const params = toSearchParams(state, facets, new URLSearchParams("other=1"));
     expect(params.get("other")).toBe("1");
     expect(parseSearch(params, facets)).toEqual(state);
@@ -85,20 +86,21 @@ describe("URL state", () => {
 
   it("ignores empty values and keeps only one place", () => {
     const state = parseSearch(new URLSearchParams("q=+&field=&place=a&place=b&field=x&field=x"), facets);
-    expect(state).toEqual({ q: "", facets: { field: ["x"], place: ["a"] } });
+    expect(state).toEqual({ q: "", facets: { field: ["x"], place: ["a"] }, saved: false });
     expect(isSearchActive(state)).toBe(true);
     expect(isSearchActive(parseSearch(new URLSearchParams(""), facets))).toBe(false);
   });
 
   it("builds a link suffix", () => {
-    expect(searchSuffix({ q: "", facets: {} }, facets)).toBe("");
-    expect(searchSuffix({ q: "zet", facets: {} }, facets)).toBe("?q=zet");
+    expect(searchSuffix(emptySearch, facets)).toBe("");
+    expect(searchSuffix({ ...emptySearch, q: "zet" }, facets)).toBe("?q=zet");
+    expect(searchSuffix({ ...emptySearch, saved: true }, facets)).toBe("?saved=1");
   });
 });
 
 describe("filterPeople", () => {
   const search = (q: string, f: Record<string, string[]> = {}) =>
-    filterPeople(people, { q, facets: f }, facets, labels).map((p) => p.name.display);
+    filterPeople(people, { q, facets: f, saved: false }, facets, labels).map((p) => p.name.display);
 
   it("returns everyone without a search", () => {
     expect(search("")).toHaveLength(4);
@@ -114,6 +116,17 @@ describe("filterPeople", () => {
   it("matches places by their label, accent-insensitively", () => {
     expect(search("", { place: ["munchen"] })).toEqual(["Helene Müller"]);
     expect(search("", { place: ["königs"] })).toEqual(["Clara Zetkin"]);
+  });
+
+  it("keeps only bookmarked people with the saved filter", () => {
+    const bookmarks = new Set(["hedwig-dohm", "clara-zetkin"]);
+    const saved = (q: string) =>
+      filterPeople(people, { q, facets: {}, saved: true }, facets, labels, bookmarks).map(
+        (p) => p.name.display,
+      );
+    expect(saved("")).toEqual(["Clara Zetkin", "Hedwig Dohm"]);
+    expect(saved("dohm")).toEqual(["Hedwig Dohm"]);
+    expect(filterPeople(people, { ...emptySearch, saved: true }, facets, labels)).toEqual([]);
   });
 });
 

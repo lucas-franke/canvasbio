@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: November 26, 1814
     event: Born in Gröningen
+  - date: November 25, 1850
+    event: Marriage to Daniel Eduard Meier
   - date: December 21, 1871
     event: Died in Wangen im Allgäu
 ---

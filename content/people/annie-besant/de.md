@@ -15,6 +15,12 @@ timeline:
     event: Geboren in Clapham
   - date: "1895"
     event: "Auszeichnung: Subba Row Medal"
+  - date: "1897"
+    event: "Veröffentlichung: „The Ancient Wisdom“"
+  - date: "1905"
+    event: "Veröffentlichung: „Thought-Forms: A Record of Clairvoyant Investigation“"
+  - date: "1931"
+    event: "Nominiert für: Friedensnobelpreis"
   - date: "1933"
     event: "Auszeichnung: Silver Wolf Award"
   - date: 20. September 1933

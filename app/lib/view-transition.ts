@@ -70,7 +70,7 @@ export function markPortraitSource(event: MouseEvent<HTMLElement>) {
   markPortraitSourceElement(event.currentTarget);
 }
 
-/** Same for a navigation started in code (e.g. "Zufällige Biografie"): `element` is the overview item. */
+/** Same for a navigation started in code (e.g. the random biography): `element` is the overview item. */
 export function markPortraitSourceElement(element: Element | null | undefined) {
   clearPortraitTransition();
   if (splitView()) setName(overviewPortrait(element ?? null));

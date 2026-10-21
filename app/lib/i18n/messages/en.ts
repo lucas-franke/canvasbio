@@ -19,6 +19,7 @@ export const en: Messages = {
     label: "View",
     canvas: "Portraits",
     list: "List",
+    timeline: "Timeline",
   },
   alphabet: {
     label: "Alphabet",
@@ -47,6 +48,7 @@ export const en: Messages = {
   people: {
     title: "Biographies",
     listTitle: "Biographies as a list",
+    timelineTitle: "Biographies on a timeline",
     gridTitle: "Biographies as portraits",
     count: (n: number) => (n === 1 ? "1 person" : `${n} people`),
     /** Badge in languages where not every biography exists (Leichte Sprache): this one does. */
@@ -55,6 +57,7 @@ export const en: Messages = {
   search: {
     title: "Search",
     suggestions: "Matching people",
+    peopleCount: (n: number) => (n === 1 ? "1 person" : `${n} people`),
     clearName: "Clear input",
     close: "Close search",
     name: "Search by name",
@@ -74,6 +77,23 @@ export const en: Messages = {
     hitStatus: (i: number, n: number, name: string) => `Match ${i} of ${n}: ${name}`,
     loading: "Loading …",
   },
+  timeline: {
+    decade: (year: number) => `${year}s`,
+    unknown: "Year of birth unknown",
+    legend: "Each bar shows a lifetime. Bars above each other lived at the same time.",
+    legendInteractive: "Point at a person to highlight who lived at the same time.",
+    events: "Key dates",
+  },
+  bookmarks: {
+    save: "Save",
+    added: "Added to your saved biographies",
+    removed: "Removed from your saved biographies",
+    list: "Saved",
+    listCount: (n: number) => `Saved (${n})`,
+    filter: "Only saved biographies",
+    marked: "Saved",
+    emptyHint: "You haven't saved anyone yet. Use “Save” in a biography to add a person.",
+  },
   random: {
     label: "Random biography",
   },
@@ -91,6 +111,9 @@ export const en: Messages = {
     moveUp: "Move up",
     moveDown: "Move down",
     recenter: "Back to center",
+    gestureHintTouch: "Swipe to explore, tap to open",
+    gestureHintPointer: "Drag to explore, click to open",
+    gestureHintClose: "Close hint",
   },
   detail: {
     close: "Close",
@@ -112,6 +135,10 @@ export const en: Messages = {
     loadingOverview: "Loading overview …",
     loadFailed: "The overview could not be loaded. Please check your internet connection.",
     retry: "Try again",
+    related: "Related biographies",
+    readingTime: (minutes: number) => `${minutes} min read`,
+    outline: "Contents",
+    sameEra: "Same era",
   },
   error: {
     title: "Error",

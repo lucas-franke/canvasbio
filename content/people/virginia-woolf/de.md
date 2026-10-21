@@ -13,6 +13,24 @@ facts:
 timeline:
   - date: 25. Januar 1882
     event: Geboren in London
+  - date: 10. August 1912
+    event: Heirat mit Leonard Sidney Woolf
+  - date: "1915"
+    event: "Veröffentlichung: „The Voyage Out“"
+  - date: "1925"
+    event: "Veröffentlichung: „Mrs. Dalloway“"
+  - date: "1927"
+    event: "Veröffentlichung: „Die Fahrt zum Leuchtturm“"
+  - date: "1928"
+    event: "Veröffentlichung: „Orlando“"
+  - date: "1929"
+    event: "Veröffentlichung: „Ein Zimmer für sich allein“"
+  - date: "1931"
+    event: "Veröffentlichung: „Die Wellen“"
+  - date: "1933"
+    event: "Veröffentlichung: „Flush: A Biography“"
+  - date: "1937"
+    event: "Veröffentlichung: „The Years“"
   - date: 28. März 1941
     event: Gestorben in Lewes
 ---

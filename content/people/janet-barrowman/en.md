@@ -2,7 +2,7 @@
 summary:
   - Scottish suffragette
   - 1879–1955 · Glasgow
-portraitAlt: Portrait of Janet Barrowman
+portraitAlt: Group photo from 1912 – Janet Barrowman (second from left) with fellow suffragists in a garden
 facts:
   - label: Born
     value: 1879 in Glasgow

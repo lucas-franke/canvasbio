@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: 7. März 1858
     event: Geboren in Eidsvoll
+  - date: 16. November 1887
+    event: Heirat mit Fredrik Arentz Krog
   - date: 13. November 1911
     event: Gestorben in Christiania
 ---

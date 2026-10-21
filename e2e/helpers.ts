@@ -2,7 +2,8 @@ import type { Page } from "@playwright/test";
 
 /**
  * On touch screens the canvas controls (zoom, direction pad, hide names) sit behind one
- * button ("Porträtwand steuern"); open it there. On desktop they are always visible.
+ * button (German label "Porträtwand steuern"); open it there. On desktop they are always
+ * visible.
  */
 export async function openCanvasControls(page: Page, isMobile: boolean) {
   if (!isMobile) return;

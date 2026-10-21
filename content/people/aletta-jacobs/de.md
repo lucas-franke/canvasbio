@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: 9. Februar 1854
     event: Geboren in Sappemeer
+  - date: "1858"
+    event: "Wohnort: Noorderstraat 19"
   - date: 10. August 1929
     event: Gestorben in Baarn
 ---

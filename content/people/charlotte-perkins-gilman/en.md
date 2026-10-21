@@ -13,6 +13,12 @@ facts:
 timeline:
   - date: July 3, 1860
     event: Born in Hartford
+  - date: "1892"
+    event: "Publication: “The Yellow Wall Paper”"
+  - date: "1898"
+    event: "Publication: “Women and Economics”"
+  - date: "1915"
+    event: "Publication: “Herland”"
   - date: August 17, 1935
     event: Died in Pasadena
   - date: "1994"

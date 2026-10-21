@@ -15,6 +15,12 @@ timeline:
     event: Geboren in Finnish church parish
   - date: "1905"
     event: Ledamot
+  - date: 11. Dezember 1905
+    event: "Mitglied: Stockholmsföreningen för kvinnans politiska rösträtt"
+  - date: "1908"
+    event: "Mitglied: Stockholmsföreningen för kvinnans politiska rösträtt"
+  - date: "1917"
+    event: "Mitglied: centralstyrelsen i landsföreningen för kvinnans politiska rösträtt"
   - date: 16. Juni 1930
     event: Gestorben in Danderyd
 ---

@@ -13,10 +13,48 @@ facts:
 timeline:
   - date: 29. November 1832
     event: Geboren in Germantown
+  - date: "1834"
+    event: "Wohnort: Boston"
+  - date: April 1840
+    event: "Wohnort: Concord"
+  - date: 1. Juni 1843
+    event: "Wohnort: Fruitlands"
+  - date: "1845"
+    event: "Wohnort: Concord"
+  - date: "1848"
+    event: "Wohnort: Boston"
+  - date: "1855"
+    event: "Wohnort: Walpole"
+  - date: Juli 1858
+    event: "Wohnort: Orchard House"
+  - date: Juli 1865
+    event: "Wohnort: Europa"
+  - date: "1868"
+    event: "Veröffentlichung: „Little Women“"
+  - date: "1869"
+    event: "Veröffentlichung: „An Old-Fashioned Girl“"
+  - date: "1870"
+    event: "Wohnort: Europa"
+  - date: "1873"
+    event: "Veröffentlichung: „Work: A Story of Experience“"
+  - date: "1875"
+    event: "Veröffentlichung: „Eight Cousins; or, The Aunt-Hill“"
+  - date: "1876"
+    event: "Veröffentlichung: „Rose in Bloom“"
+  - date: "1877"
+    event: "Veröffentlichung: „A Modern Mephistopheles“"
+  - date: "1878"
+    event: "Veröffentlichung: „Under the Lilacs“"
+  - date: "1880"
+    event: "Veröffentlichung: „Jack and Jill: A Village Story“"
+  - date: "1886"
+    event: "Veröffentlichung: „Jo's Boys“"
   - date: 6. März 1888
     event: Gestorben in Roxbury
   - date: "1996"
     event: "Auszeichnung: National Women’s Hall of Fame"
+  - date: "2004"
+    event: "Veröffentlichung: „The Brownie and the Princess“"
 ---
 
 Louisa May Alcott (* 29. November 1832 in Germantown, Pennsylvania; † 6. März 1888 in Roxbury, Massachusetts) war eine US-amerikanische Schriftstellerin. Weltweit berühmt wurde sie als Autorin der Jugendbuch-Tetralogie Little Women, die auf Kindheitserlebnissen mit ihren drei Schwestern beruht.

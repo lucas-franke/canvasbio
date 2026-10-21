@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: May 6, 1893
     event: Born in Cambridge
+  - date: "1918"
+    event: Marriage to G. D. H. Cole
   - date: May 7, 1980
     event: Died in Goring-on-Thames
 ---

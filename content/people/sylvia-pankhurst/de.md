@@ -15,8 +15,18 @@ timeline:
     event: Geboren in Trafford
   - date: "1898"
     event: "Ausbildung: Manchester School of Art"
+  - date: "1903"
+    event: "Mitglied: Women’s Social and Political Union"
   - date: "1904"
     event: "Ausbildung: Royal College of Art"
+  - date: "1913"
+    event: "Mitglied: East London Federation of the Suffragettes"
+  - date: "1924"
+    event: "Wohnort: Woodford Green"
+  - date: "1936"
+    event: "Tätig bei: New times & Ethiopia news"
+  - date: "1956"
+    event: "Wohnort: Kaiserreich Abessinien"
   - date: 27. September 1960
     event: Gestorben in Addis Abeba
 ---

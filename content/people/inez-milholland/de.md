@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: 6. August 1886
     event: Geboren in Brooklyn
+  - date: "1913"
+    event: Heirat mit Eugen Boissevain
   - date: 25. November 1916
     event: Gestorben in Good Samaritan Hospital
 ---

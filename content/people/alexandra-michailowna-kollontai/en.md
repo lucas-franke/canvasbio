@@ -31,6 +31,10 @@ timeline:
     event: "Award: Order of the Aztec Eagle"
   - date: "1946"
     event: "Award: Knight Grand Cross of the Order of St. Olav‎"
+  - date: "1946"
+    event: Nominated for Nobel Peace Prize
+  - date: "1947"
+    event: Nominated for Nobel Peace Prize
   - date: March 9, 1952
     event: Died in Bahía Blanca
 ---

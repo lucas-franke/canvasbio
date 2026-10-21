@@ -10,6 +10,7 @@ import {
   neighbor,
   personAt,
   seededShuffle,
+  tileVariation,
   visibleRange,
   type CanvasLayout,
   type Cell,
@@ -191,5 +192,30 @@ describe("seededShuffle", () => {
     expect(seededShuffle(items, "canvas")).toEqual(a);
     expect(seededShuffle(items, "other")).not.toEqual(a);
     expect([...a].sort((x, y) => x - y)).toEqual(items);
+  });
+});
+
+describe("tileVariation", () => {
+  const layout = createLayout(40, { tileSize: 200, gap: 40, rowOffset: 0.5, wrap: true });
+
+  it("varies size and position slightly, staying inside the cell", () => {
+    const variations = Array.from({ length: layout.cols * layout.rows }, (_, i) =>
+      tileVariation(layout, { col: i % layout.cols, row: Math.floor(i / layout.cols) }, 0.2),
+    );
+    expect(new Set(variations.map((v) => v.scale)).size).toBeGreaterThan(10);
+    for (const { scale, dx, dy } of variations) {
+      expect(scale).toBeGreaterThanOrEqual(0.8);
+      expect(scale).toBeLessThanOrEqual(1);
+      const margin = ((1 - scale) / 2) * 200;
+      expect(Math.abs(dx)).toBeLessThanOrEqual(margin + 0.5);
+      expect(Math.abs(dy)).toBeLessThanOrEqual(margin + 0.5);
+    }
+  });
+
+  it("is the same for copies of the pattern and off without variance", () => {
+    const cell = { col: 3, row: 2 };
+    const copy = { col: 3 + layout.cols, row: 2 - layout.rows };
+    expect(tileVariation(layout, copy, 0.2)).toEqual(tileVariation(layout, cell, 0.2));
+    expect(tileVariation(layout, cell, 0)).toEqual({ scale: 1, dx: 0, dy: 0 });
   });
 });

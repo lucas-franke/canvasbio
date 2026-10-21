@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: May 23, 1810
     event: Born in Cambridge
+  - date: "1843"
+    event: "Publication: “Woman in the Nineteenth Century”"
   - date: July 19, 1850
     event: Died in Fire Island
   - date: "1995"

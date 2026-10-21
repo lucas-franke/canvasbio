@@ -13,6 +13,10 @@ facts:
 timeline:
   - date: 10. Juni 1880
     event: Geboren in Großkarol
+  - date: "1905"
+    event: Heirat mit Brunó Fröhlich
+  - date: "1914"
+    event: Heirat mit Ervin Bauer
   - date: 1. Dezember 1918
     event: Gestorben in Budapest
 ---

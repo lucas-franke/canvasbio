@@ -48,5 +48,5 @@ export async function loadPage(name: string, locale: string): Promise<StaticPage
     const meta = pageMetaSchema.parse(data);
     return { ...meta, locale: candidate, html: await renderMarkdown(body, { headingOffset: 0 }) };
   }
-  throw new Response(`Seite "${name}" nicht gefunden`, { status: 404 });
+  throw new Response(`Page "${name}" not found`, { status: 404 });
 }

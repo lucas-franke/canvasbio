@@ -19,6 +19,8 @@ timeline:
     event: "Education: Hyde Park Academy High School"
   - date: "1919"
     event: "Education: Columbia University"
+  - date: February 7, 1931
+    event: Marriage to George P. Putnam
   - date: "1933"
     event: "Award: Gold Medal of the Society of Woman Geographers"
   - date: January 5, 1939

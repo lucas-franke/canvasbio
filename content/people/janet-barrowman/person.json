@@ -18,7 +18,13 @@
     "license": {
       "name": "Public domain"
     },
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Helen_Crawfurd,_Janet_Barrowman,_Margaret_McPhun,_Mrs_A.A._Wilson,_Frances_McPhun,_Nancy_A._John_and_Annie_Swan.jpg"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Helen_Crawfurd,_Janet_Barrowman,_Margaret_McPhun,_Mrs_A.A._Wilson,_Frances_McPhun,_Nancy_A._John_and_Annie_Swan.jpg",
+    "focus": {
+      "x": 0.245,
+      "y": 0.33,
+      "zoom": 2.3
+    },
+    "curated": true
   },
   "facets": {
     "field": [

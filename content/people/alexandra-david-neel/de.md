@@ -13,6 +13,10 @@ facts:
 timeline:
   - date: 24. Oktober 1868
     event: Geboren in Saint-Mandé
+  - date: "1927"
+    event: "Veröffentlichung: „My Journey to Lhasa“"
+  - date: "1929"
+    event: "Veröffentlichung: „With Mystics and Magicians in Tibet“"
   - date: 8. September 1969
     event: Gestorben in Digne-les-Bains
 ---

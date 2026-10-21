@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: 30. Januar 1861
     event: Geboren in Fleckeby
+  - date: 1. Mai 1886
+    event: Heirat mit Hans Wright
   - date: "1917"
     event: Stellvertretender Vorsitzender
   - date: "1921"

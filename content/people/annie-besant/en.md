@@ -15,6 +15,12 @@ timeline:
     event: Born in Clapham
   - date: "1895"
     event: "Award: Subba Row Medal"
+  - date: "1897"
+    event: "Publication: “The Ancient Wisdom”"
+  - date: "1905"
+    event: "Publication: “Thought-Forms: A Record of Clairvoyant Investigation”"
+  - date: "1931"
+    event: Nominated for Nobel Peace Prize
   - date: "1933"
     event: "Award: Silver Wolf Award"
   - date: September 20, 1933

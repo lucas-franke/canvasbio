@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: July 18, 1867
     event: Born in Hannibal
+  - date: "1886"
+    event: Marriage to James Joseph Brown
   - date: "1932"
     event: "Award: Knight of the Legion of Honour"
   - date: October 26, 1932

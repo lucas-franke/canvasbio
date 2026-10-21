@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: April 7, 1803
     event: Born in Paris
+  - date: "1838"
+    event: "Publication: “Peregrinations of a Pariah”"
   - date: November 14, 1844
     event: Died in Bordeaux
 ---

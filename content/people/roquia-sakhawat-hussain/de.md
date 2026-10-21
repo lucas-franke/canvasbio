@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: 9. Dezember 1880
     event: Geboren in Rangpur
+  - date: "1905"
+    event: "Veröffentlichung: „Sultana's Dream“"
   - date: 9. Dezember 1932
     event: Gestorben in Kolkata
 ---

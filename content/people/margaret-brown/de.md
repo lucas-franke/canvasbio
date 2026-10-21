@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: 18. Juli 1867
     event: Geboren in Hannibal
+  - date: "1886"
+    event: Heirat mit James Joseph Brown
   - date: "1932"
     event: "Auszeichnung: Ritter der französischen Ehrenlegion"
   - date: 26. Oktober 1932

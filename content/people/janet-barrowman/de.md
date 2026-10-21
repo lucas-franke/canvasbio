@@ -2,7 +2,7 @@
 summary:
   - Schottisch-britische Suffragette
   - 1879–1955 · Glasgow
-portraitAlt: Porträt von Janet Barrowman
+portraitAlt: Gruppenfoto von 1912 – Janet Barrowman (zweite von links) mit weiteren Frauenrechtlerinnen in einem Garten
 facts:
   - label: Geboren
     value: 1879 in Glasgow

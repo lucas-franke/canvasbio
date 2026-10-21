@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: 25. Februar 1857
     event: Geboren in Brighton
+  - date: 27. Juni 1882
+    event: Heirat mit David Thomas, 1. Viscount Rhondda
   - date: 11. März 1941
     event: Gestorben in Newport
 ---

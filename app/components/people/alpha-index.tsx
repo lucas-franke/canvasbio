@@ -52,7 +52,8 @@ function LetterGrid({
 /**
  * Jump-to-letter index (Figma 2×13 keyboard). From `sm` up it sits sticky below the header;
  * on phones a compact "A–Z" button opens the same grid in a bottom sheet
- * (26 targets of 44 px don't fit a phone's height as a side rail).
+ * (26 targets of 44 px don't fit a phone's height as a side rail). The button takes no
+ * height of its own: it floats at the end of the letter heading rows.
  */
 export function AlphaIndex({ available }: { available: Set<string> }) {
   const m = useMessages();
@@ -77,7 +78,10 @@ export function AlphaIndex({ available }: { available: Set<string> }) {
   };
 
   return (
-    <nav aria-label={m.alphabet.label} className="sticky top-2 z-30 mx-auto w-full max-w-[57rem] lg:top-26">
+    <nav
+      aria-label={m.alphabet.label}
+      className="sticky top-2 z-30 mx-auto w-full max-w-[57rem] lg:top-26 @max-xl:h-0"
+    >
       <div className="hidden overflow-hidden rounded-xl border-2 border-control bg-surface shadow-sm @xl:block">
         <LetterGrid
           available={available}
@@ -88,7 +92,7 @@ export function AlphaIndex({ available }: { available: Set<string> }) {
 
       <div className="flex justify-end @xl:hidden">
         <Drawer open={open} onOpenChange={setOpen}>
-          <DrawerTrigger className="min-h-12 rounded-full border-2 border-control bg-surface px-5 text-label font-medium text-emphasis shadow-sm">
+          <DrawerTrigger className="min-h-11 rounded-full border-2 border-control bg-surface px-5 text-label font-medium text-emphasis shadow-sm">
             {m.alphabet.open}
           </DrawerTrigger>
           <DrawerContent className="rounded-t-card bg-surface text-text" onCloseAutoFocus={afterSheetClosed}>

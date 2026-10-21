@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: October 29, 1834
     event: Born in Helsingør
+  - date: "1866"
+    event: Marriage to Vilhelm Klein
   - date: "1900"
     event: "Award: Medal of Merit in Gold"
   - date: March 9, 1915

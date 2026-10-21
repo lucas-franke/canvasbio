@@ -20,7 +20,7 @@ const localeCounts = siteConfig.locales
   .map((l) => `${l.code}: ${[...people.values()].filter((p) => p.texts.has(l.code)).length}`)
   .join(", ");
 console.log(
-  `\n${people.size} Personen (${localeCounts}), ${Object.values(taxonomy).reduce((n, v) => n + Object.keys(v).length, 0)} Taxonomie-Einträge`,
+  `\n${people.size} people (${localeCounts}), ${Object.values(taxonomy).reduce((n, v) => n + Object.keys(v).length, 0)} taxonomy entries`,
 );
-console.log(`${errors.length} Fehler, ${warnings.length} Warnungen`);
+console.log(`${errors.length} errors, ${warnings.length} warnings`);
 if (errors.length > 0) process.exit(1);

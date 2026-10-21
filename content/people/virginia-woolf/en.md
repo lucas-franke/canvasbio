@@ -13,6 +13,24 @@ facts:
 timeline:
   - date: January 25, 1882
     event: Born in London
+  - date: August 10, 1912
+    event: Marriage to Leonard Woolf
+  - date: "1915"
+    event: "Publication: “The Voyage Out”"
+  - date: "1925"
+    event: "Publication: “Mrs Dalloway”"
+  - date: "1927"
+    event: "Publication: “To the Lighthouse”"
+  - date: "1928"
+    event: "Publication: “Orlando: A Biography”"
+  - date: "1929"
+    event: "Publication: “A Room of One's Own”"
+  - date: "1931"
+    event: "Publication: “The Waves”"
+  - date: "1933"
+    event: "Publication: “Flush: A Biography”"
+  - date: "1937"
+    event: "Publication: “The Years”"
   - date: March 28, 1941
     event: Died in Lewes
 ---

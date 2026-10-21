@@ -62,8 +62,8 @@ function treat(image: Sharp): Sharp {
   return image;
 }
 
-function squareRegion(width: number, height: number, focus = DEFAULT_FOCUS) {
-  const side = Math.min(width, height);
+function squareRegion(width: number, height: number, focus: Person["portrait"]["focus"] = DEFAULT_FOCUS) {
+  const side = Math.round(Math.min(width, height) / (focus.zoom ?? 1));
   const clamp = (v: number, max: number) => Math.round(Math.min(Math.max(v, 0), max));
   return {
     left: clamp(focus.x * width - side / 2, width - side),
@@ -172,7 +172,7 @@ async function main() {
       }
       manifest[slug] = await processPerson(person, source, hash);
       built++;
-      if (built % 20 === 0) console.log(`  ${built} Porträts erzeugt …`);
+      if (built % 20 === 0) console.log(`  ${built} portraits generated …`);
     } catch (error) {
       failures.push(`${slug}: ${(error as Error).message}`);
     }
@@ -188,9 +188,9 @@ async function main() {
   const sorted = Object.fromEntries(Object.entries(manifest).sort(([a], [b]) => a.localeCompare(b)));
   await writeFile(MANIFEST, `${JSON.stringify(sorted, null, 2)}\n`);
 
-  console.log(`Porträts: ${built} erzeugt, ${skipped} unverändert (Tönung: ${treatment})`);
+  console.log(`Portraits: ${built} generated, ${skipped} unchanged (treatment: ${treatment})`);
   if (failures.length > 0) {
-    console.error(`Fehler bei ${failures.length} Porträt(s):\n  ${failures.join("\n  ")}`);
+    console.error(`Failed for ${failures.length} portrait(s):\n  ${failures.join("\n  ")}`);
     process.exit(1);
   }
 }

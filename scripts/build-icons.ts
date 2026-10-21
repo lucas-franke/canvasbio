@@ -75,4 +75,4 @@ const manifest = {
   ],
 };
 await writeFile(path.resolve("public/site.webmanifest"), JSON.stringify(manifest, null, 2));
-console.log(`Icons: „${initials}“ auf ${colors.light.accent}`);
+console.log(`Icons: "${initials}" on ${colors.light.accent}`);

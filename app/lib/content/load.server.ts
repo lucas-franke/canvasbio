@@ -61,13 +61,13 @@ export async function loadContent(root: string, config: SiteConfig): Promise<Loa
     if (parsed.success) taxonomy = parsed.data;
     else error(taxonomyFile, formatZodError(parsed.error));
   } catch (e) {
-    error(taxonomyFile, `nicht lesbar: ${(e as Error).message}`);
+    error(taxonomyFile, `not readable: ${(e as Error).message}`);
   }
   for (const [facet, values] of Object.entries(taxonomy)) {
     for (const [value, labels] of Object.entries(values)) {
       const missing = localeCodes.filter((code) => !labels[code]);
       if (missing.length > 0)
-        error(taxonomyFile, `${facet}.${value}: Übersetzung fehlt für ${missing.join(", ")}`);
+        error(taxonomyFile, `${facet}.${value}: translation missing for ${missing.join(", ")}`);
     }
   }
 
@@ -92,23 +92,23 @@ export async function loadContent(root: string, config: SiteConfig): Promise<Loa
       }
       person = parsed.data;
     } catch (e) {
-      error(personFile, `nicht lesbar: ${(e as Error).message}`);
+      error(personFile, `not readable: ${(e as Error).message}`);
       continue;
     }
 
     if (person.slug !== folder)
-      error(personFile, `slug "${person.slug}" passt nicht zum Ordnernamen "${folder}"`);
+      error(personFile, `slug "${person.slug}" does not match the folder name "${folder}"`);
     if (!(await exists(path.join(dir, person.portrait.file)))) {
-      error(personFile, `Porträt "${person.portrait.file}" fehlt`);
+      error(personFile, `portrait "${person.portrait.file}" is missing`);
     }
     for (const [facet, values] of Object.entries(person.facets)) {
       if (!config.facets.some((f) => f.key === facet)) {
-        error(personFile, `Facette "${facet}" ist nicht in site.config.ts definiert`);
+        error(personFile, `facet "${facet}" is not defined in site.config.ts`);
         continue;
       }
       for (const value of values) {
         if (!taxonomy[facet]?.[value])
-          error(personFile, `Facettenwert "${facet}.${value}" fehlt in taxonomy.json`);
+          error(personFile, `facet value "${facet}.${value}" is missing from taxonomy.json`);
       }
     }
 
@@ -117,7 +117,7 @@ export async function loadContent(root: string, config: SiteConfig): Promise<Loa
       const locale = file.slice(0, -3);
       const textFile = path.join(dir, file);
       if (!localeCodes.includes(locale)) {
-        warn(textFile, `Locale "${locale}" ist nicht in site.config.ts konfiguriert und wird ignoriert`);
+        warn(textFile, `locale "${locale}" is not configured in site.config.ts and is ignored`);
         continue;
       }
       const { data, body } = parseFrontmatter(await readFile(textFile, "utf8"));
@@ -126,16 +126,16 @@ export async function loadContent(root: string, config: SiteConfig): Promise<Loa
         error(textFile, formatZodError(parsed.error));
         continue;
       }
-      if (!body) warn(textFile, "Lebensgeschichte (Markdown-Text) ist leer");
+      if (!body) warn(textFile, "life story (Markdown body) is empty");
       texts.set(locale, { text: parsed.data, story: body });
     }
     for (const locale of requiredLocales) {
-      if (!texts.has(locale)) error(path.join(dir, `${locale}.md`), "Pflicht-Übersetzung fehlt");
+      if (!texts.has(locale)) error(path.join(dir, `${locale}.md`), "required translation is missing");
     }
 
     people.set(person.slug, { person, texts });
   }
 
-  if (people.size === 0) error(peopleDir, "keine Personen gefunden");
+  if (people.size === 0) error(peopleDir, "no people found");
   return { people, taxonomy, issues };
 }

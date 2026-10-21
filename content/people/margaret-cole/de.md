@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: 6. Mai 1893
     event: Geboren in Cambridge
+  - date: "1918"
+    event: Heirat mit George Douglas Howard Cole
   - date: 7. Mai 1980
     event: Gestorben in Goring-on-Thames
 ---

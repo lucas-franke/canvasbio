@@ -17,6 +17,8 @@ timeline:
     event: "Ausbildung: Fisk University"
   - date: "1883"
     event: "Ausbildung: Rust College"
+  - date: 27. Juni 1895
+    event: Heirat mit Ferdinand Lee Barnett
   - date: 25. März 1931
     event: Gestorben in Chicago
   - date: "1988"

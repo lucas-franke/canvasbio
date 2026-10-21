@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: "1881"
     event: Geboren in Groß-London
+  - date: 8. Mai 1907
+    event: Heirat mit Sir Henry Norman, 1st Baronet
   - date: 1. März 1964
     event: Gestorben in Antibes
 ---

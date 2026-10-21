@@ -13,8 +13,12 @@ facts:
 timeline:
   - date: August 26, 1874
     event: Born in Portage
+  - date: "1901"
+    event: "Residence: New York City"
   - date: "1921"
     event: "Award: Pulitzer Prize for Drama"
+  - date: "1928"
+    event: Marriage to William Llewellyn Breese
   - date: December 27, 1938
     event: Died in Chicago
 ---

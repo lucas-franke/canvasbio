@@ -255,3 +255,36 @@ export function seededShuffle<T>(items: readonly T[], seed: string): T[] {
   }
   return result;
 }
+
+/** Three numbers in [0, 1) from integer coordinates (same input, same output). */
+function cellNoise(col: number, row: number): [number, number, number] {
+  let h = Math.imul(col, 374761393) ^ Math.imul(row, 668265263);
+  const next = () => {
+    h = Math.imul(h ^ (h >>> 13), 1274126177);
+    h ^= h >>> 16;
+    return (h >>> 0) / 4294967296;
+  };
+  return [next(), next(), next()];
+}
+
+export interface TileVariation {
+  /** Drawn size relative to the cell, between 1 − variance and 1. */
+  scale: number;
+  /** Offset from the cell centre in px, within the room the smaller size frees up. */
+  dx: number;
+  dy: number;
+}
+
+/**
+ * A slight, fixed variation per tile so the wall reads as a loose collage, not a strict
+ * grid: every tile is a little smaller or larger and a little off-centre. Stable per
+ * pattern cell, so pre-rendering, the browser and the repeated copies of the pattern agree.
+ */
+export function tileVariation(layout: CanvasLayout, cell: Cell, variance: number): TileVariation {
+  if (variance <= 0) return { scale: 1, dx: 0, dy: 0 };
+  const [a, b, c] = cellNoise(mod(cell.col, layout.cols), mod(cell.row, layout.rows));
+  const scale = 1 - variance * a;
+  // Stay inside the cell: at most 80 % of the freed margin on each side.
+  const room = ((1 - scale) / 2) * 0.8 * layout.tile;
+  return { scale, dx: Math.round((b * 2 - 1) * room), dy: Math.round((c * 2 - 1) * room) };
+}

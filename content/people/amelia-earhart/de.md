@@ -19,6 +19,8 @@ timeline:
     event: "Ausbildung: Hyde Park Academy High School"
   - date: "1919"
     event: "Ausbildung: Columbia University"
+  - date: 7. Februar 1931
+    event: Heirat mit George Palmer Putnam
   - date: "1933"
     event: "Auszeichnung: Gold Medal of the Society of Woman Geographers"
   - date: 5. Januar 1939

@@ -46,6 +46,11 @@ export function listPath(locale: string): string {
   return pathFor(siteConfig, locale, "people", [siteConfig.paths.list[locale]]);
 }
 
+/** URL of the timeline view, e.g. "/personen/zeitstrahl" or "/en/people/timeline". */
+export function timelinePath(locale: string): string {
+  return pathFor(siteConfig, locale, "people", [siteConfig.paths.timeline[locale]]);
+}
+
 /** Whether a pathname is the list view of the people page. */
 export function isListPath(pathname: string, config: SiteConfig = siteConfig): boolean {
   const { locale, page, rest } = parsePath(pathname, config);
@@ -68,8 +73,10 @@ export function switchLocalePath(pathname: string, target: string, config: SiteC
   if (!page) return pathFor(config, target, "start");
 
   const translated = [...rest];
-  if (page === "people" && translated[0] === config.paths.list[locale]) {
-    translated[0] = config.paths.list[target];
+  for (const view of ["list", "timeline"] as const) {
+    if (page === "people" && translated[0] === config.paths[view][locale]) {
+      translated[0] = config.paths[view][target];
+    }
   }
   return pathFor(config, target, page, translated.filter(Boolean));
 }

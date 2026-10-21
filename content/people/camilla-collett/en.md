@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: January 23, 1813
     event: Born in Christiansand
+  - date: July 14, 1841
+    event: Marriage to Peter Jonas Collett
   - date: March 6, 1895
     event: Died in Christiania
 ---

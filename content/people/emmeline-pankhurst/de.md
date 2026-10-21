@@ -13,12 +13,18 @@ facts:
 timeline:
   - date: 15. Juli 1858
     event: Geboren in Moss Side
+  - date: 18. Dezember 1879
+    event: Heirat mit Richard Pankhurst
   - date: "1898"
     event: Standesbeamter
   - date: 1. März 1912
     event: "Auszeichnung: Hungerstreik-Medaille"
+  - date: "1914"
+    event: "Veröffentlichung: „Ein Leben für die Rechte der Frauen“"
   - date: "1917"
     event: "Mitglied: Women's Party"
+  - date: "1925"
+    event: "Wohnort: Côte d’Azur"
   - date: "1926"
     event: "Mitglied: Conservative Party"
   - date: 14. Juni 1928

@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: 24. November 1840
     event: Geboren in Plymouth
+  - date: 17. September 1874
+    event: Heirat mit Thomas Hardy
   - date: 27. November 1912
     event: Gestorben in Dorchester
 ---

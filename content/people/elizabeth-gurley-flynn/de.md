@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: 7. August 1890
     event: Geboren in Concord
+  - date: "1907"
+    event: "Mitglied: Industrial Workers of the World"
   - date: "1936"
     event: "Mitglied: Kommunistische Partei der Vereinigten Staaten von Amerika"
   - date: 5. September 1964

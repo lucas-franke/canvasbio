@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: 8. Februar 1825
     event: Geboren in Boston
+  - date: 30. November 1848
+    event: Heirat mit William Stevens Robinson
   - date: 22. Dezember 1911
     event: Gestorben in Malden
 ---

@@ -1,19 +1,19 @@
-import { LayoutGrid, List } from "lucide-react";
+import { ChartGantt, LayoutGrid, List } from "lucide-react";
 import { useId } from "react";
 import { Link } from "react-router";
 
 import { useLocale, useMessages } from "~/lib/i18n";
-import { listPath, pagePath } from "~/lib/i18n/locale";
+import { listPath, pagePath, timelinePath } from "~/lib/i18n/locale";
 import { useSearchSuffix } from "~/lib/search/use-search";
 
 const optionClass =
   "grid size-11 place-items-center rounded-full text-nav-foreground transition-colors hover:bg-nav-foreground/15 aria-[current=page]:bg-nav-foreground aria-[current=page]:text-nav [&_svg]:size-5";
 
 /**
- * "Ansicht" switch between portrait wall and list (Figma "Toggle").
- * Both views are separate URLs, so the options are links; the active one is aria-current.
+ * "Ansicht" switch between portrait wall, list and timeline (Figma "Toggle", plus the timeline).
+ * The views are separate URLs, so the options are links; the active one is aria-current.
  */
-export function ViewToggle({ active }: { active: "canvas" | "list" }) {
+export function ViewToggle({ active }: { active: "canvas" | "list" | "timeline" }) {
   const locale = useLocale();
   const m = useMessages();
   const labelId = useId();
@@ -45,6 +45,14 @@ export function ViewToggle({ active }: { active: "canvas" | "list" }) {
           className={optionClass}
         >
           <List aria-hidden="true" />
+        </Link>
+        <Link
+          to={timelinePath(locale) + suffix}
+          aria-current={active === "timeline" ? "page" : undefined}
+          aria-label={m.view.timeline}
+          className={optionClass}
+        >
+          <ChartGantt aria-hidden="true" />
         </Link>
       </div>
     </div>

@@ -13,6 +13,12 @@ facts:
 timeline:
   - date: 3. Juli 1860
     event: Geboren in Hartford
+  - date: "1892"
+    event: "Veröffentlichung: „Die gelbe Tapete“"
+  - date: "1898"
+    event: "Veröffentlichung: „Women and Economics“"
+  - date: "1915"
+    event: "Veröffentlichung: „Herland“"
   - date: 17. August 1935
     event: Gestorben in Pasadena
   - date: "1994"

@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: March 15, 1879
     event: Born in Gorzów Wielkopolski
+  - date: "1906"
+    event: "Residence: Berlin"
   - date: "1908"
     event: Member of Social Democratic Party of Germany
   - date: "1919"

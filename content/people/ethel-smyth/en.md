@@ -15,12 +15,22 @@ timeline:
     event: Born in Sidcup
   - date: "1877"
     event: "Education: University of Music and Theatre Leipzig"
+  - date: "1884"
+    event: "Publication: “Piano Trio”"
+  - date: "1893"
+    event: "Publication: “Mass in D”"
   - date: "1910"
     event: "Award: honorary doctor of Durham University"
+  - date: "1914"
+    event: "Publication: “The Boatswain's Mate”"
   - date: "1922"
     event: "Award: Dame Commander of the Order of the British Empire"
+  - date: "1923"
+    event: "Publication: “Fête Galante”"
   - date: "1928"
     event: "Award: honorary doctor of the University of St Andrews"
+  - date: "1931"
+    event: "Publication: “The Prison”"
   - date: May 8, 1944
     event: Died in Woking
 ---

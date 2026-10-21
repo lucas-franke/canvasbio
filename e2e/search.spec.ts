@@ -56,6 +56,39 @@ test("place filter matches the place names", async ({ page }) => {
   await expect(page.locator("article[data-vt-item]").first()).toBeVisible();
 });
 
+test("place suggestions work as a combobox with keyboard and pointer", async ({ page }) => {
+  await page.goto("/personen/liste");
+  const dialog = await openPanel(page);
+  const place = dialog.getByRole("combobox", { name: "Ort" });
+  const options = dialog.getByRole("listbox", { name: "Ort" }).getByRole("option");
+
+  await place.fill("berl");
+  await expect(place).toHaveAttribute("aria-expanded", "true");
+  await expect(options.first()).toContainText("Berlin");
+  // Keyboard: arrow to the first suggestion, Enter picks it (and doesn't submit).
+  await place.press("ArrowDown");
+  await expect(place).toHaveAttribute("aria-activedescendant", (await options.first().getAttribute("id"))!);
+  await place.press("Enter");
+  await expect(place).toHaveValue("Berlin");
+  await expect(place).toHaveAttribute("aria-expanded", "false");
+  await expect(dialog).toBeVisible();
+
+  // Escape closes only the list, not the panel.
+  await place.fill("ham");
+  await expect(place).toHaveAttribute("aria-expanded", "true");
+  await place.press("Escape");
+  await expect(place).toHaveAttribute("aria-expanded", "false");
+  await page.waitForTimeout(500);
+  await expect(dialog).toBeVisible();
+
+  // Pointer: pick from the list.
+  await place.fill("ber");
+  await options.filter({ hasText: "Berlin" }).click();
+  await expect(place).toHaveValue("Berlin");
+  await submit(dialog).click();
+  await expect(page).toHaveURL(/place=Berlin/);
+});
+
 test("removing a filter chip updates the results and keeps focus in the bar", async ({ page }) => {
   await page.goto("/personen/liste?q=clara&field=politics");
   await page.getByRole("button", { name: "Filter „Politik“ entfernen" }).click();

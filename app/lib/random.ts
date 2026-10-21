@@ -1,5 +1,5 @@
 /**
- * "Zufällige Biografie": a weighted random pick that favours people who are less prominent
+ * "Random biography": a weighted random pick that favours people who are less prominent
  * and who haven't been opened yet, so the button leads to discoveries rather than the
  * same famous names. Pure; the seen list is kept by the caller (see seen.ts).
  */

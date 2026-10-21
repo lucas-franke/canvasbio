@@ -1,5 +1,5 @@
 import { cn } from "cn";
-import { Menu, X } from "lucide-react";
+import { Bookmark, Menu, X } from "lucide-react";
 import { RadioGroup as RadioGroupPrimitive } from "radix-ui";
 import { useState, type ReactNode } from "react";
 import { Link, useLocation } from "react-router";
@@ -14,8 +14,16 @@ import {
 } from "~/components/ui/drawer";
 import { siteConfig } from "~/lib/config";
 import { useLocale, useMessages } from "~/lib/i18n";
-import { pagePath, parsePath, switchLocaleHash, switchLocalePath, type Page } from "~/lib/i18n/locale";
+import {
+  listPath,
+  pagePath,
+  parsePath,
+  switchLocaleHash,
+  switchLocalePath,
+  type Page,
+} from "~/lib/i18n/locale";
 import { SPLIT_VIEW_QUERY, useMediaQuery } from "~/lib/hooks";
+import { useBookmarks } from "~/lib/preferences";
 import { useTheme, type ThemeChoice } from "~/lib/theme/use-theme";
 import { NavIconButton } from "./nav";
 
@@ -48,6 +56,7 @@ export function MenuDrawer() {
   // Desktop: the nav is at the top, so the menu slides in from the left instead of up.
   const desktop = useMediaQuery(SPLIT_VIEW_QUERY, false);
   const close = () => setOpen(false);
+  const [bookmarks] = useBookmarks();
 
   const pages: { page: Page; label: string }[] = [
     { page: "start", label: m.nav.home },
@@ -93,6 +102,15 @@ export function MenuDrawer() {
                   </Link>
                 </li>
               ))}
+              {/* The bookmark list is the list view filtered to saved people. */}
+              {bookmarks.size > 0 && (
+                <li>
+                  <Link to={`${listPath(locale)}?saved=1`} onClick={close} className={cn(itemClass, "gap-3")}>
+                    <Bookmark aria-hidden="true" className="size-5" />
+                    {m.bookmarks.listCount(bookmarks.size)}
+                  </Link>
+                </li>
+              )}
             </ul>
           </nav>
 

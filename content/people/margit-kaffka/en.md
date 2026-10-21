@@ -13,6 +13,10 @@ facts:
 timeline:
   - date: June 10, 1880
     event: Born in Carei
+  - date: "1905"
+    event: Marriage to Brunó Fröhlich
+  - date: "1914"
+    event: Marriage to Ervin Bauer
   - date: December 1, 1918
     event: Died in Budapest
 ---

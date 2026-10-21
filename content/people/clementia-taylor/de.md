@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: 17. Dezember 1810
     event: Geboren in Brockdish
+  - date: 27. September 1842
+    event: Heirat mit Peter Alfred Taylor
   - date: 11. April 1908
     event: Gestorben in Brighton
 ---

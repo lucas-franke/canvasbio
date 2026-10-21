@@ -3,7 +3,7 @@ import { cn } from "cn";
 import { Tabs as TabsPrimitive } from "radix-ui";
 
 /*
- * Tabs styled as the segmented control from the design ("Biografie | Lebensgeschichte | Lebenslauf").
+ * Tabs styled as the segmented control from the design (biography | life story | timeline).
  * Radix provides the ARIA tabs pattern incl. arrow-key navigation.
  */
 

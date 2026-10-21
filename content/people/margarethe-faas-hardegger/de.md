@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: 20. Februar 1882
     event: Geboren in Bern
+  - date: "1905"
+    event: "Tätig bei: Schweizerischer Gewerkschaftsbund"
   - date: 23. September 1963
     event: Gestorben in Minusio
 ---

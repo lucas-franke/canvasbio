@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: 5. Juli 1857
     event: Geboren in Königshain-Wiederau
+  - date: "1899"
+    event: Heirat mit Friedrich Zundel
   - date: 20. Juni 1933
     event: Gestorben in Arkhangelskoye
 ---

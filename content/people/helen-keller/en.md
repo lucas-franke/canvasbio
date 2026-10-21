@@ -13,6 +13,22 @@ facts:
 timeline:
   - date: June 27, 1880
     event: Born in Ivy Green
+  - date: January 1892
+    event: "Publication: “The Frost King”"
+  - date: "1900"
+    event: "Residence: Coolidge Hill Road"
+  - date: "1903"
+    event: "Publication: “The Story of My Life”"
+  - date: "1904"
+    event: "Residence: Dana Street"
+  - date: "1912"
+    event: Member of Industrial Workers of the World
+  - date: "1933"
+    event: Nazi book burnings
+  - date: "1954"
+    event: Nominated for Nobel Peace Prize
+  - date: "1958"
+    event: Nominated for Nobel Peace Prize
   - date: September 14, 1964
     event: "Award: Presidential Medal of Freedom"
   - date: "1965"

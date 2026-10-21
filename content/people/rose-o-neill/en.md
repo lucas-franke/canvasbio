@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: June 25, 1874
     event: Born in Wilkes-Barre
+  - date: "1902"
+    event: Marriage to Harry Leon Wilson
   - date: April 6, 1944
     event: Died in Springfield
   - date: "2022"

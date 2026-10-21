@@ -13,10 +13,48 @@ facts:
 timeline:
   - date: November 29, 1832
     event: Born in Germantown
+  - date: "1834"
+    event: "Residence: Boston"
+  - date: April 1840
+    event: "Residence: Concord"
+  - date: June 1, 1843
+    event: "Residence: Fruitlands"
+  - date: "1845"
+    event: "Residence: Concord"
+  - date: "1848"
+    event: "Residence: Boston"
+  - date: "1855"
+    event: "Residence: Walpole"
+  - date: July 1858
+    event: "Residence: Orchard House"
+  - date: July 1865
+    event: "Residence: Europe"
+  - date: "1868"
+    event: "Publication: “Little Women”"
+  - date: "1869"
+    event: "Publication: “An Old-Fashioned Girl”"
+  - date: "1870"
+    event: "Residence: Europe"
+  - date: "1873"
+    event: "Publication: “Work: A Story of Experience”"
+  - date: "1875"
+    event: "Publication: “Eight Cousins; or, The Aunt-Hill”"
+  - date: "1876"
+    event: "Publication: “Rose in Bloom”"
+  - date: "1877"
+    event: "Publication: “A Modern Mephistopheles”"
+  - date: "1878"
+    event: "Publication: “Under the Lilacs”"
+  - date: "1880"
+    event: "Publication: “Jack and Jill: A Village Story”"
+  - date: "1886"
+    event: "Publication: “Jo's Boys”"
   - date: March 6, 1888
     event: Died in Roxbury
   - date: "1996"
     event: "Award: National Women's Hall of Fame"
+  - date: "2004"
+    event: "Publication: “The Brownie and the Princess”"
 ---
 
 Louisa May Alcott  ( AWL-kət; November 29, 1832 – March 6, 1888) was an American novelist, short story writer, and poet best known for writing the novel Little Women (1868) and its sequels Good Wives (1869), Little Men (1871), and Jo's Boys (1886). Raised in New England by her transcendentalist parents, Abigail May and Amos Bronson Alcott, she grew up among many well-known intellectuals of the day, including Margaret Fuller, Ralph Waldo Emerson, Nathaniel Hawthorne, and Henry David Thoreau. Encouraged by her family, Alcott began writing from an early age.

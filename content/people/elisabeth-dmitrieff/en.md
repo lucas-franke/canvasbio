@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: November 1, 1851
     event: Born in Tver Oblast
+  - date: "1877"
+    event: Marriage to Ivan Davidovski
 ---
 
 Elisabeth Dmitrieff (born Elizaveta Lukinichna Kusheleva, Russian: Елизавета Лукинична Кушелева, also known as Elizaveta Tomanovskaya; 1 November 1850 – probably between 1916 and 1918) was a Russian revolutionary and feminist activist. The illegitimate daughter of a Russian aristocrat and a German nurse, she had a comfortable upbringing but was marginalized within the Russian aristocracy due to the circumstances of her birth, leading to her interest in Marxism and the radical ideas of Nikolay Chernyshevsky. She entered into a marriage of convenience with Mikhail Tomanovski, a colonel who had retired early due to illness, in order to access her inheritance, which she used to fund revolutionary causes such as the Russian-language journal Narodnoye delo. Her money and married status allowed her to leave Russia and study in Geneva, where she participated in founding the Geneva section of the International Workingmen's Association. Sent by the Geneva section as an envoy to London, she became close to Karl Marx and his daughter Jenny.

@@ -2,7 +2,7 @@
 summary:
   - Britische Suffragette und frühe Unterstützerin der Empfängnisverhütung im Vereinigten Königreich
   - 1842–1874
-portraitAlt: Porträt von Katharine Russell, Viscountess Amberley
+portraitAlt: Katharine Russell, Viscountess Amberley, stehend im Fotoatelier vor einer gemalten Landschaft, um 1860
 facts:
   - label: Geboren
     value: 3. April 1842
@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: 3. April 1842
     event: Geboren
+  - date: 8. November 1864
+    event: Heirat mit John Russell
   - date: 28. Juni 1874
     event: Gestorben
 ---

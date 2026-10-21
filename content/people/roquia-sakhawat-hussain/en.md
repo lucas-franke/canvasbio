@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: December 9, 1880
     event: Born in Rangpur Division
+  - date: "1905"
+    event: "Publication: “Sultana's Dream”"
   - date: December 9, 1932
     event: Died in Kolkata
 ---

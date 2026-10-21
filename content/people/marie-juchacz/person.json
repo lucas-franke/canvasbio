@@ -14,11 +14,12 @@
   },
   "portrait": {
     "file": "portrait.jpg",
-    "credit": "Unbekannt",
+    "credit": "Deutsches Reich. Reichstag, 1919",
     "license": {
       "name": "Public domain"
     },
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stamps_of_Germany_(BRD)_1969,_MiNr_596.jpg"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marie_Juchacz_1919.jpg",
+    "curated": true
   },
   "facets": {
     "field": [

@@ -15,6 +15,8 @@ timeline:
     event: Geboren in Jenisseisk
   - date: 12. Juli 1994
     event: Gestorben in Bures-sur-Yvette
+  - date: "1996"
+    event: Desinfektion
 ---
 
 Irena Krzywicka (geboren als Irena Goldberg 28. Mai 1899 in Jenisseisk, Russisches Kaiserreich; gestorben 12. Juli 1994 in Bures-sur-Yvette, Frankreich) war eine polnische Feministin.

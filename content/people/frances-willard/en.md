@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: September 28, 1839
     event: Born in Churchville
+  - date: "1893"
+    event: "Publication: “A Woman of the Century”"
   - date: February 17, 1898
     event: Died in New York City
   - date: "2000"

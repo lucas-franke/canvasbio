@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: "1821"
     event: Geboren in Dorchester County
+  - date: "1844"
+    event: Heirat mit John Tubman
   - date: 10. März 1913
     event: Gestorben in Auburn
   - date: "1973"

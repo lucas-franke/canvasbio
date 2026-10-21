@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: 24. Januar 1864
     event: Geboren in Hampstead
+  - date: "1893"
+    event: "Veröffentlichung: „Ships that Pass in the Night“"
   - date: 5. Mai 1936
     event: Gestorben in Barton on Sea
 ---

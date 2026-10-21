@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: 13. August 1818
     event: Geboren in West Brookfield
+  - date: 1. Mai 1855
+    event: Heirat mit Henry Browne Blackwell
   - date: 19. Oktober 1893
     event: Gestorben in Dorchester
   - date: "1987"

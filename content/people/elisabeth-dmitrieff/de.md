@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: 1. November 1851
     event: Geboren in Oblast Twer
+  - date: "1877"
+    event: Heirat mit Ivan Davidovski
 ---
 
 Elisabeth Dmitrieff (Pseudonym), wahrer Name Jelisaweta Lukinitschna Tomanowskaja, geborene Kuschelewa, (russisch Елизавета Дмитриева bzw. Елизавета Лукинична Томановская, geb. Кушелева; * 20. Oktoberjul. / 1. November 1851greg. im Dorf Wolok bei Toropez; † 1918 in Moskau) war eine russische Sozialistin und Feministin.

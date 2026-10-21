@@ -44,7 +44,7 @@ interface CanvasControlsProps {
   /** Move the content by a fraction of the viewport (positive = towards right/bottom). */
   onPan: (x: number, y: number) => void;
   onRecenter: () => void;
-  /** "Namen ausblenden" (omit to hide the toggle). */
+  /** "Hide names" toggle state (omit to hide the toggle). */
   namesHidden?: boolean;
   onNamesHiddenChange?: (hidden: boolean) => void;
 }
@@ -76,7 +76,7 @@ export function CanvasControls({
       role="group"
       aria-label={m.canvas.controls}
       // Pad after the buttons in the DOM (tab order), but shown to their left, aligned to the
-      // top so it stays clear of the "Zufällige Biografie" button on phones.
+      // top so it stays clear of the "random biography" button on phones.
       className="pointer-events-none absolute right-3 bottom-22 z-20 flex flex-row-reverse items-start gap-2 sm:right-6 sm:bottom-30 lg:right-8 lg:bottom-8"
     >
       <div className="pointer-events-auto flex flex-col gap-1 rounded-full bg-nav p-1 shadow-[0_2px_4px_rgb(0_0_0/0.25)]">

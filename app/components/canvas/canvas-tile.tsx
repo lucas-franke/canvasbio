@@ -3,6 +3,7 @@ import { memo } from "react";
 import { Link } from "react-router";
 
 import { Portrait } from "~/components/portrait";
+import type { TileVariation } from "~/lib/canvas/layout";
 import type { PersonListItem } from "~/lib/content/adapter";
 import { lifeYears } from "~/lib/content/format";
 import { markPortraitSource } from "~/lib/view-transition";
@@ -26,8 +27,8 @@ interface CanvasTileProps {
   active: boolean;
   /** With a search: whether this person matches (highlighted) or not (dimmed). */
   match?: boolean;
-  /** Shown slightly larger (see canvas.featuredShare). */
-  featured?: boolean;
+  /** Slight size and position variation (see canvas.sizeVariance). */
+  variation: TileVariation;
   /** `sizes` value matching the rendered tile size. */
   sizes: string;
   /** Mask class for the torn paper edge, if enabled. */
@@ -46,7 +47,7 @@ export const CanvasTile = memo(function CanvasTile({
   tabbable,
   active,
   match,
-  featured,
+  variation,
   sizes,
   edgeClass,
 }: CanvasTileProps) {
@@ -56,7 +57,12 @@ export const CanvasTile = memo(function CanvasTile({
       data-vt-item
       aria-hidden={primary ? undefined : true}
       className="absolute top-0 left-0"
-      style={{ width: size, height: size, transform: `translate(${x}px, ${y}px)` }}
+      style={{
+        width: size,
+        height: size,
+        transform: `translate(${x + variation.dx}px, ${y + variation.dy}px)`,
+        ["--tile-scale" as string]: variation.scale,
+      }}
     >
       <Link
         to={href}
@@ -68,7 +74,6 @@ export const CanvasTile = memo(function CanvasTile({
         data-person={primary ? person.slug : undefined}
         data-active={active || undefined}
         data-match={match === undefined ? undefined : match ? "hit" : "miss"}
-        data-featured={featured || undefined}
         aria-current={primary && active ? "page" : undefined}
         tabIndex={tabbable ? 0 : -1}
         className="canvas-tile group block size-full"

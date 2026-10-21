@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: 10. März 1847
     event: Geboren in Liverpool
+  - date: 15. August 1925
+    event: Heirat mit William Lovell-Smith
   - date: 13. Juli 1934
     event: Gestorben in Riccarton
 ---

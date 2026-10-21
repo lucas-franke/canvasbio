@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: January 30, 1861
     event: Born in Fleckeby
+  - date: May 1, 1886
+    event: Marriage to Hans Wright
   - date: "1917"
     event: Deputy chairperson
   - date: "1921"

@@ -1,8 +1,10 @@
 import { cn } from "cn";
+import { Bookmark } from "lucide-react";
 import { Link } from "react-router";
 
 import { tornEdgeClass } from "~/lib/canvas/torn-edge";
 import { siteConfig } from "~/lib/config";
+import { useMessages } from "~/lib/i18n";
 import { markPortraitSource } from "~/lib/view-transition";
 
 import { Portrait } from "~/components/portrait";
@@ -16,6 +18,8 @@ interface PersonRowProps {
   active?: boolean;
   /** Highlighted note, e.g. that the biography exists in Leichte Sprache. */
   badge?: string;
+  /** On the reader's bookmark list. */
+  saved?: boolean;
 }
 
 /**
@@ -23,7 +27,8 @@ interface PersonRowProps {
  * Only the name is a link (short accessible name); a pseudo-element stretches it over the
  * whole row so the entire row is clickable/tappable.
  */
-export function PersonRow({ person, href, tags, active = false, badge }: PersonRowProps) {
+export function PersonRow({ person, href, tags, active = false, badge, saved = false }: PersonRowProps) {
+  const m = useMessages();
   return (
     <article
       data-vt-item
@@ -65,6 +70,15 @@ export function PersonRow({ person, href, tags, active = false, badge }: PersonR
           >
             {person.name.display}
           </Link>
+          {saved && (
+            <>
+              <Bookmark
+                aria-hidden="true"
+                className="ml-2 inline size-5 fill-brand align-[-0.125em] text-brand"
+              />
+              <span className="sr-only">, {m.bookmarks.marked}</span>
+            </>
+          )}
         </h3>
         {badge && (
           <p className="w-fit rounded-lg bg-brand px-2 py-0.5 text-body-xs font-medium text-brand-foreground">

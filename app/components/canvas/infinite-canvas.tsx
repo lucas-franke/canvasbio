@@ -23,6 +23,7 @@ import {
   neighbor,
   personAt,
   seededShuffle,
+  tileVariation,
 } from "~/lib/canvas/layout";
 import type { Cell, Direction } from "~/lib/canvas/layout";
 import { tornVariant } from "~/lib/canvas/torn-edge";
@@ -40,6 +41,7 @@ import { markPortraitSourceElement } from "~/lib/view-transition";
 import { CanvasControls } from "./canvas-controls";
 import { CanvasTile } from "./canvas-tile";
 import { firstPaintScript } from "~/lib/canvas/camera";
+import { GestureHint, useGestureHint } from "./gesture-hint";
 import { sizesFor, staticView, useCamera, type CanvasView } from "./use-camera";
 
 const { canvas: config, theme } = siteConfig;
@@ -112,12 +114,6 @@ export function InfiniteCanvas({
   // Mixed, but the same on every visit.
   const ordered = useMemo(() => seededShuffle(people, "canvas"), [people]);
   const indexBySlug = useMemo(() => new Map(ordered.map((p, i) => [p.slug, i])), [ordered]);
-  // Featured (larger) tiles: every n-th person of the mixed order, if not among the best known.
-  const featured = useMemo(() => {
-    if (config.featuredShare <= 0) return new Set<string>();
-    const step = Math.max(2, Math.round(1 / config.featuredShare));
-    return new Set(ordered.filter((p, i) => i % step === 0 && p.prominence <= 0.7).map((p) => p.slug));
-  }, [ordered]);
   const layout = useMemo(
     () =>
       createLayout(ordered.length, {
@@ -216,7 +212,7 @@ export function InfiniteCanvas({
     const { x, y } = cellCenter(layout, cell);
     camera.animateTo({ x, y, scale: camera.camera.current.scale }, 420);
   };
-  // (also used by "Zufällige Biografie" below)
+  // (also used by the random biography below)
 
   // A new search selects the nearest match (Tab lands there) …
   const [syncedHits, setSyncedHits] = useState(hitsKey);
@@ -251,7 +247,7 @@ export function InfiniteCanvas({
     centerOn(cell);
   };
 
-  // ---- Zufällige Biografie: fly to the person, let the tile pulse, then open it ----
+  // ---- Random biography: fly to the person, let the tile pulse, then open it ----
   const randomBusy = useRef(false);
   const showRandom = () => {
     if (randomBusy.current) return;
@@ -295,6 +291,14 @@ export function InfiniteCanvas({
 
   // ---- Pointer gestures ----
   const dragged = useRef(false);
+  // First-visit hint: done once the visitor has moved the wall or opened someone.
+  const [hintVisible, dismissHint] = useGestureHint();
+  const explored = () => {
+    if (hintVisible) dismissHint();
+  };
+  useEffect(() => {
+    if (activeSlug && hintVisible) dismissHint();
+  }, [activeSlug, hintVisible, dismissHint]);
   useGesture(
     {
       onDragStart: () => camera.stop(),
@@ -311,7 +315,10 @@ export function InfiniteCanvas({
           cancel();
           return;
         }
-        if (Math.hypot(mx, my) > TAP_THRESHOLD) dragged.current = true;
+        if (Math.hypot(mx, my) > TAP_THRESHOLD) {
+          dragged.current = true;
+          explored();
+        }
         camera.panBy(dx, dy);
         if (last && dragged.current) camera.glide(vx * dirX, vy * dirY);
       },
@@ -319,11 +326,13 @@ export function InfiniteCanvas({
       onPinch: ({ origin: [ox, oy], offset: [scale] }) => {
         const rect = viewportRef.current!.getBoundingClientRect();
         camera.zoomTo(scale, ox - rect.left, oy - rect.top);
+        explored();
       },
       onWheel: ({ event, delta: [dx, dy] }) => {
         if (event.ctrlKey || event.metaKey) return; // handled as pinch
         camera.stop();
         camera.panBy(-dx, -dy);
+        explored();
       },
     },
     {
@@ -472,7 +481,8 @@ export function InfiniteCanvas({
         onClickCapture={onClickCapture}
         onFocus={onFocus}
         onKeyDown={onKeyDown}
-        className="absolute inset-0 cursor-grab touch-none overflow-clip select-none active:cursor-grabbing"
+        data-detail-open={activeSlug ? "" : undefined}
+        className="canvas-viewport absolute inset-0 cursor-grab touch-none overflow-clip select-none active:cursor-grabbing"
       >
         <div
           ref={worldRef}
@@ -494,7 +504,7 @@ export function InfiniteCanvas({
                 tabbable={tabbable}
                 active={person.slug === activeSlug}
                 match={hitSet ? hitSet.has(person.slug) : undefined}
-                featured={featured.has(person.slug)}
+                variation={tileVariation(layout, cell, config.sizeVariance)}
                 sizes={sizes}
                 edgeClass={tornEdges ? `torn-edge-${tornVariant(cell.col, cell.row)}` : undefined}
               />
@@ -542,6 +552,8 @@ export function InfiniteCanvas({
           </p>
         </div>
       )}
+
+      {hintVisible && !hits && !activeSlug && <GestureHint onDismiss={dismissHint} />}
 
       {/* Soft fade behind the floating nav, as in the design. */}
       <div

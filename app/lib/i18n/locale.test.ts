@@ -68,6 +68,11 @@ describe("switchLocalePath", () => {
     expect(switchLocalePath("/personen/hedwig-dohm", "de-LS")).toBe("/leichte-sprache/personen/hedwig-dohm");
   });
 
+  it("translates the list and timeline views", () => {
+    expect(switchLocalePath("/personen/liste", "en")).toBe("/en/people/list");
+    expect(switchLocalePath("/en/people/timeline", "de")).toBe("/personen/zeitstrahl");
+  });
+
   it("translates the list sub-path", () => {
     expect(switchLocalePath("/personen/liste", "en")).toBe("/en/people/list");
     expect(switchLocalePath("/en/people/list", "de-LS")).toBe("/leichte-sprache/personen/liste");

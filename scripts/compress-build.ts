@@ -48,4 +48,4 @@ for await (const file of files(ROOT)) {
 await Promise.all(queue);
 
 const mb = (bytes: number) => `${(bytes / 1024 / 1024).toFixed(1)} MB`;
-console.log(`Komprimiert: ${count} Dateien, ${mb(before)} → ${mb(after)} (Brotli)`);
+console.log(`Compressed: ${count} files, ${mb(before)} → ${mb(after)} (Brotli)`);

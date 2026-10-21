@@ -13,8 +13,24 @@ facts:
 timeline:
   - date: 6. September 1860
     event: Geboren in Cedarville
+  - date: "1916"
+    event: "Nominiert für: Friedensnobelpreis"
+  - date: "1923"
+    event: "Nominiert für: Friedensnobelpreis"
+  - date: "1924"
+    event: "Nominiert für: Friedensnobelpreis"
+  - date: "1925"
+    event: "Nominiert für: Friedensnobelpreis"
+  - date: "1928"
+    event: "Nominiert für: Friedensnobelpreis"
+  - date: "1929"
+    event: "Nominiert für: Friedensnobelpreis"
+  - date: "1930"
+    event: "Nominiert für: Friedensnobelpreis"
   - date: "1931"
     event: "Auszeichnung: Friedensnobelpreis"
+  - date: "1931"
+    event: "Nominiert für: Friedensnobelpreis"
   - date: 22. Mai 1935
     event: Gestorben in Chicago
   - date: "1965"

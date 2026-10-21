@@ -26,3 +26,25 @@ describe("renderMarkdown", () => {
     expect(html).not.toContain("onerror");
   });
 });
+
+describe("renderMarkdown headings", () => {
+  it("adds unique ids and reports the headings when asked", async () => {
+    const headings: { id: string; text: string; level: number }[] = [];
+    const html = await renderMarkdown(
+      "## Leben\n\nText[^1]\n\n## Frühe *Jahre*\n\n## Leben\n\n[^1]: Quelle.",
+      {
+        headingOffset: 1,
+        headingIdPrefix: "story-",
+        headings,
+      },
+    );
+    expect(headings).toEqual([
+      { id: "story-leben", text: "Leben", level: 3 },
+      { id: "story-fruehe-jahre", text: "Frühe Jahre", level: 3 },
+      { id: "story-leben-2", text: "Leben", level: 3 },
+    ]);
+    expect(html).toContain('<h3 id="story-leben">Leben</h3>');
+    // The footnote heading keeps its own id (aria-labelledby of the footnote section).
+    expect(html).toContain('id="user-content-footnote-label"');
+  });
+});

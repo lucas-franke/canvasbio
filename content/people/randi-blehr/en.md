@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: February 12, 1851
     event: Born in Bergen
+  - date: June 19, 1876
+    event: Marriage to Otto Blehr
   - date: "1895"
     event: President of the Norwegian Association for Women's Rights
   - date: "1903"

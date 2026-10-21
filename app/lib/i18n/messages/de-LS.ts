@@ -20,6 +20,7 @@ export const deLS: Messages = {
     label: "Ansicht",
     canvas: "Bilder",
     list: "Liste",
+    timeline: "Zeit-Strahl",
   },
   alphabet: {
     label: "ABC",
@@ -48,6 +49,7 @@ export const deLS: Messages = {
   people: {
     title: "Die Frauen",
     listTitle: "Die Frauen als Liste",
+    timelineTitle: "Alle Frauen nach Jahren",
     gridTitle: "Die Frauen als Bilder",
     count: (n: number) => (n === 1 ? "1 Frau" : `${n} Frauen`),
     /** Badge in languages where not every biography exists (Leichte Sprache): this one does. */
@@ -56,6 +58,7 @@ export const deLS: Messages = {
   search: {
     title: "Suche",
     suggestions: "Diese Frauen passen",
+    peopleCount: (n: number) => (n === 1 ? "1 Person" : `${n} Personen`),
     clearName: "Eingabe löschen",
     close: "Suche zu-machen",
     name: "Name von der Frau",
@@ -76,6 +79,24 @@ export const deLS: Messages = {
     hitStatus: (i: number, n: number, name: string) => `Frau ${i} von ${n}: ${name}`,
     loading: "Bitte warten …",
   },
+  timeline: {
+    decade: (year: number) => `${year} bis ${year + 9}`,
+    unknown: "Wir wissen nicht: Wann ist die Frau geboren?",
+    legend:
+      "Jeder Strich zeigt: So lange hat eine Frau gelebt. Striche übereinander heißen: Diese Frauen haben zur selben Zeit gelebt.",
+    legendInteractive: "Zeigen Sie auf eine Frau. Dann sehen Sie: Wer hat zur selben Zeit gelebt?",
+    events: "Wichtige Jahre",
+  },
+  bookmarks: {
+    save: "Merken",
+    added: "Die Frau ist jetzt auf Ihrer Merk-Liste.",
+    removed: "Die Frau ist nicht mehr auf Ihrer Merk-Liste.",
+    list: "Merk-Liste",
+    listCount: (n: number) => `Merk-Liste (${n})`,
+    filter: "Nur Frauen von meiner Merk-Liste",
+    marked: "Auf der Merk-Liste",
+    emptyHint: "Ihre Merk-Liste ist leer. Lesen Sie über eine Frau. Drücken Sie dann auf: Merken.",
+  },
   random: {
     label: "Eine Frau per Zufall",
   },
@@ -93,6 +114,9 @@ export const deLS: Messages = {
     moveUp: "Nach oben",
     moveDown: "Nach unten",
     recenter: "Zur Mitte",
+    gestureHintTouch: "Mit dem Finger wischen: Sie sehen mehr Bilder. Auf ein Bild tippen: Sie lesen mehr.",
+    gestureHintPointer: "Mit der Maus ziehen: Sie sehen mehr Bilder. Auf ein Bild klicken: Sie lesen mehr.",
+    gestureHintClose: "Hinweis schließen",
   },
   detail: {
     close: "Schließen",
@@ -114,6 +138,10 @@ export const deLS: Messages = {
     loadingOverview: "Die Übersicht wird geladen.",
     loadFailed: "Die Übersicht ist nicht da. Vielleicht geht das Internet nicht.",
     retry: "Noch einmal versuchen",
+    related: "Diese Frauen passen dazu",
+    readingTime: (minutes: number) => `Lese-Zeit: etwa ${minutes} ${minutes === 1 ? "Minute" : "Minuten"}`,
+    outline: "Inhalt",
+    sameEra: "Hat zur selben Zeit gelebt",
   },
   error: {
     title: "Fehler",

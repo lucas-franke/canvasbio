@@ -1,6 +1,6 @@
 import { cn } from "cn";
-import { Check, Search, X } from "lucide-react";
-import { useEffect, useId, useMemo, useRef, useState, type FormEvent } from "react";
+import { Bookmark, Check, MapPin, Search, X } from "lucide-react";
+import { useEffect, useId, useMemo, useRef, useState, type FormEvent, type KeyboardEvent } from "react";
 import { Link } from "react-router";
 
 import { LoadFailed } from "~/components/people/load-failed";
@@ -17,7 +17,8 @@ import { usePeopleIndex, type PeopleIndex } from "~/lib/content/people-index";
 import { useLocale, useMessages } from "~/lib/i18n";
 import { pagePath } from "~/lib/i18n/locale";
 import { localize } from "~/lib/i18n/localize";
-import { emptySearch, filterPeople, suggestPeople, type SearchState } from "~/lib/search/search";
+import { useBookmarks } from "~/lib/preferences";
+import { emptySearch, filterPeople, normalize, suggestPeople, type SearchState } from "~/lib/search/search";
 import {
   setSearchPanelOpen,
   useApplySearch,
@@ -30,13 +31,13 @@ const fieldClass =
   "min-h-12 w-full rounded-xl border-2 border-control bg-surface px-4 text-body text-emphasis placeholder:text-muted-text";
 
 /**
- * "Suche" in the bottom navigation: a sheet with name, place and field filters (Figma
+ * The search button in the navigation: a sheet with name, place and field filters (Figma
  * "Suchpanel"). The button shows the number of results live; the search applies on submit.
  */
 export function SearchDrawer() {
   const m = useMessages();
   const open = useSearchPanelOpen();
-  // Desktop: "Suche" is at the top right, so the panel slides in from the right.
+  // Desktop: the search button is at the top right, so the panel slides in from the right.
   const desktop = useMediaQuery(SPLIT_VIEW_QUERY, false);
 
   return (
@@ -50,6 +51,11 @@ export function SearchDrawer() {
           desktop ? SIDE_SHEET : "mx-auto max-h-[90dvh] w-full rounded-t-card md:max-w-xl",
         )}
         aria-describedby={undefined}
+        // Escape in an open suggestion list closes the list, not the panel (the panel listens first).
+        onEscapeKeyDown={(event) => {
+          if ((event.target as Element).closest?.('[role="combobox"][aria-expanded="true"]'))
+            event.preventDefault();
+        }}
         // The name field gets focus, not the close button.
         onOpenAutoFocus={(event) => {
           event.preventDefault();
@@ -93,9 +99,10 @@ function SearchForm({ index }: { index: PeopleIndex }) {
   const applySearch = useApplySearch();
   const current = useSearch();
   const [draft, setDraft] = useState<SearchState>(current);
+  const [bookmarks] = useBookmarks();
   const count = useMemo(
-    () => filterPeople(index.people, draft, siteConfig.facets, index.facetLabels).length,
-    [index, draft],
+    () => filterPeople(index.people, draft, siteConfig.facets, index.facetLabels, bookmarks).length,
+    [index, draft, bookmarks],
   );
 
   // Screen readers hear the count once typing pauses, not on every key.
@@ -118,12 +125,13 @@ function SearchForm({ index }: { index: PeopleIndex }) {
             { ...draft, facets: { ...draft.facets, [facet.key]: [value] } },
             siteConfig.facets,
             index.facetLabels,
+            bookmarks,
           ).length,
         ]),
       );
     }
     return counts;
-  }, [index, draft]);
+  }, [index, draft, bookmarks]);
 
   const setFacet = (key: string, values: string[]) =>
     setDraft((state) => ({ ...state, facets: { ...state.facets, [key]: values } }));
@@ -143,6 +151,10 @@ function SearchForm({ index }: { index: PeopleIndex }) {
             {m.search.name}
           </label>
           <div className="relative">
+            <Search
+              aria-hidden="true"
+              className="pointer-events-none absolute top-1/2 left-4 size-5 -translate-y-1/2 text-muted-text"
+            />
             <input
               ref={nameInput}
               id="search-name"
@@ -152,7 +164,7 @@ function SearchForm({ index }: { index: PeopleIndex }) {
               spellCheck={false}
               value={draft.q}
               onChange={(event) => setDraft((state) => ({ ...state, q: event.target.value }))}
-              className={cn(fieldClass, "pr-12 [&::-webkit-search-cancel-button]:appearance-none")}
+              className={cn(fieldClass, "pr-12 pl-12 [&::-webkit-search-cancel-button]:appearance-none")}
             />
             {draft.q && (
               <button
@@ -190,6 +202,15 @@ function SearchForm({ index }: { index: PeopleIndex }) {
               onChange={(value) => setFacet(facet.key, value.trim() ? [value] : [])}
             />
           ),
+        )}
+
+        {/* Only offered once something is bookmarked (or the filter is already on). */}
+        {(bookmarks.size > 0 || draft.saved) && (
+          <SavedToggle
+            checked={draft.saved}
+            count={bookmarks.size}
+            onChange={(saved) => setDraft((state) => ({ ...state, saved }))}
+          />
         )}
       </div>
 
@@ -318,6 +339,53 @@ function MultiFacet({
   );
 }
 
+/** "Only saved biographies": a single switch-like chip, styled like the facet chips. */
+function SavedToggle({
+  checked,
+  count,
+  onChange,
+}: {
+  checked: boolean;
+  count: number;
+  onChange: (checked: boolean) => void;
+}) {
+  const m = useMessages();
+  return (
+    <div>
+      <label
+        className={cn(
+          "relative inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-full border-2 px-4 text-body-sm font-medium transition-colors",
+          "has-[:focus-visible]:shadow-[0_0_0_6px_var(--c-focus-halo)] has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-focus",
+          checked
+            ? "border-brand bg-brand text-brand-foreground"
+            : "border-control text-emphasis hover:bg-emphasis/5",
+        )}
+      >
+        <input
+          type="checkbox"
+          className="sr-only"
+          checked={checked}
+          onChange={(event) => onChange(event.target.checked)}
+        />
+        {checked ? (
+          <Check aria-hidden="true" className="-ml-1 size-4" />
+        ) : (
+          <Bookmark aria-hidden="true" className="-ml-1 size-4" />
+        )}
+        {m.bookmarks.filter}
+        <span className="text-body-xs tabular-nums">{count}</span>
+      </label>
+    </div>
+  );
+}
+
+/** Most suggestions shown at once; typing narrows them down. */
+const MAX_PLACE_OPTIONS = 8;
+
+/**
+ * Free text with suggestions as an ARIA 1.2 combobox (list autocomplete). Replaces a native
+ * datalist, which can't be styled, shows no counts and behaves differently in every browser.
+ */
 function AutocompleteFacet({
   facet,
   index,
@@ -329,15 +397,73 @@ function AutocompleteFacet({
   value: string;
   onChange: (value: string) => void;
 }) {
+  const m = useMessages();
   const locale = useLocale();
   const id = useId();
-  // Suggestions: labels of the values people actually have.
-  const suggestions = useMemo(() => {
+  const input = useRef<HTMLInputElement>(null);
+  const [open, setOpen] = useState(false);
+  const [active, setActive] = useState(-1);
+
+  // Labels of the values people actually have, with how many people have each.
+  const all = useMemo(() => {
     const labels = index.facetLabels[facet.key] ?? {};
-    const used = new Set(index.people.flatMap((p) => p.facets[facet.key] ?? []));
-    return [...new Set([...used].map((v) => labels[v] ?? v))].sort((a, b) => a.localeCompare(b, locale));
-  }, [index, facet.key, locale]);
+    const counts = new Map<string, number>();
+    for (const person of index.people) {
+      for (const v of person.facets[facet.key] ?? []) {
+        const label = labels[v] ?? v;
+        counts.set(label, (counts.get(label) ?? 0) + 1);
+      }
+    }
+    return [...counts].map(([label, count]) => ({ label, count, key: normalize(label) }));
+  }, [index, facet.key]);
+
+  const options = useMemo(() => {
+    const query = normalize(value.trim());
+    const matches = query ? all.filter((o) => o.key.includes(query)) : [...all];
+    return matches
+      .sort(
+        (a, b) =>
+          // Labels starting with the input first, then the most frequent.
+          Number(b.key.startsWith(query)) - Number(a.key.startsWith(query)) ||
+          b.count - a.count ||
+          a.label.localeCompare(b.label, locale),
+      )
+      .slice(0, MAX_PLACE_OPTIONS);
+  }, [all, value, locale]);
+
+  const exact = options.length === 1 && options[0]!.key === normalize(value.trim());
+  const expanded = open && options.length > 0 && !exact;
   const hint = facet.hint ? localize(facet.hint, locale) : undefined;
+  const optionId = (i: number) => `${id}-option-${i}`;
+
+  const choose = (label: string) => {
+    onChange(label);
+    setOpen(false);
+    setActive(-1);
+  };
+
+  const onKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+      event.preventDefault();
+      if (!expanded) {
+        setOpen(true);
+        setActive(event.key === "ArrowDown" ? 0 : options.length - 1);
+        return;
+      }
+      const step = event.key === "ArrowDown" ? 1 : -1;
+      setActive((i) => (i + step + options.length) % options.length);
+    } else if (event.key === "Enter" && expanded && active >= 0) {
+      // Picks the suggestion; without one, Enter submits the search as usual.
+      event.preventDefault();
+      choose(options[active]!.label);
+    } else if (event.key === "Escape" && expanded) {
+      // Closes the list only, not the whole search panel.
+      event.preventDefault();
+      event.stopPropagation();
+      setOpen(false);
+      setActive(-1);
+    }
+  };
 
   return (
     <div className="flex flex-col gap-2">
@@ -349,21 +475,78 @@ function AutocompleteFacet({
           {hint}
         </p>
       )}
-      <input
-        id={`${id}-input`}
-        type="text"
-        list={`${id}-list`}
-        autoComplete="off"
-        aria-describedby={hint ? `${id}-hint` : undefined}
-        value={value}
-        onChange={(event) => onChange(event.target.value)}
-        className={fieldClass}
-      />
-      <datalist id={`${id}-list`}>
-        {suggestions.map((label) => (
-          <option key={label} value={label} />
+      <div className="relative">
+        <MapPin
+          aria-hidden="true"
+          className="pointer-events-none absolute top-1/2 left-4 size-5 -translate-y-1/2 text-muted-text"
+        />
+        <input
+          ref={input}
+          id={`${id}-input`}
+          type="text"
+          role="combobox"
+          aria-expanded={expanded}
+          aria-controls={`${id}-listbox`}
+          aria-autocomplete="list"
+          aria-activedescendant={expanded && active >= 0 ? optionId(active) : undefined}
+          autoComplete="off"
+          aria-describedby={hint ? `${id}-hint` : undefined}
+          value={value}
+          onChange={(event) => {
+            onChange(event.target.value);
+            setOpen(true);
+            setActive(-1);
+          }}
+          onKeyDown={onKeyDown}
+          onBlur={() => setOpen(false)}
+          className={cn(fieldClass, "pr-12 pl-12")}
+        />
+        {value && (
+          <button
+            type="button"
+            aria-label={m.search.clearName}
+            onClick={() => {
+              onChange("");
+              input.current?.focus();
+            }}
+            className="absolute inset-y-0.5 right-0.5 grid w-11 place-items-center rounded-xl text-muted-text hover:text-emphasis"
+          >
+            <X aria-hidden="true" className="size-5" />
+          </button>
+        )}
+      </div>
+      <div
+        id={`${id}-listbox`}
+        role="listbox"
+        aria-label={localize(facet.label, locale)}
+        hidden={!expanded}
+        className="flex flex-col rounded-xl border-2 border-control bg-surface p-1"
+      >
+        {options.map((option, i) => (
+          // Mouse: keep focus in the input (no blur before the click) and pick on click.
+          // Keyboard users pick with the arrow keys and Enter (aria-activedescendant).
+          // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+          <div
+            key={option.label}
+            id={optionId(i)}
+            role="option"
+            tabIndex={-1}
+            aria-selected={i === active}
+            onMouseDown={(event) => event.preventDefault()}
+            onClick={() => choose(option.label)}
+            className={cn(
+              "flex min-h-11 cursor-pointer items-center justify-between gap-3 rounded-lg px-3 text-body text-emphasis hover:bg-emphasis/5",
+              i === active && "bg-brand text-brand-foreground hover:bg-brand",
+            )}
+          >
+            {option.label}
+            <span className={cn("text-body-xs tabular-nums", i !== active && "text-muted-text")}>
+              <span aria-hidden="true">{option.count}</span>
+              <span className="sr-only">{m.search.peopleCount(option.count)}</span>
+            </span>
+          </div>
         ))}
-      </datalist>
+      </div>
     </div>
   );
 }

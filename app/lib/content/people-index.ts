@@ -58,7 +58,7 @@ export function usePeopleIndex(locale: string): PeopleIndexState {
         if (!cancelled) setFetched(data);
       })
       .catch((error) => {
-        console.error("Übersicht konnte nicht geladen werden", error);
+        console.error("Could not load the people overview", error);
         if (!cancelled) setFailed(true);
       });
     return () => {

@@ -24,7 +24,7 @@ export function NavPill({ bare = false, className, ...props }: ComponentProps<"d
 const outlined =
   "border-2 border-nav-foreground bg-nav text-nav-foreground transition-colors hover:bg-nav-foreground hover:text-nav";
 
-/** Text pill with outline, e.g. "Über das Projekt". */
+/** Text pill with outline, e.g. "About the project". */
 export function NavTextLink({ className, ...props }: ComponentProps<typeof Link>) {
   return (
     <Link
@@ -82,7 +82,7 @@ const iconActionClass = (labelSide: "start" | "end" = "start", compactLabel = tr
     labelSide === "start" ? (compactLabel ? "md:pl-6" : "pl-6") : compactLabel ? "md:pr-6" : "pr-6",
   );
 
-/** Visible label + round outlined icon, as a link ("Suche", "Zurück"). */
+/** Visible label + round outlined icon, as a link (e.g. search, home). */
 export function NavIconLink({
   label,
   icon,
@@ -149,6 +149,7 @@ export function BottomNav({
         "pointer-events-none fixed inset-x-0 bottom-0 z-40 flex items-end justify-between gap-2 px-3 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] [view-transition-name:site-nav] sm:px-6 sm:pb-6",
         "lg:top-0 lg:bottom-auto lg:items-center lg:px-8 lg:pt-3 lg:pb-0",
         besideAside && "lg:left-[min(55%,56rem)] lg:px-4",
+        "print:hidden",
       )}
     >
       <div className="flex min-w-0 items-center gap-2">{start}</div>

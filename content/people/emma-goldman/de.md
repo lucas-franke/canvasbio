@@ -13,6 +13,14 @@ facts:
 timeline:
   - date: 27. Juni 1869
     event: Geboren in Kaunas
+  - date: "1910"
+    event: "Veröffentlichung: „Anarchismus und andere Essays“"
+  - date: "1923"
+    event: "Veröffentlichung: „Niedergang der russischen Revolution“"
+  - date: "1924"
+    event: "Veröffentlichung: „My Further Disillusionment in Russia“"
+  - date: "1931"
+    event: "Veröffentlichung: „Gelebtes Leben“"
   - date: 14. Mai 1940
     event: Gestorben in Toronto
 ---

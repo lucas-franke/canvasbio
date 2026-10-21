@@ -23,7 +23,7 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
       className={cn(
         // Next to an open biography the overview column is narrow: the nav pills (with home)
         // are enough there, the wordmark would collide with them.
-        "flex justify-center px-4 lg:@max-lg:hidden",
+        "flex justify-center px-4 lg:@max-2xl:hidden",
         overlay
           ? "pointer-events-none absolute inset-x-0 top-0 z-10"
           : // Desktop: a sticky band behind the top navigation, so content doesn't scroll under it.
@@ -67,9 +67,18 @@ export function PageShell({ children, navEnd, aside, inert = false, fullBleed = 
   const m = useMessages();
 
   return (
-    <div className={cn("flex bg-page", fullBleed ? "h-dvh overflow-clip" : "min-h-dvh")}>
+    <div
+      className={cn(
+        "flex bg-page print:block print:h-auto print:overflow-visible",
+        fullBleed ? "h-dvh overflow-clip" : "min-h-dvh",
+      )}
+    >
       {aside}
-      <div className="@container relative flex min-w-0 flex-1 flex-col" inert={inert || undefined}>
+      {/* Printing a biography prints only the biography, not the overview next to it. */}
+      <div
+        className={cn("@container relative flex min-w-0 flex-1 flex-col", aside && "print:hidden")}
+        inert={inert || undefined}
+      >
         <SiteHeader overlay={fullBleed} />
         {/* Bottom padding keeps the last content and focused elements clear of the fixed nav (WCAG 2.4.11). */}
         <main id="main" className={fullBleed ? "absolute inset-0" : "flex-1 px-4 pt-8 pb-36 sm:px-8"}>
@@ -82,7 +91,15 @@ export function PageShell({ children, navEnd, aside, inert = false, fullBleed = 
         label={m.nav.label}
         start={
           <NavPill>
-            <NavIconLink to={pagePath(locale, "start")} label={m.nav.home} icon={<House />} labelSide="end" />
+            {/* Very narrow screens with the view switch: no room for both pills in full. Home
+                stays reachable through the wordmark at the top and the menu. */}
+            <NavIconLink
+              to={pagePath(locale, "start")}
+              label={m.nav.home}
+              icon={<House />}
+              labelSide="end"
+              className={cn(navEnd && "max-[23rem]:hidden")}
+            />
             <MenuDrawer />
           </NavPill>
         }

@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: February 20, 1845
     event: Born in London
+  - date: October 4, 1864
+    event: Marriage to George Howard, 9th Earl of Carlisle
   - date: August 12, 1921
     event: Died in London
 ---

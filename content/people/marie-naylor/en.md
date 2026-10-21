@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: "1856"
     event: Born in London
+  - date: "1907"
+    event: Member of Women's Social and Political Union
   - date: October 30, 1940
     event: Died in London
 ---

@@ -4,7 +4,7 @@ import { siteConfig } from "~/lib/config";
 export function localize(record: Record<string, string>, locale: string): string {
   const value = record[locale] ?? record[siteConfig.defaultLocale];
   if (value === undefined) {
-    throw new Error(`Kein Text für Locale "${locale}" in ${JSON.stringify(record)}`);
+    throw new Error(`No text for locale "${locale}" in ${JSON.stringify(record)}`);
   }
   return value;
 }

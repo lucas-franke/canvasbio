@@ -13,6 +13,12 @@ facts:
 timeline:
   - date: April 3, 1894
     event: Born in Thornton Heath
+  - date: September 27, 1921
+    event: Marriage to Bertrand Russell
+  - date: "1925"
+    event: "Publication: “Hypatia”"
+  - date: "1940"
+    event: Marriage to Gordon "Pat" Grace
   - date: May 31, 1986
     event: Died in Porthcurno
 ---

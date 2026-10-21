@@ -13,6 +13,12 @@ facts:
 timeline:
   - date: September 23, 1838
     event: Born in Homer
+  - date: "1853"
+    event: Marriage to Canning H. Woodhull
+  - date: "1866"
+    event: Marriage to James Blood
+  - date: "1883"
+    event: Marriage to John Martin
   - date: June 9, 1927
     event: Died in Bredon's Norton
   - date: "2001"

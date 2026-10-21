@@ -13,6 +13,10 @@ facts:
 timeline:
   - date: April 13, 1828
     event: Born in Glendale
+  - date: "1852"
+    event: Marriage to George Butler
+  - date: "1868"
+    event: "Publication: “The Education and Employment of Women”"
   - date: December 30, 1906
     event: Died in Wooler
 ---

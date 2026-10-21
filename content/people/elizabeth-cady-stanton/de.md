@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: 12. November 1815
     event: Geboren in Johnstown
+  - date: 1. Mai 1840
+    event: Heirat mit Henry Brewster Stanton
   - date: 26. Oktober 1902
     event: Gestorben in New York City
   - date: "1973"

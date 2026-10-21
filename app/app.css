@@ -164,6 +164,10 @@
   & h3 {
     @apply mt-4 text-h3;
   }
+  /* Jumps from the table of contents land below the sticky bar and tabs of the biography. */
+  & :is(h2, h3, h4) {
+    scroll-margin-top: 9rem;
+  }
   & h4,
   & h5,
   & h6 {
@@ -271,21 +275,16 @@
     outline-color: var(--c-focus);
   }
 
+  /* Slight size variation per tile (canvas.sizeVariance), set on the list item. */
+  --scale: var(--tile-scale, 1);
+  transform: scale(var(--scale));
+
   /* Search: matches are lifted, the others fade back but keep their place (context). */
   transition: transform 300ms ease;
 
-  /* Featured: slightly larger (the gap leaves room, neighbours aren't covered). */
-  &[data-featured] {
-    transform: scale(1.12);
-  }
-
   &[data-match="hit"] {
-    transform: scale(1.06);
+    transform: scale(calc(var(--scale) * 1.08));
     filter: drop-shadow(0 calc(6px / var(--s)) calc(10px / var(--s)) rgb(0 0 0 / 0.35));
-  }
-
-  &[data-featured][data-match="hit"] {
-    transform: scale(1.12);
   }
 
   &[data-match="miss"] [data-vt-portrait] {
@@ -301,20 +300,38 @@
   /* Long-press shows the name (see below) instead of the link preview. */
   -webkit-touch-callout: none;
 
-  /* "Zufällige Biografie": the chosen tile pulses before it opens. */
+  /* "Random biography": the chosen tile pulses before it opens. */
   &[data-pulse] {
     animation: tile-pulse 550ms ease-in-out;
   }
 }
 
+/*
+ * Split view: while a biography is open, the wall next to it blurs slightly so the reading
+ * column has the focus. Pointing at the wall or moving keyboard focus into it brings it
+ * back into focus, so it stays usable for opening the next person.
+ */
+@media (min-width: 64rem) {
+  .canvas-world {
+    transition:
+      filter 300ms ease,
+      opacity 300ms ease;
+  }
+
+  .canvas-viewport[data-detail-open]:not(:hover, :focus-within) .canvas-world {
+    filter: blur(3px) saturate(0.85);
+    opacity: 0.8;
+  }
+}
+
 @keyframes tile-pulse {
   40% {
-    transform: scale(1.12);
+    transform: scale(calc(var(--scale) * 1.12));
   }
 }
 
 /*
- * "Namen ausblenden": names appear on hover, keyboard focus and long-press (:active), and
+ * "Hide names": names appear on hover, keyboard focus and long-press (:active), and
  * for the open biography and search matches. Screen readers always get them (opacity only).
  */
 [data-hide-names] .canvas-tile-name {
@@ -368,8 +385,12 @@
 ::view-transition-new(detail-panel):only-child {
   animation: vt-slide-in-up 380ms cubic-bezier(0.22, 1, 0.36, 1);
 }
+/*
+ * "forwards": the transition runs as long as its longest animation (the 380 ms groups).
+ * Without it the closing panel would jump back into view for the remaining time.
+ */
 ::view-transition-old(detail-panel):only-child {
-  animation: vt-slide-out-down 260ms cubic-bezier(0.4, 0, 1, 1);
+  animation: vt-slide-out-down 260ms cubic-bezier(0.4, 0, 1, 1) forwards;
 }
 
 /* Split view: the biography column slides in from the left edge. */
@@ -399,7 +420,27 @@
   animation-duration: 420ms;
 }
 
+/* First-visit hint on the wall: appears after a moment, once the wall has settled. */
+.gesture-hint {
+  animation: gesture-hint-in 400ms ease-out 700ms backwards;
+}
+
+@keyframes gesture-hint-in {
+  from {
+    opacity: 0;
+    translate: 0 0.75rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .gesture-hint {
+    animation: none;
+  }
+
+  .canvas-world {
+    transition: none;
+  }
+
   ::view-transition-group(*),
   ::view-transition-old(*),
   ::view-transition-new(*) {
@@ -433,4 +474,25 @@
 [data-paper] [class*="bg-page"],
 [data-paper] body {
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22180%22%20height%3D%22180%22%3E%3Cfilter%20id%3D%22n%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.85%22%20numOctaves%3D%223%22%20stitchTiles%3D%22stitch%22%2F%3E%3CfeColorMatrix%20values%3D%220%200%200%200%200.35%200%200%200%200%200.25%200%200%200%200%200.15%200%200%200%200.07%200%22%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23n)%22%2F%3E%3C%2Fsvg%3E");
+}
+
+/*
+ * Print: a biography prints as one document — all sections, no navigation or controls
+ * (see the print: variants in the components), sources with their addresses.
+ */
+@media print {
+  html {
+    /* The open dialog locks page scrolling; on paper everything has to flow. */
+    overflow: visible !important;
+  }
+
+  [data-slot="tabs-content"][data-state="inactive"] {
+    display: block;
+    margin-top: 2rem;
+  }
+
+  .print-urls a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    word-break: break-all;
+  }
 }

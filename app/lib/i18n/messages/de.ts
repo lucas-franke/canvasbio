@@ -22,6 +22,7 @@ export const de = {
     label: "Ansicht",
     canvas: "Bilder",
     list: "Liste",
+    timeline: "Zeitstrahl",
   },
   alphabet: {
     label: "Alphabet",
@@ -50,6 +51,7 @@ export const de = {
   people: {
     title: "Biografien",
     listTitle: "Biografien als Liste",
+    timelineTitle: "Biografien als Zeitstrahl",
     gridTitle: "Biografien als Bilder",
     count: (n: number) => (n === 1 ? "1 Person" : `${n} Personen`),
     /** Badge in languages where not every biography exists (Leichte Sprache): this one does. */
@@ -59,6 +61,7 @@ export const de = {
     title: "Suche",
     suggestions: "Passende Personen",
     clearName: "Eingabe löschen",
+    peopleCount: (n: number) => (n === 1 ? "1 Person" : `${n} Personen`),
     close: "Suche schließen",
     name: "Nach Namen suchen",
     show: (n: number) =>
@@ -79,6 +82,23 @@ export const de = {
     hitStatus: (i: number, n: number, name: string) => `Treffer ${i} von ${n}: ${name}`,
     loading: "Wird geladen …",
   },
+  timeline: {
+    decade: (year: number) => `${year}er`,
+    unknown: "Geburtsjahr unbekannt",
+    legend: "Jeder Balken zeigt eine Lebenszeit. Wer übereinander liegt, lebte zur selben Zeit.",
+    legendInteractive: "Zeigen Sie auf eine Person, um ihre Zeitgenossen hervorzuheben.",
+    events: "Wichtige Daten",
+  },
+  bookmarks: {
+    save: "Merken",
+    added: "Auf die Merkliste gesetzt",
+    removed: "Von der Merkliste entfernt",
+    list: "Merkliste",
+    listCount: (n: number) => `Merkliste (${n})`,
+    filter: "Nur gemerkte Biografien",
+    marked: "Gemerkt",
+    emptyHint: "Ihre Merkliste ist leer. Mit „Merken“ in einer Biografie setzen Sie eine Person darauf.",
+  },
   random: {
     label: "Zufällige Biografie",
   },
@@ -96,6 +116,9 @@ export const de = {
     moveUp: "Nach oben",
     moveDown: "Nach unten",
     recenter: "Zur Mitte",
+    gestureHintTouch: "Wischen zum Erkunden, tippen zum Öffnen",
+    gestureHintPointer: "Ziehen zum Erkunden, klicken zum Öffnen",
+    gestureHintClose: "Hinweis schließen",
   },
   detail: {
     close: "Schließen",
@@ -117,6 +140,10 @@ export const de = {
     loadingOverview: "Übersicht wird geladen …",
     loadFailed: "Die Übersicht konnte nicht geladen werden. Bitte prüfen Sie die Internetverbindung.",
     retry: "Erneut versuchen",
+    related: "Ähnliche Biografien",
+    readingTime: (minutes: number) => `${minutes} ${minutes === 1 ? "Minute" : "Minuten"} Lesezeit`,
+    outline: "Inhalt",
+    sameEra: "Zur selben Zeit",
   },
   error: {
     title: "Fehler",

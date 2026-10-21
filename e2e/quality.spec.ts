@@ -8,7 +8,15 @@ test.beforeEach(({ isMobile }) => {
   test.skip(isMobile, "viewport-specific checks run on desktop");
 });
 
-const pages = ["/", "/ueber", "/barrierefreiheit", "/personen", "/personen/liste", "/personen/clara-zetkin"];
+const pages = [
+  "/",
+  "/ueber",
+  "/barrierefreiheit",
+  "/personen",
+  "/personen/liste",
+  "/personen/zeitstrahl",
+  "/personen/clara-zetkin",
+];
 
 async function settle(page: Page, path: string) {
   await page.goto(path);
@@ -22,6 +30,14 @@ for (const path of pages) {
     await settle(page, path);
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     expect(overflow).toBeLessThanOrEqual(0);
+    // The two navigation groups sit side by side without covering each other.
+    const pills = await page.evaluate(() => {
+      const nav = document.querySelector('nav[aria-label="Hauptnavigation"]');
+      const box = (selector: string) =>
+        nav?.querySelector(selector)?.getBoundingClientRect().toJSON() as DOMRect;
+      return nav && { start: box(":scope > div:first-child > *"), end: box(":scope > div:last-child > *") };
+    });
+    if (pills) expect(pills.start.right).toBeLessThanOrEqual(pills.end.left);
   });
 }
 
@@ -37,6 +53,9 @@ async function clippedText(page: Page) {
         // (the link keeps the full name).
         if (el.closest("[data-cell]") || el.matches(".canvas-world, .canvas-world *")) return false;
         if (el.querySelector(".canvas-world")) return false;
+        // Decorative duplicates: the compact name in the biography bar repeats the h1 and ends
+        // with "…" when space runs out.
+        if (el.closest('[aria-hidden="true"]')) return false;
         const hasText = [...el.childNodes].some((n) => n.nodeType === 3 && n.textContent!.trim());
         if (!hasText) return false;
         return el.scrollWidth > el.clientWidth + 1 || el.scrollHeight > el.clientHeight + 1;

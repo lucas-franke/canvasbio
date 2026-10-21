@@ -13,8 +13,20 @@ facts:
 timeline:
   - date: 15. Oktober 1880
     event: Geboren in Edinburgh
+  - date: "1904"
+    event: "Tätig bei: Victoria University of Manchester"
   - date: "1909"
     event: "Auszeichnung: Fellow of the Linnean Society of London"
+  - date: 18. März 1911
+    event: Heirat mit Reginald Ruggles Gates
+  - date: 26. März 1918
+    event: "Veröffentlichung: „Married Love“"
+  - date: 16. Mai 1918
+    event: Heirat mit Humphrey Verdon Roe
+  - date: 18. November 1918
+    event: "Veröffentlichung: „Wise Parenthood“"
+  - date: 9. August 1920
+    event: "Veröffentlichung: „Radiant Motherhood“"
   - date: 2. Oktober 1958
     event: Gestorben in Dorking
 ---

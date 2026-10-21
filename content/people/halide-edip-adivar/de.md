@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: 11. Juni 1884
     event: Geboren in Istanbul
+  - date: "1901"
+    event: Heirat mit Salih Zeki
   - date: 9. Januar 1964
     event: Gestorben in Istanbul
 ---

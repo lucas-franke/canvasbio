@@ -13,6 +13,12 @@ facts:
 timeline:
   - date: May 5, 1864
     event: Born in Burrell Township
+  - date: "1887"
+    event: "Publication: “Ten Days in a Mad-House”"
+  - date: November 14, 1889
+    event: Circumnavigation of Earth
+  - date: "1895"
+    event: Marriage to Robert Seaman
   - date: January 27, 1922
     event: Died in New York City
   - date: "1998"

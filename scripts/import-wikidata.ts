@@ -16,6 +16,7 @@ import sharp from "sharp";
 import { stringify } from "yaml";
 
 import { formatPartialDate, slugify, sortName, yearOf } from "../app/lib/content/format";
+import { parseFrontmatter } from "../app/lib/content/frontmatter";
 import type { Person, PersonText, Taxonomy } from "../app/lib/content/schema";
 import { getFreeImages, type CommonsImage } from "./import/commons";
 import { fetchBinary } from "./import/http";
@@ -129,6 +130,11 @@ const T = {
   education: { de: (x: string) => `Ausbildung: ${x}`, en: (x: string) => `Education: ${x}` },
   party: { de: (x: string) => `Mitglied: ${x}`, en: (x: string) => `Member of ${x}` },
   award: { de: (x: string) => `Auszeichnung: ${x}`, en: (x: string) => `Award: ${x}` },
+  nomination: { de: (x: string) => `Nominiert für: ${x}`, en: (x: string) => `Nominated for ${x}` },
+  marriage: { de: (x: string) => `Heirat mit ${x}`, en: (x: string) => `Marriage to ${x}` },
+  residence: { de: (x: string) => `Wohnort: ${x}`, en: (x: string) => `Residence: ${x}` },
+  employer: { de: (x: string) => `Tätig bei: ${x}`, en: (x: string) => `Works at ${x}` },
+  work: { de: (x: string) => `Veröffentlichung: „${x}“`, en: (x: string) => `Publication: “${x}”` },
   portraitAlt: { de: (n: string) => `Porträt von ${n}`, en: (n: string) => `Portrait of ${n}` },
 };
 
@@ -151,11 +157,23 @@ function buildTimeline(
   places: { born?: string; died?: string },
 ): { date: string; event: string }[] {
   const entries: TimelineEntry[] = [];
+  const seen = new Set<string>();
   const add = (date: string | undefined, event: string | undefined) => {
-    if (date && event) entries.push({ sort: date, date: formatPartialDate(date, lang), event });
+    // The same fact can come from several statements (e.g. two ranks); list it once.
+    if (!date || !event || seen.has(`${date} ${event}`)) return;
+    seen.add(`${date} ${event}`);
+    entries.push({ sort: date, date: formatPartialDate(date, lang), event });
   };
-  const ref = (s: { mainsnak: { datavalue?: { value: unknown } } }) =>
-    label(refs.get((s.mainsnak.datavalue?.value as { id: string }).id), lang);
+  const refEntity = (s: { mainsnak: { datavalue?: { value: unknown } } }) =>
+    refs.get((s.mainsnak.datavalue?.value as { id: string }).id);
+  const ref = (s: { mainsnak: { datavalue?: { value: unknown } } }) => label(refEntity(s), lang);
+  /** Statements with a start date (or point in time): "from then on". */
+  const started = (property: string, text: (name: string) => string) => {
+    for (const s of statements(person, property)) {
+      const name = ref(s);
+      add(qualifierDate(s, "P580") ?? qualifierDate(s, "P585"), name && text(name));
+    }
+  };
 
   add(dateOf(person, "P569"), T.bornIn[lang](places.born));
   for (const s of statements(person, "P69")) {
@@ -172,7 +190,20 @@ function buildTimeline(
   }
   for (const s of statements(person, "P166")) {
     const name = ref(s);
-    add(qualifierDate(s, "P585"), name && T.award[lang](name));
+    add(qualifierDate(s, "P585") ?? qualifierDate(s, "P580"), name && T.award[lang](name));
+  }
+  started("P1411", T.nomination[lang]);
+  started("P26", T.marriage[lang]);
+  started("P551", T.residence[lang]);
+  started("P463", T.party[lang]);
+  started("P108", T.employer[lang]);
+  // Significant events are named by themselves ("Women's Social and Political Union founded" …).
+  started("P793", capitalize);
+  // Notable works: dated by the statement or by the work's own publication date.
+  for (const s of statements(person, "P800")) {
+    const work = refEntity(s);
+    const name = label(work, lang);
+    add(qualifierDate(s, "P577") ?? (work && dateOf(work, "P577")), name && T.work[lang](name));
   }
   add(dateOf(person, "P570"), T.diedIn[lang](places.died));
 
@@ -206,6 +237,20 @@ async function ensurePortrait(dir: string, image: CommonsImage): Promise<boolean
   return true;
 }
 
+/** Portrait and alt texts of a person whose portrait was curated by hand (else undefined). */
+async function readCurated(dir: string) {
+  const person = await readFile(path.join(dir, "person.json"), "utf8")
+    .then((json) => JSON.parse(json) as Person)
+    .catch(() => undefined);
+  if (!person?.portrait.curated) return undefined;
+  const portraitAlt: Record<string, string | undefined> = {};
+  for (const lang of LANGS) {
+    const doc = await readFile(path.join(dir, `${lang}.md`), "utf8").catch(() => "");
+    portraitAlt[lang] = (parseFrontmatter(doc).data as Partial<PersonText>).portraitAlt;
+  }
+  return { portrait: person.portrait, portraitAlt };
+}
+
 /** Files the importer writes; folders containing anything else were edited by hand and are kept. */
 const GENERATED_FILES = new Set(["person.json", "de.md", "en.md", "portrait.jpg"]);
 
@@ -226,15 +271,15 @@ async function removeStaleFolders(keep: Set<string>): Promise<string[]> {
 /* ------------------------------------------------------------------ main */
 
 async function main() {
-  console.log("1/5 Kandidaten aus Wikidata …");
+  console.log("1/5 Candidates from Wikidata …");
   const candidates = (await findCandidates()).sort((a, b) => b.sitelinks - a.sitelinks);
-  console.log(`    ${candidates.length} Kandidatinnen gefunden`);
+  console.log(`    ${candidates.length} candidates found`);
 
   // Oversample: some portraits will turn out not to be public domain.
   const sample = spreadSample(candidates, Math.min(candidates.length, Math.round(LIMIT * 1.8)));
   const entities = await getEntities(sample.map((c) => c.qid));
 
-  console.log("2/5 Bildlizenzen auf Commons prüfen …");
+  console.log("2/5 Checking image licences on Commons …");
   const imageFile = (e: Entity) => stringValue(e, "P18");
   const images = await getFreeImages(
     [...entities.values()].map(imageFile).filter((f): f is string => !!f),
@@ -247,12 +292,27 @@ async function main() {
   const selected = spreadSample(withFreeImage, LIMIT);
   // Stand-ins in case a portrait can't be downloaded, closest in prominence first.
   const reserves = withFreeImage.filter((c) => !selected.includes(c));
-  console.log(`    ${withFreeImage.length} mit freiem Porträt, ${selected.length} ausgewählt`);
+  console.log(`    ${withFreeImage.length} with a free portrait, ${selected.length} selected`);
 
-  console.log("3/5 Orte, Berufe und weitere Bezüge auflösen …");
+  console.log("3/5 Resolving places, occupations and other references …");
   const refIds = withFreeImage.flatMap((c) => {
     const e = entities.get(c.qid)!;
-    return ["P19", "P20", "P106", "P69", "P102", "P39", "P166"].flatMap((p) => entityIds(e, p));
+    return [
+      "P19",
+      "P20",
+      "P106",
+      "P69",
+      "P102",
+      "P39",
+      "P166",
+      "P1411",
+      "P26",
+      "P551",
+      "P463",
+      "P108",
+      "P793",
+      "P800",
+    ].flatMap((p) => entityIds(e, p));
   });
   const refs = await getEntities(refIds);
 
@@ -285,7 +345,7 @@ async function main() {
   const skipped: string[] = [];
   let downloaded = 0;
 
-  console.log("4/5 Biografien schreiben …");
+  console.log("4/5 Writing biographies …");
   const queue = [...selected];
   while (queue.length > 0 && usedSlugs.size < LIMIT) {
     const candidate = queue.shift()!;
@@ -296,12 +356,15 @@ async function main() {
     const dir = path.join(CONTENT, "people", slug);
     const image = images.get(imageFile(e)!)!;
 
+    // A portrait chosen by hand (portrait.curated) is kept, with its alt texts.
+    const curated = await readCurated(dir);
+
     // Portrait first: if it can't be downloaded, a reserve candidate takes the place.
     try {
-      if (await ensurePortrait(dir, image)) downloaded++;
+      if (!curated && (await ensurePortrait(dir, image))) downloaded++;
     } catch (error) {
       skipped.push(`${name}: ${(error as Error).message}`);
-      console.warn(`    übersprungen: ${name} (${(error as Error).message})`);
+      console.warn(`    skipped: ${name} (${(error as Error).message})`);
       const reserve = reserves.shift();
       if (reserve) queue.push(reserve);
       continue;
@@ -327,7 +390,7 @@ async function main() {
       name: { display: name, sort: sortName(name) },
       born: { date: born, place: bornPlace },
       died: died || diedPlace ? { date: died, place: diedPlace } : undefined,
-      portrait: {
+      portrait: curated?.portrait ?? {
         file: "portrait.jpg",
         credit: [image.artist, image.year].filter(Boolean).join(", "),
         license: image.license,
@@ -368,7 +431,7 @@ async function main() {
           description ? capitalize(description) : occupationNames.slice(0, 3).join(", "),
           [lifespan, place(bornPlace)].filter(Boolean).join(" · "),
         ].filter((s) => s.length > 0),
-        portraitAlt: T.portraitAlt[lang](name),
+        portraitAlt: curated?.portraitAlt[lang] ?? T.portraitAlt[lang](name),
         facts: [
           ...(born || bornPlace
             ? [{ label: T.born[lang], value: dateAndPlace(born, place(bornPlace), lang) }]
@@ -389,15 +452,15 @@ async function main() {
     console.log(`    [${usedSlugs.size}/${LIMIT}] ${name}`);
   }
 
-  console.log("5/5 Taxonomie schreiben und aufräumen …");
+  console.log("5/5 Writing taxonomy and cleaning up …");
   await writeFile(path.join(CONTENT, "taxonomy.json"), `${JSON.stringify(taxonomy, null, 2)}\n`);
   const removed = await removeStaleFolders(usedSlugs);
 
   console.log(
-    `Fertig: ${usedSlugs.size} Personen, ${Object.keys(taxonomy.place).length} Orte, ` +
-      `${downloaded} Porträts neu geladen, ${skipped.length} übersprungen, ${removed.length} alte Ordner entfernt.`,
+    `Done: ${usedSlugs.size} people, ${Object.keys(taxonomy.place).length} places, ` +
+      `${downloaded} portraits downloaded, ${skipped.length} skipped, ${removed.length} stale folders removed.`,
   );
-  if (removed.length > 0) console.log(`  entfernt: ${removed.join(", ")}`);
+  if (removed.length > 0) console.log(`  removed: ${removed.join(", ")}`);
 }
 
 main().catch((error) => {

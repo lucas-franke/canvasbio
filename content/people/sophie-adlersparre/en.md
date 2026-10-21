@@ -13,6 +13,10 @@ facts:
 timeline:
   - date: July 6, 1823
     event: Born
+  - date: "1859"
+    event: Works at Tidskrift för hemmet
+  - date: December 26, 1869
+    event: Marriage to Axel Adlersparre
   - date: "1895"
     event: "Award: Illis quorum"
   - date: June 27, 1895

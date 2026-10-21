@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: 5. Mai 1856
     event: Geboren in Boscawen
+  - date: "1913"
+    event: "Nominiert für: Friedensnobelpreis"
   - date: 1. November 1936
     event: Gestorben in Brookline
 ---

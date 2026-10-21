@@ -1,17 +1,19 @@
 import { cn } from "cn";
-import { ArrowLeft, ArrowRight, Quote, Shuffle, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Clock, Quote, Shuffle, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 
 import { Portrait } from "~/components/portrait";
+import { BookmarkButton } from "./bookmark-button";
 import { ShareButton } from "./share-button";
 import { Button } from "~/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
 import { siteConfig } from "~/lib/config";
 import type { PersonDetail as PersonDetailData, PersonListItem } from "~/lib/content/adapter";
+import { lifeYears } from "~/lib/content/format";
 import { useHydrated } from "~/lib/hooks";
 import { useMessages } from "~/lib/i18n";
-import { localeConfig } from "~/lib/i18n/locale";
+import { localeConfig, pagePath } from "~/lib/i18n/locale";
 import { htmlLangFor, localize } from "~/lib/i18n/localize";
 import { tornEdgeClass } from "~/lib/canvas/torn-edge";
 import { readSeen } from "~/lib/preferences";
@@ -20,13 +22,27 @@ import { PERSON_HEADING_ID } from "./ids";
 
 type TabId = (typeof siteConfig.detail.tabs)[number]["id"];
 
+/** A related person as shown at the end of a biography (see app/lib/content/related.ts). */
+export type RelatedPerson = Pick<PersonListItem, "slug" | "name" | "born" | "died" | "image"> & {
+  /** Translated reasons, strongest first (e.g. a shared place). */
+  reasons: string[];
+};
+
+export interface StoryInfo {
+  /** Sections of the life story (only for longer stories). */
+  outline: { id: string; text: string }[];
+  readingMinutes: number;
+}
+
 /** Height of the sticky bar in px (h-16); the tabs stick right below it. */
 const BAR_HEIGHT = 64;
 
 interface PersonDetailProps {
   person: Omit<PersonDetailData, "story">;
   storyHtml: string;
+  storyInfo?: StoryInfo;
   tags: string[];
+  related?: RelatedPerson[];
   /** Locale of the page (the text may be in another one if not translated). */
   locale: string;
   closeHref: string;
@@ -57,7 +73,9 @@ function useTabFromHash(locale: string): [TabId, (tab: TabId) => void] {
 export function PersonDetail({
   person,
   storyHtml,
+  storyInfo,
   tags,
+  related = [],
   locale,
   closeHref,
   sequence,
@@ -86,7 +104,12 @@ export function PersonDetail({
   return (
     <article className="@container flex min-h-full flex-col gap-6 px-5 pb-28 sm:px-10 lg:pb-16">
       {/* Sticky bar: closing (and the name) stay in reach while reading a long story. */}
-      <div className="sticky top-0 z-20 -mx-5 flex h-16 items-center gap-3 bg-surface/95 px-5 backdrop-blur-sm sm:-mx-10 sm:px-10">
+      <div className="sticky top-0 z-20 -mx-5 flex h-16 items-center gap-3 bg-surface/95 px-5 backdrop-blur-sm sm:-mx-10 sm:px-10 print:hidden">
+        {/* Grab handle: the sheet on phones can be swiped down to close (app/lib/swipe-to-close.ts). */}
+        <span
+          aria-hidden="true"
+          className="absolute top-1.5 left-1/2 h-1 w-10 -translate-x-1/2 rounded-full bg-control/60 lg:hidden"
+        />
         <p
           aria-hidden="true"
           className={cn(
@@ -96,6 +119,7 @@ export function PersonDetail({
         >
           {person.name.display}
         </p>
+        <BookmarkButton key={person.slug} slug={person.slug} />
         <ShareButton title={person.name.display} />
         <Link
           to={closeHref}
@@ -155,7 +179,7 @@ export function PersonDetail({
       )}
 
       <Tabs value={tab} onValueChange={(value) => setTab(value as TabId)}>
-        <div className="sticky top-16 z-10 -mx-5 bg-surface/95 px-5 py-2 backdrop-blur-sm sm:-mx-10 sm:px-10">
+        <div className="sticky top-16 z-10 -mx-5 bg-surface/95 px-5 py-2 backdrop-blur-sm sm:-mx-10 sm:px-10 print:hidden">
           <TabsList aria-label={m.detail.sections}>
             {siteConfig.detail.tabs.map((t) => (
               <TabsTrigger key={t.id} value={t.id}>
@@ -170,14 +194,59 @@ export function PersonDetail({
           <TabsContent key={t.id} value={t.id} forceMount lang={textLang}>
             <h2 className="mb-5 text-h2">{localize(t.label, locale)}</h2>
             {t.id === "facts" && <FactsPanel person={person} />}
-            {t.id === "story" && <StoryPanel person={person} storyHtml={storyHtml} />}
+            {t.id === "story" && <StoryPanel person={person} storyHtml={storyHtml} info={storyInfo} />}
             {t.id === "timeline" && <TimelinePanel timeline={text.timeline} />}
           </TabsContent>
         ))}
       </Tabs>
 
+      {related.length > 0 && (
+        <RelatedPeople people={related} hrefFor={hrefFor ?? ((s) => pagePath(locale, "people", s))} />
+      )}
       {sequence && hrefFor && <MoreBiographies slug={person.slug} sequence={sequence} hrefFor={hrefFor} />}
     </article>
+  );
+}
+
+/** People connected by a shared field, place or era — a way to explore by content. */
+function RelatedPeople({ people, hrefFor }: { people: RelatedPerson[]; hrefFor: (slug: string) => string }) {
+  const m = useMessages();
+  return (
+    <section
+      aria-labelledby="related-heading"
+      className="mt-4 flex flex-col gap-4 border-t border-line pt-6 print:hidden"
+    >
+      <h2 id="related-heading" className="text-h3">
+        {m.detail.related}
+      </h2>
+      <ul className="grid gap-3 @md:grid-cols-2">
+        {people.map((p) => (
+          <li key={p.slug}>
+            <Link
+              to={hrefFor(p.slug)}
+              preventScrollReset
+              viewTransition
+              className="flex min-h-20 items-center gap-4 rounded-xl border border-line p-2 pr-4 hover:bg-emphasis/5"
+            >
+              <Portrait
+                slug={p.slug}
+                image={p.image}
+                alt=""
+                sizes="4rem"
+                className="size-16 shrink-0 rounded-lg object-cover"
+              />
+              <span className="flex min-w-0 flex-col">
+                <span className="font-heading text-body text-emphasis">{p.name.display}</span>
+                <span className="text-body-xs text-muted-text">
+                  {lifeYears(p.born, p.died)}
+                  {p.reasons.length > 0 && <> · {p.reasons.join(" · ")}</>}
+                </span>
+              </span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }
 
@@ -206,7 +275,10 @@ function MoreBiographies({
   const linkClass =
     "group/more flex min-h-16 flex-col justify-center gap-0.5 rounded-xl border border-line px-4 py-3 hover:bg-emphasis/5";
   return (
-    <nav aria-label={m.detail.more} className="mt-4 flex flex-col gap-3 border-t border-line pt-6">
+    <nav
+      aria-label={m.detail.more}
+      className="mt-4 flex flex-col gap-3 border-t border-line pt-6 print:hidden"
+    >
       <div className="grid gap-3 @md:grid-cols-2">
         <Link to={hrefFor(previous.slug)} preventScrollReset viewTransition className={linkClass}>
           <span className="flex items-center gap-1.5 text-body-sm text-muted-text">
@@ -308,16 +380,62 @@ function FactsPanel({ person }: { person: PersonDetailProps["person"] }) {
   );
 }
 
-function StoryPanel({ person, storyHtml }: { person: PersonDetailProps["person"]; storyHtml: string }) {
+function StoryPanel({
+  person,
+  storyHtml,
+  info,
+}: {
+  person: PersonDetailProps["person"];
+  storyHtml: string;
+  info?: StoryInfo;
+}) {
   const m = useMessages();
+  // In-page links must not touch the URL hash: it selects the tab.
+  const jumpTo = (event: React.MouseEvent, id: string) => {
+    const target = document.getElementById(id);
+    if (!target) return;
+    event.preventDefault();
+    const smooth = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    target.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "start" });
+    target.setAttribute("tabindex", "-1");
+    target.focus({ preventScroll: true });
+  };
   return (
     <div className="flex flex-col gap-10">
+      {info && (
+        <div className="-mt-2 flex flex-col gap-4 print:hidden">
+          <p className="flex items-center gap-2 text-body-sm text-muted-text">
+            <Clock aria-hidden="true" className="size-4" />
+            {m.detail.readingTime(info.readingMinutes)}
+          </p>
+          {info.outline.length > 0 && (
+            <nav aria-labelledby="outline-heading" className="rounded-xl border border-line p-4">
+              <h3 id="outline-heading" className="mb-2 font-sans text-label font-semibold text-emphasis">
+                {m.detail.outline}
+              </h3>
+              <ol className="flex flex-col">
+                {info.outline.map((heading) => (
+                  <li key={heading.id}>
+                    <a
+                      href={`#${heading.id}`}
+                      onClick={(event) => jumpTo(event, heading.id)}
+                      className="inline-flex min-h-11 items-center text-brand underline decoration-1 underline-offset-[0.2em] hover:decoration-2"
+                    >
+                      {heading.text}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </nav>
+          )}
+        </div>
+      )}
       <div className="prose-content" dangerouslySetInnerHTML={{ __html: storyHtml }} />
       <section aria-labelledby="sources-heading" className="flex flex-col gap-3 border-t border-line pt-6">
         <h3 id="sources-heading" className="text-h3">
           {m.detail.sources}
         </h3>
-        <ul className="flex flex-col gap-2 text-body-sm">
+        <ul className="print-urls flex flex-col gap-2 text-body-sm">
           {person.sources.map((source) => (
             <li key={source.url}>
               <a href={source.url} className="text-brand underline underline-offset-2 hover:decoration-2">

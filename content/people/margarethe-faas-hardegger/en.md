@@ -13,6 +13,8 @@ facts:
 timeline:
   - date: February 20, 1882
     event: Born in Bern
+  - date: "1905"
+    event: Works at Swiss Trade Union Confederation
   - date: September 23, 1963
     event: Died in Minusio
 ---

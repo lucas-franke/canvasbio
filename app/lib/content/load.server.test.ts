@@ -82,11 +82,11 @@ describe("loadContent", () => {
     const messages = (await loadContent(root, siteConfig)).issues.map((i) => `${i.file} ${i.message}`);
     expect(messages).toEqual(
       expect.arrayContaining([
-        expect.stringMatching(/slug "other-slug" passt nicht/),
-        expect.stringMatching(/Porträt "portrait.jpg" fehlt/),
-        expect.stringMatching(/"field.unknown" fehlt in taxonomy/),
-        expect.stringMatching(/Facette "color" ist nicht in site.config/),
-        expect.stringMatching(/missing-en[\\/]en\.md Pflicht-Übersetzung fehlt/),
+        expect.stringMatching(/slug "other-slug" does not match/),
+        expect.stringMatching(/portrait "portrait.jpg" is missing/),
+        expect.stringMatching(/"field.unknown" is missing from taxonomy/),
+        expect.stringMatching(/facet "color" is not defined in site.config/),
+        expect.stringMatching(/missing-en[\\/]en\.md required translation is missing/),
         expect.stringMatching(/bad-text[\\/]de\.md .*summary/),
       ]),
     );
@@ -118,7 +118,7 @@ describe("fs content adapter", () => {
 
   it("refuses to serve invalid content", async () => {
     await addPerson("wrong-folder", person("other-slug"));
-    await expect((await adapterFor({})).listSlugs()).rejects.toThrow(/ungültig/);
+    await expect((await adapterFor({})).listSlugs()).rejects.toThrow(/invalid/);
   });
 
   it("asks for build:images when portraits are missing", async () => {

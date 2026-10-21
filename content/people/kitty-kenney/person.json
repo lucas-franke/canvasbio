@@ -18,7 +18,13 @@
     "license": {
       "name": "Public domain"
     },
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kitty_Kenney_standing_in_the_foxgloves_(cropped).jpg"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kitty_Kenney_standing_in_the_foxgloves_(cropped).jpg",
+    "focus": {
+      "x": 0.33,
+      "y": 0.45,
+      "zoom": 1.8
+    },
+    "curated": true
   },
   "facets": {
     "field": [

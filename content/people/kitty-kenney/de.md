@@ -2,7 +2,7 @@
 summary:
   - Englisch-britische Suffragette
   - 1880–1952 · England
-portraitAlt: Porträt von Kitty Kenney
+portraitAlt: Kitty Kenney steht in einem Garten zwischen blühendem Fingerhut, 1910
 facts:
   - label: Geboren
     value: 1880 in England

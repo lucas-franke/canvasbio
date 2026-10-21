@@ -11,10 +11,11 @@ import type { PersonListItem } from "~/lib/content/adapter";
 import { usePeopleIndex } from "~/lib/content/people-index";
 import { SPLIT_VIEW_QUERY, useMediaQuery } from "~/lib/hooks";
 import { useLocale, useMessages } from "~/lib/i18n";
-import { listPath, pagePath } from "~/lib/i18n/locale";
+import { listPath, pagePath, timelinePath } from "~/lib/i18n/locale";
 import { filterPeople, isSearchActive, searchSuffix } from "~/lib/search/search";
-import { markSeen } from "~/lib/preferences";
+import { markSeen, useBookmarks } from "~/lib/preferences";
 import { useSearch } from "~/lib/search/use-search";
+import { useSwipeToClose } from "~/lib/swipe-to-close";
 import { afterViewTransition, markPortraitTarget } from "~/lib/view-transition";
 
 /** Passed to the detail route via <Outlet context>. */
@@ -41,9 +42,11 @@ export default function PeopleLayout() {
 
   const routeView: OverviewView | null = leafId.startsWith("people-list:")
     ? "list"
-    : leafId.startsWith("people:")
-      ? "canvas"
-      : null;
+    : leafId.startsWith("people-timeline:")
+      ? "timeline"
+      : leafId.startsWith("people:")
+        ? "canvas"
+        : null;
   const isDetail = leafId.startsWith("person:");
 
   // The overview behind a biography keeps whichever view was used last.
@@ -55,15 +58,21 @@ export default function PeopleLayout() {
   // opening and closing a biography.
   const search = useSearch();
   const suffix = searchSuffix(search, siteConfig.facets);
-  const overviewHref = (view === "list" ? listPath(locale) : pagePath(locale, "people")) + suffix;
+  const viewPath = {
+    canvas: pagePath(locale, "people"),
+    list: listPath(locale),
+    timeline: timelinePath(locale),
+  };
+  const overviewHref = viewPath[view] + suffix;
 
   const { index, failed, retry } = usePeopleIndex(locale);
+  const [bookmarks] = useBookmarks();
   const hits = useMemo(
     () =>
       index && isSearchActive(search)
-        ? filterPeople(index.people, search, siteConfig.facets, index.facetLabels)
+        ? filterPeople(index.people, search, siteConfig.facets, index.facetLabels, bookmarks)
         : null,
-    [index, search],
+    [index, search, bookmarks],
   );
   // Pre-rendered HTML assumes the split view; small screens switch to the dialog after hydration.
   const isSplit = useMediaQuery(SPLIT_VIEW_QUERY, true);
@@ -118,7 +127,7 @@ export default function PeopleLayout() {
     }
   }, [slug]);
 
-  // Opened biographies come up less often under "Zufällige Biografie".
+  // Opened biographies come up less often as a random biography.
   useEffect(() => {
     if (slug) markSeen(slug);
   }, [slug]);
@@ -136,6 +145,10 @@ export default function PeopleLayout() {
   useLayoutEffect(() => {
     asideRef.current?.scrollTo({ top: 0 });
   }, [slug]);
+  // Phones: swipe the biography sheet down to close it.
+  useSwipeToClose(asideRef, modal, () =>
+    navigate(overviewHref, { preventScrollReset: true, viewTransition: true }),
+  );
 
   return (
     <PageShell
@@ -149,7 +162,7 @@ export default function PeopleLayout() {
             aria-labelledby={PERSON_HEADING_ID}
             role={modal ? "dialog" : undefined}
             aria-modal={modal || undefined}
-            className="fixed inset-0 z-50 overflow-y-auto overscroll-contain bg-surface [view-transition-name:detail-panel] lg:sticky lg:top-0 lg:z-auto lg:h-dvh lg:w-[min(55%,56rem)] lg:shrink-0 lg:border-r lg:border-line"
+            className="fixed inset-0 z-50 overflow-y-auto overscroll-contain bg-surface [view-transition-name:detail-panel] lg:sticky lg:top-0 lg:z-auto lg:h-dvh lg:w-[min(55%,56rem)] lg:shrink-0 lg:border-r lg:border-line print:static print:h-auto print:w-auto print:overflow-visible print:border-0"
           >
             <Outlet context={context} />
           </section>

@@ -15,6 +15,8 @@ timeline:
     event: Born in Yeniseysk
   - date: July 12, 1994
     event: Died in Bures-sur-Yvette
+  - date: "1996"
+    event: Disinfection
 ---
 
 Irena Krzywicka née Goldberg (28 May 1899 – 12 July 1994) was a Polish feminist, writer, translator and activist for women's rights, who promoted sexual education, contraception and planned parenthood.

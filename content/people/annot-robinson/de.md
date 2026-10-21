@@ -13,6 +13,16 @@ facts:
 timeline:
   - date: 8. Juni 1874
     event: Geboren in Montrose
+  - date: "1907"
+    event: "Wohnort: Manchester"
+  - date: "1908"
+    event: Gefangenschaft
+  - date: "1909"
+    event: Gefangenschaft
+  - date: "1912"
+    event: "Mitglied: National Union of Women's Suffrage Societies"
+  - date: "1917"
+    event: "Mitglied: The Women's Peace Crusade"
   - date: 29. September 1925
     event: Gestorben in Perth
 ---

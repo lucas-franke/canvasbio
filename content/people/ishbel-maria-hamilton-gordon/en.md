@@ -13,12 +13,26 @@ facts:
 timeline:
   - date: March 14, 1857
     event: Born in London
+  - date: November 7, 1877
+    event: Marriage to John Hamilton-Gordon, 1st Marquess of Aberdeen and Temair
   - date: "1893"
     event: President
   - date: "1904"
     event: President
   - date: "1931"
     event: "Award: Dame Grand Cross of the Order of the British Empire"
+  - date: "1931"
+    event: Nominated for Nobel Peace Prize
+  - date: "1932"
+    event: Nominated for Nobel Peace Prize
+  - date: "1934"
+    event: Nominated for Nobel Peace Prize
+  - date: "1935"
+    event: Nominated for Nobel Peace Prize
+  - date: "1936"
+    event: Nominated for Nobel Peace Prize
+  - date: "1937"
+    event: Nominated for Nobel Peace Prize
   - date: April 18, 1939
     event: Died in Rubislaw Den Nursing Home Including Gatepiers And Walls, 27 Rubislaw Den North, Aberdeen
 ---
