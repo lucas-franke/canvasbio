@@ -439,23 +439,7 @@
   animation: vt-card-in 420ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* First-visit hint on the wall: appears after a moment, once the wall has settled. */
-.gesture-hint {
-  animation: gesture-hint-in 400ms ease-out 700ms backwards;
-}
-
-@keyframes gesture-hint-in {
-  from {
-    opacity: 0;
-    translate: 0 0.75rem;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .gesture-hint {
-    animation: none;
-  }
-
   ::view-transition-group(*),
   ::view-transition-old(*),
   ::view-transition-new(*) {

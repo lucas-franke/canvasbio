@@ -194,34 +194,6 @@ test("the pre-rendered wall is already zoomed for the screen: no jump at hydrati
   expect(Math.abs(scale(after) - scale(beforeHydration))).toBeLessThan(0.001);
 });
 
-test.describe("first-visit hint", () => {
-  test.use({ storageState: { cookies: [], origins: [] } });
-
-  test("shows once and goes away for good after the first drag", async ({ page }) => {
-    await openCanvas(page);
-    const hint = page.getByText(/(Wischen|Ziehen) zum Erkunden/);
-    await expect(hint).toBeVisible();
-
-    const box = (await page.locator(".canvas-world").locator("..").boundingBox())!;
-    await page.mouse.move(box.x + box.width / 2, box.y + 120);
-    await page.mouse.down();
-    await page.mouse.move(box.x + box.width / 2 - 150, box.y + 140, { steps: 8 });
-    await page.mouse.up();
-    await expect(hint).toBeHidden();
-
-    await page.reload();
-    await page.locator("[data-cell]").first().waitFor({ state: "attached" });
-    await page.waitForTimeout(1200);
-    await expect(hint).toBeHidden();
-  });
-
-  test("can be closed with its button", async ({ page }) => {
-    await openCanvas(page);
-    await page.getByRole("button", { name: "Hinweis schließen" }).click();
-    await expect(page.getByText(/(Wischen|Ziehen) zum Erkunden/)).toBeHidden();
-  });
-});
-
 test("while a biography is open the wall is inert; a click beside the card closes it (desktop)", async ({
   page,
   isMobile,

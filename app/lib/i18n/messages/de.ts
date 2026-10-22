@@ -114,9 +114,6 @@ export const de = {
     controls: "Mosaik steuern",
     zoomIn: "Vergrößern",
     zoomOut: "Verkleinern",
-    gestureHintTouch: "Wischen zum Erkunden, tippen zum Öffnen",
-    gestureHintPointer: "Ziehen zum Erkunden, klicken zum Öffnen",
-    gestureHintClose: "Hinweis schließen",
   },
   detail: {
     close: "Schließen",

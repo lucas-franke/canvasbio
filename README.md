@@ -10,7 +10,6 @@ The demo content shows pioneers of the women's movement (1850–1950) from Wikid
   - Drag with momentum; zoom with pinch or the mouse wheel.
   - Only + and − on screen. Without dragging: arrow keys, and the list and timeline views show the same people.
   - Pre-rendered so it appears immediately.
-  - First-time visitors get a short, dismissible hint on how to explore.
   - Tiles vary slightly in size and position (`canvas.sizeVariance`) for a loose collage.
 - **Navigation:** the brand on the left leads home; on the right always view switch, search, menu. The view switch shows the active view with a chevron and unfolds on click.
 - **List:** sorted by name (A–Z, Z–A) or year of birth, in chapters (letters or decades). A chapter rail beside the list on wide screens, a chapter sheet in the sticky bar otherwise.

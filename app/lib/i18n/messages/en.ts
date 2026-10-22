@@ -109,9 +109,6 @@ export const en: Messages = {
     controls: "Mosaic controls",
     zoomIn: "Zoom in",
     zoomOut: "Zoom out",
-    gestureHintTouch: "Swipe to explore, tap to open",
-    gestureHintPointer: "Drag to explore, click to open",
-    gestureHintClose: "Close hint",
   },
   detail: {
     close: "Close",

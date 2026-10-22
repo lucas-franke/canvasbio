@@ -41,7 +41,6 @@ import { markPortraitSourceElement } from "~/lib/view-transition";
 import { CanvasControls } from "./canvas-controls";
 import { CanvasTile } from "./canvas-tile";
 import { firstPaintScript } from "~/lib/canvas/camera";
-import { GestureHint, useGestureHint } from "./gesture-hint";
 import { sizesFor, staticView, useCamera, type CanvasView } from "./use-camera";
 
 const { canvas: config, theme } = siteConfig;
@@ -291,14 +290,6 @@ export function InfiniteCanvas({
 
   // ---- Pointer gestures ----
   const dragged = useRef(false);
-  // First-visit hint: done once the visitor has moved the wall or opened someone.
-  const [hintVisible, dismissHint] = useGestureHint();
-  const explored = () => {
-    if (hintVisible) dismissHint();
-  };
-  useEffect(() => {
-    if (activeSlug && hintVisible) dismissHint();
-  }, [activeSlug, hintVisible, dismissHint]);
   useGesture(
     {
       onDragStart: () => camera.stop(),
@@ -315,10 +306,7 @@ export function InfiniteCanvas({
           cancel();
           return;
         }
-        if (Math.hypot(mx, my) > TAP_THRESHOLD) {
-          dragged.current = true;
-          explored();
-        }
+        if (Math.hypot(mx, my) > TAP_THRESHOLD) dragged.current = true;
         camera.panBy(dx, dy);
         if (last && dragged.current) camera.glide(vx * dirX, vy * dirY);
       },
@@ -326,13 +314,11 @@ export function InfiniteCanvas({
       onPinch: ({ origin: [ox, oy], offset: [scale] }) => {
         const rect = viewportRef.current!.getBoundingClientRect();
         camera.zoomTo(scale, ox - rect.left, oy - rect.top);
-        explored();
       },
       onWheel: ({ event, delta: [dx, dy] }) => {
         if (event.ctrlKey || event.metaKey) return; // handled as pinch
         camera.stop();
         camera.panBy(-dx, -dy);
-        explored();
       },
     },
     {
@@ -546,8 +532,6 @@ export function InfiniteCanvas({
           </p>
         </div>
       )}
-
-      {hintVisible && !hits && !activeSlug && <GestureHint onDismiss={dismissHint} />}
 
       {/* Desktop: the navigation (with the free-standing wordmark) sits at the top; the wall
           fades into the page colour there, so the wordmark doesn't compete with tile names. */}
