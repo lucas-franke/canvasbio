@@ -27,5 +27,5 @@ export function useMediaQuery(query: string, serverValue = false): boolean {
   );
 }
 
-/** Tailwind `lg` breakpoint: from here the detail view sits next to the overview instead of covering it. */
-export const SPLIT_VIEW_QUERY = "(min-width: 64rem)";
+/** Tailwind `lg` breakpoint: desktop layout (top navigation, side sheets, the biography as a centred card). */
+export const WIDE_QUERY = "(min-width: 64rem)";

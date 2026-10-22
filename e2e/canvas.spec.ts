@@ -231,18 +231,16 @@ test.describe("first-visit hint", () => {
   });
 });
 
-test("an open biography blurs the wall beside it until the wall is used (desktop)", async ({
+test("while a biography is open the wall is inert; a click beside the card closes it (desktop)", async ({
   page,
   isMobile,
 }) => {
   test.skip(isMobile, "phones show the biography over the whole screen");
   await page.goto("/personen");
-  const world = page.locator(".canvas-world");
-  await expect(world).toHaveCSS("filter", "none");
-  await page.goto("/personen/clara-zetkin");
-  await page.mouse.move(100, 400);
-  await expect(world).toHaveCSS("filter", /blur/);
-  // Pointing at the wall brings it back into focus, so the next person can be picked.
-  await page.locator('[data-person="clara-zetkin"]').hover();
-  await expect(world).toHaveCSS("filter", "none");
+  await page.locator('[data-person="clara-zetkin"]').click();
+  await expect(page.getByRole("heading", { level: 1, name: "Clara Zetkin" })).toBeFocused();
+  await expect(page.locator("main#main").locator("..")).toHaveAttribute("inert", "");
+  await page.mouse.click(20, 450);
+  await expect(page).toHaveURL(/\/personen$/);
+  await expect(page.locator('[data-person="clara-zetkin"]')).toBeFocused();
 });

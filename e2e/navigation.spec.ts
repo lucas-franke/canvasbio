@@ -65,14 +65,10 @@ test("the navigation never covers the start or end of the page content", async (
   for (const pill of await navPillBoxes(page)) expect(overlaps(last, pill)).toBe(false);
 });
 
-test("next to an open biography the navigation stays in the overview column (desktop)", async ({
-  page,
-  isMobile,
-}) => {
-  test.skip(isMobile, "phones show the biography as a dialog");
+test("while a biography is open, the navigation behind it is inert", async ({ page }) => {
   await page.goto("/personen/clara-zetkin");
-  const biography = (await page.locator("section[aria-labelledby='person-name']").boundingBox())!;
-  for (const pill of await navPillBoxes(page)) expect(overlaps(biography, pill)).toBe(false);
+  await expect(page.getByRole("dialog", { name: "Clara Zetkin" })).toBeVisible();
+  await expect(page.getByRole("navigation", { name: "Hauptnavigation" })).toHaveAttribute("inert", "");
 });
 
 test("the accessibility statement is in the menu and filled from the config", async ({ page }) => {
@@ -118,5 +114,16 @@ test("the start page shows who was born on this day", async ({ page }) => {
   const today = page.getByRole("region", { name: "An diesem Tag" });
   await expect(today.getByRole("link", { name: /Clara Zetkin/ })).toBeVisible();
   await expect(today).toContainText("Heute vor 169 Jahren geboren");
-  await expect(page.getByText("200 Personen")).toBeVisible();
+});
+
+test("with nobody on this day, the start page shows the next days under their own heading", async ({
+  page,
+}) => {
+  // 21 October: nobody in the demo collection; Annie Lorrain Smith was born on 23 October 1854.
+  await page.clock.setFixedTime(new Date(2026, 9, 21, 12));
+  await page.goto("/");
+  const soon = page.getByRole("region", { name: "In den nächsten Tagen" });
+  await expect(soon.getByRole("link", { name: /Annie Lorrain Smith/ })).toBeVisible();
+  await expect(soon).toContainText("Geboren am 23. Oktober 1854");
+  await expect(page.getByRole("region", { name: "An diesem Tag" })).toHaveCount(0);
 });

@@ -11,12 +11,13 @@ import { Portrait } from "~/components/portrait";
 import { Button } from "~/components/ui/button";
 import { siteConfig } from "~/lib/config";
 import { anniversaries } from "~/lib/content/anniversary";
+import { formatPartialDate } from "~/lib/content/format";
 import { content } from "~/lib/content/index.server";
 import { usePeopleIndex } from "~/lib/content/people-index";
 import { useHydrated } from "~/lib/hooks";
 import { useLocale, useMessages } from "~/lib/i18n";
 import { localeConfig, localeFromPathname, pagePath, switchLocalePath } from "~/lib/i18n/locale";
-import { htmlLangFor, localize } from "~/lib/i18n/localize";
+import { localize } from "~/lib/i18n/localize";
 import { pageMeta } from "~/lib/meta";
 import { readSeen } from "~/lib/preferences";
 import { pickRandom } from "~/lib/random";
@@ -28,7 +29,6 @@ export async function loader({ request }: Route.LoaderArgs) {
   const people = await content.listPeople(locale);
   return {
     mosaic: mosaicOrder(people, 70).map(({ slug, image }) => ({ slug, image })),
-    count: people.length,
   };
 }
 
@@ -64,7 +64,6 @@ export default function Start({ loaderData }: Route.ComponentProps) {
               {t(start.title)}
             </h1>
             <p className="font-heading text-subline text-balance text-emphasis">{t(start.subtitle)}</p>
-            <p className="text-body-sm text-muted-text">{m.people.count(loaderData.count)}</p>
           </header>
 
           {start.quote && (
@@ -149,28 +148,29 @@ function RandomStart() {
 }
 
 /**
- * Who was born or died on this day (or in the next days). Computed in the browser: the
- * pre-rendered page doesn't know the date it is read on.
+ * Who was born or died on this day — or, if nobody, in the next days (with its own heading,
+ * so it doesn't claim to be today). Computed in the browser: the pre-rendered page doesn't
+ * know the date it is read on.
  */
 function OnThisDay() {
   const locale = useLocale();
   const m = useMessages();
   const hydrated = useHydrated();
   const { index } = usePeopleIndex(locale);
-  const items = useMemo(
-    () => (hydrated && index ? anniversaries(index.people, new Date(), 6).slice(0, 2) : []),
-    [hydrated, index],
-  );
+  const { items, today } = useMemo(() => {
+    const all = hydrated && index ? anniversaries(index.people, new Date(), 6) : [];
+    const exact = all.filter((a) => a.inDays === 0);
+    return { items: (exact.length > 0 ? exact : all).slice(0, 2), today: exact.length > 0 };
+  }, [hydrated, index]);
   if (items.length === 0) return null;
 
-  const dayFormat = new Intl.DateTimeFormat(htmlLangFor(locale), { day: "numeric", month: "long" });
   return (
     <section aria-labelledby="on-this-day" className="flex flex-col gap-3 border-t border-line pt-6">
       <h2 id="on-this-day" className="font-sans text-body-sm font-medium tracking-normal text-muted-text">
-        {m.start.onThisDay}
+        {today ? m.start.onThisDay : m.start.comingUp}
       </h2>
       <ul className="flex flex-col gap-1">
-        {items.map(({ person, kind, years, inDays, date }) => (
+        {items.map(({ person, kind, years, inDays }) => (
           <li key={`${person.slug}-${kind}`}>
             <Link
               to={pagePath(locale, "people", person.slug)}
@@ -188,7 +188,9 @@ function OnThisDay() {
               <span className="flex min-w-0 flex-col">
                 <span className="font-medium text-emphasis">{person.name.display}</span>
                 <span className="text-body-sm text-muted-text">
-                  {m.start.anniversary(kind, years, inDays === 0 ? null : dayFormat.format(date))}
+                  {inDays === 0
+                    ? m.start.anniversaryToday(kind, years)
+                    : m.start.anniversaryUpcoming(kind, formatPartialDate(person[kind]!.date!, locale))}
                 </span>
               </span>
             </Link>

@@ -208,7 +208,6 @@ export const siteConfigSchema = z.object({
 
   features: z.object({
     randomBio: z.boolean(),
-    hideNames: z.boolean(),
     easyLanguage: z.boolean(),
     themeToggle: z.boolean(),
   }),

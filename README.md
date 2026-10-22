@@ -11,11 +11,11 @@ The demo content shows pioneers of the women's movement (1850–1950) from Wikid
   - Without dragging: zoom buttons and a direction pad. With the keyboard: arrow keys.
   - Pre-rendered so it appears immediately.
   - First-time visitors get a short, dismissible hint on how to explore.
-  - Tiles vary slightly in size and position (`canvas.sizeVariance`) for a loose collage. Next to an open biography the wall blurs until you point at it.
+  - Tiles vary slightly in size and position (`canvas.sizeVariance`) for a loose collage.
 - **List:** alphabetical, with A–Z jump links.
 - **Timeline ("Zeitstrahl"):** people by year of birth, grouped by decade, each with a bar for their life span on a shared scale. Grid lines and key dates from the configuration (e.g. when women got the vote) run through the list; pointing at a person or opening one highlights who lived at the same time.
 - **Biography:**
-  - Opens as a column next to the overview from 1024 px; on smaller screens it is a full-screen dialog that starts with the portrait.
+  - Opens as a modal dialog over the overview: a centred card from 1024 px (a click outside, Escape or "Close" closes it), a full-screen sheet that starts with the portrait on smaller screens.
   - Name, save, share, close and the tabs stay visible while scrolling.
   - Tabs: biography, life story and timeline, each with a shareable link (`#lebenslauf` / `#timeline`).
   - Life story with reading time and, for longer texts, a table of contents.
@@ -27,8 +27,8 @@ The demo content shows pioneers of the women's movement (1850–1950) from Wikid
   - Matches are highlighted on the portrait wall, and the search state lives in the URL.
 - **Random biography:** favours lesser-known people and people not opened yet.
 - **Saved biographies ("Merkliste"):** "Save" in a biography adds the person to a list kept in the browser (no account, nothing sent anywhere). The menu links to it, the search panel offers it as a filter (`?saved=1`), and saved people are marked in the list.
-- **Start page:** size of the collection, a random entry point and "On this day" (people whose birthday or day of death is today or in the next few days).
-- **Also:** hide names, light/dark theme, languages including Easy Language. Transitions use the View Transitions API and are disabled with "reduce motion".
+- **Start page:** a random entry point and "On this day" (people whose birthday or day of death is today; if there is nobody, those of the next few days under "Coming up").
+- **Also:** light/dark theme, languages including Easy Language. Transitions use the View Transitions API and are disabled with "reduce motion".
 
 ## Requirements
 
@@ -65,7 +65,7 @@ Everything project-specific lives in one typed file. It is validated on load. Er
 | `detail.tabs`              | Biography tabs and their URL names                                                                                                        |
 | `timeline`                 | Key dates of the subject, marked on the timeline axis and listed above it (`events`: year + label per language)                           |
 | `canvas`                   | Tile size, gap, offset, endless repetition, zoom limits, size variation of the tiles (`sizeVariance`)                                     |
-| `features`                 | Random biography, hide names, Easy Language, theme switch                                                                                 |
+| `features`                 | Random biography, Easy Language, theme switch                                                                                             |
 
 All texts are given per language (`{ de: "…", en: "…" }`). UI texts that are not project-specific live in `app/lib/i18n/messages/`.
 

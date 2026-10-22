@@ -10,7 +10,7 @@ import { NavIconButton } from "~/components/shell/nav";
 import { Button } from "~/components/ui/button";
 import { Drawer, DrawerClose, DrawerContent, DrawerTitle, DrawerTrigger } from "~/components/ui/drawer";
 import { siteConfig } from "~/lib/config";
-import { SPLIT_VIEW_QUERY, useMediaQuery } from "~/lib/hooks";
+import { WIDE_QUERY, useMediaQuery } from "~/lib/hooks";
 import type { FacetConfig } from "~/lib/config/schema";
 import { lifeYears } from "~/lib/content/format";
 import { usePeopleIndex, type PeopleIndex } from "~/lib/content/people-index";
@@ -38,7 +38,7 @@ export function SearchDrawer() {
   const m = useMessages();
   const open = useSearchPanelOpen();
   // Desktop: the search button is at the top right, so the panel slides in from the right.
-  const desktop = useMediaQuery(SPLIT_VIEW_QUERY, false);
+  const desktop = useMediaQuery(WIDE_QUERY, false);
 
   return (
     <Drawer open={open} onOpenChange={setSearchPanelOpen} direction={desktop ? "right" : "bottom"}>

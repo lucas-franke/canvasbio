@@ -306,24 +306,6 @@
   }
 }
 
-/*
- * Split view: while a biography is open, the wall next to it blurs slightly so the reading
- * column has the focus. Pointing at the wall or moving keyboard focus into it brings it
- * back into focus, so it stays usable for opening the next person.
- */
-@media (min-width: 64rem) {
-  .canvas-world {
-    transition:
-      filter 300ms ease,
-      opacity 300ms ease;
-  }
-
-  .canvas-viewport[data-detail-open]:not(:hover, :focus-within) .canvas-world {
-    filter: blur(3px) saturate(0.85);
-    opacity: 0.8;
-  }
-}
-
 @keyframes tile-pulse {
   40% {
     transform: scale(calc(var(--scale) * 1.12));
@@ -331,33 +313,20 @@
 }
 
 /*
- * "Hide names": names appear on hover, keyboard focus and long-press (:active), and
- * for the open biography and search matches. Screen readers always get them (opacity only).
- */
-[data-hide-names] .canvas-tile-name {
-  opacity: 0;
-  transition: opacity 150ms ease;
-}
-
-[data-hide-names]
-  .canvas-tile:is(:hover, :focus-visible, :active, [data-active], [data-match="hit"])
-  .canvas-tile-name {
-  opacity: 1;
-}
-
-/*
  * View transitions between overview and biography (links with `viewTransition`).
  * Layers: root (cross-fade), detail-panel, person-portrait (shared element, see
  * app/lib/view-transition.ts), site-nav (stays put on top).
  */
-@keyframes vt-slide-in-left {
+@keyframes vt-zoom-in {
   from {
-    transform: translateX(-100%);
+    opacity: 0;
+    transform: scale(0.96);
   }
 }
-@keyframes vt-slide-out-left {
+@keyframes vt-zoom-out {
   to {
-    transform: translateX(-100%);
+    opacity: 0;
+    transform: scale(0.98);
   }
 }
 @keyframes vt-slide-in-up {
@@ -393,31 +362,35 @@
   animation: vt-slide-out-down 260ms cubic-bezier(0.4, 0, 1, 1) forwards;
 }
 
-/* Split view: the biography column slides in from the left edge. */
+/* Wide screens: the biography card fades in, slightly growing (the backdrop is part of the root cross-fade). */
 @media (min-width: 64rem) {
   ::view-transition-new(detail-panel):only-child {
-    animation-name: vt-slide-in-left;
+    animation-name: vt-zoom-in;
   }
   ::view-transition-old(detail-panel):only-child {
-    animation-name: vt-slide-out-left;
-  }
-
-  /* The nav floats above the column (on small screens the sheet covers it, as after the transition). */
-  ::view-transition-group(site-nav) {
-    z-index: 2;
+    animation-name: vt-zoom-out;
   }
 }
 
-/* Switching between two biographies: a quick cross-fade inside the column. */
+/* Switching between two biographies: a quick cross-fade inside the dialog. */
 ::view-transition-old(detail-panel),
 ::view-transition-new(detail-panel) {
   animation-duration: 200ms;
 }
 
-/* The portrait flies above the sliding column. */
-::view-transition-group(person-portrait) {
+/* The dialog stays above the nav while it appears or goes, and the portrait flies above both. */
+::view-transition-group(detail-panel) {
   z-index: 1;
+}
+::view-transition-group(person-portrait) {
+  z-index: 2;
   animation-duration: 420ms;
+}
+
+/* The scrollbar inside the biography card: thin, on a transparent track. */
+.detail-scroller {
+  scrollbar-width: thin;
+  scrollbar-color: var(--c-border-control) transparent;
 }
 
 /* First-visit hint on the wall: appears after a moment, once the wall has settled. */
@@ -437,33 +410,10 @@
     animation: none;
   }
 
-  .canvas-world {
-    transition: none;
-  }
-
   ::view-transition-group(*),
   ::view-transition-old(*),
   ::view-transition-new(*) {
     animation: none !important;
-  }
-}
-
-/* Navigation next to an open biography: icons only (labels stay as accessible names). */
-[data-nav-compact] .nav-label {
-  @media (min-width: 64rem) {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
-  }
-}
-[data-nav-compact] .nav-icon-action {
-  @media (min-width: 64rem) {
-    padding-inline: 0;
   }
 }
 

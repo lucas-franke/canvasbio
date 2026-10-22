@@ -1,7 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
 
-import { openCanvasControls } from "./helpers";
-
 const waitForCanvas = (page: Page) => page.locator("[data-cell]").first().waitFor({ state: "attached" });
 
 test("random biography from the canvas: the tile pulses, then the biography opens", async ({ page }) => {
@@ -38,36 +36,4 @@ test("no random button when the search has no results", async ({ page }) => {
   await page.goto("/personen?q=xyzxyz");
   await expect(page.getByRole("heading", { name: "Keine Personen gefunden" })).toBeVisible();
   await expect(page.getByRole("button", { name: "Zufällige Biografie" })).toHaveCount(0);
-});
-
-test("hide names: names disappear visually, stay accessible, and the choice is remembered", async ({
-  page,
-  isMobile,
-}) => {
-  await page.goto("/personen");
-  await waitForCanvas(page);
-  await openCanvasControls(page, isMobile);
-  const toggle = page.getByRole("button", { name: "Namen ausblenden" });
-  await expect(toggle).toHaveAttribute("aria-pressed", "false");
-  await toggle.click();
-  await expect(toggle).toHaveAttribute("aria-pressed", "true");
-
-  const tile = page.locator('[data-cell][tabindex="0"]');
-  const name = tile.locator(".canvas-tile-name");
-  await expect(name).toHaveCSS("opacity", "0");
-  // The link keeps its accessible name.
-  await expect(tile).toHaveAccessibleName(/\S/);
-
-  // Keyboard focus reveals the name.
-  await tile.focus();
-  await page.keyboard.press("ArrowRight");
-  await expect(page.locator("[data-cell]:focus .canvas-tile-name")).toHaveCSS("opacity", "1");
-
-  await page.reload();
-  await waitForCanvas(page);
-  await openCanvasControls(page, isMobile);
-  await expect(page.getByRole("button", { name: "Namen ausblenden" })).toHaveAttribute(
-    "aria-pressed",
-    "true",
-  );
 });

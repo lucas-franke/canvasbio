@@ -16,20 +16,25 @@ test("opening a biography from the list keeps the list and moves focus", async (
   await expect(page.getByRole("link", { name: "Clara Zetkin", exact: true })).toBeFocused();
 });
 
-test("split view: the overview stays usable next to the biography (desktop)", async ({ page, isMobile }) => {
-  test.skip(isMobile, "phones show the biography as a dialog");
+test("desktop: the biography is a centred dialog, a click outside closes it", async ({ page, isMobile }) => {
+  test.skip(isMobile, "phones show the biography over the whole screen");
   await page.goto("/personen/liste");
   await page.getByRole("link", { name: "Helen Keller", exact: true }).click();
-  await expect(heading(page, "Helen Keller")).toBeVisible();
-  // The opened person is marked in the overview, and another one can be opened directly.
-  await expect(page.locator('[data-person="helen-keller"]')).toHaveAttribute("aria-current", "page");
-  await page.getByRole("link", { name: "Anita Augspurg", exact: true }).click();
-  await expect(heading(page, "Anita Augspurg")).toBeFocused();
-  await expect(page.getByRole("dialog")).toHaveCount(0);
+  const dialog = page.getByRole("dialog", { name: "Helen Keller" });
+  await expect(heading(page, "Helen Keller")).toBeFocused();
+  const box = (await dialog.boundingBox())!;
+  const viewport = page.viewportSize()!;
+  expect(Math.abs(box.x + box.width / 2 - viewport.width / 2)).toBeLessThan(2);
+  expect(box.width).toBeLessThan(viewport.width);
+
+  // Clicking the dimmed backdrop beside the card closes it; focus returns to the person.
+  await page.mouse.click(Math.max(4, box.x / 2), viewport.height / 2);
+  await expect(page).toHaveURL(/\/personen\/liste$/);
+  await expect(dialog).toHaveCount(0);
+  await expect(page.getByRole("link", { name: "Helen Keller", exact: true })).toBeFocused();
 });
 
-test("small screens show the biography as a modal dialog", async ({ page, isMobile }) => {
-  test.skip(!isMobile, "desktop uses the split view");
+test("the biography is a modal dialog on every screen", async ({ page }) => {
   await page.goto("/personen/liste");
   await page.getByRole("link", { name: "Helen Keller", exact: true }).click();
   const dialog = page.getByRole("dialog", { name: "Helen Keller" });
@@ -80,17 +85,6 @@ test("missing Leichte Sprache text shows a notice and is marked as German", asyn
   await expect(page.getByText("Clara Zetkin hat viele Jahre eine Zeitung gemacht.")).toBeAttached();
 });
 
-test("language switch keeps the biography (desktop)", async ({ page, isMobile }) => {
-  // On phones the biography is a modal dialog; the menu behind it is inert until it's closed.
-  test.skip(isMobile, "menu is behind the modal biography");
-  await page.goto("/personen/helen-keller");
-  await page.getByRole("button", { name: "Menü" }).click();
-  await page.getByRole("dialog", { name: "Menü" }).getByRole("link", { name: "English" }).click();
-  await expect(page).toHaveURL(/\/en\/people\/helen-keller$/);
-  await expect(heading(page, "Helen Keller")).toBeVisible();
-  await expect(page.getByRole("tab", { name: "Life story" })).toBeVisible();
-});
-
 test("unknown person shows the not-found page", async ({ page }) => {
   await page.goto("/personen/gibt-es-nicht");
   await expect(page.getByRole("heading", { level: 1, name: "Seite nicht gefunden" })).toBeVisible();
@@ -99,20 +93,36 @@ test("unknown person shows the not-found page", async ({ page }) => {
 test("on phones closing and the tabs stay in reach while reading", async ({ page, isMobile }) => {
   test.skip(!isMobile, "the sticky bar matters in the full-screen dialog");
   await page.goto("/personen/clara-zetkin#geschichte");
-  await page.locator('[role="dialog"]').evaluate((el) => el.scrollTo(0, 2000));
+  await page.locator(".detail-scroller").evaluate((el) => el.scrollTo(0, 2000));
   await expect(page.getByRole("link", { name: "Schließen" })).toBeInViewport();
   await expect(page.getByRole("tablist", { name: "Abschnitte" })).toBeInViewport();
 });
 
-test("if the overview data can't be loaded, an error with retry is shown", async ({ page, isMobile }) => {
-  test.skip(isMobile, "the overview is behind the dialog on phones");
+test("if the overview data cannot be loaded, the biography still works and closing loads the overview", async ({
+  page,
+}) => {
   await page.route("**/data/people-de.json", (route) => route.abort());
   await page.goto("/personen/clara-zetkin");
-  const alert = page.getByRole("alert").filter({ hasText: "Die Übersicht konnte nicht geladen werden" });
+  // The biography is pre-rendered and readable; the overview behind it shows the error.
+  await expect(heading(page, "Clara Zetkin")).toBeVisible();
+  await expect(
+    page.getByRole("alert").filter({ hasText: "Die Übersicht konnte nicht geladen werden" }),
+  ).toBeAttached();
+  // Closing navigates to the overview route, which brings its own data.
+  await page.getByRole("link", { name: "Schließen" }).click();
+  await expect(page.locator("[data-cell]").first()).toBeAttached();
+});
+
+test("the search panel offers a retry when the overview data cannot be loaded", async ({ page }) => {
+  await page.route("**/data/people-de.json", (route) => route.abort());
+  await page.goto("/ueber");
+  await page.getByRole("button", { name: "Suche", exact: true }).click();
+  const panel = page.getByRole("dialog", { name: "Suche" });
+  const alert = panel.getByRole("alert").filter({ hasText: "Die Übersicht konnte nicht geladen werden" });
   await expect(alert).toBeVisible();
   await page.unroute("**/data/people-de.json");
   await alert.getByRole("button", { name: "Erneut versuchen" }).click();
-  await expect(page.locator("[data-cell]").first()).toBeAttached();
+  await expect(panel.getByLabel("Nach Namen suchen")).toBeVisible();
 });
 
 test("previous and next continue in list order", async ({ page }) => {
@@ -220,4 +230,19 @@ test("swiping the biography sheet down closes it (phones)", async ({ page, brows
   await touch("touchEnd", 600);
   await expect(page).toHaveURL(/\/personen\/liste$/);
   await expect(dialog).toBeHidden();
+});
+
+test("desktop: the dialog scrolls inside its rounded card, with a thin scrollbar", async ({
+  page,
+  isMobile,
+}) => {
+  test.skip(isMobile, "phones show the biography over the whole screen");
+  await page.goto("/personen/clara-zetkin#geschichte");
+  const card = page.getByRole("dialog", { name: "Clara Zetkin" });
+  const scroller = card.locator(".detail-scroller");
+  // The card clips (rounded corners) and doesn't scroll itself; the inner area does.
+  await expect(card).toHaveCSS("overflow-y", "hidden");
+  await expect(scroller).toHaveCSS("overflow-y", "auto");
+  await expect(scroller).toHaveCSS("scrollbar-width", "thin");
+  expect(await scroller.evaluate((el) => el.scrollHeight > el.clientHeight)).toBe(true);
 });

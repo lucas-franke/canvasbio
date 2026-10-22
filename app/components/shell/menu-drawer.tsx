@@ -22,7 +22,7 @@ import {
   switchLocalePath,
   type Page,
 } from "~/lib/i18n/locale";
-import { SPLIT_VIEW_QUERY, useMediaQuery } from "~/lib/hooks";
+import { WIDE_QUERY, useMediaQuery } from "~/lib/hooks";
 import { useBookmarks } from "~/lib/preferences";
 import { useTheme, type ThemeChoice } from "~/lib/theme/use-theme";
 import { NavIconButton } from "./nav";
@@ -54,7 +54,7 @@ export function MenuDrawer() {
   const current = parsePath(pathname).page;
   const [theme, setTheme] = useTheme();
   // Desktop: the nav is at the top, so the menu slides in from the left instead of up.
-  const desktop = useMediaQuery(SPLIT_VIEW_QUERY, false);
+  const desktop = useMediaQuery(WIDE_QUERY, false);
   const close = () => setOpen(false);
   const [bookmarks] = useBookmarks();
 

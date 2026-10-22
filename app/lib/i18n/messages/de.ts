@@ -44,8 +44,11 @@ export const de = {
   },
   start: {
     onThisDay: "An diesem Tag",
-    anniversary: (kind: "born" | "died", years: number, date: string | null) =>
-      `${date ? `Am ${date}` : "Heute"} vor ${years} Jahren ${kind === "born" ? "geboren" : "gestorben"}`,
+    comingUp: "In den nächsten Tagen",
+    anniversaryToday: (kind: "born" | "died", years: number) =>
+      `Heute vor ${years} Jahren ${kind === "born" ? "geboren" : "gestorben"}`,
+    anniversaryUpcoming: (kind: "born" | "died", date: string) =>
+      `${kind === "born" ? "Geboren" : "Gestorben"} am ${date}`,
     portraitsLabel: "Porträts aus der Sammlung",
   },
   people: {
@@ -53,7 +56,6 @@ export const de = {
     listTitle: "Biografien als Liste",
     timelineTitle: "Biografien als Zeitstrahl",
     gridTitle: "Biografien als Bilder",
-    count: (n: number) => (n === 1 ? "1 Person" : `${n} Personen`),
     /** Badge in languages where not every biography exists (Leichte Sprache): this one does. */
     ownText: "In Leichter Sprache",
   },
@@ -103,7 +105,6 @@ export const de = {
     label: "Zufällige Biografie",
   },
   canvas: {
-    hideNames: "Namen ausblenden",
     label: "Porträtwand",
     hint: "Mit den Pfeiltasten von Porträt zu Porträt, mit Plus und Minus zoomen. Alle Personen gibt es auch als Liste.",
     toList: "Zur Listenansicht",

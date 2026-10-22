@@ -34,7 +34,7 @@ import { SearchSummary } from "~/components/search/search-summary";
 import { Button } from "~/components/ui/button";
 import type { PersonListItem } from "~/lib/content/adapter";
 import { useMessages } from "~/lib/i18n";
-import { useHideNames, readSeen } from "~/lib/preferences";
+import { readSeen } from "~/lib/preferences";
 import { pickRandom } from "~/lib/random";
 import type { FacetLabels, SearchState } from "~/lib/search/search";
 import { markPortraitSourceElement } from "~/lib/view-transition";
@@ -109,7 +109,6 @@ export function InfiniteCanvas({
   const location = useLocation();
   const navigate = useNavigate();
   const hintId = useId();
-  const [namesHidden, setNamesHidden] = useHideNames();
 
   // Mixed, but the same on every visit.
   const ordered = useMemo(() => seededShuffle(people, "canvas"), [people]);
@@ -170,9 +169,9 @@ export function InfiniteCanvas({
     }
   }
 
-  // …and brings it into view. In the split view the canvas column changes width when a
-  // biography opens or closes: re-measure right in the commit, so the portraits keep their
-  // place on screen (also in the snapshot a view transition takes right after).
+  // …and brings it into view. Re-measure right in the commit (the viewport may have changed
+  // size meanwhile), so the portraits keep their place on screen (also in the snapshot a
+  // view transition takes right after).
   useLayoutEffect(() => {
     camera.sync();
     const cell = currentRef.current;
@@ -460,12 +459,7 @@ export function InfiniteCanvas({
   const sizes = sizesFor(view?.lod ?? 0);
 
   return (
-    <section
-      aria-label={m.canvas.label}
-      aria-describedby={hintId}
-      data-hide-names={(siteConfig.features.hideNames && namesHidden) || undefined}
-      className="relative h-full overflow-clip"
-    >
+    <section aria-label={m.canvas.label} aria-describedby={hintId} className="relative h-full overflow-clip">
       <p id={hintId} className="sr-only">
         {m.canvas.hint}
       </p>
@@ -481,7 +475,6 @@ export function InfiniteCanvas({
         onClickCapture={onClickCapture}
         onFocus={onFocus}
         onKeyDown={onKeyDown}
-        data-detail-open={activeSlug ? "" : undefined}
         className="canvas-viewport absolute inset-0 cursor-grab touch-none overflow-clip select-none active:cursor-grabbing"
       >
         <div
@@ -570,8 +563,6 @@ export function InfiniteCanvas({
           camera.animateTo({ x: x - (fx * width) / scale, y: y - (fy * height) / scale, scale });
         }}
         onRecenter={camera.recenter}
-        namesHidden={siteConfig.features.hideNames ? namesHidden : undefined}
-        onNamesHiddenChange={setNamesHidden}
       />
 
       {siteConfig.features.randomBio && (hits === null || hits.length > 0) && (

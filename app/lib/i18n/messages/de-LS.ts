@@ -41,9 +41,12 @@ export const deLS: Messages = {
     dark: "Dunkel",
   },
   start: {
-    onThisDay: "An diesem Tag",
-    anniversary: (kind: "born" | "died", years: number, date: string | null) =>
-      `${date ? `Am ${date}` : "Heute"} vor ${years} Jahren ${kind === "born" ? "geboren" : "gestorben"}`,
+    onThisDay: "Heute",
+    comingUp: "In den nächsten Tagen",
+    anniversaryToday: (kind: "born" | "died", years: number) =>
+      `Heute vor ${years} Jahren ${kind === "born" ? "geboren" : "gestorben"}`,
+    anniversaryUpcoming: (kind: "born" | "died", date: string) =>
+      `${kind === "born" ? "Geboren" : "Gestorben"} am ${date}`,
     portraitsLabel: "Bilder von den Frauen",
   },
   people: {
@@ -51,7 +54,6 @@ export const deLS: Messages = {
     listTitle: "Die Frauen als Liste",
     timelineTitle: "Alle Frauen nach Jahren",
     gridTitle: "Die Frauen als Bilder",
-    count: (n: number) => (n === 1 ? "1 Frau" : `${n} Frauen`),
     /** Badge in languages where not every biography exists (Leichte Sprache): this one does. */
     ownText: "In Leichter Sprache",
   },
@@ -101,7 +103,6 @@ export const deLS: Messages = {
     label: "Eine Frau per Zufall",
   },
   canvas: {
-    hideNames: "Namen verstecken",
     label: "Bilder von allen Frauen",
     hint: "Mit den Pfeil-Tasten gehen Sie von Bild zu Bild. Mit Plus und Minus machen Sie die Bilder größer oder kleiner. Alle Frauen gibt es auch als Liste.",
     toList: "Zur Liste",

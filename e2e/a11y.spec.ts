@@ -88,18 +88,6 @@ const states: { name: string; run: (page: Page, isMobile: boolean) => Promise<vo
     }),
   ),
   {
-    name: "canvas with hidden names",
-    run: async (page, isMobile) => {
-      await page.addInitScript(() => localStorage.setItem("hide-names", "1"));
-      await page.goto("/personen");
-      await openCanvasControls(page, isMobile);
-      await expect(page.getByRole("button", { name: "Namen ausblenden" })).toHaveAttribute(
-        "aria-pressed",
-        "true",
-      );
-    },
-  },
-  {
     name: "open search panel",
     run: async (page) => {
       await page.goto("/personen");

@@ -1,7 +1,7 @@
 import type { Page } from "@playwright/test";
 
 /**
- * On touch screens the canvas controls (zoom, direction pad, hide names) sit behind one
+ * On touch screens the canvas controls (zoom, direction pad) sit behind one
  * button (German label "Porträtwand steuern"); open it there. On desktop they are always
  * visible.
  */

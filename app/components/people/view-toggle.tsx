@@ -22,10 +22,10 @@ export function ViewToggle({ active }: { active: "canvas" | "list" | "timeline" 
   const suffix = useSearchSuffix();
 
   return (
-    <div role="group" aria-labelledby={labelId} className="nav-icon-action flex items-center gap-3 md:pl-6">
+    <div role="group" aria-labelledby={labelId} className="flex items-center gap-3 md:pl-6">
       <span
         id={labelId}
-        className="nav-label sr-only text-label font-medium whitespace-nowrap text-nav-foreground md:not-sr-only"
+        className="sr-only text-label font-medium whitespace-nowrap text-nav-foreground md:not-sr-only"
       >
         {m.view.label}
       </span>

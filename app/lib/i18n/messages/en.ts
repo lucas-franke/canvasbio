@@ -41,8 +41,11 @@ export const en: Messages = {
   },
   start: {
     onThisDay: "On this day",
-    anniversary: (kind: "born" | "died", years: number, date: string | null) =>
-      `${kind === "born" ? "Born" : "Died"} ${years} years ago ${date ? `on ${date}` : "today"}`,
+    comingUp: "Coming up",
+    anniversaryToday: (kind: "born" | "died", years: number) =>
+      `${kind === "born" ? "Born" : "Died"} ${years} years ago today`,
+    anniversaryUpcoming: (kind: "born" | "died", date: string) =>
+      `${kind === "born" ? "Born" : "Died"} on ${date}`,
     portraitsLabel: "Portraits from the collection",
   },
   people: {
@@ -50,7 +53,6 @@ export const en: Messages = {
     listTitle: "Biographies as a list",
     timelineTitle: "Biographies on a timeline",
     gridTitle: "Biographies as portraits",
-    count: (n: number) => (n === 1 ? "1 person" : `${n} people`),
     /** Badge in languages where not every biography exists (Leichte Sprache): this one does. */
     ownText: "In this language",
   },
@@ -98,7 +100,6 @@ export const en: Messages = {
     label: "Random biography",
   },
   canvas: {
-    hideNames: "Hide names",
     label: "Portrait wall",
     hint: "Use the arrow keys to move between portraits, plus and minus to zoom. All people are also available as a list.",
     toList: "Go to list view",

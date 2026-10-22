@@ -50,10 +50,7 @@ interface IconActionProps {
 function IconActionContent({ label, icon, labelSide = "start", compactLabel = true }: IconActionProps) {
   const text = (
     <span
-      className={cn(
-        "nav-label text-label font-medium whitespace-nowrap",
-        compactLabel && "sr-only md:not-sr-only",
-      )}
+      className={cn("text-label font-medium whitespace-nowrap", compactLabel && "sr-only md:not-sr-only")}
     >
       {label}
     </span>
@@ -78,7 +75,7 @@ function IconActionContent({ label, icon, labelSide = "start", compactLabel = tr
 
 const iconActionClass = (labelSide: "start" | "end" = "start", compactLabel = true) =>
   cn(
-    "nav-icon-action group/action inline-flex items-center gap-3 rounded-full text-nav-foreground",
+    "group/action inline-flex items-center gap-3 rounded-full text-nav-foreground",
     labelSide === "start" ? (compactLabel ? "md:pl-6" : "pl-6") : compactLabel ? "md:pr-6" : "pr-6",
   );
 
@@ -114,15 +111,10 @@ export function NavIconButton({
   );
 }
 
-/** Width of the biography column in the split view; the nav and other overlays start after it. */
-export const ASIDE_WIDTH = "min(55%,56rem)";
-
 /**
  * The site navigation with a left and right group (and an optional center slot):
  * at the bottom on phones and tablets (thumb reach, safe area respected), at the top from
- * `lg` (on a desktop it would cover the content at the bottom). With `besideAside` it
- * spans only the overview column of the split view, so it never covers the biography,
- * and shows icons only.
+ * `lg` (on a desktop it would cover the content at the bottom).
  */
 export function BottomNav({
   label,
@@ -130,25 +122,24 @@ export function BottomNav({
   center,
   end,
   inert = false,
-  besideAside = false,
 }: {
   label: string;
   start: ReactNode;
   center?: ReactNode;
   end?: ReactNode;
   inert?: boolean;
-  besideAside?: boolean;
 }) {
   return (
     <nav
       aria-label={label}
       inert={inert || undefined}
-      data-nav-compact={besideAside || undefined}
       // Own view-transition layer: stays put (and on top) while pages and panels animate.
       className={cn(
         "pointer-events-none fixed inset-x-0 bottom-0 z-40 flex items-end justify-between gap-2 px-3 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] [view-transition-name:site-nav] sm:px-6 sm:pb-6",
+        // Behind an open dialog (inert) the nav is part of the page snapshot, so it fades and
+        // blurs together with the rest instead of staying sharp on its own layer.
+        "[&[inert]]:[view-transition-name:none]",
         "lg:top-0 lg:bottom-auto lg:items-center lg:px-8 lg:pt-3 lg:pb-0",
-        besideAside && "lg:left-[min(55%,56rem)] lg:px-4",
         "print:hidden",
       )}
     >

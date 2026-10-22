@@ -9,7 +9,7 @@ import { PageShell } from "~/components/shell/page-shell";
 import { siteConfig } from "~/lib/config";
 import type { PersonListItem } from "~/lib/content/adapter";
 import { usePeopleIndex } from "~/lib/content/people-index";
-import { SPLIT_VIEW_QUERY, useMediaQuery } from "~/lib/hooks";
+import { WIDE_QUERY, useMediaQuery } from "~/lib/hooks";
 import { useLocale, useMessages } from "~/lib/i18n";
 import { listPath, pagePath, timelinePath } from "~/lib/i18n/locale";
 import { filterPeople, isSearchActive, searchSuffix } from "~/lib/search/search";
@@ -21,17 +21,16 @@ import { afterViewTransition, markPortraitTarget } from "~/lib/view-transition";
 /** Passed to the detail route via <Outlet context>. */
 export interface PeopleLayoutContext {
   closeHref: string;
-  modal: boolean;
   /** People in overview order (search results when searching), for previous/next; null while loading. */
   sequence: PersonListItem[] | null;
   hrefFor: (slug: string) => string;
 }
 
 /**
- * Shared frame of overview and biography. The overview (portrait wall or list) lives here,
- * so it stays mounted — with its scroll position — while a biography is opened next to it:
- * - from `lg` up the biography is a column on the left and the overview stays usable (split view),
- * - below it covers the screen as a modal dialog; the overview is inert meanwhile.
+ * Shared frame of overview and biography. The overview (portrait wall, list or timeline)
+ * lives here, so it stays mounted — with its scroll position — while a biography is open.
+ * The biography is a modal dialog over it: a full-screen sheet on phones, a centred card
+ * from `lg` (a click on the dimmed backdrop closes it). The overview is inert meanwhile.
  */
 export default function PeopleLayout() {
   const locale = useLocale();
@@ -74,13 +73,13 @@ export default function PeopleLayout() {
         : null,
     [index, search, bookmarks],
   );
-  // Pre-rendered HTML assumes the split view; small screens switch to the dialog after hydration.
-  const isSplit = useMediaQuery(SPLIT_VIEW_QUERY, true);
-  const modal = isDetail && !isSplit;
+  const modal = isDetail;
+  // From `lg` the dialog is a centred card (no swipe-down sheet).
+  const wide = useMediaQuery(WIDE_QUERY, false);
   // The canvas fills the screen (also pre-rendered); the list scrolls like a normal page.
   const fullBleed = view === "canvas" && Boolean(index);
 
-  // Modal on small screens: lock page scrolling behind the dialog.
+  // Lock page scrolling behind the dialog.
   useEffect(() => {
     if (!modal) return;
     const root = document.documentElement;
@@ -135,20 +134,18 @@ export default function PeopleLayout() {
   const hrefFor = (personSlug: string) => pagePath(locale, "people", personSlug) + suffix;
   const context: PeopleLayoutContext = {
     closeHref: overviewHref,
-    modal,
     sequence: hits ?? index?.people ?? null,
     hrefFor,
   };
 
-  // Another person opened in the column: start reading at the top.
-  const asideRef = useRef<HTMLElement>(null);
+  // Another person opened in the dialog: start reading at the top.
+  const asideRef = useRef<HTMLDivElement>(null);
   useLayoutEffect(() => {
     asideRef.current?.scrollTo({ top: 0 });
   }, [slug]);
+  const close = () => navigate(overviewHref, { preventScrollReset: true, viewTransition: true });
   // Phones: swipe the biography sheet down to close it.
-  useSwipeToClose(asideRef, modal, () =>
-    navigate(overviewHref, { preventScrollReset: true, viewTransition: true }),
-  );
+  useSwipeToClose(asideRef, modal && !wide, close);
 
   return (
     <PageShell
@@ -157,15 +154,30 @@ export default function PeopleLayout() {
       fullBleed={fullBleed}
       aside={
         isDetail && (
-          <section
-            ref={asideRef}
-            aria-labelledby={PERSON_HEADING_ID}
-            role={modal ? "dialog" : undefined}
-            aria-modal={modal || undefined}
-            className="fixed inset-0 z-50 overflow-y-auto overscroll-contain bg-surface [view-transition-name:detail-panel] lg:sticky lg:top-0 lg:z-auto lg:h-dvh lg:w-[min(55%,56rem)] lg:shrink-0 lg:border-r lg:border-line print:static print:h-auto print:w-auto print:overflow-visible print:border-0"
-          >
-            <Outlet context={context} />
-          </section>
+          <div className="fixed inset-0 z-50 lg:grid lg:place-items-center lg:p-8 print:static print:block print:p-0">
+            {/* Backdrop: a click outside the card closes it. Keyboard users close with Escape or
+                the close button in the dialog, so the backdrop itself needs no key handling. */}
+            <div
+              aria-hidden="true"
+              onClick={close}
+              className="absolute inset-0 hidden bg-stage/55 backdrop-blur-sm lg:block print:hidden"
+            />
+            {/* The card clips to its rounded corners; the scrolling happens inside it, so the
+                scrollbar stays within the card (browsers don't round scrollbars themselves). */}
+            <section
+              aria-labelledby={PERSON_HEADING_ID}
+              role="dialog"
+              aria-modal="true"
+              className="relative flex h-full flex-col [view-transition-name:detail-panel] lg:h-auto lg:max-h-[calc(100dvh-4rem)] lg:w-[min(100%,60rem)] lg:overflow-hidden lg:rounded-card lg:bg-surface lg:shadow-[0_24px_64px_rgb(0_0_0/0.35)] print:static print:block print:h-auto print:max-h-none print:w-full print:overflow-visible print:rounded-none print:shadow-none"
+            >
+              <div
+                ref={asideRef}
+                className="detail-scroller min-h-0 flex-1 overflow-y-auto overscroll-contain bg-surface lg:my-2 print:my-0 print:overflow-visible"
+              >
+                <Outlet context={context} />
+              </div>
+            </section>
+          </div>
         )
       }
     >

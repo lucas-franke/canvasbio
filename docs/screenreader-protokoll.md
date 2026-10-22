@@ -32,7 +32,7 @@ Bewertung je Schritt: **ok** · **Problem** (mit Beschreibung) · **nicht geprü
 | 14  | „Nächster Treffer“ in der Bildwand                          | Ansage „Treffer 1 von N: Name“                                                                         |          |       |
 | 15  | Leere Suche (z. B. „xyzxyz“)                                | „Keine Personen gefunden“ und „Suche zurücksetzen“ erreichbar                                          |          |       |
 | 16  | „Zufällige Biografie“                                       | Biografie öffnet sich, Fokus auf dem Namen                                                             |          |       |
-| 17  | „Namen ausblenden“ umschalten                               | Als Umschalter mit Zustand angesagt; Kacheln behalten ihre Namen für den Screenreader                  |          |       |
+| 17  | „Merken“ in einer Biografie umschalten                      | Als Umschalter mit Zustand angesagt; Statusmeldung „Auf die Merkliste gesetzt“                         |          |       |
 | 18  | Menü: Sprache wechseln (Englisch, Leichte Sprache)          | Sprache der Ansage wechselt; aktuelle Sprache und Seite sind markiert                                  |          |       |
 | 19  | Menü: Darstellung (Hell / Dunkel / Wie Gerät)               | Als Optionsgruppe mit Auswahl angesagt                                                                 |          |       |
 | 20  | Erklärung zur Barrierefreiheit öffnen, Kontakt-Link         | Seite erreichbar, E-Mail-Link verständlich                                                             |          |       |

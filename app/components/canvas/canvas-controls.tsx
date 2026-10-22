@@ -8,7 +8,6 @@ import {
   Minus,
   Move,
   Plus,
-  EyeOff,
   SlidersHorizontal,
 } from "lucide-react";
 import { useId, useState, type ComponentProps, type ReactNode } from "react";
@@ -44,9 +43,6 @@ interface CanvasControlsProps {
   /** Move the content by a fraction of the viewport (positive = towards right/bottom). */
   onPan: (x: number, y: number) => void;
   onRecenter: () => void;
-  /** "Hide names" toggle state (omit to hide the toggle). */
-  namesHidden?: boolean;
-  onNamesHiddenChange?: (hidden: boolean) => void;
 }
 
 /**
@@ -55,14 +51,7 @@ interface CanvasControlsProps {
  * On touch screens (pinch and drag already work) all controls sit behind one button, so
  * the wall isn't covered; the alternatives stay one tap away.
  */
-export function CanvasControls({
-  onZoomIn,
-  onZoomOut,
-  onPan,
-  onRecenter,
-  namesHidden,
-  onNamesHiddenChange,
-}: CanvasControlsProps) {
+export function CanvasControls({ onZoomIn, onZoomOut, onPan, onRecenter }: CanvasControlsProps) {
   const m = useMessages();
   const padId = useId();
   const columnId = useId();
@@ -91,15 +80,6 @@ export function CanvasControls({
               aria-controls={padId}
               onClick={() => setPadOpen((open) => !open)}
             />
-            {namesHidden !== undefined && (
-              <ControlButton
-                label={m.canvas.hideNames}
-                icon={<EyeOff />}
-                aria-pressed={namesHidden}
-                onClick={() => onNamesHiddenChange?.(!namesHidden)}
-                className="aria-pressed:bg-nav-foreground aria-pressed:text-nav"
-              />
-            )}
           </div>
         )}
         {touch && (

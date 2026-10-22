@@ -1,6 +1,6 @@
 import type { MouseEvent } from "react";
 
-import { SPLIT_VIEW_QUERY } from "./hooks";
+import { WIDE_QUERY } from "./hooks";
 
 /*
  * Shared-element morph between a portrait in the overview (canvas tile or list row) and the
@@ -10,8 +10,9 @@ import { SPLIT_VIEW_QUERY } from "./hooks";
  * - old state: the clicked overview portrait (set on click, before the navigation starts),
  * - new state: the biography portrait, or when closing, the overview portrait of that person
  *   (set in a layout effect, i.e. in the commit inside the transition's update callback).
- * Browsers without View Transitions simply navigate. Only in the split view: on small
- * screens the biography slides up as a sheet and its portrait may be off screen.
+ * Browsers without View Transitions simply navigate. Only on wide screens, where the
+ * biography is a centred card: on small screens it slides up as a sheet and its portrait
+ * may be off screen.
  */
 
 /*
@@ -57,7 +58,7 @@ export function clearPortraitTransition() {
   named = [];
 }
 
-const splitView = () => typeof window !== "undefined" && window.matchMedia(SPLIT_VIEW_QUERY).matches;
+const wideView = () => typeof window !== "undefined" && window.matchMedia(WIDE_QUERY).matches;
 
 /** Overview portrait of a person: the element marked `data-vt-portrait` in its `data-vt-item`. */
 function overviewPortrait(from: Element | null) {
@@ -73,13 +74,13 @@ export function markPortraitSource(event: MouseEvent<HTMLElement>) {
 /** Same for a navigation started in code (e.g. the random biography): `element` is the overview item. */
 export function markPortraitSourceElement(element: Element | null | undefined) {
   clearPortraitTransition();
-  if (splitView()) setName(overviewPortrait(element ?? null));
+  if (wideView()) setName(overviewPortrait(element ?? null));
 }
 
 /** After a biography opened (or closed): name the element the morph should end on. */
 export function markPortraitTarget(slug: string | undefined, previousSlug: string | undefined) {
   clearPortraitTransition();
-  if (!splitView()) return;
+  if (!wideView()) return;
   if (slug) {
     setName(document.querySelector<HTMLElement>("[data-vt-detail-portrait]"));
   } else if (previousSlug) {

@@ -21,9 +21,7 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
   return (
     <header
       className={cn(
-        // Next to an open biography the overview column is narrow: the nav pills (with home)
-        // are enough there, the wordmark would collide with them.
-        "flex justify-center px-4 lg:@max-2xl:hidden",
+        "flex justify-center px-4",
         overlay
           ? "pointer-events-none absolute inset-x-0 top-0 z-10"
           : // Desktop: a sticky band behind the top navigation, so content doesn't scroll under it.
@@ -50,7 +48,7 @@ interface PageShellProps {
   children: ReactNode;
   /** Extra controls in the right nav pill (view toggle etc.). */
   navEnd?: ReactNode;
-  /** Panel shown before the main column, e.g. the biography detail (split view). */
+  /** Overlay above the page, e.g. the biography dialog. */
   aside?: ReactNode;
   /** Make header, main content and nav inert (while a modal panel covers them). */
   inert?: boolean;
@@ -60,7 +58,7 @@ interface PageShellProps {
 
 /**
  * Frame for the light content pages: header, main content and the floating bottom navigation.
- * The main column is a size container, so its content adapts to the space left by `aside`.
+ * The main column is a size container, so its content adapts to its width.
  */
 export function PageShell({ children, navEnd, aside, inert = false, fullBleed = false }: PageShellProps) {
   const locale = useLocale();
@@ -87,7 +85,6 @@ export function PageShell({ children, navEnd, aside, inert = false, fullBleed = 
       </div>
       <BottomNav
         inert={inert}
-        besideAside={Boolean(aside)}
         label={m.nav.label}
         start={
           <NavPill>

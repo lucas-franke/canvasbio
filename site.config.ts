@@ -230,7 +230,6 @@ export default defineSiteConfig({
 
   features: {
     randomBio: true,
-    hideNames: true,
     easyLanguage: true,
     themeToggle: true,
   },

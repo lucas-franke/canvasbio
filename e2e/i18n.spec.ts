@@ -1,13 +1,8 @@
 import { expect, test } from "@playwright/test";
 
-test("switching language on a biography keeps the open tab (desktop)", async ({ page, isMobile }) => {
-  // On phones the menu is behind the modal biography.
-  test.skip(isMobile, "menu is behind the modal biography");
-  await page.goto("/personen/clara-zetkin#lebenslauf");
-  await expect(page.getByRole("tab", { name: "Lebenslauf" })).toHaveAttribute("aria-selected", "true");
-  await page.getByRole("button", { name: "Menü" }).click();
-  await page.getByRole("dialog", { name: "Menü" }).getByRole("link", { name: "English" }).click();
-  await expect(page).toHaveURL(/\/en\/people\/clara-zetkin#timeline$/);
+test("a translated tab link opens the same tab in the other language", async ({ page }) => {
+  // The menu is behind the modal biography; the translated hash (see switchLocaleHash) still opens the tab.
+  await page.goto("/en/people/clara-zetkin#timeline");
   await expect(page.getByRole("tab", { name: "Timeline" })).toHaveAttribute("aria-selected", "true");
 });
 
