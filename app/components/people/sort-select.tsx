@@ -23,7 +23,7 @@ export function SortSelect({ view, value }: { view: SortView; value: SortKey }) 
       </label>
       <ArrowDownUp
         aria-hidden="true"
-        className="pointer-events-none absolute left-3.5 size-4 text-muted-text"
+        className="pointer-events-none absolute left-0 size-4 text-muted-text"
       />
       <select
         id={id}
@@ -33,12 +33,12 @@ export function SortSelect({ view, value }: { view: SortView; value: SortKey }) 
           // The default order needs no parameter.
           applySearch({ ...search, sort: next === options[0] ? "" : next });
         }}
-        className="h-11 min-w-0 cursor-pointer appearance-none truncate rounded-full border border-control/55 bg-surface pr-9 pl-9 text-body-sm font-medium text-emphasis hover:border-control lg:h-10"
+        className="h-11 min-w-0 cursor-pointer appearance-none truncate rounded-md bg-transparent pr-7 pl-6 text-body-sm font-medium text-emphasis hover:text-brand lg:h-10"
         style={{
           backgroundImage:
             "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E\")",
           backgroundRepeat: "no-repeat",
-          backgroundPosition: "right 0.75rem center",
+          backgroundPosition: "right 0.25rem center",
         }}
       >
         {options.map((option) => (

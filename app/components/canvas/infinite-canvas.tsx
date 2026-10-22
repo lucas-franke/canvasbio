@@ -496,7 +496,7 @@ export function InfiniteCanvas({
       <script dangerouslySetInnerHTML={{ __html: firstPaintScript(layout, limits, STORAGE_PREFIX) }} />
 
       {hits && (
-        <div ref={summaryRef} className="absolute inset-x-3 top-19 z-20 mx-auto max-w-xl sm:top-24 lg:top-28">
+        <div ref={summaryRef} className="absolute inset-x-3 top-24 z-20 mx-auto max-w-xl lg:top-28">
           <SearchSummary
             state={search}
             count={hits.length}
@@ -532,18 +532,6 @@ export function InfiniteCanvas({
           </p>
         </div>
       )}
-
-      {/* Desktop: the navigation (with the free-standing wordmark) sits at the top; the wall
-          fades into the page colour there, so the wordmark doesn't compete with tile names. */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 hidden h-32 bg-linear-to-b from-page from-30% via-page/70 to-transparent lg:block"
-      />
-      {/* Soft fade behind the floating nav, as in the design. */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-linear-to-t from-page to-transparent"
-      />
 
       <CanvasControls onZoomIn={() => camera.zoomBy(1.4)} onZoomOut={() => camera.zoomBy(1 / 1.4)} />
 

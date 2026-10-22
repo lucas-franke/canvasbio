@@ -12,8 +12,8 @@ The demo content shows pioneers of the women's movement (1850–1950) from Wikid
   - Pre-rendered so it appears immediately.
   - Tiles vary slightly in size and position (`canvas.sizeVariance`) for a loose collage.
 - **Navigation:** the brand on the left leads home; on the right always view switch, search, menu. The view switch shows the active view with a chevron and unfolds on click.
-- **List:** sorted by name (A–Z, Z–A) or year of birth, in chapters (letters or decades). A chapter rail beside the list on wide screens, a chapter sheet in the sticky bar otherwise.
-- **Timeline ("Zeitstrahl"):** people by year of birth, grouped by decade, each with a bar for their life span on a shared scale. Grid lines and key dates from the configuration (e.g. when women got the vote) run through the list; pointing at a person or opening one highlights who lived at the same time. Sorted by birth, death or life span; the chapters (decades, life spans) are in a rail on wide screens and a sheet otherwise. The order is part of the URL (`?sort=`) and decides previous/next in a biography.
+- **List:** sorted by name (A–Z, Z–A) or year of birth, in chapters (letters or decades). The chapters are in an index at the right edge, as in a phone's contacts app: tap a letter to jump, or slide along it to scroll with it.
+- **Timeline ("Zeitstrahl"):** people by year of birth, grouped by decade, each with a bar for their life span on a shared scale. Grid lines and key dates from the configuration (e.g. when women got the vote) run through the list; pointing at a person or opening one highlights who lived at the same time. Sorted by birth, death or life span; the chapters (decades, life spans) are in the same index at the right edge. The order is part of the URL (`?sort=`) and decides previous/next in a biography.
 - **Biography:**
   - Opens as a modal dialog over the overview: a centred card from 1024 px (a click outside, Escape or "Close" closes it), a full-screen sheet that starts with the portrait on smaller screens.
   - Name, close and the tabs stay visible while scrolling.

@@ -63,14 +63,12 @@ const sameView = (a: CanvasView | null, b: CanvasView) =>
 const prefersReducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 /**
- * Screen areas covered by the wordmark (top), the nav and the random biography button
- * above it (bottom) and the canvas controls (right).
+ * Screen areas covered by the navigation (top), the random biography button (bottom) and
+ * the canvas controls (right).
  */
 function insetsFor({ width }: Size): Insets {
-  // From lg the navigation is at the top and only the random button sits at the bottom.
   if (window.matchMedia("(min-width: 64rem)").matches) return { top: 112, right: 88, bottom: 104, left: 12 };
-  const small = width < 640;
-  return { top: small ? 76 : 96, right: small ? 64 : 88, bottom: small ? 144 : 180, left: 12 };
+  return { top: 96, right: width < 640 ? 64 : 88, bottom: 104, left: 12 };
 }
 
 function readStoredCamera(key: string, limits: ZoomLimits): Camera | null {

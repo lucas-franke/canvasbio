@@ -1,7 +1,7 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 
-import { waitForHydration } from "./helpers";
+import { overlaps, waitForHydration } from "./helpers";
 
 test("list groups people under letter headings", async ({ page }) => {
   await page.goto("/personen/liste");
@@ -11,42 +11,48 @@ test("list groups people under letter headings", async ({ page }) => {
   await expect(page.getByRole("link", { name: "Clara Zetkin", exact: true })).toBeAttached();
 });
 
-test("wide screens: the letter rail jumps to a letter and follows the scrolling", async ({
-  page,
-  isMobile,
-}) => {
-  test.skip(isMobile, "phones use the chapter sheet");
-  await page.setViewportSize({ width: 1440, height: 900 });
+test("the letter index jumps to a letter and follows the scrolling", async ({ page }) => {
   await page.goto("/personen/liste");
-  const rail = page.getByRole("navigation", { name: "Alphabet" });
+  const index = page.getByRole("navigation", { name: "Alphabet" });
   // Only letters with entries are offered.
-  await expect(rail.getByRole("link", { name: "Q", exact: true })).toHaveCount(0);
-  await rail.getByRole("link", { name: "Z", exact: true }).click();
+  await expect(index.getByRole("link", { name: "Q", exact: true })).toHaveCount(0);
+  await index.getByRole("link", { name: "Z", exact: true }).click();
   await expect(page).toHaveURL(/#buchstabe-z$/);
   const heading = page.getByRole("heading", { level: 2, name: "Z", exact: true });
   await expect(heading).toBeFocused();
   await expect(heading).toBeInViewport();
-  await expect(rail.getByRole("link", { name: "Z", exact: true })).toHaveAttribute("aria-current", "true");
-});
-
-test("narrower screens: the chapter sheet jumps to a letter, the bar stays in reach", async ({ page }) => {
-  await page.setViewportSize({ width: 412, height: 860 });
-  await page.goto("/personen/liste");
-  await page.getByRole("button", { name: "Alphabet" }).click();
-  const sheet = page.getByRole("dialog", { name: "Springen zu: Alphabet" });
-  await expect(sheet).toBeVisible();
-  const results = await new AxeBuilder({ page })
+  await expect(index.getByRole("link", { name: "Z", exact: true })).toHaveAttribute("aria-current", "true");
+  const axe = await new AxeBuilder({ page })
+    .include('nav[aria-label="Alphabet"]')
     .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
     .analyze();
-  expect(results.violations.map((v) => v.id)).toEqual([]);
-  await sheet.getByRole("link", { name: "M", exact: true }).click();
-  await expect(sheet).toBeHidden();
+  expect(axe.violations.map((v) => v.id)).toEqual([]);
+});
+
+test("sliding along the letter index scrolls with it (desktop)", async ({ page, isMobile }) => {
+  test.skip(isMobile, "the same pointer events; Playwright drags with a mouse");
+  await page.goto("/personen/liste");
+  await waitForHydration(page);
+  const index = page.getByRole("navigation", { name: "Alphabet" });
+  const from = (await index.getByRole("link", { name: "A", exact: true }).boundingBox())!;
+  const to = (await index.getByRole("link", { name: "M", exact: true }).boundingBox())!;
+  await page.mouse.move(from.x + from.width / 2, from.y + from.height / 2);
+  await page.mouse.down();
+  await page.mouse.move(to.x + to.width / 2, to.y + to.height / 2, { steps: 12 });
+  await page.mouse.up();
   await expect(page).toHaveURL(/#buchstabe-m$/);
-  const heading = page.getByRole("heading", { level: 2, name: "M", exact: true });
-  await expect(heading).toBeInViewport();
-  // The sticky bar (order, chapters) doesn't cover the heading it jumped to (WCAG 2.4.11).
-  const bar = await page.getByRole("button", { name: "Alphabet" }).boundingBox();
-  expect((await heading.boundingBox())!.y).toBeGreaterThanOrEqual(bar!.y + bar!.height);
+  await expect(page.getByRole("heading", { level: 2, name: "M", exact: true })).toBeFocused();
+  await expect(index.getByRole("link", { name: "M", exact: true })).toHaveAttribute("aria-current", "true");
+});
+
+test("the index at the edge covers no names in the list", async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 800 });
+  await page.goto("/personen/liste");
+  const index = (await page.getByRole("navigation", { name: "Alphabet" }).locator("ul").boundingBox())!;
+  for (const name of await page.locator("main article h3").all()) {
+    const box = await name.boundingBox();
+    if (box) expect(overlaps(box, index)).toBe(false);
+  }
 });
 
 test("sorting the list by birth gives decade chapters and survives a biography", async ({ page }) => {
@@ -102,7 +108,7 @@ test("the list offers a random biography without covering any entry", async ({ p
   await page.goto("/personen/liste");
   const random = page.getByRole("button", { name: "Zufällige Biografie" });
   await expect(random).toBeVisible();
-  // Never floating over the entries: it scrolls away, or rides in the slim bar at the top.
+  // Never floating over the entries: it scrolls away with the line above the list.
   await page.evaluate(() => window.scrollTo(0, 2000));
   const box = await random.boundingBox();
   const viewport = page.viewportSize()!;

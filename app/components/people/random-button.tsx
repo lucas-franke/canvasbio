@@ -4,7 +4,7 @@ import { Shuffle } from "lucide-react";
 import { useMessages } from "~/lib/i18n";
 
 /**
- * "Random biography" button (Figma FAB): floats centred above the bottom navigation.
+ * "Random biography" button (Figma FAB): floats centred at the bottom of the canvas.
  * The surrounding element positions it; this is just the button.
  */
 export function RandomButton({ onClick, className }: { onClick: () => void; className?: string }) {
@@ -25,9 +25,5 @@ export function RandomButton({ onClick, className }: { onClick: () => void; clas
   );
 }
 
-/**
- * Vertical position above the floating nav (its height plus the safe area on phones).
- * Shared by canvas (absolute) and list (sticky).
- */
-export const RANDOM_BUTTON_BOTTOM =
-  "bottom-[calc(max(0.75rem,env(safe-area-inset-bottom))+5.5rem)] sm:bottom-28 lg:bottom-8";
+/** Vertical position at the bottom edge of the canvas, clear of the safe area on phones. */
+export const RANDOM_BUTTON_BOTTOM = "bottom-[max(1.5rem,env(safe-area-inset-bottom))] lg:bottom-8";

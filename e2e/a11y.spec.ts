@@ -26,7 +26,7 @@ const routes = [
 ];
 
 /**
- * Runs axe in three passes. Content scrolls underneath the fixed bottom navigation and the
+ * Runs axe in three passes. Content scrolls underneath the fixed navigation and the
  * floating random button, and axe's target-size rule then reports whatever link happens to sit
  * behind them at the current scroll position. Being covered is SC 2.4.11 (handled via padding), not target size, so target size
  * is checked separately: content targets with the floating nav hidden, nav targets on their own.

@@ -1,9 +1,8 @@
-import { cn } from "cn";
 import { Shuffle } from "lucide-react";
 import { useNavigate } from "react-router";
 
 import { InfiniteCanvas } from "~/components/canvas/infinite-canvas";
-import { ChapterLayout, ChapterSheet, chapterText } from "~/components/people/chapters";
+import { ChapterLayout, chapterText } from "~/components/people/chapters";
 import { PersonRow } from "~/components/people/person-row";
 import { SortSelect } from "~/components/people/sort-select";
 import { TimelineView } from "~/components/people/timeline-view";
@@ -93,30 +92,22 @@ export function PeopleOverview({
   const chapters = chaptersOf(people, sort);
   const { tagFacet, tagLabels } = index;
 
-  // Order, chapters and the random biography: one quiet bar at the top. In the list it
-  // sticks (below the rail's width), so the chapters stay one tap away while scrolling.
+  // Order and the random biography: one quiet line above the content (the chapters are in
+  // the index at the right edge).
   const toolbar = (
-    <div
-      className={cn(
-        "flex items-center gap-2",
-        view === "list" &&
-          "sticky top-2 z-30 rounded-full bg-surface/95 p-1 shadow-sm ring-1 ring-line/70 backdrop-blur-sm lg:top-22 @6xl:static @6xl:bg-transparent @6xl:p-0 @6xl:shadow-none @6xl:ring-0",
-      )}
-    >
+    <div className="-mb-4 flex items-center justify-between gap-2">
       <SortSelect view={view} value={sort} />
-      {view === "list" && <ChapterSheet chapters={chapters} sort={sort} />}
       {siteConfig.features.randomBio && people.length > 0 && (
         <Button
           size="sm"
-          variant="secondary"
+          variant="ghost"
           onClick={showRandom}
-          className="ml-auto"
-          aria-label={m.random.label}
+          title={m.random.label}
+          className="-mr-3 shrink-0"
         >
           <Shuffle aria-hidden="true" className="size-4" />
-          <span aria-hidden="true" className="hidden sm:inline">
-            {m.random.label}
-          </span>
+          {/* Phones: the symbol only, so the chosen order keeps room. */}
+          <span className="sr-only sm:not-sr-only">{m.random.label}</span>
         </Button>
       )}
     </div>
@@ -129,14 +120,14 @@ export function PeopleOverview({
         {toolbar}
         {hits && <SearchSummary state={search} count={hits.length} labels={index.facetLabels} />}
         {view === "timeline" ? (
-          <TimelineView chapters={chapters} sort={sort} hrefFor={hrefFor} activeSlug={activeSlug} />
+          <TimelineView chapters={chapters} hrefFor={hrefFor} activeSlug={activeSlug} />
         ) : (
           chapters.map((chapter) => (
             <section key={chapter.id} aria-labelledby={chapter.id}>
               <h2
                 id={chapter.id}
                 tabIndex={-1}
-                className="scroll-mt-24 border-b border-brand px-2 pb-2 text-h2 text-brand focus-target lg:scroll-mt-40 @6xl:lg:scroll-mt-28"
+                className="scroll-mt-2 border-b border-brand px-2 pb-2 text-h2 text-brand focus-target"
               >
                 {chapterText(chapter, m).heading}
               </h2>

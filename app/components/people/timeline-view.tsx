@@ -1,8 +1,8 @@
 import { cn } from "cn";
-import { memo, useCallback, useMemo, useState, type CSSProperties, type ReactNode } from "react";
+import { memo, useCallback, useMemo, useState, type CSSProperties } from "react";
 import { Link } from "react-router";
 
-import { ChapterSheet, chapterText } from "~/components/people/chapters";
+import { chapterText } from "~/components/people/chapters";
 import { Portrait } from "~/components/portrait";
 import { tornEdgeClass } from "~/lib/canvas/torn-edge";
 import { siteConfig } from "~/lib/config";
@@ -14,7 +14,7 @@ import {
   type ChronologyRow,
   type TimeScale,
 } from "~/lib/content/chronology";
-import type { Chapter, SortKey } from "~/lib/content/sort";
+import type { Chapter } from "~/lib/content/sort";
 import { lifeYears } from "~/lib/content/format";
 import { useLocale, useMessages } from "~/lib/i18n";
 import { localize } from "~/lib/i18n/localize";
@@ -43,7 +43,6 @@ const spanOf = (row: ChronologyRow<unknown>): [number, number] => [row.from, row
 interface TimelineViewProps {
   /** People in the chosen order, divided into chapters (decades of birth or death, life spans). */
   chapters: Chapter<PersonListItem>[];
-  sort: SortKey;
   hrefFor: (slug: string) => string;
   activeSlug?: string;
 }
@@ -58,7 +57,7 @@ interface TimelineViewProps {
  * The bars are decoration: the years are in the text, the list order carries the
  * chronology, and the key dates are listed as text above the axis.
  */
-export function TimelineView({ chapters, sort, hrefFor, activeSlug }: TimelineViewProps) {
+export function TimelineView({ chapters, hrefFor, activeSlug }: TimelineViewProps) {
   const m = useMessages();
   const locale = useLocale();
   const groups = useMemo(
@@ -83,8 +82,6 @@ export function TimelineView({ chapters, sort, hrefFor, activeSlug }: TimelineVi
     return null;
   }, [groups, highlightSlug]);
   const onPoint = useCallback((slug: string | null) => setPointed(slug), []);
-
-  const chapterSheet = <ChapterSheet chapters={chapters} sort={sort} compact className="-my-2" />;
 
   return (
     <>
@@ -118,14 +115,7 @@ export function TimelineView({ chapters, sort, hrefFor, activeSlug }: TimelineVi
       )}
 
       <div className="relative flex flex-col gap-10">
-        {scale && (
-          <Axis
-            scale={scale}
-            events={events.map((e) => e.year)}
-            highlight={highlight}
-            chapters={chapterSheet}
-          />
-        )}
+        {scale && <Axis scale={scale} events={events.map((e) => e.year)} highlight={highlight} />}
         {/* The highlighted life span as a band across all decades. */}
         {scale && highlight && (
           <div aria-hidden="true" className={cn(TRACK_BOX, "pointer-events-none")}>
@@ -143,7 +133,7 @@ export function TimelineView({ chapters, sort, hrefFor, activeSlug }: TimelineVi
               <h2
                 id={id}
                 tabIndex={-1}
-                className="scroll-mt-28 border-b border-brand px-2 pb-2 text-h2 text-brand focus-target lg:scroll-mt-16"
+                className="scroll-mt-16 border-b border-brand px-2 pb-2 text-h2 text-brand focus-target"
               >
                 {chapterText(chapter, m).heading}
               </h2>
@@ -208,22 +198,19 @@ function Axis({
   scale,
   events,
   highlight,
-  chapters,
 }: {
   scale: TimeScale;
   events: number[];
   highlight: [number, number] | null;
-  /** Button for the chapter sheet, in the empty first column of the axis. */
-  chapters?: ReactNode;
 }) {
   return (
     <div
       className={cn(
         ROW_GRID,
-        "sticky top-2 z-30 -mb-6 items-center rounded-xl bg-surface px-2 py-2 shadow-sm ring-2 ring-control lg:top-22",
+        "sticky top-22 z-30 -mb-6 items-center rounded-xl bg-surface px-2 py-2 shadow-sm ring-2 ring-control",
       )}
     >
-      <span className="flex @2xl:col-span-2">{chapters}</span>
+      <span className="@2xl:col-span-2" />
       <div aria-hidden="true" className={cn("relative h-7", TRACK_END)}>
         {highlight && (
           <div

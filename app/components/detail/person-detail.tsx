@@ -1,6 +1,5 @@
 import { cn } from "cn";
 import { ArrowLeft, ArrowRight, Clock, Quote, Shuffle, X } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 
 import { Portrait } from "~/components/portrait";
@@ -31,9 +30,6 @@ export interface StoryInfo {
   outline: { id: string; text: string }[];
   readingMinutes: number;
 }
-
-/** Height of the sticky bar in px (h-16); the tabs stick right below it. */
-const BAR_HEIGHT = 64;
 
 interface PersonDetailProps {
   person: Omit<PersonDetailData, "story">;
@@ -86,51 +82,30 @@ export function PersonDetail({
   const fallback = person.locale !== locale;
   const textLang = fallback ? htmlLangFor(person.locale) : undefined;
 
-  // The compact name in the sticky bar appears once the big heading has scrolled away.
-  const heading = useRef<HTMLHeadingElement>(null);
-  const [headingVisible, setHeadingVisible] = useState(true);
-  useEffect(() => {
-    const element = heading.current;
-    if (!element) return;
-    const observer = new IntersectionObserver(([entry]) => setHeadingVisible(entry!.isIntersecting), {
-      rootMargin: `-${BAR_HEIGHT}px 0px 0px 0px`,
-    });
-    observer.observe(element);
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <article className="@container flex min-h-full flex-col gap-6 px-5 pb-28 sm:px-10 lg:pb-16">
-      {/* Sticky bar: closing (and the name) stay in reach while reading a long story. */}
-      <div className="sticky top-0 z-20 -mx-5 flex h-16 items-center gap-3 bg-surface/95 px-5 backdrop-blur-sm sm:-mx-10 sm:px-10 print:hidden">
+      {/* Sticky bar without a background: the portrait reaches the top edge, and closing stays
+          in reach while reading a long story, floating on its own round background. */}
+      <div className="pointer-events-none sticky top-0 z-20 -mx-5 -mb-6 flex h-16 items-center justify-end px-5 sm:-mx-10 sm:px-10 print:hidden">
         {/* Grab handle: the sheet on phones can be swiped down to close (app/lib/swipe-to-close.ts). */}
         <span
           aria-hidden="true"
-          className="absolute top-1.5 left-1/2 h-1 w-10 -translate-x-1/2 rounded-full bg-control/60 lg:hidden"
+          className="absolute top-1.5 left-1/2 h-1 w-10 -translate-x-1/2 rounded-full bg-surface/80 shadow-sm lg:hidden"
         />
-        <p
-          aria-hidden="true"
-          className={cn(
-            "min-w-0 flex-1 truncate font-heading text-h3 text-emphasis transition-opacity duration-200",
-            headingVisible ? "opacity-0" : "opacity-100",
-          )}
-        >
-          {person.name.display}
-        </p>
         <Link
           to={closeHref}
           preventScrollReset
           viewTransition
           aria-label={m.detail.close}
           title={m.detail.close}
-          className="-mr-2 grid size-11 shrink-0 place-items-center rounded-full text-emphasis transition-colors hover:bg-emphasis/8"
+          className="pointer-events-auto -mr-2 grid size-11 shrink-0 place-items-center rounded-full bg-surface/85 text-emphasis shadow-[0_2px_8px_rgb(0_0_0/0.18)] ring-1 ring-line/60 backdrop-blur-sm transition-colors hover:bg-surface"
         >
           <X aria-hidden="true" className="size-6" />
         </Link>
       </div>
 
       {/* Phones: the biography opens with the portrait (desktop shows it next to the facts). */}
-      <div data-tint className="relative -mx-5 -mt-6 sm:-mx-10 lg:hidden">
+      <div data-tint className="relative -mx-5 -mt-16 sm:-mx-10 lg:hidden">
         <Portrait
           slug={person.slug}
           image={person.image}
@@ -147,7 +122,7 @@ export function PersonDetail({
       </div>
 
       <header className="relative -mt-10 flex flex-col gap-3 lg:mt-0">
-        <h1 ref={heading} id={PERSON_HEADING_ID} tabIndex={-1} className="text-h1 focus-target">
+        <h1 id={PERSON_HEADING_ID} tabIndex={-1} className="text-h1 focus-target">
           {person.name.display}
         </h1>
         {tags.length > 0 && (
@@ -301,7 +276,7 @@ function MoreBiographies({
         }}
       >
         <Shuffle aria-hidden="true" />
-        {m.detail.randomAnother}
+        {m.random.label}
       </Button>
     </nav>
   );

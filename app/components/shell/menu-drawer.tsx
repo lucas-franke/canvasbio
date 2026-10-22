@@ -1,5 +1,5 @@
 import { cn } from "cn";
-import { Menu, X } from "lucide-react";
+import { Globe, Menu, Monitor, Moon, Sun, X } from "lucide-react";
 import { RadioGroup as RadioGroupPrimitive } from "radix-ui";
 import { useState, type ReactNode } from "react";
 import { Link, useLocation } from "react-router";
@@ -19,11 +19,21 @@ import { WIDE_QUERY, useMediaQuery } from "~/lib/hooks";
 import { useTheme, type ThemeChoice } from "~/lib/theme/use-theme";
 import { NavIconButton } from "./nav";
 
-function Section({ title, children }: { title: string; children: ReactNode }) {
+const THEME_ICONS = { system: Monitor, light: Sun, dark: Moon } as const;
+
+function Section({ title, icon, children }: { title: string; icon?: ReactNode; children: ReactNode }) {
   const id = `menu-${title.toLowerCase().replace(/\W+/g, "-")}`;
   return (
     <section aria-labelledby={id} className="flex flex-col gap-3">
-      <h3 id={id} className="font-sans text-body-sm font-medium tracking-normal text-muted-text">
+      <h3
+        id={id}
+        className="flex items-center gap-2 font-sans text-body-sm font-medium tracking-normal text-muted-text"
+      >
+        {icon && (
+          <span aria-hidden="true" className="contents [&_svg]:size-4">
+            {icon}
+          </span>
+        )}
         {title}
       </h3>
       {children}
@@ -98,8 +108,8 @@ export function MenuDrawer() {
           </nav>
 
           {siteConfig.locales.length > 1 && (
-            <Section title={m.language.label}>
-              <ul className="flex flex-col gap-1">
+            <Section title={m.language.label} icon={<Globe />}>
+              <ul className="flex flex-wrap gap-2">
                 {siteConfig.locales.map((l) => (
                   <li key={l.code}>
                     <Link
@@ -110,7 +120,7 @@ export function MenuDrawer() {
                       lang={l.htmlLang}
                       hrefLang={l.htmlLang}
                       aria-current={l.code === locale ? "page" : undefined}
-                      className={itemClass}
+                      className="inline-flex min-h-11 items-center rounded-full border border-control/55 px-5 text-label font-medium text-emphasis hover:border-control hover:bg-emphasis/5 aria-[current=page]:border-brand aria-[current=page]:bg-brand aria-[current=page]:text-brand-foreground"
                     >
                       {l.label}
                     </Link>
@@ -126,20 +136,25 @@ export function MenuDrawer() {
                 value={theme}
                 onValueChange={(value) => setTheme(value as ThemeChoice)}
                 aria-label={m.theme.label}
-                className="grid grid-cols-3 gap-1 rounded-2xl border-2 border-control p-1"
+                className="grid grid-cols-3 gap-1 rounded-full border border-control/55 p-1"
               >
-                {(["system", "light", "dark"] as const).map((choice) => (
-                  <RadioGroupPrimitive.Item
-                    key={choice}
-                    value={choice}
-                    className={cn(
-                      "min-h-12 rounded-xl px-2 text-body-sm font-medium text-emphasis hover:bg-emphasis/5",
-                      "data-[state=checked]:bg-emphasis data-[state=checked]:text-surface",
-                    )}
-                  >
-                    {m.theme[choice]}
-                  </RadioGroupPrimitive.Item>
-                ))}
+                {(["system", "light", "dark"] as const).map((choice) => {
+                  const Icon = THEME_ICONS[choice];
+                  return (
+                    <RadioGroupPrimitive.Item
+                      key={choice}
+                      value={choice}
+                      title={m.theme[choice]}
+                      className={cn(
+                        "flex min-h-11 items-center justify-center gap-1.5 rounded-full px-2 text-body-sm font-medium text-emphasis hover:bg-emphasis/5",
+                        "data-[state=checked]:bg-emphasis data-[state=checked]:text-surface",
+                      )}
+                    >
+                      <Icon aria-hidden="true" className="size-4 shrink-0" />
+                      <span className="sr-only min-[24rem]:not-sr-only">{m.theme[choice]}</span>
+                    </RadioGroupPrimitive.Item>
+                  );
+                })}
               </RadioGroupPrimitive.Root>
             </Section>
           )}

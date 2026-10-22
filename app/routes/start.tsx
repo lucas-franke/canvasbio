@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router";
 
 import type { Route } from "./+types/start";
 import { SearchDrawer } from "~/components/search/search-drawer";
-import { BottomNav, NavPill, NavTextLink } from "~/components/shell/nav";
+import { TopNav, NavPill, NavTextLink } from "~/components/shell/nav";
 import { BrandLink } from "~/components/shell/brand-link";
 import { MenuDrawer } from "~/components/shell/menu-drawer";
 import { CanvasBackdrop } from "~/components/canvas/canvas-backdrop";
@@ -53,10 +53,7 @@ export default function Start({ loaderData }: Route.ComponentProps) {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,color-mix(in_srgb,var(--c-page)_55%,transparent)_0%,var(--c-page)_90%)]" />
       </div>
 
-      <main
-        id="main"
-        className="relative grid min-h-dvh place-items-center px-4 pt-6 pb-32 sm:px-8 lg:pt-28 lg:pb-12"
-      >
+      <main id="main" className="relative grid min-h-dvh place-items-center px-4 pt-28 pb-12 sm:px-8">
         <section
           aria-labelledby="start-title"
           className="start-card flex w-full max-w-2xl flex-col gap-8 rounded-card bg-surface p-6 shadow-2xl sm:gap-12 sm:p-12 lg:p-16"
@@ -101,7 +98,7 @@ export default function Start({ loaderData }: Route.ComponentProps) {
         </section>
       </main>
 
-      <BottomNav
+      <TopNav
         label={m.nav.label}
         // Same order as on every page: brand on the left; about, search and menu on the right.
         // "Biografien" needs no nav link here: the card's main button leads there.

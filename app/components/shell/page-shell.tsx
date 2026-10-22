@@ -1,37 +1,18 @@
 import { cn } from "cn";
 import type { ReactNode } from "react";
-import { Link } from "react-router";
 
-import { siteConfig } from "~/lib/config";
-import { useLocale, useMessages } from "~/lib/i18n";
-import { pagePath } from "~/lib/i18n/locale";
-import { localize } from "~/lib/i18n/localize";
+import { useMessages } from "~/lib/i18n";
 import { SearchDrawer } from "~/components/search/search-drawer";
 import { BrandLink } from "./brand-link";
 import { MenuDrawer } from "./menu-drawer";
-import { BottomNav, NavPill } from "./nav";
+import { TopNav, NavPill } from "./nav";
 
 /**
- * Top of the scrolling pages. Desktop: an empty sticky band behind the top navigation, so
- * content doesn't scroll under it (the brand sits in the navigation). Phones and tablets:
- * the wordmark as a small page header that scrolls away (the brand's monogram is in the
- * bottom navigation).
+ * Top of the scrolling pages: room for the floating navigation at the start. No background:
+ * the content scrolls on beneath the pills (which carry their own).
  */
 function SiteHeader() {
-  const locale = useLocale();
-  const m = useMessages();
-  const wordmark = localize(siteConfig.brand.wordmark, locale);
-  return (
-    <header className="flex justify-center px-4 pt-6 sm:pt-8 lg:sticky lg:top-0 lg:z-30 lg:h-20 lg:bg-page/95 lg:pt-0 lg:backdrop-blur-sm">
-      <Link
-        to={pagePath(locale, "start")}
-        aria-label={`${wordmark} – ${m.nav.home}`}
-        className="rounded-sm wordmark text-[1.75rem] text-brand lg:hidden"
-      >
-        {wordmark}
-      </Link>
-    </header>
-  );
+  return <div aria-hidden="true" className="h-[calc(5rem+env(safe-area-inset-top))] shrink-0" />;
 }
 
 interface PageShellProps {
@@ -68,12 +49,11 @@ export function PageShell({ children, navEnd, aside, inert = false, fullBleed = 
         inert={inert || undefined}
       >
         {!fullBleed && <SiteHeader />}
-        {/* Bottom padding keeps the last content and focused elements clear of the fixed nav (WCAG 2.4.11). */}
-        <main id="main" className={fullBleed ? "absolute inset-0" : "flex-1 px-4 pt-8 pb-36 sm:px-8"}>
+        <main id="main" className={fullBleed ? "absolute inset-0" : "flex-1 px-4 pt-8 pb-24 sm:px-8"}>
           {children}
         </main>
       </div>
-      <BottomNav
+      <TopNav
         inert={inert}
         label={m.nav.label}
         start={

@@ -95,13 +95,9 @@
 
   html {
     @apply bg-page font-sans text-text;
-    /* Keyboard focus that scrolls the page stops clear of the nav and the random button (WCAG 2.4.11). */
-    scroll-padding-bottom: 11rem;
-
-    @media (min-width: 64rem) {
-      scroll-padding-top: 7rem;
-      scroll-padding-bottom: 6rem;
-    }
+    /* Keyboard focus that scrolls the page stops clear of the nav at the top (WCAG 2.4.11). */
+    scroll-padding-top: 7rem;
+    scroll-padding-bottom: 6rem;
     -webkit-tap-highlight-color: transparent;
     text-size-adjust: 100%;
   }

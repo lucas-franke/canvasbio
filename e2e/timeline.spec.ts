@@ -73,30 +73,18 @@ test("pointing at a person highlights who lived at the same time (desktop)", asy
   await expect(bar("Harriet Martineau")).toHaveCSS("opacity", "1");
 });
 
-test("wide screens: the decade rail jumps to a chapter and follows the scrolling", async ({
-  page,
-  isMobile,
-}) => {
-  test.skip(isMobile, "phones use the decade sheet");
-  await page.setViewportSize({ width: 1440, height: 900 });
+test("the decade index jumps to a chapter and follows the scrolling", async ({ page }) => {
   await page.goto("/personen/zeitstrahl");
-  const rail = page.getByRole("navigation", { name: "Jahrzehnte" });
-  await rail.getByRole("link", { name: "1870er" }).click();
-  await expect(page.getByRole("heading", { level: 2, name: "1870er" })).toBeFocused();
-  await expect(rail.getByRole("link", { name: "1870er" })).toHaveAttribute("aria-current", "true");
-  await expect(page).toHaveURL(/#jahrzehnt-1870$/);
-});
-
-test("narrower screens: the decade sheet jumps to a chapter", async ({ page }) => {
-  await page.setViewportSize({ width: 412, height: 860 });
-  await page.goto("/personen/zeitstrahl");
-  await page.getByRole("button", { name: "Jahrzehnte" }).click();
-  const sheet = page.getByRole("dialog", { name: "Springen zu: Jahrzehnte" });
-  await sheet.getByRole("link", { name: "1880er" }).click();
-  await expect(sheet).toBeHidden();
-  const heading = page.getByRole("heading", { level: 2, name: "1880er" });
+  const index = page.getByRole("navigation", { name: "Jahrzehnte" });
+  // The index shows "1870"; screen readers hear the full label.
+  const link = index.getByRole("link", { name: "1870er", exact: true });
+  await expect(link).toHaveAccessibleName("1870er");
+  await link.click();
+  const heading = page.getByRole("heading", { level: 2, name: "1870er" });
   await expect(heading).toBeFocused();
   await expect(heading).toBeInViewport();
+  await expect(link).toHaveAttribute("aria-current", "true");
+  await expect(page).toHaveURL(/#jahrzehnt-1870$/);
 });
 
 test("the timeline can be sorted by year of death and by life span", async ({ page }) => {

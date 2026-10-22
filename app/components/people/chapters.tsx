@@ -1,8 +1,6 @@
 import { cn } from "cn";
-import { ListTree } from "lucide-react";
-import { useEffect, useState, type MouseEvent, type ReactNode } from "react";
+import { useEffect, useRef, useState, type MouseEvent, type PointerEvent, type ReactNode } from "react";
 
-import { JumpSheet } from "~/components/people/jump-sheet";
 import type { Chapter, SortKey } from "~/lib/content/sort";
 import { useMessages, type Messages } from "~/lib/i18n";
 
@@ -43,6 +41,12 @@ function jumpTo(event: MouseEvent<HTMLAnchorElement>, anchor: string) {
   target.focus({ preventScroll: true });
 }
 
+/** Where a jump puts a heading: the page's scroll padding plus the heading's scroll margin. */
+function landingTop(heading: HTMLElement): number {
+  const padding = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+  return padding + (parseFloat(getComputedStyle(heading).scrollMarginTop) || 0);
+}
+
 /** The chapter whose heading has most recently scrolled past the top (sticky bars included). */
 function useCurrentChapter(ids: string[]): string | null {
   const [current, setCurrent] = useState<string | null>(null);
@@ -54,8 +58,9 @@ function useCurrentChapter(ids: string[]): string | null {
       frame = 0;
       let found: string | null = list[0] ?? null;
       for (const id of list) {
-        const top = document.getElementById(id)?.getBoundingClientRect().top;
-        if (top !== undefined && top <= 200) found = id;
+        const heading = document.getElementById(id);
+        // A few pixels of slack for rounding; a heading that was jumped to counts as reached.
+        if (heading && heading.getBoundingClientRect().top <= landingTop(heading) + 8) found = id;
       }
       // At the end of the page the last chapters can't reach the top: the last one is current.
       const atEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
@@ -81,92 +86,157 @@ interface ChapterNavProps {
 }
 
 /**
- * Chapter rail beside the content on wide screens (container ≥ 72rem): every chapter of the
- * current order, the current one marked while scrolling.
+ * What the index shows for a chapter: "A", "#", "1850", "80", "100+", "?" (screen readers
+ * get the full label, see IndexLabel).
  */
-function ChapterRail({ chapters, sort }: ChapterNavProps) {
-  const m = useMessages();
-  const name = chaptersName(sort, m);
-  const current = useCurrentChapter(chapters.map((c) => c.id));
-  const letters = chapters[0]?.kind === "letter";
+export function chapterShort(chapter: Chapter<unknown>): string {
+  const { kind, value } = chapter;
+  if (kind === "unknown") return "?";
+  if (kind === "age" && Number(value) >= 100) return "100+";
+  return String(value);
+}
+
+/**
+ * The short label for the eye, the full one for screen readers ("1850" → "1850er"). As text,
+ * not aria-label, so the name contains what is visible (WCAG 2.5.3) and reads as one word.
+ */
+function IndexLabel({ chapter, full }: { chapter: Chapter<unknown>; full: string }) {
+  const short = chapterShort(chapter);
+  if (short === full) return <>{short}</>;
   return (
-    <nav
-      aria-label={name}
-      className="sticky top-28 hidden max-h-[calc(100dvh-9rem)] self-start justify-self-end overflow-y-auto @6xl:block"
-    >
-      <p className="px-3 pb-2 font-sans text-body-xs font-semibold tracking-normal text-muted-text">{name}</p>
-      <ul className={cn("border-l border-line", letters ? "grid grid-cols-2" : "flex flex-col")}>
-        {chapters.map((chapter) => (
-          <li key={chapter.id}>
-            <a
-              href={`#${chapter.id}`}
-              onClick={(event) => jumpTo(event, chapter.id)}
-              aria-current={chapter.id === current ? "true" : undefined}
-              className="-ml-px block border-l-2 border-transparent px-3 py-1 text-body-sm whitespace-nowrap text-muted-text tabular-nums hover:text-emphasis aria-[current=true]:border-brand aria-[current=true]:font-semibold aria-[current=true]:text-brand"
-            >
-              {chapterText(chapter, m).label}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <>
+      <span aria-hidden="true">{short}</span>
+      <span className="sr-only">{full}</span>
+    </>
   );
 }
 
-/** Button that opens the chapters as a sheet (below the rail's width). */
-export function ChapterSheet({
-  chapters,
-  sort,
-  className,
-  compact = false,
-}: ChapterNavProps & { className?: string; compact?: boolean }) {
+/** Movement (px) after which pressing the index becomes scrubbing instead of a tap. */
+const SCRUB_THRESHOLD = 6;
+
+/**
+ * Index along the right edge, as in a phone's contacts app: every chapter of the current
+ * order, the current one marked while scrolling. Tapping a chapter jumps there; sliding a
+ * finger (or the mouse) along the index scrolls with it, with the chapter shown large beside it.
+ * Each entry is a link (keyboard, screen readers) of at least 24 × 24 px (WCAG 2.5.8).
+ */
+function ChapterIndex({ chapters, sort }: ChapterNavProps) {
   const m = useMessages();
-  const name = chaptersName(sort, m);
-  if (chapters.length < 2) return null;
+  const current = useCurrentChapter(chapters.map((c) => c.id));
+  const scrub = useRef<{ startY: number; moved: boolean; id: string | null } | null>(null);
+  const suppressClick = useRef(false);
+  const [bubble, setBubble] = useState<{ label: string; top: number } | null>(null);
+
+  const onPointerDown = (event: PointerEvent<HTMLElement>) => {
+    if (event.button !== 0) return;
+    scrub.current = { startY: event.clientY, moved: false, id: null };
+  };
+
+  const onPointerMove = (event: PointerEvent<HTMLElement>) => {
+    const state = scrub.current;
+    if (!state) return;
+    if (!state.moved && Math.abs(event.clientY - state.startY) < SCRUB_THRESHOLD) return;
+    if (!state.moved) {
+      state.moved = true;
+      // Keep scrubbing when the finger drifts off the narrow index.
+      event.currentTarget.setPointerCapture(event.pointerId);
+    }
+    const box = event.currentTarget.getBoundingClientRect();
+    const entry = document
+      .elementFromPoint(box.left + box.width / 2, event.clientY)
+      ?.closest<HTMLAnchorElement>("[data-chapter]");
+    if (entry && entry.dataset.chapter !== state.id) {
+      state.id = entry.dataset.chapter!;
+      document.getElementById(state.id)?.scrollIntoView({ behavior: "auto" });
+    }
+    if (state.id) {
+      const chapter = chapters.find((c) => c.id === state.id);
+      if (chapter) setBubble({ label: chapterShort(chapter), top: event.clientY - box.top });
+    }
+  };
+
+  const endScrub = () => {
+    const state = scrub.current;
+    scrub.current = null;
+    setBubble(null);
+    if (!state?.moved) return;
+    // The click that follows the release is not a tap on an entry.
+    suppressClick.current = true;
+    if (!state.id) return;
+    window.history.replaceState(window.history.state, "", `#${state.id}`);
+    document.getElementById(state.id)?.focus({ preventScroll: true });
+  };
+
   return (
-    <JumpSheet
-      trigger={
-        <>
-          <ListTree aria-hidden="true" />
-          <span className={cn(compact && "sr-only @2xl:not-sr-only")}>{name}</span>
-        </>
-      }
-      triggerClassName={cn(
-        "inline-flex h-11 shrink-0 items-center justify-center gap-2 rounded-full border border-control/55 px-3.5 text-body-sm font-medium text-emphasis hover:border-control hover:bg-emphasis/5 lg:h-10 @6xl:hidden [&_svg]:size-5",
-        compact && "w-11 px-0 @2xl:w-auto @2xl:px-3.5",
-        className,
-      )}
-      title={`${m.chapters.title}: ${name}`}
-      description={name}
+    <nav
+      aria-label={chaptersName(sort, m)}
+      data-floating=""
+      // A track as high as the content; the index sticks in it (below the navigation).
+      className="pointer-events-none absolute inset-y-0 -right-3 z-30 sm:-right-6 lg:-right-4 print:hidden"
     >
-      {(onJump) => (
-        <ul className="grid grid-cols-[repeat(auto-fill,minmax(4.75rem,1fr))] gap-1">
+      {/* Sticks exactly where the content starts (below the 5rem page header and the main
+          padding), so it never shifts once the page scrolls. */}
+      <div className="sticky top-28 flex h-[calc(100dvh-8rem)] max-h-full flex-col justify-center">
+        <ul
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={endScrub}
+          onPointerCancel={endScrub}
+          onClickCapture={(event) => {
+            if (!suppressClick.current) return;
+            suppressClick.current = false;
+            event.preventDefault();
+            event.stopPropagation();
+          }}
+          className="pointer-events-auto flex max-h-full touch-none flex-col items-center overflow-y-auto rounded-full bg-surface/80 px-0.5 py-1 shadow-sm ring-1 ring-line/60 backdrop-blur-sm select-none"
+        >
           {chapters.map((chapter) => (
             <li key={chapter.id}>
               <a
                 href={`#${chapter.id}`}
-                onClick={(event) => onJump(event, chapter.id)}
-                className="grid h-11 place-items-center rounded-md px-1 text-label font-medium whitespace-nowrap text-emphasis tabular-nums hover:bg-emphasis/5"
+                data-chapter={chapter.id}
+                onClick={(event) => jumpTo(event, chapter.id)}
+                aria-current={chapter.id === current ? "true" : undefined}
+                draggable={false}
+                className="flex min-h-6 min-w-6 items-center justify-center rounded-full px-1 text-body-xs font-semibold text-muted-text tabular-nums hover:text-emphasis aria-[current=true]:bg-brand aria-[current=true]:text-brand-foreground"
               >
-                {chapterText(chapter, m).label}
+                <IndexLabel chapter={chapter} full={chapterText(chapter, m).label} />
               </a>
             </li>
           ))}
         </ul>
-      )}
-    </JumpSheet>
+        {bubble && (
+          <span
+            aria-hidden="true"
+            className="absolute right-full mr-3 grid min-w-14 -translate-y-1/2 place-items-center rounded-full bg-brand px-3 py-3 font-heading text-h3 text-brand-foreground tabular-nums shadow-lg"
+            style={{ top: bubble.top }}
+          >
+            {bubble.label}
+          </span>
+        )}
+      </div>
+    </nav>
   );
 }
 
 /**
- * Page layout of list and timeline: the content column, and on wide screens the chapter
- * rail to its left.
+ * Page layout of list and timeline: the content column, and the chapter index at the right
+ * edge (the column keeps clear of it while it is narrow).
  */
 export function ChapterLayout({ chapters, sort, children }: ChapterNavProps & { children: ReactNode }) {
+  const indexed = chapters.length > 1;
+  // Years ("1850", "100+") make a wider index than letters.
+  const wide = indexed && chapters.some((c) => c.kind !== "letter");
   return (
-    <div className="@6xl:grid @6xl:grid-cols-[1fr_minmax(0,57rem)_1fr] @6xl:gap-8">
-      {chapters.length > 1 && <ChapterRail chapters={chapters} sort={sort} />}
-      <div className="mx-auto flex w-full max-w-[57rem] flex-col gap-10 @6xl:col-start-2 @6xl:row-start-1">
+    <div className="relative">
+      {indexed && <ChapterIndex chapters={chapters} sort={sort} />}
+      <div
+        className={cn(
+          "mx-auto flex w-full max-w-[57rem] flex-col gap-10",
+          indexed && (wide ? "pr-11 sm:pr-9" : "pr-7 sm:pr-6"),
+          indexed && "@6xl:pr-0",
+        )}
+      >
         {children}
       </div>
     </div>

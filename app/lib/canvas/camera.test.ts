@@ -59,7 +59,7 @@ describe("revealRect", () => {
     expect(revealRect(camera, viewport, insets, { x: -50, y: -50, width: 100, height: 100 })).toBe(camera);
   });
 
-  it("pans just enough to clear the bottom nav and the right controls", () => {
+  it("pans just enough to clear the random button and the right controls", () => {
     // Rect spans screen x 650–750, y 450–550: under the controls and the nav.
     const moved = revealRect(camera, viewport, insets, { x: 250, y: 150, width: 100, height: 100 });
     const corner = worldToScreen(moved, viewport, 350, 250);
