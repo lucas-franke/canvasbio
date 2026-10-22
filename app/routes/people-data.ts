@@ -1,4 +1,5 @@
 import type { Route } from "./+types/people-data";
+import { requestPath } from "~/lib/base-path";
 import { loadPeopleIndex } from "~/lib/content/people-index.server";
 import { peopleDataLocale } from "~/lib/content/people-data-path";
 
@@ -9,7 +10,7 @@ import { peopleDataLocale } from "~/lib/content/people-data-path";
  */
 export async function loader({ request }: Route.LoaderArgs) {
   // Pre-rendering also requests the ".data" variant of resource routes.
-  const locale = peopleDataLocale(new URL(request.url).pathname.replace(/\.data$/, ""));
+  const locale = peopleDataLocale(requestPath(request));
   if (!locale) throw new Response("Not found", { status: 404 });
   return Response.json(await loadPeopleIndex(locale));
 }

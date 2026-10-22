@@ -9,6 +9,8 @@ export const SQUARE_WIDTHS = [160, 320, 640] as const;
 export const FULL_WIDTHS = [640, 1280] as const;
 export const IMAGE_FORMATS = ["avif", "webp"] as const;
 
+import { withBase } from "../base-path";
+
 export type PortraitKind = "sq" | "full";
 export type ImageFormat = (typeof IMAGE_FORMATS)[number];
 
@@ -38,7 +40,7 @@ export function portraitUrl(
   format: ImageFormat,
   hash: string,
 ) {
-  return `${PORTRAIT_BASE}/${slug}/${kind}-${width}.${format}?v=${hash}`;
+  return withBase(`${PORTRAIT_BASE}/${slug}/${kind}-${width}.${format}?v=${hash}`);
 }
 
 /** `srcset` value for one format, e.g. for a <source type="image/avif">. */

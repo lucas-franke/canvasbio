@@ -41,6 +41,7 @@ The demo content shows pioneers of the women's movement (1850–1950) from Wikid
 | --------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | `npm run dev`         | Development server (generates missing portrait variants first)                                                     |
 | `npm run build`       | Contrast and content checks, portraits, static pre-rendered build into `build/client`, Brotli/Gzip pre-compression |
+| `npm run build:pages` | Build for GitHub Pages into `build/pages` (see Hosting)                                                            |
 | `npm run preview`     | Serve the static build locally (with compression)                                                                  |
 | `npm run validate`    | Typecheck, lint, contrast, content, unit tests                                                                     |
 | `npm run e2e`         | Playwright tests incl. axe, reflow, text spacing, focus (desktop, Android, iOS)                                    |
@@ -109,6 +110,16 @@ The build in `build/client` is fully static (no server code) and runs on any sta
   - `/assets/*` and `/portraits/*` carry a content hash or version parameter → `Cache-Control: public, max-age=31536000, immutable`.
   - HTML and `/data/*.json`: short or no cache.
 - **Compression:** every text file has a `.br` and `.gz` next to it. For nginx: `brotli_static on; gzip_static on;`. Hosts with their own compression ignore them.
+- **Base path:** to serve the site under a sub-path, build with `BASE_PATH`, e.g. `BASE_PATH=/canvasbio/ npm run build`. Router links handle it; plain URLs (portraits, data, icons, links in Markdown) go through `withBase()` in `app/lib/base-path.ts`.
+
+### GitHub Pages
+
+`.github/workflows/deploy.yml` builds and publishes every push to `main` at `https://<owner>.github.io/<repo>/`.
+
+1. In the repository: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+2. Push to `main` (or run the workflow by hand under **Actions**).
+
+The workflow sets `BASE_PATH=/<repo>/` and runs `npm run build:pages`. `scripts/prepare-pages.ts` moves the pages and assets to one level, adds the SPA fallback as `404.html` and a `.nojekyll`. With a custom domain the site lives at the root: set `BASE_PATH` to `/` in the workflow and put a `CNAME` file into `public/`.
 
 ## Demo import
 

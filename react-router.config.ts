@@ -18,6 +18,8 @@ export default {
   // Fully static site: every route is pre-rendered at build time and can be
   // served from any static host. Non-prerendered paths use the SPA fallback.
   ssr: false,
+  // Same base path as in vite.config.ts (BASE_PATH, e.g. "/canvasbio/" on GitHub Pages).
+  basename: process.env.BASE_PATH ?? "/",
   prerender: {
     paths: ({ getStaticPaths }) => [...getStaticPaths(), ...biographyPaths()],
     concurrency: 8,

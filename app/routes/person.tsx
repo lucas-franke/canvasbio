@@ -4,6 +4,7 @@ import type { Route } from "./+types/person";
 import { PERSON_HEADING_ID } from "~/components/detail/ids";
 import { PersonDetail, type RelatedPerson } from "~/components/detail/person-detail";
 import { NotFoundContent } from "~/components/not-found-content";
+import { requestPath } from "~/lib/base-path";
 import { content } from "~/lib/content/index.server";
 import { renderMarkdown, type Heading } from "~/lib/content/markdown.server";
 import { loadPeopleIndex } from "~/lib/content/people-index.server";
@@ -18,7 +19,7 @@ import type { PeopleLayoutContext } from "./people-layout";
 const WORDS_PER_MINUTE = 200;
 
 export async function loader({ request, params }: Route.LoaderArgs) {
-  const locale = localeFromPathname(new URL(request.url).pathname);
+  const locale = localeFromPathname(requestPath(request));
   const detail = await content.getPerson(params.slug, locale);
   if (!detail) throw new Response("Not found", { status: 404 });
 

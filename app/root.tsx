@@ -11,6 +11,7 @@ import {
 import type { Route } from "./+types/root";
 import "./theme/fonts";
 import "./app.css";
+import { withBase } from "~/lib/base-path";
 import { siteConfig } from "~/lib/config";
 import { messagesFor } from "~/lib/i18n";
 import { localeFromPathname } from "~/lib/i18n/locale";
@@ -51,9 +52,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
           content={siteConfig.theme.colors.dark.page}
         />
         {/* Generated from the brand by scripts/build-icons.ts. */}
-        <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
-        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="icon" href={withBase("/icons/icon.svg")} type="image/svg+xml" />
+        <link rel="apple-touch-icon" href={withBase("/icons/apple-touch-icon.png")} />
+        <link rel="manifest" href={withBase("/site.webmanifest")} />
         <style dangerouslySetInnerHTML={{ __html: themeCss }} />
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <Meta />

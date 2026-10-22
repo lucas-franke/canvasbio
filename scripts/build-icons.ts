@@ -59,15 +59,16 @@ const manifest = {
   short_name: name,
   description: siteConfig.brand.description[locale],
   lang: locale,
-  start_url: "/",
+  // Relative to the manifest, so the site also works under a base path (GitHub Pages).
+  start_url: "./",
   display: "browser",
   background_color: colors.light.page,
   theme_color: colors.light.page,
   icons: [
-    { src: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
-    { src: "/icons/icon-512.png", sizes: "512x512", type: "image/png" },
-    { src: "/icons/icon-maskable-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
-    { src: "/icons/icon.svg", sizes: "any", type: "image/svg+xml" },
+    { src: "icons/icon-192.png", sizes: "192x192", type: "image/png" },
+    { src: "icons/icon-512.png", sizes: "512x512", type: "image/png" },
+    { src: "icons/icon-maskable-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
+    { src: "icons/icon.svg", sizes: "any", type: "image/svg+xml" },
   ],
 };
 await writeFile(path.resolve("public/site.webmanifest"), JSON.stringify(manifest, null, 2));

@@ -39,6 +39,8 @@ function siteConfigAsData(): Plugin {
 }
 
 export default defineConfig({
+  // Path the site is served under, e.g. BASE_PATH=/canvasbio/ for GitHub Pages (default "/").
+  base: process.env.BASE_PATH ?? "/",
   plugins: [siteConfigAsData(), tailwindcss(), reactRouter()],
   resolve: {
     tsconfigPaths: true,

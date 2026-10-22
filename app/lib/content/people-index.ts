@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useMatches } from "react-router";
 
+import { withBase } from "~/lib/base-path";
 import type { FacetLabels } from "~/lib/search/search";
 import type { PersonListItem } from "./adapter";
 import { peopleDataPath } from "./people-data-path";
@@ -54,7 +55,7 @@ export function usePeopleIndex(locale: string): PeopleIndexState {
   useEffect(() => {
     if (fromRoute || cache.has(locale)) return;
     let cancelled = false;
-    fetch(peopleDataPath(locale))
+    fetch(withBase(peopleDataPath(locale)))
       .then((res) => (res.ok ? res.json() : Promise.reject(new Error(`HTTP ${res.status}`))))
       .then((data: PeopleIndex) => {
         cache.set(locale, data);

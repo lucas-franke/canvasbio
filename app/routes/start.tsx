@@ -11,6 +11,7 @@ import { CanvasBackdrop } from "~/components/canvas/canvas-backdrop";
 import { continueFromLastCamera } from "~/components/canvas/use-camera";
 import { Portrait } from "~/components/portrait";
 import { Button } from "~/components/ui/button";
+import { requestPath } from "~/lib/base-path";
 import { siteConfig } from "~/lib/config";
 import { anniversaries } from "~/lib/content/anniversary";
 import { formatPartialDate } from "~/lib/content/format";
@@ -25,7 +26,7 @@ import { readSeen } from "~/lib/preferences";
 import { pickRandom } from "~/lib/random";
 
 export async function loader({ request }: Route.LoaderArgs) {
-  const locale = localeFromPathname(new URL(request.url).pathname);
+  const locale = localeFromPathname(requestPath(request));
   // The wall behind the start page is the real canvas (same people, order and layout); the
   // full index also serves "On this day", the random entry and the search panel.
   return loadPeopleIndex(locale);

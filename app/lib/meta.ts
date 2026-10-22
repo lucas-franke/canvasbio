@@ -1,3 +1,4 @@
+import { withBase } from "~/lib/base-path";
 import { siteConfig } from "~/lib/config";
 import { htmlLangFor, localize } from "~/lib/i18n/localize";
 
@@ -7,7 +8,7 @@ interface PageMetaOptions {
   locale: string;
   /** Path of the page ("/personen/clara-zetkin"): canonical URL and og:url when `siteUrl` is set. */
   path?: string;
-  /** Preview image for links shared in messengers and social media (path from the site root). */
+  /** Preview image for links shared in messengers and social media (its URL path, e.g. from portraitUrl). */
   image?: { path: string; alt: string; width: number; height: number };
 }
 
@@ -23,7 +24,7 @@ export function pageMeta({ title, description, locale, path, image }: PageMetaOp
   const brand = localize(siteConfig.brand.name, locale);
   const fullTitle = title ? `${title} – ${brand}` : brand;
   const text = description ?? localize(siteConfig.brand.description, locale);
-  const url = path ? absolute(path) : undefined;
+  const url = path ? absolute(withBase(path)) : undefined;
   const imageUrl = image ? absolute(image.path) : undefined;
 
   return [

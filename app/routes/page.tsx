@@ -1,5 +1,6 @@
 import type { Route } from "./+types/page";
 import { PageShell } from "~/components/shell/page-shell";
+import { requestPath } from "~/lib/base-path";
 import { loadPage } from "~/lib/content/pages.server";
 import { htmlLangFor } from "~/lib/i18n/localize";
 import { parsePath, TEXT_PAGES, type TextPage } from "~/lib/i18n/locale";
@@ -11,7 +12,7 @@ import { pageMeta } from "~/lib/meta";
  */
 export async function loader({ request }: Route.LoaderArgs) {
   // Pre-rendering also requests "/ueber.data" (the data for client-side navigation).
-  const { locale, page } = parsePath(new URL(request.url).pathname.replace(/\.data$/, ""));
+  const { locale, page } = parsePath(requestPath(request));
   if (!TEXT_PAGES.includes(page as TextPage)) throw new Response("Not found", { status: 404 });
   return { page: await loadPage(page!, locale), locale };
 }

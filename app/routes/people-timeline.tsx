@@ -1,4 +1,5 @@
 import type { Route } from "./+types/people-timeline";
+import { requestPath } from "~/lib/base-path";
 import { loadPeopleIndex } from "~/lib/content/people-index.server";
 import { messagesFor, useMessages } from "~/lib/i18n";
 import { localeFromPathname } from "~/lib/i18n/locale";
@@ -9,7 +10,7 @@ import { pageMeta } from "~/lib/meta";
  * this route provides its data.
  */
 export async function loader({ request }: Route.LoaderArgs) {
-  return loadPeopleIndex(localeFromPathname(new URL(request.url).pathname));
+  return loadPeopleIndex(localeFromPathname(requestPath(request)));
 }
 
 export function meta({ location }: Route.MetaArgs) {

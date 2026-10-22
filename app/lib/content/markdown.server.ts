@@ -5,6 +5,7 @@ import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
 
+import { withBase } from "../base-path";
 import { slugify } from "./format";
 
 interface HastNode {
@@ -58,6 +59,20 @@ function rehypeShiftHeadings(offset: number) {
   };
 }
 
+/** Site-internal links ("/en/about") get the base path, so they also work under e.g. "/canvasbio/". */
+function rehypeBaseLinks() {
+  return (tree: HastNode) => {
+    const visit = (node: HastNode) => {
+      const href = node.tagName === "a" ? node.properties?.href : undefined;
+      if (typeof href === "string" && href.startsWith("/") && !href.startsWith("//")) {
+        node.properties = { ...node.properties, href: withBase(href) };
+      }
+      node.children?.forEach(visit);
+    };
+    visit(tree);
+  };
+}
+
 export interface MarkdownOptions {
   /** Shift heading levels so the Markdown fits under the page's own headings. */
   headingOffset?: number;
@@ -91,6 +106,7 @@ export async function renderMarkdown(markdown: string, options: MarkdownOptions 
         "*": [...(defaultSchema.attributes?.["*"] ?? []), "lang"],
       },
     })
+    .use(rehypeBaseLinks)
     .use(
       options.headings
         ? [[rehypeHeadingIds, { prefix: options.headingIdPrefix ?? "", headings: options.headings }]]
