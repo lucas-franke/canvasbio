@@ -1,5 +1,5 @@
 import { cn } from "cn";
-import { Bookmark, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { RadioGroup as RadioGroupPrimitive } from "radix-ui";
 import { useState, type ReactNode } from "react";
 import { Link, useLocation } from "react-router";
@@ -14,16 +14,8 @@ import {
 } from "~/components/ui/drawer";
 import { siteConfig } from "~/lib/config";
 import { useLocale, useMessages } from "~/lib/i18n";
-import {
-  listPath,
-  pagePath,
-  parsePath,
-  switchLocaleHash,
-  switchLocalePath,
-  type Page,
-} from "~/lib/i18n/locale";
+import { pagePath, parsePath, switchLocaleHash, switchLocalePath, type Page } from "~/lib/i18n/locale";
 import { WIDE_QUERY, useMediaQuery } from "~/lib/hooks";
-import { useBookmarks } from "~/lib/preferences";
 import { useTheme, type ThemeChoice } from "~/lib/theme/use-theme";
 import { NavIconButton } from "./nav";
 
@@ -43,8 +35,9 @@ function Section({ title, children }: { title: string; children: ReactNode }) {
 export const SIDE_SHEET =
   "h-full w-full max-w-md data-[vaul-drawer-direction=left]:rounded-r-card data-[vaul-drawer-direction=left]:sm:max-w-md data-[vaul-drawer-direction=right]:rounded-l-card data-[vaul-drawer-direction=right]:sm:max-w-md";
 
+/** Menu entries; the current one is marked calmly (accent text and a bar), not filled. */
 const itemClass =
-  "flex min-h-12 items-center rounded-xl px-4 text-label font-medium text-emphasis hover:bg-emphasis/5 aria-[current=page]:bg-brand aria-[current=page]:text-brand-foreground";
+  "relative flex min-h-12 items-center rounded-xl px-4 text-label font-medium text-emphasis hover:bg-emphasis/5 aria-[current=page]:font-semibold aria-[current=page]:text-brand aria-[current=page]:before:absolute aria-[current=page]:before:top-1/2 aria-[current=page]:before:left-1 aria-[current=page]:before:h-5 aria-[current=page]:before:w-1 aria-[current=page]:before:-translate-y-1/2 aria-[current=page]:before:rounded-full aria-[current=page]:before:bg-brand aria-[current=page]:before:content-['']";
 
 export function MenuDrawer() {
   const [open, setOpen] = useState(false);
@@ -53,10 +46,9 @@ export function MenuDrawer() {
   const { pathname, search, hash } = useLocation();
   const current = parsePath(pathname).page;
   const [theme, setTheme] = useTheme();
-  // Desktop: the nav is at the top, so the menu slides in from the left instead of up.
+  // Desktop: the menu button is at the top right, so the menu slides in from the right.
   const desktop = useMediaQuery(WIDE_QUERY, false);
   const close = () => setOpen(false);
-  const [bookmarks] = useBookmarks();
 
   const pages: { page: Page; label: string }[] = [
     { page: "start", label: m.nav.home },
@@ -66,9 +58,9 @@ export function MenuDrawer() {
   ];
 
   return (
-    <Drawer open={open} onOpenChange={setOpen} direction={desktop ? "left" : "bottom"}>
+    <Drawer open={open} onOpenChange={setOpen} direction={desktop ? "right" : "bottom"}>
       <DrawerTrigger asChild>
-        <NavIconButton label={m.nav.menu} icon={<Menu />} labelSide="end" />
+        <NavIconButton label={m.nav.menu} icon={<Menu />} />
       </DrawerTrigger>
       <DrawerContent
         className={cn(
@@ -102,15 +94,6 @@ export function MenuDrawer() {
                   </Link>
                 </li>
               ))}
-              {/* The bookmark list is the list view filtered to saved people. */}
-              {bookmarks.size > 0 && (
-                <li>
-                  <Link to={`${listPath(locale)}?saved=1`} onClick={close} className={cn(itemClass, "gap-3")}>
-                    <Bookmark aria-hidden="true" className="size-5" />
-                    {m.bookmarks.listCount(bookmarks.size)}
-                  </Link>
-                </li>
-              )}
             </ul>
           </nav>
 
@@ -151,7 +134,7 @@ export function MenuDrawer() {
                     value={choice}
                     className={cn(
                       "min-h-12 rounded-xl px-2 text-body-sm font-medium text-emphasis hover:bg-emphasis/5",
-                      "data-[state=checked]:bg-brand data-[state=checked]:text-brand-foreground",
+                      "data-[state=checked]:bg-emphasis data-[state=checked]:text-surface",
                     )}
                   >
                     {m.theme[choice]}

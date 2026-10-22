@@ -1,19 +1,20 @@
 import { cn } from "cn";
-import { Bookmark } from "lucide-react";
-import { memo, useCallback, useMemo, useState, type CSSProperties } from "react";
+import { memo, useCallback, useMemo, useState, type CSSProperties, type ReactNode } from "react";
 import { Link } from "react-router";
 
+import { ChapterSheet, chapterText } from "~/components/people/chapters";
 import { Portrait } from "~/components/portrait";
 import { tornEdgeClass } from "~/lib/canvas/torn-edge";
 import { siteConfig } from "~/lib/config";
 import type { PersonListItem } from "~/lib/content/adapter";
 import {
-  groupByDecade,
+  rowFor,
   scalePercent,
-  timeScale,
+  scaleOfRows,
   type ChronologyRow,
   type TimeScale,
 } from "~/lib/content/chronology";
+import type { Chapter, SortKey } from "~/lib/content/sort";
 import { lifeYears } from "~/lib/content/format";
 import { useLocale, useMessages } from "~/lib/i18n";
 import { localize } from "~/lib/i18n/localize";
@@ -40,15 +41,16 @@ const OPEN_SPAN = 70;
 const spanOf = (row: ChronologyRow<unknown>): [number, number] => [row.from, row.to ?? row.from + OPEN_SPAN];
 
 interface TimelineViewProps {
-  people: PersonListItem[];
+  /** People in the chosen order, divided into chapters (decades of birth or death, life spans). */
+  chapters: Chapter<PersonListItem>[];
+  sort: SortKey;
   hrefFor: (slug: string) => string;
   activeSlug?: string;
-  bookmarks: ReadonlySet<string>;
 }
 
 /**
- * "Zeitstrahl": people by year of birth, grouped by decade, each with a bar for their life
- * span on a shared scale. Grid lines run from the year axis through the list, so bars that
+ * "Zeitstrahl": people in chapters (by default by decade of birth), each with a bar for their
+ * life span on a shared scale. Grid lines run from the year axis through the list, so bars that
  * overlap show who lived at the same time. Pointing at a person (or opening one) highlights
  * their life span across the whole list. Key dates of the subject (site.config.ts,
  * `timeline.events`) are marked on the axis and in the list.
@@ -56,11 +58,14 @@ interface TimelineViewProps {
  * The bars are decoration: the years are in the text, the list order carries the
  * chronology, and the key dates are listed as text above the axis.
  */
-export function TimelineView({ people, hrefFor, activeSlug, bookmarks }: TimelineViewProps) {
+export function TimelineView({ chapters, sort, hrefFor, activeSlug }: TimelineViewProps) {
   const m = useMessages();
   const locale = useLocale();
-  const groups = useMemo(() => groupByDecade(people), [people]);
-  const scale = useMemo(() => timeScale(groups), [groups]);
+  const groups = useMemo(
+    () => chapters.map((chapter) => ({ chapter, rows: chapter.items.map(rowFor) })),
+    [chapters],
+  );
+  const scale = useMemo(() => scaleOfRows(groups.flatMap((g) => g.rows)), [groups]);
   const events = useMemo(
     () =>
       scale ? siteConfig.timeline.events.filter((e) => e.year >= scale.start && e.year <= scale.end) : [],
@@ -79,8 +84,10 @@ export function TimelineView({ people, hrefFor, activeSlug, bookmarks }: Timelin
   }, [groups, highlightSlug]);
   const onPoint = useCallback((slug: string | null) => setPointed(slug), []);
 
+  const chapterSheet = <ChapterSheet chapters={chapters} sort={sort} compact className="-my-2" />;
+
   return (
-    <div className="mx-auto flex max-w-[57rem] flex-col gap-10">
+    <>
       {scale && (
         <div className="flex flex-col gap-4 px-2 text-body-sm text-text">
           <p>
@@ -111,7 +118,14 @@ export function TimelineView({ people, hrefFor, activeSlug, bookmarks }: Timelin
       )}
 
       <div className="relative flex flex-col gap-10">
-        {scale && <Axis scale={scale} events={events.map((e) => e.year)} highlight={highlight} />}
+        {scale && (
+          <Axis
+            scale={scale}
+            events={events.map((e) => e.year)}
+            highlight={highlight}
+            chapters={chapterSheet}
+          />
+        )}
         {/* The highlighted life span as a band across all decades. */}
         {scale && highlight && (
           <div aria-hidden="true" className={cn(TRACK_BOX, "pointer-events-none")}>
@@ -121,19 +135,20 @@ export function TimelineView({ people, hrefFor, activeSlug, bookmarks }: Timelin
             />
           </div>
         )}
-        {groups.map(({ decade, rows }) => {
-          const id = `jahrzehnt-${decade ?? "unbekannt"}`;
+        {groups.map(({ chapter, rows }) => {
+          const id = chapter.id;
+          const dated = rows.some((row) => Number.isFinite(row.from));
           return (
             <section key={id} aria-labelledby={id}>
               <h2
                 id={id}
                 tabIndex={-1}
-                className="scroll-mt-28 border-b border-brand px-2 pb-2 text-h2 text-brand focus-target lg:scroll-mt-44"
+                className="scroll-mt-28 border-b border-brand px-2 pb-2 text-h2 text-brand focus-target lg:scroll-mt-16"
               >
-                {decade === null ? m.timeline.unknown : m.timeline.decade(decade)}
+                {chapterText(chapter, m).heading}
               </h2>
               <ul className="relative mt-3 flex flex-col gap-1">
-                {scale && decade !== null && <GridLines scale={scale} events={events.map((e) => e.year)} />}
+                {scale && dated && <GridLines scale={scale} events={events.map((e) => e.year)} />}
                 {rows.map((row) => (
                   <li key={row.person.slug} className="relative">
                     <TimelineRow
@@ -141,7 +156,6 @@ export function TimelineView({ people, hrefFor, activeSlug, bookmarks }: Timelin
                       scale={scale}
                       href={hrefFor(row.person.slug)}
                       active={row.person.slug === activeSlug}
-                      saved={bookmarks.has(row.person.slug)}
                       dimmed={Boolean(highlight) && !overlaps(row, highlight!)}
                       onPoint={onPoint}
                     />
@@ -152,7 +166,7 @@ export function TimelineView({ people, hrefFor, activeSlug, bookmarks }: Timelin
           );
         })}
       </div>
-    </div>
+    </>
   );
 }
 
@@ -194,22 +208,23 @@ function Axis({
   scale,
   events,
   highlight,
+  chapters,
 }: {
   scale: TimeScale;
   events: number[];
   highlight: [number, number] | null;
+  /** Button for the chapter sheet, in the empty first column of the axis. */
+  chapters?: ReactNode;
 }) {
   return (
     <div
-      aria-hidden="true"
       className={cn(
         ROW_GRID,
-        "sticky top-2 z-30 -mb-6 rounded-xl bg-surface px-2 py-2 shadow-sm ring-2 ring-control lg:top-26",
+        "sticky top-2 z-30 -mb-6 items-center rounded-xl bg-surface px-2 py-2 shadow-sm ring-2 ring-control lg:top-22",
       )}
     >
-      <span />
-      <span className="hidden @2xl:block" />
-      <div className={cn("relative h-7", TRACK_END)}>
+      <span className="flex @2xl:col-span-2">{chapters}</span>
+      <div aria-hidden="true" className={cn("relative h-7", TRACK_END)}>
         {highlight && (
           <div
             className="absolute inset-y-0 rounded-md bg-brand/15 transition-[left,width] duration-200 motion-reduce:transition-none"
@@ -243,7 +258,6 @@ const TimelineRow = memo(function TimelineRow({
   scale,
   href,
   active,
-  saved,
   dimmed,
   onPoint,
 }: {
@@ -251,12 +265,10 @@ const TimelineRow = memo(function TimelineRow({
   scale: TimeScale | null;
   href: string;
   active: boolean;
-  saved: boolean;
   /** Another person is highlighted and this one didn't live at the same time. */
   dimmed: boolean;
   onPoint: (slug: string | null) => void;
 }) {
-  const m = useMessages();
   const { person } = row;
   const dated = scale && Number.isFinite(row.from);
   const bar = dated ? band(scale, spanOf(row)) : undefined;
@@ -278,6 +290,7 @@ const TimelineRow = memo(function TimelineRow({
     >
       <div
         data-vt-portrait
+        data-tint
         className={cn(
           "size-12 overflow-hidden @lg:size-16",
           siteConfig.theme.tileEdge === "torn" && tornEdgeClass(person.slug),
@@ -309,15 +322,6 @@ const TimelineRow = memo(function TimelineRow({
             >
               {person.name.display}
             </Link>
-            {saved && (
-              <>
-                <Bookmark
-                  aria-hidden="true"
-                  className="ml-2 inline size-4 fill-brand align-[-0.1em] text-brand"
-                />
-                <span className="sr-only">, {m.bookmarks.marked}</span>
-              </>
-            )}
           </h3>
           <span className="text-body-sm text-muted-text tabular-nums">
             {lifeYears(person.born, person.died)}

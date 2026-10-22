@@ -20,14 +20,14 @@ test("language switch keeps the current page", async ({ page }) => {
 });
 
 test("menu marks the current page and language", async ({ page }) => {
-  await page.goto("/leichte-sprache/ueber");
-  await page.getByRole("button", { name: "Menü" }).click();
+  await page.goto("/en/about");
+  await page.getByRole("button", { name: "Menu" }).click();
   const dialog = page.getByRole("dialog");
-  await expect(dialog.getByRole("link", { name: "Über diese Internet-Seite" })).toHaveAttribute(
+  await expect(dialog.getByRole("link", { name: "About the project" })).toHaveAttribute(
     "aria-current",
     "page",
   );
-  await expect(dialog.getByRole("link", { name: "Leichte Sprache" })).toHaveAttribute("aria-current", "page");
+  await expect(dialog.getByRole("link", { name: "English" })).toHaveAttribute("aria-current", "page");
 });
 
 test("theme choice is applied and persisted", async ({ page }) => {
@@ -42,12 +42,18 @@ test("theme choice is applied and persisted", async ({ page }) => {
   await expect(page.locator("html")).not.toHaveAttribute("data-theme", /.+/);
 });
 
-test("home button leads to the start page", async ({ page }) => {
-  await page.goto("/en/about");
-  await page
+test("the brand in the navigation leads to the start page, in the same place everywhere", async ({
+  page,
+}) => {
+  const brand = page
     .getByRole("navigation", { name: "Main navigation" })
-    .getByRole("link", { name: "Home", exact: true })
-    .click();
+    .getByRole("link", { name: /Her Voice – Home$/ });
+  for (const path of ["/en/about", "/en/people", "/en/people/list"]) {
+    await page.goto(path);
+    // At the left edge (top on desktop, bottom on phones).
+    expect((await brand.boundingBox())!.x).toBeLessThan(80);
+  }
+  await brand.click();
   await expect(page).toHaveURL(/\/en$/);
 });
 
@@ -103,9 +109,6 @@ test("Impressum and Datenschutz are in the menu and filled from the config", asy
   await page.goto("/en/privacy");
   await expect(page.getByRole("heading", { level: 1, name: "Privacy policy" })).toBeVisible();
   await expect(page.getByRole("link", { name: "barrierefreiheit@example.org" }).first()).toBeVisible();
-  // Leichte Sprache falls back to the German text.
-  await page.goto("/leichte-sprache/datenschutz");
-  await expect(page.getByRole("heading", { level: 1, name: "Datenschutzerklärung" })).toBeVisible();
 });
 
 test("the start page shows who was born on this day", async ({ page }) => {

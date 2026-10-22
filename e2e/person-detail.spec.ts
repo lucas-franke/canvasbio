@@ -77,14 +77,6 @@ test("a deep link with hash opens that tab", async ({ page }) => {
   await expect(page.getByRole("heading", { level: 3, name: "Quellen" })).toBeVisible();
 });
 
-test("missing Leichte Sprache text shows a notice and is marked as German", async ({ page }) => {
-  await page.goto("/leichte-sprache/personen/jane-addams");
-  await expect(page.getByText("Diesen Text gibt es noch nicht in Leichter Sprache.")).toBeVisible();
-  await page.goto("/leichte-sprache/personen/clara-zetkin");
-  await expect(page.getByText("Diesen Text gibt es noch nicht")).toHaveCount(0);
-  await expect(page.getByText("Clara Zetkin hat viele Jahre eine Zeitung gemacht.")).toBeAttached();
-});
-
 test("unknown person shows the not-found page", async ({ page }) => {
   await page.goto("/personen/gibt-es-nicht");
   await expect(page.getByRole("heading", { level: 1, name: "Seite nicht gefunden" })).toBeVisible();

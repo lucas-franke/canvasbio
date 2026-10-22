@@ -5,9 +5,9 @@ description: What this is about, where the content comes from and how to use the
 
 “Her Voice” tells the stories of women who fought for suffrage, education and equal rights between 1850 and 1950. Some names are world-famous; many are almost forgotten today. The portrait wall places them side by side as equals. The “Random biography” button deliberately brings lesser-known lives to the front.
 
-## Two views
+## Three views
 
-The **portrait view** shows every portrait on an endless surface that you can move and zoom with your finger, mouse or keyboard. The **list view** shows the same people in alphabetical order. Both views contain the same information; the list works especially well with screen readers.
+The **mosaic** shows every portrait on an endless surface that you can move and zoom with your finger, mouse or keyboard. The **list view** shows the same people sorted by name or year of birth. The **timeline** arranges them by lifetime and shows who lived at the same time. All views contain the same people; the list works especially well with screen readers.
 
 ## Where the content comes from
 
@@ -17,6 +17,6 @@ The data was compiled automatically and has not been editorially reviewed. Error
 
 ## Accessibility
 
-The site aims to be usable by everyone and follows the Web Content Accessibility Guidelines (WCAG) 2.2 at level AA. All features work without swipe gestures and without a mouse, you can switch between light and dark appearance, and some biographies are also available in easy-to-read German.
+The site aims to be usable by everyone and follows the Web Content Accessibility Guidelines (WCAG) 2.2 at level AA. All features work without swipe gestures and without a mouse, and you can switch between light and dark appearance.
 
 What is not yet accessible, and how to report barriers, is described in the [accessibility statement](/en/accessibility).

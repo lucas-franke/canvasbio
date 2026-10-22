@@ -4,8 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 
 import { Portrait } from "~/components/portrait";
-import { BookmarkButton } from "./bookmark-button";
-import { ShareButton } from "./share-button";
 import { Button } from "~/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
 import { siteConfig } from "~/lib/config";
@@ -84,7 +82,7 @@ export function PersonDetail({
   const m = useMessages();
   const [tab, setTab] = useTabFromHash(locale);
   const { text } = person;
-  // Text not available in this locale (e.g. Leichte Sprache): say so and mark its real language.
+  // Text not available in this locale (an optional language): say so and mark its real language.
   const fallback = person.locale !== locale;
   const textLang = fallback ? htmlLangFor(person.locale) : undefined;
 
@@ -119,26 +117,20 @@ export function PersonDetail({
         >
           {person.name.display}
         </p>
-        <BookmarkButton key={person.slug} slug={person.slug} />
-        <ShareButton title={person.name.display} />
         <Link
           to={closeHref}
           preventScrollReset
           viewTransition
-          className="group/close inline-flex shrink-0 items-center gap-3 rounded-full text-label font-medium text-emphasis sm:pl-4"
+          aria-label={m.detail.close}
+          title={m.detail.close}
+          className="-mr-2 grid size-11 shrink-0 place-items-center rounded-full text-emphasis transition-colors hover:bg-emphasis/8"
         >
-          <span className="sr-only sm:not-sr-only">{m.detail.close}</span>
-          <span
-            aria-hidden="true"
-            className="grid size-12 place-items-center rounded-full border-2 border-emphasis group-hover/close:bg-emphasis group-hover/close:text-surface"
-          >
-            <X className="size-6" />
-          </span>
+          <X aria-hidden="true" className="size-6" />
         </Link>
       </div>
 
       {/* Phones: the biography opens with the portrait (desktop shows it next to the facts). */}
-      <div className="relative -mx-5 -mt-6 sm:-mx-10 lg:hidden">
+      <div data-tint className="relative -mx-5 -mt-6 sm:-mx-10 lg:hidden">
         <Portrait
           slug={person.slug}
           image={person.image}
@@ -150,7 +142,7 @@ export function PersonDetail({
         />
         <div
           aria-hidden="true"
-          className="absolute inset-x-0 -bottom-px h-1/2 bg-linear-to-t from-surface from-15% via-surface/60 to-transparent"
+          className="absolute inset-x-0 -bottom-px z-1 h-1/2 bg-linear-to-t from-surface from-15% via-surface/60 to-transparent"
         />
       </div>
 
@@ -301,7 +293,7 @@ function MoreBiographies({
         </Link>
       </div>
       <Button
-        variant="outline"
+        variant="secondary"
         className="self-start"
         onClick={() => {
           const person = pickRandom(sequence, { seen: readSeen(), exclude: slug });
@@ -353,6 +345,7 @@ function FactsPanel({ person }: { person: PersonDetailProps["person"] }) {
               On phones the portrait is at the top of the biography; the credit stays here. */}
           <div
             data-vt-detail-portrait
+            data-tint
             className={cn(
               "hidden lg:block",
               siteConfig.theme.tileEdge === "torn" && tornEdgeClass(person.slug),

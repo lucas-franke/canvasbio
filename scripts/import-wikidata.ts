@@ -6,7 +6,7 @@
  *
  * This is a one-off generator for demo data, not part of the build. It overwrites
  * person.json, de.md, en.md and portrait.jpg of imported people, but never touches
- * hand-written files such as de-LS.md. API responses are cached in .cache/import.
+ * hand-written files. API responses are cached in .cache/import.
  */
 import { access, mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
@@ -50,43 +50,43 @@ const FIELDS: { key: string; match: RegExp; label: Record<string, string> }[] = 
   {
     key: "politics",
     match: /politician|member of parliament|diplomat|mayor/,
-    label: { de: "Politik", en: "Politics", "de-LS": "Politik" },
+    label: { de: "Politik", en: "Politics" },
   },
   {
     key: "writing",
     match: /writer|novelist|poet|journalist|editor|essayist|publisher|translator|author|playwright/,
-    label: { de: "Literatur & Presse", en: "Writing & press", "de-LS": "Bücher und Zeitungen" },
+    label: { de: "Literatur & Presse", en: "Writing & press" },
   },
   {
     key: "education",
     match: /teacher|educator|pedagogue|headmistress|school/,
-    label: { de: "Bildung", en: "Education", "de-LS": "Schule und Lernen" },
+    label: { de: "Bildung", en: "Education" },
   },
   {
     key: "medicine",
     match: /physician|nurse|midwife|doctor|surgeon|psychiatrist/,
-    label: { de: "Medizin & Pflege", en: "Medicine & care", "de-LS": "Medizin" },
+    label: { de: "Medizin & Pflege", en: "Medicine & care" },
   },
   {
     key: "science",
     match:
       /scientist|mathematician|economist|sociologist|historian|physicist|chemist|astronomer|philosopher|biologist|psychologist|lawyer|jurist/,
-    label: { de: "Wissenschaft & Recht", en: "Science & law", "de-LS": "Wissenschaft" },
+    label: { de: "Wissenschaft & Recht", en: "Science & law" },
   },
   {
     key: "arts",
     match: /painter|artist|actress|actor|singer|composer|musician|photographer|sculptor|dancer/,
-    label: { de: "Kunst & Kultur", en: "Arts & culture", "de-LS": "Kunst" },
+    label: { de: "Kunst & Kultur", en: "Arts & culture" },
   },
   {
     key: "social",
     match: /social worker|philanthropist|trade unionist|reformer|pacifist|charity/,
-    label: { de: "Soziales & Gewerkschaft", en: "Social work & unions", "de-LS": "Hilfe für Menschen" },
+    label: { de: "Soziales & Gewerkschaft", en: "Social work & unions" },
   },
 ];
 const ACTIVISM = {
   key: "activism",
-  label: { de: "Frauenbewegung", en: "Women's movement", "de-LS": "Frauen-Rechte" },
+  label: { de: "Frauenbewegung", en: "Women's movement" },
 };
 
 function fieldsOf(occupations: (Entity | undefined)[]): string[] {
@@ -376,7 +376,7 @@ async function main() {
       const en = label(place, "en");
       if (!place || !en) return undefined;
       const key = slugify(en);
-      taxonomy.place[key] ??= { de: label(place, "de")!, en, "de-LS": label(place, "de")! };
+      taxonomy.place[key] ??= { de: label(place, "de")!, en };
       return key;
     };
     const bornPlace = placeKey("P19");

@@ -63,27 +63,27 @@
    * Type scale from the Figma variables (designed for 1920px kiosks),
    * scaled fluidly from phone (360px) to desktop (1440px).
    */
-  --text-h1: clamp(2rem, 1.6rem + 1.8vw, 3rem);
+  --text-h1: clamp(2rem, 1.7rem + 1.2vw, 2.5rem);
   --text-h1--line-height: 1.15;
   --text-h1--letter-spacing: -0.04em;
-  --text-h2: clamp(1.5rem, 1.3rem + 0.9vw, 2rem);
+  --text-h2: clamp(1.5rem, 1.35rem + 0.6vw, 1.75rem);
   --text-h2--line-height: 1.15;
   --text-h2--letter-spacing: -0.04em;
-  --text-subline: clamp(1.25rem, 1.1rem + 0.7vw, 1.75rem);
+  --text-subline: clamp(1.25rem, 1.15rem + 0.45vw, 1.5rem);
   --text-subline--line-height: 1.15;
   --text-subline--letter-spacing: -0.04em;
-  --text-h3: clamp(1.25rem, 1.15rem + 0.45vw, 1.5rem);
+  --text-h3: clamp(1.1875rem, 1.13rem + 0.25vw, 1.3125rem);
   --text-h3--line-height: 1.25;
   --text-h3--letter-spacing: -0.03em;
-  --text-body: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-body: clamp(1rem, 0.97rem + 0.12vw, 1.0625rem);
   --text-body--line-height: 1.55;
   --text-body--letter-spacing: -0.01em;
-  --text-body-sm: clamp(0.9375rem, 0.9rem + 0.15vw, 1rem);
+  --text-body-sm: 0.9375rem;
   --text-body-sm--line-height: 1.55;
   --text-body-sm--letter-spacing: -0.01em;
   --text-body-xs: 0.875rem;
   --text-body-xs--line-height: 1.5;
-  --text-label: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-label: 1rem;
   --text-label--line-height: 1.2;
   --text-label--letter-spacing: -0.01em;
 }
@@ -241,15 +241,6 @@
   padding: calc(20px / var(--s)) calc(10px / var(--s)) calc(8px / var(--s));
 }
 
-/* Life years under the name: the era at a glance, without opening the biography. */
-.canvas-tile-years {
-  display: block;
-  margin-top: calc(2px / var(--s));
-  font-size: calc(clamp(11px, 14px * var(--s), 16px) / var(--s));
-  font-weight: 400;
-  font-variant-numeric: tabular-nums;
-}
-
 /* Long names end with an ellipsis after three lines (the full name stays the link text). */
 .canvas-tile-label {
   display: -webkit-box;
@@ -304,6 +295,35 @@
   &[data-pulse] {
     animation: tile-pulse 550ms ease-in-out;
   }
+}
+
+/*
+ * Portrait tint (theme.portraitTint): a soft gradient in the accent colour over every
+ * portrait frame marked data-tint, mixed in with a blend mode. Names on the tiles stay above it.
+ */
+[data-portrait-tint] [data-tint] {
+  position: relative;
+  isolation: isolate;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      160deg,
+      var(--tint-color) 0%,
+      color-mix(in srgb, var(--tint-color) 35%, transparent) 45%,
+      transparent 85%
+    );
+    mix-blend-mode: var(--tint-blend);
+    opacity: var(--tint-opacity);
+  }
+}
+
+.canvas-tile-name {
+  z-index: 1;
 }
 
 @keyframes tile-pulse {
@@ -393,6 +413,32 @@
   scrollbar-color: var(--c-border-control) transparent;
 }
 
+/*
+ * Start page → canvas: the wall behind the start page is the same wall at the same spot, so
+ * the root cross-fade only brightens it; the welcome card sinks away (and comes back home).
+ */
+.start-card {
+  view-transition-name: start-card;
+}
+@keyframes vt-card-out {
+  to {
+    opacity: 0;
+    transform: translateY(1rem) scale(0.97);
+  }
+}
+@keyframes vt-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(1rem) scale(0.97);
+  }
+}
+::view-transition-old(start-card):only-child {
+  animation: vt-card-out 300ms cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+::view-transition-new(start-card):only-child {
+  animation: vt-card-in 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 /* First-visit hint on the wall: appears after a moment, once the wall has settled. */
 .gesture-hint {
   animation: gesture-hint-in 400ms ease-out 700ms backwards;
@@ -444,5 +490,17 @@
   .print-urls a[href^="http"]::after {
     content: " (" attr(href) ")";
     word-break: break-all;
+  }
+}
+
+/* Progressive enhancement: controls that need JavaScript, and their stand-ins without it. */
+@media (scripting: none) {
+  .js-only {
+    display: none !important;
+  }
+}
+@media (scripting: enabled) {
+  .nojs-only {
+    display: none !important;
   }
 }

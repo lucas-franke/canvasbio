@@ -12,8 +12,8 @@ export function NavPill({ bare = false, className, ...props }: ComponentProps<"d
   return (
     <div
       className={cn(
-        "pointer-events-auto flex items-center gap-2 rounded-full p-1.5 sm:gap-3 sm:p-2",
-        !bare && "bg-nav text-nav-foreground shadow-[0_2px_2px_rgb(0_0_0/0.25)]",
+        "pointer-events-auto flex items-center gap-1 rounded-full p-1",
+        !bare && "bg-nav text-nav-foreground shadow-[0_2px_12px_rgb(0_0_0/0.12)] ring-1 ring-line/70",
         className,
       )}
       {...props}
@@ -21,15 +21,15 @@ export function NavPill({ bare = false, className, ...props }: ComponentProps<"d
   );
 }
 
-const outlined =
-  "border-2 border-nav-foreground bg-nav text-nav-foreground transition-colors hover:bg-nav-foreground hover:text-nav";
+/** Buttons inside the pills: no outline of their own, a light tint on hover. */
+const outlined = "text-nav-foreground transition-colors hover:bg-nav-foreground/10";
 
 /** Text pill with outline, e.g. "About the project". */
 export function NavTextLink({ className, ...props }: ComponentProps<typeof Link>) {
   return (
     <Link
       className={cn(
-        "inline-flex h-12 items-center rounded-full px-5 text-label font-medium whitespace-nowrap sm:h-14 sm:px-7",
+        "inline-flex h-12 items-center rounded-full px-5 text-label font-medium whitespace-nowrap lg:h-11",
         outlined,
         className,
       )}
@@ -39,74 +39,37 @@ export function NavTextLink({ className, ...props }: ComponentProps<typeof Link>
 }
 
 interface IconActionProps {
+  /** Accessible name, also shown as the tooltip. */
   label: string;
   icon: ReactNode;
-  /** Where the visible label sits relative to the round icon. */
-  labelSide?: "start" | "end";
-  /** Hide the visible label on small screens (it stays the accessible name). */
-  compactLabel?: boolean;
 }
 
-function IconActionContent({ label, icon, labelSide = "start", compactLabel = true }: IconActionProps) {
-  const text = (
-    <span
-      className={cn("text-label font-medium whitespace-nowrap", compactLabel && "sr-only md:not-sr-only")}
-    >
-      {label}
-    </span>
-  );
-  return (
-    <>
-      {labelSide === "start" && text}
-      <span
-        aria-hidden="true"
-        className={cn(
-          "grid size-12 shrink-0 place-items-center rounded-full sm:size-14 [&_svg]:size-6",
-          outlined,
-          "group-hover/action:bg-nav-foreground group-hover/action:text-nav",
-        )}
-      >
-        {icon}
-      </span>
-      {labelSide === "end" && text}
-    </>
-  );
-}
-
-const iconActionClass = (labelSide: "start" | "end" = "start", compactLabel = true) =>
-  cn(
-    "group/action inline-flex items-center gap-3 rounded-full text-nav-foreground",
-    labelSide === "start" ? (compactLabel ? "md:pl-6" : "pl-6") : compactLabel ? "md:pr-6" : "pr-6",
-  );
-
-/** Visible label + round outlined icon, as a link (e.g. search, home). */
-export function NavIconLink({
-  label,
-  icon,
-  labelSide,
-  compactLabel,
-  className,
-  ...props
-}: IconActionProps & Omit<ComponentProps<typeof Link>, "children">) {
-  return (
-    <Link className={cn(iconActionClass(labelSide, compactLabel), className)} {...props}>
-      <IconActionContent label={label} icon={icon} labelSide={labelSide} compactLabel={compactLabel} />
-    </Link>
-  );
-}
-
-/** Same look as NavIconLink, as a button (opens menus/panels). */
+/**
+ * Round icon button of the navigation (search, menu): no visible label, to keep the bar
+ * quiet. The label is the accessible name and the tooltip (native `title`, which also
+ * shows on long-press in some mobile browsers).
+ */
 export function NavIconButton({
   label,
   icon,
-  labelSide,
-  compactLabel,
   className,
   ...props
 }: IconActionProps & Omit<ComponentProps<"button">, "children">) {
   return (
-    <button type="button" className={cn(iconActionClass(labelSide, compactLabel), className)} {...props}>
-      <IconActionContent label={label} icon={icon} labelSide={labelSide} compactLabel={compactLabel} />
+    <button
+      type="button"
+      title={label}
+      className={cn(
+        "grid size-11 shrink-0 place-items-center rounded-full lg:size-10 [&_svg]:size-5",
+        outlined,
+        className,
+      )}
+      {...props}
+    >
+      <span aria-hidden="true" className="contents">
+        {icon}
+      </span>
+      <span className="sr-only">{label}</span>
     </button>
   );
 }

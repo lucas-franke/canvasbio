@@ -9,7 +9,7 @@ export function LoadFailed({ onRetry, className }: { onRetry: () => void; classN
   return (
     <div role="alert" className={cn("flex flex-col items-center gap-4 py-16 text-center", className)}>
       <p className="max-w-md">{m.detail.loadFailed}</p>
-      <Button variant="outline" onClick={onRetry}>
+      <Button variant="secondary" onClick={onRetry}>
         {m.detail.retry}
       </Button>
     </div>

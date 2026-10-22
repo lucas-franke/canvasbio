@@ -16,8 +16,8 @@ import {
 } from "./search";
 
 const facets: FacetConfig[] = [
-  { key: "field", type: "multi", label: { de: "Feld", en: "Field", "de-LS": "Feld" } },
-  { key: "place", type: "autocomplete", label: { de: "Ort", en: "Place", "de-LS": "Ort" } },
+  { key: "field", type: "multi", label: { de: "Feld", en: "Field" } },
+  { key: "place", type: "autocomplete", label: { de: "Ort", en: "Place" } },
 ];
 
 const person = (display: string, sort: string, field: string[], place: string[]) =>
@@ -78,7 +78,7 @@ describe("name search", () => {
 
 describe("URL state", () => {
   it("round-trips through search parameters", () => {
-    const state = { q: "clara", facets: { field: ["politics", "writing"], place: ["Berlin"] }, saved: true };
+    const state = { q: "clara", facets: { field: ["politics", "writing"], place: ["Berlin"] }, sort: "born" };
     const params = toSearchParams(state, facets, new URLSearchParams("other=1"));
     expect(params.get("other")).toBe("1");
     expect(parseSearch(params, facets)).toEqual(state);
@@ -86,21 +86,22 @@ describe("URL state", () => {
 
   it("ignores empty values and keeps only one place", () => {
     const state = parseSearch(new URLSearchParams("q=+&field=&place=a&place=b&field=x&field=x"), facets);
-    expect(state).toEqual({ q: "", facets: { field: ["x"], place: ["a"] }, saved: false });
+    expect(state).toEqual({ q: "", facets: { field: ["x"], place: ["a"] }, sort: "" });
     expect(isSearchActive(state)).toBe(true);
     expect(isSearchActive(parseSearch(new URLSearchParams(""), facets))).toBe(false);
+    // The order alone is no search.
+    expect(isSearchActive(parseSearch(new URLSearchParams("sort=born"), facets))).toBe(false);
   });
 
   it("builds a link suffix", () => {
     expect(searchSuffix(emptySearch, facets)).toBe("");
     expect(searchSuffix({ ...emptySearch, q: "zet" }, facets)).toBe("?q=zet");
-    expect(searchSuffix({ ...emptySearch, saved: true }, facets)).toBe("?saved=1");
   });
 });
 
 describe("filterPeople", () => {
   const search = (q: string, f: Record<string, string[]> = {}) =>
-    filterPeople(people, { q, facets: f, saved: false }, facets, labels).map((p) => p.name.display);
+    filterPeople(people, { q, facets: f, sort: "" }, facets, labels).map((p) => p.name.display);
 
   it("returns everyone without a search", () => {
     expect(search("")).toHaveLength(4);
@@ -116,17 +117,6 @@ describe("filterPeople", () => {
   it("matches places by their label, accent-insensitively", () => {
     expect(search("", { place: ["munchen"] })).toEqual(["Helene Müller"]);
     expect(search("", { place: ["königs"] })).toEqual(["Clara Zetkin"]);
-  });
-
-  it("keeps only bookmarked people with the saved filter", () => {
-    const bookmarks = new Set(["hedwig-dohm", "clara-zetkin"]);
-    const saved = (q: string) =>
-      filterPeople(people, { q, facets: {}, saved: true }, facets, labels, bookmarks).map(
-        (p) => p.name.display,
-      );
-    expect(saved("")).toEqual(["Clara Zetkin", "Hedwig Dohm"]);
-    expect(saved("dohm")).toEqual(["Hedwig Dohm"]);
-    expect(filterPeople(people, { ...emptySearch, saved: true }, facets, labels)).toEqual([]);
   });
 });
 

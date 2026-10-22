@@ -20,12 +20,12 @@ Diese Website ist mit den genannten Anforderungen **teilweise vereinbar**. Die E
 
 ## Nicht barrierefreie Inhalte
 
-- **Leichte Sprache:** Nur einige Biografien gibt es in Leichter Sprache. Bei allen anderen steht ein Hinweis, und es wird der Text in Alltagssprache angezeigt.
+- **Leichte Sprache:** Informationen in Leichter Sprache werden derzeit nicht angeboten.
 - **Lebensgeschichten:** Die Texte sind automatisch übernommene Auszüge aus der Wikipedia. Fremdsprachige Wörter und Zitate darin sind nicht als solche ausgezeichnet, sodass Screenreader sie mit deutscher Aussprache vorlesen können.
 - **Bildbeschreibungen:** Die Porträts haben einen Alternativtext mit dem Namen der Person, aber keine ausführliche Beschreibung des Bildes.
 - **Gebärdensprache:** Informationen in Deutscher Gebärdensprache werden derzeit nicht angeboten.
 
-Die Bildwand (Bilder-Ansicht) lässt sich mit Tastatur und Schaltflächen ohne Wischgesten bedienen. Für Screenreader ist die **Listen-Ansicht** die gleichwertige Alternative mit denselben Inhalten.
+Das Mosaik lässt sich mit Tastatur und Schaltflächen ohne Wischgesten bedienen. Für Screenreader ist die **Listen-Ansicht** die gleichwertige Alternative mit denselben Inhalten.
 
 ## Erstellung dieser Erklärung
 

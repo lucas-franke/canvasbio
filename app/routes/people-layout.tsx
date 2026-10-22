@@ -12,8 +12,9 @@ import { usePeopleIndex } from "~/lib/content/people-index";
 import { WIDE_QUERY, useMediaQuery } from "~/lib/hooks";
 import { useLocale, useMessages } from "~/lib/i18n";
 import { listPath, pagePath, timelinePath } from "~/lib/i18n/locale";
+import { sortFor, sortPeople } from "~/lib/content/sort";
 import { filterPeople, isSearchActive, searchSuffix } from "~/lib/search/search";
-import { markSeen, useBookmarks } from "~/lib/preferences";
+import { markSeen } from "~/lib/preferences";
 import { useSearch } from "~/lib/search/use-search";
 import { useSwipeToClose } from "~/lib/swipe-to-close";
 import { afterViewTransition, markPortraitTarget } from "~/lib/view-transition";
@@ -65,13 +66,12 @@ export default function PeopleLayout() {
   const overviewHref = viewPath[view] + suffix;
 
   const { index, failed, retry } = usePeopleIndex(locale);
-  const [bookmarks] = useBookmarks();
   const hits = useMemo(
     () =>
       index && isSearchActive(search)
-        ? filterPeople(index.people, search, siteConfig.facets, index.facetLabels, bookmarks)
+        ? filterPeople(index.people, search, siteConfig.facets, index.facetLabels)
         : null,
-    [index, search, bookmarks],
+    [index, search],
   );
   const modal = isDetail;
   // From `lg` the dialog is a centred card (no swipe-down sheet).
@@ -131,10 +131,18 @@ export default function PeopleLayout() {
     if (slug) markSeen(slug);
   }, [slug]);
 
+  // Previous/next in the biography follow the overview as shown: search results, in the
+  // order chosen for list or timeline.
+  const sequence = useMemo(() => {
+    const people = hits ?? index?.people ?? null;
+    if (!people || view === "canvas") return people;
+    return sortPeople(people, sortFor(view, search.sort));
+  }, [hits, index, view, search.sort]);
+
   const hrefFor = (personSlug: string) => pagePath(locale, "people", personSlug) + suffix;
   const context: PeopleLayoutContext = {
     closeHref: overviewHref,
-    sequence: hits ?? index?.people ?? null,
+    sequence,
     hrefFor,
   };
 

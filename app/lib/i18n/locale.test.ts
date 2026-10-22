@@ -25,7 +25,6 @@ describe("localeFromPathname", () => {
     expect(localeFromPathname("/")).toBe("de");
     expect(localeFromPathname("/personen")).toBe("de");
     expect(localeFromPathname("/en/people")).toBe("en");
-    expect(localeFromPathname("/leichte-sprache")).toBe("de-LS");
   });
 });
 
@@ -38,7 +37,6 @@ describe("parsePath", () => {
       page: "people",
       rest: ["hedwig-dohm", "lebenslauf"],
     });
-    expect(parsePath("/leichte-sprache/ueber")).toEqual({ locale: "de-LS", page: "about", rest: [] });
   });
 
   it("does not match a page segment of another locale", () => {
@@ -52,7 +50,6 @@ describe("pagePath", () => {
     expect(pagePath("en", "start")).toBe("/en");
     expect(pagePath("de", "people", "hedwig-dohm")).toBe("/personen/hedwig-dohm");
     expect(pagePath("en", "about")).toBe("/en/about");
-    expect(pagePath("de-LS", "people")).toBe("/leichte-sprache/personen");
   });
 });
 
@@ -60,22 +57,17 @@ describe("switchLocalePath", () => {
   it("keeps the page and translates segments", () => {
     expect(switchLocalePath("/personen", "en")).toBe("/en/people");
     expect(switchLocalePath("/en/about", "de")).toBe("/ueber");
-    expect(switchLocalePath("/en", "de-LS")).toBe("/leichte-sprache");
+    expect(switchLocalePath("/en", "de")).toBe("/");
   });
 
   it("keeps the person", () => {
     expect(switchLocalePath("/en/people/hedwig-dohm", "de")).toBe("/personen/hedwig-dohm");
-    expect(switchLocalePath("/personen/hedwig-dohm", "de-LS")).toBe("/leichte-sprache/personen/hedwig-dohm");
+    expect(switchLocalePath("/personen/hedwig-dohm", "en")).toBe("/en/people/hedwig-dohm");
   });
 
   it("translates the list and timeline views", () => {
     expect(switchLocalePath("/personen/liste", "en")).toBe("/en/people/list");
     expect(switchLocalePath("/en/people/timeline", "de")).toBe("/personen/zeitstrahl");
-  });
-
-  it("translates the list sub-path", () => {
-    expect(switchLocalePath("/personen/liste", "en")).toBe("/en/people/list");
-    expect(switchLocalePath("/en/people/list", "de-LS")).toBe("/leichte-sprache/personen/liste");
   });
 
   it("falls back to the start page for unknown paths", () => {
@@ -86,8 +78,7 @@ describe("switchLocalePath", () => {
 describe("switchLocaleHash", () => {
   it("translates biography tabs and keeps other anchors", () => {
     expect(switchLocaleHash("#lebenslauf", "de", "en")).toBe("#timeline");
-    expect(switchLocaleHash("#story", "en", "de-LS")).toBe("#geschichte");
-    expect(switchLocaleHash("#lebenslauf", "de", "de-LS")).toBe("#jahre");
+    expect(switchLocaleHash("#story", "en", "de")).toBe("#geschichte");
     expect(switchLocaleHash("#fn-1", "de", "en")).toBe("#fn-1");
     expect(switchLocaleHash("", "de", "en")).toBe("");
   });

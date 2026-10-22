@@ -33,6 +33,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
     <html
       lang={htmlLangFor(locale)}
       data-paper={siteConfig.theme.paperTexture || undefined}
+      data-portrait-tint={siteConfig.theme.portraitTint ? "" : undefined}
       suppressHydrationWarning
     >
       <head>

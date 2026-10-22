@@ -5,31 +5,30 @@ import { Link, useNavigate } from "react-router";
 import type { Route } from "./+types/start";
 import { SearchDrawer } from "~/components/search/search-drawer";
 import { BottomNav, NavPill, NavTextLink } from "~/components/shell/nav";
+import { BrandLink } from "~/components/shell/brand-link";
 import { MenuDrawer } from "~/components/shell/menu-drawer";
-import { StageMosaic, mosaicOrder } from "~/components/shell/stage-mosaic";
+import { CanvasBackdrop } from "~/components/canvas/canvas-backdrop";
+import { continueFromLastCamera } from "~/components/canvas/use-camera";
 import { Portrait } from "~/components/portrait";
 import { Button } from "~/components/ui/button";
 import { siteConfig } from "~/lib/config";
 import { anniversaries } from "~/lib/content/anniversary";
 import { formatPartialDate } from "~/lib/content/format";
-import { content } from "~/lib/content/index.server";
+import { loadPeopleIndex } from "~/lib/content/people-index.server";
 import { usePeopleIndex } from "~/lib/content/people-index";
 import { useHydrated } from "~/lib/hooks";
 import { useLocale, useMessages } from "~/lib/i18n";
-import { localeConfig, localeFromPathname, pagePath, switchLocalePath } from "~/lib/i18n/locale";
+import { localeFromPathname, pagePath } from "~/lib/i18n/locale";
 import { localize } from "~/lib/i18n/localize";
 import { pageMeta } from "~/lib/meta";
 import { readSeen } from "~/lib/preferences";
 import { pickRandom } from "~/lib/random";
 
-const EASY_LANGUAGE = "de-LS";
-
 export async function loader({ request }: Route.LoaderArgs) {
   const locale = localeFromPathname(new URL(request.url).pathname);
-  const people = await content.listPeople(locale);
-  return {
-    mosaic: mosaicOrder(people, 70).map(({ slug, image }) => ({ slug, image })),
-  };
+  // The wall behind the start page is the real canvas (same people, order and layout); the
+  // full index also serves "On this day", the random entry and the search panel.
+  return loadPeopleIndex(locale);
 }
 
 export function meta({ location }: Route.MetaArgs) {
@@ -42,14 +41,16 @@ export default function Start({ loaderData }: Route.ComponentProps) {
   const { start, features } = siteConfig;
   const t = (record: Record<string, string>) => localize(record, locale);
 
-  // "Leichte Sprache" shortcut as in the design; inside Leichte Sprache it leads back to the default language.
-  const hasEasyLanguage = features.easyLanguage && siteConfig.locales.some((l) => l.code === EASY_LANGUAGE);
-  const easyTarget = locale === EASY_LANGUAGE ? siteConfig.defaultLocale : EASY_LANGUAGE;
-  const easyTargetConfig = localeConfig(easyTarget);
-
   return (
-    <div className="relative min-h-dvh bg-stage">
-      <StageMosaic items={loaderData.mosaic} />
+    <div className="relative min-h-dvh bg-page">
+      {/* The living wall: drifts slowly behind the card; "Biografien entdecken" continues right
+          there on the canvas. A vignette in the page colour (light or dark) calms it down. */}
+      <div aria-hidden="true" className="pointer-events-none fixed inset-0 overflow-hidden">
+        <div className="absolute inset-0 opacity-70">
+          <CanvasBackdrop people={loaderData.people} hrefFor={(slug) => pagePath(locale, "people", slug)} />
+        </div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,color-mix(in_srgb,var(--c-page)_55%,transparent)_0%,var(--c-page)_90%)]" />
+      </div>
 
       <main
         id="main"
@@ -57,7 +58,7 @@ export default function Start({ loaderData }: Route.ComponentProps) {
       >
         <section
           aria-labelledby="start-title"
-          className="flex w-full max-w-2xl flex-col gap-8 rounded-card bg-surface p-6 shadow-2xl sm:gap-12 sm:p-12 lg:p-16"
+          className="start-card flex w-full max-w-2xl flex-col gap-8 rounded-card bg-surface p-6 shadow-2xl sm:gap-12 sm:p-12 lg:p-16"
         >
           <header className="flex flex-col gap-4">
             <h1 id="start-title" className="wordmark text-[clamp(2.75rem,2rem+4vw,4.5rem)] text-brand">
@@ -82,7 +83,7 @@ export default function Start({ loaderData }: Route.ComponentProps) {
 
           <div className="flex flex-wrap items-center gap-4">
             <Button asChild size="lg" className="pr-2">
-              <Link to={pagePath(locale, "people")}>
+              <Link to={pagePath(locale, "people")} viewTransition onClick={continueFromLastCamera}>
                 {t(start.cta)}
                 <span
                   aria-hidden="true"
@@ -101,24 +102,20 @@ export default function Start({ loaderData }: Route.ComponentProps) {
 
       <BottomNav
         label={m.nav.label}
+        // Same order as on every page: brand on the left; about, search and menu on the right.
+        // "Biografien" needs no nav link here: the card's main button leads there.
         start={
           <NavPill bare>
-            <MenuDrawer />
-            {/* Leichte Sprache also on phones: whoever needs it should find it right away. */}
-            {hasEasyLanguage && (
-              <NavTextLink to={switchLocalePath("/", easyTarget)} lang={easyTargetConfig.htmlLang}>
-                {easyTargetConfig.label}
-              </NavTextLink>
-            )}
-            <div className="hidden items-center gap-3 lg:flex">
-              <NavTextLink to={pagePath(locale, "about")}>{m.nav.about}</NavTextLink>
-              <NavTextLink to={pagePath(locale, "people")}>{m.nav.people}</NavTextLink>
-            </div>
+            <BrandLink />
           </NavPill>
         }
         end={
-          <NavPill bare>
+          <NavPill>
+            <NavTextLink to={pagePath(locale, "about")} className="hidden sm:inline-flex">
+              {m.nav.about}
+            </NavTextLink>
             <SearchDrawer />
+            <MenuDrawer />
           </NavPill>
         }
       />
@@ -134,7 +131,7 @@ function RandomStart() {
   const { index } = usePeopleIndex(locale);
   return (
     <Button
-      variant="outline"
+      variant="secondary"
       size="lg"
       onClick={() => {
         const person = index && pickRandom(index.people, { seen: readSeen() });

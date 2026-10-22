@@ -61,7 +61,13 @@ export function defaultScale(layout: CanvasLayout, viewport: Size, limits: ZoomL
  * A position remembered for this history entry wins, like after hydration.
  * Placed right after the viewport element; the world is its first child.
  */
-export function firstPaintScript(layout: CanvasLayout, limits: ZoomLimits, storagePrefix: string): string {
+export function firstPaintScript(
+  layout: CanvasLayout,
+  limits: ZoomLimits,
+  storagePrefix: string,
+  /** Read this key as is (not per history entry). */
+  fixedKey = false,
+): string {
   const { x, y } = initialCamera(layout, { width: 1, height: 1 }, limits);
   return [
     "(function(){try{",
@@ -69,7 +75,8 @@ export function firstPaintScript(layout: CanvasLayout, limits: ZoomLimits, stora
     `var c={x:${x},y:${y},scale:Math.min(${limits.maxZoom},Math.max(${limits.minZoom},Math.min(280,Math.max(130,r.width/6))/${layout.pitch}))};`,
     "var h=history.state,k=h&&h.key?h.key:'default',s=JSON.parse(sessionStorage.getItem(" +
       JSON.stringify(storagePrefix) +
-      "+k)||'null');",
+      (fixedKey ? "" : "+k") +
+      ")||'null');",
     `if(s&&isFinite(s.x)&&isFinite(s.y)&&s.scale>=${limits.minZoom}&&s.scale<=${limits.maxZoom})c=s;`,
     "w.style.transform='translate3d('+(-c.x*c.scale)+'px,'+(-c.y*c.scale)+'px,0) scale('+c.scale+')';",
     "w.style.setProperty('--s',String(c.scale));",

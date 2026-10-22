@@ -1,6 +1,6 @@
 import { expect, test, type Page } from "@playwright/test";
 
-import { navPillBoxes, openCanvasControls, overlaps } from "./helpers";
+import { navPillBoxes, overlaps } from "./helpers";
 
 /** Camera as written to the world element: translate(-x·s, -y·s) scale(s). */
 async function camera(page: Page) {
@@ -116,24 +116,14 @@ test("dragging pans without opening a biography; a tap opens one", async ({ page
   await expect(page).toHaveURL(new RegExp(`/personen/${slug}$`));
 });
 
-test("zoom buttons and the direction pad work without dragging (WCAG 2.5.7)", async ({ page, isMobile }) => {
+test("zoom buttons work without pinching (WCAG 2.5.1)", async ({ page }) => {
   await openCanvas(page);
-  await openCanvasControls(page, isMobile);
   const start = await camera(page);
   await page.getByRole("button", { name: "Vergrößern" }).click();
   await expect.poll(async () => (await camera(page)).scale).toBeGreaterThan(start.scale);
   await page.getByRole("button", { name: "Verkleinern" }).click();
   await page.getByRole("button", { name: "Verkleinern" }).click();
   await expect.poll(async () => (await camera(page)).scale).toBeLessThan(start.scale);
-
-  const toggle = page.getByRole("button", { name: "Verschieben" });
-  await toggle.click();
-  await expect(toggle).toHaveAttribute("aria-expanded", "true");
-  const before = await camera(page);
-  await page.getByRole("button", { name: "Nach rechts" }).click();
-  await expect.poll(async () => (await camera(page)).tx).toBeLessThan(before.tx - 50);
-  await page.getByRole("button", { name: "Nach unten" }).click();
-  await expect.poll(async () => (await camera(page)).ty).toBeLessThan(before.ty - 50);
 });
 
 test("wheel pans and Ctrl + wheel zooms (desktop)", async ({ page, isMobile }) => {
@@ -184,6 +174,7 @@ test.describe("without JavaScript", () => {
     expect(await tiles.count()).toBeGreaterThan(30);
     // The pre-rendered tiles are real links to the biographies.
     await expect(tiles.first()).toHaveAttribute("href", /^\/personen\/[a-z0-9-]+$/);
+    // Without JavaScript the view switch shows all views right away.
     await page.getByRole("group", { name: "Ansicht" }).getByRole("link", { name: "Liste" }).click();
     await expect(page.locator("article[data-vt-item]")).toHaveCount(200);
   });

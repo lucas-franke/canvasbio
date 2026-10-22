@@ -6,16 +6,6 @@ test("a translated tab link opens the same tab in the other language", async ({ 
   await expect(page.getByRole("tab", { name: "Timeline" })).toHaveAttribute("aria-selected", "true");
 });
 
-test("Leichte Sprache marks who has a text in Leichte Sprache", async ({ page }) => {
-  await page.goto("/leichte-sprache/personen/liste");
-  const row = (name: string) => page.locator("article[data-vt-item]").filter({ hasText: name });
-  await expect(row("Clara Zetkin").getByText("In Leichter Sprache")).toBeVisible();
-  await expect(row("Jane Addams").getByText("In Leichter Sprache")).toHaveCount(0);
-  // Not in the other languages, where every biography exists.
-  await page.goto("/personen/liste");
-  await expect(page.getByText("In Leichter Sprache")).toHaveCount(0);
-});
-
 test("English life stories have no leftover pronunciation markup", async ({ page }) => {
   await page.goto("/en/people/clara-zetkin#story");
   const story = page.getByRole("tabpanel", { name: "Life story" });

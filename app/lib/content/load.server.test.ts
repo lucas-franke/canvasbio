@@ -9,9 +9,25 @@ import { createFsContentAdapter } from "./fs-adapter.server";
 import { parseFrontmatter } from "./frontmatter";
 import { loadContent } from "./load.server";
 
+// Labels for every locale, including the optional one used in some tests.
 const taxonomy = {
   field: { politics: { de: "Politik", en: "Politics", "de-LS": "Politik" } },
   place: { berlin: { de: "Berlin", en: "Berlin", "de-LS": "Berlin" } },
+};
+
+/** The project config plus an optional language (not every person needs a text in it). */
+const withOptionalLocale = {
+  ...siteConfig,
+  locales: [
+    ...siteConfig.locales,
+    {
+      code: "de-LS",
+      prefix: "leichte-sprache",
+      htmlLang: "de",
+      label: "Leichte Sprache",
+      contentRequired: false,
+    },
+  ],
 };
 
 const person = (slug: string, overrides: Record<string, unknown> = {}) => ({
@@ -92,24 +108,24 @@ describe("loadContent", () => {
     );
   });
 
-  it("does not require optional locales such as Leichte Sprache", async () => {
+  it("does not require texts in optional locales", async () => {
     await addPerson("hedwig-dohm", person("hedwig-dohm"));
-    const { issues } = await loadContent(root, siteConfig);
+    const { issues } = await loadContent(root, withOptionalLocale);
     expect(issues.filter((i) => i.file.includes("de-LS"))).toEqual([]);
   });
 });
 
 describe("fs content adapter", () => {
   const image = { width: 640, height: 800, lqip: "data:image/webp;base64,", color: "#806040", hash: "abc" };
-  const adapterFor = async (manifest: object) => {
+  const adapterFor = async (manifest: object, config = siteConfig) => {
     const manifestFile = path.join(root, "portraits.json");
     await writeFile(manifestFile, JSON.stringify(manifest));
-    return createFsContentAdapter(root, siteConfig, manifestFile);
+    return createFsContentAdapter(root, config, manifestFile);
   };
 
   it("falls back to the default locale and says so", async () => {
     await addPerson("hedwig-dohm", person("hedwig-dohm"));
-    const adapter = await adapterFor({ "hedwig-dohm": image });
+    const adapter = await adapterFor({ "hedwig-dohm": image }, withOptionalLocale);
     const easy = await adapter.getPerson("hedwig-dohm", "de-LS");
     expect(easy?.locale).toBe("de");
     expect(easy?.image).toEqual(image);

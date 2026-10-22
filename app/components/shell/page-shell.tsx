@@ -1,5 +1,4 @@
 import { cn } from "cn";
-import { House } from "lucide-react";
 import type { ReactNode } from "react";
 import { Link } from "react-router";
 
@@ -8,37 +7,28 @@ import { useLocale, useMessages } from "~/lib/i18n";
 import { pagePath } from "~/lib/i18n/locale";
 import { localize } from "~/lib/i18n/localize";
 import { SearchDrawer } from "~/components/search/search-drawer";
+import { BrandLink } from "./brand-link";
 import { MenuDrawer } from "./menu-drawer";
-import { BottomNav, NavIconLink, NavPill } from "./nav";
+import { BottomNav, NavPill } from "./nav";
 
 /**
- * Wordmark linking to the start page, centered at the top like in the design.
- * `overlay`: floats above full-bleed content (the canvas) on a label in the page colour.
+ * Top of the scrolling pages. Desktop: an empty sticky band behind the top navigation, so
+ * content doesn't scroll under it (the brand sits in the navigation). Phones and tablets:
+ * the wordmark as a small page header that scrolls away (the brand's monogram is in the
+ * bottom navigation).
  */
-export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
+function SiteHeader() {
   const locale = useLocale();
   const m = useMessages();
+  const wordmark = localize(siteConfig.brand.wordmark, locale);
   return (
-    <header
-      className={cn(
-        "flex justify-center px-4",
-        overlay
-          ? "pointer-events-none absolute inset-x-0 top-0 z-10"
-          : // Desktop: a sticky band behind the top navigation, so content doesn't scroll under it.
-            "pt-6 sm:pt-10 lg:sticky lg:top-0 lg:z-30 lg:h-24 lg:items-center lg:bg-page/95 lg:pt-0 lg:backdrop-blur-sm",
-      )}
-    >
+    <header className="flex justify-center px-4 pt-6 sm:pt-8 lg:sticky lg:top-0 lg:z-30 lg:h-20 lg:bg-page/95 lg:pt-0 lg:backdrop-blur-sm">
       <Link
         to={pagePath(locale, "start")}
-        aria-label={`${localize(siteConfig.brand.wordmark, locale)} – ${m.nav.home}`}
-        className={cn(
-          // Sized by the column (container), which is narrow next to an open biography.
-          "rounded-sm wordmark text-[clamp(1.5rem,0.9rem+3cqw,2.5rem)] text-brand",
-          overlay &&
-            "pointer-events-auto rounded-b-card bg-page px-5 pt-4 pb-3 shadow-[0_2px_4px_rgb(0_0_0/0.15)] sm:px-7 sm:pt-6",
-        )}
+        aria-label={`${wordmark} – ${m.nav.home}`}
+        className="rounded-sm wordmark text-[1.75rem] text-brand lg:hidden"
       >
-        {localize(siteConfig.brand.wordmark, locale)}
+        {wordmark}
       </Link>
     </header>
   );
@@ -46,22 +36,22 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
 
 interface PageShellProps {
   children: ReactNode;
-  /** Extra controls in the right nav pill (view toggle etc.). */
+  /** Extra controls at the start of the right nav pill (view switch etc.). */
   navEnd?: ReactNode;
   /** Overlay above the page, e.g. the biography dialog. */
   aside?: ReactNode;
   /** Make header, main content and nav inert (while a modal panel covers them). */
   inert?: boolean;
-  /** Main content fills the screen without page scrolling (the canvas); the header floats above it. */
+  /** Main content fills the screen without page scrolling (the canvas); no page header. */
   fullBleed?: boolean;
 }
 
 /**
- * Frame for the light content pages: header, main content and the floating bottom navigation.
- * The main column is a size container, so its content adapts to its width.
+ * Frame for the light content pages: header, main content and the floating navigation.
+ * The navigation keeps one order everywhere: the brand (start page) on the left; view,
+ * search and menu on the right. The main column is a size container.
  */
 export function PageShell({ children, navEnd, aside, inert = false, fullBleed = false }: PageShellProps) {
-  const locale = useLocale();
   const m = useMessages();
 
   return (
@@ -77,7 +67,7 @@ export function PageShell({ children, navEnd, aside, inert = false, fullBleed = 
         className={cn("@container relative flex min-w-0 flex-1 flex-col", aside && "print:hidden")}
         inert={inert || undefined}
       >
-        <SiteHeader overlay={fullBleed} />
+        {!fullBleed && <SiteHeader />}
         {/* Bottom padding keeps the last content and focused elements clear of the fixed nav (WCAG 2.4.11). */}
         <main id="main" className={fullBleed ? "absolute inset-0" : "flex-1 px-4 pt-8 pb-36 sm:px-8"}>
           {children}
@@ -87,23 +77,15 @@ export function PageShell({ children, navEnd, aside, inert = false, fullBleed = 
         inert={inert}
         label={m.nav.label}
         start={
-          <NavPill>
-            {/* Very narrow screens with the view switch: no room for both pills in full. Home
-                stays reachable through the wordmark at the top and the menu. */}
-            <NavIconLink
-              to={pagePath(locale, "start")}
-              label={m.nav.home}
-              icon={<House />}
-              labelSide="end"
-              className={cn(navEnd && "max-[23rem]:hidden")}
-            />
-            <MenuDrawer />
+          <NavPill bare>
+            <BrandLink />
           </NavPill>
         }
         end={
           <NavPill>
             {navEnd}
             <SearchDrawer />
+            <MenuDrawer />
           </NavPill>
         }
       />

@@ -15,7 +15,7 @@ export function RandomButton({ onClick, className }: { onClick: () => void; clas
       data-floating=""
       onClick={onClick}
       className={cn(
-        "pointer-events-auto inline-flex min-h-12 items-center gap-3 rounded-full bg-brand px-6 text-label font-medium whitespace-nowrap text-brand-foreground shadow-[0_2px_4px_rgb(0_0_0/0.25)] transition-[filter] hover:brightness-90 sm:min-h-14 sm:px-8",
+        "pointer-events-auto inline-flex min-h-11 items-center gap-2.5 rounded-full bg-brand px-5 text-body-sm font-medium whitespace-nowrap text-brand-foreground shadow-[0_2px_4px_rgb(0_0_0/0.25)] transition-[filter] hover:brightness-90 sm:min-h-12 sm:px-6 sm:text-label lg:min-h-12 lg:px-6",
         className,
       )}
     >
@@ -30,4 +30,4 @@ export function RandomButton({ onClick, className }: { onClick: () => void; clas
  * Shared by canvas (absolute) and list (sticky).
  */
 export const RANDOM_BUTTON_BOTTOM =
-  "bottom-[calc(max(0.75rem,env(safe-area-inset-bottom))+4.75rem)] sm:bottom-27 lg:bottom-8";
+  "bottom-[calc(max(0.75rem,env(safe-area-inset-bottom))+5.5rem)] sm:bottom-28 lg:bottom-8";

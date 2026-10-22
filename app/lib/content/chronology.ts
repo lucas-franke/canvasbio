@@ -37,6 +37,14 @@ const year = (date?: string) => {
   return Number.isFinite(value) ? value : undefined;
 };
 
+/** A person on the timeline: birth and death year (NaN / undefined when unknown). */
+export function rowFor<T extends Dated>(person: T): ChronologyRow<T> {
+  const from = year(person.born.date);
+  const to = year(person.died?.date);
+  if (from === undefined) return { person, from: NaN, to };
+  return { person, from, to: to !== undefined && to >= from ? to : undefined };
+}
+
 /** People by decade of birth (oldest first); within a decade by year, then by sort name. */
 export function groupByDecade<T extends Dated>(people: readonly T[]): DecadeGroup<T>[] {
   const rows: ChronologyRow<T>[] = [];
@@ -65,7 +73,12 @@ export function groupByDecade<T extends Dated>(people: readonly T[]): DecadeGrou
  * labels every 25 or 50 years (every 10 for short spans).
  */
 export function timeScale(groups: readonly DecadeGroup<unknown>[]): TimeScale | null {
-  const rows = groups.flatMap((g) => (g.decade === null ? [] : g.rows));
+  return scaleOfRows(groups.flatMap((g) => (g.decade === null ? [] : g.rows)));
+}
+
+/** The time scale for any rows (those without a year of birth are left out). */
+export function scaleOfRows(all: readonly ChronologyRow<unknown>[]): TimeScale | null {
+  const rows = all.filter((r) => Number.isFinite(r.from));
   if (rows.length === 0) return null;
   const start = Math.floor(Math.min(...rows.map((r) => r.from)) / 10) * 10;
   const end = Math.max(start + 10, Math.ceil(Math.max(...rows.map((r) => r.to ?? r.from)) / 10) * 10);

@@ -8,24 +8,25 @@ import type { PersonListItem } from "~/lib/content/adapter";
  * `q` is the name, every facet uses its key from site.config.ts as parameter, e.g.
  * `?q=zetkin&field=politics&field=writing&place=Berlin`.
  * - "multi" facets hold values (slugs); a person matches if they have any of them,
- * - "autocomplete" facets hold free text, matched against the labels of the person's values,
- * - `saved=1` keeps only the people bookmarked in this browser (the "Merkliste").
+ * - "autocomplete" facets hold free text, matched against the labels of the person's values.
+ * `sort` is the order of list and timeline (app/lib/content/sort.ts); it travels with the
+ * search but doesn't filter anyone.
  */
 
 export interface SearchState {
   q: string;
   facets: Record<string, string[]>;
-  /** Only bookmarked people. */
-  saved: boolean;
+  /** Order of list and timeline; "" is the view's default. */
+  sort: string;
 }
 
-export const emptySearch: SearchState = { q: "", facets: {}, saved: false };
+export const emptySearch: SearchState = { q: "", facets: {}, sort: "" };
 
 export function parseSearch(params: URLSearchParams, facets: readonly FacetConfig[]): SearchState {
   const state: SearchState = {
     q: params.get("q")?.trim() ?? "",
     facets: {},
-    saved: params.get("saved") === "1",
+    sort: params.get("sort") ?? "",
   };
   for (const facet of facets) {
     const values = params
@@ -46,10 +47,10 @@ export function toSearchParams(
 ): URLSearchParams {
   const params = new URLSearchParams(base);
   params.delete("q");
-  params.delete("saved");
+  params.delete("sort");
   for (const facet of facets) params.delete(facet.key);
   if (state.q.trim()) params.set("q", state.q.trim());
-  if (state.saved) params.set("saved", "1");
+  if (state.sort) params.set("sort", state.sort);
   for (const facet of facets) {
     for (const value of state.facets[facet.key] ?? []) params.append(facet.key, value);
   }
@@ -63,7 +64,7 @@ export function searchSuffix(state: SearchState, facets: readonly FacetConfig[])
 }
 
 export const isSearchActive = (state: SearchState) =>
-  state.q.trim() !== "" || state.saved || Object.values(state.facets).some((values) => values.length > 0);
+  state.q.trim() !== "" || Object.values(state.facets).some((values) => values.length > 0);
 
 /**
  * Folds text for comparison: case, accents (é → e), ß → ss and the German transcriptions
@@ -175,11 +176,9 @@ export function filterPeople(
   state: SearchState,
   facets: readonly FacetConfig[],
   labels: FacetLabels,
-  bookmarks: ReadonlySet<string> = new Set(),
 ): PersonListItem[] {
   if (!isSearchActive(state)) return [...people];
   return people.filter((person) => {
-    if (state.saved && !bookmarks.has(person.slug)) return false;
     if (state.q && !nameMatches(state.q, `${person.name.display} ${person.name.sort}`)) return false;
     for (const facet of facets) {
       const wanted = state.facets[facet.key];

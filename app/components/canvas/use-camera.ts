@@ -90,11 +90,40 @@ function readStoredCamera(key: string, limits: ZoomLimits): Camera | null {
   return null;
 }
 
+/**
+ * The wall seen last, shared by the start page backdrop and the canvas: the backdrop starts
+ * where the canvas was left, and its own drift is stored here as well.
+ */
+export const LAST_CAMERA_KEY = "canvas:last";
+/** One-shot flag: the next canvas starts at LAST_CAMERA_KEY (set by the start page CTA). */
+const CONTINUE_KEY = "canvas:continue";
+
+/** Lets the next canvas continue at the wall's last position (start page → canvas). */
+export function continueFromLastCamera() {
+  try {
+    sessionStorage.setItem(CONTINUE_KEY, "1");
+  } catch {
+    // Not critical: the canvas then starts in the middle.
+  }
+}
+
+function takeContinuation(limits: ZoomLimits): Camera | null {
+  try {
+    if (sessionStorage.getItem(CONTINUE_KEY) !== "1") return null;
+    sessionStorage.removeItem(CONTINUE_KEY);
+  } catch {
+    return null;
+  }
+  return readStoredCamera(LAST_CAMERA_KEY, limits);
+}
+
 interface UseCameraOptions {
   layout: CanvasLayout;
   limits: ZoomLimits;
   /** sessionStorage key for the position of this history entry (restored after reload/back). */
   storageKey: string;
+  /** Without a stored position, continue where the start page backdrop was (see continueFromLastCamera). */
+  canContinue?: boolean;
   /** Called after every view change, outside of rendering. */
   onViewChange?: (view: CanvasView) => void;
   /** Extra space covered at the top (e.g. the search results bar), in px from the viewport top. */
@@ -112,6 +141,7 @@ export function useCamera({
   layout,
   limits,
   storageKey,
+  canContinue = false,
   onViewChange,
   topInset,
   initialView,
@@ -128,9 +158,9 @@ export function useCamera({
   const [view, setView] = useState<CanvasView | null>(initialView ?? null);
 
   // Latest values for callbacks that are created once.
-  const latest = useRef({ layout, limits, storageKey, onViewChange, topInset });
+  const latest = useRef({ layout, limits, storageKey, canContinue, onViewChange, topInset });
   useLayoutEffect(() => {
-    latest.current = { layout, limits, storageKey, onViewChange, topInset };
+    latest.current = { layout, limits, storageKey, canContinue, onViewChange, topInset };
   });
 
   /** Remembers the position for this history entry (restored after reload or back). */
@@ -138,6 +168,7 @@ export function useCamera({
     clearTimeout(saveTimer.current);
     try {
       sessionStorage.setItem(latest.current.storageKey, JSON.stringify(camera.current));
+      sessionStorage.setItem(LAST_CAMERA_KEY, JSON.stringify(camera.current));
     } catch {
       // Not critical: the position just isn't restored.
     }
@@ -306,19 +337,16 @@ export function useCamera({
     [animateTo, apply, measure],
   );
 
-  /** Back to the starting position. */
-  const recenter = useCallback(() => {
-    const { layout, limits } = latest.current;
-    animateTo(initialCamera(layout, measure(), limits), 420);
-  }, [animateTo, measure]);
-
   // Initial position (restored for this history entry, else the pattern centre) and resizes.
   useLayoutEffect(() => {
     const viewport = viewportRef.current;
     if (!viewport) return;
-    const { layout, limits, storageKey } = latest.current;
+    const { layout, limits, storageKey, canContinue } = latest.current;
     const initialSize = measure();
-    apply(readStoredCamera(storageKey, limits) ?? initialCamera(layout, initialSize, limits));
+    // The start page backdrop saves its last position in the same commit (unmount runs first).
+    // The one-shot flag is consumed in any case, so it can't leak into a later visit.
+    const continued = canContinue ? takeContinuation(limits) : null;
+    apply(readStoredCamera(storageKey, limits) ?? continued ?? initialCamera(layout, initialSize, limits));
 
     const observer = new ResizeObserver(sync);
     observer.observe(viewport);
@@ -350,7 +378,6 @@ export function useCamera({
     zoomTo,
     reveal,
     sync,
-    recenter,
     animateTo,
   };
 }

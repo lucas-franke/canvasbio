@@ -14,6 +14,8 @@ const buttonVariants = cva(
       variant: {
         default: "bg-brand text-brand-foreground hover:bg-brand/90",
         outline: "border-brand bg-transparent text-brand hover:bg-brand/10 aria-expanded:bg-brand/10",
+        /** Secondary actions: a quiet outline, so only the primary action (default) stands out. */
+        secondary: "border-control/60 bg-transparent text-emphasis hover:border-control hover:bg-emphasis/5",
         control:
           "border-control bg-transparent text-emphasis hover:bg-emphasis/5 aria-pressed:border-brand aria-pressed:bg-brand aria-pressed:text-brand-foreground",
         inverse: "bg-emphasis text-surface hover:bg-emphasis/90",
@@ -22,10 +24,10 @@ const buttonVariants = cva(
         link: "rounded-sm text-brand underline underline-offset-4 hover:decoration-2",
       },
       size: {
-        default: "min-h-12 px-6 py-2 text-label",
+        default: "min-h-12 px-6 py-2 text-label lg:min-h-11 lg:px-5",
         sm: "min-h-11 px-4 py-1.5 text-body-sm",
-        lg: "min-h-14 px-8 py-3 text-label",
-        icon: "size-12",
+        lg: "min-h-14 px-8 py-3 text-label lg:min-h-12 lg:px-6",
+        icon: "size-12 lg:size-11",
         "icon-sm": "size-11",
       },
     },

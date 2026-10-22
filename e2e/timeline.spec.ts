@@ -1,11 +1,13 @@
 import { expect, test } from "@playwright/test";
 
+import { switchView, waitForHydration } from "./helpers";
+
 test("the timeline lists people by year of birth, grouped by decade", async ({ page }) => {
   await page.goto("/personen/liste");
-  await page.getByRole("link", { name: "Zeitstrahl" }).click();
+  await switchView(page, "Zeitstrahl");
   await expect(page).toHaveURL(/\/personen\/zeitstrahl$/);
   await expect(page).toHaveTitle(/^Biografien als Zeitstrahl – /);
-  await expect(page.getByRole("link", { name: "Zeitstrahl" })).toHaveAttribute("aria-current", "page");
+  await expect(page.getByRole("button", { name: "Ansicht: Zeitstrahl" })).toBeVisible();
 
   const decades = await page.locator("main h2").allTextContents();
   const years = decades.filter((d) => /^\d{4}er$/.test(d)).map((d) => Number(d.slice(0, 4)));
@@ -39,7 +41,7 @@ test("the timeline follows the search and keeps it when switching views", async 
     "Christabel Pankhurst",
     "Sylvia Pankhurst",
   ]);
-  await page.getByRole("link", { name: "Liste" }).click();
+  await switchView(page, "Liste");
   await expect(page).toHaveURL(/\/personen\/liste\?q=pankhurst$/);
 });
 
@@ -69,4 +71,43 @@ test("pointing at a person highlights who lived at the same time (desktop)", asy
   // Flora Tristan (1803–1844) died before Clara Zetkin (1857–1933) was born.
   await expect(bar("Flora Tristan")).toHaveCSS("opacity", "0.25");
   await expect(bar("Harriet Martineau")).toHaveCSS("opacity", "1");
+});
+
+test("wide screens: the decade rail jumps to a chapter and follows the scrolling", async ({
+  page,
+  isMobile,
+}) => {
+  test.skip(isMobile, "phones use the decade sheet");
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/personen/zeitstrahl");
+  const rail = page.getByRole("navigation", { name: "Jahrzehnte" });
+  await rail.getByRole("link", { name: "1870er" }).click();
+  await expect(page.getByRole("heading", { level: 2, name: "1870er" })).toBeFocused();
+  await expect(rail.getByRole("link", { name: "1870er" })).toHaveAttribute("aria-current", "true");
+  await expect(page).toHaveURL(/#jahrzehnt-1870$/);
+});
+
+test("narrower screens: the decade sheet jumps to a chapter", async ({ page }) => {
+  await page.setViewportSize({ width: 412, height: 860 });
+  await page.goto("/personen/zeitstrahl");
+  await page.getByRole("button", { name: "Jahrzehnte" }).click();
+  const sheet = page.getByRole("dialog", { name: "Springen zu: Jahrzehnte" });
+  await sheet.getByRole("link", { name: "1880er" }).click();
+  await expect(sheet).toBeHidden();
+  const heading = page.getByRole("heading", { level: 2, name: "1880er" });
+  await expect(heading).toBeFocused();
+  await expect(heading).toBeInViewport();
+});
+
+test("the timeline can be sorted by year of death and by life span", async ({ page }) => {
+  await page.goto("/personen/zeitstrahl?sort=died");
+  await waitForHydration(page);
+  await expect(page.locator('main h2[id^="tod-"]').first()).toHaveText(/^Gestorben in den \d{4}er-Jahren$/);
+  await page.getByLabel("Sortieren").selectOption("age");
+  await expect(page).toHaveURL(/sort=age$/);
+  // Longest lives first: everyone from 100 years on in one chapter, then by decades.
+  await expect(page.locator('main h2[id^="alter-"]').first()).toHaveText("100+");
+  await expect(page.locator('main h2[id^="alter-"]').nth(1)).toHaveText(/^90 bis 99 Jahre alt geworden$/);
+  // Unknown values come last.
+  await expect(page.locator("main h2").last()).toHaveText("Lebensdauer unbekannt");
 });

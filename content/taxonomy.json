@@ -2,1550 +2,1241 @@
   "field": {
     "politics": {
       "de": "Politik",
-      "en": "Politics",
-      "de-LS": "Politik"
+      "en": "Politics"
     },
     "writing": {
       "de": "Literatur & Presse",
-      "en": "Writing & press",
-      "de-LS": "Bücher und Zeitungen"
+      "en": "Writing & press"
     },
     "education": {
       "de": "Bildung",
-      "en": "Education",
-      "de-LS": "Schule und Lernen"
+      "en": "Education"
     },
     "medicine": {
       "de": "Medizin & Pflege",
-      "en": "Medicine & care",
-      "de-LS": "Medizin"
+      "en": "Medicine & care"
     },
     "science": {
       "de": "Wissenschaft & Recht",
-      "en": "Science & law",
-      "de-LS": "Wissenschaft"
+      "en": "Science & law"
     },
     "arts": {
       "de": "Kunst & Kultur",
-      "en": "Arts & culture",
-      "de-LS": "Kunst"
+      "en": "Arts & culture"
     },
     "social": {
       "de": "Soziales & Gewerkschaft",
-      "en": "Social work & unions",
-      "de-LS": "Hilfe für Menschen"
+      "en": "Social work & unions"
     },
     "activism": {
       "de": "Frauenbewegung",
-      "en": "Women's movement",
-      "de-LS": "Frauen-Rechte"
+      "en": "Women's movement"
     }
   },
   "place": {
     "london": {
       "de": "London",
-      "en": "London",
-      "de-LS": "London"
+      "en": "London"
     },
     "lewes": {
       "de": "Lewes",
-      "en": "Lewes",
-      "de-LS": "Lewes"
+      "en": "Lewes"
     },
     "ivy-green": {
       "de": "Ivy Green",
-      "en": "Ivy Green",
-      "de-LS": "Ivy Green"
+      "en": "Ivy Green"
     },
     "easton": {
       "de": "Easton",
-      "en": "Easton",
-      "de-LS": "Easton"
+      "en": "Easton"
     },
     "paris": {
       "de": "Paris",
-      "en": "Paris",
-      "de-LS": "Paris"
+      "en": "Paris"
     },
     "nohant-vic": {
       "de": "Nohant-Vic",
-      "en": "Nohant-Vic",
-      "de-LS": "Nohant-Vic"
+      "en": "Nohant-Vic"
     },
     "atchison": {
       "de": "Atchison",
-      "en": "Atchison",
-      "de-LS": "Atchison"
+      "en": "Atchison"
     },
     "howland-island": {
       "de": "Howlandinsel",
-      "en": "Howland Island",
-      "de-LS": "Howlandinsel"
+      "en": "Howland Island"
     },
     "kaunas": {
       "de": "Kaunas",
-      "en": "Kaunas",
-      "de-LS": "Kaunas"
+      "en": "Kaunas"
     },
     "toronto": {
       "de": "Toronto",
-      "en": "Toronto",
-      "de-LS": "Toronto"
+      "en": "Toronto"
     },
     "germantown": {
       "de": "Germantown",
-      "en": "Germantown",
-      "de-LS": "Germantown"
+      "en": "Germantown"
     },
     "roxbury": {
       "de": "Roxbury",
-      "en": "Roxbury",
-      "de-LS": "Roxbury"
+      "en": "Roxbury"
     },
     "koenigshain-wiederau": {
       "de": "Königshain-Wiederau",
-      "en": "Königshain-Wiederau",
-      "de-LS": "Königshain-Wiederau"
+      "en": "Königshain-Wiederau"
     },
     "arkhangelskoye": {
       "de": "Arkhangelskoye",
-      "en": "Arkhangelskoye",
-      "de-LS": "Arkhangelskoye"
+      "en": "Arkhangelskoye"
     },
     "dorchester-county": {
       "de": "Dorchester County",
-      "en": "Dorchester County",
-      "de-LS": "Dorchester County"
+      "en": "Dorchester County"
     },
     "auburn": {
       "de": "Auburn",
-      "en": "Auburn",
-      "de-LS": "Auburn"
+      "en": "Auburn"
     },
     "cedarville": {
       "de": "Cedarville",
-      "en": "Cedarville",
-      "de-LS": "Cedarville"
+      "en": "Cedarville"
     },
     "chicago": {
       "de": "Chicago",
-      "en": "Chicago",
-      "de-LS": "Chicago"
+      "en": "Chicago"
     },
     "adams": {
       "de": "Adams",
-      "en": "Adams",
-      "de-LS": "Adams"
+      "en": "Adams"
     },
     "rochester": {
       "de": "Rochester",
-      "en": "Rochester",
-      "de-LS": "Rochester"
+      "en": "Rochester"
     },
     "saint-petersburg": {
       "de": "Sankt Petersburg",
-      "en": "Saint Petersburg",
-      "de-LS": "Sankt Petersburg"
+      "en": "Saint Petersburg"
     },
     "bahia-blanca": {
       "de": "Bahía Blanca",
-      "en": "Bahía Blanca",
-      "de-LS": "Bahía Blanca"
+      "en": "Bahía Blanca"
     },
     "moss-side": {
       "de": "Moss Side",
-      "en": "Moss Side",
-      "de-LS": "Moss Side"
+      "en": "Moss Side"
     },
     "hampstead": {
       "de": "Hampstead",
-      "en": "Hampstead",
-      "de-LS": "Hampstead"
+      "en": "Hampstead"
     },
     "clapham": {
       "de": "Clapham",
-      "en": "Clapham",
-      "de-LS": "Clapham"
+      "en": "Clapham"
     },
     "adyar": {
       "de": "Adyar",
-      "en": "Adyar",
-      "de-LS": "Adyar"
+      "en": "Adyar"
     },
     "johnstown": {
       "de": "Johnstown",
-      "en": "Johnstown",
-      "de-LS": "Johnstown"
+      "en": "Johnstown"
     },
     "new-york-city": {
       "de": "New York City",
-      "en": "New York City",
-      "de-LS": "New York City"
+      "en": "New York City"
     },
     "bristol": {
       "de": "Bristol",
-      "en": "Bristol",
-      "de-LS": "Bristol"
+      "en": "Bristol"
     },
     "hastings": {
       "de": "Hastings",
-      "en": "Hastings",
-      "de-LS": "Hastings"
+      "en": "Hastings"
     },
     "burrell-township": {
       "de": "Burrell Township",
-      "en": "Burrell Township",
-      "de-LS": "Burrell Township"
+      "en": "Burrell Township"
     },
     "cambridge": {
       "de": "Cambridge",
-      "en": "Cambridge",
-      "de-LS": "Cambridge"
+      "en": "Cambridge"
     },
     "fire-island": {
       "de": "Fire Island",
-      "en": "Fire Island",
-      "de-LS": "Fire Island"
+      "en": "Fire Island"
     },
     "hartford": {
       "de": "Hartford",
-      "en": "Hartford",
-      "de-LS": "Hartford"
+      "en": "Hartford"
     },
     "pasadena": {
       "de": "Pasadena",
-      "en": "Pasadena",
-      "de-LS": "Pasadena"
+      "en": "Pasadena"
     },
     "homer": {
       "de": "Homer",
-      "en": "Homer",
-      "de-LS": "Homer"
+      "en": "Homer"
     },
     "bredon-s-norton": {
       "de": "Bredon's Norton",
-      "en": "Bredon's Norton",
-      "de-LS": "Bredon's Norton"
+      "en": "Bredon's Norton"
     },
     "brooklyn-heights": {
       "de": "Brooklyn Heights",
-      "en": "Brooklyn Heights",
-      "de-LS": "Brooklyn Heights"
+      "en": "Brooklyn Heights"
     },
     "norwich": {
       "de": "Norwich",
-      "en": "Norwich",
-      "de-LS": "Norwich"
+      "en": "Norwich"
     },
     "ambleside": {
       "de": "Ambleside",
-      "en": "Ambleside",
-      "de-LS": "Ambleside"
+      "en": "Ambleside"
     },
     "minya": {
       "de": "Al-Minya",
-      "en": "Minya",
-      "de-LS": "Al-Minya"
+      "en": "Minya"
     },
     "cairo": {
       "de": "Kairo",
-      "en": "Cairo",
-      "de-LS": "Kairo"
+      "en": "Cairo"
     },
     "missoula": {
       "de": "Missoula",
-      "en": "Missoula",
-      "de-LS": "Missoula"
+      "en": "Missoula"
     },
     "carmel-by-the-sea": {
       "de": "Carmel-by-the-Sea",
-      "en": "Carmel-by-the-Sea",
-      "de-LS": "Carmel-by-the-Sea"
+      "en": "Carmel-by-the-Sea"
     },
     "mount-laurel": {
       "de": "Mount Laurel",
-      "en": "Mount Laurel",
-      "de-LS": "Mount Laurel"
+      "en": "Mount Laurel"
     },
     "moorestown": {
       "de": "Moorestown",
-      "en": "Moorestown",
-      "de-LS": "Moorestown"
+      "en": "Moorestown"
     },
     "saint-mande": {
       "de": "Saint-Mandé",
-      "en": "Saint-Mandé",
-      "de-LS": "Saint-Mandé"
+      "en": "Saint-Mandé"
     },
     "digne-les-bains": {
       "de": "Digne-les-Bains",
-      "en": "Digne-les-Bains",
-      "de-LS": "Digne-les-Bains"
+      "en": "Digne-les-Bains"
     },
     "hannibal": {
       "de": "Hannibal",
-      "en": "Hannibal",
-      "de-LS": "Hannibal"
+      "en": "Hannibal"
     },
     "holly-springs": {
       "de": "Holly Springs",
-      "en": "Holly Springs",
-      "de-LS": "Holly Springs"
+      "en": "Holly Springs"
     },
     "edinburgh": {
       "de": "Edinburgh",
-      "en": "Edinburgh",
-      "de-LS": "Edinburgh"
+      "en": "Edinburgh"
     },
     "dorking": {
       "de": "Dorking",
-      "en": "Dorking",
-      "de-LS": "Dorking"
+      "en": "Dorking"
     },
     "istanbul": {
       "de": "Istanbul",
-      "en": "Istanbul",
-      "de-LS": "Istanbul"
+      "en": "Istanbul"
     },
     "gladhammar-church-parish": {
       "de": "Gladhammar church parish",
-      "en": "Gladhammar church parish",
-      "de-LS": "Gladhammar church parish"
+      "en": "Gladhammar church parish"
     },
     "vaestra-tollstad-church-parish": {
       "de": "Västra Tollstad church parish",
-      "en": "Västra Tollstad church parish",
-      "de-LS": "Västra Tollstad church parish"
+      "en": "Västra Tollstad church parish"
     },
     "nalchik": {
       "de": "Naltschik",
-      "en": "Nalchik",
-      "de-LS": "Naltschik"
+      "en": "Nalchik"
     },
     "portsea-island": {
       "de": "Portsea Island",
-      "en": "Portsea Island",
-      "de-LS": "Portsea Island"
+      "en": "Portsea Island"
     },
     "lancing": {
       "de": "Lancing",
-      "en": "Lancing",
-      "de-LS": "Lancing"
+      "en": "Lancing"
     },
     "rangpur-division": {
       "de": "Rangpur",
-      "en": "Rangpur Division",
-      "de-LS": "Rangpur"
+      "en": "Rangpur Division"
     },
     "kolkata": {
       "de": "Kolkata",
-      "en": "Kolkata",
-      "de-LS": "Kolkata"
+      "en": "Kolkata"
     },
     "trafford": {
       "de": "Trafford",
-      "en": "Trafford",
-      "de-LS": "Trafford"
+      "en": "Trafford"
     },
     "santa-monica": {
       "de": "Santa Monica",
-      "en": "Santa Monica",
-      "de-LS": "Santa Monica"
+      "en": "Santa Monica"
     },
     "liverpool": {
       "de": "Liverpool",
-      "en": "Liverpool",
-      "de-LS": "Liverpool"
+      "en": "Liverpool"
     },
     "riccarton": {
       "de": "Riccarton",
-      "en": "Riccarton",
-      "de-LS": "Riccarton"
+      "en": "Riccarton"
     },
     "glendale": {
       "de": "Glendale",
-      "en": "Glendale",
-      "de-LS": "Glendale"
+      "en": "Glendale"
     },
     "wooler": {
       "de": "Wooler",
-      "en": "Wooler",
-      "de-LS": "Wooler"
+      "en": "Wooler"
     },
     "mangaluru": {
       "de": "Mangaluru",
-      "en": "Mangaluru",
-      "de-LS": "Mangaluru"
+      "en": "Mangaluru"
     },
     "pune-division": {
       "de": "Pune",
-      "en": "Pune division",
-      "de-LS": "Pune"
+      "en": "Pune division"
     },
     "west-brookfield": {
       "de": "West Brookfield",
-      "en": "West Brookfield",
-      "de-LS": "West Brookfield"
+      "en": "West Brookfield"
     },
     "dorchester": {
       "de": "Dorchester",
-      "en": "Dorchester",
-      "de-LS": "Dorchester"
+      "en": "Dorchester"
     },
     "addis-ababa": {
       "de": "Addis Abeba",
-      "en": "Addis Ababa",
-      "de-LS": "Addis Abeba"
+      "en": "Addis Ababa"
     },
     "blackheath": {
       "de": "Blackheath",
-      "en": "Blackheath",
-      "de-LS": "Blackheath"
+      "en": "Blackheath"
     },
     "epsom": {
       "de": "Epsom",
-      "en": "Epsom",
-      "de-LS": "Epsom"
+      "en": "Epsom"
     },
     "bordeaux": {
       "de": "Bordeaux",
-      "en": "Bordeaux",
-      "de-LS": "Bordeaux"
+      "en": "Bordeaux"
     },
     "newcastle-under-lyme": {
       "de": "Newcastle-under-Lyme",
-      "en": "Newcastle-under-Lyme",
-      "de-LS": "Newcastle-under-Lyme"
+      "en": "Newcastle-under-Lyme"
     },
     "wimbledon": {
       "de": "Wimbledon",
-      "en": "Wimbledon",
-      "de-LS": "Wimbledon"
+      "en": "Wimbledon"
     },
     "concord": {
       "de": "Concord",
-      "en": "Concord",
-      "de-LS": "Concord"
+      "en": "Concord"
     },
     "moscow": {
       "de": "Moskau",
-      "en": "Moscow",
-      "de-LS": "Moskau"
+      "en": "Moscow"
     },
     "sappemeer": {
       "de": "Sappemeer",
-      "en": "Sappemeer",
-      "de-LS": "Sappemeer"
+      "en": "Sappemeer"
     },
     "baarn": {
       "de": "Baarn",
-      "en": "Baarn",
-      "de-LS": "Baarn"
+      "en": "Baarn"
     },
     "sidcup": {
       "de": "Sidcup",
-      "en": "Sidcup",
-      "de-LS": "Sidcup"
+      "en": "Sidcup"
     },
     "woking": {
       "de": "Woking",
-      "en": "Woking",
-      "de-LS": "Woking"
+      "en": "Woking"
     },
     "beleluia": {
       "de": "Beleluja",
-      "en": "Beleluia",
-      "de-LS": "Beleluja"
+      "en": "Beleluia"
     },
     "bolekhiv": {
       "de": "Bolechiw",
-      "en": "Bolekhiv",
-      "de-LS": "Bolechiw"
+      "en": "Bolekhiv"
     },
     "churchville": {
       "de": "Churchville",
-      "en": "Churchville",
-      "de-LS": "Churchville"
+      "en": "Churchville"
     },
     "christiansand": {
       "de": "Christiansand",
-      "en": "Christiansand",
-      "de-LS": "Christiansand"
+      "en": "Christiansand"
     },
     "christiania": {
       "de": "Christiania",
-      "en": "Christiania",
-      "de-LS": "Christiania"
+      "en": "Christiania"
     },
     "middlesex-county": {
       "de": "Middlesex County",
-      "en": "Middlesex County",
-      "de-LS": "Middlesex County"
+      "en": "Middlesex County"
     },
     "erie": {
       "de": "Erie",
-      "en": "Erie",
-      "de-LS": "Erie"
+      "en": "Erie"
     },
     "new-jersey": {
       "de": "New Jersey",
-      "en": "New Jersey",
-      "de-LS": "New Jersey"
+      "en": "New Jersey"
     },
     "groedinge-parish": {
       "de": "Grödinge parish",
-      "en": "Grödinge parish",
-      "de-LS": "Grödinge parish"
+      "en": "Grödinge parish"
     },
     "prague": {
       "de": "Prag",
-      "en": "Prague",
-      "de-LS": "Prag"
+      "en": "Prague"
     },
     "new-town": {
       "de": "Prager Neustadt",
-      "en": "New Town",
-      "de-LS": "Prager Neustadt"
+      "en": "New Town"
     },
     "verden": {
       "de": "Verden (Aller)",
-      "en": "Verden",
-      "de-LS": "Verden (Aller)"
+      "en": "Verden"
     },
     "zurich": {
       "de": "Zürich",
-      "en": "Zurich",
-      "de-LS": "Zürich"
+      "en": "Zurich"
     },
     "davenport": {
       "de": "Davenport",
-      "en": "Davenport",
-      "de-LS": "Davenport"
+      "en": "Davenport"
     },
     "provincetown": {
       "de": "Provincetown",
-      "en": "Provincetown",
-      "de-LS": "Provincetown"
+      "en": "Provincetown"
     },
     "stegopul": {
       "de": "Stegopul",
-      "en": "Stegopul",
-      "de-LS": "Stegopul"
+      "en": "Stegopul"
     },
     "vlore": {
       "de": "Vlora",
-      "en": "Vlorë",
-      "de-LS": "Vlora"
+      "en": "Vlorë"
     },
     "epinay-sur-orge": {
       "de": "Épinay-sur-Orge",
-      "en": "Épinay-sur-Orge",
-      "de-LS": "Épinay-sur-Orge"
+      "en": "Épinay-sur-Orge"
     },
     "bakhchysarai": {
       "de": "Bachtschyssaraj",
-      "en": "Bakhchysarai",
-      "de-LS": "Bachtschyssaraj"
+      "en": "Bakhchysarai"
     },
     "carei": {
       "de": "Großkarol",
-      "en": "Carei",
-      "de-LS": "Großkarol"
+      "en": "Carei"
     },
     "budapest": {
       "de": "Budapest",
-      "en": "Budapest",
-      "de-LS": "Budapest"
+      "en": "Budapest"
     },
     "ardwick": {
       "de": "Ardwick",
-      "en": "Ardwick",
-      "de-LS": "Ardwick"
+      "en": "Ardwick"
     },
     "st-mary-s-hospital": {
       "de": "St Mary's Hospital",
-      "en": "St Mary's Hospital",
-      "de-LS": "St Mary's Hospital"
+      "en": "St Mary's Hospital"
     },
     "lusignan": {
       "de": "Lusignan",
-      "en": "Lusignan",
-      "de-LS": "Lusignan"
+      "en": "Lusignan"
     },
     "saint-maurice": {
       "de": "Saint-Maurice",
-      "en": "Saint-Maurice",
-      "de-LS": "Saint-Maurice"
+      "en": "Saint-Maurice"
     },
     "portage": {
       "de": "Portage",
-      "en": "Portage",
-      "de-LS": "Portage"
+      "en": "Portage"
     },
     "wilkes-barre": {
       "de": "Wilkes-Barre",
-      "en": "Wilkes-Barre",
-      "de-LS": "Wilkes-Barre"
+      "en": "Wilkes-Barre"
     },
     "springfield": {
       "de": "Springfield",
-      "en": "Springfield",
-      "de-LS": "Springfield"
+      "en": "Springfield"
     },
     "geraldton": {
       "de": "Geraldton",
-      "en": "Geraldton",
-      "de-LS": "Geraldton"
+      "en": "Geraldton"
     },
     "subiaco": {
       "de": "Subiaco",
-      "en": "Subiaco",
-      "de-LS": "Subiaco"
+      "en": "Subiaco"
     },
     "thornton-heath": {
       "de": "Thornton Heath",
-      "en": "Thornton Heath",
-      "de-LS": "Thornton Heath"
+      "en": "Thornton Heath"
     },
     "porthcurno": {
       "de": "Porthcurno",
-      "en": "Porthcurno",
-      "de-LS": "Porthcurno"
+      "en": "Porthcurno"
     },
     "sawin": {
       "de": "Sawin",
-      "en": "Sawin",
-      "de-LS": "Sawin"
+      "en": "Sawin"
     },
     "aldeburgh": {
       "de": "Aldeburgh",
-      "en": "Aldeburgh",
-      "de-LS": "Aldeburgh"
+      "en": "Aldeburgh"
     },
     "brighton": {
       "de": "Brighton",
-      "en": "Brighton",
-      "de-LS": "Brighton"
+      "en": "Brighton"
     },
     "ashbourne": {
       "de": "Ashbourne",
-      "en": "Ashbourne",
-      "de-LS": "Ashbourne"
+      "en": "Ashbourne"
     },
     "clacton-on-sea": {
       "de": "Clacton-on-Sea",
-      "en": "Clacton-on-Sea",
-      "de-LS": "Clacton-on-Sea"
+      "en": "Clacton-on-Sea"
     },
     "brooklyn": {
       "de": "Brooklyn",
-      "en": "Brooklyn",
-      "de-LS": "Brooklyn"
+      "en": "Brooklyn"
     },
     "good-samaritan-hospital": {
       "de": "Good Samaritan Hospital",
-      "en": "Good Samaritan Hospital",
-      "de-LS": "Good Samaritan Hospital"
+      "en": "Good Samaritan Hospital"
     },
     "mannheim": {
       "de": "Mannheim",
-      "en": "Mannheim",
-      "de-LS": "Mannheim"
+      "en": "Mannheim"
     },
     "colon": {
       "de": "Colón",
-      "en": "Colón",
-      "de-LS": "Colón"
+      "en": "Colón"
     },
     "montevideo": {
       "de": "Montevideo",
-      "en": "Montevideo",
-      "de-LS": "Montevideo"
+      "en": "Montevideo"
     },
     "england": {
       "de": "England",
-      "en": "England",
-      "de-LS": "England"
+      "en": "England"
     },
     "finnish-church-parish": {
       "de": "Finnish church parish",
-      "en": "Finnish church parish",
-      "de-LS": "Finnish church parish"
+      "en": "Finnish church parish"
     },
     "danderyd": {
       "de": "Danderyd",
-      "en": "Danderyd",
-      "de-LS": "Danderyd"
+      "en": "Danderyd"
     },
     "half-morton": {
       "de": "Half Morton",
-      "en": "Half Morton",
-      "de-LS": "Half Morton"
+      "en": "Half Morton"
     },
     "groeningen": {
       "de": "Gröningen",
-      "en": "Gröningen",
-      "de-LS": "Gröningen"
+      "en": "Gröningen"
     },
     "wangen-im-allgaeu": {
       "de": "Wangen im Allgäu",
-      "en": "Wangen im Allgäu",
-      "de-LS": "Wangen im Allgäu"
+      "en": "Wangen im Allgäu"
     },
     "wilmington": {
       "de": "Wilmington",
-      "en": "Wilmington",
-      "de-LS": "Wilmington"
+      "en": "Wilmington"
     },
     "washington-d-c": {
       "de": "Washington, D.C.",
-      "en": "Washington, D.C.",
-      "de-LS": "Washington, D.C."
+      "en": "Washington, D.C."
     },
     "yeniseysk": {
       "de": "Jenisseisk",
-      "en": "Yeniseysk",
-      "de-LS": "Jenisseisk"
+      "en": "Yeniseysk"
     },
     "bures-sur-yvette": {
       "de": "Bures-sur-Yvette",
-      "en": "Bures-sur-Yvette",
-      "de-LS": "Bures-sur-Yvette"
+      "en": "Bures-sur-Yvette"
     },
     "pushkin": {
       "de": "Puschkin",
-      "en": "Pushkin",
-      "de-LS": "Puschkin"
+      "en": "Pushkin"
     },
     "berlin": {
       "de": "Berlin",
-      "en": "Berlin",
-      "de-LS": "Berlin"
+      "en": "Berlin"
     },
     "jamaica-plain": {
       "de": "Jamaica Plain",
-      "en": "Jamaica Plain",
-      "de-LS": "Jamaica Plain"
+      "en": "Jamaica Plain"
     },
     "le-francois": {
       "de": "Le François",
-      "en": "Le François",
-      "de-LS": "Le François"
+      "en": "Le François"
     },
     "fort-de-france": {
       "de": "Fort-de-France",
-      "en": "Fort-de-France",
-      "de-LS": "Fort-de-France"
+      "en": "Fort-de-France"
     },
     "tver-oblast": {
       "de": "Oblast Twer",
-      "en": "Tver Oblast",
-      "de-LS": "Oblast Twer"
+      "en": "Tver Oblast"
     },
     "bergen": {
       "de": "Bergen",
-      "en": "Bergen",
-      "de-LS": "Bergen"
+      "en": "Bergen"
     },
     "oslo": {
       "de": "Oslo",
-      "en": "Oslo",
-      "de-LS": "Oslo"
+      "en": "Oslo"
     },
     "gorzow-wielkopolski": {
       "de": "Gorzów Wielkopolski",
-      "en": "Gorzów Wielkopolski",
-      "de-LS": "Gorzów Wielkopolski"
+      "en": "Gorzów Wielkopolski"
     },
     "duesseldorf": {
       "de": "Düsseldorf",
-      "en": "Düsseldorf",
-      "de-LS": "Düsseldorf"
+      "en": "Düsseldorf"
     },
     "rome": {
       "de": "Rom",
-      "en": "Rome",
-      "de-LS": "Rom"
+      "en": "Rome"
     },
     "cummertrees": {
       "de": "Cummertrees",
-      "en": "Cummertrees",
-      "de-LS": "Cummertrees"
+      "en": "Cummertrees"
     },
     "new-bedford": {
       "de": "New Bedford",
-      "en": "New Bedford",
-      "de-LS": "New Bedford"
+      "en": "New Bedford"
     },
     "portland": {
       "de": "Portland",
-      "en": "Portland",
-      "de-LS": "Portland"
+      "en": "Portland"
     },
     "monastyryska": {
       "de": "Monastyryska",
-      "en": "Monastyryska",
-      "de-LS": "Monastyryska"
+      "en": "Monastyryska"
     },
     "ottawa": {
       "de": "Ottawa",
-      "en": "Ottawa",
-      "de-LS": "Ottawa"
+      "en": "Ottawa"
     },
     "tioga-county": {
       "de": "Tioga County",
-      "en": "Tioga County",
-      "de-LS": "Tioga County"
+      "en": "Tioga County"
     },
     "cheyenne": {
       "de": "Cheyenne",
-      "en": "Cheyenne",
-      "de-LS": "Cheyenne"
+      "en": "Cheyenne"
     },
     "barton-on-sea": {
       "de": "Barton on Sea",
-      "en": "Barton on Sea",
-      "de-LS": "Barton on Sea"
+      "en": "Barton on Sea"
     },
     "mexico-city": {
       "de": "Mexiko-Stadt",
-      "en": "Mexico City",
-      "de-LS": "Mexiko-Stadt"
+      "en": "Mexico City"
     },
     "salem": {
       "de": "Salem",
-      "en": "Salem",
-      "de-LS": "Salem"
+      "en": "Salem"
     },
     "pittsburgh": {
       "de": "Pittsburgh",
-      "en": "Pittsburgh",
-      "de-LS": "Pittsburgh"
+      "en": "Pittsburgh"
     },
     "wilberforce": {
       "de": "Wilberforce",
-      "en": "Wilberforce",
-      "de-LS": "Wilberforce"
+      "en": "Wilberforce"
     },
     "fernhurst": {
       "de": "Fernhurst",
-      "en": "Fernhurst",
-      "de-LS": "Fernhurst"
+      "en": "Fernhurst"
     },
     "royal-tunbridge-wells": {
       "de": "Royal Tunbridge Wells",
-      "en": "Royal Tunbridge Wells",
-      "de-LS": "Royal Tunbridge Wells"
+      "en": "Royal Tunbridge Wells"
     },
     "hailsham": {
       "de": "Hailsham",
-      "en": "Hailsham",
-      "de-LS": "Hailsham"
+      "en": "Hailsham"
     },
     "county-sligo": {
       "de": "County Sligo",
-      "en": "County Sligo",
-      "de-LS": "County Sligo"
+      "en": "County Sligo"
     },
     "ryde": {
       "de": "Ryde",
-      "en": "Ryde",
-      "de-LS": "Ryde"
+      "en": "Ryde"
     },
     "blenheim": {
       "de": "Blenheim",
-      "en": "Blenheim",
-      "de-LS": "Blenheim"
+      "en": "Blenheim"
     },
     "barcelona": {
       "de": "Barcelona",
-      "en": "Barcelona",
-      "de-LS": "Barcelona"
+      "en": "Barcelona"
     },
     "kilingi-nomme": {
       "de": "Kilingi-Nõmme",
-      "en": "Kilingi-Nõmme",
-      "de-LS": "Kilingi-Nõmme"
+      "en": "Kilingi-Nõmme"
     },
     "tallinn": {
       "de": "Tallinn",
-      "en": "Tallinn",
-      "de-LS": "Tallinn"
+      "en": "Tallinn"
     },
     "dexter": {
       "de": "Dexter",
-      "en": "Dexter",
-      "de-LS": "Dexter"
+      "en": "Dexter"
     },
     "boston": {
       "de": "Boston",
-      "en": "Boston",
-      "de-LS": "Boston"
+      "en": "Boston"
     },
     "rotterdam": {
       "de": "Rotterdam",
-      "en": "Rotterdam",
-      "de-LS": "Rotterdam"
+      "en": "Rotterdam"
     },
     "munich": {
       "de": "München",
-      "en": "Munich",
-      "de-LS": "München"
+      "en": "Munich"
     },
     "bad-arolsen": {
       "de": "Bad Arolsen",
-      "en": "Bad Arolsen",
-      "de-LS": "Bad Arolsen"
+      "en": "Bad Arolsen"
     },
     "kassel": {
       "de": "Kassel",
-      "en": "Kassel",
-      "de-LS": "Kassel"
+      "en": "Kassel"
     },
     "naples": {
       "de": "Neapel",
-      "en": "Naples",
-      "de-LS": "Neapel"
+      "en": "Naples"
     },
     "rubislaw-den-nursing-home-including-gatepiers-and-walls-27-rubislaw-den-north-aberdeen": {
       "de": "Rubislaw Den Nursing Home Including Gatepiers And Walls, 27 Rubislaw Den North, Aberdeen",
-      "en": "Rubislaw Den Nursing Home Including Gatepiers And Walls, 27 Rubislaw Den North, Aberdeen",
-      "de-LS": "Rubislaw Den Nursing Home Including Gatepiers And Walls, 27 Rubislaw Den North, Aberdeen"
+      "en": "Rubislaw Den Nursing Home Including Gatepiers And Walls, 27 Rubislaw Den North, Aberdeen"
     },
     "honfleur": {
       "de": "Honfleur",
-      "en": "Honfleur",
-      "de-LS": "Honfleur"
+      "en": "Honfleur"
     },
     "sydney": {
       "de": "Sydney",
-      "en": "Sydney",
-      "de-LS": "Sydney"
+      "en": "Sydney"
     },
     "montgomery": {
       "de": "Montgomery",
-      "en": "Montgomery",
-      "de-LS": "Montgomery"
+      "en": "Montgomery"
     },
     "richmond": {
       "de": "Richmond",
-      "en": "Richmond",
-      "de-LS": "Richmond"
+      "en": "Richmond"
     },
     "saint-josse-ten-noode": {
       "de": "Sint-Joost-ten-Node",
-      "en": "Saint-Josse-ten-Noode",
-      "de-LS": "Sint-Joost-ten-Node"
+      "en": "Saint-Josse-ten-Noode"
     },
     "clevedon": {
       "de": "Clevedon",
-      "en": "Clevedon",
-      "de-LS": "Clevedon"
+      "en": "Clevedon"
     },
     "lampazos-de-naranjo": {
       "de": "Lampazos de Naranjo",
-      "en": "Lampazos de Naranjo",
-      "de-LS": "Lampazos de Naranjo"
+      "en": "Lampazos de Naranjo"
     },
     "san-antonio": {
       "de": "San Antonio",
-      "en": "San Antonio",
-      "de-LS": "San Antonio"
+      "en": "San Antonio"
     },
     "piguee": {
       "de": "Pigüé",
-      "en": "Pigüé",
-      "de-LS": "Pigüé"
+      "en": "Pigüé"
     },
     "buenos-aires": {
       "de": "Buenos Aires",
-      "en": "Buenos Aires",
-      "de-LS": "Buenos Aires"
+      "en": "Buenos Aires"
     },
     "goring-on-thames": {
       "de": "Goring-on-Thames",
-      "en": "Goring-on-Thames",
-      "de-LS": "Goring-on-Thames"
+      "en": "Goring-on-Thames"
     },
     "geneva": {
       "de": "Genf",
-      "en": "Geneva",
-      "de-LS": "Genf"
+      "en": "Geneva"
     },
     "nove-mesto-nad-vahom": {
       "de": "Nové Mesto nad Váhom",
-      "en": "Nové Mesto nad Váhom",
-      "de-LS": "Nové Mesto nad Váhom"
+      "en": "Nové Mesto nad Váhom"
     },
     "vienna": {
       "de": "Wien",
-      "en": "Vienna",
-      "de-LS": "Wien"
+      "en": "Vienna"
     },
     "luxembourg": {
       "de": "Luxemburg",
-      "en": "Luxembourg",
-      "de-LS": "Luxemburg"
+      "en": "Luxembourg"
     },
     "cabris": {
       "de": "Cabris",
-      "en": "Cabris",
-      "de-LS": "Cabris"
+      "en": "Cabris"
     },
     "brest": {
       "de": "Brest",
-      "en": "Brest",
-      "de-LS": "Brest"
+      "en": "Brest"
     },
     "surrey": {
       "de": "Surrey",
-      "en": "Surrey",
-      "de-LS": "Surrey"
+      "en": "Surrey"
     },
     "helsinki": {
       "de": "Helsinki",
-      "en": "Helsinki",
-      "de-LS": "Helsinki"
+      "en": "Helsinki"
     },
     "orselina": {
       "de": "Orselina",
-      "en": "Orselina",
-      "de-LS": "Orselina"
+      "en": "Orselina"
     },
     "plainfield": {
       "de": "Plainfield",
-      "en": "Plainfield",
-      "de-LS": "Plainfield"
+      "en": "Plainfield"
     },
     "preston": {
       "de": "Preston",
-      "en": "Preston",
-      "de-LS": "Preston"
+      "en": "Preston"
     },
     "llanrhos": {
       "de": "Llanrhos",
-      "en": "Llanrhos",
-      "de-LS": "Llanrhos"
+      "en": "Llanrhos"
     },
     "malden": {
       "de": "Malden",
-      "en": "Malden",
-      "de-LS": "Malden"
+      "en": "Malden"
     },
     "sighetu-marmatiei": {
       "de": "Marmaroschsiget",
-      "en": "Sighetu Marmației",
-      "de-LS": "Marmaroschsiget"
+      "en": "Sighetu Marmației"
     },
     "haarlem": {
       "de": "Haarlem",
-      "en": "Haarlem",
-      "de-LS": "Haarlem"
+      "en": "Haarlem"
     },
     "the-hague": {
       "de": "Den Haag",
-      "en": "The Hague",
-      "de-LS": "Den Haag"
+      "en": "The Hague"
     },
     "bern": {
       "de": "Bern",
-      "en": "Bern",
-      "de-LS": "Bern"
+      "en": "Bern"
     },
     "minusio": {
       "de": "Minusio",
-      "en": "Minusio",
-      "de-LS": "Minusio"
+      "en": "Minusio"
     },
     "pretoria": {
       "de": "Pretoria",
-      "en": "Pretoria",
-      "de-LS": "Pretoria"
+      "en": "Pretoria"
     },
     "amsterdam": {
       "de": "Amsterdam",
-      "en": "Amsterdam",
-      "de-LS": "Amsterdam"
+      "en": "Amsterdam"
     },
     "mossley-hill": {
       "de": "Mossley Hill",
-      "en": "Mossley Hill",
-      "de-LS": "Mossley Hill"
+      "en": "Mossley Hill"
     },
     "forest-hill": {
       "de": "Forest Hill",
-      "en": "Forest Hill",
-      "de-LS": "Forest Hill"
+      "en": "Forest Hill"
     },
     "newport": {
       "de": "Newport",
-      "en": "Newport",
-      "de-LS": "Newport"
+      "en": "Newport"
     },
     "oxfordshire": {
       "de": "Oxfordshire",
-      "en": "Oxfordshire",
-      "de-LS": "Oxfordshire"
+      "en": "Oxfordshire"
     },
     "christchurch": {
       "de": "Christchurch",
-      "en": "Christchurch",
-      "de-LS": "Christchurch"
+      "en": "Christchurch"
     },
     "hammersmith": {
       "de": "Hammersmith",
-      "en": "Hammersmith",
-      "de-LS": "Hammersmith"
+      "en": "Hammersmith"
     },
     "groningen": {
       "de": "Groningen",
-      "en": "Groningen",
-      "de-LS": "Groningen"
+      "en": "Groningen"
     },
     "hamburg": {
       "de": "Hamburg",
-      "en": "Hamburg",
-      "de-LS": "Hamburg"
+      "en": "Hamburg"
     },
     "iwamura-domain": {
       "de": "Iwamura Domain",
-      "en": "Iwamura Domain",
-      "de-LS": "Iwamura Domain"
+      "en": "Iwamura Domain"
     },
     "tokyo": {
       "de": "Tokio",
-      "en": "Tokyo",
-      "de-LS": "Tokio"
+      "en": "Tokyo"
     },
     "franklin-county": {
       "de": "Franklin County",
-      "en": "Franklin County",
-      "de-LS": "Franklin County"
+      "en": "Franklin County"
     },
     "lexington": {
       "de": "Lexington",
-      "en": "Lexington",
-      "de-LS": "Lexington"
+      "en": "Lexington"
     },
     "sychyovsky-uyezd": {
       "de": "Sychyovsky Uyezd",
-      "en": "Sychyovsky Uyezd",
-      "de-LS": "Sychyovsky Uyezd"
+      "en": "Sychyovsky Uyezd"
     },
     "constantinople": {
       "de": "Konstantinopel",
-      "en": "Constantinople",
-      "de-LS": "Konstantinopel"
+      "en": "Constantinople"
     },
     "beelitz": {
       "de": "Beelitz",
-      "en": "Beelitz",
-      "de-LS": "Beelitz"
+      "en": "Beelitz"
     },
     "eidsvoll-municipality": {
       "de": "Eidsvoll",
-      "en": "Eidsvoll Municipality",
-      "de-LS": "Eidsvoll"
+      "en": "Eidsvoll Municipality"
     },
     "leicester": {
       "de": "Leicester",
-      "en": "Leicester",
-      "de-LS": "Leicester"
+      "en": "Leicester"
     },
     "twickenham": {
       "de": "Twickenham",
-      "en": "Twickenham",
-      "de-LS": "Twickenham"
+      "en": "Twickenham"
     },
     "olomouc": {
       "de": "Olmütz",
-      "en": "Olomouc",
-      "de-LS": "Olmütz"
+      "en": "Olomouc"
     },
     "st-mary-bourne": {
       "de": "St Mary Bourne",
-      "en": "St Mary Bourne",
-      "de-LS": "St Mary Bourne"
+      "en": "St Mary Bourne"
     },
     "hove": {
       "de": "Hove",
-      "en": "Hove",
-      "de-LS": "Hove"
+      "en": "Hove"
     },
     "brockdish": {
       "de": "Brockdish",
-      "en": "Brockdish",
-      "de-LS": "Brockdish"
+      "en": "Brockdish"
     },
     "white-hall": {
       "de": "White Hall",
-      "en": "White Hall",
-      "de-LS": "White Hall"
+      "en": "White Hall"
     },
     "kentucky": {
       "de": "Kentucky",
-      "en": "Kentucky",
-      "de-LS": "Kentucky"
+      "en": "Kentucky"
     },
     "dartford": {
       "de": "Dartford",
-      "en": "Dartford",
-      "de-LS": "Dartford"
+      "en": "Dartford"
     },
     "fort-valley": {
       "de": "Fort Valley",
-      "en": "Fort Valley",
-      "de-LS": "Fort Valley"
+      "en": "Fort Valley"
     },
     "claines": {
       "de": "Claines",
-      "en": "Claines",
-      "de-LS": "Claines"
+      "en": "Claines"
     },
     "plymouth": {
       "de": "Plymouth",
-      "en": "Plymouth",
-      "de-LS": "Plymouth"
+      "en": "Plymouth"
     },
     "upper-norwood": {
       "de": "Upper Norwood",
-      "en": "Upper Norwood",
-      "de-LS": "Upper Norwood"
+      "en": "Upper Norwood"
     },
     "centralia": {
       "de": "Centralia",
-      "en": "Centralia",
-      "de-LS": "Centralia"
+      "en": "Centralia"
     },
     "berwickshire": {
       "de": "Berwickshire",
-      "en": "Berwickshire",
-      "de-LS": "Berwickshire"
+      "en": "Berwickshire"
     },
     "county-of-london": {
       "de": "County of London",
-      "en": "County of London",
-      "de-LS": "County of London"
+      "en": "County of London"
     },
     "lausanne": {
       "de": "Lausanne",
-      "en": "Lausanne",
-      "de-LS": "Lausanne"
+      "en": "Lausanne"
     },
     "llansanffraid-ym-mechain": {
       "de": "Llansanffraid-ym-Mechain",
-      "en": "Llansanffraid-ym-Mechain",
-      "de-LS": "Llansanffraid-ym-Mechain"
+      "en": "Llansanffraid-ym-Mechain"
     },
     "oswestry": {
       "de": "Oswestry",
-      "en": "Oswestry",
-      "de-LS": "Oswestry"
+      "en": "Oswestry"
     },
     "sixmilebridge": {
       "de": "Sixmilebridge",
-      "en": "Sixmilebridge",
-      "de-LS": "Sixmilebridge"
+      "en": "Sixmilebridge"
     },
     "havant": {
       "de": "Havant",
-      "en": "Havant",
-      "de-LS": "Havant"
+      "en": "Havant"
     },
     "glasgow": {
       "de": "Glasgow",
-      "en": "Glasgow",
-      "de-LS": "Glasgow"
+      "en": "Glasgow"
     },
     "copenhagen": {
       "de": "Kopenhagen",
-      "en": "Copenhagen",
-      "de-LS": "Kopenhagen"
+      "en": "Copenhagen"
     },
     "mezieres-en-drouais": {
       "de": "Mézières-en-Drouais",
-      "en": "Mézières-en-Drouais",
-      "de-LS": "Mézières-en-Drouais"
+      "en": "Mézières-en-Drouais"
     },
     "asnieres-sur-seine": {
       "de": "Asnières-sur-Seine",
-      "en": "Asnières-sur-Seine",
-      "de-LS": "Asnières-sur-Seine"
+      "en": "Asnières-sur-Seine"
     },
     "pirna": {
       "de": "Pirna",
-      "en": "Pirna",
-      "de-LS": "Pirna"
+      "en": "Pirna"
     },
     "weimar": {
       "de": "Weimar",
-      "en": "Weimar",
-      "de-LS": "Weimar"
+      "en": "Weimar"
     },
     "swansea": {
       "de": "Swansea",
-      "en": "Swansea",
-      "de-LS": "Swansea"
+      "en": "Swansea"
     },
     "ramarama": {
       "de": "Ramarama",
-      "en": "Ramarama",
-      "de-LS": "Ramarama"
+      "en": "Ramarama"
     },
     "whangarei": {
       "de": "Whangarei",
-      "en": "Whangārei",
-      "de-LS": "Whangarei"
+      "en": "Whangārei"
     },
     "llanengan": {
       "de": "Llanengan",
-      "en": "Llanengan",
-      "de-LS": "Llanengan"
+      "en": "Llanengan"
     },
     "arbroath": {
       "de": "Arbroath",
-      "en": "Arbroath",
-      "de-LS": "Arbroath"
+      "en": "Arbroath"
     },
     "montrose": {
       "de": "Montrose",
-      "en": "Montrose",
-      "de-LS": "Montrose"
+      "en": "Montrose"
     },
     "perth": {
       "de": "Perth",
-      "en": "Perth",
-      "de-LS": "Perth"
+      "en": "Perth"
     },
     "coleraine": {
       "de": "Coleraine",
-      "en": "Coleraine",
-      "de-LS": "Coleraine"
+      "en": "Coleraine"
     },
     "paddington": {
       "de": "Paddington",
-      "en": "Paddington",
-      "de-LS": "Paddington"
+      "en": "Paddington"
     },
     "united-kingdom": {
       "de": "Vereinigtes Königreich",
-      "en": "United Kingdom",
-      "de-LS": "Vereinigtes Königreich"
+      "en": "United Kingdom"
     },
     "rochdale": {
       "de": "Rochdale",
-      "en": "Rochdale",
-      "de-LS": "Rochdale"
+      "en": "Rochdale"
     },
     "boscawen": {
       "de": "Boscawen",
-      "en": "Boscawen",
-      "de-LS": "Boscawen"
+      "en": "Boscawen"
     },
     "brookline": {
       "de": "Brookline",
-      "en": "Brookline",
-      "de-LS": "Brookline"
+      "en": "Brookline"
     },
     "fleckeby": {
       "de": "Fleckeby",
-      "en": "Fleckeby",
-      "de-LS": "Fleckeby"
+      "en": "Fleckeby"
     },
     "gentofte-parish": {
       "de": "Gentofte Parish",
-      "en": "Gentofte Parish",
-      "de-LS": "Gentofte Parish"
+      "en": "Gentofte Parish"
     },
     "dozwil": {
       "de": "Dozwil",
-      "en": "Dozwil",
-      "de-LS": "Dozwil"
+      "en": "Dozwil"
     },
     "munich-prison": {
       "de": "Justizvollzugsanstalt München",
-      "en": "Munich Prison",
-      "de-LS": "Justizvollzugsanstalt München"
+      "en": "Munich Prison"
     },
     "frankfurt": {
       "de": "Frankfurt am Main",
-      "en": "Frankfurt",
-      "de-LS": "Frankfurt am Main"
+      "en": "Frankfurt"
     },
     "magherafelt": {
       "de": "Magherafelt",
-      "en": "Magherafelt",
-      "de-LS": "Magherafelt"
+      "en": "Magherafelt"
     },
     "new-lynn": {
       "de": "New Lynn",
-      "en": "New Lynn",
-      "de-LS": "New Lynn"
+      "en": "New Lynn"
     },
     "bloomsbury": {
       "de": "Bloomsbury",
-      "en": "Bloomsbury",
-      "de-LS": "Bloomsbury"
+      "en": "Bloomsbury"
     },
     "saffron-walden": {
       "de": "Saffron Walden",
-      "en": "Saffron Walden",
-      "de-LS": "Saffron Walden"
+      "en": "Saffron Walden"
     },
     "bothwell": {
       "de": "Bothwell",
-      "en": "Bothwell",
-      "de-LS": "Bothwell"
+      "en": "Bothwell"
     },
     "lowell": {
       "de": "Lowell",
-      "en": "Lowell",
-      "de-LS": "Lowell"
+      "en": "Lowell"
     },
     "delemont": {
       "de": "Delsberg",
-      "en": "Delémont",
-      "de-LS": "Delsberg"
+      "en": "Delémont"
     },
     "evilard": {
       "de": "Leubringen",
-      "en": "Evilard",
-      "de-LS": "Leubringen"
+      "en": "Evilard"
     },
     "greater-london": {
       "de": "Groß-London",
-      "en": "Greater London",
-      "de-LS": "Groß-London"
+      "en": "Greater London"
     },
     "antibes": {
       "de": "Antibes",
-      "en": "Antibes",
-      "de-LS": "Antibes"
+      "en": "Antibes"
     },
     "helsingor": {
       "de": "Helsingör",
-      "en": "Helsingør",
-      "de-LS": "Helsingör"
+      "en": "Helsingør"
     },
     "frederiksberg": {
       "de": "Frederiksberg",
-      "en": "Frederiksberg",
-      "de-LS": "Frederiksberg"
+      "en": "Frederiksberg"
     },
     "marylebone": {
       "de": "Marylebone",
-      "en": "Marylebone",
-      "de-LS": "Marylebone"
+      "en": "Marylebone"
     },
     "fulham": {
       "de": "Fulham",
-      "en": "Fulham",
-      "de-LS": "Fulham"
+      "en": "Fulham"
     },
     "faergelanda": {
       "de": "Färgelanda",
-      "en": "Färgelanda",
-      "de-LS": "Färgelanda"
+      "en": "Färgelanda"
     },
     "east-river": {
       "de": "East River",
-      "en": "East River",
-      "de-LS": "East River"
+      "en": "East River"
     },
     "brussels": {
       "de": "Brüssel",
-      "en": "Brussels",
-      "de-LS": "Brüssel"
+      "en": "Brussels"
     },
     "le-lavandou": {
       "de": "Le Lavandou",
-      "en": "Le Lavandou",
-      "de-LS": "Le Lavandou"
+      "en": "Le Lavandou"
     },
     "bedminster": {
       "de": "Bedminster",
-      "en": "Bedminster",
-      "de-LS": "Bedminster"
+      "en": "Bedminster"
     },
     "ealing": {
       "de": "Ealing",
-      "en": "Ealing",
-      "de-LS": "Ealing"
+      "en": "Ealing"
     },
     "united-states": {
       "de": "Vereinigte Staaten",
-      "en": "United States",
-      "de-LS": "Vereinigte Staaten"
+      "en": "United States"
     },
     "presidencies-and-provinces-in-british-india": {
       "de": "Provinzen Indiens",
-      "en": "presidencies and provinces in British India",
-      "de-LS": "Provinzen Indiens"
+      "en": "presidencies and provinces in British India"
     },
     "middelburg": {
       "de": "Middelburg",
-      "en": "Middelburg",
-      "de-LS": "Middelburg"
+      "en": "Middelburg"
     },
     "ayr": {
       "de": "Ayr",
-      "en": "Ayr",
-      "de-LS": "Ayr"
+      "en": "Ayr"
     },
     "vorden": {
       "de": "Vorden",
-      "en": "Vorden",
-      "de-LS": "Vorden"
+      "en": "Vorden"
     },
     "oakland": {
       "de": "Oakland",
-      "en": "Oakland",
-      "de-LS": "Oakland"
+      "en": "Oakland"
     },
     "ketandan": {
       "de": "Ketandan",
-      "en": "Ketandan",
-      "de-LS": "Ketandan"
+      "en": "Ketandan"
     },
     "zagreb": {
       "de": "Zagreb",
-      "en": "Zagreb",
-      "de-LS": "Zagreb"
+      "en": "Zagreb"
     },
     "bad-voeslau": {
       "de": "Bad Vöslau",
-      "en": "Bad Vöslau",
-      "de-LS": "Bad Vöslau"
+      "en": "Bad Vöslau"
     },
     "sutton-coldfield": {
       "de": "Royal Sutton Coldfield",
-      "en": "Sutton Coldfield",
-      "de-LS": "Royal Sutton Coldfield"
+      "en": "Sutton Coldfield"
     },
     "regent-s-park": {
       "de": "Regent’s Park",
-      "en": "Regent's Park",
-      "de-LS": "Regent’s Park"
+      "en": "Regent's Park"
     },
     "armagh": {
       "de": "Armagh",
-      "en": "Armagh",
-      "de-LS": "Armagh"
+      "en": "Armagh"
     },
     "newquay": {
       "de": "Newquay",
-      "en": "Newquay",
-      "de-LS": "Newquay"
+      "en": "Newquay"
     },
     "hereford": {
       "de": "Hereford",
-      "en": "Hereford",
-      "de-LS": "Hereford"
+      "en": "Hereford"
     },
     "cardiff": {
       "de": "Cardiff",
-      "en": "Cardiff",
-      "de-LS": "Cardiff"
+      "en": "Cardiff"
     }
   }
 }

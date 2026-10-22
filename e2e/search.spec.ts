@@ -1,5 +1,7 @@
 import { expect, test, type Page } from "@playwright/test";
 
+import { switchView, waitForHydration } from "./helpers";
+
 const openPanel = async (page: Page) => {
   await page.getByRole("button", { name: "Suche", exact: true }).click();
   const dialog = page.getByRole("dialog", { name: "Suche" });
@@ -117,12 +119,13 @@ test("the search survives opening and closing a biography and switching views", 
   await expect(page).toHaveURL(/\/personen\/clara-zetkin\?q=zetkin$/);
   await page.getByRole("link", { name: "Schließen" }).click();
   await expect(page).toHaveURL(/\/personen\/liste\?q=zetkin$/);
-  await page.getByRole("group", { name: "Ansicht" }).getByRole("link", { name: "Bilder" }).click();
+  await switchView(page, "Mosaik");
   await expect(page).toHaveURL(/\/personen\?q=zetkin$/);
 });
 
 test("searching from the start page opens the overview", async ({ page }) => {
   await page.goto("/");
+  await waitForHydration(page);
   const dialog = await openPanel(page);
   await dialog.getByLabel("Nach Namen suchen").fill("dohm");
   await submit(dialog).click();

@@ -12,6 +12,7 @@ import path from "node:path";
 
 import sharp from "sharp";
 
+import { brandInitials } from "../app/lib/brand";
 import siteConfig from "../site.config";
 
 const OUT = path.resolve("public/icons");
@@ -20,13 +21,8 @@ const locale = siteConfig.defaultLocale;
 const name = siteConfig.brand.name[locale]!;
 const wordmark = siteConfig.brand.wordmark[locale]!;
 
-/** "Ihre Stimme" → "IS", "Her Voice" → "HV", single words → first letter. */
-const initials = wordmark
-  .split(/\s+/)
-  .filter(Boolean)
-  .slice(0, 2)
-  .map((word) => word[0]!.toUpperCase())
-  .join("");
+/** The same monogram as in the navigation (app/lib/brand.ts). */
+const initials = brandInitials(wordmark);
 
 const escape = (text: string) => text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
 

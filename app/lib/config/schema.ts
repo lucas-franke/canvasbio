@@ -73,16 +73,16 @@ export const siteConfigSchema = z.object({
   locales: z
     .array(
       z.object({
-        /** Content locale and key for translations, e.g. "de", "en", "de-LS". */
+        /** Content locale and key for translations, e.g. "de", "en". */
         code: localeCode,
         /** First URL segment for this locale; "" for the default locale (no prefix). */
         prefix: z.string().regex(/^([a-z0-9]+(-[a-z0-9]+)*)?$/),
-        /** Value for the HTML lang attribute (Leichte Sprache is still "de"). */
+        /** Value for the HTML lang attribute (e.g. "de" for a German variant). */
         htmlLang: z.string(),
         /** Name of the language in that language, for the switcher. */
         label: z.string(),
         /**
-         * Whether every person must have a text in this locale. If false (e.g. Leichte Sprache),
+         * Whether every person must have a text in this locale. If false (e.g. an easy-to-read variant),
          * missing texts show a notice instead of silently falling back to another language.
          */
         contentRequired: z.boolean().default(true),
@@ -139,6 +139,18 @@ export const siteConfigSchema = z.object({
     tileEdge: z.enum(["torn", "none"]),
     /** Very light paper grain on the page background (archival look). */
     paperTexture: z.boolean().default(false),
+    /**
+     * A soft colour gradient laid over the portraits with a CSS blend mode (applied in the
+     * browser, the images stay untouched). The colour defaults to the accent of the current
+     * light/dark mode.
+     */
+    portraitTint: z
+      .object({
+        color: hexColor.optional(),
+        blend: z.enum(["soft-light", "multiply", "color", "overlay"]),
+        opacity: z.number().min(0).max(1),
+      })
+      .optional(),
   }),
 
   start: z.object({
@@ -208,7 +220,6 @@ export const siteConfigSchema = z.object({
 
   features: z.object({
     randomBio: z.boolean(),
-    easyLanguage: z.boolean(),
     themeToggle: z.boolean(),
   }),
 });

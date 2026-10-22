@@ -25,7 +25,10 @@ export interface PeopleIndexState {
 }
 
 const isPeopleIndex = (data: unknown): data is PeopleIndex =>
-  typeof data === "object" && data !== null && Array.isArray((data as PeopleIndex).people);
+  typeof data === "object" &&
+  data !== null &&
+  Array.isArray((data as PeopleIndex).people) &&
+  typeof (data as PeopleIndex).facetLabels === "object";
 
 const cache = new Map<string, PeopleIndex>();
 

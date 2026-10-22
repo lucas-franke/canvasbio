@@ -27,9 +27,8 @@ Beim Aufruf der Website speichert der Server technisch notwendige Daten in Logfi
 Damit die Seite sich Ihre Einstellungen merkt, speichert sie einige Angaben im Speicher Ihres Browsers (localStorage und sessionStorage):
 
 - die gewählte Darstellung (hell, dunkel oder wie Gerät),
-- ob die Namen in der Bilder-Ansicht ausgeblendet sind,
 - welche Biografien Sie geöffnet haben, damit „Zufällige Biografie“ eher Neues zeigt,
-- die Position in der Bilder-Ansicht während eines Besuchs.
+- die Position im Mosaik während eines Besuchs.
 
 Diese Angaben bleiben auf Ihrem Gerät und werden nicht an uns übertragen. Sie sind für die von Ihnen genutzten Funktionen erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG). Sie können sie jederzeit über die Einstellungen Ihres Browsers löschen.
 

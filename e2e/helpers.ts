@@ -1,14 +1,12 @@
 import type { Page } from "@playwright/test";
 
 /**
- * On touch screens the canvas controls (zoom, direction pad) sit behind one
- * button (German label "Porträtwand steuern"); open it there. On desktop they are always
- * visible.
+ * Switches the overview with the "Ansicht" control: it shows only the active view until
+ * it is unfolded. `view` is the German label ("Mosaik", "Liste", "Zeitstrahl").
  */
-export async function openCanvasControls(page: Page, isMobile: boolean) {
-  if (!isMobile) return;
-  const toggle = page.getByRole("button", { name: "Porträtwand steuern" });
-  if ((await toggle.getAttribute("aria-expanded")) !== "true") await toggle.click();
+export async function switchView(page: Page, view: string) {
+  await page.getByRole("button", { name: /^Ansicht/ }).click();
+  await page.getByRole("group", { name: "Ansicht" }).getByRole("link", { name: view }).click();
 }
 
 interface Box {
@@ -27,4 +25,11 @@ export async function navPillBoxes(page: Page, navName = "Hauptnavigation") {
   const groups = page.getByRole("navigation", { name: navName }).locator("> div");
   const boxes = await Promise.all([groups.first().boundingBox(), groups.last().boundingBox()]);
   return boxes.filter((b): b is Box => b !== null && b.width > 0);
+}
+
+/** Waits until React has hydrated the pre-rendered page (clicks before that do nothing). */
+export async function waitForHydration(page: Page) {
+  await page.waitForFunction(() =>
+    Object.keys(document.querySelector("main") ?? document.body).some((key) => key.startsWith("__react")),
+  );
 }

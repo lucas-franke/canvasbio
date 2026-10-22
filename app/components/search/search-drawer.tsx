@@ -1,5 +1,5 @@
 import { cn } from "cn";
-import { Bookmark, Check, MapPin, Search, X } from "lucide-react";
+import { Check, MapPin, Search, X } from "lucide-react";
 import { useEffect, useId, useMemo, useRef, useState, type FormEvent, type KeyboardEvent } from "react";
 import { Link } from "react-router";
 
@@ -17,7 +17,6 @@ import { usePeopleIndex, type PeopleIndex } from "~/lib/content/people-index";
 import { useLocale, useMessages } from "~/lib/i18n";
 import { pagePath } from "~/lib/i18n/locale";
 import { localize } from "~/lib/i18n/localize";
-import { useBookmarks } from "~/lib/preferences";
 import { emptySearch, filterPeople, normalize, suggestPeople, type SearchState } from "~/lib/search/search";
 import {
   setSearchPanelOpen,
@@ -99,10 +98,9 @@ function SearchForm({ index }: { index: PeopleIndex }) {
   const applySearch = useApplySearch();
   const current = useSearch();
   const [draft, setDraft] = useState<SearchState>(current);
-  const [bookmarks] = useBookmarks();
   const count = useMemo(
-    () => filterPeople(index.people, draft, siteConfig.facets, index.facetLabels, bookmarks).length,
-    [index, draft, bookmarks],
+    () => filterPeople(index.people, draft, siteConfig.facets, index.facetLabels).length,
+    [index, draft],
   );
 
   // Screen readers hear the count once typing pauses, not on every key.
@@ -125,13 +123,12 @@ function SearchForm({ index }: { index: PeopleIndex }) {
             { ...draft, facets: { ...draft.facets, [facet.key]: [value] } },
             siteConfig.facets,
             index.facetLabels,
-            bookmarks,
           ).length,
         ]),
       );
     }
     return counts;
-  }, [index, draft, bookmarks]);
+  }, [index, draft]);
 
   const setFacet = (key: string, values: string[]) =>
     setDraft((state) => ({ ...state, facets: { ...state.facets, [key]: values } }));
@@ -203,15 +200,6 @@ function SearchForm({ index }: { index: PeopleIndex }) {
             />
           ),
         )}
-
-        {/* Only offered once something is bookmarked (or the filter is already on). */}
-        {(bookmarks.size > 0 || draft.saved) && (
-          <SavedToggle
-            checked={draft.saved}
-            count={bookmarks.size}
-            onChange={(saved) => setDraft((state) => ({ ...state, saved }))}
-          />
-        )}
       </div>
 
       <div className="flex flex-wrap items-center gap-3 border-t border-line px-6 pt-4 pb-[max(1.5rem,env(safe-area-inset-bottom))]">
@@ -222,7 +210,7 @@ function SearchForm({ index }: { index: PeopleIndex }) {
           type="button"
           variant="control"
           onClick={() => {
-            setDraft(emptySearch);
+            setDraft((state) => ({ ...emptySearch, sort: state.sort }));
             nameInput.current?.focus();
           }}
         >
@@ -336,46 +324,6 @@ function MultiFacet({
         })}
       </div>
     </fieldset>
-  );
-}
-
-/** "Only saved biographies": a single switch-like chip, styled like the facet chips. */
-function SavedToggle({
-  checked,
-  count,
-  onChange,
-}: {
-  checked: boolean;
-  count: number;
-  onChange: (checked: boolean) => void;
-}) {
-  const m = useMessages();
-  return (
-    <div>
-      <label
-        className={cn(
-          "relative inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-full border-2 px-4 text-body-sm font-medium transition-colors",
-          "has-[:focus-visible]:shadow-[0_0_0_6px_var(--c-focus-halo)] has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-focus",
-          checked
-            ? "border-brand bg-brand text-brand-foreground"
-            : "border-control text-emphasis hover:bg-emphasis/5",
-        )}
-      >
-        <input
-          type="checkbox"
-          className="sr-only"
-          checked={checked}
-          onChange={(event) => onChange(event.target.checked)}
-        />
-        {checked ? (
-          <Check aria-hidden="true" className="-ml-1 size-4" />
-        ) : (
-          <Bookmark aria-hidden="true" className="-ml-1 size-4" />
-        )}
-        {m.bookmarks.filter}
-        <span className="text-body-xs tabular-nums">{count}</span>
-      </label>
-    </div>
   );
 }
 

@@ -16,12 +16,12 @@ This website is **partially compliant** with these requirements. The limitations
 
 ## Non-accessible content
 
-- **Easy-to-read German (Leichte Sprache):** only some biographies are available in Leichte Sprache. All others show a notice and the standard German text.
+- **Easy-to-read German (Leichte Sprache):** information in Leichte Sprache is not offered at the moment.
 - **Life stories:** the texts are automatically imported extracts from Wikipedia. Words and quotations in other languages are not marked up as such, so screen readers may pronounce them as English.
 - **Image descriptions:** portraits have an alternative text with the person's name, but no detailed description of the picture.
 - **Sign language:** information in German Sign Language is not offered at the moment.
 
-The portrait wall can be used with the keyboard and with buttons, without swiping. For screen readers, the **list view** is the equivalent alternative with the same content.
+The mosaic can be used with the keyboard and with buttons, without swiping. For screen readers, the **list view** is the equivalent alternative with the same content.
 
 ## Preparation of this statement
 

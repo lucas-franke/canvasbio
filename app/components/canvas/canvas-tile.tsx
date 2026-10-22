@@ -5,7 +5,6 @@ import { Link } from "react-router";
 import { Portrait } from "~/components/portrait";
 import type { TileVariation } from "~/lib/canvas/layout";
 import type { PersonListItem } from "~/lib/content/adapter";
-import { lifeYears } from "~/lib/content/format";
 import { markPortraitSource } from "~/lib/view-transition";
 
 interface CanvasTileProps {
@@ -51,7 +50,6 @@ export const CanvasTile = memo(function CanvasTile({
   sizes,
   edgeClass,
 }: CanvasTileProps) {
-  const years = lifeYears(person.born, person.died);
   return (
     <li
       data-vt-item
@@ -78,7 +76,11 @@ export const CanvasTile = memo(function CanvasTile({
         tabIndex={tabbable ? 0 : -1}
         className="canvas-tile group block size-full"
       >
-        <span data-vt-portrait className={cn("relative block size-full overflow-hidden bg-stage", edgeClass)}>
+        <span
+          data-vt-portrait
+          data-tint
+          className={cn("relative block size-full overflow-hidden bg-stage", edgeClass)}
+        >
           <Portrait
             slug={person.slug}
             image={person.image}
@@ -89,13 +91,6 @@ export const CanvasTile = memo(function CanvasTile({
           {/* Dark gradient guarantees contrast for the name regardless of the photo. */}
           <span className="canvas-tile-name absolute inset-x-0 bottom-0 bg-linear-to-t from-stage via-stage/80 to-transparent font-medium text-stage-foreground">
             <span className="canvas-tile-label">{person.name.display}</span>
-            {years && (
-              <>
-                {/* Separates name and years in the link name for screen readers. */}
-                <span className="sr-only">, </span>
-                <span className="canvas-tile-years">{years}</span>
-              </>
-            )}
           </span>
         </span>
       </Link>

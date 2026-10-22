@@ -1,10 +1,8 @@
 import { cn } from "cn";
-import { Bookmark } from "lucide-react";
 import { Link } from "react-router";
 
 import { tornEdgeClass } from "~/lib/canvas/torn-edge";
 import { siteConfig } from "~/lib/config";
-import { useMessages } from "~/lib/i18n";
 import { markPortraitSource } from "~/lib/view-transition";
 
 import { Portrait } from "~/components/portrait";
@@ -16,10 +14,8 @@ interface PersonRowProps {
   tags: string[];
   /** The biography of this person is currently open. */
   active?: boolean;
-  /** Highlighted note, e.g. that the biography exists in Leichte Sprache. */
+  /** Highlighted note, e.g. that the biography exists in an optional language. */
   badge?: string;
-  /** On the reader's bookmark list. */
-  saved?: boolean;
 }
 
 /**
@@ -27,8 +23,7 @@ interface PersonRowProps {
  * Only the name is a link (short accessible name); a pseudo-element stretches it over the
  * whole row so the entire row is clickable/tappable.
  */
-export function PersonRow({ person, href, tags, active = false, badge, saved = false }: PersonRowProps) {
-  const m = useMessages();
+export function PersonRow({ person, href, tags, active = false, badge }: PersonRowProps) {
   return (
     <article
       data-vt-item
@@ -39,6 +34,7 @@ export function PersonRow({ person, href, tags, active = false, badge, saved = f
     >
       <div
         data-vt-portrait
+        data-tint
         className={cn(
           "size-20 shrink-0 overflow-hidden @lg:size-28 @2xl:size-36",
           siteConfig.theme.tileEdge === "torn" && tornEdgeClass(person.slug),
@@ -70,15 +66,6 @@ export function PersonRow({ person, href, tags, active = false, badge, saved = f
           >
             {person.name.display}
           </Link>
-          {saved && (
-            <>
-              <Bookmark
-                aria-hidden="true"
-                className="ml-2 inline size-5 fill-brand align-[-0.125em] text-brand"
-              />
-              <span className="sr-only">, {m.bookmarks.marked}</span>
-            </>
-          )}
         </h3>
         {badge && (
           <p className="w-fit rounded-lg bg-brand px-2 py-0.5 text-body-xs font-medium text-brand-foreground">

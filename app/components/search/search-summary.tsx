@@ -1,11 +1,10 @@
 import { cn } from "cn";
-import { X } from "lucide-react";
+import { ChevronDown, X } from "lucide-react";
 import { useId, useRef, useState, type ReactNode } from "react";
 
 import { Button } from "~/components/ui/button";
 import { siteConfig } from "~/lib/config";
 import { useMessages } from "~/lib/i18n";
-import { useBookmarks } from "~/lib/preferences";
 import { emptySearch, isSearchActive, type FacetLabels, type SearchState } from "~/lib/search/search";
 import { setSearchPanelOpen, useApplySearch } from "~/lib/search/use-search";
 
@@ -15,14 +14,8 @@ interface Filter {
 }
 
 /** The active filters as removable chips (name, then facets in config order). */
-function activeFilters(
-  state: SearchState,
-  labels: FacetLabels,
-  nameLabel: (q: string) => string,
-  savedLabel: string,
-): Filter[] {
+function activeFilters(state: SearchState, labels: FacetLabels, nameLabel: (q: string) => string): Filter[] {
   const filters: Filter[] = [];
-  if (state.saved) filters.push({ label: savedLabel, without: { ...state, saved: false } });
   if (state.q) filters.push({ label: nameLabel(state.q), without: { ...state, q: "" } });
   for (const facet of siteConfig.facets) {
     for (const value of state.facets[facet.key] ?? []) {
@@ -75,8 +68,7 @@ export function SearchSummary({
   const [chipsOpen, setChipsOpen] = useState(false);
   const heading = useRef<HTMLHeadingElement>(null);
   const applySearch = useApplySearch();
-  const filters = activeFilters(state, labels, m.search.nameChip, m.bookmarks.list);
-  const [bookmarks] = useBookmarks();
+  const filters = activeFilters(state, labels, m.search.nameChip);
 
   return (
     <section
@@ -96,7 +88,7 @@ export function SearchSummary({
           {count === 0 ? m.search.empty : m.search.results(count)}
         </h2>
         {actions}
-        <Button size="sm" variant="outline" onClick={() => setSearchPanelOpen(true)}>
+        <Button size="sm" variant="secondary" onClick={() => setSearchPanelOpen(true)}>
           {m.search.change}
         </Button>
         {collapsible && (
@@ -109,15 +101,15 @@ export function SearchSummary({
             className="sm:hidden"
           >
             {m.search.filters(filters.length)}
+            <ChevronDown
+              aria-hidden="true"
+              className={cn("size-4 transition-transform", chipsOpen && "rotate-180")}
+            />
           </Button>
         )}
       </div>
 
-      {count === 0 && (
-        <p className="text-body-sm">
-          {state.saved && bookmarks.size === 0 ? m.bookmarks.emptyHint : m.search.emptyHint}
-        </p>
-      )}
+      {count === 0 && <p className="text-body-sm">{m.search.emptyHint}</p>}
 
       <ul id={chipsId} className={cn("flex flex-wrap gap-2", collapsible && !chipsOpen && "max-sm:hidden")}>
         {filters.map((filter) => (
@@ -141,7 +133,7 @@ export function SearchSummary({
             size="sm"
             variant="ghost"
             onClick={() => {
-              applySearch(emptySearch);
+              applySearch({ ...emptySearch, sort: state.sort });
               focusAfterRemoval(null, emptySearch);
             }}
           >

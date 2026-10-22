@@ -22,9 +22,8 @@ When you visit the website, the server stores technically necessary data in log 
 So that the site remembers your settings, it stores a few items in your browser's storage (localStorage and sessionStorage):
 
 - your chosen appearance (light, dark or as on your device),
-- whether names are hidden on the portrait wall,
 - which biographies you have opened, so that "Random biography" prefers new ones,
-- your position on the portrait wall during a visit.
+- your position in the mosaic during a visit.
 
 This information stays on your device and is not sent to us. It is required for the features you use (§ 25(2) no. 2 TDDDG). You can delete it at any time in your browser settings.
 

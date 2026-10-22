@@ -22,7 +22,11 @@ export function themeToCss(theme: SiteConfig["theme"]): string {
     `--font-heading-family:${theme.fonts.heading};` +
     `--font-body-family:${theme.fonts.body};` +
     `--font-wordmark-family:${theme.fonts.wordmark};` +
-    `--radius:${theme.radius}rem;`;
+    `--radius:${theme.radius}rem;` +
+    (theme.portraitTint
+      ? `--tint-color:${theme.portraitTint.color ?? "var(--c-accent)"};` +
+        `--tint-blend:${theme.portraitTint.blend};--tint-opacity:${theme.portraitTint.opacity};`
+      : "");
   const lightVars = `${colorVars(light)}color-scheme:light;`;
   const darkVars = `${colorVars(dark)}color-scheme:dark;`;
 

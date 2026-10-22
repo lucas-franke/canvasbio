@@ -29,7 +29,7 @@ export interface ContentAdapter {
   listPeople(locale: string): Promise<PersonListItem[]>;
   /**
    * Full person in the requested locale. If that locale has no text and it isn't required
-   * (e.g. Leichte Sprache), the default locale is returned with `locale` set accordingly.
+   * (contentRequired: false), the default locale is returned with `locale` set accordingly.
    */
   getPerson(slug: string, locale: string): Promise<PersonDetail | null>;
   /** Locales a person has texts for. */

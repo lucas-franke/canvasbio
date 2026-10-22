@@ -15,10 +15,6 @@ describe("formatPartialDate", () => {
     expect(formatPartialDate("-0050", "en")).toBe("50 BC");
   });
 
-  it("uses German for Leichte Sprache", () => {
-    expect(formatPartialDate("1919-01-19", "de-LS")).toBe("19. Januar 1919");
-  });
-
   it("extracts the year", () => {
     expect(yearOf("1831-09-20")).toBe("1831");
   });

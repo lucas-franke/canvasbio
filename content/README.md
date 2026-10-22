@@ -8,7 +8,6 @@ content/
   people/<slug>/
     person.json              Language-independent data
     de.md, en.md             Texts per language (required per site.config.ts)
-    de-LS.md                 Easy Language (optional)
     portrait.jpg             Original portrait
 ```
 
@@ -48,7 +47,7 @@ timeline: # "Timeline" tab
 Life story …
 ```
 
-If an optional language such as Easy Language is missing, the page shows a notice. It does not silently fall back to another language.
+If a text in an optional language (`contentRequired: false`) is missing, the page shows a notice. It does not silently fall back to another language.
 
 ## Portraits
 
@@ -62,4 +61,4 @@ The demo content comes from three sources:
 - portraits from Wikimedia Commons (public domain/CC0 only)
 - life stories from Wikipedia (CC BY-SA 4.0, sources in `sources`)
 
-Regenerate it with `npm run import:demo -- --limit 200`. Hand-written files such as `de-LS.md` are not overwritten.
+Regenerate it with `npm run import:demo -- --limit 200`. Hand-edited portraits (`portrait.curated`) are kept.

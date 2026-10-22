@@ -1,8 +1,6 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test, type Page } from "@playwright/test";
 
-import { openCanvasControls } from "./helpers";
-
 /** WCAG 2.2 AA, including the 2.1/2.2 additions (e.g. target-size). */
 const wcagTags = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"];
 
@@ -13,19 +11,13 @@ const routes = [
   "/en/people/list",
   "/personen/zeitstrahl",
   "/en/people/timeline",
-  "/leichte-sprache/personen",
   "/personen/clara-zetkin",
   "/en/people/helen-keller",
-  "/leichte-sprache/personen/clara-zetkin",
-  "/leichte-sprache/personen/jane-addams",
   "/ueber",
   "/en",
   "/en/about",
-  "/leichte-sprache",
-  "/leichte-sprache/ueber",
   "/barrierefreiheit",
   "/en/accessibility",
-  "/leichte-sprache/barrierefreiheit",
   "/impressum",
   "/datenschutz",
   "/en/legal-notice",
@@ -68,7 +60,7 @@ for (const path of routes) {
     test(`axe: ${path} (${colorScheme}) has no WCAG 2.2 AA violations`, async ({ page }) => {
       await page.emulateMedia({ colorScheme });
       await page.goto(path);
-      if (/^\/(en\/|leichte-sprache\/)?(personen|people)$/.test(path)) {
+      if (/^\/(en\/)?(personen|people)$/.test(path)) {
         await page.locator("[data-cell]").first().waitFor();
       }
       await expectNoViolations(page);
@@ -96,12 +88,11 @@ const states: { name: string; run: (page: Page, isMobile: boolean) => Promise<vo
     },
   },
   {
-    name: "canvas with open direction pad",
-    run: async (page, isMobile) => {
+    name: "unfolded view switch",
+    run: async (page) => {
       await page.goto("/personen");
-      await openCanvasControls(page, isMobile);
-      await page.getByRole("button", { name: "Verschieben" }).click();
-      await expect(page.getByRole("button", { name: "Nach links" })).toBeVisible();
+      await page.getByRole("button", { name: /^Ansicht/ }).click();
+      await expect(page.getByRole("group", { name: "Ansicht" })).toBeVisible();
     },
   },
   {
@@ -140,7 +131,6 @@ test("html lang follows the locale", async ({ page }) => {
   for (const [path, lang] of [
     ["/", "de"],
     ["/en", "en"],
-    ["/leichte-sprache", "de"],
   ]) {
     await page.goto(path);
     await expect(page.locator("html")).toHaveAttribute("lang", lang);

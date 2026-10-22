@@ -152,6 +152,7 @@ export function InfiniteCanvas({
     layout,
     limits,
     storageKey: `${STORAGE_PREFIX}${location.key}`,
+    canContinue: true,
     onViewChange,
     topInset,
     initialView,
@@ -548,22 +549,19 @@ export function InfiniteCanvas({
 
       {hintVisible && !hits && !activeSlug && <GestureHint onDismiss={dismissHint} />}
 
+      {/* Desktop: the navigation (with the free-standing wordmark) sits at the top; the wall
+          fades into the page colour there, so the wordmark doesn't compete with tile names. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 hidden h-32 bg-linear-to-b from-page from-30% via-page/70 to-transparent lg:block"
+      />
       {/* Soft fade behind the floating nav, as in the design. */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-linear-to-t from-page to-transparent"
       />
 
-      <CanvasControls
-        onZoomIn={() => camera.zoomBy(1.4)}
-        onZoomOut={() => camera.zoomBy(1 / 1.4)}
-        onPan={(fx, fy) => {
-          const { width, height } = camera.size.current;
-          const { x, y, scale } = camera.camera.current;
-          camera.animateTo({ x: x - (fx * width) / scale, y: y - (fy * height) / scale, scale });
-        }}
-        onRecenter={camera.recenter}
-      />
+      <CanvasControls onZoomIn={() => camera.zoomBy(1.4)} onZoomOut={() => camera.zoomBy(1 / 1.4)} />
 
       {siteConfig.features.randomBio && (hits === null || hits.length > 0) && (
         <div

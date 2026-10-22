@@ -74,18 +74,18 @@ Legende: ✅ erfüllt · ◐ teilweise · — nicht anwendbar
 | 2.4.6 Überschriften und Beschriftungen  | AA    | ✅     | Beschreibende Überschriften, sichtbare Feldbeschriftungen.                                                                                                            |
 | 2.4.7 Fokus sichtbar                    | AA    | ✅     | Ring plus Halo (≥ 3:1 auf allen Hintergründen), in der Bildwand gegen den Zoom skaliert. Test.                                                                        |
 | 2.4.11 Fokus nicht verdeckt (Minimum)   | AA    | ✅     | `scroll-padding-bottom` für Navigation und Zufalls-Button; die Bildwand rückt fokussierte Kacheln aus dem Bereich von Navigation, Steuerung und Ergebnisleiste. Test. |
-| 2.5.1 Zeigergesten                      | A     | ✅     | Pinch-Zoom auch per Knöpfe, Verschieben per Steuerkreuz.                                                                                                              |
+| 2.5.1 Zeigergesten                      | A     | ✅     | Pinch-Zoom auch per Knöpfe (+ und −).                                                                                                                                 |
 | 2.5.2 Zeigerabbruch                     | A     | ✅     | Auslösen erst beim Loslassen; nach einer Ziehbewegung öffnet sich keine Biografie. Test.                                                                              |
 | 2.5.3 Beschriftung im Namen             | A     | ✅     | Zugängliche Namen enthalten die sichtbare Beschriftung (z. B. „Zurück“ → „Zurück zur Startseite“).                                                                    |
 | 2.5.4 Auslösung durch Bewegung          | A     | —      | Keine bewegungsgesteuerten Funktionen.                                                                                                                                |
-| 2.5.7 Ziehbewegungen                    | AA    | ✅     | Bildwand ohne Ziehen per Steuerkreuz, Tastatur, Treffer-Navigation; Liste als Alternative. Test.                                                                      |
+| 2.5.7 Ziehbewegungen                    | AA    | ✅     | Bildwand ohne Ziehen per Tastatur (Pfeiltasten) und Treffer-Navigation; Liste und Zeitstrahl zeigen dieselben Personen ohne Ziehen. Test.                             |
 | 2.5.8 Zielgröße (Minimum)               | AA    | ✅     | Projektstandard ≥ 44 × 44 px (axe `target-size`).                                                                                                                     |
 
 ### Verständlich
 
 | SC                                    | Stufe | Status | Umsetzung / Nachweis                                                                                                                                                                  |
 | ------------------------------------- | ----- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 3.1.1 Sprache der Seite               | A     | ✅     | `lang` je Sprachversion (Leichte Sprache: `de`). Test.                                                                                                                                |
+| 3.1.1 Sprache der Seite               | A     | ✅     | `lang` je Sprachversion. Test.                                                                                                                                                        |
 | 3.1.2 Sprache von Teilen              | AA    | ◐      | Sprachlinks, nicht übersetzte Texte und Fallbacks sind ausgezeichnet. **Offen (Inhalt):** fremdsprachige Wörter und Zitate in den importierten Wikipedia-Auszügen tragen kein `lang`. |
 | 3.2.1 Bei Fokus                       | A     | ✅     | Fokus löst keinen Kontextwechsel aus.                                                                                                                                                 |
 | 3.2.2 Bei Eingabe                     | A     | ✅     | Die Suche wird erst mit „Ergebnisse anzeigen“ angewendet; die Zahl im Button aktualisiert sich live.                                                                                  |
@@ -110,7 +110,7 @@ Legende: ✅ erfüllt · ◐ teilweise · — nicht anwendbar
 
 1. **Screenreader-Tests** mit VoiceOver (iOS/Safari), TalkBack (Android/Chrome) und NVDA (Windows/Firefox) nach der [Protokollvorlage](screenreader-protokoll.md) – je Meilenstein und vor dem Livegang.
 2. **3.1.2 Sprache von Teilen:** bei redaktionell gepflegten Texten fremdsprachige Passagen auszeichnen. Die Markdown-Pipeline lässt derzeit kein HTML durch; für `lang`-Auszeichnung braucht sie eine Erweiterung (z. B. eine Markdown-Direktive oder `rehype-raw` vor dem Sanitizer, der `lang` bereits erlaubt).
-3. **Leichte Sprache:** weitere Texte schreiben und von einer Prüfgruppe prüfen lassen.
+3. **Leichte Sprache:** wird derzeit nicht angeboten; für öffentliche Stellen nach BITV 2.0 sind zumindest Erläuterungen in Leichter Sprache nötig.
 4. **Echte Geräte:** Gesten, Safe Areas und Bottom-Sheets auf einem aktuellen iPhone und Android-Gerät prüfen (Playwrights WebKit unter Windows ist nur eine Annäherung an Safari).
 
 ## Performance

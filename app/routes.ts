@@ -6,7 +6,7 @@ import siteConfig from "../site.config";
 /**
  * Routes are generated per locale from site.config.ts: the default locale has no
  * prefix, others use their prefix, and page segments are translated
- * ("/personen", "/en/people", "/leichte-sprache/personen").
+ * ("/personen", "/en/people").
  * Overview and biography share a layout, so the overview stays mounted next to an open biography.
  */
 const localeRoutes = siteConfig.locales.flatMap(({ code, prefix }) => {

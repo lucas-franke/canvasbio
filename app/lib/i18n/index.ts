@@ -3,11 +3,10 @@ import { useLocation } from "react-router";
 import { siteConfig } from "~/lib/config";
 import { localeFromPathname } from "./locale";
 import { de, type Messages } from "./messages/de";
-import { deLS } from "./messages/de-LS";
 import { en } from "./messages/en";
 
 /** UI strings per locale code. A project adding a locale adds a messages file here. */
-const catalogs: Record<string, Messages> = { de, en, "de-LS": deLS };
+const catalogs: Record<string, Messages> = { de, en };
 
 export function messagesFor(locale: string): Messages {
   return catalogs[locale] ?? catalogs[siteConfig.defaultLocale];

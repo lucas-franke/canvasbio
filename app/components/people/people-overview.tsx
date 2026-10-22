@@ -1,19 +1,21 @@
 import { cn } from "cn";
+import { Shuffle } from "lucide-react";
 import { useNavigate } from "react-router";
 
 import { InfiniteCanvas } from "~/components/canvas/infinite-canvas";
-import { AlphaIndex, letterAnchor } from "~/components/people/alpha-index";
+import { ChapterLayout, ChapterSheet, chapterText } from "~/components/people/chapters";
 import { PersonRow } from "~/components/people/person-row";
-import { RANDOM_BUTTON_BOTTOM, RandomButton } from "~/components/people/random-button";
+import { SortSelect } from "~/components/people/sort-select";
 import { TimelineView } from "~/components/people/timeline-view";
 import { SearchSummary } from "~/components/search/search-summary";
+import { Button } from "~/components/ui/button";
 import { siteConfig } from "~/lib/config";
 import type { PersonListItem } from "~/lib/content/adapter";
-import { groupByLetter } from "~/lib/content/group";
 import type { PeopleIndex } from "~/lib/content/people-index";
+import { chaptersOf, sortFor } from "~/lib/content/sort";
 import { useLocale, useMessages } from "~/lib/i18n";
 import { localeConfig } from "~/lib/i18n/locale";
-import { readSeen, useBookmarks } from "~/lib/preferences";
+import { readSeen } from "~/lib/preferences";
 import { pickRandom } from "~/lib/random";
 import type { SearchState } from "~/lib/search/search";
 import { markPortraitSourceElement } from "~/lib/view-transition";
@@ -49,7 +51,6 @@ export function PeopleOverview({
   const m = useMessages();
   const locale = useLocale();
   const navigate = useNavigate();
-  const [bookmarks] = useBookmarks();
   // Announces the number of results whenever the search changes (WCAG 4.1.3).
   const status = (
     <p role="status" className="sr-only">
@@ -84,55 +85,68 @@ export function PeopleOverview({
     navigate(hrefFor(person.slug), { preventScrollReset: true, viewTransition: true });
   };
 
-  // In a language with optional content (Leichte Sprache), mark who has their own text.
+  // In a language with optional content (contentRequired: false), mark who has their own text.
   const optionalContent = localeConfig(locale).contentRequired === false;
 
-  const groups = groupByLetter(hits ?? index.people);
-  // Jumping by letter only helps in longer lists (e.g. not for a handful of results).
-  const showAlphaIndex = view === "list" && (hits ?? index.people).length >= 15;
+  const people = hits ?? index.people;
+  const sort = sortFor(view, search.sort);
+  const chapters = chaptersOf(people, sort);
   const { tagFacet, tagLabels } = index;
+
+  // Order, chapters and the random biography: one quiet bar at the top. In the list it
+  // sticks (below the rail's width), so the chapters stay one tap away while scrolling.
+  const toolbar = (
+    <div
+      className={cn(
+        "flex items-center gap-2",
+        view === "list" &&
+          "sticky top-2 z-30 rounded-full bg-surface/95 p-1 shadow-sm ring-1 ring-line/70 backdrop-blur-sm lg:top-22 @6xl:static @6xl:bg-transparent @6xl:p-0 @6xl:shadow-none @6xl:ring-0",
+      )}
+    >
+      <SortSelect view={view} value={sort} />
+      {view === "list" && <ChapterSheet chapters={chapters} sort={sort} />}
+      {siteConfig.features.randomBio && people.length > 0 && (
+        <Button
+          size="sm"
+          variant="secondary"
+          onClick={showRandom}
+          className="ml-auto"
+          aria-label={m.random.label}
+        >
+          <Shuffle aria-hidden="true" className="size-4" />
+          <span aria-hidden="true" className="hidden sm:inline">
+            {m.random.label}
+          </span>
+        </Button>
+      )}
+    </div>
+  );
 
   return (
     <>
       {status}
-      {hits && (
-        <SearchSummary
-          state={search}
-          count={hits.length}
-          labels={index.facetLabels}
-          className="mx-auto mb-6 max-w-[57rem]"
-        />
-      )}
-      {showAlphaIndex && <AlphaIndex available={new Set(groups.map((g) => g.letter))} />}
-      {view === "timeline" ? (
-        <TimelineView
-          people={hits ?? index.people}
-          hrefFor={hrefFor}
-          activeSlug={activeSlug}
-          bookmarks={bookmarks}
-        />
-      ) : (
-        // Phones: the "A–Z" button floats level with the first letter heading (no row of its own).
-        <div
-          className={cn("mx-auto mt-6 flex max-w-[57rem] flex-col gap-10", showAlphaIndex && "@max-xl:mt-0")}
-        >
-          {groups.map(({ letter, items }) => (
-            <section key={letter} aria-labelledby={letterAnchor(letter)}>
+      <ChapterLayout chapters={chapters} sort={sort}>
+        {toolbar}
+        {hits && <SearchSummary state={search} count={hits.length} labels={index.facetLabels} />}
+        {view === "timeline" ? (
+          <TimelineView chapters={chapters} sort={sort} hrefFor={hrefFor} activeSlug={activeSlug} />
+        ) : (
+          chapters.map((chapter) => (
+            <section key={chapter.id} aria-labelledby={chapter.id}>
               <h2
-                id={letterAnchor(letter)}
+                id={chapter.id}
                 tabIndex={-1}
-                className="scroll-mt-36 border-b border-brand px-2 pb-2 text-h2 text-brand focus-target lg:scroll-mt-60 @max-xl:min-h-12 @xl:scroll-mt-40"
+                className="scroll-mt-24 border-b border-brand px-2 pb-2 text-h2 text-brand focus-target lg:scroll-mt-40 @6xl:lg:scroll-mt-28"
               >
-                {letter}
+                {chapterText(chapter, m).heading}
               </h2>
               <ul className="mt-3 flex flex-col gap-1">
-                {items.map((person) => (
+                {chapter.items.map((person) => (
                   <li key={person.slug}>
                     <PersonRow
                       person={person}
                       href={hrefFor(person.slug)}
                       active={person.slug === activeSlug}
-                      saved={bookmarks.has(person.slug)}
                       badge={optionalContent && person.textLocale === locale ? m.people.ownText : undefined}
                       tags={(tagFacet ? (person.facets[tagFacet] ?? []) : [])
                         .map((v) => tagLabels[v])
@@ -142,15 +156,9 @@ export function PeopleOverview({
                 ))}
               </ul>
             </section>
-          ))}
-        </div>
-      )}
-      {siteConfig.features.randomBio && groups.length > 0 && (
-        // Sticks above the nav while the list scrolls (the main column has room for it below).
-        <div className={`pointer-events-none sticky z-30 mt-10 flex justify-center ${RANDOM_BUTTON_BOTTOM}`}>
-          <RandomButton onClick={showRandom} />
-        </div>
-      )}
+          ))
+        )}
+      </ChapterLayout>
     </>
   );
 }
