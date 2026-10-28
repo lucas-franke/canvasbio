@@ -76,7 +76,10 @@ test("sorting the list by birth gives decade chapters and survives a biography",
   await expect(page.getByLabel("Sortieren")).toHaveValue("born");
 });
 
-test("the view switch shows the active view and unfolds to change it", async ({ page, isMobile }) => {
+test("the view switch shows the active view and opens a dropdown to change it", async ({
+  page,
+  isMobile,
+}) => {
   await page.goto("/personen");
   const button = page.getByRole("button", { name: "Ansicht: Mosaik" });
   await expect(button).toHaveAttribute("aria-expanded", "false");
@@ -85,12 +88,19 @@ test("the view switch shows the active view and unfolds to change it", async ({ 
   const group = page.getByRole("group", { name: "Ansicht" });
   await expect(group.getByRole("link", { name: "Mosaik" })).toHaveAttribute("aria-current", "page");
   await expect(group.getByRole("link", { name: "Mosaik" })).toBeFocused();
+  await expect(button).toHaveAttribute("aria-expanded", "true");
+  // Each view with icon and visible label; arrow keys move between them.
+  await expect(group.getByRole("link")).toHaveText(["Mosaik", "Liste", "Zeitstrahl"]);
+  await page.keyboard.press("ArrowDown");
+  await expect(group.getByRole("link", { name: "Liste" })).toBeFocused();
+  await page.keyboard.press("ArrowUp");
+  await expect(group.getByRole("link", { name: "Mosaik" })).toBeFocused();
   const list = group.getByRole("link", { name: "Liste" });
   await (isMobile ? list.tap() : list.click());
   await expect(page).toHaveURL(/\/personen\/liste$/);
   await expect(page.getByRole("button", { name: "Ansicht: Liste" })).toBeVisible();
 
-  // Escape folds it again and returns focus to the button.
+  // Escape closes it and returns focus to the button.
   await page.getByRole("button", { name: "Ansicht: Liste" }).click();
   await page.keyboard.press("Escape");
   await expect(page.getByRole("button", { name: "Ansicht: Liste" })).toBeFocused();

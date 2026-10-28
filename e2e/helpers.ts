@@ -1,8 +1,8 @@
 import type { Page } from "@playwright/test";
 
 /**
- * Switches the overview with the "Ansicht" control: it shows only the active view until
- * it is unfolded. `view` is the German label ("Mosaik", "Liste", "Zeitstrahl").
+ * Switches the overview with the "Ansicht" dropdown: the button shows the active view and
+ * opens the list of views. `view` is the German label ("Mosaik", "Liste", "Zeitstrahl").
  */
 export async function switchView(page: Page, view: string) {
   await page.getByRole("button", { name: /^Ansicht/ }).click();

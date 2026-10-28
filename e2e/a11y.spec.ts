@@ -88,7 +88,7 @@ const states: { name: string; run: (page: Page, isMobile: boolean) => Promise<vo
     },
   },
   {
-    name: "unfolded view switch",
+    name: "open view dropdown",
     run: async (page) => {
       await page.goto("/personen");
       await page.getByRole("button", { name: /^Ansicht/ }).click();

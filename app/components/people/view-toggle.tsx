@@ -1,6 +1,6 @@
 import { cn } from "cn";
-import { ChartGantt, ChevronDown, LayoutDashboard, List } from "lucide-react";
-import { useEffect, useId, useRef, useState } from "react";
+import { ChartGantt, Check, ChevronDown, LayoutDashboard, List } from "lucide-react";
+import { useEffect, useId, useRef, useState, type KeyboardEvent } from "react";
 import { Link } from "react-router";
 
 import { useLocale, useMessages } from "~/lib/i18n";
@@ -9,20 +9,17 @@ import { useSearchSuffix } from "~/lib/search/use-search";
 
 type View = "canvas" | "list" | "timeline";
 
-const optionClass =
-  "grid size-11 shrink-0 place-items-center rounded-full text-nav-foreground transition-colors hover:bg-nav-foreground/10 lg:size-10 [&_svg]:size-5";
-
 /**
- * "Ansicht": switch between portrait wall, list and timeline. Collapsed it shows only the
- * active view; a click unfolds the label and all three options (links, the active one is
- * aria-current). Escape, a click outside or choosing a view folds it again. Without
- * JavaScript all three options show right away.
+ * "Ansicht": switch between portrait wall, list and timeline. The button shows the active
+ * view; it opens a small dropdown with all three views (icon and label; links, the active
+ * one is aria-current). Escape, a click outside or choosing a view closes it; arrow keys move
+ * between the views. Without JavaScript all three views show right away.
  */
 export function ViewToggle({ active }: { active: View }) {
   const locale = useLocale();
   const m = useMessages();
   const labelId = useId();
-  const groupId = useId();
+  const listId = useId();
   // Switching views keeps the search (so does switching languages in the menu). No view
   // transition here: right after loading, it raced with hydration and crashed WebKit.
   const suffix = useSearchSuffix();
@@ -35,36 +32,29 @@ export function ViewToggle({ active }: { active: View }) {
   const current = options.find((o) => o.view === active)!;
 
   const [open, setOpen] = useState(false);
-  // Fold again once another view is shown.
+  // Close once another view is shown.
   const [shownFor, setShownFor] = useState(active);
   if (shownFor !== active) {
     setShownFor(active);
     setOpen(false);
   }
 
-  const group = useRef<HTMLDivElement>(null);
+  const root = useRef<HTMLDivElement>(null);
   const button = useRef<HTMLButtonElement>(null);
-  // After Escape, focus goes back to the (re-rendered) button.
-  const returnFocus = useRef(false);
+  const panel = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!open) {
-      if (returnFocus.current) {
-        returnFocus.current = false;
-        button.current?.focus();
-      }
-      return;
-    }
-    // Focus moves into the unfolded options (the button is gone).
-    group.current?.querySelector<HTMLElement>('[aria-current="page"]')?.focus();
+    if (!open) return;
+    // Focus moves to the active view in the list.
+    panel.current?.querySelector<HTMLElement>('[aria-current="page"]')?.focus();
     const onPointerDown = (event: PointerEvent) => {
-      if (!group.current?.contains(event.target as Node)) setOpen(false);
+      if (!root.current?.contains(event.target as Node)) setOpen(false);
     };
-    const onKeyDown = (event: KeyboardEvent) => {
+    const onKeyDown = (event: globalThis.KeyboardEvent) => {
       if (event.key !== "Escape") return;
       event.stopPropagation();
-      returnFocus.current = true;
       setOpen(false);
+      button.current?.focus();
     };
     document.addEventListener("pointerdown", onPointerDown);
     document.addEventListener("keydown", onKeyDown, true);
@@ -74,63 +64,96 @@ export function ViewToggle({ active }: { active: View }) {
     };
   }, [open]);
 
-  const unfolded = (props: { id: string; labelId: string; className?: string; animate?: boolean }) => (
-    <div
-      ref={props.animate ? group : undefined}
-      id={props.id}
-      role="group"
-      aria-labelledby={props.labelId}
-      className={cn(
-        "flex items-center gap-0.5",
-        props.animate && "animate-in duration-150 zoom-in-95 fade-in",
-        props.className,
-      )}
-    >
-      <span
-        id={props.labelId}
-        className="px-2 text-body-sm font-medium whitespace-nowrap text-nav-foreground"
-      >
-        {m.view.label}
-      </span>
-      {options.map((option) => (
-        <Link
-          key={option.view}
-          to={option.href + suffix}
-          aria-current={option.view === active ? "page" : undefined}
-          aria-label={option.label}
-          title={option.label}
-          onClick={() => option.view === active && setOpen(false)}
-          className={cn(optionClass, "aria-[current=page]:bg-nav-foreground aria-[current=page]:text-nav")}
-        >
-          <span aria-hidden="true">{option.icon}</span>
-        </Link>
-      ))}
-    </div>
-  );
-
-  if (open) return unfolded({ id: groupId, labelId, animate: true });
+  // Up/down (and Home/End) move between the views; Tab leaves the list as usual.
+  const onListKeyDown = (event: KeyboardEvent) => {
+    const links = [...(panel.current?.querySelectorAll<HTMLElement>("a") ?? [])];
+    const index = links.indexOf(document.activeElement as HTMLElement);
+    const next =
+      event.key === "ArrowDown"
+        ? (index + 1) % links.length
+        : event.key === "ArrowUp"
+          ? (index - 1 + links.length) % links.length
+          : event.key === "Home"
+            ? 0
+            : event.key === "End"
+              ? links.length - 1
+              : -1;
+    if (next < 0) return;
+    event.preventDefault();
+    links[next]?.focus();
+  };
 
   return (
     <>
-      <button
-        ref={button}
-        type="button"
-        aria-expanded={false}
-        aria-controls={groupId}
-        aria-label={`${m.view.label}: ${current.label}`}
-        title={m.view.label}
-        onClick={() => setOpen(true)}
-        // The chevron (and from md the view's name) shows that it unfolds.
-        className="js-only inline-flex h-11 shrink-0 items-center gap-1.5 rounded-full px-3 text-nav-foreground transition-colors hover:bg-nav-foreground/10 lg:h-10 [&_svg]:size-5"
-      >
-        <span aria-hidden="true">{current.icon}</span>
-        <span aria-hidden="true" className="hidden text-label font-medium md:inline">
-          {current.label}
+      <div ref={root} className="js-only relative">
+        <button
+          ref={button}
+          type="button"
+          aria-expanded={open}
+          aria-controls={listId}
+          aria-label={`${m.view.label}: ${current.label}`}
+          title={m.view.label}
+          onClick={() => setOpen((value) => !value)}
+          // The chevron (and from md the view's name) shows that it opens.
+          className="inline-flex h-11 shrink-0 items-center gap-1.5 rounded-full px-3 text-nav-foreground transition-colors hover:bg-nav-foreground/10 aria-expanded:bg-nav-foreground/10 lg:h-10 [&_svg]:size-5"
+        >
+          <span aria-hidden="true">{current.icon}</span>
+          <span aria-hidden="true" className="hidden text-label font-medium md:inline">
+            {current.label}
+          </span>
+          <ChevronDown
+            aria-hidden="true"
+            className={cn("-ml-0.5 size-4! transition-transform", open && "rotate-180")}
+          />
+        </button>
+        {open && (
+          // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions -- arrow keys for the links inside
+          <div
+            ref={panel}
+            id={listId}
+            role="group"
+            aria-labelledby={labelId}
+            onKeyDown={onListKeyDown}
+            className="absolute top-full right-0 z-50 mt-2 flex min-w-48 animate-in flex-col gap-0.5 rounded-3xl bg-nav p-1.5 text-nav-foreground shadow-[0_8px_30px_rgb(0_0_0/0.18)] duration-150 zoom-in-95 fade-in"
+          >
+            <span id={labelId} className="sr-only">
+              {m.view.label}
+            </span>
+            {options.map((option) => (
+              <Link
+                key={option.view}
+                to={option.href + suffix}
+                aria-current={option.view === active ? "page" : undefined}
+                onClick={() => setOpen(false)}
+                className="flex min-h-11 items-center gap-3 rounded-full px-3 text-label font-medium whitespace-nowrap transition-colors hover:bg-nav-foreground/10 aria-[current=page]:bg-nav-foreground/10 [&_svg]:size-5"
+              >
+                <span aria-hidden="true">{option.icon}</span>
+                <span className="flex-1">{option.label}</span>
+                {option.view === active && <Check aria-hidden="true" className="size-4!" />}
+              </Link>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Without JavaScript the button can't open: show all views right away. */}
+      <div role="group" aria-labelledby={`${labelId}-static`} className="nojs-only flex items-center gap-0.5">
+        <span id={`${labelId}-static`} className="px-2 text-body-sm font-medium whitespace-nowrap">
+          {m.view.label}
         </span>
-        <ChevronDown aria-hidden="true" className="-ml-0.5 size-4!" />
-      </button>
-      {/* Without JavaScript the button can't unfold: show all views right away. */}
-      {unfolded({ id: `${groupId}-static`, labelId: `${labelId}-static`, className: "nojs-only" })}
+        {options.map((option) => (
+          <Link
+            key={option.view}
+            to={option.href}
+            aria-current={option.view === active ? "page" : undefined}
+            aria-label={option.label}
+            title={option.label}
+            className="grid size-11 shrink-0 place-items-center rounded-full text-nav-foreground hover:bg-nav-foreground/10 aria-[current=page]:bg-nav-foreground aria-[current=page]:text-nav lg:size-10 [&_svg]:size-5"
+          >
+            <span aria-hidden="true">{option.icon}</span>
+          </Link>
+        ))}
+      </div>
     </>
   );
 }
