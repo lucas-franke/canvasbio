@@ -7,7 +7,7 @@ description: Worum es geht, woher die Inhalte stammen und wie die Seite bedient 
 
 ## Drei Ansichten
 
-Das **Mosaik** zeigt alle Porträts auf einer endlosen Fläche, die sich verschieben und vergrößern lässt – mit dem Finger, der Maus oder der Tastatur. Die **Listen-Ansicht** zeigt dieselben Personen nach Name oder Geburtsjahr sortiert. Der **Zeitstrahl** ordnet sie nach Lebenszeit und zeigt, wer zur selben Zeit gelebt hat. Alle Ansichten enthalten dieselben Personen; die Liste eignet sich besonders für Screenreader.
+Im **Mosaik** stehen alle Porträts versetzt nebeneinander auf einer Fläche. Sie lässt sich verschieben und vergrößern – mit dem Finger, der Maus oder der Tastatur. Die **Listen-Ansicht** zeigt dieselben Personen nach Name oder Geburtsjahr sortiert. Der **Zeitstrahl** ordnet sie nach Lebenszeit und zeigt, wer zur selben Zeit gelebt hat. Alle Ansichten enthalten dieselben Personen; die Liste eignet sich besonders für Screenreader.
 
 ## Woher die Inhalte stammen
 

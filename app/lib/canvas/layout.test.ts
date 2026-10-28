@@ -76,6 +76,17 @@ describe("personAt", () => {
     expect(personAt(layout, copy)).toBe(personAt(layout, cell));
   });
 
+  it("shows everyone exactly once without wrap, the last row centred", () => {
+    const layout = createLayout(200, { ...options, wrap: false });
+    const people = layout.cells.filter((p) => p >= 0);
+    expect(people).toHaveLength(200);
+    expect(new Set(people).size).toBe(200);
+    const lastRow = layout.cells.slice((layout.rows - 1) * layout.cols);
+    const first = lastRow.findIndex((p) => p >= 0);
+    const after = [...lastRow].reverse().findIndex((p) => p >= 0);
+    expect(Math.abs(first - after)).toBeLessThanOrEqual(1);
+  });
+
   it("is empty outside the pattern without wrap", () => {
     const layout = createLayout(50, { ...options, wrap: false });
     expect(personAt(layout, { col: -1, row: 0 })).toBeUndefined();

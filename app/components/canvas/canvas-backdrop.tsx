@@ -2,28 +2,22 @@ import { useEffect, useMemo } from "react";
 
 import { siteConfig } from "~/lib/config";
 import { firstPaintScript } from "~/lib/canvas/camera";
-import {
-  cellOrigin,
-  createLayout,
-  personAt,
-  seededShuffle,
-  tileVariation,
-  type Cell,
-} from "~/lib/canvas/layout";
+import { cellOrigin, personAt, seededShuffle, tileVariation, type Cell } from "~/lib/canvas/layout";
 import { tornVariant } from "~/lib/canvas/torn-edge";
 import type { PersonListItem } from "~/lib/content/adapter";
+import { canvasLayout, canvasLimits } from "./canvas-layout";
 import { CanvasTile } from "./canvas-tile";
 import { LAST_CAMERA_KEY, sizesFor, staticView, useCamera } from "./use-camera";
 
 const { canvas: config, theme } = siteConfig;
-const limits = { minZoom: config.minZoom, maxZoom: config.maxZoom };
 
 /** Drift speed of the camera, in screen pixels per second. */
 const DRIFT = { x: 9, y: 5 };
 
 /**
- * The portrait wall as a slowly drifting, decorative backdrop (start page). Same order,
- * layout and tiles as the interactive canvas, and it shares the last camera position with
+ * The portrait wall as a slowly drifting, decorative backdrop (start page): a few portraits
+ * up close; "Mosaik" continues right there. Same order, layout and
+ * tiles as the interactive canvas, and it shares the last camera position with
  * it (LAST_CAMERA_KEY): the start page continues where the wall was left, and the wall
  * continues where the backdrop drifted to. Hidden from assistive tech and not interactive.
  */
@@ -35,17 +29,9 @@ export function CanvasBackdrop({
   hrefFor: (slug: string) => string;
 }) {
   const ordered = useMemo(() => seededShuffle(people, "canvas"), [people]);
-  const layout = useMemo(
-    () =>
-      createLayout(ordered.length, {
-        tileSize: config.tileSize,
-        gap: config.gap,
-        rowOffset: config.rowOffset,
-        wrap: config.wrap,
-      }),
-    [ordered.length],
-  );
-  const initialView = useMemo(() => staticView(layout, limits), [layout]);
+  const layout = useMemo(() => canvasLayout(ordered.length), [ordered.length]);
+  const limits = useMemo(() => canvasLimits(layout), [layout]);
+  const initialView = useMemo(() => staticView(layout, limits), [layout, limits]);
   const camera = useCamera({ layout, limits, storageKey: LAST_CAMERA_KEY, initialView });
   const { viewportRef, worldRef, view } = camera;
 

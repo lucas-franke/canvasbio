@@ -1,12 +1,15 @@
 | Translated URL segments (`/personen`, `/en/people`, list and timeline views …)# CanvasBio
 
-White-label template for biography collections. People appear as an endless portrait mosaic (infinite canvas) and as a list. It includes search and filters, a random biography and a detail view. The template is designed for touch and mobile, works with mouse and keyboard, and is accessible to **WCAG 2.2 AA** ([audit report](docs/accessibility-audit.md), in German).
+White-label template for biography collections. People appear as a portrait mosaic (a zoomable canvas) and as a list. It includes search and filters, a random biography and a detail view. The template is designed for touch and mobile, works with mouse and keyboard, and is accessible to **WCAG 2.2 AA** ([audit report](docs/accessibility-audit.md), in German).
 
 The demo content shows pioneers of the women's movement (1850–1950) from Wikidata, Wikimedia Commons and Wikipedia. It is available in German and English.
 
 ## Features
 
-- **Mosaic:** endless in every direction.
+- **Mosaic:** the portraits in a brick pattern that ends at its edges, every person exactly once (`canvas.wrap: true` repeats it endlessly instead).
+  - Opens in the middle at reading size. From the start page it continues right where the backdrop was.
+  - Seen from afar the names are hidden and a tap zooms in instead of opening.
+  - Screen readers get every person once, as a list with a name and an end, and a pointer to the list view first. During a search the shape stays: non-matches are dimmed and hidden from screen readers, and the arrow keys move between matches only.
   - Drag with momentum; zoom with pinch or the mouse wheel.
   - Only + and − on screen. Without dragging: arrow keys, and the list and timeline views show the same people.
   - Pre-rendered so it appears immediately.
@@ -26,7 +29,7 @@ The demo content shows pioneers of the women's movement (1850–1950) from Wikid
   - Filters for place (with suggestions and counts) and for the facets from the configuration.
   - Matches are highlighted in the mosaic, and the search state lives in the URL.
 - **Random biography:** favours lesser-known people and people not opened yet. Floating on the mosaic; a quiet button at the top of list and timeline.
-- **Start page:** the real mosaic drifts slowly behind the welcome card ("Discover" continues right there on the canvas; no drift with reduced motion), a random entry point and "On this day" (people whose birthday or day of death is today; if there is nobody, those of the next few days under "Coming up").
+- **Start page:** a close-up of the mosaic drifts slowly behind the welcome card (no drift with reduced motion), two equal ways in, "Mosaic" (continues right there) and "List", a random entry point and "On this day" (people whose birthday or day of death is today; if there is nobody, those of the next few days under "Coming up").
 - **Also:** light/dark theme, German and English. Transitions use the View Transitions API and are disabled with "reduce motion".
 
 ## Requirements
@@ -55,7 +58,7 @@ Everything project-specific lives in one typed file. It is validated on load. Er
 | Section                    | Content                                                                                                                                                                         |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `siteUrl`                  | Public address (optional). Enables canonical URLs and preview images when biographies are shared                                                                                |
-| `brand`                    | Name, wordmark (top left in the navigation, monogram on phones), optional logo (`logo` replaces both), description (meta tags)                                                  |
+| `brand`                    | Name, wordmark (top left in the navigation), `monogram` for the site icon (default: initials), optional logo (`logo` replaces the wordmark), description (meta tags)            |
 | `locales`, `defaultLocale` | Languages with URL prefix; `contentRequired: false` for languages in which not every biography has to exist (e.g. an easy-to-read variant)                                      |
 | `paths`                    | Translated URL segments (`/personen`, `/en/people` …)                                                                                                                           |
 | `operator`                 | Operator with address, phone (optional), contact email and date of the accessibility statement; fills legal notice, privacy and statement                                       |

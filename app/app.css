@@ -235,6 +235,13 @@
   font-size: calc(clamp(12px, 18px * var(--s), 21px) / var(--s));
   line-height: 1.2;
   padding: calc(20px / var(--s)) calc(10px / var(--s)) calc(8px / var(--s));
+  transition: opacity 200ms ease;
+}
+
+/* Seen from afar (the whole wall): tiles are too small for names. Hidden visually only,
+   the link keeps its name. */
+.canvas-world[data-far] .canvas-tile-name {
+  opacity: 0;
 }
 
 /* Long names end with an ellipsis after three lines (the full name stays the link text). */

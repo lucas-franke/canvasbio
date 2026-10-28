@@ -61,6 +61,7 @@ export const en: Messages = {
     anniversaryUpcoming: (kind: "born" | "died", date: string) =>
       `${kind === "born" ? "Born" : "Died"} on ${date}`,
     portraitsLabel: "Portraits from the collection",
+    listHint: "With a screen reader, the list view is easier to follow.",
   },
   people: {
     title: "Biographies",
@@ -102,8 +103,10 @@ export const en: Messages = {
     label: "Random biography",
   },
   canvas: {
-    label: "Mosaic",
-    hint: "Use the arrow keys to move between portraits, plus and minus to zoom. All people are also available as a list.",
+    intro: (count: number) =>
+      `All ${count} biographies as a picture. With a screen reader, the list view is easier to follow.`,
+    keys: "With the keyboard: arrow keys move between portraits, plus and minus zoom.",
+    portraits: "Portraits",
     toList: "Go to list view",
     controls: "Mosaic controls",
     zoomIn: "Zoom in",

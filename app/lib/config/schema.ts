@@ -65,6 +65,8 @@ export const siteConfigSchema = z.object({
     name: localized,
     /** Text wordmark shown in the header and on the start card. */
     wordmark: localized,
+    /** Letters of the site icon (favicon, home screen); default: the initials of the wordmark. */
+    monogram: z.string().min(1).max(2).optional(),
     /** Optional logo (path relative to /public). */
     logo: z.object({ src: z.string(), alt: localized, width: z.number(), height: z.number() }).optional(),
     description: localized,
@@ -157,6 +159,7 @@ export const siteConfigSchema = z.object({
     title: localized,
     subtitle: localized,
     quote: z.object({ text: localized, source: localized }).optional(),
+    /** Label above the two ways in (mosaic, list). */
     cta: localized,
   }),
 
@@ -206,7 +209,10 @@ export const siteConfigSchema = z.object({
     gap: z.number().min(0),
     /** Horizontal offset of every other row, as a fraction of (tileSize + gap). */
     rowOffset: z.number().min(0).max(1),
-    /** Repeat the layout endlessly in all directions. */
+    /**
+     * Repeat the pattern endlessly in all directions. Without, the wall ends at its edges and
+     * shows every person exactly once (a complete list for screen readers).
+     */
     wrap: z.boolean(),
     minZoom: z.number().positive(),
     maxZoom: z.number().positive(),

@@ -25,7 +25,7 @@ Diese Website ist mit den genannten Anforderungen **teilweise vereinbar**. Die E
 - **Bildbeschreibungen:** Die Porträts haben einen Alternativtext mit dem Namen der Person, aber keine ausführliche Beschreibung des Bildes.
 - **Gebärdensprache:** Informationen in Deutscher Gebärdensprache werden derzeit nicht angeboten.
 
-Das Mosaik lässt sich mit Tastatur und Schaltflächen ohne Wischgesten bedienen. Für Screenreader ist die **Listen-Ansicht** die gleichwertige Alternative mit denselben Inhalten.
+- **Mosaik:** Das Mosaik ist eine Bildfläche aus Porträts, versetzt angeordnet und mit festen Rändern. Mit der Tastatur lässt es sich vollständig bedienen (Pfeiltasten wechseln das Porträt, Plus und Minus zoomen), Wischgesten sind nicht nötig. Screenreader lesen alle Personen als Liste von Links vor; die räumliche Anordnung wird dabei aber nicht vermittelt. Die **Listen-Ansicht** enthält dieselben Personen und ist mit Screenreader der empfohlene Weg. Startseite und Mosaik weisen darauf hin.
 
 ## Erstellung dieser Erklärung
 

@@ -16,9 +16,9 @@ Bewertung je Schritt: **ok** · **Problem** (mit Beschreibung) · **nicht geprü
 
 | #   | Ablauf                                                      | Erwartung                                                                                              | Ergebnis | Notiz |
 | --- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | -------- | ----- |
-| 1   | Startseite öffnen, mit Überschriften-Navigation durchgehen  | Titel, Zitat und Navigation werden verständlich angesagt                                               |          |       |
-| 2   | „Biografien entdecken“ aktivieren                           | Bildwand wird als Bereich „Mosaik“ mit Bedienhinweis angesagt                                          |          |       |
-| 3   | In der Bildwand per Wischen / Tab eine Kachel erreichen     | Name der Person wird angesagt; Doppelungen der endlosen Wand werden nicht angesagt                     |          |       |
+| 1   | Startseite öffnen, mit Überschriften-Navigation durchgehen  | Navigation zuerst; Titel „Ihre Stimme“ nur einmal (keine Region); Hinweis auf die Listenansicht        |          |       |
+| 2   | „Mosaik“ aktivieren (Gruppe „Biografien entdecken“)                           | Zuerst der Hinweis: Bildfläche, Liste übersichtlicher; Link zur Liste             |          |       |
+| 3   | In der Bildwand per Wischen / Tab eine Kachel erreichen     | Liste „Porträts“ mit 200 Einträgen und Ende; Name der Person; keine Doppelungen                        |          |       |
 | 4   | „Zur Listenansicht“ nutzen                                  | Liste mit Buchstaben-Überschriften; Anzahl der Einträge je Liste                                       |          |       |
 | 5   | A–Z-Index: zu einem Buchstaben springen                     | Fokus und Ansage landen auf der Buchstaben-Überschrift; leere Buchstaben als „keine Einträge“ angesagt |          |       |
 | 6   | Biografie öffnen                                            | Fokus auf dem Namen; auf dem Handy als Dialog angesagt                                                 |          |       |

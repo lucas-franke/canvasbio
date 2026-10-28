@@ -1,18 +1,12 @@
 import { expect, test, type Page } from "@playwright/test";
 
-import { switchView } from "./helpers";
+const scaleOf = (transform: string) => Number(/scale\(([\d.e-]+)\)/.exec(transform)?.[1]);
 
 const worldTransform = (page: Page) =>
   page
     .locator(".canvas-world")
     .first()
     .evaluate((el) => (el as HTMLElement).style.transform);
-
-const translation = (transform: string) =>
-  transform
-    .match(/-?\d+(\.\d+)?/g)!
-    .slice(0, 2)
-    .map(Number);
 
 test("the start page shows the living wall as a decorative backdrop", async ({ page }) => {
   await page.goto("/");
@@ -44,25 +38,41 @@ test("with reduced motion the backdrop stands still", async ({ page }) => {
   expect(await worldTransform(page)).toBe(before);
 });
 
-test("discovering the biographies continues the wall right where it was", async ({ page }) => {
+test("the mosaic button continues the wall where it was, without a camera flight", async ({ page }) => {
   await page.goto("/");
   // Once the wall drifts, the page is hydrated and the link navigates in the app.
-  const start = await worldTransform(page);
-  await expect.poll(() => worldTransform(page)).not.toBe(start);
-  const [bx, by] = translation(await worldTransform(page));
-  await page.getByRole("link", { name: /Biografien entdecken/ }).click();
+  const before = await worldTransform(page);
+  await expect.poll(() => worldTransform(page)).not.toBe(before);
+  const backdropScale = scaleOf(await worldTransform(page));
+  await page.getByRole("link", { name: "Mosaik", exact: true }).click();
   await expect(page).toHaveURL(/\/personen$/);
-  // The interactive wall (not the backdrop) starts at the backdrop's position (it drifts ~10 px per second).
-  const wall = page.getByRole("region", { name: "Mosaik" }).locator(".canvas-world");
+  const wall = page.locator("main .canvas-world");
   await expect(wall).toBeAttached();
-  const [x, y] = translation(await wall.evaluate((el) => (el as HTMLElement).style.transform));
-  expect(Math.hypot(x! - bx!, y! - by!)).toBeLessThan(20);
+  // Same zoom as the backdrop, and it stays put.
+  const transform = await wall.evaluate((el) => (el as HTMLElement).style.transform);
+  expect(scaleOf(transform)).toBeCloseTo(backdropScale, 5);
+  await page.waitForTimeout(600);
+  expect(await wall.evaluate((el) => (el as HTMLElement).style.transform)).toBe(transform);
   expect(await page.evaluate(() => sessionStorage.getItem("canvas:continue"))).toBeNull();
-  // A later, new visit (not a reload) starts in the middle again.
-  await page.goto("/personen/liste");
-  await switchView(page, "Mosaik");
-  const fresh = page.getByRole("region", { name: "Mosaik" }).locator(".canvas-world");
-  await expect(fresh).toBeAttached();
-  const [cx, cy] = translation(await fresh.evaluate((el) => (el as HTMLElement).style.transform));
-  expect(Math.hypot(x! - cx!, y! - cy!)).toBeGreaterThan(1);
+});
+
+test("the start page offers mosaic and list as equal ways in, and names its card only once", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const ways = page.getByRole("group", { name: "Biografien entdecken" });
+  await expect(ways.getByRole("link", { name: "Mosaik", exact: true })).toHaveAccessibleDescription(
+    "Mit Screenreader ist die Listenansicht übersichtlicher.",
+  );
+  await expect(page.getByRole("region", { name: "Ihre Stimme" })).toHaveCount(0);
+  await ways.getByRole("link", { name: "Liste", exact: true }).click();
+  await expect(page).toHaveURL(/\/personen\/liste$/);
+});
+
+test("the brand shows the full name on phones too", async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 740 });
+  await page.goto("/");
+  const brand = page.getByRole("link", { name: "Ihre Stimme – Startseite" });
+  await expect(brand).toBeVisible();
+  await expect(brand).toContainText("Ihre Stimme");
 });

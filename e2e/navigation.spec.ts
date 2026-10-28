@@ -5,7 +5,7 @@ import { navPillBoxes, overlaps } from "./helpers";
 test("start page leads to the biographies", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { level: 1, name: "Ihre Stimme" })).toBeVisible();
-  await page.getByRole("link", { name: "Biografien entdecken" }).click();
+  await page.getByRole("link", { name: "Mosaik", exact: true }).click();
   await expect(page).toHaveURL(/\/personen$/);
   await expect(page.getByRole("heading", { level: 1, name: "Biografien" })).toBeVisible();
 });
@@ -129,4 +129,16 @@ test("with nobody on this day, the start page shows the next days under their ow
   await expect(soon.getByRole("link", { name: /Annie Lorrain Smith/ })).toBeVisible();
   await expect(soon).toContainText("Geboren am 23. Oktober 1854");
   await expect(page.getByRole("region", { name: "An diesem Tag" })).toHaveCount(0);
+});
+
+test("the navigation comes before the content, as on screen (focus order)", async ({ page }) => {
+  for (const path of ["/", "/personen/liste", "/ueber"]) {
+    await page.goto(path);
+    const navFirst = await page.evaluate(() => {
+      const nav = document.querySelector('nav[aria-label="Hauptnavigation"]')!;
+      const main = document.querySelector("main")!;
+      return Boolean(nav.compareDocumentPosition(main) & Node.DOCUMENT_POSITION_FOLLOWING);
+    });
+    expect(navFirst).toBe(true);
+  }
 });

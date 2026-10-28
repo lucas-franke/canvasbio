@@ -1,6 +1,12 @@
 import { expect, test, type Page } from "@playwright/test";
 
-const waitForCanvas = (page: Page) => page.locator("[data-cell]").first().waitFor({ state: "attached" });
+import { waitForHydration } from "./helpers";
+
+/** The pre-rendered canvas is there at once; the random button works once it is hydrated. */
+async function waitForCanvas(page: Page) {
+  await page.locator("[data-cell]").first().waitFor({ state: "attached" });
+  await waitForHydration(page);
+}
 
 test("random biography from the canvas: the tile pulses, then the biography opens", async ({ page }) => {
   await page.goto("/personen");

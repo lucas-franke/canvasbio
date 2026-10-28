@@ -7,7 +7,7 @@ description: What this is about, where the content comes from and how to use the
 
 ## Three views
 
-The **mosaic** shows every portrait on an endless surface that you can move and zoom with your finger, mouse or keyboard. The **list view** shows the same people sorted by name or year of birth. The **timeline** arranges them by lifetime and shows who lived at the same time. All views contain the same people; the list works especially well with screen readers.
+In the **mosaic**, all portraits sit side by side in staggered rows. You can move and zoom it with your finger, mouse or keyboard. The **list view** shows the same people sorted by name or year of birth. The **timeline** arranges them by lifetime and shows who lived at the same time. All views contain the same people; the list works especially well with screen readers.
 
 ## Where the content comes from
 

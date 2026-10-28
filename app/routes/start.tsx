@@ -1,4 +1,4 @@
-import { ChevronRight, Quote, Shuffle } from "lucide-react";
+import { LayoutDashboard, List, Quote, Shuffle } from "lucide-react";
 import { useMemo } from "react";
 import { Link, useNavigate } from "react-router";
 
@@ -19,7 +19,7 @@ import { loadPeopleIndex } from "~/lib/content/people-index.server";
 import { usePeopleIndex } from "~/lib/content/people-index";
 import { useHydrated } from "~/lib/hooks";
 import { useLocale, useMessages } from "~/lib/i18n";
-import { localeFromPathname, pagePath } from "~/lib/i18n/locale";
+import { listPath, localeFromPathname, pagePath } from "~/lib/i18n/locale";
 import { localize } from "~/lib/i18n/localize";
 import { pageMeta } from "~/lib/meta";
 import { readSeen } from "~/lib/preferences";
@@ -44,7 +44,7 @@ export default function Start({ loaderData }: Route.ComponentProps) {
 
   return (
     <div className="relative min-h-dvh bg-page">
-      {/* The living wall: drifts slowly behind the card; "Biografien entdecken" continues right
+      {/* The living wall: drifts slowly behind the card; "Mosaik" continues right
           there on the canvas. A vignette in the page colour (light or dark) calms it down. */}
       <div aria-hidden="true" className="pointer-events-none fixed inset-0 overflow-hidden">
         <div className="absolute inset-0 opacity-70">
@@ -53,11 +53,29 @@ export default function Start({ loaderData }: Route.ComponentProps) {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,color-mix(in_srgb,var(--c-page)_55%,transparent)_0%,var(--c-page)_90%)]" />
       </div>
 
+      {/* First in the DOM, as on screen: Tab and screen readers reach it before the content (WCAG 2.4.3). */}
+      <TopNav
+        label={m.nav.label}
+        // Same order as on every page: brand on the left; about, search and menu on the right.
+        // "Biografien" needs no nav link here: the card's main button leads there.
+        start={
+          <NavPill bare>
+            <BrandLink />
+          </NavPill>
+        }
+        end={
+          <NavPill>
+            <NavTextLink to={pagePath(locale, "about")} className="hidden sm:inline-flex">
+              {m.nav.about}
+            </NavTextLink>
+            <SearchDrawer />
+            <MenuDrawer />
+          </NavPill>
+        }
+      />
       <main id="main" className="relative grid min-h-dvh place-items-center px-4 pt-28 pb-12 sm:px-8">
-        <section
-          aria-labelledby="start-title"
-          className="start-card flex w-full max-w-2xl flex-col gap-8 rounded-card bg-surface p-6 shadow-2xl sm:gap-12 sm:p-12 lg:p-16"
-        >
+        {/* No region around the card: it is the whole content, and its h1 already names it. */}
+        <div className="start-card flex w-full max-w-2xl flex-col gap-8 rounded-card bg-surface p-6 shadow-2xl sm:gap-12 sm:p-12 lg:p-16">
           <header className="flex flex-col gap-4">
             <h1 id="start-title" className="wordmark text-[clamp(2.75rem,2rem+4vw,4.5rem)] text-brand">
               {t(start.title)}
@@ -79,44 +97,39 @@ export default function Start({ loaderData }: Route.ComponentProps) {
             </figure>
           )}
 
-          <div className="flex flex-wrap items-center gap-4">
-            <Button asChild size="lg" className="pr-2">
-              <Link to={pagePath(locale, "people")} viewTransition onClick={continueFromLastCamera}>
-                {t(start.cta)}
-                <span
-                  aria-hidden="true"
-                  className="grid size-10 place-items-center rounded-full bg-brand-foreground text-brand"
+          {/* Two equal ways in: the mosaic, or the list (the easier one with a screen reader). */}
+          <div role="group" aria-labelledby="start-explore" className="flex flex-col gap-3">
+            <p id="start-explore" className="text-body-sm font-medium text-muted-text">
+              {t(start.cta)}
+            </p>
+            <div className="grid grid-cols-2 gap-3">
+              <Button asChild size="lg">
+                <Link
+                  to={pagePath(locale, "people")}
+                  viewTransition
+                  onClick={continueFromLastCamera}
+                  aria-describedby="start-list-hint"
                 >
-                  <ChevronRight />
-                </span>
-              </Link>
-            </Button>
+                  <LayoutDashboard aria-hidden="true" />
+                  {m.view.canvas}
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline">
+                <Link to={listPath(locale)}>
+                  <List aria-hidden="true" />
+                  {m.view.list}
+                </Link>
+              </Button>
+            </div>
+            <p id="start-list-hint" hidden>
+              {m.start.listHint}
+            </p>
             {features.randomBio && <RandomStart />}
           </div>
 
           <OnThisDay />
-        </section>
+        </div>
       </main>
-
-      <TopNav
-        label={m.nav.label}
-        // Same order as on every page: brand on the left; about, search and menu on the right.
-        // "Biografien" needs no nav link here: the card's main button leads there.
-        start={
-          <NavPill bare>
-            <BrandLink />
-          </NavPill>
-        }
-        end={
-          <NavPill>
-            <NavTextLink to={pagePath(locale, "about")} className="hidden sm:inline-flex">
-              {m.nav.about}
-            </NavTextLink>
-            <SearchDrawer />
-            <MenuDrawer />
-          </NavPill>
-        }
-      />
     </div>
   );
 }
@@ -129,8 +142,9 @@ function RandomStart() {
   const { index } = usePeopleIndex(locale);
   return (
     <Button
-      variant="secondary"
-      size="lg"
+      variant="ghost"
+      size="sm"
+      className="-ml-4 self-start"
       onClick={() => {
         const person = index && pickRandom(index.people, { seen: readSeen() });
         navigate(person ? pagePath(locale, "people", person.slug) : pagePath(locale, "people"));

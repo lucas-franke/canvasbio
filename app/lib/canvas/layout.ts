@@ -3,7 +3,8 @@
  *
  * People are laid out in a brick pattern of `cols × rows` cells (odd rows shifted by
  * `rowOffset` of a cell). With `wrap` the pattern repeats endlessly in every direction,
- * like a torus; otherwise the canvas ends at the pattern's edges.
+ * like a torus; otherwise the canvas ends at the pattern's edges (the last row is centred,
+ * its spare cells stay empty).
  *
  * World coordinates are CSS pixels at zoom 1. A cell (col, row) may lie outside the pattern
  * (negative or ≥ cols/rows); `personAt` maps it back via modulo.
@@ -26,7 +27,7 @@ export interface CanvasLayout {
   wrap: boolean;
   cols: number;
   rows: number;
-  /** Person index for every pattern cell, row by row (length cols × rows). */
+  /** Person index for every pattern cell, row by row (length cols × rows); -1 = empty. */
   cells: number[];
   count: number;
 }
@@ -83,11 +84,18 @@ export function createLayout(count: number, options: LayoutOptions): CanvasLayou
   const { cols, rows } = count > 0 ? patternSize(count, aspect, wrap) : { cols: 1, rows: 1 };
   const total = cols * rows;
   const cells = Array.from({ length: total }, (_, i) => i);
-  if (count > 0) {
+  if (count > 0 && wrap) {
     // Filler cells (the end of the last rows) repeat people from the middle of the pattern:
     // half the pattern height away, so a person and their duplicate are never neighbours.
     const shift = Math.floor(rows / 2) * cols;
     for (let i = count; i < total; i++) cells[i] = mod(i - shift, count);
+  } else if (count > 0) {
+    // A finite wall shows everyone once: the last row is centred, its spare cells stay empty.
+    const last = (rows - 1) * cols;
+    const inLast = count - last;
+    const start = last + Math.floor((cols - inLast) / 2);
+    for (let i = last; i < total; i++) cells[i] = -1;
+    for (let i = 0; i < inLast; i++) cells[start + i] = last + i;
   }
   return {
     tile: tileSize,
@@ -118,11 +126,12 @@ export function inPattern(layout: CanvasLayout, { col, row }: Cell): boolean {
   return col >= 0 && col < layout.cols && row >= 0 && row < layout.rows;
 }
 
-/** Person index shown in a cell, or undefined outside a non-wrapping canvas. */
+/** Person index shown in a cell, or undefined outside a non-wrapping canvas or in an empty cell. */
 export function personAt(layout: CanvasLayout, cell: Cell): number | undefined {
   if (layout.count === 0) return undefined;
   if (!layout.wrap && !inPattern(layout, cell)) return undefined;
-  return layout.cells[mod(cell.row, layout.rows) * layout.cols + mod(cell.col, layout.cols)];
+  const person = layout.cells[mod(cell.row, layout.rows) * layout.cols + mod(cell.col, layout.cols)];
+  return person === undefined || person < 0 ? undefined : person;
 }
 
 /** World rectangle covered by the viewport. */
@@ -173,27 +182,49 @@ export function cellNear(layout: CanvasLayout, x: number, y: number): Cell {
 export type Direction = "left" | "right" | "up" | "down";
 
 /**
- * Neighbouring cell for keyboard navigation. Moving up/down keeps a goal x (like a text
- * cursor keeps its column), so zig-zagging through the brick rows doesn't drift sideways.
- * Returns null at the edge of a non-wrapping canvas.
+ * Neighbouring cell for keyboard navigation: the next cell in that direction that shows a
+ * person (and passes `accept`, e.g. only search matches), skipping empty cells.
+ * Moving up/down keeps a goal x (like a text cursor keeps its column), so zig-zagging
+ * through the brick rows doesn't drift sideways; it lands on the accepted cell nearest to
+ * that x in the next row that has one. Returns null at the edge of a non-wrapping canvas.
  */
 export function neighbor(
   layout: CanvasLayout,
   cell: Cell,
   direction: Direction,
   goalX?: number,
+  accept: (cell: Cell) => boolean = () => true,
 ): Cell | null {
-  let next: Cell;
+  const ok = (candidate: Cell) =>
+    (layout.wrap || inPattern(layout, candidate)) &&
+    personAt(layout, candidate) !== undefined &&
+    accept(candidate);
+
   if (direction === "left" || direction === "right") {
-    next = { col: cell.col + (direction === "left" ? -1 : 1), row: cell.row };
-  } else {
-    const row = cell.row + (direction === "up" ? -1 : 1);
-    const x = goalX ?? cellCenter(layout, cell).x;
-    const col = roundInt((x - layout.tile / 2 - rowShift(layout, row)) / layout.pitch);
-    next = { col, row };
+    const step = direction === "left" ? -1 : 1;
+    for (let i = 1; i <= layout.cols; i++) {
+      const next = { col: cell.col + step * i, row: cell.row };
+      if (!layout.wrap && !inPattern(layout, next)) return null;
+      if (ok(next)) return next;
+    }
+    return null;
   }
-  if (!layout.wrap && !inPattern(layout, next)) return null;
-  return next;
+
+  const step = direction === "up" ? -1 : 1;
+  const x = goalX ?? cellCenter(layout, cell).x;
+  for (let i = 1; i <= layout.rows; i++) {
+    const row = cell.row + step * i;
+    if (!layout.wrap && (row < 0 || row >= layout.rows)) return null;
+    // Columns of this row ordered by distance from the goal x (one pattern width around it).
+    const nearest = roundInt((x - layout.tile / 2 - rowShift(layout, row)) / layout.pitch);
+    for (let d = 0; d <= layout.cols; d++) {
+      for (const col of d === 0 ? [nearest] : [nearest - d, nearest + d]) {
+        const next = { col, row };
+        if (ok(next)) return next;
+      }
+    }
+  }
+  return null;
 }
 
 /** The instance of a person closest to a world point (with wrap there are infinitely many). */

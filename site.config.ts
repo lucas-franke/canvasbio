@@ -12,6 +12,7 @@ export default defineSiteConfig({
   brand: {
     name: { de: "Ihre Stimme", en: "Her Voice" },
     wordmark: { de: "Ihre Stimme", en: "Her Voice" },
+    monogram: "S",
     description: {
       de: "Biografien von Pionierinnen der Frauenbewegung, 1850–1950.",
       en: "Biographies of pioneers of the women's movement, 1850–1950.",
@@ -204,7 +205,7 @@ export default defineSiteConfig({
     tileSize: 240,
     gap: 48,
     rowOffset: 0.5,
-    wrap: true,
+    wrap: false,
     minZoom: 0.4,
     maxZoom: 2.5,
     sizeVariance: 0.16,

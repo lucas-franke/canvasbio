@@ -25,22 +25,24 @@ async function settledCamera(page: Page) {
 async function openCanvas(page: Page) {
   await page.goto("/personen");
   await page.locator("[data-cell]").first().waitFor({ state: "attached" });
+  await settledCamera(page);
 }
 
 const tabbableTile = (page: Page) => page.locator('[data-cell][tabindex="0"]');
 
-test("renders a window of the wall and exposes every person once", async ({ page }) => {
+test("the finite wall shows every person exactly once, as a named list", async ({ page }) => {
   await openCanvas(page);
-  const tiles = await page.locator("[data-cell]").count();
-  expect(tiles).toBeGreaterThan(10);
-  expect(tiles).toBeLessThan(200);
+  // The whole wall is rendered, without repeats.
+  expect(await page.locator("[data-cell]").count()).toBe(200);
 
   const exposed = await page
     .locator("[data-person]")
     .evaluateAll((els) => els.map((e) => e.getAttribute("data-person")));
-  expect(new Set(exposed).size).toBe(exposed.length);
+  expect(exposed).toHaveLength(200);
+  expect(new Set(exposed).size).toBe(200);
+  await expect(page.getByRole("list", { name: "Porträts" }).getByRole("listitem")).toHaveCount(200);
   await expect(tabbableTile(page)).toHaveCount(1);
-  // Duplicates (wrap copies) are hidden from assistive tech and out of the tab order.
+  // Duplicates (with wrap) would be hidden from assistive tech and out of the tab order.
   const hiddenFocusable = page.locator('li[aria-hidden="true"] a:not([tabindex="-1"])');
   await expect(hiddenFocusable).toHaveCount(0);
 });
@@ -199,11 +201,47 @@ test("while a biography is open the wall is inert; a click beside the card close
   isMobile,
 }) => {
   test.skip(isMobile, "phones show the biography over the whole screen");
-  await page.goto("/personen");
-  await page.locator('[data-person="clara-zetkin"]').click();
-  await expect(page.getByRole("heading", { level: 1, name: "Clara Zetkin" })).toBeFocused();
+  await openCanvas(page);
+  const tile = tabbableTile(page);
+  const slug = await tile.getAttribute("data-person");
+  await tile.click();
+  await expect(page).toHaveURL(new RegExp(`/personen/${slug}$`));
+  await expect(page.getByRole("heading", { level: 1 })).toBeFocused();
   await expect(page.locator("main#main").locator("..")).toHaveAttribute("inert", "");
   await page.mouse.click(20, 450);
   await expect(page).toHaveURL(/\/personen$/);
-  await expect(page.locator('[data-person="clara-zetkin"]')).toBeFocused();
+  await expect(page.locator(`[data-person="${slug}"]`)).toBeFocused();
+});
+
+test("a new visit opens in the middle of the wall at reading size", async ({ page }) => {
+  await openCanvas(page);
+  await expect(page.locator(".canvas-world")).not.toHaveAttribute("data-far", "");
+  // A tile with a person sits in the middle of the screen.
+  const viewport = page.viewportSize()!;
+  const middle = await page.evaluate(
+    ({ x, y }) => document.elementFromPoint(x, y)?.closest("[data-cell]") !== null,
+    { x: viewport.width / 2, y: viewport.height / 2 },
+  );
+  expect(middle).toBe(true);
+});
+
+test("seen from afar, a tap zooms in instead of opening", async ({ page }) => {
+  await openCanvas(page);
+  const zoomOut = page.getByRole("button", { name: "Verkleinern" });
+  for (let i = 0; i < 9; i++) await zoomOut.click();
+  await expect(page.locator(".canvas-world")).toHaveAttribute("data-far", "");
+  await settledCamera(page);
+  const box = (await tabbableTile(page).boundingBox())!;
+  await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
+  await expect(page.locator(".canvas-world")).not.toHaveAttribute("data-far", "");
+  expect(page.url()).toMatch(/\/personen$/);
+});
+
+test("screen readers hear first what the wall is and that the list is easier", async ({ page }) => {
+  await openCanvas(page);
+  await expect(page.locator("main").getByText(/Listenansicht übersichtlicher/)).toContainText(
+    "Mit Screenreader ist die Listenansicht übersichtlicher",
+  );
+  // No extra region around the wall (the page's h1 names it).
+  await expect(page.getByRole("region", { name: "Mosaik" })).toHaveCount(0);
 });

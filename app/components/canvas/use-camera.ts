@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 
 import {
+  FAR_TILE_PX,
   constrainCamera,
   easeOutCubic,
   initialCamera,
@@ -151,6 +152,8 @@ export function useCamera({
   /** Viewport centre on screen at the last measurement. */
   const screenCenter = useRef<{ x: number; y: number } | null>(null);
   const frame = useRef(0);
+  /** Where the running zoom animation ends, so quick repeated zooms add up. */
+  const zoomTarget = useRef<Camera | null>(null);
   const saveTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
   const viewRef = useRef<CanvasView | null>(initialView ?? null);
   const [view, setView] = useState<CanvasView | null>(initialView ?? null);
@@ -185,6 +188,8 @@ export function useCamera({
       world.style.transform = `translate3d(${-cam.x * cam.scale}px, ${-cam.y * cam.scale}px, 0) scale(${cam.scale})`;
       const scale = String(cam.scale);
       if (world.style.getPropertyValue("--s") !== scale) world.style.setProperty("--s", scale);
+      // Seen from afar: names are hidden (app.css) and a tap zooms in instead of opening.
+      world.toggleAttribute("data-far", layout.tile * cam.scale < FAR_TILE_PX);
     }
 
     const nextView: CanvasView = {
@@ -207,6 +212,7 @@ export function useCamera({
     const running = frame.current !== 0;
     cancelAnimationFrame(frame.current);
     frame.current = 0;
+    zoomTarget.current = null;
     return running;
   }, []);
 
@@ -292,7 +298,7 @@ export function useCamera({
   const zoomBy = useCallback(
     (factor: number, point?: { x: number; y: number }, animate = true) => {
       const { width, height } = size.current;
-      const cam = camera.current;
+      const cam = (frame.current !== 0 && zoomTarget.current) || camera.current;
       const target = zoomAt(
         cam,
         size.current,
@@ -301,8 +307,10 @@ export function useCamera({
         cam.scale * factor,
         latest.current.limits,
       );
-      if (animate) animateTo(target, 220);
-      else apply(target);
+      if (animate) {
+        animateTo(target, 220);
+        zoomTarget.current = target;
+      } else apply(target);
     },
     [animateTo, apply],
   );
@@ -377,5 +385,6 @@ export function useCamera({
     reveal,
     sync,
     animateTo,
+    measure,
   };
 }

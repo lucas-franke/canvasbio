@@ -16,15 +16,19 @@ interface CanvasTileProps {
   size: number;
   href: string;
   /**
-   * The one instance of this person exposed to assistive tech. With the endless wrap a person
-   * can appear several times; the other copies are hidden from screen readers.
+   * The one instance of this person exposed to assistive tech. With the endless wrap (or the
+   * filler cells of the endless wall) a person can appear several times; the other copies are hidden
+   * from screen readers.
    */
   primary: boolean;
   /** Roving tabindex: exactly one tile is in the tab order. */
   tabbable: boolean;
   /** Biography of this person is open. */
   active: boolean;
-  /** With a search: whether this person matches (highlighted) or not (dimmed). */
+  /**
+   * With a search: whether this person matches (highlighted) or not (dimmed, and hidden from
+   * screen readers, so they hear the matches only).
+   */
   match?: boolean;
   /** Slight size and position variation (see canvas.sizeVariance). */
   variation: TileVariation;
@@ -32,6 +36,20 @@ interface CanvasTileProps {
   sizes: string;
   /** Mask class for the torn paper edge, if enabled. */
   edgeClass?: string;
+}
+
+/**
+ * Props are equal when all are identical, the variation by value (it is computed anew on every
+ * render; comparing it by identity would re-render every tile on every camera move).
+ */
+function sameProps(a: CanvasTileProps, b: CanvasTileProps) {
+  return (Object.keys(a) as (keyof CanvasTileProps)[]).every((key) =>
+    key === "variation"
+      ? a.variation.scale === b.variation.scale &&
+        a.variation.dx === b.variation.dx &&
+        a.variation.dy === b.variation.dy
+      : a[key] === b[key],
+  );
 }
 
 /** One portrait on the canvas: a link to the biography with the name on a dark gradient. */
@@ -53,7 +71,7 @@ export const CanvasTile = memo(function CanvasTile({
   return (
     <li
       data-vt-item
-      aria-hidden={primary ? undefined : true}
+      aria-hidden={primary && match !== false ? undefined : true}
       className="absolute top-0 left-0"
       style={{
         width: size,
@@ -96,4 +114,4 @@ export const CanvasTile = memo(function CanvasTile({
       </Link>
     </li>
   );
-});
+}, sameProps);

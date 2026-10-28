@@ -1,5 +1,8 @@
 import { clamp, type Camera, type CanvasLayout, type Size } from "./layout";
 
+/** Below this rendered tile size (px) the wall is seen from afar: names hidden, a tap zooms in. */
+export const FAR_TILE_PX = 72;
+
 /** Screen-space margins that floating UI (wordmark, nav, controls) covers. */
 export interface Insets {
   top: number;
@@ -80,11 +83,32 @@ export function firstPaintScript(
     `if(s&&isFinite(s.x)&&isFinite(s.y)&&s.scale>=${limits.minZoom}&&s.scale<=${limits.maxZoom})c=s;`,
     "w.style.transform='translate3d('+(-c.x*c.scale)+'px,'+(-c.y*c.scale)+'px,0) scale('+c.scale+')';",
     "w.style.setProperty('--s',String(c.scale));",
+    `w.toggleAttribute('data-far',c.scale*${layout.tile}<${FAR_TILE_PX});`,
     "}catch(e){}})();",
   ].join("");
 }
 
-/** Camera centred on the middle of the pattern. */
+/** World size of the pattern (all cells, including the brick offset). */
+export function patternBounds(layout: CanvasLayout) {
+  return {
+    x: 0,
+    y: 0,
+    width: (layout.cols - 1) * layout.pitch + layout.tile + layout.rowOffset * layout.pitch,
+    height: (layout.rows - 1) * layout.pitch + layout.tile,
+  };
+}
+
+/**
+ * Lowest zoom for a finite wall: whole on a laptop screen (about 1280 × 720 px), so it can be
+ * seen at once there (on a phone, mostly). The endless wall keeps the configured limit.
+ */
+export function finiteMinZoom(layout: CanvasLayout, configured: number): number {
+  if (layout.wrap) return configured;
+  const { width, height } = patternBounds(layout);
+  return Math.min(configured, 0.9 * Math.min(1280 / width, 720 / height));
+}
+
+/** Where a canvas starts without a remembered position: in the middle, at the reading zoom. */
 export function initialCamera(layout: CanvasLayout, viewport: Size, limits: ZoomLimits): Camera {
   // Middle of the pattern, snapped to the centre of a cell so the view looks composed.
   const row = Math.floor(layout.rows / 2);
@@ -103,8 +127,7 @@ export function initialCamera(layout: CanvasLayout, viewport: Size, limits: Zoom
  */
 export function constrainCamera(layout: CanvasLayout, camera: Camera): Camera {
   if (layout.wrap) return camera;
-  const width = (layout.cols - 1) * layout.pitch + layout.tile + layout.rowOffset * layout.pitch;
-  const height = (layout.rows - 1) * layout.pitch + layout.tile;
+  const { width, height } = patternBounds(layout);
   return { ...camera, x: clamp(camera.x, 0, width), y: clamp(camera.y, 0, height) };
 }
 

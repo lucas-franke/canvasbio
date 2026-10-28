@@ -21,7 +21,7 @@ This website is **partially compliant** with these requirements. The limitations
 - **Image descriptions:** portraits have an alternative text with the person's name, but no detailed description of the picture.
 - **Sign language:** information in German Sign Language is not offered at the moment.
 
-The mosaic can be used with the keyboard and with buttons, without swiping. For screen readers, the **list view** is the equivalent alternative with the same content.
+- **Mosaic:** The mosaic is a picture of portraits in staggered rows, with fixed edges. It can be fully used with the keyboard (arrow keys move between portraits, plus and minus zoom), without swiping. Screen readers read all people as a list of links, but the spatial arrangement is not conveyed. The **list view** contains the same people and is the recommended way with a screen reader. The start page and the mosaic point this out.
 
 ## Preparation of this statement
 

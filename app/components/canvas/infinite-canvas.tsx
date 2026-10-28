@@ -17,7 +17,6 @@ import { siteConfig } from "~/lib/config";
 import {
   cellCenter,
   cellOrigin,
-  createLayout,
   inRange,
   nearestInstance,
   neighbor,
@@ -40,11 +39,11 @@ import type { FacetLabels, SearchState } from "~/lib/search/search";
 import { markPortraitSourceElement } from "~/lib/view-transition";
 import { CanvasControls } from "./canvas-controls";
 import { CanvasTile } from "./canvas-tile";
-import { firstPaintScript } from "~/lib/canvas/camera";
+import { defaultScale, firstPaintScript } from "~/lib/canvas/camera";
+import { canvasLayout, canvasLimits } from "./canvas-layout";
 import { sizesFor, staticView, useCamera, type CanvasView } from "./use-camera";
 
 const { canvas: config, theme } = siteConfig;
-const limits = { minZoom: config.minZoom, maxZoom: config.maxZoom };
 const tornEdges = theme.tileEdge === "torn";
 
 const cellId = ({ col, row }: Cell) => `${col}:${row}`;
@@ -87,13 +86,17 @@ interface InfiniteCanvasProps {
 }
 
 /**
- * The portrait wall as an endless, pannable and zoomable canvas.
+ * The portrait wall as a pannable and zoomable canvas: a brick pattern of portraits that
+ * ends at its edges, or repeats endlessly (canvas.wrap).
  *
+ * - Seen from afar, a tap zooms in instead of opening.
  * - Pointer: drag to pan (with inertia), pinch or Ctrl/⌘ + wheel to zoom, wheel/trackpad to pan.
  * - Keyboard: one tile is in the tab order (roving tabindex); arrow keys move between
- *   portraits and the camera follows, + and − zoom.
- * - Without dragging: zoom buttons and a direction pad (WCAG 2.5.7).
- * - Only visible tiles are rendered; every person is exposed once to assistive tech.
+ *   portraits (only matches during a search) and the camera
+ *   follows, + and − zoom.
+ * - Without dragging: zoom buttons (WCAG 2.5.7).
+ * - Screen readers: every person once, as a list in reading order (the whole finite wall
+ *   is rendered; the endless one only around the view), and a pointer to the list view.
  */
 export function InfiniteCanvas({
   people,
@@ -107,21 +110,13 @@ export function InfiniteCanvas({
   const m = useMessages();
   const location = useLocation();
   const navigate = useNavigate();
-  const hintId = useId();
+  const introId = useId();
 
   // Mixed, but the same on every visit.
   const ordered = useMemo(() => seededShuffle(people, "canvas"), [people]);
   const indexBySlug = useMemo(() => new Map(ordered.map((p, i) => [p.slug, i])), [ordered]);
-  const layout = useMemo(
-    () =>
-      createLayout(ordered.length, {
-        tileSize: config.tileSize,
-        gap: config.gap,
-        rowOffset: config.rowOffset,
-        wrap: config.wrap,
-      }),
-    [ordered.length],
-  );
+  const layout = useMemo(() => canvasLayout(ordered.length), [ordered.length]);
+  const limits = useMemo(() => canvasLimits(layout), [layout]);
 
   // Roving tabindex: the tile that is (or was last) focused. null = the tile in the centre.
   const [current, setCurrent] = useState<Cell | null>(null);
@@ -146,7 +141,7 @@ export function InfiniteCanvas({
     return summary && viewport ? summary.bottom - viewport.top + 12 : 0;
   }, []);
 
-  const initialView = useMemo(() => staticView(layout, limits), [layout]);
+  const initialView = useMemo(() => staticView(layout, limits), [layout, limits]);
   const camera = useCamera({
     layout,
     limits,
@@ -369,6 +364,14 @@ export function InfiniteCanvas({
     }
     const cell = parseCell(event.target);
     if (cell && !sameCell(cell, current)) setCurrent(cell);
+    // Seen from afar (tiny tiles, no names): a tap or click zooms in there instead of opening.
+    // Keyboard activation (detail 0) always opens.
+    if (cell && event.detail > 0 && worldRef.current?.hasAttribute("data-far")) {
+      event.preventDefault();
+      event.stopPropagation();
+      const { x, y } = cellCenter(layout, cell);
+      camera.animateTo({ x, y, scale: defaultScale(layout, camera.measure(), limits) }, 700);
+    }
   };
 
   const onFocus = (event: FocusEvent) => {
@@ -388,7 +391,11 @@ export function InfiniteCanvas({
       event.preventDefault();
       if (direction === "up" || direction === "down") goalX.current ??= cellCenter(layout, cell).x;
       else goalX.current = undefined;
-      const next = neighbor(layout, cell, direction, goalX.current);
+      // During a search, only the matches (the rest is dimmed and hidden from screen readers).
+      const next = neighbor(layout, cell, direction, goalX.current, (candidate) => {
+        const index = personAt(layout, candidate);
+        return !hitSet || (index !== undefined && hitSet.has(ordered[index]!.slug));
+      });
       if (!next) return;
       pendingFocus.current = true;
       setCurrent(next);
@@ -407,7 +414,11 @@ export function InfiniteCanvas({
   // ---- Tiles ----
   const tiles = useMemo(() => {
     if (!view || layout.count === 0) return [];
-    const { range } = view;
+    // A finite wall: all of it, row by row (a stable list for screen readers). The endless
+    // one: the cells around the view.
+    const range = layout.wrap
+      ? view.range
+      : { row0: 0, row1: layout.rows - 1, col0: 0, col1: layout.cols - 1 };
     const cells: Cell[] = [];
     for (let row = range.row0; row <= range.row1; row++) {
       for (let col = range.col0; col <= range.col1; col++) cells.push({ col, row });
@@ -415,19 +426,42 @@ export function InfiniteCanvas({
     // The focused tile stays rendered even when panned out of view (focus must not get lost).
     if (current && !inRange(range, current)) cells.push(current);
 
-    // One instance per person for assistive tech: the current tile, else the one nearest the centre.
+    // One instance per person for assistive tech: the current tile, else (with wrap) the one
+    // nearest the centre.
     const center = cellCenter(layout, view.center);
     const primary = new Map<number, { cell: Cell; distance: number }>();
-    for (const cell of cells) {
+    cells.forEach((cell, order) => {
       const person = personAt(layout, cell);
-      if (person === undefined) continue;
+      if (person === undefined) return;
       const c = cellCenter(layout, cell);
-      const distance = sameCell(cell, current) ? -1 : (c.x - center.x) ** 2 + (c.y - center.y) ** 2;
+      const distance = sameCell(cell, current)
+        ? -1
+        : layout.wrap
+          ? (c.x - center.x) ** 2 + (c.y - center.y) ** 2
+          : order;
       const best = primary.get(person);
       if (!best || distance < best.distance) primary.set(person, { cell, distance });
-    }
+    });
 
-    const tabbable = current ?? view.center;
+    // Tab lands on the remembered tile, else on the one nearest the centre that shows a person
+    // (the centre may be an empty cell) and, during a search, matches.
+    const eligible = (cell: Cell) => {
+      const person = personAt(layout, cell);
+      return person !== undefined && (!hitSet || hitSet.has(ordered[person]!.slug));
+    };
+    let tabbable: Cell | null = current;
+    if (!tabbable) {
+      let best = Infinity;
+      for (const cell of cells) {
+        if (!eligible(cell)) continue;
+        const c = cellCenter(layout, cell);
+        const distance = (c.x - center.x) ** 2 + (c.y - center.y) ** 2;
+        if (distance < best) {
+          best = distance;
+          tabbable = cell;
+        }
+      }
+    }
     return cells.flatMap((cell) => {
       const index = personAt(layout, cell);
       if (index === undefined) return [];
@@ -441,16 +475,17 @@ export function InfiniteCanvas({
         },
       ];
     });
-  }, [view, layout, current, ordered]);
+  }, [view, layout, current, ordered, hitSet]);
 
   const sizes = sizesFor(view?.lod ?? 0);
 
   return (
-    <section aria-label={m.canvas.label} aria-describedby={hintId} className="relative h-full overflow-clip">
-      <p id={hintId} className="sr-only">
-        {m.canvas.hint}
+    <div className="relative h-full overflow-clip">
+      {/* Read first: what the wall is and that the list is easier with a screen reader. */}
+      <p id={introId} className="sr-only">
+        {m.canvas.intro(people.length)} {m.canvas.keys}
       </p>
-      <Link to={listHref} className="skip-link">
+      <Link to={listHref} className="skip-link" aria-describedby={introId}>
         {m.canvas.toList}
       </Link>
 
@@ -470,7 +505,7 @@ export function InfiniteCanvas({
           suppressHydrationWarning
           className="canvas-world absolute top-1/2 left-1/2 origin-top-left will-change-transform"
         >
-          <ul>
+          <ul aria-label={m.canvas.portraits}>
             {tiles.map(({ cell, person, origin, primary, tabbable }) => (
               <CanvasTile
                 key={cellId(cell)}
@@ -493,7 +528,11 @@ export function InfiniteCanvas({
         </div>
       </div>
       {/* Pre-rendered HTML: zoom for this screen before the first paint (no jump at hydration). */}
-      <script dangerouslySetInnerHTML={{ __html: firstPaintScript(layout, limits, STORAGE_PREFIX) }} />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: firstPaintScript(layout, limits, STORAGE_PREFIX),
+        }}
+      />
 
       {hits && (
         <div ref={summaryRef} className="absolute inset-x-3 top-24 z-20 mx-auto max-w-xl lg:top-28">
@@ -542,6 +581,6 @@ export function InfiniteCanvas({
           <RandomButton onClick={showRandom} />
         </div>
       )}
-    </section>
+    </div>
   );
 }

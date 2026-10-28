@@ -1,5 +1,5 @@
 /**
- * Generates the site icons from site.config.ts (brand initials on the accent colour),
+ * Generates the site icons from site.config.ts (brand monogram on the accent colour),
  * so every project from the template gets its own favicon, touch icon and web manifest.
  *
  *   npx tsx scripts/build-icons.ts
@@ -21,8 +21,8 @@ const locale = siteConfig.defaultLocale;
 const name = siteConfig.brand.name[locale]!;
 const wordmark = siteConfig.brand.wordmark[locale]!;
 
-/** The same monogram as in the navigation (app/lib/brand.ts). */
-const initials = brandInitials(wordmark);
+/** The configured monogram, else the initials of the wordmark (app/lib/brand.ts). */
+const initials = siteConfig.brand.monogram ?? brandInitials(wordmark);
 
 const escape = (text: string) => text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
 

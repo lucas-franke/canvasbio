@@ -163,3 +163,21 @@ test("filter chips show how many people each would find", async ({ page }) => {
   await dialog.getByLabel("Nach Namen suchen").fill("zetkin");
   await expect(politics.locator("span").last()).toHaveText("1");
 });
+
+test("a search keeps the wall; screen readers and arrow keys get only the matches", async ({
+  page,
+}) => {
+  await page.goto("/personen?q=pankhurst");
+  await page.locator("[data-cell]").first().waitFor({ state: "attached" });
+  // The whole shape stays (the rest is dimmed) …
+  expect(await page.locator("[data-cell]").count()).toBeGreaterThanOrEqual(200);
+  // … but only the three matches are exposed.
+  await expect(page.locator('li:not([aria-hidden="true"]) > a[data-person]')).toHaveCount(3);
+  const tile = page.locator('[data-cell][tabindex="0"]');
+  await expect(tile).toHaveAttribute("data-match", "hit");
+  await tile.focus();
+  for (const key of ["ArrowDown", "ArrowRight", "ArrowUp", "ArrowLeft", "ArrowDown"]) {
+    await page.keyboard.press(key);
+    await expect(page.locator("[data-cell]:focus")).toHaveAttribute("data-match", "hit");
+  }
+});

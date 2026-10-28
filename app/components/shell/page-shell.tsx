@@ -43,16 +43,7 @@ export function PageShell({ children, navEnd, aside, inert = false, fullBleed = 
       )}
     >
       {aside}
-      {/* Printing a biography prints only the biography, not the overview next to it. */}
-      <div
-        className={cn("@container relative flex min-w-0 flex-1 flex-col", aside && "print:hidden")}
-        inert={inert || undefined}
-      >
-        {!fullBleed && <SiteHeader />}
-        <main id="main" className={fullBleed ? "absolute inset-0" : "flex-1 px-4 pt-8 pb-24 sm:px-8"}>
-          {children}
-        </main>
-      </div>
+      {/* First in the DOM, as on screen: Tab and screen readers reach it before the content (WCAG 2.4.3). */}
       <TopNav
         inert={inert}
         label={m.nav.label}
@@ -69,6 +60,16 @@ export function PageShell({ children, navEnd, aside, inert = false, fullBleed = 
           </NavPill>
         }
       />
+      {/* Printing a biography prints only the biography, not the overview next to it. */}
+      <div
+        className={cn("@container relative flex min-w-0 flex-1 flex-col", aside && "print:hidden")}
+        inert={inert || undefined}
+      >
+        {!fullBleed && <SiteHeader />}
+        <main id="main" className={fullBleed ? "absolute inset-0" : "flex-1 px-4 pt-8 pb-24 sm:px-8"}>
+          {children}
+        </main>
+      </div>
     </div>
   );
 }

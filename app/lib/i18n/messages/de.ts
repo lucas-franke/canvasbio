@@ -64,6 +64,7 @@ export const de = {
     anniversaryUpcoming: (kind: "born" | "died", date: string) =>
       `${kind === "born" ? "Geboren" : "Gestorben"} am ${date}`,
     portraitsLabel: "Porträts aus der Sammlung",
+    listHint: "Mit Screenreader ist die Listenansicht übersichtlicher.",
   },
   people: {
     title: "Biografien",
@@ -107,8 +108,10 @@ export const de = {
     label: "Zufällige Biografie",
   },
   canvas: {
-    label: "Mosaik",
-    hint: "Mit den Pfeiltasten von Porträt zu Porträt, mit Plus und Minus zoomen. Alle Personen gibt es auch als Liste.",
+    intro: (count: number) =>
+      `Alle ${count} Biografien als Bildfläche. Mit Screenreader ist die Listenansicht übersichtlicher.`,
+    keys: "Mit der Tastatur: Pfeiltasten wechseln das Porträt, Plus und Minus zoomen.",
+    portraits: "Porträts",
     toList: "Zur Listenansicht",
     controls: "Mosaik steuern",
     zoomIn: "Vergrößern",
