@@ -27,7 +27,9 @@
     ],
     "place": [
       "frankfurt",
-      "london"
+      "london",
+      "germany",
+      "united-kingdom"
     ]
   },
   "prominence": 0.25,

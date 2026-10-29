@@ -22,6 +22,7 @@ import { getFreeImages, type CommonsImage } from "./import/commons";
 import { fetchBinary } from "./import/http";
 import {
   dateOf,
+  countriesOf,
   entityIds,
   femaleLabel,
   findCandidates,
@@ -341,6 +342,22 @@ async function main() {
     field: Object.fromEntries([...FIELDS, ACTIVISM].map((f) => [f.key, f.label])),
     place: {},
   };
+  // Countries too, so searching "Deutschland" finds everyone born or died there.
+  const cityEntities = withFreeImage.flatMap((c) =>
+    ["P19", "P20"].flatMap((prop) => {
+      const city = cityOf(refs.get(entityIds(entities.get(c.qid)!, prop)[0]));
+      return city ? [city] : [];
+    }),
+  );
+  const countries = await countriesOf(cityEntities);
+  const countryKey = (place: Entity) => {
+    const country = countries.get(place.id);
+    const en = label(country, "en");
+    if (!country || !en) return undefined;
+    const key = slugify(en);
+    taxonomy.place[key] ??= { de: label(country, "de") ?? en, en };
+    return key;
+  };
   const usedSlugs = new Set<string>();
   const skipped: string[] = [];
   let downloaded = 0;
@@ -371,12 +388,15 @@ async function main() {
     }
     usedSlugs.add(slug);
 
+    const countryKeys: string[] = [];
     const placeKey = (prop: string) => {
       const place = cityOf(refs.get(entityIds(e, prop)[0]));
       const en = label(place, "en");
       if (!place || !en) return undefined;
       const key = slugify(en);
       taxonomy.place[key] ??= { de: label(place, "de")!, en };
+      const country = countryKey(place);
+      if (country) countryKeys.push(country);
       return key;
     };
     const bornPlace = placeKey("P19");
@@ -398,7 +418,7 @@ async function main() {
       },
       facets: {
         field: fieldsOf(occupations),
-        place: [...new Set([bornPlace, diedPlace].filter((p): p is string => !!p))],
+        place: [...new Set([bornPlace, diedPlace, ...countryKeys].filter((p): p is string => !!p))],
       },
       prominence:
         maxLog === minLog

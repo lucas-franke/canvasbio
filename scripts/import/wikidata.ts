@@ -113,3 +113,36 @@ export function femaleLabel(entity: Entity | undefined, lang: "de" | "en"): stri
     .filter((v): v is { text: string; language: string } => v?.language === lang);
   return forms[0]?.text ?? label(entity, lang);
 }
+
+/**
+ * Country entity per place (P17, else up the administrative parents P131), for the places
+ * given. Loads missing parents and countries; keys of the result are the place ids.
+ */
+export async function countriesOf(places: Entity[]): Promise<Map<string, Entity>> {
+  const known = new Map<string, Entity>(places.map((p) => [p.id, p]));
+  const countryId = new Map<string, string>();
+  let pending = places;
+  for (let level = 0; level < 4 && pending.length > 0; level++) {
+    const parents: string[] = [];
+    for (const place of pending) {
+      const direct = entityIds(place, "P17")[0];
+      if (direct) countryId.set(place.id, direct);
+      else parents.push(...entityIds(place, "P131").slice(0, 1));
+    }
+    const missing = parents.filter((id) => !known.has(id));
+    for (const [id, entity] of await getEntities(missing)) known.set(id, entity);
+    // Places without a country of their own take the country of their parent in the next round.
+    const next = pending.filter((p) => !countryId.has(p.id));
+    pending = next.flatMap((p) => {
+      const parent = known.get(entityIds(p, "P131")[0] ?? "");
+      return parent ? [{ ...parent, id: p.id, claims: parent.claims }] : [];
+    });
+  }
+  const countries = await getEntities([...new Set(countryId.values())]);
+  const result = new Map<string, Entity>();
+  for (const [placeId, id] of countryId) {
+    const country = countries.get(id);
+    if (country) result.set(placeId, country);
+  }
+  return result;
+}

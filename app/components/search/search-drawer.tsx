@@ -58,7 +58,9 @@ export function SearchDrawer() {
         // The name field gets focus, not the close button.
         onOpenAutoFocus={(event) => {
           event.preventDefault();
-          document.getElementById("search-name")?.focus();
+          // On a phone the keyboard would cover half the sheet, so the name field is only
+          // focused where there is room; preventScroll keeps the sheet's content at the top.
+          if (desktop) document.getElementById("search-name")?.focus({ preventScroll: true });
         }}
       >
         <div className="flex items-center justify-between px-6 pt-2">
@@ -141,8 +143,8 @@ function SearchForm({ index }: { index: PeopleIndex }) {
   };
 
   return (
-    <form onSubmit={onSubmit} role="search" className="flex min-h-0 flex-col" aria-label={m.search.title}>
-      <div className="flex flex-col gap-6 overflow-y-auto px-6 pt-6 pb-4">
+    <form onSubmit={onSubmit} role="search" className="flex min-h-0 flex-1 flex-col" aria-label={m.search.title}>
+      <div className="flex min-h-0 scroll-pt-6 scroll-pb-4 flex-col gap-6 overflow-y-auto overscroll-contain px-6 pt-6 pb-4">
         <div className="flex flex-col gap-2">
           <label htmlFor="search-name" className="text-label font-medium text-emphasis">
             {m.search.name}
@@ -349,6 +351,7 @@ function AutocompleteFacet({
   const locale = useLocale();
   const id = useId();
   const input = useRef<HTMLInputElement>(null);
+  const root = useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(-1);
 
@@ -414,7 +417,7 @@ function AutocompleteFacet({
   };
 
   return (
-    <div className="flex flex-col gap-2">
+    <div ref={root} className="flex flex-col gap-2">
       <label htmlFor={`${id}-input`} className="text-label font-medium text-emphasis">
         {localize(facet.label, locale)}
       </label>
@@ -446,6 +449,11 @@ function AutocompleteFacet({
             setActive(-1);
           }}
           onKeyDown={onKeyDown}
+          // The on-screen keyboard shrinks the sheet; keep label, field and suggestions in view
+          // instead of letting the browser scroll just the field (which hides the label).
+          onFocus={() =>
+            setTimeout(() => root.current?.scrollIntoView({ block: "nearest", behavior: "smooth" }), 300)
+          }
           onBlur={() => setOpen(false)}
           className={cn(fieldClass, "pr-12 pl-12")}
         />

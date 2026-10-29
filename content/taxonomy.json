@@ -1237,6 +1237,126 @@
     "cardiff": {
       "de": "Cardiff",
       "en": "Cardiff"
+    },
+    "new-zealand": {
+      "de": "Neuseeland",
+      "en": "New Zealand"
+    },
+    "austria": {
+      "de": "Österreich",
+      "en": "Austria"
+    },
+    "germany": {
+      "de": "Deutschland",
+      "en": "Germany"
+    },
+    "turkey": {
+      "de": "Türkei",
+      "en": "Turkey"
+    },
+    "netherlands": {
+      "de": "Niederlande",
+      "en": "Netherlands"
+    },
+    "france": {
+      "de": "Frankreich",
+      "en": "France"
+    },
+    "russia": {
+      "de": "Russland",
+      "en": "Russia"
+    },
+    "argentina": {
+      "de": "Argentinien",
+      "en": "Argentina"
+    },
+    "czech-republic": {
+      "de": "Tschechien",
+      "en": "Czech Republic"
+    },
+    "mexico": {
+      "de": "Mexiko",
+      "en": "Mexico"
+    },
+    "switzerland": {
+      "de": "Schweiz",
+      "en": "Switzerland"
+    },
+    "croatia": {
+      "de": "Kroatien",
+      "en": "Croatia"
+    },
+    "sweden": {
+      "de": "Schweden",
+      "en": "Sweden"
+    },
+    "india": {
+      "de": "Indien",
+      "en": "India"
+    },
+    "belgium": {
+      "de": "Belgien",
+      "en": "Belgium"
+    },
+    "denmark-norway": {
+      "de": "Dänemark-Norwegen",
+      "en": "Denmark–Norway"
+    },
+    "norway": {
+      "de": "Norwegen",
+      "en": "Norway"
+    },
+    "spain": {
+      "de": "Spanien",
+      "en": "Spain"
+    },
+    "denmark": {
+      "de": "Dänemark",
+      "en": "Denmark"
+    },
+    "australia": {
+      "de": "Australien",
+      "en": "Australia"
+    },
+    "lithuania": {
+      "de": "Litauen",
+      "en": "Lithuania"
+    },
+    "canada": {
+      "de": "Kanada",
+      "en": "Canada"
+    },
+    "ireland": {
+      "de": "Irland",
+      "en": "Ireland"
+    },
+    "egypt": {
+      "de": "Ägypten",
+      "en": "Egypt"
+    },
+    "romania": {
+      "de": "Rumänien",
+      "en": "Romania"
+    },
+    "hungary": {
+      "de": "Ungarn",
+      "en": "Hungary"
+    },
+    "poland": {
+      "de": "Polen",
+      "en": "Poland"
+    },
+    "estonia": {
+      "de": "Estland",
+      "en": "Estonia"
+    },
+    "italy": {
+      "de": "Italien",
+      "en": "Italy"
+    },
+    "russian-empire": {
+      "de": "Russisches Kaiserreich",
+      "en": "Russian Empire"
     }
   }
 }
