@@ -1,0 +1,63 @@
+{
+  "slug": "elizabeth-colenso",
+  "name": {
+    "display": "Elizabeth Colenso",
+    "sort": "Colenso, Elizabeth"
+  },
+  "born": {
+    "date": "1821-08-29",
+    "place": "kerikeri"
+  },
+  "died": {
+    "date": "1904-09-02",
+    "place": "otaki"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1904",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mrs_Elizabeth_Colenso_nee_Fairburn.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education"
+    ],
+    "place": [
+      "kerikeri",
+      "otaki",
+      "new-zealand",
+      "oceania"
+    ]
+  },
+  "prominence": 0.46,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q430769",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Elizabeth Colenso",
+      "url": "https://de.wikipedia.org/wiki/Elizabeth_Colenso",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Elizabeth Colenso",
+      "url": "https://en.wikipedia.org/wiki/Elizabeth_Colenso",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q430769"
+}

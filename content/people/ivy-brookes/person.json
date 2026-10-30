@@ -1,0 +1,54 @@
+{
+  "slug": "ivy-brookes",
+  "name": {
+    "display": "Ivy Brookes",
+    "sort": "Brookes, Ivy"
+  },
+  "born": {
+    "date": "1883-07-14",
+    "place": "south-yarra"
+  },
+  "died": {
+    "date": "1970-12-27",
+    "place": "melbourne"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Lafayette Studios, Melbourne, 1929",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ivy_Brookes_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "south-yarra",
+      "melbourne",
+      "australia",
+      "oceania"
+    ]
+  },
+  "prominence": 0.33,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q21539280",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ivy Brookes",
+      "url": "https://en.wikipedia.org/wiki/Ivy_Brookes",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q21539280"
+}

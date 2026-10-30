@@ -1,0 +1,62 @@
+{
+  "slug": "emily-siedeberg",
+  "name": {
+    "display": "Emily Siedeberg",
+    "sort": "Siedeberg, Emily"
+  },
+  "born": {
+    "date": "1873-02-17",
+    "place": "clyde"
+  },
+  "died": {
+    "date": "1968-06-13",
+    "place": "oamaru"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Not stated at source, 1896",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emily_Siedeberg.jpg"
+  },
+  "facets": {
+    "field": [
+      "medicine"
+    ],
+    "place": [
+      "clyde",
+      "oamaru",
+      "new-zealand",
+      "oceania"
+    ]
+  },
+  "prominence": 0.54,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5372201",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Emily Siedeberg",
+      "url": "https://de.wikipedia.org/wiki/Emily_Siedeberg",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Emily Siedeberg",
+      "url": "https://en.wikipedia.org/wiki/Emily_Siedeberg",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5372201"
+}

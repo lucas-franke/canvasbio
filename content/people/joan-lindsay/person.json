@@ -1,0 +1,63 @@
+{
+  "slug": "joan-lindsay",
+  "name": {
+    "display": "Joan Lindsay",
+    "sort": "Lindsay, Joan"
+  },
+  "born": {
+    "date": "1896-11-16",
+    "place": "st-kilda"
+  },
+  "died": {
+    "date": "1984-12-23",
+    "place": "frankston"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1925",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Joan_Lindsay_enhance_crop_1925.png"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "arts"
+    ],
+    "place": [
+      "st-kilda",
+      "frankston",
+      "australia",
+      "oceania"
+    ]
+  },
+  "prominence": 0.71,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q453983",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Joan Lindsay",
+      "url": "https://de.wikipedia.org/wiki/Joan_Lindsay",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Joan Lindsay",
+      "url": "https://en.wikipedia.org/wiki/Joan_Lindsay",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q453983"
+}

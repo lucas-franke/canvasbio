@@ -51,14 +51,17 @@ export async function findCandidates(toYear = 1950): Promise<Candidate[]> {
   }));
 }
 
-/** Wikidata ids of the continents (P30) by their English name, for --focus. */
-export const CONTINENT_IDS: Record<string, string> = {
-  Africa: "Q15",
-  Asia: "Q48",
-  Europe: "Q46",
-  "North America": "Q49",
-  "South America": "Q18",
-  Oceania: "Q538",
+/**
+ * Wikidata ids of the continents (P30) by their English name, for --focus. Oceania has two:
+ * Australia and New Zealand are only on "Insular Oceania" (Q55643).
+ */
+export const CONTINENT_IDS: Record<string, string[]> = {
+  Africa: ["Q15"],
+  Asia: ["Q48"],
+  Europe: ["Q46"],
+  "North America": ["Q49"],
+  "South America": ["Q18"],
+  Oceania: ["Q538", "Q55643"],
 };
 
 /** Occupations for the broader search in under-represented regions (see findRegionalCandidates). */
@@ -84,9 +87,12 @@ const sparql = <K extends string>(query: string) =>
   fetchJson<Bindings<K>>(`${SPARQL}?format=json&query=${encodeURIComponent(query)}`);
 const qidOf = (uri: string) => uri.split("/").pop()!;
 
-/** Sovereign states on a continent. */
-export async function countriesOn(continent: string): Promise<string[]> {
-  const data = await sparql<"c">(`SELECT ?c WHERE { ?c wdt:P30 wd:${continent}; wdt:P31 wd:Q6256. }`);
+/** Sovereign states on a continent (any of its Wikidata ids). */
+export async function countriesOn(continent: string[]): Promise<string[]> {
+  const ids = continent.map((id) => `wd:${id}`).join(" ");
+  const data = await sparql<"c">(
+    `SELECT DISTINCT ?c WHERE { VALUES ?continent { ${ids} } ?c wdt:P30 ?continent; wdt:P31 wd:Q6256. }`,
+  );
   return data.results.bindings.map((b) => qidOf(b.c.value));
 }
 

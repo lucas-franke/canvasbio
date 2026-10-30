@@ -1,0 +1,54 @@
+{
+  "slug": "alice-cashin",
+  "name": {
+    "display": "Alice Cashin",
+    "sort": "Cashin, Alice"
+  },
+  "born": {
+    "date": "1870-03-26",
+    "place": "melbourne"
+  },
+  "died": {
+    "date": "1939",
+    "place": "marrickville"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1915",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alice_Cashin_4099967.jpg"
+  },
+  "facets": {
+    "field": [
+      "medicine"
+    ],
+    "place": [
+      "melbourne",
+      "marrickville",
+      "australia",
+      "oceania"
+    ]
+  },
+  "prominence": 0.16,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q24036544",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Alice Cashin",
+      "url": "https://en.wikipedia.org/wiki/Alice_Cashin",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q24036544"
+}

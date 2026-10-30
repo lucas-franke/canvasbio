@@ -1,0 +1,52 @@
+{
+  "slug": "iris-dexter",
+  "name": {
+    "display": "Iris Dexter",
+    "sort": "Dexter, Iris"
+  },
+  "born": {
+    "date": "1907",
+    "place": "sydney"
+  },
+  "died": {
+    "date": "1974-03-24"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "uncrediited, 1943",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Iris_Dexter_in_1943.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "sydney",
+      "australia",
+      "oceania"
+    ]
+  },
+  "prominence": 0.38,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q55418883",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Iris Dexter",
+      "url": "https://en.wikipedia.org/wiki/Iris_Dexter",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q55418883"
+}

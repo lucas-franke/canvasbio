@@ -1,0 +1,53 @@
+{
+  "slug": "mavis-thorpe-clark",
+  "name": {
+    "display": "Mavis Thorpe Clark",
+    "sort": "Clark, Mavis Thorpe"
+  },
+  "born": {
+    "date": "1909-06-26",
+    "place": "melbourne"
+  },
+  "died": {
+    "date": "1999-07-08",
+    "place": "melbourne"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1948",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mavis_Thorpe_Clark_in_1948.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "melbourne",
+      "australia",
+      "oceania"
+    ]
+  },
+  "prominence": 0.16,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q24284530",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mavis Thorpe Clark",
+      "url": "https://en.wikipedia.org/wiki/Mavis_Thorpe_Clark",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q24284530"
+}

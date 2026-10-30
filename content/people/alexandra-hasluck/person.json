@@ -1,0 +1,65 @@
+{
+  "slug": "alexandra-hasluck",
+  "name": {
+    "display": "Alexandra Hasluck",
+    "sort": "Hasluck, Alexandra"
+  },
+  "born": {
+    "date": "1908-08-26",
+    "place": "north-perth"
+  },
+  "died": {
+    "date": "1993-06-18",
+    "place": "claremont"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Nationaal Archief, Den Haag, Rijksfotoarchief: Fotocollectie Algemeen Nederlands Fotopersbureau (ANEFO), 1945-1989 - negatiefstroken zwart/wit, nummer toegang 2.24.01.05, bestanddeelnummer 911-2797, 1960",
+    "license": {
+      "name": "CC0",
+      "url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alexandra_Hasluck.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education",
+      "science"
+    ],
+    "place": [
+      "north-perth",
+      "claremont",
+      "australia",
+      "oceania"
+    ]
+  },
+  "prominence": 0.46,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q539553",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Alexandra Hasluck",
+      "url": "https://de.wikipedia.org/wiki/Alexandra_Hasluck",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Alexandra Hasluck",
+      "url": "https://en.wikipedia.org/wiki/Alexandra_Hasluck",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q539553"
+}
