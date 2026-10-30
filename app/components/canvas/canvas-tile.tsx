@@ -1,9 +1,9 @@
 import { cn } from "cn";
-import { memo } from "react";
+import { memo, useRef } from "react";
 import { Link } from "react-router";
 
 import { Portrait } from "~/components/portrait";
-import { portraitUrl } from "~/lib/content/images";
+import { sizesFor } from "./use-camera";
 import type { TileVariation } from "~/lib/canvas/layout";
 import type { PersonListItem } from "~/lib/content/adapter";
 import { markPortraitSource } from "~/lib/view-transition";
@@ -37,8 +37,8 @@ interface CanvasTileProps {
   match?: boolean;
   /** Slight size and position variation (see canvas.sizeVariance). */
   variation: TileVariation;
-  /** `sizes` value matching the rendered tile size. */
-  sizes: string;
+  /** Rendered tile size bucket (see CanvasView.lod); 0 = not measured yet. */
+  lod: number;
   /** Mask class for the torn paper edge, if enabled. */
   edgeClass?: string;
 }
@@ -72,9 +72,18 @@ export const CanvasTile = memo(function CanvasTile({
   active,
   match,
   variation,
-  sizes,
+  lod,
   edgeClass,
 }: CanvasTileProps) {
+  // Zooming out never swaps a loaded portrait for a smaller file (a new download that leaves
+  // the tile empty meanwhile); zooming in upgrades it.
+  // (Only while the portrait is shown: a bare tile starts afresh with the size of the moment.)
+  const largest = useRef(lod);
+  if (!near || lod > largest.current) largest.current = lod;
+  const sizes = sizesFor(largest.current);
+  // Until the portrait has loaded: its main colour, darkened, so it reads as a tile and not
+  // as a gap on the light page (many old photos are light beige).
+  const placeholder = `color-mix(in srgb, ${person.image.color} 70%, var(--c-stage))`;
   return (
     <li
       data-vt-item
@@ -102,23 +111,10 @@ export const CanvasTile = memo(function CanvasTile({
         // Bare and far tiles have no visible name: the link is named directly.
         aria-label={near && !far ? undefined : person.name.display}
         className="canvas-tile group block size-full"
-        style={near ? undefined : { backgroundColor: person.image.color }}
+        style={near ? undefined : { backgroundColor: placeholder }}
       >
         {/* Away from the view the link is bare, in the portrait's dominant colour (a fast fling). */}
-        {near && far ? (
-          // Seen from afar (names hidden, tiles small): one small image, no tint or name layer.
-          <img
-            data-vt-portrait
-            src={portraitUrl(person.slug, "sq", 160, "webp", person.image.hash)}
-            alt=""
-            width={160}
-            height={160}
-            decoding="async"
-            draggable={false}
-            className={cn("block size-full object-cover", edgeClass)}
-            style={{ backgroundColor: person.image.color }}
-          />
-        ) : near ? (
+        {near ? (
           <span
             data-vt-portrait
             data-tint
@@ -126,15 +122,18 @@ export const CanvasTile = memo(function CanvasTile({
           >
             <Portrait
               slug={person.slug}
-              image={person.image}
+              image={{ ...person.image, color: placeholder }}
               alt=""
               sizes={sizes}
               className="size-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
-            {/* Dark gradient guarantees contrast for the name regardless of the photo. */}
-            <span className="canvas-tile-name absolute inset-x-0 bottom-0 bg-linear-to-t from-stage via-stage/80 to-transparent font-medium text-stage-foreground">
-              <span className="canvas-tile-label">{person.name.display}</span>
-            </span>
+            {/* Dark gradient guarantees contrast for the name regardless of the photo. Seen
+                from afar the names are hidden anyway: no layer to restyle (same portrait element). */}
+            {!far && (
+              <span className="canvas-tile-name absolute inset-x-0 bottom-0 bg-linear-to-t from-stage via-stage/80 to-transparent font-medium text-stage-foreground">
+                <span className="canvas-tile-label">{person.name.display}</span>
+              </span>
+            )}
           </span>
         ) : null}
       </Link>

@@ -7,7 +7,7 @@ import { tornVariant } from "~/lib/canvas/torn-edge";
 import type { PersonListItem } from "~/lib/content/adapter";
 import { canvasLayout, canvasLimits } from "./canvas-layout";
 import { CanvasTile } from "./canvas-tile";
-import { LAST_CAMERA_KEY, sizesFor, staticView, useCamera } from "./use-camera";
+import { LAST_CAMERA_KEY, staticView, useCamera } from "./use-camera";
 
 const { canvas: config, theme } = siteConfig;
 
@@ -73,8 +73,6 @@ export function CanvasBackdrop({
     });
   }, [view, layout, ordered]);
 
-  const sizes = sizesFor(view?.lod ?? 0);
-
   return (
     <div aria-hidden="true" inert className="pointer-events-none absolute inset-0 overflow-clip">
       <div ref={viewportRef} className="canvas-viewport absolute inset-0 overflow-clip">
@@ -99,7 +97,7 @@ export function CanvasBackdrop({
                 near
                 active={false}
                 variation={tileVariation(layout, cell, config.sizeVariance)}
-                sizes={sizes}
+                lod={view?.lod ?? 0}
                 edgeClass={
                   theme.tileEdge === "torn" ? `torn-edge-${tornVariant(cell.col, cell.row)}` : undefined
                 }

@@ -11,6 +11,7 @@ import {
   type Insets,
   type ZoomLimits,
 } from "~/lib/canvas/camera";
+import { SQUARE_WIDTHS } from "~/lib/content/images";
 import {
   cellNear,
   cellOrigin,
@@ -40,28 +41,38 @@ export function staticView(layout: CanvasLayout, limits: ZoomLimits): CanvasView
   };
 }
 
-/** `sizes` for tile images: the rendered size, or the starting size by viewport width. */
-export const sizesFor = (lod: number) => (lod > 0 ? `${lod}px` : "(max-width: 780px) 130px, 280px");
+/** Screen density for image choice; above 3 the difference isn't visible on a small tile. */
+const density = () => (typeof window === "undefined" ? 1 : Math.min(3, window.devicePixelRatio || 1));
+
+/**
+ * `sizes` for tile images that makes the browser pick exactly the file width `lod` (it
+ * multiplies `sizes` by the screen density), or the starting size by viewport width.
+ */
+export const sizesFor = (lod: number) =>
+  lod > 0 ? `${Math.floor(lod / density())}px` : "(max-width: 780px) 130px, 280px";
 
 /** What React renders from the camera: changes only when a cell boundary or the image size bucket is crossed. */
 export interface CanvasView {
   range: CellRange;
   /** Cell at the viewport centre. */
   center: Cell;
-  /** Rendered tile size in screen px, rounded up to an image size bucket (for `sizes`). */
+  /** Image file width the tiles need at this zoom and screen density (see `sizesFor`). */
   lod: number;
   /** Seen from afar (names hidden): tiles render as bare portraits. */
   far: boolean;
 }
 
-const LOD_BUCKETS = [96, 160, 240, 320, 480, 640];
 /**
  * How long the camera has to rest before zoom-dependent details catch up: the constant-size
  * names and focus rings (--s) and the image size (lod). Updating them on every frame of a
  * zoom restyles or re-renders every tile and made zooming stutter.
  */
 const SETTLE_MS = 140;
-const lodFor = (px: number) => LOD_BUCKETS.find((b) => b >= px) ?? LOD_BUCKETS.at(-1)!;
+/**
+ * The smallest portrait file that is sharp enough for a tile of `px` CSS pixels. Slightly
+ * soft is fine (15 %): a sharper file is often four times the bytes.
+ */
+const lodFor = (px: number) => SQUARE_WIDTHS.find((w) => w >= px * density() * 0.85) ?? SQUARE_WIDTHS.at(-1)!;
 
 const sameView = (a: CanvasView | null, b: CanvasView) =>
   a !== null &&
@@ -217,10 +228,13 @@ export function useCamera({
 
     // The first camera (and every one without a measured size yet) takes effect at once.
     const first = !viewRef.current || viewRef.current.lod === 0;
+    // A smaller image size applies at once: tiles coming into view while zooming out load the
+    // small file (loaded tiles keep their sharper one, see CanvasTile). Larger sizes wait.
+    const lod = lodFor(layout.tile * cam.scale);
     const nextView: CanvasView = {
       range: visibleRange(layout, cam, size.current, 1),
       center: cellNear(layout, cam.x, cam.y),
-      lod: first ? lodFor(layout.tile * cam.scale) : viewRef.current!.lod,
+      lod: first ? lod : Math.min(lod, viewRef.current!.lod),
       far: first ? layout.tile * cam.scale < FAR_TILE_PX : viewRef.current!.far,
     };
     if (!sameView(viewRef.current, nextView)) {

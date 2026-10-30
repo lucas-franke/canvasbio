@@ -41,7 +41,7 @@ import { CanvasControls } from "./canvas-controls";
 import { CanvasTile } from "./canvas-tile";
 import { defaultScale, firstPaintScript } from "~/lib/canvas/camera";
 import { canvasLayout, canvasLimits } from "./canvas-layout";
-import { sizesFor, staticView, useCamera, type CanvasView } from "./use-camera";
+import { staticView, useCamera, type CanvasView } from "./use-camera";
 
 const { canvas: config, theme } = siteConfig;
 const tornEdges = theme.tileEdge === "torn";
@@ -487,8 +487,6 @@ export function InfiniteCanvas({
     });
   }, [view, layout, current, ordered, hitSet]);
 
-  const sizes = sizesFor(view?.lod ?? 0);
-
   return (
     <div className="relative h-full overflow-clip">
       {/* Read first: what the wall is and that the list is easier with a screen reader. */}
@@ -532,7 +530,7 @@ export function InfiniteCanvas({
                 active={person.slug === activeSlug}
                 match={hitSet ? hitSet.has(person.slug) : undefined}
                 variation={tileVariation(layout, cell, config.sizeVariance)}
-                sizes={sizes}
+                lod={view?.lod ?? 0}
                 edgeClass={tornEdges ? `torn-edge-${tornVariant(cell.col, cell.row)}` : undefined}
               />
             ))}
