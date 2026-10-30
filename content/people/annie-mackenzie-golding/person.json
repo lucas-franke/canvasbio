@@ -1,0 +1,53 @@
+{
+  "slug": "annie-mackenzie-golding",
+  "name": {
+    "display": "Annie Mackenzie Golding",
+    "sort": "Golding, Annie Mackenzie"
+  },
+  "born": {
+    "date": "1855-10-27",
+    "place": "tambaroora"
+  },
+  "died": {
+    "date": "1934-12-28",
+    "place": "sydney"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Freeman Brothers Studio, 1902",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Annie_Mackenzie_Golding_(crop).jpg"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "tambaroora",
+      "sydney",
+      "australia"
+    ]
+  },
+  "prominence": 0.23,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q21535661",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Annie Mackenzie Golding",
+      "url": "https://en.wikipedia.org/wiki/Annie_Mackenzie_Golding",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q21535661"
+}

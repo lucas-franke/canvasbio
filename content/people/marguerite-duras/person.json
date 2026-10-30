@@ -1,0 +1,63 @@
+{
+  "slug": "marguerite-duras",
+  "name": {
+    "display": "Marguerite Duras",
+    "sort": "Duras, Marguerite"
+  },
+  "born": {
+    "date": "1914-04-04",
+    "place": "gia-dinh"
+  },
+  "died": {
+    "date": "1996-03-03",
+    "place": "paris"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1960",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Identite-Duras-1960-Sacem.png"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "science"
+    ],
+    "place": [
+      "gia-dinh",
+      "paris",
+      "nguyen-dynasty",
+      "france"
+    ]
+  },
+  "prominence": 0.94,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q153248",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Marguerite Duras",
+      "url": "https://de.wikipedia.org/wiki/Marguerite_Duras",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Marguerite Duras",
+      "url": "https://en.wikipedia.org/wiki/Marguerite_Duras",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q153248"
+}

@@ -1,0 +1,52 @@
+{
+  "slug": "ana-figueroa-gajardo",
+  "name": {
+    "display": "Ana Figueroa Gajardo",
+    "sort": "Gajardo, Ana Figueroa"
+  },
+  "born": {
+    "date": "1907-06-19",
+    "place": "santiago"
+  },
+  "died": {
+    "date": "1970-04-08",
+    "place": "santiago"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1949",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ana_Figueroa_Gajardo.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "education"
+    ],
+    "place": [
+      "santiago"
+    ]
+  },
+  "prominence": 0.51,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q18645948",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ana Figuero",
+      "url": "https://en.wikipedia.org/wiki/Ana_Figuero",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q18645948"
+}

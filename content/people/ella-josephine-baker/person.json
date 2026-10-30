@@ -1,0 +1,61 @@
+{
+  "slug": "ella-josephine-baker",
+  "name": {
+    "display": "Ella Josephine Baker",
+    "sort": "Baker, Ella Josephine"
+  },
+  "born": {
+    "date": "1903-12-13",
+    "place": "norfolk"
+  },
+  "died": {
+    "date": "1986-12-13",
+    "place": "manhattan"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "AnonymousUnknown author, 1944",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ella_Baker_(1903-1986)_circa_1944.png"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "norfolk",
+      "manhattan",
+      "united-states"
+    ]
+  },
+  "prominence": 0.75,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q468884",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Ella Baker",
+      "url": "https://de.wikipedia.org/wiki/Ella_Baker",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ella Baker",
+      "url": "https://en.wikipedia.org/wiki/Ella_Baker",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q468884"
+}

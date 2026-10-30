@@ -1,0 +1,62 @@
+{
+  "slug": "rebecca-ann-latimer-felton",
+  "name": {
+    "display": "Rebecca Ann Latimer Felton",
+    "sort": "Felton, Rebecca Ann Latimer"
+  },
+  "born": {
+    "date": "1835-06-10",
+    "place": "decatur"
+  },
+  "died": {
+    "date": "1930-01-24",
+    "place": "atlanta"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Biographical Directory of the United States Congress",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rebecca_L._Felton.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing"
+    ],
+    "place": [
+      "decatur",
+      "atlanta",
+      "united-states"
+    ]
+  },
+  "prominence": 0.74,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q271243",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Rebecca Ann Latimer Felton",
+      "url": "https://de.wikipedia.org/wiki/Rebecca_Ann_Latimer_Felton",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Rebecca Latimer Felton",
+      "url": "https://en.wikipedia.org/wiki/Rebecca_Latimer_Felton",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q271243"
+}

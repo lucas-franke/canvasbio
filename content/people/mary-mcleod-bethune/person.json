@@ -1,0 +1,63 @@
+{
+  "slug": "mary-mcleod-bethune",
+  "name": {
+    "display": "Mary McLeod Bethune",
+    "sort": "Bethune, Mary McLeod"
+  },
+  "born": {
+    "date": "1875-07-10",
+    "place": "mayesville"
+  },
+  "died": {
+    "date": "1955-05-18",
+    "place": "daytona-beach"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1910",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mary_Jane_McLeod_Bethune,_c1910.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "education"
+    ],
+    "place": [
+      "mayesville",
+      "daytona-beach",
+      "united-states"
+    ]
+  },
+  "prominence": 0.75,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q291068",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Mary McLeod Bethune",
+      "url": "https://de.wikipedia.org/wiki/Mary_McLeod_Bethune",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mary McLeod Bethune",
+      "url": "https://en.wikipedia.org/wiki/Mary_McLeod_Bethune",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q291068"
+}

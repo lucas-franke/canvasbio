@@ -1,0 +1,62 @@
+{
+  "slug": "carrie-chapman-catt",
+  "name": {
+    "display": "Carrie Chapman Catt",
+    "sort": "Catt, Carrie Chapman"
+  },
+  "born": {
+    "date": "1859-01-09",
+    "place": "ripon"
+  },
+  "died": {
+    "date": "1947-03-09",
+    "place": "new-rochelle"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1914",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Carrie_Chapman_Catt.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing"
+    ],
+    "place": [
+      "ripon",
+      "new-rochelle",
+      "united-states"
+    ]
+  },
+  "prominence": 0.8,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q270207",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Carrie Chapman Catt",
+      "url": "https://de.wikipedia.org/wiki/Carrie_Chapman_Catt",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Carrie Chapman Catt",
+      "url": "https://en.wikipedia.org/wiki/Carrie_Chapman_Catt",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q270207"
+}

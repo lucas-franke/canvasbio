@@ -1,0 +1,62 @@
+{
+  "slug": "elizabeth-maria-molteno",
+  "name": {
+    "display": "Elizabeth Maria Molteno",
+    "sort": "Molteno, Elizabeth Maria"
+  },
+  "born": {
+    "date": "1852-09-24",
+    "place": "beaufort-west"
+  },
+  "died": {
+    "date": "1927-08-25",
+    "place": "trevone"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "AnonymousUnknown author, 1920",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elizabeth_Maria_Molteno_-_Civil_and_Womens_Rights_Activist_-_Cape_Town_2.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "beaufort-west",
+      "trevone",
+      "south-africa",
+      "united-kingdom"
+    ]
+  },
+  "prominence": 0.59,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5363160",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Elizabeth Maria Molteno",
+      "url": "https://de.wikipedia.org/wiki/Elizabeth_Maria_Molteno",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Elizabeth Maria Molteno",
+      "url": "https://en.wikipedia.org/wiki/Elizabeth_Maria_Molteno",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5363160"
+}

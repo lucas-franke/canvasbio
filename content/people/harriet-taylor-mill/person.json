@@ -1,0 +1,63 @@
+{
+  "slug": "harriet-taylor-mill",
+  "name": {
+    "display": "Harriet Taylor Mill",
+    "sort": "Mill, Harriet Taylor"
+  },
+  "born": {
+    "date": "1807-10-08",
+    "place": "london"
+  },
+  "died": {
+    "date": "1858-11-03",
+    "place": "avignon"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "anonymous, 1982",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Harriet_Mill_from_NPG.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "science"
+    ],
+    "place": [
+      "london",
+      "avignon",
+      "united-kingdom",
+      "france"
+    ]
+  },
+  "prominence": 0.78,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q240782",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Harriet Taylor Mill",
+      "url": "https://de.wikipedia.org/wiki/Harriet_Taylor_Mill",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Harriet Taylor Mill",
+      "url": "https://en.wikipedia.org/wiki/Harriet_Taylor_Mill",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q240782"
+}

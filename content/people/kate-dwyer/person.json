@@ -1,0 +1,53 @@
+{
+  "slug": "kate-dwyer",
+  "name": {
+    "display": "Kate Dwyer",
+    "sort": "Dwyer, Kate"
+  },
+  "born": {
+    "date": "1861-06-13",
+    "place": "tambaroora"
+  },
+  "died": {
+    "date": "1949-02-03",
+    "place": "sydney"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Freeman Brothers Studio, 1902",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kate_Dwyer.jpg"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "tambaroora",
+      "sydney",
+      "australia"
+    ]
+  },
+  "prominence": 0.44,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6375473",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Kate Dwyer",
+      "url": "https://en.wikipedia.org/wiki/Kate_Dwyer",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6375473"
+}

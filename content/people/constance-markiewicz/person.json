@@ -1,0 +1,63 @@
+{
+  "slug": "constance-markiewicz",
+  "name": {
+    "display": "Constance Markiewicz",
+    "sort": "Markiewicz, Constance"
+  },
+  "born": {
+    "date": "1868-02-04",
+    "place": "westminster"
+  },
+  "died": {
+    "date": "1927-07-15",
+    "place": "dublin"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Keogh Brothers Ltd., 1920",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Countess_Constance_Markiewicz-1.1.2_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "arts"
+    ],
+    "place": [
+      "westminster",
+      "dublin",
+      "united-kingdom",
+      "ireland"
+    ]
+  },
+  "prominence": 0.8,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q195768",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Constance Markiewicz",
+      "url": "https://de.wikipedia.org/wiki/Constance_Markiewicz",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Constance Markievicz",
+      "url": "https://en.wikipedia.org/wiki/Constance_Markievicz",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q195768"
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "mercedes-cabello",
+  "name": {
+    "display": "Mercedes Cabello",
+    "sort": "Cabello, Mercedes"
+  },
+  "born": {
+    "date": "1845-02-07",
+    "place": "moquegua"
+  },
+  "died": {
+    "date": "1909-10-12",
+    "place": "hospital-de-la-misericordia-lima"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Estudio Courret. Reproducción de una foto bajo dominio público., 1889",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mercedes_Cabello_de_Carbonera.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "moquegua",
+      "hospital-de-la-misericordia-lima"
+    ]
+  },
+  "prominence": 0.59,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q543726",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Mercedes Cabello de Carbonera",
+      "url": "https://de.wikipedia.org/wiki/Mercedes_Cabello_de_Carbonera",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mercedes Cabello de Carbonera",
+      "url": "https://en.wikipedia.org/wiki/Mercedes_Cabello_de_Carbonera",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q543726"
+}

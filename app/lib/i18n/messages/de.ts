@@ -137,6 +137,7 @@ export const de = {
     related: "Ähnliche Biografien",
     readingTime: (minutes: number) => `${minutes} ${minutes === 1 ? "Minute" : "Minuten"} Lesezeit`,
     outline: "Inhalt",
+    storyOnlyIn: (language: string) => `Dieser Text liegt nur auf ${language} vor.`,
     sameEra: "Zur selben Zeit",
   },
   error: {

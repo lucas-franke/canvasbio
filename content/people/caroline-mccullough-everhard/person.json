@@ -1,0 +1,51 @@
+{
+  "slug": "caroline-mccullough-everhard",
+  "name": {
+    "display": "Caroline McCullough Everhard",
+    "sort": "Everhard, Caroline McCullough"
+  },
+  "born": {
+    "date": "1843-09-14",
+    "place": "massillon"
+  },
+  "died": {
+    "date": "1902-04-14"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:CAROLINE_MCCULLOUGH_EVERHARD.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "massillon",
+      "united-states"
+    ]
+  },
+  "prominence": 0.15,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q29876390",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Caroline McCullough Everhard",
+      "url": "https://en.wikipedia.org/wiki/Caroline_McCullough_Everhard",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q29876390"
+}

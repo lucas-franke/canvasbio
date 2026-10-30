@@ -1,0 +1,62 @@
+{
+  "slug": "kang-kyong-ae",
+  "name": {
+    "display": "Kang Kyŏng-ae",
+    "sort": "Kyŏng-ae, Kang"
+  },
+  "born": {
+    "date": "1907-04-20",
+    "place": "songhwa-county"
+  },
+  "died": {
+    "date": "1944-04-26",
+    "place": "hwanghae"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1930",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kang_Kyeong-ae.JPG"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "songhwa-county",
+      "hwanghae",
+      "north-korea",
+      "joseon"
+    ]
+  },
+  "prominence": 0.62,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q47305",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Kang Kyŏng-ae",
+      "url": "https://de.wikipedia.org/wiki/Kang_Ky%C5%8Fng-ae",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Kang Kyŏngae",
+      "url": "https://en.wikipedia.org/wiki/Kang_Ky%C5%8Fngae",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q47305"
+}

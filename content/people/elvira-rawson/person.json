@@ -1,0 +1,61 @@
+{
+  "slug": "elvira-rawson",
+  "name": {
+    "display": "Elvira Rawson",
+    "sort": "Rawson, Elvira"
+  },
+  "born": {
+    "date": "1867-04-19",
+    "place": "junin"
+  },
+  "died": {
+    "date": "1954-06-04",
+    "place": "buenos-aires"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1920",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elvira_Rawson_AGN.jpg"
+  },
+  "facets": {
+    "field": [
+      "medicine"
+    ],
+    "place": [
+      "junin",
+      "buenos-aires",
+      "argentina"
+    ]
+  },
+  "prominence": 0.66,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5368127",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Elvira Rawson",
+      "url": "https://de.wikipedia.org/wiki/Elvira_Rawson",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Elvira Rawson de Dellepiane",
+      "url": "https://en.wikipedia.org/wiki/Elvira_Rawson_de_Dellepiane",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5368127"
+}

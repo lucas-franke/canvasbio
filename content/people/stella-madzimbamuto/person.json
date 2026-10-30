@@ -1,0 +1,51 @@
+{
+  "slug": "stella-madzimbamuto",
+  "name": {
+    "display": "Stella Madzimbamuto",
+    "sort": "Madzimbamuto, Stella"
+  },
+  "born": {
+    "date": "1930-04-13"
+  },
+  "died": {
+    "date": "2020-06-30",
+    "place": "george"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "William Birmingham (author of article), 1969",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stella_Madzimbamuto_(brightened)_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "medicine"
+    ],
+    "place": [
+      "george",
+      "south-africa"
+    ]
+  },
+  "prominence": 0.34,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q110805987",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Stella Madzimbamuto",
+      "url": "https://en.wikipedia.org/wiki/Stella_Madzimbamuto",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q110805987"
+}

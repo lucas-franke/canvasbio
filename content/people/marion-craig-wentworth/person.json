@@ -1,0 +1,51 @@
+{
+  "slug": "marion-craig-wentworth",
+  "name": {
+    "display": "Marion Craig Wentworth",
+    "sort": "Wentworth, Marion Craig"
+  },
+  "born": {
+    "date": "1872",
+    "place": "minnesota"
+  },
+  "died": {
+    "date": "1942"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Bain News Service, publisher, 1910",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Suffragette_Marion_Craig_Wentworth_(cropped).tif"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "minnesota",
+      "united-states"
+    ]
+  },
+  "prominence": 0.34,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q28137086",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Marion Craig Wentworth",
+      "url": "https://en.wikipedia.org/wiki/Marion_Craig_Wentworth",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q28137086"
+}

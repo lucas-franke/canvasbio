@@ -1357,6 +1357,994 @@
     "russian-empire": {
       "de": "Russisches Kaiserreich",
       "en": "Russian Empire"
+    },
+    "junin": {
+      "de": "Junín",
+      "en": "Junín"
+    },
+    "gia-dinh": {
+      "de": "Gia Định",
+      "en": "Gia Định"
+    },
+    "nguyen-dynasty": {
+      "de": "Nguyễn-Dynastie",
+      "en": "Nguyen dynasty"
+    },
+    "rancho-mirage": {
+      "de": "Rancho Mirage",
+      "en": "Rancho Mirage"
+    },
+    "plains": {
+      "de": "Plains",
+      "en": "Plains"
+    },
+    "jimmy-carter-house": {
+      "de": "Jimmy Carter House",
+      "en": "Jimmy Carter House"
+    },
+    "peoria": {
+      "de": "Peoria",
+      "en": "Peoria"
+    },
+    "the-bronx": {
+      "de": "Bronx",
+      "en": "The Bronx"
+    },
+    "denver": {
+      "de": "Denver",
+      "en": "Denver"
+    },
+    "ventnor-city": {
+      "de": "Ventnor City",
+      "en": "Ventnor City"
+    },
+    "san-francisco": {
+      "de": "San Francisco",
+      "en": "San Francisco"
+    },
+    "ballintemple": {
+      "de": "Ballintemple",
+      "en": "Ballintemple"
+    },
+    "xiamen": {
+      "de": "Xiamen",
+      "en": "Xiamen"
+    },
+    "people-s-republic-of-china": {
+      "de": "Volksrepublik China",
+      "en": "People's Republic of China"
+    },
+    "shaoxing": {
+      "de": "Shaoxing",
+      "en": "Shaoxing"
+    },
+    "wojczyce": {
+      "de": "Wojczyce",
+      "en": "Wojczyce"
+    },
+    "dahlem": {
+      "de": "Dahlem",
+      "en": "Dahlem"
+    },
+    "dakar": {
+      "de": "Dakar",
+      "en": "Dakar"
+    },
+    "senegal": {
+      "de": "Senegal",
+      "en": "Senegal"
+    },
+    "ripon": {
+      "de": "Ripon",
+      "en": "Ripon"
+    },
+    "new-rochelle": {
+      "de": "New Rochelle",
+      "en": "New Rochelle"
+    },
+    "leslie": {
+      "de": "Leslie",
+      "en": "Leslie"
+    },
+    "westminster": {
+      "de": "Westminster",
+      "en": "Westminster"
+    },
+    "dublin": {
+      "de": "Dublin",
+      "en": "Dublin"
+    },
+    "cape-colony": {
+      "de": "Kapkolonie",
+      "en": "Cape Colony"
+    },
+    "british-empire": {
+      "de": "Britisches Weltreich",
+      "en": "British Empire"
+    },
+    "cape-town": {
+      "de": "Kapstadt",
+      "en": "Cape Town"
+    },
+    "south-africa": {
+      "de": "Südafrika",
+      "en": "South Africa"
+    },
+    "danville": {
+      "de": "Danville",
+      "en": "Danville"
+    },
+    "grimsthorpe-castle": {
+      "de": "Grimsthorpe Castle",
+      "en": "Grimsthorpe Castle"
+    },
+    "bhagalpur": {
+      "de": "Bhagalpur",
+      "en": "Bhagalpur"
+    },
+    "tel-aviv": {
+      "de": "Tel Aviv-Jaffa",
+      "en": "Tel Aviv"
+    },
+    "israel": {
+      "de": "Israel",
+      "en": "Israel"
+    },
+    "melbourne": {
+      "de": "Melbourne",
+      "en": "Melbourne"
+    },
+    "los-angeles": {
+      "de": "Los Angeles",
+      "en": "Los Angeles"
+    },
+    "avignon": {
+      "de": "Avignon",
+      "en": "Avignon"
+    },
+    "cicero": {
+      "de": "Cicero",
+      "en": "Cicero"
+    },
+    "whitechapel": {
+      "de": "Whitechapel",
+      "en": "Whitechapel"
+    },
+    "alde-house": {
+      "de": "Alde House",
+      "en": "Alde House"
+    },
+    "portsmouth": {
+      "de": "Portsmouth",
+      "en": "Portsmouth"
+    },
+    "talbingo": {
+      "de": "Talbingo",
+      "en": "Talbingo"
+    },
+    "drummoyne": {
+      "de": "Drummoyne",
+      "en": "Drummoyne"
+    },
+    "council-bluffs": {
+      "de": "Council Bluffs",
+      "en": "Council Bluffs"
+    },
+    "houston": {
+      "de": "Houston",
+      "en": "Houston"
+    },
+    "austin": {
+      "de": "Austin",
+      "en": "Austin"
+    },
+    "gower-street": {
+      "de": "Gower Street",
+      "en": "Gower Street"
+    },
+    "tanta": {
+      "de": "Tanta",
+      "en": "Tanta"
+    },
+    "albacete": {
+      "de": "Albacete",
+      "en": "Albacete"
+    },
+    "sevres": {
+      "de": "Sèvres",
+      "en": "Sèvres"
+    },
+    "oswego": {
+      "de": "Oswego",
+      "en": "Oswego"
+    },
+    "norfolk": {
+      "de": "Norfolk",
+      "en": "Norfolk"
+    },
+    "manhattan": {
+      "de": "Manhattan",
+      "en": "Manhattan"
+    },
+    "gura-humorului": {
+      "de": "Gura Humorului",
+      "en": "Gura Humorului"
+    },
+    "chernivtsi": {
+      "de": "Czernowitz",
+      "en": "Chernivtsi"
+    },
+    "ukraine": {
+      "de": "Ukraine",
+      "en": "Ukraine"
+    },
+    "qom": {
+      "de": "Ghom",
+      "en": "Qom"
+    },
+    "iran": {
+      "de": "Iran",
+      "en": "Iran"
+    },
+    "tehran": {
+      "de": "Teheran",
+      "en": "Tehran"
+    },
+    "mayesville": {
+      "de": "Mayesville",
+      "en": "Mayesville"
+    },
+    "daytona-beach": {
+      "de": "Daytona Beach",
+      "en": "Daytona Beach"
+    },
+    "ahilyanagar": {
+      "de": "Ahmednagar",
+      "en": "Ahilyanagar"
+    },
+    "montreal": {
+      "de": "Montreal",
+      "en": "Montreal"
+    },
+    "seoul": {
+      "de": "Seoul",
+      "en": "Seoul"
+    },
+    "south-korea": {
+      "de": "Südkorea",
+      "en": "South Korea"
+    },
+    "pyongyang": {
+      "de": "Pjöngjang",
+      "en": "Pyongyang"
+    },
+    "north-korea": {
+      "de": "Nordkorea",
+      "en": "North Korea"
+    },
+    "decatur": {
+      "de": "Decatur",
+      "en": "Decatur"
+    },
+    "atlanta": {
+      "de": "Atlanta",
+      "en": "Atlanta"
+    },
+    "sao-paulo": {
+      "de": "São Paulo",
+      "en": "São Paulo"
+    },
+    "brazil": {
+      "de": "Brasilien",
+      "en": "Brazil"
+    },
+    "rio-de-janeiro": {
+      "de": "Rio de Janeiro",
+      "en": "Rio de Janeiro"
+    },
+    "st-joseph": {
+      "de": "Saint Joseph",
+      "en": "St. Joseph"
+    },
+    "tottenham": {
+      "de": "Tottenham",
+      "en": "Tottenham"
+    },
+    "adana": {
+      "de": "Adana",
+      "en": "Adana"
+    },
+    "rreshen": {
+      "de": "Rrëshen",
+      "en": "Rrëshen"
+    },
+    "albania": {
+      "de": "Albanien",
+      "en": "Albania"
+    },
+    "worcester": {
+      "de": "Worcester",
+      "en": "Worcester"
+    },
+    "cannes": {
+      "de": "Cannes",
+      "en": "Cannes"
+    },
+    "japan": {
+      "de": "Japan",
+      "en": "Japan"
+    },
+    "baltimore": {
+      "de": "Baltimore",
+      "en": "Baltimore"
+    },
+    "philadelphia": {
+      "de": "Philadelphia",
+      "en": "Philadelphia"
+    },
+    "raleigh": {
+      "de": "Raleigh",
+      "en": "Raleigh"
+    },
+    "shobra": {
+      "de": "Shubra",
+      "en": "Shobra"
+    },
+    "indianapolis": {
+      "de": "Indianapolis",
+      "en": "Indianapolis"
+    },
+    "phoenix": {
+      "de": "Phoenix",
+      "en": "Phoenix"
+    },
+    "palestine": {
+      "de": "Palästina",
+      "en": "Palestine"
+    },
+    "fukuoka": {
+      "de": "Fukuoka",
+      "en": "Fukuoka"
+    },
+    "cincinnati": {
+      "de": "Cincinnati",
+      "en": "Cincinnati"
+    },
+    "westport": {
+      "de": "Westport",
+      "en": "Westport"
+    },
+    "satulung": {
+      "de": "Satulung",
+      "en": "Satulung"
+    },
+    "kandilli": {
+      "de": "Kandilli",
+      "en": "Kandilli"
+    },
+    "cicalengka": {
+      "de": "Cicalengka",
+      "en": "Cicalengka"
+    },
+    "indonesia": {
+      "de": "Indonesien",
+      "en": "Indonesia"
+    },
+    "tasikmalaya": {
+      "de": "Tasikmalaya",
+      "en": "Tasikmalaya"
+    },
+    "osgood": {
+      "de": "Osgood",
+      "en": "Osgood"
+    },
+    "pudukkottai-state": {
+      "de": "Pudukkottai",
+      "en": "Pudukkottai State"
+    },
+    "british-india": {
+      "de": "Britisch-Indien",
+      "en": "British India"
+    },
+    "chennai": {
+      "de": "Chennai",
+      "en": "Chennai"
+    },
+    "minamicho": {
+      "de": "Minamichō",
+      "en": "Minamichō"
+    },
+    "kamakura": {
+      "de": "Kamakura",
+      "en": "Kamakura"
+    },
+    "south-yarra": {
+      "de": "South Yarra",
+      "en": "South Yarra"
+    },
+    "mudgee": {
+      "de": "Mudgee",
+      "en": "Mudgee"
+    },
+    "gladesville": {
+      "de": "Gladesville",
+      "en": "Gladesville"
+    },
+    "mumbai": {
+      "de": "Mumbai",
+      "en": "Mumbai"
+    },
+    "isfahan": {
+      "de": "Isfahan",
+      "en": "Isfahan"
+    },
+    "hokianga-harbour": {
+      "de": "Hokianga Harbour",
+      "en": "Hokianga Harbour"
+    },
+    "panguru": {
+      "de": "Panguru",
+      "en": "Panguru"
+    },
+    "new-south-wales": {
+      "de": "New South Wales",
+      "en": "New South Wales"
+    },
+    "matrahaza": {
+      "de": "Mátraháza",
+      "en": "Mátraháza"
+    },
+    "zagazig": {
+      "de": "Zagazig",
+      "en": "Zagazig"
+    },
+    "alexandria": {
+      "de": "Alexandria",
+      "en": "Alexandria"
+    },
+    "songhwa-county": {
+      "de": "Songhwa County",
+      "en": "Songhwa County"
+    },
+    "hwanghae": {
+      "de": "Hwanghae-do",
+      "en": "Hwanghae"
+    },
+    "joseon": {
+      "de": "Joseon-Dynastie",
+      "en": "Joseon"
+    },
+    "lima": {
+      "de": "Lima",
+      "en": "Lima"
+    },
+    "tebnine": {
+      "de": "Tebnine",
+      "en": "Tebnine"
+    },
+    "jiangsu": {
+      "de": "Jiangsu",
+      "en": "Jiangsu"
+    },
+    "beaufort-west": {
+      "de": "Beaufort West",
+      "en": "Beaufort West"
+    },
+    "trevone": {
+      "de": "Trevone",
+      "en": "Trevone"
+    },
+    "moquegua": {
+      "de": "Moquegua",
+      "en": "Moquegua"
+    },
+    "hospital-de-la-misericordia-lima": {
+      "de": "Hospital de la Misericordia, Lima",
+      "en": "Hospital de la Misericordia, Lima"
+    },
+    "caracas": {
+      "de": "Caracas",
+      "en": "Caracas"
+    },
+    "city-of-malvern": {
+      "de": "City of Malvern",
+      "en": "City of Malvern"
+    },
+    "serang": {
+      "de": "Serang",
+      "en": "Serang"
+    },
+    "jakarta": {
+      "de": "Jakarta",
+      "en": "Jakarta"
+    },
+    "asyut": {
+      "de": "Asyut",
+      "en": "Asyut"
+    },
+    "accra": {
+      "de": "Accra",
+      "en": "Accra"
+    },
+    "parirenyatwa-hospital": {
+      "de": "Parirenyatwa Hospital",
+      "en": "Parirenyatwa Hospital"
+    },
+    "scituate": {
+      "de": "Scituate",
+      "en": "Scituate"
+    },
+    "chincha-alta": {
+      "de": "Chincha Alta",
+      "en": "Chincha Alta"
+    },
+    "beirut": {
+      "de": "Beirut",
+      "en": "Beirut"
+    },
+    "freyenstein": {
+      "de": "Freyenstein",
+      "en": "Freyenstein"
+    },
+    "freetown": {
+      "de": "Freetown",
+      "en": "Freetown"
+    },
+    "algiers": {
+      "de": "Algier",
+      "en": "Algiers"
+    },
+    "algiers-province": {
+      "de": "Provinz Algier",
+      "en": "Algiers Province"
+    },
+    "paysandu": {
+      "de": "Paysandú",
+      "en": "Paysandú"
+    },
+    "dingras": {
+      "de": "Dingras",
+      "en": "Dingras"
+    },
+    "manila": {
+      "de": "Manila",
+      "en": "Manila"
+    },
+    "agam": {
+      "de": "Agam",
+      "en": "Agam"
+    },
+    "clermont-ferrand": {
+      "de": "Clermont-Ferrand",
+      "en": "Clermont-Ferrand"
+    },
+    "ennery": {
+      "de": "Ennery",
+      "en": "Ennery"
+    },
+    "gabes": {
+      "de": "Gabès",
+      "en": "Gabès"
+    },
+    "santiago": {
+      "de": "Santiago de Chile",
+      "en": "Santiago"
+    },
+    "iquique": {
+      "de": "Iquique",
+      "en": "Iquique"
+    },
+    "manhuacu": {
+      "de": "Manhuaçu",
+      "en": "Manhuaçu"
+    },
+    "valence": {
+      "de": "Valence",
+      "en": "Valence"
+    },
+    "kemerton": {
+      "de": "Kemerton",
+      "en": "Kemerton"
+    },
+    "irvington": {
+      "de": "Irvington",
+      "en": "Irvington"
+    },
+    "tunisia": {
+      "de": "Tunesien",
+      "en": "Tunisia"
+    },
+    "la-paz": {
+      "de": "La Paz",
+      "en": "La Paz"
+    },
+    "bolivia": {
+      "de": "Bolivien",
+      "en": "Bolivia"
+    },
+    "williamstown": {
+      "de": "Williamstown",
+      "en": "Williamstown"
+    },
+    "adelaide": {
+      "de": "Adelaide",
+      "en": "Adelaide"
+    },
+    "glenmaggie": {
+      "de": "Glenmaggie",
+      "en": "Glenmaggie"
+    },
+    "maresfield": {
+      "de": "Maresfield",
+      "en": "Maresfield"
+    },
+    "otago-region": {
+      "de": "Otago",
+      "en": "Otago Region"
+    },
+    "arcachon": {
+      "de": "Arcachon",
+      "en": "Arcachon"
+    },
+    "nanjangud": {
+      "de": "Nanjangud",
+      "en": "Nanjangud"
+    },
+    "thiruvaiyaru": {
+      "de": "Thiruvaiyaru",
+      "en": "Thiruvaiyaru"
+    },
+    "marysville": {
+      "de": "Marysville",
+      "en": "Marysville"
+    },
+    "paraiba": {
+      "de": "Paraíba",
+      "en": "Paraíba"
+    },
+    "albuquerque": {
+      "de": "Albuquerque",
+      "en": "Albuquerque"
+    },
+    "yurimaguas": {
+      "de": "Yurimaguas",
+      "en": "Yurimaguas"
+    },
+    "moises-ville": {
+      "de": "Moisés Ville",
+      "en": "Moisés Ville"
+    },
+    "san-felipe": {
+      "de": "San Felipe",
+      "en": "San Felipe"
+    },
+    "claremont": {
+      "de": "Claremont",
+      "en": "Claremont"
+    },
+    "minhou-county": {
+      "de": "Minhou",
+      "en": "Minhou County"
+    },
+    "kunming": {
+      "de": "Kunming",
+      "en": "Kunming"
+    },
+    "tebing-tinggi": {
+      "de": "Tebing Tinggi",
+      "en": "Tebing Tinggi"
+    },
+    "wassenaar": {
+      "de": "Wassenaar",
+      "en": "Wassenaar"
+    },
+    "chagrin-falls": {
+      "de": "Chagrin Falls",
+      "en": "Chagrin Falls"
+    },
+    "chur": {
+      "de": "Chur",
+      "en": "Chur"
+    },
+    "tunis": {
+      "de": "Tunis",
+      "en": "Tunis"
+    },
+    "carthage": {
+      "de": "Karthago",
+      "en": "Carthage"
+    },
+    "michigan": {
+      "de": "Michigan",
+      "en": "Michigan"
+    },
+    "san-jose": {
+      "de": "San José",
+      "en": "San Jose"
+    },
+    "yegoryevsk": {
+      "de": "Jegorjewsk",
+      "en": "Yegoryevsk"
+    },
+    "valparaiso": {
+      "de": "Valparaíso",
+      "en": "Valparaíso"
+    },
+    "natal": {
+      "de": "Natal",
+      "en": "Natal"
+    },
+    "belo-horizonte": {
+      "de": "Belo Horizonte",
+      "en": "Belo Horizonte"
+    },
+    "tambaroora": {
+      "de": "Tambaroora",
+      "en": "Tambaroora"
+    },
+    "thames": {
+      "de": "Thames",
+      "en": "Thames"
+    },
+    "auckland": {
+      "de": "Auckland",
+      "en": "Auckland"
+    },
+    "elizabeth-garrett-anderson-and-obstetric-hospital": {
+      "de": "Elizabeth Garrett Anderson and Obstetric Hospital",
+      "en": "Elizabeth Garrett Anderson and Obstetric Hospital"
+    },
+    "geetbets": {
+      "de": "Geetbets",
+      "en": "Geetbets"
+    },
+    "forest": {
+      "de": "Forest/Vorst",
+      "en": "Forest"
+    },
+    "sao-nicolau": {
+      "de": "São Nicolau",
+      "en": "São Nicolau"
+    },
+    "cape-verde": {
+      "de": "Kap Verde",
+      "en": "Cape Verde"
+    },
+    "lisbon": {
+      "de": "Lissabon",
+      "en": "Lisbon"
+    },
+    "portugal": {
+      "de": "Portugal",
+      "en": "Portugal"
+    },
+    "bahia": {
+      "de": "Bahia",
+      "en": "Bahia"
+    },
+    "st-leonards": {
+      "de": "St Leonards-on-Sea",
+      "en": "St Leonards"
+    },
+    "clunes": {
+      "de": "Clunes",
+      "en": "Clunes"
+    },
+    "darlinghurst": {
+      "de": "Darlinghurst",
+      "en": "Darlinghurst"
+    },
+    "san-jose-department": {
+      "de": "Departamento San José",
+      "en": "San José Department"
+    },
+    "la-plata": {
+      "de": "La Plata",
+      "en": "La Plata"
+    },
+    "popayan": {
+      "de": "Popayán",
+      "en": "Popayán"
+    },
+    "colombia": {
+      "de": "Kolumbien",
+      "en": "Colombia"
+    },
+    "madrid": {
+      "de": "Madrid",
+      "en": "Madrid"
+    },
+    "cusco": {
+      "de": "Cusco",
+      "en": "Cusco"
+    },
+    "baradero": {
+      "de": "Baradero",
+      "en": "Baradero"
+    },
+    "belgravia": {
+      "de": "Belgravia",
+      "en": "Belgravia"
+    },
+    "seneca-castle": {
+      "de": "Seneca Castle",
+      "en": "Seneca Castle"
+    },
+    "jenkintown": {
+      "de": "Jenkintown",
+      "en": "Jenkintown"
+    },
+    "brisbane": {
+      "de": "Brisbane",
+      "en": "Brisbane"
+    },
+    "stockton": {
+      "de": "Stockton",
+      "en": "Stockton"
+    },
+    "rundle-street": {
+      "de": "Rundle Street",
+      "en": "Rundle Street"
+    },
+    "dunedin": {
+      "de": "Dunedin",
+      "en": "Dunedin"
+    },
+    "broadstairs": {
+      "de": "Broadstairs",
+      "en": "Broadstairs"
+    },
+    "hawthorn": {
+      "de": "Hawthorn",
+      "en": "Hawthorn"
+    },
+    "chelsea": {
+      "de": "Chelsea",
+      "en": "Chelsea"
+    },
+    "punta-arenas": {
+      "de": "Punta Arenas",
+      "en": "Punta Arenas"
+    },
+    "sarreguemines": {
+      "de": "Saargemünd",
+      "en": "Sarreguemines"
+    },
+    "tayport": {
+      "de": "Tayport",
+      "en": "Tayport"
+    },
+    "dundee": {
+      "de": "Dundee",
+      "en": "Dundee"
+    },
+    "sparta": {
+      "de": "Sparta",
+      "en": "Sparta"
+    },
+    "tuskegee": {
+      "de": "Tuskegee",
+      "en": "Tuskegee"
+    },
+    "cape-of-good-hope": {
+      "de": "Kap der Guten Hoffnung",
+      "en": "Cape of Good Hope"
+    },
+    "george": {
+      "de": "George",
+      "en": "George"
+    },
+    "ambriz": {
+      "de": "Ambriz",
+      "en": "Ambriz"
+    },
+    "angola": {
+      "de": "Angola",
+      "en": "Angola"
+    },
+    "collingwood": {
+      "de": "Collingwood",
+      "en": "Collingwood"
+    },
+    "northland-region": {
+      "de": "Northland",
+      "en": "Northland Region"
+    },
+    "remuera": {
+      "de": "Remuera",
+      "en": "Remuera"
+    },
+    "nuremberg": {
+      "de": "Nürnberg",
+      "en": "Nuremberg"
+    },
+    "minnesota": {
+      "de": "Minnesota",
+      "en": "Minnesota"
+    },
+    "buckinghamshire": {
+      "de": "Buckinghamshire",
+      "en": "Buckinghamshire"
+    },
+    "keokuk": {
+      "de": "Keokuk",
+      "en": "Keokuk"
+    },
+    "north-sydney": {
+      "de": "North Sydney",
+      "en": "North Sydney"
+    },
+    "westbury": {
+      "de": "Westbury",
+      "en": "Westbury"
+    },
+    "salt-lake-city": {
+      "de": "Salt Lake City",
+      "en": "Salt Lake City"
+    },
+    "amelia-county": {
+      "de": "Amelia County",
+      "en": "Amelia County"
+    },
+    "kyneton": {
+      "de": "Kyneton",
+      "en": "Kyneton"
+    },
+    "unley": {
+      "de": "Unley",
+      "en": "Unley"
+    },
+    "rose-park": {
+      "de": "Rose Park",
+      "en": "Rose Park"
+    },
+    "stogumber": {
+      "de": "Stogumber",
+      "en": "Stogumber"
+    },
+    "georgetown": {
+      "de": "Georgetown",
+      "en": "Georgetown"
+    },
+    "st-clair-county": {
+      "de": "St. Clair County",
+      "en": "St. Clair County"
+    },
+    "nottingham": {
+      "de": "Nottingham",
+      "en": "Nottingham"
+    },
+    "kaitaia": {
+      "de": "Kaitaia",
+      "en": "Kaitaia"
+    },
+    "mount-albert": {
+      "de": "Mount Albert",
+      "en": "Mount Albert"
+    },
+    "wellington": {
+      "de": "Wellington",
+      "en": "Wellington"
+    },
+    "anahuac": {
+      "de": "Anahuac",
+      "en": "Anahuac"
+    },
+    "massillon": {
+      "de": "Massillon",
+      "en": "Massillon"
+    },
+    "hobart": {
+      "de": "Hobart",
+      "en": "Hobart"
+    },
+    "godalming": {
+      "de": "Godalming",
+      "en": "Godalming"
+    },
+    "dschenin": {
+      "de": "Dschenin",
+      "en": "جنين"
     }
   }
 }

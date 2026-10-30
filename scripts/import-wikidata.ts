@@ -31,12 +31,19 @@ import {
   qualifierDate,
   statements,
   stringValue,
+  type Candidate,
   type Entity,
 } from "./import/wikidata";
 import { articleUrl, getStory } from "./import/wikipedia";
 
-const { values: args } = parseArgs({ options: { limit: { type: "string", default: "200" } } });
+const { values: args } = parseArgs({
+  options: { limit: { type: "string", default: "200" }, full: { type: "boolean", default: false } },
+});
+/** Total number of people. By default the import only adds to the existing ones; --full starts over. */
 const LIMIT = Number(args.limit);
+const ADD = !args.full;
+/** In add mode: at least this many people per continent outside Europe (if enough candidates exist). */
+const MIN_PER_CONTINENT = 25;
 const CONTENT = path.resolve("content");
 const LANGS = ["de", "en"] as const;
 type Lang = (typeof LANGS)[number];
@@ -278,16 +285,96 @@ async function removeStaleFolders(keep: Set<string>): Promise<string[]> {
   return removed;
 }
 
+/* ---------------------------------------------------------------- regions */
+
+/** People already in content/: Wikidata ids and folder names. */
+async function readExisting() {
+  const qids = new Set<string>();
+  const slugs = new Set<string>();
+  const peopleDir = path.join(CONTENT, "people");
+  for (const entry of await readdir(peopleDir, { withFileTypes: true })) {
+    if (!entry.isDirectory()) continue;
+    slugs.add(entry.name);
+    const person = await readFile(path.join(peopleDir, entry.name, "person.json"), "utf8")
+      .then((json) => JSON.parse(json) as Person)
+      .catch(() => undefined);
+    const qid = person?.sources.map((s) => /wikidata\.org\/wiki\/(Q\d+)/.exec(s.url)?.[1]).find(Boolean);
+    if (qid) qids.add(qid);
+  }
+  return { qids, slugs };
+}
+
+/** English continent name of each person's birth place (via its country), "Unknown" if not resolvable. */
+async function continentsOfBirth(entities: Map<string, Entity>): Promise<Map<string, string>> {
+  const placeOf = (e: Entity) => entityIds(e, "P19")[0] ?? entityIds(e, "P20")[0];
+  const places = await getEntities([...entities.values()].flatMap((e) => placeOf(e) ?? []));
+  const countries = await countriesOf([...places.values()]);
+  const continents = await getEntities([...countries.values()].flatMap((c) => entityIds(c, "P30")));
+  const result = new Map<string, string>();
+  for (const [qid, e] of entities) {
+    const country = countries.get(placeOf(e) ?? "");
+    const continent = country && continents.get(entityIds(country, "P30")[0] ?? "");
+    result.set(qid, label(continent, "en") ?? "Unknown");
+  }
+  return result;
+}
+
+/**
+ * The best-known `perContinent` people of every continent outside Europe, then an even sample of
+ * everyone else up to `count` (most prominent first).
+ */
+function regionalSample<T extends Candidate>(
+  sorted: T[],
+  continentOf: (c: T) => string,
+  count: number,
+  perContinent: number,
+): T[] {
+  const guaranteed = ["Africa", "Asia", "South America", "North America", "Oceania"].flatMap((continent) =>
+    sorted.filter((c) => continentOf(c) === continent).slice(0, perContinent),
+  );
+  const rest = sorted.filter((c) => !guaranteed.includes(c));
+  return [...guaranteed, ...spreadSample(rest, Math.max(0, count - guaranteed.length))].sort(
+    (a, b) => b.sitelinks - a.sitelinks,
+  );
+}
+
 /* ------------------------------------------------------------------ main */
 
 async function main() {
   console.log("1/5 Candidates from Wikidata …");
-  const candidates = (await findCandidates()).sort((a, b) => b.sitelinks - a.sitelinks);
-  console.log(`    ${candidates.length} candidates found`);
+  const existing = ADD ? await readExisting() : { qids: new Set<string>(), slugs: new Set<string>() };
+  const candidates = (await findCandidates())
+    .filter((c) => !existing.qids.has(c.qid))
+    .sort((a, b) => b.sitelinks - a.sitelinks);
+  const need = LIMIT - existing.slugs.size;
+  console.log(`    ${candidates.length} candidates found, ${existing.slugs.size} people already present`);
+  if (ADD && need <= 0) {
+    console.log("Nothing to add (raise --limit).");
+    return;
+  }
 
   // Oversample: some portraits will turn out not to be public domain.
-  const sample = spreadSample(candidates, Math.min(candidates.length, Math.round(LIMIT * 1.8)));
-  const entities = await getEntities(sample.map((c) => c.qid));
+  let sample: Candidate[];
+  let entities: Map<string, Entity>;
+  let regionOf: (c: Candidate) => string = () => "Unknown";
+  if (ADD) {
+    entities = await getEntities(candidates.map((c) => c.qid));
+    // Without a death date, people born after 1925 may be alive: no portraits of them.
+    const deceased = candidates.filter((c) => {
+      const e = entities.get(c.qid);
+      const born = e && Number(yearOf(dateOf(e, "P569") ?? ""));
+      return e && (dateOf(e, "P570") || (born && born <= 1925));
+    });
+    const continents = await continentsOfBirth(entities);
+    const counts: Record<string, number> = {};
+    for (const c of deceased) counts[continents.get(c.qid)!] = (counts[continents.get(c.qid)!] ?? 0) + 1;
+    console.log("    candidates by continent:", counts);
+    regionOf = (c) => continents.get(c.qid)!;
+    sample = regionalSample(deceased, regionOf, Math.round(need * 1.8), MIN_PER_CONTINENT * 2);
+  } else {
+    sample = spreadSample(candidates, Math.min(candidates.length, Math.round(LIMIT * 1.8)));
+    entities = await getEntities(sample.map((c) => c.qid));
+  }
 
   console.log("2/5 Checking image licences on Commons …");
   const imageFile = (e: Entity) => stringValue(e, "P18");
@@ -299,7 +386,9 @@ async function main() {
     const file = entities.get(c.qid) && imageFile(entities.get(c.qid)!);
     return file && images.has(file);
   });
-  const selected = spreadSample(withFreeImage, LIMIT);
+  const selected = ADD
+    ? regionalSample(withFreeImage, regionOf, need, MIN_PER_CONTINENT)
+    : spreadSample(withFreeImage, LIMIT);
   // Stand-ins in case a portrait can't be downloaded, closest in prominence first.
   const reserves = withFreeImage.filter((c) => !selected.includes(c));
   console.log(`    ${withFreeImage.length} with a free portrait, ${selected.length} selected`);
@@ -347,9 +436,10 @@ async function main() {
 
   const maxLog = Math.log(withFreeImage[0]?.sitelinks ?? 1);
   const minLog = Math.log(withFreeImage[withFreeImage.length - 1]?.sitelinks ?? 1);
+  const previous: Taxonomy = ADD ? JSON.parse(await readFile(path.join(CONTENT, "taxonomy.json"), "utf8")) : {};
   const taxonomy: Taxonomy = {
     field: Object.fromEntries([...FIELDS, ACTIVISM].map((f) => [f.key, f.label])),
-    place: {},
+    place: { ...previous.place },
   };
   // Countries too, so searching "Deutschland" finds everyone born or died there.
   const cityEntities = withFreeImage.flatMap((c) =>
@@ -363,11 +453,11 @@ async function main() {
     const country = countries.get(place.id);
     const en = label(country, "en");
     if (!country || !en) return undefined;
-    const key = slugify(en);
+    const key = slugify(en) || slugify(label(country, "de") ?? "") || country.id.toLowerCase();
     taxonomy.place[key] ??= { de: label(country, "de") ?? en, en };
     return key;
   };
-  const usedSlugs = new Set<string>();
+  const usedSlugs = new Set<string>(existing.slugs);
   const skipped: string[] = [];
   let downloaded = 0;
 
@@ -376,7 +466,7 @@ async function main() {
   while (queue.length > 0 && usedSlugs.size < LIMIT) {
     const candidate = queue.shift()!;
     const e = entities.get(candidate.qid)!;
-    const name = label(e, "de")!;
+    const name = label(e, "de") ?? e.sitelinks.enwiki?.title ?? e.id;
     let slug = slugify(name);
     for (let n = 2; usedSlugs.has(slug); n++) slug = `${slugify(name)}-${n}`;
     const dir = path.join(CONTENT, "people", slug);
@@ -403,7 +493,7 @@ async function main() {
       const place = cityOf(refs.get(entityIds(e, prop)[0]));
       const en = label(place, "en");
       if (!place || !en) return undefined;
-      const key = slugify(en);
+      const key = slugify(en) || slugify(label(place, "de") ?? "") || place.id.toLowerCase();
       taxonomy.place[key] ??= { de: label(place, "de")!, en };
       const country = countryKey(place);
       if (country) countryKeys.push(country);
@@ -437,9 +527,9 @@ async function main() {
           : Math.round(((Math.log(candidate.sitelinks) - minLog) / (maxLog - minLog)) * 100) / 100,
       sources: [
         { label: "Wikidata", url: `https://www.wikidata.org/wiki/${e.id}`, license: WIKIDATA_LICENSE },
-        ...LANGS.map((lang) => ({
-          label: `Wikipedia (${lang}): ${e.sitelinks[`${lang}wiki`].title}`,
-          url: articleUrl(lang, e.sitelinks[`${lang}wiki`].title),
+        ...LANGS.filter((lang) => e.sitelinks[`${lang}wiki`]).map((lang) => ({
+          label: `Wikipedia (${lang}): ${e.sitelinks[`${lang}wiki`]!.title}`,
+          url: articleUrl(lang, e.sitelinks[`${lang}wiki`]!.title),
           license: WIKIPEDIA_LICENSE,
         })),
       ],
@@ -477,7 +567,10 @@ async function main() {
         ],
         timeline: buildTimeline(e, refs, lang, { born: place(bornPlace), died: place(diedPlace) }),
       };
-      const story = await getStory(lang, e.sitelinks[`${lang}wiki`].title);
+      // No article in this language: the English one is used and the page says so.
+      const storyLang = e.sitelinks[`${lang}wiki`] ? lang : "en";
+      const story = await getStory(storyLang, e.sitelinks[`${storyLang}wiki`]!.title);
+      if (storyLang !== lang) text.storyLang = storyLang;
       await writeFile(path.join(dir, `${lang}.md`), frontmatterDoc(text, story));
     }
 
@@ -486,7 +579,7 @@ async function main() {
 
   console.log("5/5 Writing taxonomy and cleaning up …");
   await writeFile(path.join(CONTENT, "taxonomy.json"), `${JSON.stringify(taxonomy, null, 2)}\n`);
-  const removed = await removeStaleFolders(usedSlugs);
+  const removed = ADD ? [] : await removeStaleFolders(usedSlugs);
 
   console.log(
     `Done: ${usedSlugs.size} people, ${Object.keys(taxonomy.place).length} places, ` +

@@ -1,0 +1,51 @@
+{
+  "slug": "jean-beadle",
+  "name": {
+    "display": "Jean Beadle",
+    "sort": "Beadle, Jean"
+  },
+  "born": {
+    "date": "1868-01-01",
+    "place": "clunes"
+  },
+  "died": {
+    "date": "1942-05-22"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1926",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jean_Beadle.png"
+  },
+  "facets": {
+    "field": [
+      "social"
+    ],
+    "place": [
+      "clunes",
+      "australia"
+    ]
+  },
+  "prominence": 0.42,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6170240",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Jean Beadle",
+      "url": "https://en.wikipedia.org/wiki/Jean_Beadle",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6170240"
+}

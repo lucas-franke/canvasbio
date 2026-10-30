@@ -1,0 +1,51 @@
+{
+  "slug": "a-viola-neblett",
+  "name": {
+    "display": "A. Viola Neblett",
+    "sort": "Neblett, A. Viola"
+  },
+  "born": {
+    "date": "1842-03-05",
+    "place": "hamburg"
+  },
+  "died": {
+    "date": "1897-04-30"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unbekannt",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:ANN_VIOLA_NEBLETT_A_woman_of_the_century_(page_542_crop).jpg"
+  },
+  "facets": {
+    "field": [
+      "social"
+    ],
+    "place": [
+      "hamburg",
+      "united-states"
+    ]
+  },
+  "prominence": 0.3,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q60889963",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): A. Viola Neblett",
+      "url": "https://en.wikipedia.org/wiki/A._Viola_Neblett",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q60889963"
+}

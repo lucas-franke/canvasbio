@@ -1,0 +1,52 @@
+{
+  "slug": "trinidad-maria-enriquez",
+  "name": {
+    "display": "Trinidad María Enríquez",
+    "sort": "Enríquez, Trinidad María"
+  },
+  "born": {
+    "date": "1846-06-05",
+    "place": "cusco"
+  },
+  "died": {
+    "date": "1891-04-20",
+    "place": "lima"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "AnonymousUnknown author",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:TrinidadEnriquez.jpg"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "cusco",
+      "lima"
+    ]
+  },
+  "prominence": 0.42,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6004729",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Trinidad María Enríquez",
+      "url": "https://en.wikipedia.org/wiki/Trinidad_Mar%C3%ADa_Enr%C3%ADquez",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6004729"
+}

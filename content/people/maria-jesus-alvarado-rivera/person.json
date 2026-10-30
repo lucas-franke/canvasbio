@@ -1,0 +1,52 @@
+{
+  "slug": "maria-jesus-alvarado-rivera",
+  "name": {
+    "display": "María Jesús Alvarado Rivera",
+    "sort": "Rivera, María Jesús Alvarado"
+  },
+  "born": {
+    "date": "1878-05-27",
+    "place": "chincha-alta"
+  },
+  "died": {
+    "date": "1971-05-06",
+    "place": "lima"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Elvira García y García, 1876-",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mar%C3%ADa_Jes%C3%BAs_Alvarado_Rivera_(cropped).png"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "chincha-alta",
+      "lima"
+    ]
+  },
+  "prominence": 0.56,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6068245",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): María Jesús Alvarado Rivera",
+      "url": "https://en.wikipedia.org/wiki/Mar%C3%ADa_Jes%C3%BAs_Alvarado_Rivera",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6068245"
+}

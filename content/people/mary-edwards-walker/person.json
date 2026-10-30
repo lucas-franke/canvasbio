@@ -1,0 +1,60 @@
+{
+  "slug": "mary-edwards-walker",
+  "name": {
+    "display": "Mary Edwards Walker",
+    "sort": "Walker, Mary Edwards"
+  },
+  "born": {
+    "date": "1832-11-26",
+    "place": "oswego"
+  },
+  "died": {
+    "date": "1919-02-21",
+    "place": "oswego"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "C.M. Bell, 1873",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dr._Mary_Walker_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "medicine"
+    ],
+    "place": [
+      "oswego",
+      "united-states"
+    ]
+  },
+  "prominence": 0.75,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2418031",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Mary Edwards Walker",
+      "url": "https://de.wikipedia.org/wiki/Mary_Edwards_Walker",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mary Edwards Walker",
+      "url": "https://en.wikipedia.org/wiki/Mary_Edwards_Walker",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2418031"
+}

@@ -1,0 +1,51 @@
+{
+  "slug": "isabella-golding",
+  "name": {
+    "display": "Isabella Golding",
+    "sort": "Golding, Isabella"
+  },
+  "born": {
+    "date": "1864-11-25",
+    "place": "tambaroora"
+  },
+  "died": {
+    "date": "1940-12-11"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1903",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Belle_Golding.png"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "tambaroora",
+      "australia"
+    ]
+  },
+  "prominence": 0.38,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q18392717",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Belle Golding",
+      "url": "https://en.wikipedia.org/wiki/Belle_Golding",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q18392717"
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "adelaide-smith-casely-hayford",
+  "name": {
+    "display": "Adelaide Smith Casely Hayford",
+    "sort": "Hayford, Adelaide Smith Casely"
+  },
+  "born": {
+    "date": "1868-06-27",
+    "place": "freetown"
+  },
+  "died": {
+    "date": "1960-01-16",
+    "place": "freetown"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1903",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Adelaide_Casely-Hayford,_1903.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education",
+      "science"
+    ],
+    "place": [
+      "freetown"
+    ]
+  },
+  "prominence": 0.55,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q4681689",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Adelaide Smith Casely Hayford",
+      "url": "https://de.wikipedia.org/wiki/Adelaide_Smith_Casely_Hayford",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Adelaide Casely-Hayford",
+      "url": "https://en.wikipedia.org/wiki/Adelaide_Casely-Hayford",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q4681689"
+}

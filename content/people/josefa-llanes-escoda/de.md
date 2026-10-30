@@ -1,0 +1,61 @@
+---
+summary:
+  - Suffragette
+  - 1898–1945 · Dingras
+portraitAlt: Porträt von Josefa Llanes Escoda
+facts:
+  - label: Geboren
+    value: 20. September 1898 in Dingras
+  - label: Gestorben
+    value: 6. Januar 1945 in Manila
+  - label: Wirkungsfeld
+    value: Suffragette
+timeline:
+  - date: 20. September 1898
+    event: Geboren in Dingras
+  - date: 6. Januar 1945
+    event: Gestorben in Manila
+storyLang: en
+---
+
+Josefa Madamba Llanes Escoda (born Josefa Llanes y Madamba; 20 September 1898 – 6 January 1945) was a Filipino teacher and social worker known for her role in the establishment of the Girl Scouts of the Philippines and campaigns for women's suffrage.
+
+After receiving a high school teacher's certificate from the University of the Philippines in 1922, she became a social worker for the American Red Cross in the Philippines and received a scholarship to study in the United States. She received her master's degree in 1925 and continued her social work in the Philippines the following year. She held various teaching positions in universities and social work positions related to healthcare.
+
+She became the president of the National Federation of Women's Clubs from 1941 to 1944. During the Second World War, she led the provision of relief to POWs. However, she was arrested on 27 August 1944 and was imprisoned in Fort Santiago. She was last seen alive on 6 January 1945.
+
+Together with José Abad Santos and Vicente Lim, she is depicted on the Philippine one thousand-peso banknote as Filipinos who died resisting the Japanese occupation of the Philippines. She is recognized as the "Florence Nightingale" of the Philippines for her social work, campaigns for women's suffrage, and role in forming the Girl Scouts of the Philippines.
+
+## Early life
+
+Escoda was born in Dingras, Ilocos Norte as Josefa Llanes y Madamba. She was the eldest of the seven children of Mercedes Madamba and Gabriel Llanes. Josefa's siblings were Florencio, Luisa, Elvira, Rosario, Purita, and Eufrocina. Josefa's nickname was Pepa as a child.
+
+Josefa graduated as valedictorian in grade school from Dingras Elementary School and as salutatorian from her provincial high school in Laoag, Ilocos Norte. She went to Philippine Normal School in Manila to earn her teaching degree and graduated with honors in 1918. While working as a teacher, she earned a high school teacher's certificate from the University of the Philippines in 1922.
+
+Her father, Gabriel Llanes, died in 1918 due to an influenza epidemic in the Philippines.
+
+## Career
+
+After obtaining her teacher's certificate, she became a social worker for the Philippine Chapter of the American Red Cross. The Red Cross granted her a scholarship as a pensionada to the United States in 1922 through a recommendation from Josefa Jara Martinez. She studied at the New York School of Social Work and earned a master's degree in social work from Columbia University in 1925. Josefa was one of the incorporators of the National Federation of Women's Clubs (NFWC) in 1921 and was assistant treasurer of the organization until 1922. She held a position in the NFWC as executive secretary in 1932, and as president from 1941 until her death in 1945. Josefa Escoda succeeded Pilar Hidalgo-Lim as the president of the NFWC in 1941 and was succeeded by Trinidad Legarda.
+
+Josefa's scholarship only included her tuition fees. Hence, she relied on various jobs, which included office work and baby-sitting, and financial assistance from her mother. Josefa joined a group of foreign students who supported the founding of the International House in New York. She was assigned as an adviser to students and received free board and lodging. During her free time in the International House, she accepted speaking engagements around the United States to lecture about the Philippines to American audiences with compensation. It was also her practice to wear a Filipiniana dress during her lecture tours to promote foreigners' interest in the Philippines.
+
+In 1925, Josefa was invited by Carrie Chapman Catt to represent the Philippines in the Women's International League for Peace in Washington, D.C. Catt provided assistance for Josefa since Josefa informed Catt that she could not pay the necessary expenses to travel. During the event, she met Antonio Escoda, a Philippine Press Bureau reporter from Gandara, Samar, whom she later married on 11 June 1927 in the Philippines. They had two children: Maria Teresa, who later became the president of the Cultural Center of the Philippines from 1986 to 1994, and Antonio Jr., who became a member of the Associated Press Southeast Asia writing staff.
+
+After her stay in the United States from 1922 to 1925, Escoda returned to the Philippines in 1926. She became a lecturer in sociology at the University of the Philippines from 1927 to 1930 and at the University of Santo Tomas from 1930 to 1932. She was appointed as the field secretary of the Philippine Chapter of the American Red Cross from 1926 to 1929, where she managed civilian relief activities in rural communities and assisted in finding jobs for the unemployed.
+
+She was the executive secretary of the Philippine Anti-Leprosy Society from 1928 to 1932, social organizing secretary of the Tuberculosis Commission of the Bureau of Heath from 1932 to 1935, then as an editor of the Bureau of Health's Health Messenger from 1935 to 1941.
+
+## Suffrage Activity
+
+The NFWC began suffrage campaigns and mobilized women's organizations across the Philippines in 1921. In 1933, Filipino women were granted the right to vote through Act 4112, which was an amendment of the Hare–Hawes–Cutting Act. However, this right was effectively revoked with the rejection of the Hare–Hawes–Cutting Act and the adoption of the Tydings–McDuffie Act in the 1935 Constitution. The Constitution stated that women would be allowed the right of suffrage if a plebiscite held within two years after the ratification of the Constitution results in the affirmative vote of at least 300,000 women.
+
+The NFWC conducted social work across the Philippines to convince Filipino women to vote for the affirmative. Their activities included providing food and medical relief, setting up literacy booths for Filipino men and women, and informational lectures on maternal education. Volunteer adults also joined teaching in literacy booths. Executive secretary Josefa decided to prioritize social work as she believed that only discussing suffrage to Filipino women would be impractical.
+
+The special plebiscite was held on 30 April 1937. On the eve of the plebiscite at 29 April, Josefa Llanes Escoda, along with Judge Natividad Almeda-López, Josefa Jara Martinez, Pilar Hidalgo-Lim, Concepción Felix, Geronima Pecson, and Corazon Torres, spoke on the radio channel KZRM in different languages to appeal to listeners to support the suffrage plebiscite, where Josefa spoke in Ilocano. The plebiscite resulted in the majority vote supporting the affirmative of granting suffrage to women.
+
+## Girl Scouts of the Philippines
+
+With the formation of the Boy Scouts of the Philippines in 1936, an initiative was formed to organize a girl scout's organization in the Philippines. Escoda traveled with sponsorship from the Boy Scouts of the Philippines to the United States in 1939 to undergo extensive training in girl scouting in preparation for formally organizing a girl scout's organization in the Philippines. In her trip, she observed boy and girl scouting work in various cities in the US. She also visited the World Bureau of Girl Scouts and Girl Guides in 1940 in London for her training.
+
+Escoda returned to the Philippines again in 1940. Afterward, she began to train young women to become girl scout leaders, then organized the Girl Scouts of the Philippines. On 26 May 1940, President Manuel L. Quezon signed the charter of the Girl Scouts of the Philippines. Helena Z. Benitez was the chairman of the Girl Scouts of the Philippines Central Committee, while Josefa became the group's first national executive. At the time of the charter, there were 1,000 Girl Scouts in the Philippines.

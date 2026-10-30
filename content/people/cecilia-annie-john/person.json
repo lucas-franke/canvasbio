@@ -1,0 +1,54 @@
+{
+  "slug": "cecilia-annie-john",
+  "name": {
+    "display": "Cecilia Annie John",
+    "sort": "John, Cecilia Annie"
+  },
+  "born": {
+    "date": "1877-11-05",
+    "place": "hobart"
+  },
+  "died": {
+    "date": "1955-05-28",
+    "place": "godalming"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Herald photographer, 1923",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cecilia_John.png"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "hobart",
+      "godalming",
+      "australia",
+      "united-kingdom"
+    ]
+  },
+  "prominence": 0,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q21536171",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Cecilia John",
+      "url": "https://en.wikipedia.org/wiki/Cecilia_John",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q21536171"
+}

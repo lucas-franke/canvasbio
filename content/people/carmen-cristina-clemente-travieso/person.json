@@ -1,0 +1,51 @@
+{
+  "slug": "carmen-cristina-clemente-travieso",
+  "name": {
+    "display": "Carmen Cristina Clemente Travieso",
+    "sort": "Travieso, Carmen Cristina Clemente"
+  },
+  "born": {
+    "date": "1900-07-24",
+    "place": "caracas"
+  },
+  "died": {
+    "date": "1983-01-24",
+    "place": "caracas"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "AnonymousUnknown author, 1920",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Carmen_Clemente_Travieso_(1900-1983).png"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "caracas"
+    ]
+  },
+  "prominence": 0.58,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5752484",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Carmen Clemente Travieso",
+      "url": "https://en.wikipedia.org/wiki/Carmen_Clemente_Travieso",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5752484"
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "rose-scott",
+  "name": {
+    "display": "Rose Scott",
+    "sort": "Scott, Rose"
+  },
+  "born": {
+    "date": "1847-10-08",
+    "place": "new-south-wales"
+  },
+  "died": {
+    "date": "1925-04-20",
+    "place": "sydney"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Rose_Scott,_1883_by_August_Ludwig.jpg: State Library of New South Wales collection derivative work: Nesnad (talk)",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rose-Scott-1883-crop.jpg"
+  },
+  "facets": {
+    "field": [
+      "social"
+    ],
+    "place": [
+      "new-south-wales",
+      "sydney",
+      "australia"
+    ]
+  },
+  "prominence": 0.63,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q7367933",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Rose Scott",
+      "url": "https://de.wikipedia.org/wiki/Rose_Scott",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Rose Scott",
+      "url": "https://en.wikipedia.org/wiki/Rose_Scott",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q7367933"
+}

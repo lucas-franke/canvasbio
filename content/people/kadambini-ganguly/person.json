@@ -1,0 +1,62 @@
+{
+  "slug": "kadambini-ganguly",
+  "name": {
+    "display": "Kadambini Ganguly",
+    "sort": "Ganguly, Kadambini"
+  },
+  "born": {
+    "date": "1862-07-18",
+    "place": "bhagalpur"
+  },
+  "died": {
+    "date": "1923-10-03",
+    "place": "kolkata"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unbekannt",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kadambini_Ganguly.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "medicine"
+    ],
+    "place": [
+      "bhagalpur",
+      "kolkata",
+      "india"
+    ]
+  },
+  "prominence": 0.78,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q3347358",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Kadambini Ganguly",
+      "url": "https://de.wikipedia.org/wiki/Kadambini_Ganguly",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Kadambini Ganguly",
+      "url": "https://en.wikipedia.org/wiki/Kadambini_Ganguly",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q3347358"
+}

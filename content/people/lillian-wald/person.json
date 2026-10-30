@@ -1,0 +1,63 @@
+{
+  "slug": "lillian-wald",
+  "name": {
+    "display": "Lillian Wald",
+    "sort": "Wald, Lillian"
+  },
+  "born": {
+    "date": "1867-03-10",
+    "place": "cincinnati"
+  },
+  "died": {
+    "date": "1940-09-01",
+    "place": "westport"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "William Valentine Schevill, 1919",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lillian_Wald_-_William_Valentine_Schevill.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "medicine",
+      "social"
+    ],
+    "place": [
+      "cincinnati",
+      "westport",
+      "united-states"
+    ]
+  },
+  "prominence": 0.7,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q515387",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Lillian Wald",
+      "url": "https://de.wikipedia.org/wiki/Lillian_Wald",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Lillian Wald",
+      "url": "https://en.wikipedia.org/wiki/Lillian_Wald",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q515387"
+}

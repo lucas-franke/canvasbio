@@ -1,0 +1,61 @@
+{
+  "slug": "adella-hunt-logan",
+  "name": {
+    "display": "Adella Hunt Logan",
+    "sort": "Logan, Adella Hunt"
+  },
+  "born": {
+    "date": "1863-02-10",
+    "place": "sparta"
+  },
+  "died": {
+    "date": "1915-12-12",
+    "place": "tuskegee"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1902",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:AdellaHuntLogan-1902.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "sparta",
+      "tuskegee",
+      "united-states"
+    ]
+  },
+  "prominence": 0.38,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q29378417",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Adella Hunt Logan",
+      "url": "https://de.wikipedia.org/wiki/Adella_Hunt_Logan",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Adella Hunt Logan",
+      "url": "https://en.wikipedia.org/wiki/Adella_Hunt_Logan",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q29378417"
+}

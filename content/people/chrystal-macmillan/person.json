@@ -1,0 +1,62 @@
+{
+  "slug": "chrystal-macmillan",
+  "name": {
+    "display": "Chrystal Macmillan",
+    "sort": "Macmillan, Chrystal"
+  },
+  "born": {
+    "date": "1872-06-13",
+    "place": "edinburgh"
+  },
+  "died": {
+    "date": "1937-09-21",
+    "place": "edinburgh"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unbekannt, 1908",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:MacMillan_Chrystal.jpeg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "science",
+      "social"
+    ],
+    "place": [
+      "edinburgh",
+      "united-kingdom"
+    ]
+  },
+  "prominence": 0.59,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2967444",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Chrystal Macmillan",
+      "url": "https://de.wikipedia.org/wiki/Chrystal_Macmillan",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Chrystal Macmillan",
+      "url": "https://en.wikipedia.org/wiki/Chrystal_Macmillan",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2967444"
+}

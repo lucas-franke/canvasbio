@@ -1,0 +1,55 @@
+{
+  "slug": "corry-tendeloo",
+  "name": {
+    "display": "Corry Tendeloo",
+    "sort": "Tendeloo, Corry"
+  },
+  "born": {
+    "date": "1897-09-03",
+    "place": "tebing-tinggi"
+  },
+  "died": {
+    "date": "1956-10-18",
+    "place": "wassenaar"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown photographer, 1938",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:CorryTendeloo.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "science"
+    ],
+    "place": [
+      "tebing-tinggi",
+      "wassenaar",
+      "indonesia",
+      "netherlands"
+    ]
+  },
+  "prominence": 0.49,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2520719",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Corry Tendeloo",
+      "url": "https://en.wikipedia.org/wiki/Corry_Tendeloo",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2520719"
+}

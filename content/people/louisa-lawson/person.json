@@ -1,0 +1,61 @@
+{
+  "slug": "louisa-lawson",
+  "name": {
+    "display": "Louisa Lawson",
+    "sort": "Lawson, Louisa"
+  },
+  "born": {
+    "date": "1848-02-17",
+    "place": "mudgee"
+  },
+  "died": {
+    "date": "1920-08-12",
+    "place": "gladesville"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown, 1885",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Louisa_Lawson_V1-FL3303627.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "mudgee",
+      "gladesville",
+      "australia"
+    ]
+  },
+  "prominence": 0.67,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q541929",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Louisa Lawson",
+      "url": "https://de.wikipedia.org/wiki/Louisa_Lawson",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Louisa Lawson",
+      "url": "https://en.wikipedia.org/wiki/Louisa_Lawson",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q541929"
+}

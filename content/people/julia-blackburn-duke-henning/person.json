@@ -1,0 +1,47 @@
+{
+  "slug": "julia-blackburn-duke-henning",
+  "name": {
+    "display": "Julia Blackburn Duke Henning",
+    "sort": "Henning, Julia Blackburn Duke"
+  },
+  "born": {
+    "date": "1875-07-23"
+  },
+  "died": {
+    "date": "1961-07-07"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Alice Stone Blackwell, 1918",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Julia_Duke_Henning_(1918).png"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": []
+  },
+  "prominence": 0,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q107424105",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Julia Blackburn Duke Henning",
+      "url": "https://en.wikipedia.org/wiki/Julia_Blackburn_Duke_Henning",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q107424105"
+}

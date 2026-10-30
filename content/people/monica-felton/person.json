@@ -1,0 +1,54 @@
+{
+  "slug": "monica-felton",
+  "name": {
+    "display": "Monica Felton",
+    "sort": "Felton, Monica"
+  },
+  "born": {
+    "date": "1906-09-23",
+    "place": "buckinghamshire"
+  },
+  "died": {
+    "date": "1970-03-03",
+    "place": "chennai"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Femmes françaises (magazine), 1952",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Monica_Felton_Stalin_prize.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "buckinghamshire",
+      "chennai",
+      "united-kingdom",
+      "india"
+    ]
+  },
+  "prominence": 0.34,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q4482484",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Monica Felton",
+      "url": "https://en.wikipedia.org/wiki/Monica_Felton",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q4482484"
+}

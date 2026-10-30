@@ -1,0 +1,53 @@
+{
+  "slug": "sophia-taylor",
+  "name": {
+    "display": "Sophia Taylor",
+    "sort": "Taylor, Sophia"
+  },
+  "born": {
+    "date": "1847-07-02",
+    "place": "kaitaia"
+  },
+  "died": {
+    "date": "1930-01-24",
+    "place": "mount-albert"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Photographer unidentified, 1800",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sophia_Taylor.jpeg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "kaitaia",
+      "mount-albert",
+      "new-zealand"
+    ]
+  },
+  "prominence": 0.15,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q7562926",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Sophia Taylor",
+      "url": "https://en.wikipedia.org/wiki/Sophia_Taylor",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q7562926"
+}

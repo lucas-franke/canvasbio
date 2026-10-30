@@ -1,0 +1,53 @@
+{
+  "slug": "mariana-cox-mendez",
+  "name": {
+    "display": "Mariana Cox Méndez",
+    "sort": "Méndez, Mariana Cox"
+  },
+  "born": {
+    "date": "1871",
+    "place": "punta-arenas"
+  },
+  "died": {
+    "date": "1914-09-08",
+    "place": "paris"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Desconocido - en revista Pacifico Magazine, 1914",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mariana_Cox_M%C3%A9ndez.JPG"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "punta-arenas",
+      "paris",
+      "france"
+    ]
+  },
+  "prominence": 0.38,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q10878813",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mariana Cox Méndez",
+      "url": "https://en.wikipedia.org/wiki/Mariana_Cox_M%C3%A9ndez",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q10878813"
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "kato-shizue",
+  "name": {
+    "display": "Katō Shizue",
+    "sort": "Shizue, Katō"
+  },
+  "born": {
+    "date": "1897-03-02",
+    "place": "tokyo"
+  },
+  "died": {
+    "date": "2001-12-22"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1914",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:KATO_Shizue.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "tokyo",
+      "japan"
+    ]
+  },
+  "prominence": 0.63,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q534399",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Katō Shizue",
+      "url": "https://de.wikipedia.org/wiki/Kat%C5%8D_Shizue",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Shidzue Katō",
+      "url": "https://en.wikipedia.org/wiki/Shidzue_Kat%C5%8D",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q534399"
+}

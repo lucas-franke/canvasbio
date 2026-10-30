@@ -1,0 +1,53 @@
+{
+  "slug": "petrona-eyle",
+  "name": {
+    "display": "Petrona Eyle",
+    "sort": "Eyle, Petrona"
+  },
+  "born": {
+    "date": "1866-01-18",
+    "place": "baradero"
+  },
+  "died": {
+    "date": "1945-04-12",
+    "place": "buenos-aires"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "https://www.taringa.net/posts/offtopic/13822669/Mujeres-en-la-historia-argentina.html",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Petrona_Eyle.jpg"
+  },
+  "facets": {
+    "field": [
+      "medicine"
+    ],
+    "place": [
+      "baradero",
+      "buenos-aires",
+      "argentina"
+    ]
+  },
+  "prominence": 0.42,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q7179015",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Petrona Eyle",
+      "url": "https://en.wikipedia.org/wiki/Petrona_Eyle",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q7179015"
+}

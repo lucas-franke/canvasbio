@@ -1,0 +1,53 @@
+{
+  "slug": "rose-morgan-french",
+  "name": {
+    "display": "Rose Morgan French",
+    "sort": "French, Rose Morgan"
+  },
+  "born": {
+    "date": "1859-06-15",
+    "place": "oswego"
+  },
+  "died": {
+    "date": "1929-01-09",
+    "place": "los-angeles"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "No photographer credited, 1919",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:RoseMorganFrench1919.png"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "oswego",
+      "los-angeles",
+      "united-states"
+    ]
+  },
+  "prominence": 0.15,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q66699103",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Rose Morgan French",
+      "url": "https://en.wikipedia.org/wiki/Rose_Morgan_French",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q66699103"
+}

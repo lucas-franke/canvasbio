@@ -1,0 +1,60 @@
+{
+  "slug": "bhikaiji-cama",
+  "name": {
+    "display": "Bhikaiji Cama",
+    "sort": "Cama, Bhikaiji"
+  },
+  "born": {
+    "date": "1861-09-24",
+    "place": "mumbai"
+  },
+  "died": {
+    "date": "1936-08-13",
+    "place": "mumbai"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1936",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Madam_Bhikaiji_Cama.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "mumbai",
+      "india"
+    ]
+  },
+  "prominence": 0.66,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2768981",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Bhikaiji Cama",
+      "url": "https://de.wikipedia.org/wiki/Bhikaiji_Cama",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Bhikaiji Cama",
+      "url": "https://en.wikipedia.org/wiki/Bhikaiji_Cama",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2768981"
+}

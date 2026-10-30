@@ -1,0 +1,53 @@
+{
+  "slug": "jane-brigode",
+  "name": {
+    "display": "Jane Brigode",
+    "sort": "Brigode, Jane"
+  },
+  "born": {
+    "date": "1870-05-30",
+    "place": "geetbets"
+  },
+  "died": {
+    "date": "1952-05-03",
+    "place": "forest"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "George Grantham Bain News Service, 1908",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jane_Brigode,_c._1910.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "geetbets",
+      "forest",
+      "belgium"
+    ]
+  },
+  "prominence": 0.44,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2230964",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Jane Brigode",
+      "url": "https://en.wikipedia.org/wiki/Jane_Brigode",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2230964"
+}

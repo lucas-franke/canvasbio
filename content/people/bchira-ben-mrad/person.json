@@ -1,0 +1,59 @@
+{
+  "slug": "bchira-ben-mrad",
+  "name": {
+    "display": "Bchira Ben Mrad",
+    "sort": "Mrad, Bchira Ben"
+  },
+  "born": {
+    "date": "1913",
+    "place": "tunisia"
+  },
+  "died": {
+    "date": "1993-05-04",
+    "place": "tunisia"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1930",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bchira_Ben_Mrad_tunisian_activist.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "tunisia"
+    ]
+  },
+  "prominence": 0.51,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2892588",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Bchira Ben Mrad",
+      "url": "https://de.wikipedia.org/wiki/Bchira_Ben_Mrad",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Bchira Ben Mrad",
+      "url": "https://en.wikipedia.org/wiki/Bchira_Ben_Mrad",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2892588"
+}

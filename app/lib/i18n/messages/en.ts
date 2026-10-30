@@ -132,6 +132,7 @@ export const en: Messages = {
     related: "Related biographies",
     readingTime: (minutes: number) => `${minutes} min read`,
     outline: "Contents",
+    storyOnlyIn: (language: string) => `This text is only available in ${language}.`,
     sameEra: "Same era",
   },
   error: {

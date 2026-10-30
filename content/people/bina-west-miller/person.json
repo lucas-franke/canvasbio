@@ -1,0 +1,52 @@
+{
+  "slug": "bina-west-miller",
+  "name": {
+    "display": "Bina West Miller",
+    "sort": "Miller, Bina West"
+  },
+  "born": {
+    "date": "1867",
+    "place": "st-clair-county"
+  },
+  "died": {
+    "date": "1954"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "C. J. Peterson, 1895",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bina_West_Miller_(1895).png"
+  },
+  "facets": {
+    "field": [
+      "education",
+      "medicine"
+    ],
+    "place": [
+      "st-clair-county",
+      "united-states"
+    ]
+  },
+  "prominence": 0.23,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q44400511",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Bina West Miller",
+      "url": "https://en.wikipedia.org/wiki/Bina_West_Miller",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q44400511"
+}

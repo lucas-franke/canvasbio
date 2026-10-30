@@ -1,0 +1,61 @@
+{
+  "slug": "agnes-husband",
+  "name": {
+    "display": "Agnes Husband",
+    "sort": "Husband, Agnes"
+  },
+  "born": {
+    "date": "1852-05-20",
+    "place": "tayport"
+  },
+  "died": {
+    "date": "1929-04-30",
+    "place": "dundee"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "w:Alec Grieve",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Agnes_Husband.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "tayport",
+      "dundee",
+      "united-kingdom"
+    ]
+  },
+  "prominence": 0.38,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q50059163",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Agnes Husband",
+      "url": "https://de.wikipedia.org/wiki/Agnes_Husband",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Agnes Husband",
+      "url": "https://en.wikipedia.org/wiki/Agnes_Husband",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q50059163"
+}

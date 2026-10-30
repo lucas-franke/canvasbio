@@ -9,7 +9,7 @@ import { siteConfig } from "~/lib/config";
 import type { PersonDetail as PersonDetailData, PersonListItem } from "~/lib/content/adapter";
 import { lifeYears } from "~/lib/content/format";
 import { useHydrated } from "~/lib/hooks";
-import { useMessages } from "~/lib/i18n";
+import { useLocale, useMessages } from "~/lib/i18n";
 import { localeConfig, pagePath } from "~/lib/i18n/locale";
 import { htmlLangFor, localize } from "~/lib/i18n/localize";
 import { tornEdgeClass } from "~/lib/canvas/torn-edge";
@@ -358,6 +358,9 @@ function StoryPanel({
   info?: StoryInfo;
 }) {
   const m = useMessages();
+  const locale = useLocale();
+  const storyLang = person.text.storyLang;
+  const foreignStory = storyLang && storyLang !== locale ? storyLang : undefined;
   // In-page links must not touch the URL hash: it selects the tab.
   const jumpTo = (event: React.MouseEvent, id: string) => {
     const target = document.getElementById(id);
@@ -398,7 +401,12 @@ function StoryPanel({
           )}
         </div>
       )}
-      <div className="prose-content" dangerouslySetInnerHTML={{ __html: storyHtml }} />
+      {foreignStory && (
+        <p className="-mt-4 text-body-sm text-muted-text">
+          {m.detail.storyOnlyIn(foreignStory === "en" ? (locale === "de" ? "Englisch" : "English") : foreignStory)}
+        </p>
+      )}
+      <div className="prose-content" lang={foreignStory} dangerouslySetInnerHTML={{ __html: storyHtml }} />
       <section aria-labelledby="sources-heading" className="flex flex-col gap-3 border-t border-line pt-6">
         <h3 id="sources-heading" className="text-h3">
           {m.detail.sources}

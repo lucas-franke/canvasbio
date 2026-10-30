@@ -1,0 +1,62 @@
+{
+  "slug": "vida-goldstein",
+  "name": {
+    "display": "Vida Goldstein",
+    "sort": "Goldstein, Vida"
+  },
+  "born": {
+    "date": "1869-04-13",
+    "place": "portland"
+  },
+  "died": {
+    "date": "1949-08-15",
+    "place": "south-yarra"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "uncertain, 1914",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vida_Goldstein-01.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing"
+    ],
+    "place": [
+      "portland",
+      "south-yarra",
+      "australia"
+    ]
+  },
+  "prominence": 0.67,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q7927635",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Vida Goldstein",
+      "url": "https://de.wikipedia.org/wiki/Vida_Goldstein",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Vida Goldstein",
+      "url": "https://en.wikipedia.org/wiki/Vida_Goldstein",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q7927635"
+}

@@ -1,0 +1,63 @@
+{
+  "slug": "ethel-lilian-voynich",
+  "name": {
+    "display": "Ethel Lilian Voynich",
+    "sort": "Voynich, Ethel Lilian"
+  },
+  "born": {
+    "date": "1864-05-11",
+    "place": "ballintemple"
+  },
+  "died": {
+    "date": "1960-07-27",
+    "place": "new-york-city"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "National Book League (Great Britain), 1902",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Voynich_Ethel_Lilian.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "arts"
+    ],
+    "place": [
+      "ballintemple",
+      "new-york-city",
+      "ireland",
+      "united-states"
+    ]
+  },
+  "prominence": 0.82,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q466068",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Ethel Lilian Voynich",
+      "url": "https://de.wikipedia.org/wiki/Ethel_Lilian_Voynich",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ethel Voynich",
+      "url": "https://en.wikipedia.org/wiki/Ethel_Voynich",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q466068"
+}

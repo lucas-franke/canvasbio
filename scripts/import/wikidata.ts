@@ -31,16 +31,15 @@ export interface Candidate {
 }
 
 /**
- * Women active in the women's movement, born 1800–1905, with a portrait on Commons
- * and articles in both German and English Wikipedia.
+ * Women active in the women's movement, born 1800–1950, with a portrait on Commons
+ * and an English Wikipedia article (German is optional; the text falls back to English).
  */
 export async function findCandidates(): Promise<Candidate[]> {
   const query = `
     SELECT ?p (MAX(?links) AS ?sitelinks) WHERE {
       VALUES ?occ { wd:Q28692502 wd:Q27532437 wd:Q322170 wd:Q34074720 }
       ?p wdt:P106 ?occ; wdt:P21 wd:Q6581072; wdt:P18 ?img; wdt:P569 ?born; wikibase:sitelinks ?links.
-      FILTER(YEAR(?born) >= 1800 && YEAR(?born) <= 1905)
-      ?de schema:about ?p; schema:isPartOf <https://de.wikipedia.org/>.
+      FILTER(YEAR(?born) >= 1800 && YEAR(?born) <= 1950)
       ?en schema:about ?p; schema:isPartOf <https://en.wikipedia.org/>.
     } GROUP BY ?p`;
   const data = await fetchJson<{

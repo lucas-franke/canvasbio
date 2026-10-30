@@ -1,0 +1,61 @@
+{
+  "slug": "frances-harper",
+  "name": {
+    "display": "Frances Harper",
+    "sort": "Harper, Frances"
+  },
+  "born": {
+    "date": "1825-09-24",
+    "place": "baltimore"
+  },
+  "died": {
+    "date": "1911-02-20",
+    "place": "philadelphia"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Miscellaneous Items in High Demand, PPOC, Library of Congress, 1898",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Frances_E.W._Harper,_three-quarter_length_portrait,_standing,_facing_front_LCCN97513270_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "baltimore",
+      "philadelphia",
+      "united-states"
+    ]
+  },
+  "prominence": 0.72,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5478699",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Frances Harper",
+      "url": "https://de.wikipedia.org/wiki/Frances_Harper",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Frances Ellen Watkins Harper",
+      "url": "https://en.wikipedia.org/wiki/Frances_Ellen_Watkins_Harper",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5478699"
+}

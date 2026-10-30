@@ -1,0 +1,53 @@
+{
+  "slug": "leolinda-daltro",
+  "name": {
+    "display": "Leolinda Daltro",
+    "sort": "Daltro, Leolinda"
+  },
+  "born": {
+    "date": "1859-07-14",
+    "place": "bahia"
+  },
+  "died": {
+    "date": "1935-05-04",
+    "place": "rio-de-janeiro"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1933",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Leolinda_Daltro_(1933).jpg"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "bahia",
+      "rio-de-janeiro",
+      "brazil"
+    ]
+  },
+  "prominence": 0.42,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q10265160",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Leolinda Daltro",
+      "url": "https://en.wikipedia.org/wiki/Leolinda_Daltro",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q10265160"
+}

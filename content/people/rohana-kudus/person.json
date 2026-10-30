@@ -1,0 +1,53 @@
+{
+  "slug": "rohana-kudus",
+  "name": {
+    "display": "Rohana Kudus",
+    "sort": "Kudus, Rohana"
+  },
+  "born": {
+    "date": "1884-12-20",
+    "place": "agam"
+  },
+  "died": {
+    "date": "1972-08-17",
+    "place": "jakarta"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rohana_Kudus.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "agam",
+      "jakarta",
+      "indonesia"
+    ]
+  },
+  "prominence": 0.55,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q4261370",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ruhana Kuddus",
+      "url": "https://en.wikipedia.org/wiki/Ruhana_Kuddus",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q4261370"
+}

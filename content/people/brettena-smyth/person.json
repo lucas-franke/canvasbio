@@ -1,0 +1,53 @@
+{
+  "slug": "brettena-smyth",
+  "name": {
+    "display": "Brettena Smyth",
+    "sort": "Smyth, Brettena"
+  },
+  "born": {
+    "date": "1840",
+    "place": "kyneton"
+  },
+  "died": {
+    "date": "1898",
+    "place": "melbourne"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1892",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Brettena_Smyth,_Australian_suffragist.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "kyneton",
+      "melbourne",
+      "australia"
+    ]
+  },
+  "prominence": 0.23,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q19977102",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Brettena Smyth",
+      "url": "https://en.wikipedia.org/wiki/Brettena_Smyth",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q19977102"
+}

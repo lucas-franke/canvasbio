@@ -1,0 +1,54 @@
+{
+  "slug": "josefina-valencia-munoz",
+  "name": {
+    "display": "Josefina Valencia Muñoz",
+    "sort": "Muñoz, Josefina Valencia"
+  },
+  "born": {
+    "date": "1913-09-22",
+    "place": "popayan"
+  },
+  "died": {
+    "date": "1991-10-04",
+    "place": "madrid"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Josefina_Valencia_de_Hubach.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "popayan",
+      "madrid",
+      "colombia",
+      "spain"
+    ]
+  },
+  "prominence": 0.42,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q384822",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Josefina Valencia",
+      "url": "https://en.wikipedia.org/wiki/Josefina_Valencia",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q384822"
+}

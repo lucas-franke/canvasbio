@@ -1,0 +1,61 @@
+{
+  "slug": "caroline-kauffmann",
+  "name": {
+    "display": "Caroline Kauffmann",
+    "sort": "Kauffmann, Caroline"
+  },
+  "born": {
+    "date": "1840",
+    "place": "sarreguemines"
+  },
+  "died": {
+    "date": "1926-12-13",
+    "place": "paris"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Excelsior, 1910",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Excelsior_-_La_France,_comme_l%27Angleterre,_%C3%A0_ses_Suffragettes_-_Kauffmann.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "sarreguemines",
+      "paris",
+      "france"
+    ]
+  },
+  "prominence": 0.38,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q19606974",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Caroline Kauffmann",
+      "url": "https://de.wikipedia.org/wiki/Caroline_Kauffmann",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Caroline Kauffmann",
+      "url": "https://en.wikipedia.org/wiki/Caroline_Kauffmann",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q19606974"
+}

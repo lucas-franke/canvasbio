@@ -1,0 +1,54 @@
+{
+  "slug": "dora-meeson",
+  "name": {
+    "display": "Dora Meeson",
+    "sort": "Meeson, Dora"
+  },
+  "born": {
+    "date": "1869-08-07",
+    "place": "hawthorn"
+  },
+  "died": {
+    "date": "1955-03-24",
+    "place": "chelsea"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "George James Coates (1869-1930), 1930",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coates-Dora.jpg"
+  },
+  "facets": {
+    "field": [
+      "arts"
+    ],
+    "place": [
+      "hawthorn",
+      "chelsea",
+      "australia",
+      "united-kingdom"
+    ]
+  },
+  "prominence": 0.38,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5297435",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Dora Meeson",
+      "url": "https://en.wikipedia.org/wiki/Dora_Meeson",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5297435"
+}

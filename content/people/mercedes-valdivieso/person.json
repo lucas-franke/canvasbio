@@ -1,0 +1,51 @@
+{
+  "slug": "mercedes-valdivieso",
+  "name": {
+    "display": "Mercedes Valdivieso",
+    "sort": "Valdivieso, Mercedes"
+  },
+  "born": {
+    "date": "1924-03-01",
+    "place": "santiago"
+  },
+  "died": {
+    "date": "1993-08-03",
+    "place": "santiago"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unbekannt",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mercedes_Valdivieso.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "santiago"
+    ]
+  },
+  "prominence": 0.51,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q21556",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mercedes Valdivieso",
+      "url": "https://en.wikipedia.org/wiki/Mercedes_Valdivieso",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q21556"
+}

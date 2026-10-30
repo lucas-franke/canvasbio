@@ -1,0 +1,51 @@
+{
+  "slug": "virginia-durant-young",
+  "name": {
+    "display": "Virginia Durant Young",
+    "sort": "Young, Virginia Durant"
+  },
+  "born": {
+    "date": "1842-03-10",
+    "place": "georgetown"
+  },
+  "died": {
+    "date": "1906-11-02"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author This file was derived from: Virginia Durant Young, photo in 1904 edition of The State.pdf, 1904",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Virginia_Durant_Young,_photo_in_1904_edition_of_The_State.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "georgetown",
+      "united-states"
+    ]
+  },
+  "prominence": 0.23,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q59248256",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Virginia Durant Young",
+      "url": "https://en.wikipedia.org/wiki/Virginia_Durant_Young",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q59248256"
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "rhoda-coffin",
+  "name": {
+    "display": "Rhoda Coffin",
+    "sort": "Coffin, Rhoda"
+  },
+  "born": {
+    "date": "1826"
+  },
+  "died": {
+    "date": "1909"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Rhoda Moorman Coffin, 1910",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rhoda_Moorman_Johnson_Coffin.png"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "social"
+    ],
+    "place": []
+  },
+  "prominence": 0.15,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q7320840",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Rhoda Coffin",
+      "url": "https://en.wikipedia.org/wiki/Rhoda_Coffin",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q7320840"
+}

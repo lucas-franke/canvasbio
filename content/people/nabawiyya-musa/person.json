@@ -1,0 +1,53 @@
+{
+  "slug": "nabawiyya-musa",
+  "name": {
+    "display": "Nabawiyya Musa",
+    "sort": "Musa, Nabawiyya"
+  },
+  "born": {
+    "date": "1886-12-17",
+    "place": "zagazig"
+  },
+  "died": {
+    "date": "1951",
+    "place": "alexandria"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "نبوية موسى أول فتاة تحصل على شهادة البكالوريا. أرشيف مصر (29 October 2015). Retrieved on 22 August 2016.)",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D8%A7%D9%84%D9%83%D8%A7%D8%AA%D8%A8%D8%A9_%D9%86%D8%A8%D9%88%D9%8A%D8%A9_%D9%85%D9%88%D8%B3%D9%89.jpg"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "zagazig",
+      "alexandria",
+      "egypt"
+    ]
+  },
+  "prominence": 0.62,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q4120257",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Nabawiyya Musa",
+      "url": "https://en.wikipedia.org/wiki/Nabawiyya_Musa",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q4120257"
+}

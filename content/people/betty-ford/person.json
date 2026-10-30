@@ -1,0 +1,63 @@
+{
+  "slug": "betty-ford",
+  "name": {
+    "display": "Betty Ford",
+    "sort": "Ford, Betty"
+  },
+  "born": {
+    "date": "1918-04-08",
+    "place": "chicago"
+  },
+  "died": {
+    "date": "2011-07-08",
+    "place": "rancho-mirage"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author or not provided, 1974",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait_of_First_Lady_Betty_Ford_-_NARA_(3x4_cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "arts"
+    ],
+    "place": [
+      "chicago",
+      "rancho-mirage",
+      "united-states"
+    ]
+  },
+  "prominence": 0.92,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q213122",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Betty Ford",
+      "url": "https://de.wikipedia.org/wiki/Betty_Ford",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Betty Ford",
+      "url": "https://en.wikipedia.org/wiki/Betty_Ford",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q213122"
+}

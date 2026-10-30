@@ -1,0 +1,64 @@
+{
+  "slug": "minna-cauer",
+  "name": {
+    "display": "Minna Cauer",
+    "sort": "Cauer, Minna"
+  },
+  "born": {
+    "date": "1841-11-01",
+    "place": "freyenstein"
+  },
+  "died": {
+    "date": "1922-08-03",
+    "place": "berlin"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Theodor Prümm (1841-1890), 1870",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait_Minna_Cauer_1870_Pr%C3%BCmm_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "education",
+      "social"
+    ],
+    "place": [
+      "freyenstein",
+      "berlin",
+      "germany"
+    ]
+  },
+  "prominence": 0.56,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q75202",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Minna Cauer",
+      "url": "https://de.wikipedia.org/wiki/Minna_Cauer",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Minna Cauer",
+      "url": "https://en.wikipedia.org/wiki/Minna_Cauer",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q75202"
+}

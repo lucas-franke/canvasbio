@@ -1,0 +1,62 @@
+{
+  "slug": "farrokhroo-parsa",
+  "name": {
+    "display": "Farrokhroo Parsa",
+    "sort": "Parsa, Farrokhroo"
+  },
+  "born": {
+    "date": "1922-03-22",
+    "place": "qom"
+  },
+  "died": {
+    "date": "1980-05-08",
+    "place": "tehran"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1968",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Farrokhroo_Parsa_1968.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "medicine"
+    ],
+    "place": [
+      "qom",
+      "tehran",
+      "iran"
+    ]
+  },
+  "prominence": 0.75,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2986892",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Farrochru Parsa",
+      "url": "https://de.wikipedia.org/wiki/Farrochru_Parsa",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Farrokhroo Parsa",
+      "url": "https://en.wikipedia.org/wiki/Farrokhroo_Parsa",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2986892"
+}

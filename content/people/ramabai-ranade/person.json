@@ -1,0 +1,52 @@
+{
+  "slug": "ramabai-ranade",
+  "name": {
+    "display": "Ramabai Ranade",
+    "sort": "Ranade, Ramabai"
+  },
+  "born": {
+    "date": "1862-01-25",
+    "place": "pune-division"
+  },
+  "died": {
+    "date": "1924"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1924",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ramabai-ranade.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "social"
+    ],
+    "place": [
+      "pune-division",
+      "india"
+    ]
+  },
+  "prominence": 0.61,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q55779",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ramabai Ranade",
+      "url": "https://en.wikipedia.org/wiki/Ramabai_Ranade",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q55779"
+}

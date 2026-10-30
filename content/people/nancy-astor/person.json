@@ -1,0 +1,62 @@
+{
+  "slug": "nancy-astor",
+  "name": {
+    "display": "Nancy Astor",
+    "sort": "Astor, Nancy"
+  },
+  "born": {
+    "date": "1879-05-19",
+    "place": "danville"
+  },
+  "died": {
+    "date": "1964-05-02",
+    "place": "grimsthorpe-castle"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Bassano Ltd, 1923",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nancy-Astor-Viscountess-Astor.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "danville",
+      "grimsthorpe-castle",
+      "united-states",
+      "united-kingdom"
+    ]
+  },
+  "prominence": 0.79,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q195013",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Nancy Astor",
+      "url": "https://de.wikipedia.org/wiki/Nancy_Astor",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Nancy Astor, Viscountess Astor",
+      "url": "https://en.wikipedia.org/wiki/Nancy_Astor%2C_Viscountess_Astor",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q195013"
+}

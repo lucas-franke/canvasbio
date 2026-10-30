@@ -1,0 +1,54 @@
+{
+  "slug": "caroline-dexter",
+  "name": {
+    "display": "Caroline Dexter",
+    "sort": "Dexter, Caroline"
+  },
+  "born": {
+    "date": "1819-01-06",
+    "place": "nottingham"
+  },
+  "died": {
+    "date": "1884-08-19",
+    "place": "melbourne"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1931",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Caroline_Dexter.png"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "nottingham",
+      "melbourne",
+      "united-kingdom",
+      "australia"
+    ]
+  },
+  "prominence": 0.23,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5045040",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Caroline Dexter",
+      "url": "https://en.wikipedia.org/wiki/Caroline_Dexter",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5045040"
+}

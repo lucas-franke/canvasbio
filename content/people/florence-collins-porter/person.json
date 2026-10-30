@@ -1,0 +1,47 @@
+{
+  "slug": "florence-collins-porter",
+  "name": {
+    "display": "Florence Collins Porter",
+    "sort": "Porter, Florence Collins"
+  },
+  "born": {
+    "date": "1853-08-14"
+  },
+  "died": {
+    "date": "1930-12-31"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unbekannt",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:FLORENCE_COLLINS_PORTER_A_woman_of_the_century_(page_593_crop).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": []
+  },
+  "prominence": 0.23,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q65512547",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Florence Collins Porter",
+      "url": "https://en.wikipedia.org/wiki/Florence_Collins_Porter",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q65512547"
+}

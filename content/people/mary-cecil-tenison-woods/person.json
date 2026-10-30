@@ -1,0 +1,54 @@
+{
+  "slug": "mary-cecil-tenison-woods",
+  "name": {
+    "display": "Mary Cecil Tenison Woods",
+    "sort": "Woods, Mary Cecil Tenison"
+  },
+  "born": {
+    "date": "1893-12-09",
+    "place": "adelaide"
+  },
+  "died": {
+    "date": "1971-10-18",
+    "place": "ryde"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1950",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mary_Tenison_Woods.png"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "science"
+    ],
+    "place": [
+      "adelaide",
+      "ryde",
+      "australia"
+    ]
+  },
+  "prominence": 0.15,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q21536592",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mary Tenison Woods",
+      "url": "https://en.wikipedia.org/wiki/Mary_Tenison_Woods",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q21536592"
+}

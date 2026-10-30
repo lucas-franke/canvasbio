@@ -1,0 +1,62 @@
+{
+  "slug": "may-jordan-mcconnel",
+  "name": {
+    "display": "May Jordan McConnel",
+    "sort": "McConnel, May Jordan"
+  },
+  "born": {
+    "date": "1860-09-06",
+    "place": "brisbane"
+  },
+  "died": {
+    "date": "1929-04-28",
+    "place": "stockton"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1890",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mary_Emma_McConnel_(nee_Jordan)_1860-1929,_circa_1890.jpg"
+  },
+  "facets": {
+    "field": [
+      "social"
+    ],
+    "place": [
+      "brisbane",
+      "stockton",
+      "australia",
+      "united-states"
+    ]
+  },
+  "prominence": 0.38,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q26701444",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): May Jordan McConnel",
+      "url": "https://de.wikipedia.org/wiki/May_Jordan_McConnel",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): May Jordan McConnel",
+      "url": "https://en.wikipedia.org/wiki/May_Jordan_McConnel",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q26701444"
+}

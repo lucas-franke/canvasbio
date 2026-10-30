@@ -1,0 +1,54 @@
+{
+  "slug": "ana-rosa-tornero",
+  "name": {
+    "display": "Ana Rosa Tornero",
+    "sort": "Tornero, Ana Rosa"
+  },
+  "born": {
+    "date": "1907",
+    "place": "bolivia"
+  },
+  "died": {
+    "date": "1984-02-27",
+    "place": "albuquerque"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "José María Velasco Maidana, Wara Wara, 1930, 1930",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ana_Rosa_Tornero.webp"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education"
+    ],
+    "place": [
+      "bolivia",
+      "albuquerque",
+      "united-states"
+    ]
+  },
+  "prominence": 0.49,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q20685642",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ana Rosa Tornero",
+      "url": "https://en.wikipedia.org/wiki/Ana_Rosa_Tornero",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q20685642"
+}

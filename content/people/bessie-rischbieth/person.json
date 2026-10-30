@@ -1,0 +1,61 @@
+{
+  "slug": "bessie-rischbieth",
+  "name": {
+    "display": "Bessie Rischbieth",
+    "sort": "Rischbieth, Bessie"
+  },
+  "born": {
+    "date": "1874-10-16",
+    "place": "adelaide"
+  },
+  "died": {
+    "date": "1967-03-13",
+    "place": "claremont"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "\"Freeman\"",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rischbieth(1940s).jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "adelaide",
+      "claremont",
+      "australia"
+    ]
+  },
+  "prominence": 0.49,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q4896491",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Bessie Rischbieth",
+      "url": "https://de.wikipedia.org/wiki/Bessie_Rischbieth",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Bessie Rischbieth",
+      "url": "https://en.wikipedia.org/wiki/Bessie_Rischbieth",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q4896491"
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "marta-vergara",
+  "name": {
+    "display": "Marta Vergara",
+    "sort": "Vergara, Marta"
+  },
+  "born": {
+    "date": "1898-01-02",
+    "place": "valparaiso"
+  },
+  "died": {
+    "date": "1995",
+    "place": "santiago"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Gobierno de Chile, 1931",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marta_Vergara_(1931).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "valparaiso",
+      "santiago"
+    ]
+  },
+  "prominence": 0.44,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q9029542",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Marta Vergara",
+      "url": "https://de.wikipedia.org/wiki/Marta_Vergara",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Marta Vergara",
+      "url": "https://en.wikipedia.org/wiki/Marta_Vergara",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q9029542"
+}

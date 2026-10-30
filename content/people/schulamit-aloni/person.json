@@ -1,0 +1,63 @@
+{
+  "slug": "schulamit-aloni",
+  "name": {
+    "display": "Schulamit Aloni",
+    "sort": "Aloni, Schulamit"
+  },
+  "born": {
+    "date": "1928-12-27",
+    "place": "tel-aviv"
+  },
+  "died": {
+    "date": "2014-01-24",
+    "place": "tel-aviv"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Fritz Cohen, 1966",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait_of_Shulamit_Aloni.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "education",
+      "science"
+    ],
+    "place": [
+      "tel-aviv",
+      "israel"
+    ]
+  },
+  "prominence": 0.78,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q267335",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Schulamit Aloni",
+      "url": "https://de.wikipedia.org/wiki/Schulamit_Aloni",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Shulamit Aloni",
+      "url": "https://en.wikipedia.org/wiki/Shulamit_Aloni",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q267335"
+}

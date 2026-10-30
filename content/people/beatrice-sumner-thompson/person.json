@@ -1,0 +1,53 @@
+{
+  "slug": "beatrice-sumner-thompson",
+  "name": {
+    "display": "Beatrice Sumner Thompson",
+    "sort": "Thompson, Beatrice Sumner"
+  },
+  "born": {
+    "date": "1874-05-04",
+    "place": "boston"
+  },
+  "died": {
+    "date": "1938-02-14",
+    "place": "los-angeles"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1919",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Beatrice_Sumner_Thompson.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "boston",
+      "los-angeles",
+      "united-states"
+    ]
+  },
+  "prominence": 0.23,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q66691285",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Beatrice Sumner Thompson",
+      "url": "https://en.wikipedia.org/wiki/Beatrice_Sumner_Thompson",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q66691285"
+}

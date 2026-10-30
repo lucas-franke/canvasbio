@@ -1,0 +1,53 @@
+{
+  "slug": "josefina-alvares-de-azevedo",
+  "name": {
+    "display": "Josefina Álvares de Azevedo",
+    "sort": "Azevedo, Josefina Álvares de"
+  },
+  "born": {
+    "date": "1851-05-05",
+    "place": "paraiba"
+  },
+  "died": {
+    "date": "1913-09-01",
+    "place": "rio-de-janeiro"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "L. Amaral",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ilustracao_Josefina_%C3%81lvares_de_Azevedo.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "paraiba",
+      "rio-de-janeiro",
+      "brazil"
+    ]
+  },
+  "prominence": 0.49,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q29415635",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Josefina Álvares de Azevedo",
+      "url": "https://en.wikipedia.org/wiki/Josefina_%C3%81lvares_de_Azevedo",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q29415635"
+}

@@ -1,0 +1,55 @@
+{
+  "slug": "addie-lucia-ballou",
+  "name": {
+    "display": "Addie Lucia Ballou",
+    "sort": "Ballou, Addie Lucia"
+  },
+  "born": {
+    "date": "1837-04-19",
+    "place": "chagrin-falls"
+  },
+  "died": {
+    "date": "1916-08-10",
+    "place": "san-francisco"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Addie L. Ballou, 1915",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Padre%27s_Dream_frontispiece.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "medicine",
+      "arts"
+    ],
+    "place": [
+      "chagrin-falls",
+      "san-francisco",
+      "united-states"
+    ]
+  },
+  "prominence": 0.49,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q4681137",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Addie L. Ballou",
+      "url": "https://en.wikipedia.org/wiki/Addie_L._Ballou",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q4681137"
+}

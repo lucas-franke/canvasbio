@@ -1,0 +1,53 @@
+{
+  "slug": "lin-zongsu",
+  "name": {
+    "display": "Lin Zongsu",
+    "sort": "Zongsu, Lin"
+  },
+  "born": {
+    "date": "1878",
+    "place": "minhou-county"
+  },
+  "died": {
+    "date": "1944",
+    "place": "kunming"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1944",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lin_Zongsu.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "minhou-county",
+      "kunming",
+      "people-s-republic-of-china"
+    ]
+  },
+  "prominence": 0.49,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q11105968",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Lin Zongsu",
+      "url": "https://en.wikipedia.org/wiki/Lin_Zongsu",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q11105968"
+}
