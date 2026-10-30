@@ -1,0 +1,52 @@
+{
+  "slug": "nydia-lamarque",
+  "name": {
+    "display": "Nydia Lamarque",
+    "sort": "Lamarque, Nydia"
+  },
+  "born": {
+    "date": "1906",
+    "place": "buenos-aires"
+  },
+  "died": {
+    "date": "1982"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:NYDIA_LAMARQUE_II.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "buenos-aires",
+      "argentina",
+      "south-america"
+    ]
+  },
+  "prominence": 0.29,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q24203445",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Nydia Lamarque",
+      "url": "https://en.wikipedia.org/wiki/Nydia_Lamarque",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q24203445"
+}

@@ -1,0 +1,56 @@
+{
+  "slug": "louisa-aslanian",
+  "name": {
+    "display": "Louisa Aslanian",
+    "sort": "Aslanian, Louisa"
+  },
+  "born": {
+    "date": "1906-05-05",
+    "place": "tabriz"
+  },
+  "died": {
+    "date": "1945-01-30",
+    "place": "ravensbrueck-concentration-camp"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Louise_Aslanian_(Las).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "tabriz",
+      "ravensbrueck-concentration-camp",
+      "iran",
+      "asia",
+      "germany",
+      "europe"
+    ]
+  },
+  "prominence": 0.53,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q20513783",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Louise Aslanian",
+      "url": "https://en.wikipedia.org/wiki/Louise_Aslanian",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q20513783"
+}

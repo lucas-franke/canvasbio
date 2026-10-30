@@ -1,0 +1,53 @@
+{
+  "slug": "siti-sukaptinah-sunaryo-mangunpuspito",
+  "name": {
+    "display": "Siti Sukaptinah Sunaryo Mangunpuspito",
+    "sort": "Mangunpuspito, Siti Sukaptinah Sunaryo"
+  },
+  "born": {
+    "date": "1907-12-28",
+    "place": "yogyakarta"
+  },
+  "died": {
+    "date": "1991-08-31",
+    "place": "yogyakarta"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "DEPARTEMEN PENDIDIKAN DAN KEBUDAYAAN DIREKTORAT SEJARAH DAN NILAI TRADISIONAL PROYEK INVENTARISASI DAN DOKUMENTASI SEJARAH NASIONAL JAKARTA, 1991",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ny._Siti_Sukaptinah_Sunaryo_Mangunpuspito.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "yogyakarta",
+      "indonesia",
+      "asia"
+    ]
+  },
+  "prominence": 0.23,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q28355682",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Siti Sukaptinah Sunaryo Mangunpuspito",
+      "url": "https://en.wikipedia.org/wiki/Siti_Sukaptinah_Sunaryo_Mangunpuspito",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q28355682"
+}

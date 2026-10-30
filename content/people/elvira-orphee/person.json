@@ -1,0 +1,62 @@
+{
+  "slug": "elvira-orphee",
+  "name": {
+    "display": "Elvira Orphée",
+    "sort": "Orphée, Elvira"
+  },
+  "born": {
+    "date": "1929",
+    "place": "san-miguel-de-tucuman"
+  },
+  "died": {
+    "date": "2018-04-26",
+    "place": "buenos-aires"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1981",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elviraorphee.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "san-miguel-de-tucuman",
+      "buenos-aires",
+      "argentina",
+      "south-america"
+    ]
+  },
+  "prominence": 0.46,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q1334281",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Elvira Orphée",
+      "url": "https://de.wikipedia.org/wiki/Elvira_Orph%C3%A9e",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Elvira Orphée",
+      "url": "https://en.wikipedia.org/wiki/Elvira_Orph%C3%A9e",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q1334281"
+}

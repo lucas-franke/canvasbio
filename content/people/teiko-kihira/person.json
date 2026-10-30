@@ -1,0 +1,52 @@
+{
+  "slug": "teiko-kihira",
+  "name": {
+    "display": "Teiko Kihira",
+    "sort": "Kihira, Teiko"
+  },
+  "born": {
+    "date": "1928-02-02",
+    "place": "fukuoka"
+  },
+  "died": {
+    "date": "2015-07-19"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "財団法人婦選会館",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gekkan-Fujin-Tenbo-1963-January-1.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "fukuoka",
+      "japan",
+      "asia"
+    ]
+  },
+  "prominence": 0.14,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q11605054",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Teiko Kihira",
+      "url": "https://en.wikipedia.org/wiki/Teiko_Kihira",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q11605054"
+}

@@ -1,0 +1,55 @@
+{
+  "slug": "matilde-alba-swann",
+  "name": {
+    "display": "Matilde Alba Swann",
+    "sort": "Swann, Matilde Alba"
+  },
+  "born": {
+    "date": "1912-02-24",
+    "place": "berisso"
+  },
+  "died": {
+    "date": "2000-09-13",
+    "place": "la-plata"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Creimerd",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Matilde_Alba_Swann.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "science"
+    ],
+    "place": [
+      "berisso",
+      "la-plata",
+      "argentina",
+      "south-america"
+    ]
+  },
+  "prominence": 0.23,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2835544",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Matilde Alba Swann",
+      "url": "https://en.wikipedia.org/wiki/Matilde_Alba_Swann",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2835544"
+}

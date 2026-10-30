@@ -1,0 +1,52 @@
+{
+  "slug": "maria-tomasia-figueira-lima",
+  "name": {
+    "display": "Maria Tomásia Figueira Lima",
+    "sort": "Lima, Maria Tomásia Figueira"
+  },
+  "born": {
+    "date": "1826",
+    "place": "sobral"
+  },
+  "died": {
+    "date": "1902"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maria_Tom%C3%A1sia_Figueira_Lima_(1826-1902).jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "sobral",
+      "brazil",
+      "south-america"
+    ]
+  },
+  "prominence": 0.4,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q10326108",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Maria Tomásia Figueira Lima",
+      "url": "https://en.wikipedia.org/wiki/Maria_Tom%C3%A1sia_Figueira_Lima",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q10326108"
+}

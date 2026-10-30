@@ -1,0 +1,52 @@
+{
+  "slug": "badri-teymourtash",
+  "name": {
+    "display": "Badri Teymourtash",
+    "sort": "Teymourtash, Badri"
+  },
+  "born": {
+    "date": "1911",
+    "place": "mashhad"
+  },
+  "died": {
+    "date": "1995"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "The original uploader was Khorasani at English Wikipedia.",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dr._Badri_Teymourtash.jpg"
+  },
+  "facets": {
+    "field": [
+      "medicine"
+    ],
+    "place": [
+      "mashhad",
+      "iran",
+      "asia"
+    ]
+  },
+  "prominence": 0.55,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q4841130",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Badri Teymourtash",
+      "url": "https://en.wikipedia.org/wiki/Badri_Teymourtash",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q4841130"
+}

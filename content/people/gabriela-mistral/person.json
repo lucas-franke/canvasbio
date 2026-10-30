@@ -1,0 +1,66 @@
+{
+  "slug": "gabriela-mistral",
+  "name": {
+    "display": "Gabriela Mistral",
+    "sort": "Mistral, Gabriela"
+  },
+  "born": {
+    "date": "1889-04-07",
+    "place": "vicuna"
+  },
+  "died": {
+    "date": "1957-01-10",
+    "place": "hempstead"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Anna Riwkin-Brick, 1945",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gabriela_Mistral_1945.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "education"
+    ],
+    "place": [
+      "vicuna",
+      "hempstead",
+      "chile",
+      "south-america",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 1,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q80871",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Gabriela Mistral",
+      "url": "https://de.wikipedia.org/wiki/Gabriela_Mistral",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Gabriela Mistral",
+      "url": "https://en.wikipedia.org/wiki/Gabriela_Mistral",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q80871"
+}

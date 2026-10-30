@@ -1,0 +1,53 @@
+{
+  "slug": "elysa-ayala",
+  "name": {
+    "display": "Elysa Ayala",
+    "sort": "Ayala, Elysa"
+  },
+  "born": {
+    "date": "1878",
+    "place": "guayaquil"
+  },
+  "died": {
+    "date": "1956"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "El Comercio, 1918",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elysa_Ayala_Gonzalez.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "arts"
+    ],
+    "place": [
+      "guayaquil",
+      "ecuador",
+      "south-america"
+    ]
+  },
+  "prominence": 0.29,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5368524",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Elysa Ayala",
+      "url": "https://en.wikipedia.org/wiki/Elysa_Ayala",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5368524"
+}

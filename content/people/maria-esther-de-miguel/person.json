@@ -1,0 +1,63 @@
+{
+  "slug": "maria-esther-de-miguel",
+  "name": {
+    "display": "María Esther de Miguel",
+    "sort": "Miguel, María Esther de"
+  },
+  "born": {
+    "date": "1929-11-01",
+    "place": "larroque"
+  },
+  "died": {
+    "date": "2003-07-27",
+    "place": "buenos-aires"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1979",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mariaestherdemiguel.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education"
+    ],
+    "place": [
+      "larroque",
+      "buenos-aires",
+      "argentina",
+      "south-america"
+    ]
+  },
+  "prominence": 0.37,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q1906597",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): María Esther de Miguel",
+      "url": "https://de.wikipedia.org/wiki/Mar%C3%ADa_Esther_de_Miguel",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): María Esther de Miguel",
+      "url": "https://en.wikipedia.org/wiki/Mar%C3%ADa_Esther_de_Miguel",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q1906597"
+}

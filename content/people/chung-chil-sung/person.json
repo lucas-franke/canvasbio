@@ -1,0 +1,55 @@
+{
+  "slug": "chung-chil-sung",
+  "name": {
+    "display": "Chung Chil-sung",
+    "sort": "Chil-sung, Chung"
+  },
+  "born": {
+    "date": "1897",
+    "place": "daegu"
+  },
+  "died": {
+    "date": "1958-11"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1925",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:GeumJuk_Chung_Chil-sung.JPG"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "science",
+      "arts"
+    ],
+    "place": [
+      "daegu",
+      "south-korea",
+      "asia"
+    ]
+  },
+  "prominence": 0.4,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q624152",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Chung Chil-sung",
+      "url": "https://en.wikipedia.org/wiki/Chung_Chil-sung",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q624152"
+}

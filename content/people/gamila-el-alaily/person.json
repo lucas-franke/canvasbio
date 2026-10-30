@@ -1,0 +1,55 @@
+{
+  "slug": "gamila-el-alaily",
+  "name": {
+    "display": "Gamila El Alaily",
+    "sort": "Alaily, Gamila El"
+  },
+  "born": {
+    "date": "1907-03-20",
+    "place": "mansoura"
+  },
+  "died": {
+    "date": "1991-04-11",
+    "place": "ain-shams"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1955",
+    "license": {
+      "name": "CC0",
+      "url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gamila-el-alaily-on-her-desk.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "mansoura",
+      "ain-shams",
+      "egypt",
+      "africa"
+    ]
+  },
+  "prominence": 0.4,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q12206172",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Gamila El Alaily",
+      "url": "https://en.wikipedia.org/wiki/Gamila_El_Alaily",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q12206172"
+}

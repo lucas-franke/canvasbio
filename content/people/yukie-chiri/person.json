@@ -1,0 +1,62 @@
+{
+  "slug": "yukie-chiri",
+  "name": {
+    "display": "Yukie Chiri",
+    "sort": "Chiri, Yukie"
+  },
+  "born": {
+    "date": "1903-06-08",
+    "place": "noboribetsu"
+  },
+  "died": {
+    "date": "1922-09-18",
+    "place": "hongo-ku"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yukie_Chiri_3.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "noboribetsu",
+      "hongo-ku",
+      "japan",
+      "asia"
+    ]
+  },
+  "prominence": 0.59,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q7315919",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Chiri Yukie",
+      "url": "https://de.wikipedia.org/wiki/Chiri_Yukie",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Yukie Chiri",
+      "url": "https://en.wikipedia.org/wiki/Yukie_Chiri",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q7315919"
+}

@@ -1,0 +1,53 @@
+{
+  "slug": "maria-romero",
+  "name": {
+    "display": "María Romero",
+    "sort": "Romero, María"
+  },
+  "born": {
+    "date": "1909-04-02",
+    "place": "santiago"
+  },
+  "died": {
+    "date": "1989-08-14",
+    "place": "santiago"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Desconocido - Revista Ecran, 1941",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maria_Romero_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "santiago",
+      "chile",
+      "south-america"
+    ]
+  },
+  "prominence": 0.37,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q21499864",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): María Romero Cordero",
+      "url": "https://en.wikipedia.org/wiki/Mar%C3%ADa_Romero_Cordero",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q21499864"
+}

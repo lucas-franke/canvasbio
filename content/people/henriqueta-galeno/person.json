@@ -1,0 +1,55 @@
+{
+  "slug": "henriqueta-galeno",
+  "name": {
+    "display": "Henriqueta Galeno",
+    "sort": "Galeno, Henriqueta"
+  },
+  "born": {
+    "date": "1887-02-23",
+    "place": "fortaleza"
+  },
+  "died": {
+    "date": "1964-09-10",
+    "place": "fortaleza"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Henriqueta_Galeno.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education",
+      "science"
+    ],
+    "place": [
+      "fortaleza",
+      "brazil",
+      "south-america"
+    ]
+  },
+  "prominence": 0.29,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q55869281",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Henriqueta Galeno",
+      "url": "https://en.wikipedia.org/wiki/Henriqueta_Galeno",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q55869281"
+}

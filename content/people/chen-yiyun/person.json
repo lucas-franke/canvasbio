@@ -1,0 +1,52 @@
+{
+  "slug": "chen-yiyun",
+  "name": {
+    "display": "Chen Yiyun",
+    "sort": "Yiyun, Chen"
+  },
+  "born": {
+    "date": "1910",
+    "place": "guangdong"
+  },
+  "died": {
+    "date": "1969-06-30"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "立法院立法委員名鑑指導委員會, 民42, 1953",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E9%99%B3%E9%80%B8%E9%9B%B2.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "guangdong",
+      "people-s-republic-of-china",
+      "asia"
+    ]
+  },
+  "prominence": 0.14,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q104165217",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Yi Yun Chen",
+      "url": "https://en.wikipedia.org/wiki/Yi_Yun_Chen",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q104165217"
+}

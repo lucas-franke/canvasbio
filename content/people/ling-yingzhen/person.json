@@ -1,0 +1,47 @@
+{
+  "slug": "ling-yingzhen",
+  "name": {
+    "display": "Ling Yingzhen",
+    "sort": "Yingzhen, Ling"
+  },
+  "born": {
+    "date": "1913"
+  },
+  "died": {
+    "date": "1981-09-08"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "立法院立法委員名鑑指導委員會, 民42, 1953",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%87%8C%E8%8B%B1%E8%B2%9E.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": []
+  },
+  "prominence": 0.14,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q65048902",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ling Yingzhen",
+      "url": "https://en.wikipedia.org/wiki/Ling_Yingzhen",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q65048902"
+}

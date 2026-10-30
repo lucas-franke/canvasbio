@@ -1,0 +1,62 @@
+{
+  "slug": "pamela-mboya",
+  "name": {
+    "display": "Pamela Mboya",
+    "sort": "Mboya, Pamela"
+  },
+  "born": {
+    "date": "1939",
+    "place": "maseno"
+  },
+  "died": {
+    "date": "2009-01-26",
+    "place": "south-africa"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Israeli GPO photographer, 1962",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pamela_Mboya_on_honeymoon_Tel_Aviv_1962_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "maseno",
+      "south-africa",
+      "kenya",
+      "africa"
+    ]
+  },
+  "prominence": 0.33,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2411858",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Pamela Mboya",
+      "url": "https://de.wikipedia.org/wiki/Pamela_Mboya",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Pamela Mboya",
+      "url": "https://en.wikipedia.org/wiki/Pamela_Mboya",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2411858"
+}

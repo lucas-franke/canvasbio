@@ -1,6 +1,6 @@
 import { expect, test, type Page } from "@playwright/test";
 
-import { navPillBoxes, overlaps } from "./helpers";
+import { navPillBoxes, overlaps, peopleCount } from "./helpers";
 
 /** Camera as written to the world element: translate(-x·s, -y·s) scale(s). */
 async function camera(page: Page) {
@@ -32,15 +32,16 @@ const tabbableTile = (page: Page) => page.locator('[data-cell][tabindex="0"]');
 
 test("the finite wall shows every person exactly once, as a named list", async ({ page }) => {
   await openCanvas(page);
+  const count = await peopleCount(page);
   // The whole wall is rendered, without repeats.
-  expect(await page.locator("[data-cell]").count()).toBe(600);
+  expect(await page.locator("[data-cell]").count()).toBe(count);
 
   const exposed = await page
     .locator("[data-person]")
     .evaluateAll((els) => els.map((e) => e.getAttribute("data-person")));
-  expect(exposed).toHaveLength(600);
-  expect(new Set(exposed).size).toBe(600);
-  await expect(page.getByRole("list", { name: "Porträts" }).getByRole("listitem")).toHaveCount(600);
+  expect(exposed).toHaveLength(count);
+  expect(new Set(exposed).size).toBe(count);
+  await expect(page.getByRole("list", { name: "Porträts" }).getByRole("listitem")).toHaveCount(count);
   await expect(tabbableTile(page)).toHaveCount(1);
   // The portraits are painted on one canvas; the tiles are transparent links named by the
   // person (no images in them), so the whole list stays reachable.
@@ -183,7 +184,7 @@ test.describe("without JavaScript", () => {
     await expect(tiles.first()).toHaveAttribute("href", /^\/personen\/[a-z0-9-]+$/);
     // Without JavaScript the view switch shows all views right away.
     await page.getByRole("group", { name: "Ansicht" }).getByRole("link", { name: "Liste" }).click();
-    await expect(page.locator("article[data-vt-item]")).toHaveCount(600);
+    await expect(page.locator("article[data-vt-item]")).toHaveCount(await peopleCount(page));
   });
 });
 

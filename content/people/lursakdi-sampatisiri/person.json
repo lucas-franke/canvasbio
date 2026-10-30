@@ -1,0 +1,53 @@
+{
+  "slug": "lursakdi-sampatisiri",
+  "name": {
+    "display": "Lursakdi Sampatisiri",
+    "sort": "Sampatisiri, Lursakdi"
+  },
+  "born": {
+    "date": "1919-02-20",
+    "place": "bangkok"
+  },
+  "died": {
+    "date": "2010-11-09",
+    "place": "bangkok"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Bangkokreporter",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Thanpuying_Lursakdi.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "bangkok",
+      "thailand",
+      "asia"
+    ]
+  },
+  "prominence": 0.23,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6666777",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Lursakdi Sampatisiri",
+      "url": "https://en.wikipedia.org/wiki/Lursakdi_Sampatisiri",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6666777"
+}

@@ -1,0 +1,62 @@
+{
+  "slug": "harada-yasuko",
+  "name": {
+    "display": "Harada Yasuko",
+    "sort": "Yasuko, Harada"
+  },
+  "born": {
+    "date": "1928-01-12",
+    "place": "hokkaido"
+  },
+  "died": {
+    "date": "2009-10-20",
+    "place": "sapporo"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1956",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yauko_Harada.1956.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "hokkaido",
+      "sapporo",
+      "japan",
+      "asia"
+    ]
+  },
+  "prominence": 0.37,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q11409828",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Yasuko Harada",
+      "url": "https://de.wikipedia.org/wiki/Yasuko_Harada",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Yasuko Harada",
+      "url": "https://en.wikipedia.org/wiki/Yasuko_Harada",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q11409828"
+}

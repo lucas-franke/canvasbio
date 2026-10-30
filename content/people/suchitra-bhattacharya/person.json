@@ -1,0 +1,54 @@
+{
+  "slug": "suchitra-bhattacharya",
+  "name": {
+    "display": "Suchitra Bhattacharya",
+    "sort": "Bhattacharya, Suchitra"
+  },
+  "born": {
+    "date": "1950-01-10",
+    "place": "bhagalpur"
+  },
+  "died": {
+    "date": "2015-05-12",
+    "place": "dhakuria"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "https://www.loc.gov/acq/ovop/delhi/salrp/suchitrabhattacharya.html",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Suchitra_Bhattacharya_photo.png"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "bhagalpur",
+      "dhakuria",
+      "india",
+      "asia"
+    ]
+  },
+  "prominence": 0.61,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q7632914",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Suchitra Bhattacharya",
+      "url": "https://en.wikipedia.org/wiki/Suchitra_Bhattacharya",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q7632914"
+}

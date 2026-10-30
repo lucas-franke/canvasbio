@@ -1,0 +1,52 @@
+{
+  "slug": "anja-z",
+  "name": {
+    "display": "Anja-Z",
+    "sort": "Anja-Z"
+  },
+  "born": {
+    "date": "1892",
+    "place": "antananarivo"
+  },
+  "died": {
+    "date": "1931-04"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Esther_Razanadrasoa.JPG"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "antananarivo",
+      "madagascar",
+      "africa"
+    ]
+  },
+  "prominence": 0.48,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q23019500",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Esther Razanadrasoa",
+      "url": "https://en.wikipedia.org/wiki/Esther_Razanadrasoa",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q23019500"
+}

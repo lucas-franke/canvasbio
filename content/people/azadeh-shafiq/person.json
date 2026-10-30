@@ -1,0 +1,55 @@
+{
+  "slug": "azadeh-shafiq",
+  "name": {
+    "display": "Azadeh Shafiq",
+    "sort": "Shafiq, Azadeh"
+  },
+  "born": {
+    "date": "1951",
+    "place": "iran"
+  },
+  "died": {
+    "date": "2011-02-23",
+    "place": "paris"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1987",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Princess_Azadeh_Shafiq.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "iran",
+      "paris",
+      "asia",
+      "france",
+      "europe"
+    ]
+  },
+  "prominence": 0.46,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5868452",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Azadeh Shafiq",
+      "url": "https://en.wikipedia.org/wiki/Azadeh_Shafiq",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5868452"
+}

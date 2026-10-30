@@ -1,0 +1,52 @@
+{
+  "slug": "maria-esperanza-barrios",
+  "name": {
+    "display": "María Esperanza Barrios",
+    "sort": "Barrios, María Esperanza"
+  },
+  "born": {
+    "date": "1892-12-18",
+    "place": "san-carlos"
+  },
+  "died": {
+    "date": "1931-10-02"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1920",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maria_Esperanza_Barrios.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "san-carlos",
+      "uruguay",
+      "south-america"
+    ]
+  },
+  "prominence": 0.4,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q43288573",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): María Esperanza Barrios",
+      "url": "https://en.wikipedia.org/wiki/Mar%C3%ADa_Esperanza_Barrios",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q43288573"
+}

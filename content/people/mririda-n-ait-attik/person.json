@@ -1,0 +1,55 @@
+{
+  "slug": "mririda-n-ait-attik",
+  "name": {
+    "display": "Mririda n’Ait Attik",
+    "sort": "Attik, Mririda n’Ait"
+  },
+  "born": {
+    "date": "1900"
+  },
+  "died": {
+    "date": "1940"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "permission given by Dr. Abderrahmane Ammar, 1940",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Merirda_Nait_Atik.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": []
+  },
+  "prominence": 0.55,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6929604",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Mririda n’Aït Attik",
+      "url": "https://de.wikipedia.org/wiki/Mririda_n%E2%80%99A%C3%AFt_Attik",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mririda n'Ait Attik",
+      "url": "https://en.wikipedia.org/wiki/Mririda_n'Ait_Attik",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6929604"
+}

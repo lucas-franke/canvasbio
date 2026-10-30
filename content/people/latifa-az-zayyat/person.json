@@ -1,0 +1,63 @@
+{
+  "slug": "latifa-az-zayyat",
+  "name": {
+    "display": "Latifa az-Zayyat",
+    "sort": "az-Zayyat, Latifa"
+  },
+  "born": {
+    "date": "1923-08-08",
+    "place": "damietta"
+  },
+  "died": {
+    "date": "1996-09-11",
+    "place": "cairo"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unavailable",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Latifa_al-Zayyat_(facecrop).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education"
+    ],
+    "place": [
+      "damietta",
+      "cairo",
+      "egypt",
+      "africa"
+    ]
+  },
+  "prominence": 0.65,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q542257",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Latifa az-Zayyat",
+      "url": "https://de.wikipedia.org/wiki/Latifa_az-Zayyat",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Latifa al-Zayyat",
+      "url": "https://en.wikipedia.org/wiki/Latifa_al-Zayyat",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q542257"
+}

@@ -1,0 +1,54 @@
+{
+  "slug": "seniha-hizal",
+  "name": {
+    "display": "Seniha Hızal",
+    "sort": "Hızal, Seniha"
+  },
+  "born": {
+    "date": "1897",
+    "place": "adapazari"
+  },
+  "died": {
+    "date": "1985-06-22",
+    "place": "turkey"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1935",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Seniha_H%C4%B1zal.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "adapazari",
+      "turkey",
+      "asia",
+      "europe"
+    ]
+  },
+  "prominence": 0.46,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6034311",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Seniha Nafız Hızal",
+      "url": "https://en.wikipedia.org/wiki/Seniha_Naf%C4%B1z_H%C4%B1zal",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6034311"
+}

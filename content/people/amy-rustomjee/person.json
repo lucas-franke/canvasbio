@@ -1,0 +1,52 @@
+{
+  "slug": "amy-rustomjee",
+  "name": {
+    "display": "Amy Rustomjee",
+    "sort": "Rustomjee, Amy"
+  },
+  "born": {
+    "date": "1896-05-18",
+    "place": "pune"
+  },
+  "died": {
+    "date": "1976"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "No photographer credited, 1940",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:AmyBHJRustomji1940.png"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "pune",
+      "india",
+      "asia"
+    ]
+  },
+  "prominence": 0.37,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q109657123",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Amy Rustomjee",
+      "url": "https://en.wikipedia.org/wiki/Amy_Rustomjee",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q109657123"
+}

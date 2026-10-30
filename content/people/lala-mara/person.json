@@ -1,0 +1,47 @@
+{
+  "slug": "lala-mara",
+  "name": {
+    "display": "Lala Mara",
+    "sort": "Mara, Lala"
+  },
+  "born": {
+    "date": "1931-01-04"
+  },
+  "died": {
+    "date": "2004-07-20"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "National Archives of Fiji, 1970",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ro_Lady_Mara_1970.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": []
+  },
+  "prominence": 0.29,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6480132",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Lala Mara",
+      "url": "https://en.wikipedia.org/wiki/Lala_Mara",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6480132"
+}

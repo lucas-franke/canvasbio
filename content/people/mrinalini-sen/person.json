@@ -1,0 +1,54 @@
+{
+  "slug": "mrinalini-sen",
+  "name": {
+    "display": "Mrinalini Sen",
+    "sort": "Sen, Mrinalini"
+  },
+  "born": {
+    "date": "1879-08-03",
+    "place": "bhagalpur"
+  },
+  "died": {
+    "date": "1972-03-08",
+    "place": "kolkata"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown, 1905",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mrinalini_Sen.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "bhagalpur",
+      "kolkata",
+      "india",
+      "asia"
+    ]
+  },
+  "prominence": 0.43,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q29994878",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mrinalini Sen",
+      "url": "https://en.wikipedia.org/wiki/Mrinalini_Sen",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q29994878"
+}

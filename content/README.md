@@ -5,6 +5,8 @@ All biographies live in this folder. The build validates the format (`npm run va
 ```
 content/
   taxonomy.json              Translated labels of the filter values
+  places.json                Coordinates of birth and death places (map view)
+  import-exclude.json        Wikidata ids the demo import must not add (removed by hand)
   people/<slug>/
     person.json              Language-independent data
     de.md, en.md             Texts per language (required per site.config.ts)
@@ -61,4 +63,4 @@ The demo content comes from three sources:
 - portraits from Wikimedia Commons (public domain/CC0 only)
 - life stories from Wikipedia (CC BY-SA 4.0, sources in `sources`)
 
-Regenerate it with `npm run import:demo -- --limit 200`. Hand-edited portraits (`portrait.curated`) are kept.
+The import adds to the existing people: `npm run import:demo -- --limit 800 --to-year 1990` (only people who have died). `--focus "Africa,Asia,South America,Oceania"` takes the new people from these continents, with broader occupations (politics, activism, press, writing, education, medicine, unions); review them before committing. `--full` regenerates everything. Hand-edited portraits (`portrait.curated`) are kept. Coordinates for new places: `npx tsx scripts/add-coords.ts`.

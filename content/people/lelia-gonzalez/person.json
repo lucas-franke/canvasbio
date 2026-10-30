@@ -1,0 +1,64 @@
+{
+  "slug": "lelia-gonzalez",
+  "name": {
+    "display": "Lélia Gonzalez",
+    "sort": "Gonzalez, Lélia"
+  },
+  "born": {
+    "date": "1935-02-01",
+    "place": "belo-horizonte"
+  },
+  "died": {
+    "date": "1994-07-10",
+    "place": "rio-de-janeiro"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Cezar Loureiro, 1994",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:L%C3%A9lia_Gonzalez_by_Cezar_Loureiro.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "education",
+      "science"
+    ],
+    "place": [
+      "belo-horizonte",
+      "rio-de-janeiro",
+      "brazil",
+      "south-america"
+    ]
+  },
+  "prominence": 0.56,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q10321947",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Lélia Gonzalez",
+      "url": "https://de.wikipedia.org/wiki/L%C3%A9lia_Gonzalez",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Lélia Gonzalez",
+      "url": "https://en.wikipedia.org/wiki/L%C3%A9lia_Gonzalez",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q10321947"
+}

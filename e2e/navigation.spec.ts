@@ -132,12 +132,12 @@ test("the start page shows who was born on this day", async ({ page }) => {
 test("with nobody on this day, the start page shows the next days under their own heading", async ({
   page,
 }) => {
-  // 20 August: nobody in the demo collection; Hannah Jane Patterson died on 21 August 1937.
-  await page.clock.setFixedTime(new Date(2026, 7, 20, 12));
+  // 6 December: nobody in the demo collection; Yosano Akiko was born on 7 December 1878.
+  await page.clock.setFixedTime(new Date(2026, 11, 6, 12));
   await page.goto("/");
   const soon = page.getByRole("region", { name: "In den nächsten Tagen" });
-  await expect(soon.getByRole("link", { name: /Hannah Jane Patterson/ })).toBeVisible();
-  await expect(soon).toContainText("Gestorben am 21. August 1937");
+  await expect(soon.getByRole("link", { name: /Yosano Akiko/ })).toBeVisible();
+  await expect(soon).toContainText("Geboren am 7. Dezember 1878");
   await expect(page.getByRole("region", { name: "An diesem Tag" })).toHaveCount(0);
 });
 

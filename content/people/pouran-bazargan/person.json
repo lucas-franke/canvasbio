@@ -1,0 +1,48 @@
+{
+  "slug": "pouran-bazargan",
+  "name": {
+    "display": "Pouran Bazargan",
+    "sort": "Bazargan, Pouran"
+  },
+  "born": {
+    "date": "1937"
+  },
+  "died": {
+    "date": "2007-03-06"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait_of_Pouran_Bazargan_(Bihejab).png"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education"
+    ],
+    "place": []
+  },
+  "prominence": 0.29,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q30328095",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Pouran Bazargan",
+      "url": "https://en.wikipedia.org/wiki/Pouran_Bazargan",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q30328095"
+}

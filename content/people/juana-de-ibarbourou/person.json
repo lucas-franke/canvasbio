@@ -1,0 +1,62 @@
+{
+  "slug": "juana-de-ibarbourou",
+  "name": {
+    "display": "Juana de Ibarbourou",
+    "sort": "Ibarbourou, Juana de"
+  },
+  "born": {
+    "date": "1892-03-08",
+    "place": "melo"
+  },
+  "died": {
+    "date": "1979-07-15",
+    "place": "montevideo"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Elena Bazterrica, 1934",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juana_de_Ibarbourou_from_Estampas_de_la_Biblia_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "melo",
+      "montevideo",
+      "uruguay",
+      "south-america"
+    ]
+  },
+  "prominence": 0.74,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q237914",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Juana de Ibarbourou",
+      "url": "https://de.wikipedia.org/wiki/Juana_de_Ibarbourou",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Juana de Ibarbourou",
+      "url": "https://en.wikipedia.org/wiki/Juana_de_Ibarbourou",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q237914"
+}

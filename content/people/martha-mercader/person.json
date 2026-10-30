@@ -1,0 +1,63 @@
+{
+  "slug": "martha-mercader",
+  "name": {
+    "display": "Martha Mercader",
+    "sort": "Mercader, Martha"
+  },
+  "born": {
+    "date": "1926-02-27",
+    "place": "la-plata"
+  },
+  "died": {
+    "date": "2010-02-17",
+    "place": "buenos-aires"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1981",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marthamercader.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing"
+    ],
+    "place": [
+      "la-plata",
+      "buenos-aires",
+      "argentina",
+      "south-america"
+    ]
+  },
+  "prominence": 0.29,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q534949",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Martha Mercader",
+      "url": "https://de.wikipedia.org/wiki/Martha_Mercader",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Martha Mercader",
+      "url": "https://en.wikipedia.org/wiki/Martha_Mercader",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q534949"
+}

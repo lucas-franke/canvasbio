@@ -1,0 +1,54 @@
+{
+  "slug": "mercedes-gonzalez-tola",
+  "name": {
+    "display": "Mercedes González Tola",
+    "sort": "Tola, Mercedes González"
+  },
+  "born": {
+    "date": "1860-10-12",
+    "place": "guayaquil"
+  },
+  "died": {
+    "date": "1911-10-23",
+    "place": "quito"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "AnonymousUnknown author, 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mercedes_Gonzalez_de_Moscoso.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "guayaquil",
+      "quito",
+      "ecuador",
+      "south-america"
+    ]
+  },
+  "prominence": 0.23,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q51882929",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mercedes González Tola",
+      "url": "https://en.wikipedia.org/wiki/Mercedes_Gonz%C3%A1lez_Tola",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q51882929"
+}

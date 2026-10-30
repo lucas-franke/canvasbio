@@ -1,0 +1,63 @@
+{
+  "slug": "violeta-parra",
+  "name": {
+    "display": "Violeta Parra",
+    "sort": "Parra, Violeta"
+  },
+  "born": {
+    "date": "1917-10-04",
+    "place": "san-carlos"
+  },
+  "died": {
+    "date": "1967-02-05",
+    "place": "la-reina"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Revista Argentina \"Panorama\", 1973",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Parra01f.PNG"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "arts"
+    ],
+    "place": [
+      "san-carlos",
+      "la-reina",
+      "chile",
+      "south-america"
+    ]
+  },
+  "prominence": 0.81,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q230499",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Violeta Parra",
+      "url": "https://de.wikipedia.org/wiki/Violeta_Parra",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Violeta Parra",
+      "url": "https://en.wikipedia.org/wiki/Violeta_Parra",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q230499"
+}

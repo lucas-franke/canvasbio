@@ -1,0 +1,47 @@
+{
+  "slug": "hagiko-umezu",
+  "name": {
+    "display": "Hagiko Umezu",
+    "sort": "Umezu, Hagiko"
+  },
+  "born": {
+    "date": "1904-04-22"
+  },
+  "died": {
+    "date": "1989-10-08"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1933",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hagiko_Umezu_(Trade_unionists)_1933.jpg"
+  },
+  "facets": {
+    "field": [
+      "social"
+    ],
+    "place": []
+  },
+  "prominence": 0.14,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q100454474",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Hagiko Umezu",
+      "url": "https://en.wikipedia.org/wiki/Hagiko_Umezu",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q100454474"
+}

@@ -1,0 +1,55 @@
+{
+  "slug": "eugenia-alvaro-moreyra",
+  "name": {
+    "display": "Eugênia Álvaro Moreyra",
+    "sort": "Moreyra, Eugênia Álvaro"
+  },
+  "born": {
+    "date": "1898-03-06",
+    "place": "juiz-de-fora"
+  },
+  "died": {
+    "date": "1948-06-16",
+    "place": "rio-de-janeiro"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown, 1935",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eug%C3%AAnia_Alvaro_Moreyra_(1935).tif"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "arts"
+    ],
+    "place": [
+      "juiz-de-fora",
+      "rio-de-janeiro",
+      "brazil",
+      "south-america"
+    ]
+  },
+  "prominence": 0.5,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q611165",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Eugênia Álvaro Moreyra",
+      "url": "https://en.wikipedia.org/wiki/Eug%C3%AAnia_%C3%81lvaro_Moreyra",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q611165"
+}

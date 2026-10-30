@@ -1,0 +1,61 @@
+{
+  "slug": "julia-lopes-de-almeida",
+  "name": {
+    "display": "Júlia Lopes de Almeida",
+    "sort": "Almeida, Júlia Lopes de"
+  },
+  "born": {
+    "date": "1862-09-24",
+    "place": "rio-de-janeiro"
+  },
+  "died": {
+    "date": "1934-05-30",
+    "place": "rio-de-janeiro"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:J%C3%BAlia_Lopes_de_Almeida,_sem_data.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "rio-de-janeiro",
+      "brazil",
+      "south-america"
+    ]
+  },
+  "prominence": 0.63,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q3191192",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Júlia Lopes de Almeida",
+      "url": "https://de.wikipedia.org/wiki/J%C3%BAlia_Lopes_de_Almeida",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Júlia Lopes de Almeida",
+      "url": "https://en.wikipedia.org/wiki/J%C3%BAlia_Lopes_de_Almeida",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q3191192"
+}

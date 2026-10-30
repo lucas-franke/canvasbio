@@ -1,0 +1,62 @@
+{
+  "slug": "elisabeth-domitien",
+  "name": {
+    "display": "Elisabeth Domitien",
+    "sort": "Domitien, Elisabeth"
+  },
+  "born": {
+    "date": "1925",
+    "place": "lobaye-prefecture"
+  },
+  "died": {
+    "date": "2005-04-26",
+    "place": "bimbo"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1974",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elisabeth_Domitien.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "lobaye-prefecture",
+      "bimbo",
+      "central-african-republic",
+      "africa"
+    ]
+  },
+  "prominence": 0.74,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q291555",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Elisabeth Domitien",
+      "url": "https://de.wikipedia.org/wiki/Elisabeth_Domitien",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Elisabeth Domitien",
+      "url": "https://en.wikipedia.org/wiki/Elisabeth_Domitien",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q291555"
+}

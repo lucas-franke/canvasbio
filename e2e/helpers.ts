@@ -33,3 +33,9 @@ export async function waitForHydration(page: Page) {
     Object.keys(document.querySelector("main") ?? document.body).some((key) => key.startsWith("__react")),
   );
 }
+
+/** Number of people in the collection (from the overview data), so tests don't hard-code it. */
+export async function peopleCount(page: Page): Promise<number> {
+  const response = await page.request.get("/data/people-de.json");
+  return ((await response.json()) as { people: unknown[] }).people.length;
+}

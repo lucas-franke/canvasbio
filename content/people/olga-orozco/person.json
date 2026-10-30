@@ -1,0 +1,62 @@
+{
+  "slug": "olga-orozco",
+  "name": {
+    "display": "Olga Orozco",
+    "sort": "Orozco, Olga"
+  },
+  "born": {
+    "date": "1920-03-17",
+    "place": "toay"
+  },
+  "died": {
+    "date": "1999-08-15",
+    "place": "buenos-aires"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1960",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Olga_Orozco_(1920-1999).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "toay",
+      "buenos-aires",
+      "argentina",
+      "south-america"
+    ]
+  },
+  "prominence": 0.72,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q467091",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Olga Orozco",
+      "url": "https://de.wikipedia.org/wiki/Olga_Orozco",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Olga Orozco",
+      "url": "https://en.wikipedia.org/wiki/Olga_Orozco",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q467091"
+}

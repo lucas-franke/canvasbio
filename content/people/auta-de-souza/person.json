@@ -1,0 +1,54 @@
+{
+  "slug": "auta-de-souza",
+  "name": {
+    "display": "Auta de Souza",
+    "sort": "Souza, Auta de"
+  },
+  "born": {
+    "date": "1876-09-12",
+    "place": "macaiba"
+  },
+  "died": {
+    "date": "1901-02-07",
+    "place": "natal"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Auta_de_souza.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "macaiba",
+      "natal",
+      "brazil",
+      "south-america"
+    ]
+  },
+  "prominence": 0.33,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q9638526",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Auta de Souza",
+      "url": "https://en.wikipedia.org/wiki/Auta_de_Souza",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q9638526"
+}

@@ -1,0 +1,63 @@
+{
+  "slug": "yajima-kajiko",
+  "name": {
+    "display": "Yajima Kajiko",
+    "sort": "Kajiko, Yajima"
+  },
+  "born": {
+    "date": "1833-06-11",
+    "place": "higo-province"
+  },
+  "died": {
+    "date": "1925-06-16",
+    "place": "tokyo"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Sievers, 1983",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kajiko_yajima.jpg"
+  },
+  "facets": {
+    "field": [
+      "education",
+      "social"
+    ],
+    "place": [
+      "higo-province",
+      "tokyo",
+      "japan",
+      "asia"
+    ]
+  },
+  "prominence": 0.46,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q8047006",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Yajima Kajiko",
+      "url": "https://de.wikipedia.org/wiki/Yajima_Kajiko",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Yajima Kajiko",
+      "url": "https://en.wikipedia.org/wiki/Yajima_Kajiko",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q8047006"
+}

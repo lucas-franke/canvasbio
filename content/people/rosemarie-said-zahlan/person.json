@@ -1,0 +1,65 @@
+{
+  "slug": "rosemarie-said-zahlan",
+  "name": {
+    "display": "Rosemarie Said Zahlan",
+    "sort": "Zahlan, Rosemarie Said"
+  },
+  "born": {
+    "date": "1937-08-20",
+    "place": "cairo"
+  },
+  "died": {
+    "date": "2006-05-10",
+    "place": "london"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Hanini, 1940",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:SaidSis.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "science"
+    ],
+    "place": [
+      "cairo",
+      "london",
+      "egypt",
+      "africa",
+      "united-kingdom",
+      "europe"
+    ]
+  },
+  "prominence": 0.56,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2688163",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Rosemarie Said Zahlan",
+      "url": "https://de.wikipedia.org/wiki/Rosemarie_Said_Zahlan",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Rosemarie Said Zahlan",
+      "url": "https://en.wikipedia.org/wiki/Rosemarie_Said_Zahlan",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2688163"
+}

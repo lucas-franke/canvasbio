@@ -1,0 +1,53 @@
+{
+  "slug": "carolina-muzzilli",
+  "name": {
+    "display": "Carolina Muzzilli",
+    "sort": "Muzzilli, Carolina"
+  },
+  "born": {
+    "date": "1889-11-17",
+    "place": "buenos-aires"
+  },
+  "died": {
+    "date": "1917-03-23"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1950",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Carolina_Muzzilli.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing"
+    ],
+    "place": [
+      "buenos-aires",
+      "argentina",
+      "south-america"
+    ]
+  },
+  "prominence": 0.33,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q13220576",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Carolina Muzzilli",
+      "url": "https://en.wikipedia.org/wiki/Carolina_Muzzilli",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q13220576"
+}

@@ -51,6 +51,74 @@ export async function findCandidates(toYear = 1950): Promise<Candidate[]> {
   }));
 }
 
+/** Wikidata ids of the continents (P30) by their English name, for --focus. */
+export const CONTINENT_IDS: Record<string, string> = {
+  Africa: "Q15",
+  Asia: "Q48",
+  Europe: "Q46",
+  "North America": "Q49",
+  "South America": "Q18",
+  Oceania: "Q538",
+};
+
+/** Occupations for the broader search in under-represented regions (see findRegionalCandidates). */
+const BROAD_OCCUPATIONS = [
+  "Q28692502", // women's rights activist
+  "Q27532437", // suffragist
+  "Q82955", // politician
+  "Q15253558", // activist
+  "Q11499147", // political activist
+  "Q1476215", // human rights activist
+  "Q1930187", // journalist
+  "Q36180", // writer
+  "Q49757", // poet
+  "Q37226", // teacher
+  "Q974144", // educator
+  "Q39631", // physician
+  "Q186360", // nurse
+  "Q15627169", // trade unionist
+];
+
+type Bindings<K extends string> = { results: { bindings: Record<K, { value: string }>[] } };
+const sparql = <K extends string>(query: string) =>
+  fetchJson<Bindings<K>>(`${SPARQL}?format=json&query=${encodeURIComponent(query)}`);
+const qidOf = (uri: string) => uri.split("/").pop()!;
+
+/** Sovereign states on a continent. */
+export async function countriesOn(continent: string): Promise<string[]> {
+  const data = await sparql<"c">(`SELECT ?c WHERE { ?c wdt:P30 wd:${continent}; wdt:P31 wd:Q6256. }`);
+  return data.results.bindings.map((b) => qidOf(b.c.value));
+}
+
+/**
+ * Women with a citizenship of `country` and one of the broader occupations (politics,
+ * activism, press, writing, education, medicine, unions), deceased, with a portrait. Ids only:
+ * year of birth and the English article are checked on the loaded entities (much faster
+ * queries). A country too large for one query is asked per occupation.
+ */
+export async function findRegionalCandidates(country: string): Promise<string[]> {
+  const query = (occupations: string[]) => `
+    SELECT DISTINCT ?p WHERE {
+      VALUES ?occ { ${occupations.map((o) => `wd:${o}`).join(" ")} }
+      ?p wdt:P27 wd:${country}; wdt:P106 ?occ.
+      ?p wdt:P21 wd:Q6581072.
+      ?p wdt:P570 ?died; wdt:P18 ?img.
+    }`;
+  try {
+    return (await sparql<"p">(query(BROAD_OCCUPATIONS))).results.bindings.map((b) => qidOf(b.p.value));
+  } catch {
+    const ids = new Set<string>();
+    for (const occupation of BROAD_OCCUPATIONS) {
+      try {
+        for (const b of (await sparql<"p">(query([occupation]))).results.bindings) ids.add(qidOf(b.p.value));
+      } catch (error) {
+        console.warn(`    skipped ${country}/${occupation}: ${(error as Error).message.slice(0, 80)}`);
+      }
+    }
+    return [...ids];
+  }
+}
+
 /**
  * Loads full entities in batches of 50 (API limit). Large entities (countries have thousands
  * of statements) can exceed the API's response limit: it then silently leaves entities out

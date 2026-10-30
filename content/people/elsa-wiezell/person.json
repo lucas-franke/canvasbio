@@ -1,0 +1,54 @@
+{
+  "slug": "elsa-wiezell",
+  "name": {
+    "display": "Elsa Wiezell",
+    "sort": "Wiezell, Elsa"
+  },
+  "born": {
+    "date": "1926-11-19",
+    "place": "asuncion"
+  },
+  "died": {
+    "date": "2014-08-23",
+    "place": "asuncion"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Patty P",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elsa_Wiezell_04030.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "arts"
+    ],
+    "place": [
+      "asuncion",
+      "paraguay",
+      "south-america"
+    ]
+  },
+  "prominence": 0.4,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5367452",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Elsa Wiezell",
+      "url": "https://en.wikipedia.org/wiki/Elsa_Wiezell",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5367452"
+}

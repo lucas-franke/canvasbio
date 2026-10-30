@@ -1,0 +1,51 @@
+{
+  "slug": "maria-h-sabbia-y-oribe",
+  "name": {
+    "display": "María H. Sabbia y Oribe",
+    "sort": "Oribe, María H. Sabbia y"
+  },
+  "born": {
+    "date": "1883",
+    "place": "uruguay"
+  },
+  "died": {
+    "date": "1961"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "John Fitz-Patrick, 1898",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maria_Herminia_Sabbia_y_Oribe.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "uruguay",
+      "south-america"
+    ]
+  },
+  "prominence": 0.29,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q42405472",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): María Herminia Sabbia y Oribe",
+      "url": "https://en.wikipedia.org/wiki/Mar%C3%ADa_Herminia_Sabbia_y_Oribe",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q42405472"
+}

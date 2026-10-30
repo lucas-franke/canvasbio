@@ -1,0 +1,62 @@
+{
+  "slug": "hirabayashi-taiko",
+  "name": {
+    "display": "Hirabayashi Taiko",
+    "sort": "Taiko, Hirabayashi"
+  },
+  "born": {
+    "date": "1905-10-03",
+    "place": "suwa"
+  },
+  "died": {
+    "date": "1972-02-17",
+    "place": "tokyo"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1949",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hirabayashi_Taiko_01.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "suwa",
+      "tokyo",
+      "japan",
+      "asia"
+    ]
+  },
+  "prominence": 0.51,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q274003",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Hirabayashi Taiko",
+      "url": "https://de.wikipedia.org/wiki/Hirabayashi_Taiko",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Taiko Hirabayashi",
+      "url": "https://en.wikipedia.org/wiki/Taiko_Hirabayashi",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q274003"
+}

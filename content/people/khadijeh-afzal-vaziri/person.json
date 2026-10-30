@@ -1,0 +1,53 @@
+{
+  "slug": "khadijeh-afzal-vaziri",
+  "name": {
+    "display": "Khadijeh Afzal Vaziri",
+    "sort": "Vaziri, Khadijeh Afzal"
+  },
+  "born": {
+    "date": "1889",
+    "place": "tehran"
+  },
+  "died": {
+    "date": "1981-01-03",
+    "place": "tehran"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unbekannt, 1930",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Afzal_Vaziri.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "tehran",
+      "iran",
+      "asia"
+    ]
+  },
+  "prominence": 0.5,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5939233",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Khadijeh Afzal Vaziri",
+      "url": "https://en.wikipedia.org/wiki/Khadijeh_Afzal_Vaziri",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5939233"
+}

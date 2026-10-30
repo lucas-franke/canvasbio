@@ -1,0 +1,55 @@
+{
+  "slug": "macarena-valdes",
+  "name": {
+    "display": "Macarena Valdés",
+    "sort": "Valdés, Macarena"
+  },
+  "born": {
+    "date": "1983-12-23",
+    "place": "hualane"
+  },
+  "died": {
+    "date": "2016-08-22",
+    "place": "panguipulli"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Manuel033",
+    "license": {
+      "name": "CC0",
+      "url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Macarena_Vald%C3%A9s_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "hualane",
+      "panguipulli",
+      "chile",
+      "south-america"
+    ]
+  },
+  "prominence": 0.4,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q69684985",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Macarena Valdés",
+      "url": "https://en.wikipedia.org/wiki/Macarena_Vald%C3%A9s",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q69684985"
+}

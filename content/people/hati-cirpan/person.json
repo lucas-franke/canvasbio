@@ -1,0 +1,62 @@
+{
+  "slug": "hati-cirpan",
+  "name": {
+    "display": "Hatı Çırpan",
+    "sort": "Çırpan, Hatı"
+  },
+  "born": {
+    "date": "1890",
+    "place": "ankara"
+  },
+  "died": {
+    "date": "1956-03-21",
+    "place": "ankara"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1935",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hat%C4%B1_%C3%87%C4%B1rpan.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "ankara",
+      "turkey",
+      "asia",
+      "europe"
+    ]
+  },
+  "prominence": 0.63,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q209826",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Hatı Çırpan",
+      "url": "https://de.wikipedia.org/wiki/Hat%C4%B1_%C3%87%C4%B1rpan",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Hatı Çırpan",
+      "url": "https://en.wikipedia.org/wiki/Hat%C4%B1_%C3%87%C4%B1rpan",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q209826"
+}

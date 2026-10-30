@@ -1,0 +1,63 @@
+{
+  "slug": "sushma-swaraj",
+  "name": {
+    "display": "Sushma Swaraj",
+    "sort": "Swaraj, Sushma"
+  },
+  "born": {
+    "date": "1952-02-14",
+    "place": "ambala-cantonment"
+  },
+  "died": {
+    "date": "2019-08-06",
+    "place": "new-delhi"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "U.S. Department of State from United States",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Secretary_Tillerson_is_Greeted_by_Indian_Minister_of_External_Affairs_Swaraj_(24074726498)_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "science"
+    ],
+    "place": [
+      "ambala-cantonment",
+      "new-delhi",
+      "india",
+      "asia"
+    ]
+  },
+  "prominence": 0.84,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q1652493",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Sushma Swaraj",
+      "url": "https://de.wikipedia.org/wiki/Sushma_Swaraj",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Sushma Swaraj",
+      "url": "https://en.wikipedia.org/wiki/Sushma_Swaraj",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q1652493"
+}

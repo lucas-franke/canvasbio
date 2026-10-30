@@ -1,0 +1,55 @@
+{
+  "slug": "elvira-garcia-y-garcia",
+  "name": {
+    "display": "Elvira García y García",
+    "sort": "García, Elvira García y"
+  },
+  "born": {
+    "date": "1862-06-01",
+    "place": "lambayeque"
+  },
+  "died": {
+    "date": "1951-10-23",
+    "place": "lima"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Trabajo propio. Foto de autor desconocido, 1880",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elvira_Garc%C3%ADa_y_Garc%C3%ADa.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education"
+    ],
+    "place": [
+      "lambayeque",
+      "lima",
+      "peru",
+      "south-america"
+    ]
+  },
+  "prominence": 0.53,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q8775179",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Elvira García y García",
+      "url": "https://en.wikipedia.org/wiki/Elvira_Garc%C3%ADa_y_Garc%C3%ADa",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q8775179"
+}

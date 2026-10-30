@@ -1,0 +1,52 @@
+{
+  "slug": "parul-mukherjee",
+  "name": {
+    "display": "Parul Mukherjee",
+    "sort": "Mukherjee, Parul"
+  },
+  "born": {
+    "date": "1915",
+    "place": "kolkata"
+  },
+  "died": {
+    "date": "1990-04-20"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1936",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Parul_Mukherjee.png"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "kolkata",
+      "india",
+      "asia"
+    ]
+  },
+  "prominence": 0.37,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q31725142",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Parul Mukherjee",
+      "url": "https://en.wikipedia.org/wiki/Parul_Mukherjee",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q31725142"
+}

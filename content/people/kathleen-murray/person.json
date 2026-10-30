@@ -1,0 +1,52 @@
+{
+  "slug": "kathleen-murray",
+  "name": {
+    "display": "Kathleen Murray",
+    "sort": "Murray, Kathleen"
+  },
+  "born": {
+    "date": "1891-08-09",
+    "place": "kenilworth"
+  },
+  "died": {
+    "date": "1984-02-09"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Anon. circa 1910., 1910",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kathleen_Murray_-_Elgin.jpg"
+  },
+  "facets": {
+    "field": [
+      "social"
+    ],
+    "place": [
+      "kenilworth",
+      "south-africa",
+      "africa"
+    ]
+  },
+  "prominence": 0.33,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q38051386",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Kathleen Murray",
+      "url": "https://en.wikipedia.org/wiki/Kathleen_Murray",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q38051386"
+}

@@ -1,0 +1,63 @@
+{
+  "slug": "rachel-de-queiroz",
+  "name": {
+    "display": "Rachel de Queiroz",
+    "sort": "Queiroz, Rachel de"
+  },
+  "born": {
+    "date": "1910-11-17",
+    "place": "fortaleza"
+  },
+  "died": {
+    "date": "2003-11-04",
+    "place": "rio-de-janeiro"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown, 1971",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rachel_de_Queiroz,_1971.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing"
+    ],
+    "place": [
+      "fortaleza",
+      "rio-de-janeiro",
+      "brazil",
+      "south-america"
+    ]
+  },
+  "prominence": 0.72,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q283964",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Rachel de Queiroz",
+      "url": "https://de.wikipedia.org/wiki/Rachel_de_Queiroz",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Rachel de Queiroz",
+      "url": "https://en.wikipedia.org/wiki/Rachel_de_Queiroz",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q283964"
+}

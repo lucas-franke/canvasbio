@@ -1,0 +1,55 @@
+{
+  "slug": "carmen-febres-cordero-de-ballen",
+  "name": {
+    "display": "Carmen Febres-Cordero de Ballén",
+    "sort": "Ballén, Carmen Febres-Cordero de"
+  },
+  "born": {
+    "date": "1829",
+    "place": "guayaquil"
+  },
+  "died": {
+    "date": "1893-02-22",
+    "place": "valparaiso"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Bischoff y Spencer, 1872",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Carmen_Febres_Cordero_de_Ballen_cropped.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "guayaquil",
+      "valparaiso",
+      "ecuador",
+      "south-america",
+      "chile"
+    ]
+  },
+  "prominence": 0.29,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q105754718",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Carmen Febres-Cordero de Ballén",
+      "url": "https://en.wikipedia.org/wiki/Carmen_Febres-Cordero_de_Ball%C3%A9n",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q105754718"
+}

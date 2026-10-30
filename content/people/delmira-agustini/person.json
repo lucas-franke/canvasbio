@@ -1,0 +1,61 @@
+{
+  "slug": "delmira-agustini",
+  "name": {
+    "display": "Delmira Agustini",
+    "sort": "Agustini, Delmira"
+  },
+  "born": {
+    "date": "1886-10-24",
+    "place": "montevideo"
+  },
+  "died": {
+    "date": "1914-07-06",
+    "place": "montevideo"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1907",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Delmira_Agustini.png"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "montevideo",
+      "uruguay",
+      "south-america"
+    ]
+  },
+  "prominence": 0.75,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q239458",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Delmira Agustini",
+      "url": "https://de.wikipedia.org/wiki/Delmira_Agustini",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Delmira Agustini",
+      "url": "https://en.wikipedia.org/wiki/Delmira_Agustini",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q239458"
+}

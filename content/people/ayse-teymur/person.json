@@ -1,0 +1,61 @@
+{
+  "slug": "ayse-teymur",
+  "name": {
+    "display": "Ayşe Teymûr",
+    "sort": "Teymûr, Ayşe"
+  },
+  "born": {
+    "date": "1840-11",
+    "place": "cairo"
+  },
+  "died": {
+    "date": "1902-05-26",
+    "place": "cairo"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1902",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ayesha_Al-Taymuriyya.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "cairo",
+      "egypt",
+      "africa"
+    ]
+  },
+  "prominence": 0.68,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2876220",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Ayşe Teymûr",
+      "url": "https://de.wikipedia.org/wiki/Ay%C5%9Fe_Teym%C3%BBr",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Aisha Taymur",
+      "url": "https://en.wikipedia.org/wiki/Aisha_Taymur",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2876220"
+}

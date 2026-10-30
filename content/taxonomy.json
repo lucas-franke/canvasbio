@@ -3289,6 +3289,718 @@
     "slovakia": {
       "de": "Slowakei",
       "en": "Slovakia"
+    },
+    "vicuna": {
+      "de": "Vicuña",
+      "en": "Vicuña"
+    },
+    "hempstead": {
+      "de": "Hempstead",
+      "en": "Hempstead"
+    },
+    "paniqui": {
+      "de": "Paniqui",
+      "en": "Paniqui"
+    },
+    "balangoda": {
+      "de": "Baḷangoḍa",
+      "en": "Baḷangoḍa"
+    },
+    "sri-lanka": {
+      "de": "Sri Lanka",
+      "en": "Sri Lanka"
+    },
+    "kadawatha": {
+      "de": "Kadawatha",
+      "en": "Kadawatha"
+    },
+    "bizana": {
+      "de": "Bizana",
+      "en": "Bizana"
+    },
+    "johannesburg": {
+      "de": "Johannesburg",
+      "en": "Johannesburg"
+    },
+    "hyderabad": {
+      "de": "Hyderabad",
+      "en": "Hyderabad"
+    },
+    "lucknow": {
+      "de": "Lucknow",
+      "en": "Lucknow"
+    },
+    "jalpaiguri": {
+      "de": "Jalpaiguri",
+      "en": "Jalpaiguri"
+    },
+    "evercare-hospital-dhaka": {
+      "de": "Evercare Hospital Dhaka",
+      "en": "Evercare Hospital Dhaka"
+    },
+    "beijing": {
+      "de": "Peking",
+      "en": "Beijing"
+    },
+    "tafresh": {
+      "de": "Tafresh",
+      "en": "Tafresh"
+    },
+    "ambala-cantonment": {
+      "de": "Ambala Cantonment",
+      "en": "Ambala Cantonment"
+    },
+    "new-delhi": {
+      "de": "Neu-Delhi",
+      "en": "New Delhi"
+    },
+    "gujranwala": {
+      "de": "Gujranwala",
+      "en": "Gujranwala"
+    },
+    "prayagraj": {
+      "de": "Prayagraj",
+      "en": "Prayagraj"
+    },
+    "dehradun": {
+      "de": "Dehradun",
+      "en": "Dehradun"
+    },
+    "pathum-wan": {
+      "de": "Pathum Wan",
+      "en": "Pathum Wan"
+    },
+    "thailand": {
+      "de": "Thailand",
+      "en": "Thailand"
+    },
+    "king-chulalongkorn-memorial-hospital": {
+      "de": "King Chulalongkorn Memorial Hospital",
+      "en": "King Chulalongkorn Memorial Hospital"
+    },
+    "sakai": {
+      "de": "Sakai",
+      "en": "Sakai"
+    },
+    "ogikubo": {
+      "de": "Ogikubo",
+      "en": "Ogikubo"
+    },
+    "san-carlos": {
+      "de": "San Carlos",
+      "en": "San Carlos"
+    },
+    "la-reina": {
+      "de": "La Reina",
+      "en": "La Reina"
+    },
+    "ejersa-goro": {
+      "de": "Ejersa Goro",
+      "en": "Ejersa Goro"
+    },
+    "villa-sarmiento": {
+      "de": "Villa Sarmiento",
+      "en": "Villa Sarmiento"
+    },
+    "avellaneda": {
+      "de": "Avellaneda",
+      "en": "Avellaneda"
+    },
+    "germiston": {
+      "de": "Germiston",
+      "en": "Germiston"
+    },
+    "great-ashfield": {
+      "de": "Great Ashfield",
+      "en": "Great Ashfield"
+    },
+    "melo": {
+      "de": "Melo",
+      "en": "Melo"
+    },
+    "lobaye-prefecture": {
+      "de": "Lobaye",
+      "en": "Lobaye Prefecture"
+    },
+    "central-african-republic": {
+      "de": "Zentralafrikanische Republik",
+      "en": "Central African Republic"
+    },
+    "bimbo": {
+      "de": "Bimbo",
+      "en": "Bimbo"
+    },
+    "maputo": {
+      "de": "Maputo",
+      "en": "Maputo"
+    },
+    "mozambique": {
+      "de": "Mosambik",
+      "en": "Mozambique"
+    },
+    "yerevan": {
+      "de": "Jerewan",
+      "en": "Yerevan"
+    },
+    "armenia": {
+      "de": "Armenien",
+      "en": "Armenia"
+    },
+    "oguta": {
+      "de": "Oguta",
+      "en": "Oguta"
+    },
+    "nigeria": {
+      "de": "Nigeria",
+      "en": "Nigeria"
+    },
+    "enugu": {
+      "de": "Enugu",
+      "en": "Enugu"
+    },
+    "toay": {
+      "de": "Toay",
+      "en": "Toay"
+    },
+    "fortaleza": {
+      "de": "Fortaleza",
+      "en": "Fortaleza"
+    },
+    "vallegrande-province-santa-cruz": {
+      "de": "Provinz Vallegrande",
+      "en": "Vallegrande Province (Santa Cruz)"
+    },
+    "aubervilliers": {
+      "de": "Aubervilliers",
+      "en": "Aubervilliers"
+    },
+    "subprefecture-of-se": {
+      "de": "Sé",
+      "en": "Subprefecture of Sé"
+    },
+    "salonica-vilayet": {
+      "de": "Vilâyet Saloniki",
+      "en": "Salonica vilayet"
+    },
+    "ottoman-empire": {
+      "de": "Osmanisches Reich",
+      "en": "Ottoman Empire"
+    },
+    "ankara": {
+      "de": "Ankara",
+      "en": "Ankara"
+    },
+    "dejima": {
+      "de": "Dejima",
+      "en": "Dejima"
+    },
+    "azabu": {
+      "de": "Azabu",
+      "en": "Azabu"
+    },
+    "kimberley": {
+      "de": "Kimberley",
+      "en": "Kimberley"
+    },
+    "three-anchor-bay": {
+      "de": "Drieankerbaai",
+      "en": "Three Anchor Bay"
+    },
+    "damietta": {
+      "de": "Damiette",
+      "en": "Damietta"
+    },
+    "taku": {
+      "de": "Taku",
+      "en": "Taku"
+    },
+    "jerico": {
+      "de": "Jericó",
+      "en": "Jericó"
+    },
+    "medellin": {
+      "de": "Medellín",
+      "en": "Medellín"
+    },
+    "fort-beaufort": {
+      "de": "Fort Beaufort",
+      "en": "Fort Beaufort"
+    },
+    "dhakuria": {
+      "de": "Dhakuria",
+      "en": "Dhakuria"
+    },
+    "dortmund": {
+      "de": "Dortmund",
+      "en": "Dortmund"
+    },
+    "noboribetsu": {
+      "de": "Noboribetsu",
+      "en": "Noboribetsu"
+    },
+    "hongo-ku": {
+      "de": "Hongō-ku",
+      "en": "Hongō-ku"
+    },
+    "tonosawa": {
+      "de": "Tōnosawa",
+      "en": "Tōnosawa"
+    },
+    "krishnanagar": {
+      "de": "Krishnanagar",
+      "en": "Krishnanagar"
+    },
+    "rishikesh": {
+      "de": "Rishikesh",
+      "en": "Rishikesh"
+    },
+    "northern-region": {
+      "de": "Northern Region",
+      "en": "Northern Region"
+    },
+    "malawi": {
+      "de": "Malawi",
+      "en": "Malawi"
+    },
+    "blantyre": {
+      "de": "Blantyre",
+      "en": "Blantyre"
+    },
+    "xiuyan-manchu-autonomous-county": {
+      "de": "Xiuyan",
+      "en": "Xiuyan Manchu Autonomous County"
+    },
+    "buuhoodle": {
+      "de": "Buhoodle",
+      "en": "Buuhoodle"
+    },
+    "somalia": {
+      "de": "Somalia",
+      "en": "Somalia"
+    },
+    "mogadishu": {
+      "de": "Mogadischu",
+      "en": "Mogadishu"
+    },
+    "mashhad": {
+      "de": "Maschhad",
+      "en": "Mashhad"
+    },
+    "iwanuma": {
+      "de": "Iwanuma",
+      "en": "Iwanuma"
+    },
+    "surat": {
+      "de": "Surat",
+      "en": "Surat"
+    },
+    "tabriz": {
+      "de": "Täbris",
+      "en": "Tabriz"
+    },
+    "ravensbrueck-concentration-camp": {
+      "de": "KZ Ravensbrück",
+      "en": "Ravensbrück concentration camp"
+    },
+    "bayombong": {
+      "de": "Bayombong",
+      "en": "Bayombong"
+    },
+    "lambayeque": {
+      "de": "Lambayeque",
+      "en": "Lambayeque"
+    },
+    "suwa": {
+      "de": "Suwa",
+      "en": "Suwa"
+    },
+    "kabwe": {
+      "de": "Kabwe",
+      "en": "Kabwe"
+    },
+    "zambia": {
+      "de": "Sambia",
+      "en": "Zambia"
+    },
+    "lusaka": {
+      "de": "Lusaka",
+      "en": "Lusaka"
+    },
+    "mavelikkara": {
+      "de": "Mavelikkara",
+      "en": "Mavelikkara"
+    },
+    "bengaluru": {
+      "de": "Bengaluru",
+      "en": "Bengaluru"
+    },
+    "juiz-de-fora": {
+      "de": "Juiz de Fora",
+      "en": "Juiz de Fora"
+    },
+    "vicente-lopez": {
+      "de": "Vicente López (Buenos Aires)",
+      "en": "Vicente López"
+    },
+    "valera": {
+      "de": "Valera",
+      "en": "Valera"
+    },
+    "valencia": {
+      "de": "Valencia",
+      "en": "Valencia"
+    },
+    "antananarivo": {
+      "de": "Antananarivo",
+      "en": "Antananarivo"
+    },
+    "madagascar": {
+      "de": "Madagaskar",
+      "en": "Madagascar"
+    },
+    "tongyeong": {
+      "de": "Tongyeong",
+      "en": "Tongyeong"
+    },
+    "nara-prefecture": {
+      "de": "Präfektur Nara",
+      "en": "Nara Prefecture"
+    },
+    "gio-ji": {
+      "de": "Giō-ji",
+      "en": "Giō-ji"
+    },
+    "vina-del-mar": {
+      "de": "Viña del Mar",
+      "en": "Viña del Mar"
+    },
+    "supe": {
+      "de": "Supe",
+      "en": "Supe"
+    },
+    "quito": {
+      "de": "Quito",
+      "en": "Quito"
+    },
+    "kankan": {
+      "de": "Kankan",
+      "en": "Kankan"
+    },
+    "guinea": {
+      "de": "Guinea",
+      "en": "Guinea"
+    },
+    "american-hospital-of-paris": {
+      "de": "Amerikanisches Krankenhaus Paris",
+      "en": "American Hospital of Paris"
+    },
+    "maroua": {
+      "de": "Maroua",
+      "en": "Maroua"
+    },
+    "cameroon": {
+      "de": "Kamerun",
+      "en": "Cameroon"
+    },
+    "yaounde": {
+      "de": "Yaoundé",
+      "en": "Yaoundé"
+    },
+    "dokolo": {
+      "de": "Dokolo",
+      "en": "Dokolo"
+    },
+    "uganda": {
+      "de": "Uganda",
+      "en": "Uganda"
+    },
+    "inanda": {
+      "de": "Inanda",
+      "en": "Inanda"
+    },
+    "higo-province": {
+      "de": "Provinz Higo",
+      "en": "Higo Province"
+    },
+    "adapazari": {
+      "de": "Adapazarı",
+      "en": "Adapazarı"
+    },
+    "cachoeira": {
+      "de": "Cachoeira",
+      "en": "Cachoeira"
+    },
+    "san-miguel-de-tucuman": {
+      "de": "San Miguel de Tucumán",
+      "en": "San Miguel de Tucumán"
+    },
+    "cuenca": {
+      "de": "Cuenca",
+      "en": "Cuenca"
+    },
+    "beja": {
+      "de": "Beja",
+      "en": "Béja"
+    },
+    "la-marsa": {
+      "de": "La Marsa",
+      "en": "La Marsa"
+    },
+    "eastern-cape": {
+      "de": "Ostkap",
+      "en": "Eastern Cape"
+    },
+    "medea": {
+      "de": "Medea",
+      "en": "Médéa"
+    },
+    "keijo": {
+      "de": "Gyeongseong",
+      "en": "Keijō"
+    },
+    "korea-under-japanese-rule": {
+      "de": "Korea unter japanischer Herrschaft",
+      "en": "Korea under Japanese rule"
+    },
+    "palma": {
+      "de": "Palma",
+      "en": "Palma"
+    },
+    "curitiba": {
+      "de": "Curitiba",
+      "en": "Curitiba"
+    },
+    "ambanja": {
+      "de": "Ambanja",
+      "en": "Ambanja"
+    },
+    "kwara-state": {
+      "de": "Kwara",
+      "en": "Kwara State"
+    },
+    "ibadan": {
+      "de": "Ibadan",
+      "en": "Ibadan"
+    },
+    "mansoura": {
+      "de": "al-Mansura",
+      "en": "Mansoura"
+    },
+    "ain-shams": {
+      "de": "Ain Shams",
+      "en": "Ain Shams"
+    },
+    "kenya": {
+      "de": "Kenia",
+      "en": "Kenya"
+    },
+    "kisumu": {
+      "de": "Kisumu",
+      "en": "Kisumu"
+    },
+    "orania": {
+      "de": "Orania",
+      "en": "Orania"
+    },
+    "daegu": {
+      "de": "Daegu",
+      "en": "Daegu"
+    },
+    "kumamoto": {
+      "de": "Kumamoto",
+      "en": "Kumamoto"
+    },
+    "bosnia-vilayet": {
+      "de": "Vilâyet Bosnien",
+      "en": "Bosnia vilayet"
+    },
+    "shimoga": {
+      "de": "Shivamogga",
+      "en": "Shimoga"
+    },
+    "sobral": {
+      "de": "Sobral",
+      "en": "Sobral"
+    },
+    "hualane": {
+      "de": "Hualañé",
+      "en": "Hualañé"
+    },
+    "panguipulli": {
+      "de": "Panguipulli",
+      "en": "Panguipulli"
+    },
+    "rosario": {
+      "de": "Rosario",
+      "en": "Rosario"
+    },
+    "asuncion": {
+      "de": "Asunción",
+      "en": "Asunción"
+    },
+    "paraguay": {
+      "de": "Paraguay",
+      "en": "Paraguay"
+    },
+    "bello": {
+      "de": "Bello",
+      "en": "Bello"
+    },
+    "abidjan": {
+      "de": "Abidjan",
+      "en": "Abidjan"
+    },
+    "ivory-coast": {
+      "de": "Elfenbeinküste",
+      "en": "Ivory Coast"
+    },
+    "wad-ramli": {
+      "de": "Wad Ramli",
+      "en": "Wad Ramli"
+    },
+    "bad-muskau": {
+      "de": "Bad Muskau",
+      "en": "Bad Muskau"
+    },
+    "kerman": {
+      "de": "Kerman",
+      "en": "Kerman"
+    },
+    "hokkaido": {
+      "de": "Hokkaidō",
+      "en": "Hokkaidō"
+    },
+    "sapporo": {
+      "de": "Sapporo",
+      "en": "Sapporo"
+    },
+    "wuwei-city": {
+      "de": "Wuwei",
+      "en": "Wuwei City"
+    },
+    "pune": {
+      "de": "Pune",
+      "en": "Pune"
+    },
+    "larroque": {
+      "de": "Larroque",
+      "en": "Larroque"
+    },
+    "maracaibo": {
+      "de": "Maracaibo",
+      "en": "Maracaibo"
+    },
+    "oujda": {
+      "de": "Oujda",
+      "en": "Oujda"
+    },
+    "morocco": {
+      "de": "Marokko",
+      "en": "Morocco"
+    },
+    "rabat": {
+      "de": "Rabat",
+      "en": "Rabat"
+    },
+    "maseno": {
+      "de": "Maseno",
+      "en": "Maseno"
+    },
+    "kenilworth": {
+      "de": "Kenilworth",
+      "en": "Kenilworth"
+    },
+    "rasht": {
+      "de": "Rasht",
+      "en": "Rasht"
+    },
+    "myaungmya": {
+      "de": "Myaungmya",
+      "en": "Myaungmya"
+    },
+    "myanmar": {
+      "de": "Myanmar",
+      "en": "Myanmar"
+    },
+    "fort-wayne": {
+      "de": "Fort Wayne",
+      "en": "Fort Wayne"
+    },
+    "kamiita": {
+      "de": "Kamiita",
+      "en": "Kamiita"
+    },
+    "nanchang": {
+      "de": "Nanchang",
+      "en": "Nanchang"
+    },
+    "macaiba": {
+      "de": "Macaíba",
+      "en": "Macaíba"
+    },
+    "cajamarca": {
+      "de": "Cajamarca",
+      "en": "Cajamarca"
+    },
+    "guarambare": {
+      "de": "Guarambaré",
+      "en": "Guarambaré"
+    },
+    "barishal": {
+      "de": "Barishal",
+      "en": "Barishal"
+    },
+    "nankoku": {
+      "de": "Nankoku",
+      "en": "Nankoku"
+    },
+    "silva-jardim": {
+      "de": "Silva Jardim",
+      "en": "Silva Jardim"
+    },
+    "botafogo": {
+      "de": "Botafogo",
+      "en": "Botafogo"
+    },
+    "san-juan": {
+      "de": "San Juan",
+      "en": "San Juan"
+    },
+    "san-jorge": {
+      "de": "San Jorge",
+      "en": "San Jorge"
+    },
+    "bangkok": {
+      "de": "Bangkok",
+      "en": "Bangkok"
+    },
+    "yamaguchi-prefecture": {
+      "de": "Präfektur Yamaguchi",
+      "en": "Yamaguchi Prefecture"
+    },
+    "berisso": {
+      "de": "Berisso",
+      "en": "Berisso"
+    },
+    "requena": {
+      "de": "Requena",
+      "en": "Requena"
+    },
+    "iquitos": {
+      "de": "Iquitos",
+      "en": "Iquitos"
+    },
+    "buzuluk": {
+      "de": "Busuluk",
+      "en": "Buzuluk"
+    },
+    "guangdong": {
+      "de": "Guangdong",
+      "en": "Guangdong"
+    },
+    "arequipa": {
+      "de": "Arequipa",
+      "en": "Arequipa"
     }
   }
 }

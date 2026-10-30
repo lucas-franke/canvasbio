@@ -1,0 +1,47 @@
+{
+  "slug": "agnes-newton-keith",
+  "name": {
+    "display": "Agnes Newton Keith",
+    "sort": "Keith, Agnes Newton"
+  },
+  "born": {
+    "date": "1901-07-04"
+  },
+  "died": {
+    "date": "1982-03-30"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1945",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Awm116941.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": []
+  },
+  "prominence": 0.29,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q4693095",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Agnes Newton Keith",
+      "url": "https://en.wikipedia.org/wiki/Agnes_Newton_Keith",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q4693095"
+}

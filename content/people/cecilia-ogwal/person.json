@@ -1,0 +1,56 @@
+{
+  "slug": "cecilia-ogwal",
+  "name": {
+    "display": "Cecilia Ogwal",
+    "sort": "Ogwal, Cecilia"
+  },
+  "born": {
+    "date": "1946-06-12",
+    "place": "dokolo"
+  },
+  "died": {
+    "date": "2024-01-18",
+    "place": "india"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Ssemmanda will",
+    "license": {
+      "name": "CC0",
+      "url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Atim_Ogwal_Cecilia_Barbara.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "dokolo",
+      "india",
+      "uganda",
+      "africa",
+      "asia"
+    ]
+  },
+  "prominence": 0.46,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q19276819",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Cecilia Ogwal",
+      "url": "https://en.wikipedia.org/wiki/Cecilia_Ogwal",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q19276819"
+}

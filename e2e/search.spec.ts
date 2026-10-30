@@ -1,6 +1,6 @@
 import { expect, test, type Page } from "@playwright/test";
 
-import { switchView, waitForHydration } from "./helpers";
+import { switchView, waitForHydration, peopleCount } from "./helpers";
 
 const openPanel = async (page: Page) => {
   await page.getByRole("button", { name: "Suche", exact: true }).click();
@@ -109,7 +109,7 @@ test("no results: message and reset", async ({ page }) => {
   await expect(page.locator("article[data-vt-item]")).toHaveCount(0);
   await page.getByRole("button", { name: "Suche zurücksetzen" }).click();
   await expect(page).toHaveURL(/\/personen\/liste$/);
-  await expect(page.locator("article[data-vt-item]")).toHaveCount(600);
+  await expect(page.locator("article[data-vt-item]")).toHaveCount(await peopleCount(page));
 });
 
 test("the search survives opening and closing a biography and switching views", async ({ page }) => {

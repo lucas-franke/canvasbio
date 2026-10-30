@@ -1,0 +1,63 @@
+{
+  "slug": "lygia-fagundes-telles",
+  "name": {
+    "display": "Lygia Fagundes Telles",
+    "sort": "Telles, Lygia Fagundes"
+  },
+  "born": {
+    "date": "1918-04-19",
+    "place": "subprefecture-of-se"
+  },
+  "died": {
+    "date": "2022-04-03",
+    "place": "sao-paulo"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lygia_Fagundes_Telles,_sem_data.tif"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "science"
+    ],
+    "place": [
+      "subprefecture-of-se",
+      "sao-paulo",
+      "brazil",
+      "south-america"
+    ]
+  },
+  "prominence": 0.7,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q465421",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Lygia Fagundes Telles",
+      "url": "https://de.wikipedia.org/wiki/Lygia_Fagundes_Telles",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Lygia Fagundes Telles",
+      "url": "https://en.wikipedia.org/wiki/Lygia_Fagundes_Telles",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q465421"
+}

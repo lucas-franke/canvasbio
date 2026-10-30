@@ -1,0 +1,54 @@
+{
+  "slug": "rosa-panduro",
+  "name": {
+    "display": "Rosa Panduro",
+    "sort": "Panduro, Rosa"
+  },
+  "born": {
+    "date": "1918-12-01",
+    "place": "requena"
+  },
+  "died": {
+    "date": "1989-11-11",
+    "place": "iquitos"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Museo Histórico Militar del Perú, 1941",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rosa_Panduro_Ram%C3%ADrez_de_Pe%C3%B1a_Herrera.png"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "requena",
+      "iquitos",
+      "peru",
+      "south-america"
+    ]
+  },
+  "prominence": 0.23,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q62769641",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Rosa Panduro",
+      "url": "https://en.wikipedia.org/wiki/Rosa_Panduro",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q62769641"
+}

@@ -1,0 +1,55 @@
+{
+  "slug": "eveline-safir-lavalette",
+  "name": {
+    "display": "Eveline Safir Lavalette",
+    "sort": "Lavalette, Eveline Safir"
+  },
+  "born": {
+    "date": "1927",
+    "place": "algiers"
+  },
+  "died": {
+    "date": "2014-04-25",
+    "place": "medea"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%C3%89velyne_Safir_Lavalette.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing"
+    ],
+    "place": [
+      "algiers",
+      "medea",
+      "algeria",
+      "africa"
+    ]
+  },
+  "prominence": 0.43,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q16009030",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Eveline Safir Lavalette",
+      "url": "https://en.wikipedia.org/wiki/Eveline_Safir_Lavalette",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q16009030"
+}

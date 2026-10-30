@@ -1,0 +1,62 @@
+{
+  "slug": "song-qingling",
+  "name": {
+    "display": "Song Qingling",
+    "sort": "Qingling, Song"
+  },
+  "born": {
+    "date": "1893-01-27",
+    "place": "shanghai"
+  },
+  "died": {
+    "date": "1981-05-29",
+    "place": "beijing"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1941",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Soong_Ching-ling.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "shanghai",
+      "beijing",
+      "people-s-republic-of-china",
+      "asia"
+    ]
+  },
+  "prominence": 0.85,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q17132",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Song Qingling",
+      "url": "https://de.wikipedia.org/wiki/Song_Qingling",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Soong Ching-ling",
+      "url": "https://en.wikipedia.org/wiki/Soong_Ching-ling",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q17132"
+}

@@ -1,0 +1,64 @@
+{
+  "slug": "saado-ali-warsame",
+  "name": {
+    "display": "Saado Ali Warsame",
+    "sort": "Warsame, Saado Ali"
+  },
+  "born": {
+    "date": "1950",
+    "place": "buuhoodle"
+  },
+  "died": {
+    "date": "2014-07-23",
+    "place": "mogadishu"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Somali Refugee Awareness Project",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Saadoaliw1.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "arts"
+    ],
+    "place": [
+      "buuhoodle",
+      "mogadishu",
+      "somalia",
+      "africa"
+    ]
+  },
+  "prominence": 0.55,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q17404430",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Saado Ali Warsame",
+      "url": "https://de.wikipedia.org/wiki/Saado_Ali_Warsame",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Saado Ali Warsame",
+      "url": "https://en.wikipedia.org/wiki/Saado_Ali_Warsame",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q17404430"
+}

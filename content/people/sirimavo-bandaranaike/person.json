@@ -1,0 +1,62 @@
+{
+  "slug": "sirimavo-bandaranaike",
+  "name": {
+    "display": "Sirimavo Bandaranaike",
+    "sort": "Bandaranaike, Sirimavo"
+  },
+  "born": {
+    "date": "1916-04-17",
+    "place": "balangoda"
+  },
+  "died": {
+    "date": "2000-10-10",
+    "place": "kadawatha"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Centralna Agencja Fotograficzna, 1963",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:S._Bandaranaike_w_Polsce_(Sirimavo_cropped_close).jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "balangoda",
+      "kadawatha",
+      "sri-lanka",
+      "asia"
+    ]
+  },
+  "prominence": 0.93,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q194291",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Sirimavo Bandaranaike",
+      "url": "https://de.wikipedia.org/wiki/Sirimavo_Bandaranaike",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Sirimavo Bandaranaike",
+      "url": "https://en.wikipedia.org/wiki/Sirimavo_Bandaranaike",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q194291"
+}

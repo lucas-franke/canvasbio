@@ -1,0 +1,62 @@
+{
+  "slug": "nokutela-dube",
+  "name": {
+    "display": "Nokutela Dube",
+    "sort": "Dube, Nokutela"
+  },
+  "born": {
+    "date": "1873",
+    "place": "inanda"
+  },
+  "died": {
+    "date": "1917-01-25",
+    "place": "johannesburg"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1917",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nokutela_born_Mdima_Dube.jpg"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "inanda",
+      "johannesburg",
+      "south-africa",
+      "africa"
+    ]
+  },
+  "prominence": 0.46,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q17308980",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Nokutela Dube",
+      "url": "https://de.wikipedia.org/wiki/Nokutela_Dube",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Nokutela Dube",
+      "url": "https://en.wikipedia.org/wiki/Nokutela_Dube",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q17308980"
+}
