@@ -46,6 +46,12 @@ interface CanvasTileProps {
 }
 
 /**
+ * WebP only: AVIF is a few KB smaller per tile but much slower to decode on phones, and many
+ * tiles are decoded at once while panning or zooming.
+ */
+const TILE_FORMATS = ["webp"] as const;
+
+/**
  * Props are equal when all are identical, the variation by value (it is computed anew on every
  * render; comparing it by identity would re-render every tile on every camera move).
  */
@@ -130,6 +136,7 @@ export const CanvasTile = memo(function CanvasTile({
               sizes={sizes}
               loading="eager"
               fetchPriority={visible ? "high" : "low"}
+              formats={TILE_FORMATS}
               className="size-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
             {/* Dark gradient guarantees contrast for the name regardless of the photo. Seen

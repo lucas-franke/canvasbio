@@ -5,6 +5,7 @@ import {
   portraitSrcSet,
   portraitUrl,
   type PortraitKind,
+  type ImageFormat,
   type PortraitThumb,
 } from "~/lib/content/images";
 
@@ -21,6 +22,8 @@ interface PortraitProps {
   loading?: "lazy" | "eager";
   /** Download priority among the images on the page (e.g. visible first, preloaded later). */
   fetchPriority?: "high" | "low" | "auto";
+  /** Formats offered, best first (default: AVIF, then WebP). */
+  formats?: readonly ImageFormat[];
 }
 
 /**
@@ -35,13 +38,14 @@ export function Portrait({
   className,
   loading = "lazy",
   fetchPriority,
+  formats = IMAGE_FORMATS,
 }: PortraitProps) {
   const width = kind === "sq" ? 320 : 640;
   const height = kind === "sq" ? 320 : Math.round((640 * image.height) / image.width);
 
   return (
     <picture>
-      {IMAGE_FORMATS.map((format) => (
+      {formats.map((format) => (
         <source
           key={format}
           type={`image/${format}`}

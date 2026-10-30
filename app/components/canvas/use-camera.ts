@@ -203,6 +203,7 @@ export function useCamera({
       ...next,
       scale: clamp(next.scale, limits.minZoom, limits.maxZoom),
     });
+    const zooming = cam.scale !== camera.current.scale;
     camera.current = cam;
 
     const world = worldRef.current;
@@ -225,8 +226,10 @@ export function useCamera({
       }
     };
     if (world) {
-      // Moving: one composited layer, so panning and zooming don't repaint every frame.
-      if (viewRef.current && viewRef.current.lod !== 0 && world.style.willChange !== "transform")
+      // Zooming: one composited layer, so the wall isn't repainted at every scale. Panning
+      // doesn't need the hint (the translate3d layer just moves), and setting or removing it
+      // makes the browser repaint the whole wall, which stuttered at the start of every pan.
+      if (zooming && viewRef.current && viewRef.current.lod !== 0 && world.style.willChange !== "transform")
         world.style.willChange = "transform";
       world.style.transform = `translate3d(${-cam.x * cam.scale}px, ${-cam.y * cam.scale}px, 0) scale(${cam.scale})`;
       // Seen from afar: names are hidden (app.css) and a tap zooms in instead of opening.
