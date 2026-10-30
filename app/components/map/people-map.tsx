@@ -28,6 +28,34 @@ const CLUSTER_RADIUS = 52;
 
 type Mode = "born" | "died";
 
+/**
+ * The map's seam: the middle of the widest stretch of longitude without any place (today in
+ * the Pacific between Howland Island and Canada), not the date line, which would split New
+ * Zealand and the Pacific islands onto both edges. The view shows exactly one world from
+ * the seam on: both edges stay half that empty stretch away from any cluster (and from the
+ * copies of the world the map draws beyond them).
+ */
+function seamOf(coords: [number, number][]): number {
+  const lngs = [...new Set(coords.map(([lng]) => lng))].sort((a, b) => a - b);
+  if (lngs.length < 2) return -150;
+  let widest = -1;
+  let seam = -150;
+  lngs.forEach((lng, i) => {
+    const next = i + 1 < lngs.length ? lngs[i + 1]! : lngs[0]! + 360;
+    if (next - lng > widest) {
+      widest = next - lng;
+      seam = lng + widest / 2;
+    }
+  });
+  return ((((seam + 180) % 360) + 360) % 360) - 180;
+}
+/** A longitude on the shown range seam … seam + 360 (the map continues past 180°). */
+const fromSeam = (lng: number, seam: number) => seam + ((((lng - seam) % 360) + 360) % 360);
+/** Longitude for clustering (Supercluster needs −180 … 180): the seam becomes −180. */
+const toCluster = (lng: number, seam: number) => fromSeam(lng, seam) - seam - 180;
+/** Back from clustering to the shown range. */
+const fromCluster = (x: number, seam: number) => x + 180 + seam;
+
 interface PointProps {
   slug: string;
   /** Stable pseudo-random rank: picks the cluster's face without favouring the best known. */
@@ -101,6 +129,12 @@ export default function PeopleMap({
   const bySlug = useMemo(() => new Map(people.map((p) => [p.slug, p])), [people]);
   const placeLabels = useMemo(() => facetLabels.place ?? {}, [facetLabels]);
 
+  const seam = useMemo(() => seamOf(Object.values(placeCoords)), [placeCoords]);
+  const seamRef = useRef(seam);
+  useEffect(() => {
+    seamRef.current = seam;
+  }, [seam]);
+
   const points = useMemo(
     () =>
       shown.flatMap((person) => {
@@ -110,12 +144,12 @@ export default function PeopleMap({
         return [
           {
             type: "Feature" as const,
-            geometry: { type: "Point" as const, coordinates: coords },
+            geometry: { type: "Point" as const, coordinates: [toCluster(coords[0], seam), coords[1]] },
             properties: { slug: person.slug, rank: rankOf(person.slug), place } satisfies PointProps,
           },
         ];
       }),
-    [shown, mode, placeCoords],
+    [shown, mode, placeCoords, seam],
   );
   const unplaced = shown.length - points.length;
 
@@ -158,12 +192,31 @@ export default function PeopleMap({
       zoom: 1.2,
       minZoom: 0.5,
       maxZoom: MAX_ZOOM,
-      renderWorldCopies: false,
+      // The world continues past 180° up to the seam (land drawn from the next copy); the
+      // view is kept on seam … seam + 360 below (maxBounds can't cross 180°).
+      renderWorldCopies: true,
       attributionControl: false,
       dragRotate: false,
       pitchWithRotate: false,
       cooperativeGestures: false,
     });
+    // Keep the view on seam … seam + 360. The map reports its centre wrapped to −180 … 180,
+    // so it is first taken onto that range.
+    let clamping = false;
+    const clampView = () => {
+      if (clamping) return;
+      const seam = seamRef.current;
+      const bounds = map.getBounds();
+      const half = (bounds.getEast() - bounds.getWest()) / 2;
+      const center = map.getCenter();
+      const lng = fromSeam(center.lng, seam);
+      const target = half >= 180 ? seam + 180 : Math.min(seam + 360 - half, Math.max(seam + half, lng));
+      if (Math.abs(target - lng) < 1e-6) return;
+      clamping = true;
+      map.jumpTo({ center: [target, center.lat] });
+      clamping = false;
+    };
+    map.on("move", clampView);
     map.touchZoomRotate.disableRotation();
     map.keyboard.disableRotation();
     map.getCanvas().setAttribute("aria-label", m.map.label);
@@ -200,13 +253,16 @@ export default function PeopleMap({
     const map = mapRef.current;
     if (!map || !ready || points.length === 0) return;
     const bounds = new maplibregl.LngLatBounds();
-    for (const point of points) bounds.extend(point.geometry.coordinates);
+    for (const point of points) {
+      const [x, y] = point.geometry.coordinates;
+      bounds.extend([fromCluster(x, seam), y]);
+    }
     map.fitBounds(bounds, {
       padding: { top: 112, bottom: 96, left: 48, right: 48 },
       maxZoom: 5,
       duration: 600,
     });
-  }, [ready, points]);
+  }, [ready, points, seam]);
 
   // ---- Markers: portraits as links, clusters as buttons ----
   const markers = useRef(new Map<string, Marker>());
@@ -262,7 +318,8 @@ export default function PeopleMap({
           element.setAttribute("type", "button");
           element.setAttribute("aria-label", m.map.cluster(count));
           const clusterId = props.cluster_id;
-          const [lng, lat] = feature.geometry.coordinates as [number, number];
+          const [x, lat] = feature.geometry.coordinates as [number, number];
+          const lng = fromCluster(x, seam);
           element.addEventListener("click", () => {
             const next = clusters.getClusterExpansionZoom(clusterId);
             if (next > MAX_ZOOM || map.getZoom() >= MAX_ZOOM) {
@@ -291,7 +348,7 @@ export default function PeopleMap({
           });
         }
         const marker = new maplibregl.Marker({ element, anchor: "center" })
-          .setLngLat(feature.geometry.coordinates as [number, number])
+          .setLngLat([fromCluster(feature.geometry.coordinates[0]!, seam), feature.geometry.coordinates[1]!])
           .addTo(map);
         current.set(key, marker);
       }
@@ -309,7 +366,7 @@ export default function PeopleMap({
       for (const marker of current.values()) marker.remove();
       current.clear();
     };
-  }, [ready, clusters, bySlug, activeSlug, hrefFor, navigate, m, placeLabels]);
+  }, [ready, clusters, bySlug, activeSlug, hrefFor, navigate, m, placeLabels, seam]);
 
   const peopleIn = (slugs: string[]) =>
     slugs
@@ -416,7 +473,7 @@ export default function PeopleMap({
                           const coords = placeCoords[place.key];
                           if (coords)
                             mapRef.current?.easeTo({
-                              center: coords,
+                              center: [fromSeam(coords[0], seam), coords[1]],
                               zoom: Math.max(5, mapRef.current.getZoom()),
                             });
                         }}
