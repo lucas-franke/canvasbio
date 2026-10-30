@@ -23,6 +23,10 @@ interface CanvasTileProps {
   primary: boolean;
   /** Roving tabindex: exactly one tile is in the tab order. */
   tabbable: boolean;
+  /** In or near the view: with portrait and label. Far away only the link and its name. */
+  near: boolean;
+  /** Seen from afar: names are hidden anyway, so only the portrait (cheaper to restyle). */
+  far?: boolean;
   /** Biography of this person is open. */
   active: boolean;
   /**
@@ -62,6 +66,8 @@ export const CanvasTile = memo(function CanvasTile({
   href,
   primary,
   tabbable,
+  near,
+  far = false,
   active,
   match,
   variation,
@@ -94,23 +100,34 @@ export const CanvasTile = memo(function CanvasTile({
         tabIndex={tabbable ? 0 : -1}
         className="canvas-tile group block size-full"
       >
-        <span
-          data-vt-portrait
-          data-tint
-          className={cn("relative block size-full overflow-hidden bg-stage", edgeClass)}
-        >
-          <Portrait
-            slug={person.slug}
-            image={person.image}
-            alt=""
-            sizes={sizes}
-            className="size-full object-cover transition-transform duration-300 group-hover:scale-105"
-          />
-          {/* Dark gradient guarantees contrast for the name regardless of the photo. */}
-          <span className="canvas-tile-name absolute inset-x-0 bottom-0 bg-linear-to-t from-stage via-stage/80 to-transparent font-medium text-stage-foreground">
-            <span className="canvas-tile-label">{person.name.display}</span>
+        {near ? (
+          <span
+            data-vt-portrait
+            data-tint
+            className={cn("relative block size-full overflow-hidden bg-stage", edgeClass)}
+          >
+            <Portrait
+              slug={person.slug}
+              image={person.image}
+              alt=""
+              sizes={sizes}
+              className="size-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+            {/* Dark gradient guarantees contrast for the name regardless of the photo. */}
+            {far ? (
+              <span className="sr-only">{person.name.display}</span>
+            ) : (
+              <span className="canvas-tile-name absolute inset-x-0 bottom-0 bg-linear-to-t from-stage via-stage/80 to-transparent font-medium text-stage-foreground">
+                <span className="canvas-tile-label">{person.name.display}</span>
+              </span>
+            )}
           </span>
-        </span>
+        ) : (
+          // Its dominant colour shows through until it comes near (a fast fling, the far wall).
+          <span className="block size-full" style={{ backgroundColor: person.image.color }}>
+            <span className="sr-only">{person.name.display}</span>
+          </span>
+        )}
       </Link>
     </li>
   );

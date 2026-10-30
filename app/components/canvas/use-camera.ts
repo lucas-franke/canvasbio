@@ -36,6 +36,7 @@ export function staticView(layout: CanvasLayout, limits: ZoomLimits): CanvasView
     range: visibleRange(layout, camera, { width: 1900, height: 1800 }, 0),
     center: cellNear(layout, x, y),
     lod: 0,
+    far: false,
   };
 }
 
@@ -49,9 +50,17 @@ export interface CanvasView {
   center: Cell;
   /** Rendered tile size in screen px, rounded up to an image size bucket (for `sizes`). */
   lod: number;
+  /** Seen from afar (names hidden): tiles render as bare portraits. */
+  far: boolean;
 }
 
 const LOD_BUCKETS = [96, 160, 240, 320, 480, 640];
+/**
+ * How long the camera has to rest before zoom-dependent details catch up: the constant-size
+ * names and focus rings (--s) and the image size (lod). Updating them on every frame of a
+ * zoom restyles or re-renders every tile and made zooming stutter.
+ */
+const SETTLE_MS = 140;
 const lodFor = (px: number) => LOD_BUCKETS.find((b) => b >= px) ?? LOD_BUCKETS.at(-1)!;
 
 const sameView = (a: CanvasView | null, b: CanvasView) =>
@@ -59,7 +68,8 @@ const sameView = (a: CanvasView | null, b: CanvasView) =>
   sameRange(a.range, b.range) &&
   a.center.col === b.center.col &&
   a.center.row === b.center.row &&
-  a.lod === b.lod;
+  a.lod === b.lod &&
+  a.far === b.far;
 
 const prefersReducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -155,6 +165,7 @@ export function useCamera({
   /** Where the running zoom animation ends, so quick repeated zooms add up. */
   const zoomTarget = useRef<Camera | null>(null);
   const saveTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
+  const settleTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
   const viewRef = useRef<CanvasView | null>(initialView ?? null);
   const [view, setView] = useState<CanvasView | null>(initialView ?? null);
 
@@ -184,24 +195,42 @@ export function useCamera({
     camera.current = cam;
 
     const world = worldRef.current;
+    const settle = () => {
+      if (world) {
+        const scale = String(camera.current.scale);
+        if (world.style.getPropertyValue("--s") !== scale) world.style.setProperty("--s", scale);
+      }
+      const px = latest.current.layout.tile * camera.current.scale;
+      const lod = lodFor(px);
+      const far = px < FAR_TILE_PX;
+      const settled = viewRef.current;
+      if (settled && (settled.lod !== lod || settled.far !== far)) {
+        viewRef.current = { ...settled, lod, far };
+        setView(viewRef.current);
+      }
+    };
     if (world) {
       world.style.transform = `translate3d(${-cam.x * cam.scale}px, ${-cam.y * cam.scale}px, 0) scale(${cam.scale})`;
-      const scale = String(cam.scale);
-      if (world.style.getPropertyValue("--s") !== scale) world.style.setProperty("--s", scale);
       // Seen from afar: names are hidden (app.css) and a tap zooms in instead of opening.
       world.toggleAttribute("data-far", layout.tile * cam.scale < FAR_TILE_PX);
     }
 
+    // The first camera (and every one without a measured size yet) takes effect at once.
+    const first = !viewRef.current || viewRef.current.lod === 0;
     const nextView: CanvasView = {
       range: visibleRange(layout, cam, size.current, 1),
       center: cellNear(layout, cam.x, cam.y),
-      lod: lodFor(layout.tile * cam.scale),
+      lod: first ? lodFor(layout.tile * cam.scale) : viewRef.current!.lod,
+      far: first ? layout.tile * cam.scale < FAR_TILE_PX : viewRef.current!.far,
     };
     if (!sameView(viewRef.current, nextView)) {
       viewRef.current = nextView;
       setView(nextView);
       onViewChange?.(nextView);
     }
+    clearTimeout(settleTimer.current);
+    if (first) settle();
+    else settleTimer.current = setTimeout(settle, SETTLE_MS);
 
     clearTimeout(saveTimer.current);
     saveTimer.current = setTimeout(save, 250);
@@ -361,6 +390,7 @@ export function useCamera({
       window.removeEventListener("pagehide", save);
       observer.disconnect();
       stop();
+      clearTimeout(settleTimer.current);
       save();
     };
   }, [apply, measure, stop, sync]);

@@ -419,6 +419,15 @@ export function InfiniteCanvas({
     const range = layout.wrap
       ? view.range
       : { row0: 0, row1: layout.rows - 1, col0: 0, col1: layout.cols - 1 };
+    // Only tiles in and around the view get their portrait and label; the rest of the finite
+    // wall is a bare link (same name, same place in the list), so zooming restyles few nodes.
+    const NEAR = 1;
+    const near = {
+      col0: view.range.col0 - NEAR,
+      col1: view.range.col1 + NEAR,
+      row0: view.range.row0 - NEAR,
+      row1: view.range.row1 + NEAR,
+    };
     const cells: Cell[] = [];
     for (let row = range.row0; row <= range.row1; row++) {
       for (let col = range.col0; col <= range.col1; col++) cells.push({ col, row });
@@ -472,6 +481,7 @@ export function InfiniteCanvas({
           origin: cellOrigin(layout, cell),
           primary: sameCell(primary.get(index)!.cell, cell),
           tabbable: sameCell(cell, tabbable),
+          near: inRange(near, cell) || sameCell(cell, current),
         },
       ];
     });
@@ -506,7 +516,7 @@ export function InfiniteCanvas({
           className="canvas-world absolute top-1/2 left-1/2 origin-top-left will-change-transform"
         >
           <ul aria-label={m.canvas.portraits}>
-            {tiles.map(({ cell, person, origin, primary, tabbable }) => (
+            {tiles.map(({ cell, person, origin, primary, tabbable, near }) => (
               <CanvasTile
                 key={cellId(cell)}
                 cellId={cellId(cell)}
@@ -517,6 +527,8 @@ export function InfiniteCanvas({
                 href={hrefFor(person.slug)}
                 primary={primary}
                 tabbable={tabbable}
+                near={near}
+                far={view?.far ?? false}
                 active={person.slug === activeSlug}
                 match={hitSet ? hitSet.has(person.slug) : undefined}
                 variation={tileVariation(layout, cell, config.sizeVariance)}

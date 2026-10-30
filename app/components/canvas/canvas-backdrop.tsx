@@ -96,6 +96,7 @@ export function CanvasBackdrop({
                 href={hrefFor(person.slug)}
                 primary={false}
                 tabbable={false}
+                near
                 active={false}
                 variation={tileVariation(layout, cell, config.sizeVariance)}
                 sizes={sizes}
