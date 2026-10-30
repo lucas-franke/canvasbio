@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Lucia True Ames Mead
 facts:
   - label: Geboren
-    value: 5. Mai 1856 in Boscawen
+    value: 5. Mai 1856 in Boscawen, Vereinigte Staaten
   - label: Gestorben
-    value: 1. November 1936 in Brookline
+    value: 1. November 1936 in Brookline, Vereinigte Staaten
   - label: Wirkungsfeld
     value: Schullehrerin, Suffragette, Friedensaktivistin, Schriftstellerin
 timeline:

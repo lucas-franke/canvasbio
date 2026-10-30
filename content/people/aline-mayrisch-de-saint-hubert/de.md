@@ -7,7 +7,7 @@ facts:
   - label: Geboren
     value: 22. August 1874 in Luxemburg
   - label: Gestorben
-    value: 20. Januar 1947 in Cabris
+    value: 20. Januar 1947 in Cabris, Frankreich
   - label: Wirkungsfeld
     value: Schriftstellerin, Philanthropin, Frauenrechtlerin, Dame der Gesellschaft
 timeline:

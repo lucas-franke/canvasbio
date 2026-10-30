@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Elsie Bowerman
 facts:
   - label: Geboren
-    value: 18. Dezember 1889 in Royal Tunbridge Wells
+    value: 18. Dezember 1889 in Royal Tunbridge Wells, Vereinigtes Königreich
   - label: Gestorben
-    value: 18. Oktober 1973 in Hailsham
+    value: 18. Oktober 1973 in Hailsham, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Schriftstellerin, Rechtsanwältin, Suffragette
 timeline:

@@ -7,7 +7,7 @@ facts:
   - label: Geboren
     value: 15. August 1870
   - label: Gestorben
-    value: 23. Juni 1947 in Färgelanda
+    value: 23. Juni 1947 in Färgelanda, Schweden
   - label: Wirkungsfeld
     value: Fotografin, Female supporter of women's right to vote, Suffragette
 timeline:

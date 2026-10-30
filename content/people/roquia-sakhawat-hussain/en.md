@@ -7,7 +7,7 @@ facts:
   - label: Born
     value: December 9, 1880 in Rangpur Division
   - label: Died
-    value: December 9, 1932 in Kolkata
+    value: December 9, 1932 in Kolkata, India
   - label: Field
     value: Writer, Science fiction writer, Social reformer, Feminist
 timeline:

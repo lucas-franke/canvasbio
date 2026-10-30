@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Huda Shaarawi
 facts:
   - label: Geboren
-    value: 23. Juni 1879 in Al-Minya
+    value: 23. Juni 1879 in Al-Minya, Ägypten
   - label: Gestorben
-    value: 12. Dezember 1947 in Kairo
+    value: 12. Dezember 1947 in Kairo, Ägypten
   - label: Wirkungsfeld
     value: Politikerin, Sozialaktivistin, Dichterin, Journalistin
 timeline:

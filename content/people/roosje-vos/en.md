@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Roosje Vos
 facts:
   - label: Born
-    value: August 15, 1860 in Amsterdam
+    value: August 15, 1860 in Amsterdam, Netherlands
   - label: Died
-    value: July 22, 1932 in Groningen
+    value: July 22, 1932 in Groningen, Netherlands
   - label: Field
     value: Politician, Trade unionist, Suffragette, Editor
 timeline:

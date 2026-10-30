@@ -5,7 +5,7 @@ summary:
 portraitAlt: Portrait of Sylvia Pankhurst
 facts:
   - label: Born
-    value: May 5, 1882 in Trafford
+    value: May 5, 1882 in Trafford, United Kingdom
   - label: Died
     value: September 27, 1960 in Addis Ababa
   - label: Field

@@ -5,7 +5,7 @@ summary:
 portraitAlt: Kitty Kenney steht in einem Garten zwischen blühendem Fingerhut, 1910
 facts:
   - label: Geboren
-    value: 1880 in England
+    value: 1880 in England, Vereinigtes Königreich
   - label: Gestorben
     value: 1952 in Vereinigte Staaten
   - label: Wirkungsfeld

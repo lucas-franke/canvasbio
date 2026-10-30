@@ -7,7 +7,7 @@ facts:
   - label: Born
     value: December 5, 1862 in Ketandan
   - label: Died
-    value: December 2, 1939 in The Hague
+    value: December 2, 1939 in The Hague, Netherlands
   - label: Field
     value: Women's rights activist, Pacifist, Painter, Draughtswoman
 timeline:

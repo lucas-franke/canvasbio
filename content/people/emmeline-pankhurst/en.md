@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Emmeline Pankhurst
 facts:
   - label: Born
-    value: July 15, 1858 in Moss Side
+    value: July 15, 1858 in Moss Side, United Kingdom
   - label: Died
-    value: June 14, 1928 in Hampstead
+    value: June 14, 1928 in Hampstead, United Kingdom
   - label: Field
     value: Suffragette, Politician, Women's rights activist, Human rights activist
 timeline:

@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Emma Goldman
 facts:
   - label: Geboren
-    value: 27. Juni 1869 in Kaunas
+    value: 27. Juni 1869 in Kaunas, Litauen
   - label: Gestorben
-    value: 14. Mai 1940 in Toronto
+    value: 14. Mai 1940 in Toronto, Kanada
   - label: Wirkungsfeld
     value: Anarchistin, Journalistin, Politische Philosophin, Frauenrechtlerin
 timeline:

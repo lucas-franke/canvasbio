@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Jane Addams
 facts:
   - label: Geboren
-    value: 6. September 1860 in Cedarville
+    value: 6. September 1860 in Cedarville, Vereinigte Staaten
   - label: Gestorben
-    value: 22. Mai 1935 in Chicago
+    value: 22. Mai 1935 in Chicago, Vereinigte Staaten
   - label: Wirkungsfeld
     value: Journalistin, Philosophin, Schriftstellerin, Frauenrechtlerin
 timeline:

@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Annie Horniman
 facts:
   - label: Geboren
-    value: 3. Oktober 1860 in Forest Hill
+    value: 3. Oktober 1860 in Forest Hill, Vereinigtes Königreich
   - label: Gestorben
-    value: 6. August 1937 in Surrey
+    value: 6. August 1937 in Surrey, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Theaterleiterin, Suffragette
 timeline:

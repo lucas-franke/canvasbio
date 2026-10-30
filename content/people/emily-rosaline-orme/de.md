@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Emily Rosaline Orme
 facts:
   - label: Geboren
-    value: 2. Mai 1835 in Regent’s Park
+    value: 2. Mai 1835 in Regent’s Park, Vereinigtes Königreich
   - label: Gestorben
-    value: 10. Dezember 1915 in Edinburgh
+    value: 10. Dezember 1915 in Edinburgh, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Suffragette
 timeline:

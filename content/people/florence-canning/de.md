@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Florence Canning
 facts:
   - label: Geboren
-    value: 19. Mai 1863 in Hereford
+    value: 19. Mai 1863 in Hereford, Vereinigtes Königreich
   - label: Gestorben
-    value: 24. Dezember 1914 in Brighton
+    value: 24. Dezember 1914 in Brighton, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Suffragette, Künstlerin
 timeline:

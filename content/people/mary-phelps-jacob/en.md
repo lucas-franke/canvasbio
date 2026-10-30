@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Mary Phelps Jacob
 facts:
   - label: Born
-    value: April 20, 1892 in New York City
+    value: April 20, 1892 in New York City, United States
   - label: Died
-    value: January 24, 1970 in Rome
+    value: January 24, 1970 in Rome, Italy
   - label: Field
     value: Publisher, Writer, Socialite, Poet
 timeline:

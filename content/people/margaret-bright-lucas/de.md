@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Margaret Bright Lucas
 facts:
   - label: Geboren
-    value: 14. Juli 1818 in Rochdale
+    value: 14. Juli 1818 in Rochdale, Vereinigtes Königreich
   - label: Gestorben
-    value: 4. Februar 1890 in London
+    value: 4. Februar 1890 in London, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Frauenrechtlerin, Suffragette
 timeline:

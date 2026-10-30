@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Mary Phillips
 facts:
   - label: Geboren
-    value: 15. Juli 1880 in St Mary Bourne
+    value: 15. Juli 1880 in St Mary Bourne, Vereinigtes Königreich
   - label: Gestorben
-    value: 21. Juni 1969 in Hove
+    value: 21. Juni 1969 in Hove, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Frauenrechtlerin, Suffragette, Sozialistin, Feministin
 timeline:

@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Margaret Cole
 facts:
   - label: Geboren
-    value: 6. Mai 1893 in Cambridge
+    value: 6. Mai 1893 in Cambridge, Vereinigtes Königreich
   - label: Gestorben
-    value: 7. Mai 1980 in Goring-on-Thames
+    value: 7. Mai 1980 in Goring-on-Thames, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Politikerin, Lecturer, Historikerin, Biografin
 timeline:

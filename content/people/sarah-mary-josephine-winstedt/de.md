@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Sarah Mary Josephine Winstedt
 facts:
   - label: Geboren
-    value: 4. April 1886 in Sixmilebridge
+    value: 4. April 1886 in Sixmilebridge, Irland
   - label: Gestorben
-    value: 9. September 1972 in Havant
+    value: 9. September 1972 in Havant, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Ärztin, Chirurgin, Suffragette
 timeline:

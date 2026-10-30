@@ -5,7 +5,7 @@ summary:
 portraitAlt: Porträt von Mary Jane Ward
 facts:
   - label: Geboren
-    value: 6. Juni 1851 in Armagh
+    value: 6. Juni 1851 in Armagh, Vereinigtes Königreich
   - label: Gestorben
     value: 14. März 1933
   - label: Wirkungsfeld

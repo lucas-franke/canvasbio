@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Hertha Marks Ayrton
 facts:
   - label: Born
-    value: April 28, 1854 in Portsea Island
+    value: April 28, 1854 in Portsea Island, United Kingdom
   - label: Died
-    value: August 23, 1923 in Lancing
+    value: August 23, 1923 in Lancing, United Kingdom
   - label: Field
     value: Mathematician, Electrical engineer, Physicist, Inventor
 timeline:

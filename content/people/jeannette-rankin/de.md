@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Jeannette Rankin
 facts:
   - label: Geboren
-    value: 11. Juni 1880 in Missoula
+    value: 11. Juni 1880 in Missoula, Vereinigte Staaten
   - label: Gestorben
-    value: 18. Mai 1973 in Carmel-by-the-Sea
+    value: 18. Mai 1973 in Carmel-by-the-Sea, Vereinigte Staaten
   - label: Wirkungsfeld
     value: Politikerin, Sozialarbeiterin, Pazifistin, Frauenrechtlerin
 timeline:

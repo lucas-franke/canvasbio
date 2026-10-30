@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Herminia Brumana
 facts:
   - label: Born
-    value: September 12, 1897 in Pigüé
+    value: September 12, 1897 in Pigüé, Argentina
   - label: Died
-    value: January 9, 1954 in Buenos Aires
+    value: January 9, 1954 in Buenos Aires, Argentina
   - label: Field
     value: Writer, Journalist, Activist, Playwright
 timeline:

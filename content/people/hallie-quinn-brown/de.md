@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Hallie Quinn Brown
 facts:
   - label: Geboren
-    value: 10. März 1849 in Pittsburgh
+    value: 10. März 1849 in Pittsburgh, Vereinigte Staaten
   - label: Gestorben
-    value: 16. September 1949 in Wilberforce
+    value: 16. September 1949 in Wilberforce, Vereinigte Staaten
   - label: Wirkungsfeld
     value: Schriftstellerin, Suffragette, Erzieherin, Bürgerrechtlerin
 timeline:

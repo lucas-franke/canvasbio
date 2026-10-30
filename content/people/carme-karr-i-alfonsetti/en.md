@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Carme Karr i Alfonsetti
 facts:
   - label: Born
-    value: March 16, 1865 in Barcelona
+    value: March 16, 1865 in Barcelona, Spain
   - label: Died
-    value: December 29, 1943 in Barcelona
+    value: December 29, 1943 in Barcelona, Spain
   - label: Field
     value: Composer, Translator, Writer, Journalist
 timeline:

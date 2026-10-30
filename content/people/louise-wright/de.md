@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Louise Wright
 facts:
   - label: Geboren
-    value: 30. Januar 1861 in Fleckeby
+    value: 30. Januar 1861 in Fleckeby, Deutschland
   - label: Gestorben
-    value: 15. April 1935 in Gentofte Parish
+    value: 15. April 1935 in Gentofte Parish, Dänemark
   - label: Wirkungsfeld
     value: Frauenrechtlerin, Pazifistin, Philanthropin
 timeline:

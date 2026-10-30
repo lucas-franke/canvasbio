@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Charlotte Klein
 facts:
   - label: Geboren
-    value: 29. Oktober 1834 in Helsingör
+    value: 29. Oktober 1834 in Helsingör, Dänemark
   - label: Gestorben
-    value: 9. März 1915 in Frederiksberg
+    value: 9. März 1915 in Frederiksberg, Dänemark
   - label: Wirkungsfeld
     value: Künstlerin, Vorstandsvorsitzende, Frauenrechtlerin
 timeline:

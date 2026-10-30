@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Mathilde Blind
 facts:
   - label: Geboren
-    value: 21. März 1841 in Mannheim
+    value: 21. März 1841 in Mannheim, Deutschland
   - label: Gestorben
-    value: 26. November 1896 in London
+    value: 26. November 1896 in London, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Dichterin, Autorin, Übersetzerin, Frauenrechtlerin
 timeline:

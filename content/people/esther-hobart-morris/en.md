@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Esther Hobart Morris
 facts:
   - label: Born
-    value: August 8, 1814 in Tioga County
+    value: August 8, 1814 in Tioga County, United States
   - label: Died
-    value: April 3, 1902 in Cheyenne
+    value: April 3, 1902 in Cheyenne, United States
   - label: Field
     value: Judge, Suffragist
 timeline:

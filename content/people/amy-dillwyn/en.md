@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Amy Dillwyn
 facts:
   - label: Born
-    value: May 16, 1845 in Swansea
+    value: May 16, 1845 in Swansea, United Kingdom
   - label: Died
-    value: December 13, 1935 in Swansea
+    value: December 13, 1935 in Swansea, United Kingdom
   - label: Field
     value: Novelist, Writer, Suffragette, Industrialist
 timeline:

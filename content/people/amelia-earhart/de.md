@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Amelia Earhart
 facts:
   - label: Geboren
-    value: 24. Juli 1897 in Atchison
+    value: 24. Juli 1897 in Atchison, Vereinigte Staaten
   - label: Gestorben
-    value: 5. Januar 1939 in Howlandinsel
+    value: 5. Januar 1939 in Howlandinsel, Vereinigte Staaten
   - label: Wirkungsfeld
     value: Pilotin, Memoirenschreiberin, Reiseschriftstellerin, Journalistin
 timeline:

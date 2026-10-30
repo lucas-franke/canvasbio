@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Marie Souvestre
 facts:
   - label: Geboren
-    value: 28. April 1835 in Brest
+    value: 28. April 1835 in Brest, Frankreich
   - label: Gestorben
-    value: 30. März 1905 in Surrey
+    value: 30. März 1905 in Surrey, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Erzieherin, Pädagogin, Feministin
 timeline:

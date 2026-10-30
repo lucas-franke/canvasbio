@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Beatrice Harraden
 facts:
   - label: Geboren
-    value: 24. Januar 1864 in Hampstead
+    value: 24. Januar 1864 in Hampstead, Vereinigtes Königreich
   - label: Gestorben
-    value: 5. Mai 1936 in Barton on Sea
+    value: 5. Mai 1936 in Barton on Sea, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Suffragette, Schriftstellerin, Frauenrechtlerin, Romancière
 timeline:

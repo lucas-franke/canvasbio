@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Marguerite Gobat
 facts:
   - label: Geboren
-    value: 23. Februar 1870 in Delsberg
+    value: 23. Februar 1870 in Delsberg, Schweiz
   - label: Gestorben
-    value: 19. Juli 1937 in Leubringen
+    value: 19. Juli 1937 in Leubringen, Schweiz
   - label: Wirkungsfeld
     value: Frauenrechtlerin, Übersetzerin, Herausgeberin, Lehrerin
 timeline:

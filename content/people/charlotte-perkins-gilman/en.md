@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Charlotte Perkins Gilman
 facts:
   - label: Born
-    value: July 3, 1860 in Hartford
+    value: July 3, 1860 in Hartford, United States
   - label: Died
-    value: August 17, 1935 in Pasadena
+    value: August 17, 1935 in Pasadena, United States
   - label: Field
     value: Poet, Novelist, Philosopher, Sociologist
 timeline:

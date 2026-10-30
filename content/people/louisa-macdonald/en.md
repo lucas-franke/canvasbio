@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Louisa Macdonald
 facts:
   - label: Born
-    value: December 10, 1858 in Arbroath
+    value: December 10, 1858 in Arbroath, United Kingdom
   - label: Died
-    value: November 28, 1949 in London
+    value: November 28, 1949 in London, United Kingdom
   - label: Field
     value: Academic, Educational theorist, Suffragist, University teacher
 timeline:

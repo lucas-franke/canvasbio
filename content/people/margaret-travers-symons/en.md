@@ -5,7 +5,7 @@ summary:
 portraitAlt: Portrait of Margaret Travers Symons
 facts:
   - label: Born
-    value: August 18, 1879 in Paddington
+    value: August 18, 1879 in Paddington, United Kingdom
   - label: Died
     value: 1951 in United Kingdom
   - label: Field

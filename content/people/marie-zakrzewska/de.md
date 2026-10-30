@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Marie Zakrzewska
 facts:
   - label: Geboren
-    value: 6. September 1829 in Berlin
+    value: 6. September 1829 in Berlin, Deutschland
   - label: Gestorben
-    value: 12. Mai 1902 in Jamaica Plain
+    value: 12. Mai 1902 in Jamaica Plain, Vereinigte Staaten
   - label: Wirkungsfeld
     value: Ärztin, Gynäkologin, Geburtshelferin, Feministin
 timeline:

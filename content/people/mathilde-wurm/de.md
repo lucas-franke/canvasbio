@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Mathilde Wurm
 facts:
   - label: Geboren
-    value: 30. September 1874 in Frankfurt am Main
+    value: 30. September 1874 in Frankfurt am Main, Deutschland
   - label: Gestorben
-    value: 1. April 1935 in London
+    value: 1. April 1935 in London, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Politikerin, Journalistin, Herausgeberin, Feministin
 timeline:

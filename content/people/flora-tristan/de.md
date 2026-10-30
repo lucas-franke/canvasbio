@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Flora Tristan
 facts:
   - label: Geboren
-    value: 7. April 1803 in Paris
+    value: 7. April 1803 in Paris, Frankreich
   - label: Gestorben
-    value: 14. November 1844 in Bordeaux
+    value: 14. November 1844 in Bordeaux, Frankreich
   - label: Wirkungsfeld
     value: Schriftstellerin, Frauenrechtlerin, Politikerin, Wirtschaftswissenschaftlerin
 timeline:

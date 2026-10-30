@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Sinaida Sergejewna Iwanowa
 facts:
   - label: Geboren
-    value: 1865 in Sychyovsky Uyezd
+    value: 1865 in Sychyovsky Uyezd, Russisches Kaiserreich
   - label: Gestorben
-    value: 24. August 1913 in Moskau
+    value: 24. August 1913 in Moskau, Russland
   - label: Wirkungsfeld
     value: Schriftstellerin, Literaturkritikerin, Historikerin, Publizistin
 timeline:

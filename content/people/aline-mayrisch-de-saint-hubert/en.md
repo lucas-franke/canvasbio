@@ -7,7 +7,7 @@ facts:
   - label: Born
     value: August 22, 1874 in Luxembourg
   - label: Died
-    value: January 20, 1947 in Cabris
+    value: January 20, 1947 in Cabris, France
   - label: Field
     value: Writer, Philanthropist, Women's rights activist, Socialite
 timeline:

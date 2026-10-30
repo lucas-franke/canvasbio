@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Irena Krzywicka
 facts:
   - label: Born
-    value: May 28, 1899 in Yeniseysk
+    value: May 28, 1899 in Yeniseysk, Russia
   - label: Died
-    value: July 12, 1994 in Bures-sur-Yvette
+    value: July 12, 1994 in Bures-sur-Yvette, France
   - label: Field
     value: Women's rights activist, Writer, Translator
 timeline:

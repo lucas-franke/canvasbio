@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Marie Charlotte Carmichael Stopes
 facts:
   - label: Geboren
-    value: 15. Oktober 1880 in Edinburgh
+    value: 15. Oktober 1880 in Edinburgh, Vereinigtes Königreich
   - label: Gestorben
-    value: 2. Oktober 1958 in Dorking
+    value: 2. Oktober 1958 in Dorking, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Botanikerin, Paläontologin, Kuratorin, Schriftstellerin
 timeline:

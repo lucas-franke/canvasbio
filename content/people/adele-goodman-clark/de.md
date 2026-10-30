@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Adele Goodman Clark
 facts:
   - label: Geboren
-    value: 27. September 1882 in Montgomery
+    value: 27. September 1882 in Montgomery, Vereinigte Staaten
   - label: Gestorben
-    value: 4. Juni 1983 in Richmond
+    value: 4. Juni 1983 in Richmond, Vereinigte Staaten
   - label: Wirkungsfeld
     value: Malerin, Suffragette, Künstlerin
 timeline:

@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Ellen Wilkinson
 facts:
   - label: Born
-    value: October 8, 1891 in Ardwick
+    value: October 8, 1891 in Ardwick, United Kingdom
   - label: Died
-    value: February 6, 1947 in St Mary's Hospital
+    value: February 6, 1947 in St Mary's Hospital, United Kingdom
   - label: Field
     value: Politician, Writer, Trade unionist, Suffragette
 timeline:

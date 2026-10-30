@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von André Léo
 facts:
   - label: Geboren
-    value: 18. August 1824 in Lusignan
+    value: 18. August 1824 in Lusignan, Frankreich
   - label: Gestorben
-    value: 20. Mai 1900 in Saint-Maurice
+    value: 20. Mai 1900 in Saint-Maurice, Frankreich
   - label: Wirkungsfeld
     value: Schriftstellerin, Kommunardin, Journalistin, Frauenrechtlerin
 timeline:

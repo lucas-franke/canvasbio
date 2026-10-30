@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Mary Ann Shadd
 facts:
   - label: Born
-    value: October 9, 1823 in Wilmington
+    value: October 9, 1823 in Wilmington, United States
   - label: Died
-    value: June 5, 1893 in Washington, D.C.
+    value: June 5, 1893 in Washington, D.C., United States
   - label: Field
     value: Journalist, Civil rights advocate, Newspaper proprietor, Suffragist
 timeline:

@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Alice Rühle-Gerstel
 facts:
   - label: Born
-    value: March 24, 1894 in Prague
+    value: March 24, 1894 in Prague, Czech Republic
   - label: Died
-    value: June 24, 1943 in Mexico City
+    value: June 24, 1943 in Mexico City, Mexico
   - label: Field
     value: Journalist, Psychologist, Writer, Nurse
 timeline:

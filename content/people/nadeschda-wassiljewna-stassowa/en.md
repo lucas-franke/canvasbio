@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Nadeschda Wassiljewna Stassowa
 facts:
   - label: Born
-    value: June 12, 1822 in Pushkin
+    value: June 12, 1822 in Pushkin, Russia
   - label: Died
-    value: September 27, 1895 in Saint Petersburg
+    value: September 27, 1895 in Saint Petersburg, Russia
   - label: Field
     value: Women's rights activist, Philanthropist, Feminist
 timeline:

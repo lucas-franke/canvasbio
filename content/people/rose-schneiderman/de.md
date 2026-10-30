@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Rose Schneiderman
 facts:
   - label: Geboren
-    value: 6. April 1882 in Sawin
+    value: 6. April 1882 in Sawin, Polen
   - label: Gestorben
-    value: 11. August 1972 in New York City
+    value: 11. August 1972 in New York City, Vereinigte Staaten
   - label: Wirkungsfeld
     value: Gewerkschafterin, Suffragette, Feministin
 timeline:

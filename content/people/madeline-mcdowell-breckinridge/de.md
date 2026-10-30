@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Madeline McDowell Breckinridge
 facts:
   - label: Geboren
-    value: 20. Mai 1872 in Franklin County
+    value: 20. Mai 1872 in Franklin County, Vereinigte Staaten
   - label: Gestorben
-    value: 25. November 1920 in Lexington
+    value: 25. November 1920 in Lexington, Vereinigte Staaten
   - label: Wirkungsfeld
     value: Suffragette, Menschenrechtlerin
 timeline:

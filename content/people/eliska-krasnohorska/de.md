@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Eliška Krásnohorská
 facts:
   - label: Geboren
-    value: 18. November 1847 in Prag
+    value: 18. November 1847 in Prag, Tschechien
   - label: Gestorben
-    value: 26. November 1926 in Prager Neustadt
+    value: 26. November 1926 in Prager Neustadt, Tschechien
   - label: Wirkungsfeld
     value: Schriftstellerin, Frauenrechtlerin, Librettistin, Dichterin
 timeline:

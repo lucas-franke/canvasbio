@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Helene Scheu-Riesz
 facts:
   - label: Geboren
-    value: 18. September 1880 in Olmütz
+    value: 18. September 1880 in Olmütz, Tschechien
   - label: Gestorben
-    value: 8. Januar 1970 in Wien
+    value: 8. Januar 1970 in Wien, Österreich
   - label: Wirkungsfeld
     value: Übersetzerin, Verlegerin, Journalistin, Schriftstellerin
 timeline:

@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Anna Alma-Tadema
 facts:
   - label: Geboren
-    value: 16. Mai 1867 in London
+    value: 16. Mai 1867 in London, Vereinigtes Königreich
   - label: Gestorben
-    value: 5. Juli 1943 in London
+    value: 5. Juli 1943 in London, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Malerin, Suffragette
 timeline:

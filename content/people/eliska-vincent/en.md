@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Eliska Vincent
 facts:
   - label: Born
-    value: June 29, 1841 in Mézières-en-Drouais
+    value: June 29, 1841 in Mézières-en-Drouais, France
   - label: Died
-    value: February 19, 1914 in Asnières-sur-Seine
+    value: February 19, 1914 in Asnières-sur-Seine, France
   - label: Field
     value: Women's rights activist, Editor, Communard
 timeline:

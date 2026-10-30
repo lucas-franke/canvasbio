@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Jane Mander
 facts:
   - label: Geboren
-    value: 9. April 1877 in Ramarama
+    value: 9. April 1877 in Ramarama, Neuseeland
   - label: Gestorben
-    value: 20. Dezember 1949 in Whangarei
+    value: 20. Dezember 1949 in Whangarei, Neuseeland
   - label: Wirkungsfeld
     value: Journalistin, Romancière, Suffragette
 timeline:

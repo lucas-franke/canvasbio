@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Crystal Eastman
 facts:
   - label: Born
-    value: June 25, 1881 in Middlesex County
+    value: June 25, 1881 in Middlesex County, United States
   - label: Died
-    value: July 8, 1928 in Erie
+    value: July 8, 1928 in Erie, United States
   - label: Field
     value: Lawyer, Journalist, Peace activist, Suffragist
 timeline:

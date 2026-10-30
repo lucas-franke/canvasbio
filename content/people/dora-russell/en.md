@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Dora Russell
 facts:
   - label: Born
-    value: April 3, 1894 in Thornton Heath
+    value: April 3, 1894 in Thornton Heath, United Kingdom
   - label: Died
-    value: May 31, 1986 in Porthcurno
+    value: May 31, 1986 in Porthcurno, United Kingdom
   - label: Field
     value: Feminist, Peace activist
 timeline:

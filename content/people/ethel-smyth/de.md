@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Ethel Smyth
 facts:
   - label: Geboren
-    value: 22. April 1858 in Sidcup
+    value: 22. April 1858 in Sidcup, Vereinigtes Königreich
   - label: Gestorben
-    value: 8. Mai 1944 in Woking
+    value: 8. Mai 1944 in Woking, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Komponistin, Librettistin, Dirigentin, Autobiografin
 timeline:

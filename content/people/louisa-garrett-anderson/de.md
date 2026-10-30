@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Louisa Garrett Anderson
 facts:
   - label: Geboren
-    value: 28. Juli 1873 in Aldeburgh
+    value: 28. Juli 1873 in Aldeburgh, Vereinigtes Königreich
   - label: Gestorben
-    value: 15. November 1943 in Brighton
+    value: 15. November 1943 in Brighton, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Ärztin, Chirurgin, Biografin, Schriftstellerin
 timeline:

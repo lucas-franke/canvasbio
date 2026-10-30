@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Ada Wells
 facts:
   - label: Born
-    value: April 29, 1863 in Oxfordshire
+    value: April 29, 1863 in Oxfordshire, United Kingdom
   - label: Died
-    value: March 22, 1933 in Christchurch
+    value: March 22, 1933 in Christchurch, New Zealand
   - label: Field
     value: Politician, Suffragette, Teacher
 timeline:

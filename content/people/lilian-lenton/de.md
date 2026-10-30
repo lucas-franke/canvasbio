@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Lilian Lenton
 facts:
   - label: Geboren
-    value: 5. Januar 1891 in Leicester
+    value: 5. Januar 1891 in Leicester, Vereinigtes Königreich
   - label: Gestorben
-    value: 28. Oktober 1972 in Twickenham
+    value: 28. Oktober 1972 in Twickenham, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Suffragette
 timeline:

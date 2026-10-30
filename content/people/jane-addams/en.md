@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Jane Addams
 facts:
   - label: Born
-    value: September 6, 1860 in Cedarville
+    value: September 6, 1860 in Cedarville, United States
   - label: Died
-    value: May 22, 1935 in Chicago
+    value: May 22, 1935 in Chicago, United States
   - label: Field
     value: Journalist, Philosopher, Writer, Women's rights activist
 timeline:

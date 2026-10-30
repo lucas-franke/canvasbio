@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Mary Muller
 facts:
   - label: Born
-    value: September 22, 1819 in London
+    value: September 22, 1819 in London, United Kingdom
   - label: Died
-    value: July 18, 1901 in Blenheim
+    value: July 18, 1901 in Blenheim, New Zealand
   - label: Field
     value: Women's rights activist, Suffragist
 timeline:

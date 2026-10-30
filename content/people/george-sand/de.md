@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von George Sand
 facts:
   - label: Geboren
-    value: 1. Juli 1804 in Paris
+    value: 1. Juli 1804 in Paris, Frankreich
   - label: Gestorben
-    value: 8. Juni 1876 in Nohant-Vic
+    value: 8. Juni 1876 in Nohant-Vic, Frankreich
   - label: Wirkungsfeld
     value: Schriftstellerin, Journalistin, Salonnière, Dramatikerin
 timeline:

@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Clara Gertrud Wichmann
 facts:
   - label: Born
-    value: August 17, 1885 in Hamburg
+    value: August 17, 1885 in Hamburg, Germany
   - label: Died
-    value: February 15, 1922 in The Hague
+    value: February 15, 1922 in The Hague, Netherlands
   - label: Field
     value: Jurist, Pundit, Writer, Women's rights activist
 timeline:

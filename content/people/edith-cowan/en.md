@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Edith Cowan
 facts:
   - label: Born
-    value: August 2, 1861 in Geraldton
+    value: August 2, 1861 in Geraldton, Australia
   - label: Died
-    value: June 9, 1932 in Subiaco
+    value: June 9, 1932 in Subiaco, Australia
   - label: Field
     value: Politician, Suffragette, Social worker
 timeline:

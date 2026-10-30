@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Frances Willard
 facts:
   - label: Geboren
-    value: 28. September 1839 in Churchville
+    value: 28. September 1839 in Churchville, Vereinigte Staaten
   - label: Gestorben
-    value: 17. Februar 1898 in New York City
+    value: 17. Februar 1898 in New York City, Vereinigte Staaten
   - label: Wirkungsfeld
     value: Suffragette, Schriftstellerin, Abstinenzler, Vortragsrednerin
 timeline:

@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Adele Stürzl
 facts:
   - label: Born
-    value: November 23, 1892 in Vienna
+    value: November 23, 1892 in Vienna, Austria
   - label: Died
-    value: June 30, 1944 in Munich Prison
+    value: June 30, 1944 in Munich Prison, Germany
   - label: Field
     value: Resistance fighter, Feminist, Politician
 timeline:

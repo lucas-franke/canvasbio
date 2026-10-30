@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Inessa Armand
 facts:
   - label: Born
-    value: April 26, 1874 in Paris
+    value: April 26, 1874 in Paris, France
   - label: Died
-    value: September 24, 1920 in Nalchik
+    value: September 24, 1920 in Nalchik, Russia
   - label: Field
     value: Revolutionary, Editor, Politician, Communist
 timeline:

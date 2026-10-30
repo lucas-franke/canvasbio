@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Alice Rühle-Gerstel
 facts:
   - label: Geboren
-    value: 24. März 1894 in Prag
+    value: 24. März 1894 in Prag, Tschechien
   - label: Gestorben
-    value: 24. Juni 1943 in Mexiko-Stadt
+    value: 24. Juni 1943 in Mexiko-Stadt, Mexiko
   - label: Wirkungsfeld
     value: Journalistin, Psychologin, Schriftstellerin, Krankenpflegerin
 timeline:

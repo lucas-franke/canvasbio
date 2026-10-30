@@ -5,7 +5,7 @@ summary:
 portraitAlt: Kitty Kenney standing among flowering foxgloves in a garden, 1910
 facts:
   - label: Born
-    value: 1880 in England
+    value: 1880 in England, United Kingdom
   - label: Died
     value: 1952 in United States
   - label: Field

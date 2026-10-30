@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Elisabeth Dmitrieff
 facts:
   - label: Born
-    value: November 1, 1851 in Tver Oblast
+    value: November 1, 1851 in Tver Oblast, Russia
   - label: Died
-    value: in Moscow
+    value: in Moscow, Russia
   - label: Field
     value: Communard, Women's rights activist, Revolutionary
 timeline:

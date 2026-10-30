@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Elise Haighton
 facts:
   - label: Geboren
-    value: 28. Mai 1841 in Amsterdam
+    value: 28. Mai 1841 in Amsterdam, Niederlande
   - label: Gestorben
-    value: 11. August 1911 in Den Haag
+    value: 11. August 1911 in Den Haag, Niederlande
   - label: Wirkungsfeld
     value: Lehrerin, Frauenrechtlerin, Schriftstellerin, Herausgeberin
 timeline:

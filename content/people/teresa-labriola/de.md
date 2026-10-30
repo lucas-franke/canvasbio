@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Teresa Labriola
 facts:
   - label: Geboren
-    value: 17. Februar 1873 in Neapel
+    value: 17. Februar 1873 in Neapel, Italien
   - label: Gestorben
-    value: 6. Februar 1941 in Rom
+    value: 6. Februar 1941 in Rom, Italien
   - label: Wirkungsfeld
     value: Juristin, Schriftstellerin, Suffragette, Rechtsanwältin
 timeline:

@@ -7,7 +7,7 @@ facts:
   - label: Geboren
     value: 6. Juli 1823
   - label: Gestorben
-    value: 27. Juni 1895 in Grödinge parish
+    value: 27. Juni 1895 in Grödinge parish, Schweden
   - label: Wirkungsfeld
     value: Frauenrechtlerin, Redakteurin
 timeline:

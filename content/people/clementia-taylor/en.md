@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Clementia Taylor
 facts:
   - label: Born
-    value: December 17, 1810 in Brockdish
+    value: December 17, 1810 in Brockdish, United Kingdom
   - label: Died
-    value: April 11, 1908 in Brighton
+    value: April 11, 1908 in Brighton, United Kingdom
   - label: Field
     value: Suffragist
 timeline:

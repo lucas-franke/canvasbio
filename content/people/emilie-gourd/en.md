@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Emilie Gourd
 facts:
   - label: Born
-    value: December 19, 1879 in Geneva
+    value: December 19, 1879 in Geneva, Switzerland
   - label: Died
-    value: January 4, 1946 in Geneva
+    value: January 4, 1946 in Geneva, Switzerland
   - label: Field
     value: Journalist, Women's rights activist, Suffragist
 timeline:

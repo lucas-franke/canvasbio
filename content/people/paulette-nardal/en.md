@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Paulette Nardal
 facts:
   - label: Born
-    value: October 12, 1896 in Le François
+    value: October 12, 1896 in Le François, France
   - label: Died
-    value: February 16, 1985 in Fort-de-France
+    value: February 16, 1985 in Fort-de-France, France
   - label: Field
     value: Journalist, Women's rights activist, Writer
 timeline:

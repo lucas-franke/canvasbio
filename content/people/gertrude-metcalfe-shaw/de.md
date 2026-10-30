@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Gertrude Metcalfe-Shaw
 facts:
   - label: Geboren
-    value: 1866 in München
+    value: 1866 in München, Deutschland
   - label: Gestorben
-    value: 24. Januar 1944 in Newquay
+    value: 24. Januar 1944 in Newquay, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Suffragette, Schriftstellerin
 timeline:

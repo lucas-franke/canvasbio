@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Mary Richardson
 facts:
   - label: Born
-    value: 1889 in England
+    value: 1889 in England, United Kingdom
   - label: Died
-    value: November 7, 1961 in Hastings
+    value: November 7, 1961 in Hastings, United Kingdom
   - label: Field
     value: Politician, Suffragette, Suffragist
 timeline:

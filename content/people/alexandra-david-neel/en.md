@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Alexandra David-Néel
 facts:
   - label: Born
-    value: October 24, 1868 in Saint-Mandé
+    value: October 24, 1868 in Saint-Mandé, France
   - label: Died
-    value: September 8, 1969 in Digne-les-Bains
+    value: September 8, 1969 in Digne-les-Bains, France
   - label: Field
     value: Explorer, Anthropologist, Writer, Diarist
 timeline:

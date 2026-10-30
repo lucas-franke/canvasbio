@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Harriette R. Shattuck
 facts:
   - label: Born
-    value: December 4, 1850 in Lowell
+    value: December 4, 1850 in Lowell, United States
   - label: Died
-    value: March 24, 1937 in Malden
+    value: March 24, 1937 in Malden, United States
   - label: Field
     value: Writer, Non-fiction writer, Suffragist
 timeline:

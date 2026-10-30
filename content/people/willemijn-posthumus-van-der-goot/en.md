@@ -7,7 +7,7 @@ facts:
   - label: Born
     value: May 2, 1897 in Pretoria
   - label: Died
-    value: January 16, 1989 in Amsterdam
+    value: January 16, 1989 in Amsterdam, Netherlands
   - label: Field
     value: Writer, Women's rights activist, Resistance fighter, Economist
 timeline:

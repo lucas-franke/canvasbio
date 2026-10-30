@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of George Sand
 facts:
   - label: Born
-    value: July 1, 1804 in Paris
+    value: July 1, 1804 in Paris, France
   - label: Died
-    value: June 8, 1876 in Nohant-Vic
+    value: June 8, 1876 in Nohant-Vic, France
   - label: Field
     value: Writer, Journalist, Salonnière, Playwright
 timeline:

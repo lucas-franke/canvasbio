@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Virginia Woolf
 facts:
   - label: Born
-    value: January 25, 1882 in London
+    value: January 25, 1882 in London, United Kingdom
   - label: Died
-    value: March 28, 1941 in Lewes
+    value: March 28, 1941 in Lewes, United Kingdom
   - label: Field
     value: Novelist, Essayist, Autobiographer, Short story writer
 timeline:

@@ -7,7 +7,7 @@ facts:
   - label: Born
     value: July 6, 1823
   - label: Died
-    value: June 27, 1895 in Grödinge parish
+    value: June 27, 1895 in Grödinge parish, Sweden
   - label: Field
     value: Women's rights activist, Newspaper editor
 timeline:

@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Randi Blehr
 facts:
   - label: Geboren
-    value: 12. Februar 1851 in Bergen
+    value: 12. Februar 1851 in Bergen, Norwegen
   - label: Gestorben
-    value: 13. Juni 1928 in Oslo
+    value: 13. Juni 1928 in Oslo, Norwegen
   - label: Wirkungsfeld
     value: Politikerin, Suffragette
 timeline:

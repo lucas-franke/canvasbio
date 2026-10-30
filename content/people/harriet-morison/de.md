@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Harriet Morison
 facts:
   - label: Geboren
-    value: Juni 1862 in Magherafelt
+    value: Juni 1862 in Magherafelt, Vereinigtes Königreich
   - label: Gestorben
-    value: 19. August 1925 in New Lynn
+    value: 19. August 1925 in New Lynn, Neuseeland
   - label: Wirkungsfeld
     value: Gewerkschafterin, Suffragette, Schneiderin
 timeline:

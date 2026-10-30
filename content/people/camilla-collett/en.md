@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Camilla Collett
 facts:
   - label: Born
-    value: January 23, 1813 in Christiansand
+    value: January 23, 1813 in Christiansand, Denmark–Norway
   - label: Died
-    value: March 6, 1895 in Christiania
+    value: March 6, 1895 in Christiania, Norway
   - label: Field
     value: Essayist, Women's rights activist, Writer
 timeline:

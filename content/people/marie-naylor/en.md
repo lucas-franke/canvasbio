@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Marie Naylor
 facts:
   - label: Born
-    value: 1856 in London
+    value: 1856 in London, United Kingdom
   - label: Died
-    value: October 30, 1940 in London
+    value: October 30, 1940 in London, United Kingdom
   - label: Field
     value: Suffragette, Artist, Feminist
 timeline:

@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Kate Williams Evans
 facts:
   - label: Born
-    value: October 1, 1866 in Llansanffraid-ym-Mechain
+    value: October 1, 1866 in Llansanffraid-ym-Mechain, United Kingdom
   - label: Died
-    value: February 2, 1961 in Oswestry
+    value: February 2, 1961 in Oswestry, United Kingdom
   - label: Field
     value: Suffragette, Homemaker
 timeline:

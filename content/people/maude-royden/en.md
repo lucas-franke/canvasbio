@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Maude Royden
 facts:
   - label: Born
-    value: November 23, 1876 in Mossley Hill
+    value: November 23, 1876 in Mossley Hill, United Kingdom
   - label: Died
-    value: July 30, 1956 in Hampstead
+    value: July 30, 1956 in Hampstead, United Kingdom
   - label: Field
     value: Preacher, Editor, Suffragist, Feminist
 timeline:

@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Laura Clay
 facts:
   - label: Born
-    value: February 9, 1849 in White Hall
+    value: February 9, 1849 in White Hall, United States
   - label: Died
-    value: June 29, 1941 in Kentucky
+    value: June 29, 1941 in Kentucky, United States
   - label: Field
     value: Politician, Suffragist
 timeline:

@@ -7,7 +7,7 @@ facts:
   - label: Geboren
     value: 9. Dezember 1880 in Rangpur
   - label: Gestorben
-    value: 9. Dezember 1932 in Kolkata
+    value: 9. Dezember 1932 in Kolkata, Indien
   - label: Wirkungsfeld
     value: Schriftstellerin, Science-Fiction-Schriftstellerin, Sozialreformerin, Feministin
 timeline:

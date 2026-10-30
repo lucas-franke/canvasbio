@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Alice Stone Blackwell
 facts:
   - label: Geboren
-    value: 14. September 1857 in New Jersey
+    value: 14. September 1857 in New Jersey, Vereinigte Staaten
   - label: Gestorben
-    value: 15. März 1950 in Cambridge
+    value: 15. März 1950 in Cambridge, Vereinigte Staaten
   - label: Wirkungsfeld
     value: Journalistin, Dichterin, Biografin, Frauenrechtlerin
 timeline:

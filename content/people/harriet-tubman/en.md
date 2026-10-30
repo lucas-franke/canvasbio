@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Harriet Tubman
 facts:
   - label: Born
-    value: 1821 in Dorchester County
+    value: 1821 in Dorchester County, United States
   - label: Died
-    value: March 10, 1913 in Auburn
+    value: March 10, 1913 in Auburn, United States
   - label: Field
     value: Writer, Nurse, Human rights activist, Abolitionist
 timeline:

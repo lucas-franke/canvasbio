@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Zona Gale
 facts:
   - label: Geboren
-    value: 26. August 1874 in Portage
+    value: 26. August 1874 in Portage, Vereinigte Staaten
   - label: Gestorben
-    value: 27. Dezember 1938 in Chicago
+    value: 27. Dezember 1938 in Chicago, Vereinigte Staaten
   - label: Wirkungsfeld
     value: Romancière, Schriftstellerin, Dramatikerin, Kurzgeschichtenautorin
 timeline:

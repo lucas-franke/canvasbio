@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Jessie MacKaye
 facts:
   - label: Born
-    value: 1876 in Chicago
+    value: 1876 in Chicago, United States
   - label: Died
-    value: April 18, 1921 in East River
+    value: April 18, 1921 in East River, United States
   - label: Field
     value: Suffragist
 timeline:

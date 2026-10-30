@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Ellison Scotland Gibb
 facts:
   - label: Born
-    value: March 6, 1879 in Glasgow
+    value: March 6, 1879 in Glasgow, United Kingdom
   - label: Died
-    value: 1970 in Ayr
+    value: 1970 in Ayr, United Kingdom
   - label: Field
     value: Activist, Suffragist
 timeline:

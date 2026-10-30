@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Marion Gilchrist
 facts:
   - label: Born
-    value: February 5, 1864 in Bothwell
+    value: February 5, 1864 in Bothwell, United Kingdom
   - label: Died
-    value: September 7, 1952 in Glasgow
+    value: September 7, 1952 in Glasgow, United Kingdom
   - label: Field
     value: Suffragette, Physician, Ophthalmologist
 timeline:

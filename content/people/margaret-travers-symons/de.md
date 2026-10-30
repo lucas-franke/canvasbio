@@ -5,7 +5,7 @@ summary:
 portraitAlt: Porträt von Margaret Travers Symons
 facts:
   - label: Geboren
-    value: 18. August 1879 in Paddington
+    value: 18. August 1879 in Paddington, Vereinigtes Königreich
   - label: Gestorben
     value: 1951 in Vereinigtes Königreich
   - label: Wirkungsfeld

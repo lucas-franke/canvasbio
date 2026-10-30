@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Emma Hardy
 facts:
   - label: Geboren
-    value: 24. November 1840 in Plymouth
+    value: 24. November 1840 in Plymouth, Vereinigtes Königreich
   - label: Gestorben
-    value: 27. November 1912 in Dorchester
+    value: 27. November 1912 in Dorchester, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Suffragette
 timeline:

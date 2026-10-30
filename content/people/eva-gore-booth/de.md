@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Eva Gore-Booth
 facts:
   - label: Geboren
-    value: 22. Mai 1870 in County Sligo
+    value: 22. Mai 1870 in County Sligo, Irland
   - label: Gestorben
-    value: 30. Juni 1926 in London
+    value: 30. Juni 1926 in London, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Dichterin, Revolutionärin, Suffragette, Frauenrechtlerin
 timeline:

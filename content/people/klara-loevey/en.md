@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Klára Lövey
 facts:
   - label: Born
-    value: March 25, 1821 in Sighetu Marmației
+    value: March 25, 1821 in Sighetu Marmației, Romania
   - label: Died
-    value: April 8, 1897 in Budapest
+    value: April 8, 1897 in Budapest, Hungary
   - label: Field
     value: Journalist, Educator, Women's rights activist, Pedagogue
 timeline:

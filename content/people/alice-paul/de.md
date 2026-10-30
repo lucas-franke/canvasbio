@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Alice Paul
 facts:
   - label: Geboren
-    value: 11. Januar 1885 in Mount Laurel
+    value: 11. Januar 1885 in Mount Laurel, Vereinigte Staaten
   - label: Gestorben
-    value: 9. Juli 1977 in Moorestown
+    value: 9. Juli 1977 in Moorestown, Vereinigte Staaten
   - label: Wirkungsfeld
     value: Juristin, Frauenrechtlerin, Suffragette
 timeline:

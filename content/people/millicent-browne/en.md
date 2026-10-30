@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Millicent Browne
 facts:
   - label: Born
-    value: December 25, 1881 in Fulham
+    value: December 25, 1881 in Fulham, United Kingdom
   - label: Died
-    value: February 8, 1975 in Sutton Coldfield
+    value: February 8, 1975 in Sutton Coldfield, United Kingdom
   - label: Field
     value: Suffragette, Teacher
 timeline:

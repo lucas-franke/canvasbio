@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Marie Souvestre
 facts:
   - label: Born
-    value: April 28, 1835 in Brest
+    value: April 28, 1835 in Brest, France
   - label: Died
-    value: March 30, 1905 in Surrey
+    value: March 30, 1905 in Surrey, United Kingdom
   - label: Field
     value: Educator, Pedagogue, Feminist
 timeline:

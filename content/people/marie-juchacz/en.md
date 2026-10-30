@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Marie Juchacz
 facts:
   - label: Born
-    value: March 15, 1879 in Gorzów Wielkopolski
+    value: March 15, 1879 in Gorzów Wielkopolski, Poland
   - label: Died
-    value: January 28, 1956 in Düsseldorf
+    value: January 28, 1956 in Düsseldorf, Germany
   - label: Field
     value: Politician, Domestic worker, Factory worker, Licensed practical nurse
 timeline:

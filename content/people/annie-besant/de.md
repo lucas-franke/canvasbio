@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Annie Besant
 facts:
   - label: Geboren
-    value: 1. Oktober 1847 in Clapham
+    value: 1. Oktober 1847 in Clapham, Vereinigtes Königreich
   - label: Gestorben
-    value: 20. September 1933 in Adyar
+    value: 20. September 1933 in Adyar, Indien
   - label: Wirkungsfeld
     value: Essayistin, Schriftstellerin, Rednerin, Journalistin
 timeline:

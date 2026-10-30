@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Ishbel Maria Hamilton-Gordon
 facts:
   - label: Geboren
-    value: 14. März 1857 in London
+    value: 14. März 1857 in London, Vereinigtes Königreich
   - label: Gestorben
-    value: 18. April 1939 in Rubislaw Den Nursing Home Including Gatepiers And Walls, 27 Rubislaw Den North, Aberdeen
+    value: 18. April 1939 in Rubislaw Den Nursing Home Including Gatepiers And Walls, 27 Rubislaw Den North, Aberdeen, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Schriftstellerin, Herausgeberin, Suffragette, Frauenrechtlerin
 timeline:

@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Marguerite Coppin
 facts:
   - label: Born
-    value: February 2, 1867 in Saint-Josse-ten-Noode
+    value: February 2, 1867 in Saint-Josse-ten-Noode, Belgium
   - label: Died
-    value: November 7, 1947 in Clevedon
+    value: November 7, 1947 in Clevedon, United Kingdom
   - label: Field
     value: Poet, Novelist, Women's rights activist, Translator
 timeline:

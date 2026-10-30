@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Marie Equi
 facts:
   - label: Geboren
-    value: 7. April 1872 in New Bedford
+    value: 7. April 1872 in New Bedford, Vereinigte Staaten
   - label: Gestorben
-    value: 13. Juli 1952 in Portland
+    value: 13. Juli 1952 in Portland, Vereinigte Staaten
   - label: Wirkungsfeld
     value: Ärztin, Gewerkschafterin, Friedensaktivistin, Suffragette
 timeline:

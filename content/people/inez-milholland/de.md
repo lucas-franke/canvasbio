@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Inez Milholland
 facts:
   - label: Geboren
-    value: 6. August 1886 in Brooklyn
+    value: 6. August 1886 in Brooklyn, Vereinigte Staaten
   - label: Gestorben
-    value: 25. November 1916 in Good Samaritan Hospital
+    value: 25. November 1916 in Good Samaritan Hospital, Vereinigte Staaten
   - label: Wirkungsfeld
     value: Juristin, Rechtsanwältin, Friedensaktivistin, Suffragette
 timeline:

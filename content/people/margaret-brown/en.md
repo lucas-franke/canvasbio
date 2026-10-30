@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Margaret Brown
 facts:
   - label: Born
-    value: July 18, 1867 in Hannibal
+    value: July 18, 1867 in Hannibal, United States
   - label: Died
-    value: October 26, 1932 in New York City
+    value: October 26, 1932 in New York City, United States
   - label: Field
     value: Philanthropist, Actress, Socialite, Suffragist
 timeline:

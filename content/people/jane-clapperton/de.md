@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Jane Clapperton
 facts:
   - label: Geboren
-    value: 1832 in Edinburgh
+    value: 1832 in Edinburgh, Vereinigtes Königreich
   - label: Gestorben
-    value: 1914 in Edinburgh
+    value: 1914 in Edinburgh, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Philosophin, Suffragette, Sozialistin
 timeline:

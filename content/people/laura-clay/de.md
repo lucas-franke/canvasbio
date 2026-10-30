@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Laura Clay
 facts:
   - label: Geboren
-    value: 9. Februar 1849 in White Hall
+    value: 9. Februar 1849 in White Hall, Vereinigte Staaten
   - label: Gestorben
-    value: 29. Juni 1941 in Kentucky
+    value: 29. Juni 1941 in Kentucky, Vereinigte Staaten
   - label: Wirkungsfeld
     value: Politikerin, Suffragette
 timeline:

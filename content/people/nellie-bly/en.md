@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Nellie Bly
 facts:
   - label: Born
-    value: May 5, 1864 in Burrell Township
+    value: May 5, 1864 in Burrell Township, United States
   - label: Died
-    value: January 27, 1922 in New York City
+    value: January 27, 1922 in New York City, United States
   - label: Field
     value: Writer, Journalist, Novelist, Inventor
 timeline:

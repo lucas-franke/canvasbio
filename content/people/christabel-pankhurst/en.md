@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Christabel Pankhurst
 facts:
   - label: Born
-    value: September 22, 1880 in Trafford
+    value: September 22, 1880 in Trafford, United Kingdom
   - label: Died
-    value: February 13, 1958 in Santa Monica
+    value: February 13, 1958 in Santa Monica, United States
   - label: Field
     value: Suffragist, Women's rights activist, Architect, Editor
 timeline:

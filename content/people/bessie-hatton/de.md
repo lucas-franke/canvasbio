@@ -5,7 +5,7 @@ summary:
 portraitAlt: Porträt von Bessie Hatton
 facts:
   - label: Geboren
-    value: 1867 in Claines
+    value: 1867 in Claines, Vereinigtes Königreich
   - label: Gestorben
     value: 25. März 1964
   - label: Wirkungsfeld

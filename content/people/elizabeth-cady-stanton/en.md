@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Elizabeth Cady Stanton
 facts:
   - label: Born
-    value: November 12, 1815 in Johnstown
+    value: November 12, 1815 in Johnstown, United States
   - label: Died
-    value: October 26, 1902 in New York City
+    value: October 26, 1902 in New York City, United States
   - label: Field
     value: Writer, Actress, Women's rights activist, Abolitionist
 timeline:

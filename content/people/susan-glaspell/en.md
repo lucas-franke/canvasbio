@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Susan Glaspell
 facts:
   - label: Born
-    value: July 1, 1876 in Davenport
+    value: July 1, 1876 in Davenport, United States
   - label: Died
-    value: July 27, 1948 in Provincetown
+    value: July 27, 1948 in Provincetown, United States
   - label: Field
     value: Journalist, Novelist, Playwright, Writer
 timeline:

@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Mary Muller
 facts:
   - label: Geboren
-    value: 22. September 1819 in London
+    value: 22. September 1819 in London, Vereinigtes Königreich
   - label: Gestorben
-    value: 18. Juli 1901 in Blenheim
+    value: 18. Juli 1901 in Blenheim, Neuseeland
   - label: Wirkungsfeld
     value: Frauenrechtlerin, Suffragette
 timeline:

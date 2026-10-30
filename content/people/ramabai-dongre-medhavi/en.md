@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Ramabai Dongre Medhavi
 facts:
   - label: Born
-    value: April 23, 1858 in Mangaluru
+    value: April 23, 1858 in Mangaluru, India
   - label: Died
-    value: April 5, 1922 in Pune division
+    value: April 5, 1922 in Pune division, India
   - label: Field
     value: Autobiographer, Bible translator, Translator, Sociologist
 timeline:

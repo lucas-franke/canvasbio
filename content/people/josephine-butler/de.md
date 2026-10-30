@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Josephine Butler
 facts:
   - label: Geboren
-    value: 13. April 1828 in Glendale
+    value: 13. April 1828 in Glendale, Vereinigtes Königreich
   - label: Gestorben
-    value: 30. Dezember 1906 in Wooler
+    value: 30. Dezember 1906 in Wooler, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Frauenrechtlerin, Sozialreformerin
 timeline:

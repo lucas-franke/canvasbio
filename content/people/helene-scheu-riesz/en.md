@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Helene Scheu-Riesz
 facts:
   - label: Born
-    value: September 18, 1880 in Olomouc
+    value: September 18, 1880 in Olomouc, Czech Republic
   - label: Died
-    value: January 8, 1970 in Vienna
+    value: January 8, 1970 in Vienna, Austria
   - label: Field
     value: Translator, Publisher, Journalist, Writer
 timeline:

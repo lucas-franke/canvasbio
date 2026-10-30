@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Florence Dixie
 facts:
   - label: Born
-    value: May 24, 1855 in Cummertrees
+    value: May 24, 1855 in Cummertrees, United Kingdom
   - label: Died
-    value: November 7, 1905 in London
+    value: November 7, 1905 in London, United Kingdom
   - label: Field
     value: Writer, Novelist, Journalist, Travel writer
 timeline:

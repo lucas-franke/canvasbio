@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Edith Rigby
 facts:
   - label: Born
-    value: October 18, 1872 in Preston
+    value: October 18, 1872 in Preston, United Kingdom
   - label: Died
-    value: July 23, 1950 in Llanrhos
+    value: July 23, 1950 in Llanrhos, United Kingdom
   - label: Field
     value: Suffragette
 timeline:

@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Emily Davison
 facts:
   - label: Geboren
-    value: 11. Oktober 1867 in Blackheath
+    value: 11. Oktober 1867 in Blackheath, Vereinigtes Königreich
   - label: Gestorben
-    value: 8. Juni 1913 in Epsom
+    value: 8. Juni 1913 in Epsom, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Suffragette, Frauenrechtlerin, Lehrerin, Feministin
 timeline:

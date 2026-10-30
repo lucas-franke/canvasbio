@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Klára Lövey
 facts:
   - label: Geboren
-    value: 25. März 1821 in Marmaroschsiget
+    value: 25. März 1821 in Marmaroschsiget, Rumänien
   - label: Gestorben
-    value: 8. April 1897 in Budapest
+    value: 8. April 1897 in Budapest, Ungarn
   - label: Wirkungsfeld
     value: Journalistin, Erzieherin, Frauenrechtlerin, Pädagogin
 timeline:

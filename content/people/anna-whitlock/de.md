@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Anna Whitlock
 facts:
   - label: Geboren
-    value: 13. Juni 1852 in Finnish church parish
+    value: 13. Juni 1852 in Finnish church parish, Schweden
   - label: Gestorben
-    value: 16. Juni 1930 in Danderyd
+    value: 16. Juni 1930 in Danderyd, Schweden
   - label: Wirkungsfeld
     value: Journalistin, Frauenrechtlerin, Schulleiterin, Suffragette
 timeline:

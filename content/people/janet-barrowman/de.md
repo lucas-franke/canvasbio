@@ -5,9 +5,9 @@ summary:
 portraitAlt: Gruppenfoto von 1912 – Janet Barrowman (zweite von links) mit weiteren Frauenrechtlerinnen in einem Garten
 facts:
   - label: Geboren
-    value: 1879 in Glasgow
+    value: 1879 in Glasgow, Vereinigtes Königreich
   - label: Gestorben
-    value: 1955 in Glasgow
+    value: 1955 in Glasgow, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Aktivistin, Suffragette
 timeline:

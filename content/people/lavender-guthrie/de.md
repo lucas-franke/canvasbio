@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Lavender Guthrie
 facts:
   - label: Geboren
-    value: 1889 in Glasgow
+    value: 1889 in Glasgow, Vereinigtes Königreich
   - label: Gestorben
-    value: Juni 1914 in London
+    value: Juni 1914 in London, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Suffragette
 timeline:

@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Margarethe Faas-Hardegger
 facts:
   - label: Geboren
-    value: 20. Februar 1882 in Bern
+    value: 20. Februar 1882 in Bern, Schweiz
   - label: Gestorben
-    value: 23. September 1963 in Minusio
+    value: 23. September 1963 in Minusio, Schweiz
   - label: Wirkungsfeld
     value: Gewerkschafterin, Frauenrechtlerin, Herausgeberin, Sozialistin
 timeline:

@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Anita Augspurg
 facts:
   - label: Born
-    value: September 22, 1857 in Verden
+    value: September 22, 1857 in Verden, Germany
   - label: Died
-    value: December 20, 1943 in Zurich
+    value: December 20, 1943 in Zurich, Switzerland
   - label: Field
     value: Actress, Politician, Lawyer, Stage actress
 timeline:

@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Halide Edip Adıvar
 facts:
   - label: Geboren
-    value: 11. Juni 1884 in Istanbul
+    value: 11. Juni 1884 in Istanbul, Türkei
   - label: Gestorben
-    value: 9. Januar 1964 in Istanbul
+    value: 9. Januar 1964 in Istanbul, Türkei
   - label: Wirkungsfeld
     value: Politikerin, Romancière, Schriftstellerin, Hochschullehrerin
 timeline:

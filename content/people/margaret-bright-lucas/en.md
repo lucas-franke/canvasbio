@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Margaret Bright Lucas
 facts:
   - label: Born
-    value: July 14, 1818 in Rochdale
+    value: July 14, 1818 in Rochdale, United Kingdom
   - label: Died
-    value: February 4, 1890 in London
+    value: February 4, 1890 in London, United Kingdom
   - label: Field
     value: Women's rights activist, Suffragist
 timeline:

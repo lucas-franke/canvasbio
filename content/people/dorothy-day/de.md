@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Dorothy Day
 facts:
   - label: Geboren
-    value: 8. November 1897 in Brooklyn Heights
+    value: 8. November 1897 in Brooklyn Heights, Vereinigte Staaten
   - label: Gestorben
-    value: 29. November 1980 in New York City
+    value: 29. November 1980 in New York City, Vereinigte Staaten
   - label: Wirkungsfeld
     value: Journalistin, Schriftstellerin, Sozialaktivistin, Herausgeberin
 timeline:

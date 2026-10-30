@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Lucy Stone
 facts:
   - label: Geboren
-    value: 13. August 1818 in West Brookfield
+    value: 13. August 1818 in West Brookfield, Vereinigte Staaten
   - label: Gestorben
-    value: 19. Oktober 1893 in Dorchester
+    value: 19. Oktober 1893 in Dorchester, Vereinigte Staaten
   - label: Wirkungsfeld
     value: Journalistin, Frauenrechtlerin, Herausgeberin, Abolitionistin
 timeline:

@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Margit Kaffka
 facts:
   - label: Born
-    value: June 10, 1880 in Carei
+    value: June 10, 1880 in Carei, Romania
   - label: Died
-    value: December 1, 1918 in Budapest
+    value: December 1, 1918 in Budapest, Hungary
   - label: Field
     value: Poet, Writer, Women's rights activist, Novelist
 timeline:

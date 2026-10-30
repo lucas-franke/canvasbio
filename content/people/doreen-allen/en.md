@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Doreen Allen
 facts:
   - label: Born
-    value: 1879 in Dartford
+    value: 1879 in Dartford, United Kingdom
   - label: Died
-    value: June 18, 1963 in Brighton
+    value: June 18, 1963 in Brighton, United Kingdom
   - label: Field
     value: Suffragette
 timeline:

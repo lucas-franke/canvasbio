@@ -141,8 +141,17 @@ const T = {
 
 const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
-function dateAndPlace(date: string | undefined, place: string | undefined, lang: Lang) {
-  return [date && formatPartialDate(date, lang), place && `${T.in[lang]} ${place}`].filter(Boolean).join(" ");
+/** "15. Februar 1844 in Honfleur, Frankreich"; the country is left out when it is the place itself. */
+function dateAndPlace(
+  date: string | undefined,
+  place: string | undefined,
+  country: string | undefined,
+  lang: Lang,
+) {
+  const where = place && (country && country !== place ? `${place}, ${country}` : place);
+  return [date && formatPartialDate(date, lang), where && `${T.in[lang]} ${where}`]
+    .filter(Boolean)
+    .join(" ");
 }
 
 interface TimelineEntry {
@@ -389,6 +398,7 @@ async function main() {
     usedSlugs.add(slug);
 
     const countryKeys: string[] = [];
+    const countryOfPlace: Record<string, string | undefined> = {};
     const placeKey = (prop: string) => {
       const place = cityOf(refs.get(entityIds(e, prop)[0]));
       const en = label(place, "en");
@@ -397,6 +407,7 @@ async function main() {
       taxonomy.place[key] ??= { de: label(place, "de")!, en };
       const country = countryKey(place);
       if (country) countryKeys.push(country);
+      countryOfPlace[key] = country;
       return key;
     };
     const bornPlace = placeKey("P19");
@@ -442,6 +453,7 @@ async function main() {
         ...new Set(occupations.map((o) => femaleLabel(o, lang)).filter(Boolean)),
       ] as string[];
       const place = (key?: string) => (key ? taxonomy.place[key][lang] : undefined);
+      const countryOf = (key?: string) => (key ? countryOfPlace[key] : undefined);
       const lifespan = [born && yearOf(born), died && yearOf(died)].filter(Boolean).join("–");
       // Lifespan is shown on its own line, so "(1874-1939)" at the end of descriptions is redundant.
       const description = e.descriptions[lang]?.value.replace(/\s*\(\d{4}\s*[–-]\s*\d{4}\)\s*$/, "");
@@ -454,10 +466,10 @@ async function main() {
         portraitAlt: curated?.portraitAlt[lang] ?? T.portraitAlt[lang](name),
         facts: [
           ...(born || bornPlace
-            ? [{ label: T.born[lang], value: dateAndPlace(born, place(bornPlace), lang) }]
+            ? [{ label: T.born[lang], value: dateAndPlace(born, place(bornPlace), place(countryOf(bornPlace)), lang) }]
             : []),
           ...(died || diedPlace
-            ? [{ label: T.died[lang], value: dateAndPlace(died, place(diedPlace), lang) }]
+            ? [{ label: T.died[lang], value: dateAndPlace(died, place(diedPlace), place(countryOf(diedPlace)), lang) }]
             : []),
           ...(occupationNames.length > 0
             ? [{ label: T.field[lang], value: occupationNames.slice(0, 4).map(capitalize).join(", ") }]

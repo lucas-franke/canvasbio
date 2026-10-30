@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Vilhelmine Ullman
 facts:
   - label: Born
-    value: March 16, 1816 in Oslo
+    value: March 16, 1816 in Oslo, Norway
   - label: Died
-    value: April 28, 1915 in Oslo
+    value: April 28, 1915 in Oslo, Norway
   - label: Field
     value: Writer, Literary critic, Teacher, Pedagogue
 timeline:

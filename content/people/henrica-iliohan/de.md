@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Henrica Iliohan
 facts:
   - label: Geboren
-    value: 3. Mai 1850 in Vorden
+    value: 3. Mai 1850 in Vorden, Niederlande
   - label: Gestorben
-    value: 1. Juli 1921 in Oakland
+    value: 1. Juli 1921 in Oakland, Vereinigte Staaten
   - label: Wirkungsfeld
     value: Übersetzerin, Suffragette
 timeline:

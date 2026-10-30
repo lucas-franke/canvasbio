@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Mathilde Berdenis van Berlekom
 facts:
   - label: Geboren
-    value: 14. März 1862 in Middelburg
+    value: 14. März 1862 in Middelburg, Niederlande
   - label: Gestorben
-    value: 22. April 1952 in Amsterdam
+    value: 22. April 1952 in Amsterdam, Niederlande
   - label: Wirkungsfeld
     value: Frauenrechtlerin, Herausgeberin, Politikerin
 timeline:

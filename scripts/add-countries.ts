@@ -50,3 +50,36 @@ for (const [file, person] of people) {
 }
 await writeFile(taxonomyFile, `${JSON.stringify(taxonomy, null, 2)}\n`);
 console.log(`${updated} people updated, ${Object.keys(taxonomy.place).length} place entries.`);
+
+// Facts "Geboren: … in Honfleur" -> "… in Honfleur, Frankreich" in de.md and en.md.
+const FACT_LABELS = { born: { de: "Geboren", en: "Born" }, died: { de: "Gestorben", en: "Died" } } as const;
+let rewritten = 0;
+for (const [file, person] of people) {
+  const entity = entities.get(qidOf(person) ?? "");
+  if (!entity) continue;
+  for (const [kind, prop] of [
+    ["born", "P19"],
+    ["died", "P20"],
+  ] as const) {
+    const placeKey = person[kind]?.place;
+    const country = countries.get(entityIds(entity, prop)[0] ?? "");
+    if (!placeKey || !country) continue;
+    for (const lang of ["de", "en"] as const) {
+      const city = taxonomy.place[placeKey]?.[lang];
+      const name = label(country, lang) ?? label(country, "en");
+      if (!city || !name || city === name) continue;
+      const mdFile = path.join(path.dirname(file), `${lang}.md`);
+      const text = await readFile(mdFile, "utf8");
+      const factLabel = FACT_LABELS[kind][lang];
+      // Line based, so the rest of the file stays byte-identical; skipped once the country is there.
+      const lines = text.split("\n");
+      const at = lines.findIndex((l) => l.trim() === `- label: ${factLabel}`);
+      const value = lines[at + 1]?.replace(/\r$/, "");
+      if (at < 0 || !value?.trimStart().startsWith("value: ") || !value.endsWith(` ${city}`)) continue;
+      lines[at + 1] = lines[at + 1]!.replace(value, `${value}, ${name}`);
+      await writeFile(mdFile, lines.join("\n"));
+      rewritten++;
+    }
+  }
+}
+console.log(`${rewritten} fact lines extended with the country.`);

@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Harriet Martineau
 facts:
   - label: Geboren
-    value: 12. Juni 1802 in Norwich
+    value: 12. Juni 1802 in Norwich, Vereinigtes Königreich
   - label: Gestorben
-    value: 27. Juni 1876 in Ambleside
+    value: 27. Juni 1876 in Ambleside, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Linguistin, Journalistin, Wirtschaftswissenschaftlerin, Historikerin
 timeline:

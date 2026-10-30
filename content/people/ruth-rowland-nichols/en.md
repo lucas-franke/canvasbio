@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Ruth Rowland Nichols
 facts:
   - label: Born
-    value: February 23, 1901 in New York City
+    value: February 23, 1901 in New York City, United States
   - label: Died
-    value: September 25, 1960 in New York City
+    value: September 25, 1960 in New York City, United States
   - label: Field
     value: Aircraft pilot, Feminist
 timeline:

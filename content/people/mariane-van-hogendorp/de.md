@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Mariane van Hogendorp
 facts:
   - label: Geboren
-    value: 1. August 1834 in Den Haag
+    value: 1. August 1834 in Den Haag, Niederlande
   - label: Gestorben
-    value: 17. September 1909 in Lausanne
+    value: 17. September 1909 in Lausanne, Schweiz
   - label: Wirkungsfeld
     value: Schriftstellerin, Frauenrechtlerin, Suffragette, Herausgeberin
 timeline:

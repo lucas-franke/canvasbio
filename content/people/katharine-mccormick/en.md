@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Katharine McCormick
 facts:
   - label: Born
-    value: August 27, 1875 in Dexter
+    value: August 27, 1875 in Dexter, United States
   - label: Died
-    value: December 28, 1967 in Boston
+    value: December 28, 1967 in Boston, United States
   - label: Field
     value: Biologist, Suffragist, Feminist
 timeline:

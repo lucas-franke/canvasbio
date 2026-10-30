@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Una Duval
 facts:
   - label: Geboren
-    value: 1880 in Upper Norwood
+    value: 1880 in Upper Norwood, Vereinigtes Königreich
   - label: Gestorben
-    value: 24. Februar 1975 in London
+    value: 24. Februar 1975 in London, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Suffragette
 timeline:

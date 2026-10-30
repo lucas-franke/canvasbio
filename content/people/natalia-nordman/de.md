@@ -7,7 +7,7 @@ facts:
   - label: Geboren
     value: 14. Dezember 1863 in Helsinki
   - label: Gestorben
-    value: 30. Juni 1914 in Orselina
+    value: 30. Juni 1914 in Orselina, Schweiz
   - label: Wirkungsfeld
     value: Schriftstellerin, Feministin
 timeline:

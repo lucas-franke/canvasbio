@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Lillian Dove-Willcox
 facts:
   - label: Born
-    value: January 25, 1875 in Bedminster
+    value: January 25, 1875 in Bedminster, United Kingdom
   - label: Died
-    value: 1963 in Ealing
+    value: 1963 in Ealing, United Kingdom
   - label: Field
     value: Suffragette
 timeline:

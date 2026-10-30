@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Sybil Thomas, Viscountess Rhondda
 facts:
   - label: Geboren
-    value: 25. Februar 1857 in Brighton
+    value: 25. Februar 1857 in Brighton, Vereinigtes Königreich
   - label: Gestorben
-    value: 11. März 1941 in Newport
+    value: 11. März 1941 in Newport, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Frauenrechtlerin, Suffragette
 timeline:

@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Harriet Hanson Robinson
 facts:
   - label: Born
-    value: February 8, 1825 in Boston
+    value: February 8, 1825 in Boston, United States
   - label: Died
-    value: December 22, 1911 in Malden
+    value: December 22, 1911 in Malden, United States
   - label: Field
     value: Writer, Suffragist
 timeline:

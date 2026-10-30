@@ -7,7 +7,7 @@ facts:
   - label: Geboren
     value: 9. August 1872 in Nové Mesto nad Váhom
   - label: Gestorben
-    value: 19. August 1927 in Wien
+    value: 19. August 1927 in Wien, Österreich
   - label: Wirkungsfeld
     value: Frauenrechtlerin, Lehrerin, Friedensaktivistin, Herausgeberin
 timeline:

@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Elizabeth Gurley Flynn
 facts:
   - label: Geboren
-    value: 7. August 1890 in Concord
+    value: 7. August 1890 in Concord, Vereinigte Staaten
   - label: Gestorben
-    value: 5. September 1964 in Moskau
+    value: 5. September 1964 in Moskau, Russland
   - label: Wirkungsfeld
     value: Frauenrechtlerin, Aktivistin, Suffragette, Gewerkschafterin
 timeline:

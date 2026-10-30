@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Mona Caird
 facts:
   - label: Geboren
-    value: 24. Mai 1854 in Ryde
+    value: 24. Mai 1854 in Ryde, Vereinigtes Königreich
   - label: Gestorben
-    value: 4. Februar 1932 in London
+    value: 4. Februar 1932 in London, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Schriftstellerin, Romancière, Frauenrechtlerin, Suffragette
 timeline:

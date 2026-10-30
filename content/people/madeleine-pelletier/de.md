@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Madeleine Pelletier
 facts:
   - label: Geboren
-    value: 18. Mai 1874 in Paris
+    value: 18. Mai 1874 in Paris, Frankreich
   - label: Gestorben
-    value: 29. Dezember 1939 in Épinay-sur-Orge
+    value: 29. Dezember 1939 in Épinay-sur-Orge, Frankreich
   - label: Wirkungsfeld
     value: Politikerin, Anthropologin, Psychiaterin, Autobiografin
 timeline:

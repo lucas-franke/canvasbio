@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Victoria Earle Matthews
 facts:
   - label: Born
-    value: May 27, 1861 in Fort Valley
+    value: May 27, 1861 in Fort Valley, United States
   - label: Died
-    value: March 10, 1907 in New York City
+    value: March 10, 1907 in New York City, United States
   - label: Field
     value: Missionary, Suffragist, Journalist
 timeline:

@@ -5,7 +5,7 @@ summary:
 portraitAlt: Portrait of Ellen Hughes
 facts:
   - label: Born
-    value: May 18, 1862 in Llanengan
+    value: May 18, 1862 in Llanengan, United Kingdom
   - label: Died
     value: May 11, 1927
   - label: Field

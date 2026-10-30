@@ -7,7 +7,7 @@ facts:
   - label: Born
     value: August 15, 1870
   - label: Died
-    value: June 23, 1947 in Färgelanda
+    value: June 23, 1947 in Färgelanda, Sweden
   - label: Field
     value: Photographer, Female supporter of women's right to vote, Suffragist
 timeline:

@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Margaret Fuller
 facts:
   - label: Geboren
-    value: 23. Mai 1810 in Cambridge
+    value: 23. Mai 1810 in Cambridge, Vereinigte Staaten
   - label: Gestorben
-    value: 19. Juli 1850 in Fire Island
+    value: 19. Juli 1850 in Fire Island, Vereinigte Staaten
   - label: Wirkungsfeld
     value: Journalistin, Übersetzerin, Reporterin, Essayistin
 timeline:

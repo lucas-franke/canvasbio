@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Victoria Woodhull
 facts:
   - label: Born
-    value: September 23, 1838 in Homer
+    value: September 23, 1838 in Homer, United States
   - label: Died
-    value: June 9, 1927 in Bredon's Norton
+    value: June 9, 1927 in Bredon's Norton, United Kingdom
   - label: Field
     value: Stockbroker, Suffragist, Editor, Politician
 timeline:

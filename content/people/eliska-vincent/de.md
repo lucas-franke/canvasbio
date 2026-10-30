@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Eliska Vincent
 facts:
   - label: Geboren
-    value: 29. Juni 1841 in Mézières-en-Drouais
+    value: 29. Juni 1841 in Mézières-en-Drouais, Frankreich
   - label: Gestorben
-    value: 19. Februar 1914 in Asnières-sur-Seine
+    value: 19. Februar 1914 in Asnières-sur-Seine, Frankreich
   - label: Wirkungsfeld
     value: Frauenrechtlerin, Herausgeberin, Kommunardin
 timeline:

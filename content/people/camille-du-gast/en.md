@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Camille du Gast
 facts:
   - label: Born
-    value: May 30, 1868 in Paris
+    value: May 30, 1868 in Paris, France
   - label: Died
-    value: April 24, 1942 in Paris
+    value: April 24, 1942 in Paris, France
   - label: Field
     value: Nurse, Fencer, Balloonist, Racing automobile driver
 timeline:

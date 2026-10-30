@@ -7,7 +7,7 @@ facts:
   - label: Geboren
     value: 24. März 1869 in Monastyryska
   - label: Gestorben
-    value: 29. März 1956 in Ottawa
+    value: 29. März 1956 in Ottawa, Kanada
   - label: Wirkungsfeld
     value: Journalistin, Schriftstellerin, Feministin
 timeline:

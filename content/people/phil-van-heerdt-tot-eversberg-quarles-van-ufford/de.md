@@ -7,7 +7,7 @@ facts:
   - label: Geboren
     value: 5. Dezember 1862 in Ketandan
   - label: Gestorben
-    value: 2. Dezember 1939 in Den Haag
+    value: 2. Dezember 1939 in Den Haag, Niederlande
   - label: Wirkungsfeld
     value: Frauenrechtlerin, Pazifistin, Malerin, Zeichnerin
 timeline:

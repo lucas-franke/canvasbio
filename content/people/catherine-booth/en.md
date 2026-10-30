@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Catherine Booth
 facts:
   - label: Born
-    value: January 17, 1829 in Ashbourne
+    value: January 17, 1829 in Ashbourne, United Kingdom
   - label: Died
-    value: October 4, 1890 in Clacton-on-Sea
+    value: October 4, 1890 in Clacton-on-Sea, United Kingdom
   - label: Field
     value: Theologian, Evangelist, Writer, Missionary
 timeline:

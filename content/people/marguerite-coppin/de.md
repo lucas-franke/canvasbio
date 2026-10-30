@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Marguerite Coppin
 facts:
   - label: Geboren
-    value: 2. Februar 1867 in Sint-Joost-ten-Node
+    value: 2. Februar 1867 in Sint-Joost-ten-Node, Belgien
   - label: Gestorben
-    value: 7. November 1947 in Clevedon
+    value: 7. November 1947 in Clevedon, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Dichterin, Romancière, Frauenrechtlerin, Übersetzerin
 timeline:

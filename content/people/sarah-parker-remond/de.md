@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Sarah Parker Remond
 facts:
   - label: Geboren
-    value: 6. Juni 1824 in Salem
+    value: 6. Juni 1824 in Salem, Vereinigte Staaten
   - label: Gestorben
-    value: 13. Dezember 1894 in Rom
+    value: 13. Dezember 1894 in Rom, Italien
   - label: Wirkungsfeld
     value: Ärztin, Autobiografin, Abolitionistin, Suffragette
 timeline:

@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Florence Norman
 facts:
   - label: Geboren
-    value: 1881 in Groß-London
+    value: 1881 in Groß-London, Vereinigtes Königreich
   - label: Gestorben
-    value: 1. März 1964 in Antibes
+    value: 1. März 1964 in Antibes, Frankreich
   - label: Wirkungsfeld
     value: Politikerin, Suffragette
 timeline:

@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Helen Keller
 facts:
   - label: Geboren
-    value: 27. Juni 1880 in Ivy Green
+    value: 27. Juni 1880 in Ivy Green, Vereinigte Staaten
   - label: Gestorben
-    value: 1. Juni 1968 in Easton
+    value: 1. Juni 1968 in Easton, Vereinigte Staaten
   - label: Wirkungsfeld
     value: Schriftstellerin, Rednerin, Essayistin, Politische Aktivistin
 timeline:

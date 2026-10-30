@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Marguerite Gobat
 facts:
   - label: Born
-    value: February 23, 1870 in Delémont
+    value: February 23, 1870 in Delémont, Switzerland
   - label: Died
-    value: July 19, 1937 in Evilard
+    value: July 19, 1937 in Evilard, Switzerland
   - label: Field
     value: Women's rights activist, Translator, Editor, Teacher
 timeline:

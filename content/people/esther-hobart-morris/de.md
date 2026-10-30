@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Esther Hobart Morris
 facts:
   - label: Geboren
-    value: 8. August 1814 in Tioga County
+    value: 8. August 1814 in Tioga County, Vereinigte Staaten
   - label: Gestorben
-    value: 3. April 1902 in Cheyenne
+    value: 3. April 1902 in Cheyenne, Vereinigte Staaten
   - label: Wirkungsfeld
     value: Richterin, Suffragette
 timeline:

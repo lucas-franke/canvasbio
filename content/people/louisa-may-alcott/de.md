@@ -5,7 +5,7 @@ summary:
 portraitAlt: Porträt von Louisa May Alcott
 facts:
   - label: Geboren
-    value: 29. November 1832 in Germantown
+    value: 29. November 1832 in Germantown, Vereinigte Staaten
   - label: Gestorben
     value: 6. März 1888 in Roxbury
   - label: Wirkungsfeld

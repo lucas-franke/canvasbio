@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Anne Cobden-Sanderson
 facts:
   - label: Born
-    value: March 26, 1853 in London
+    value: March 26, 1853 in London, United Kingdom
   - label: Died
-    value: November 2, 1926 in Hammersmith
+    value: November 2, 1926 in Hammersmith, United Kingdom
   - label: Field
     value: Suffragette
 timeline:

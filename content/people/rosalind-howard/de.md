@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Rosalind Howard
 facts:
   - label: Geboren
-    value: 20. Februar 1845 in London
+    value: 20. Februar 1845 in London, Vereinigtes Königreich
   - label: Gestorben
-    value: 12. August 1921 in London
+    value: 12. August 1921 in London, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Suffragette, Philanthropin, Feministin
 timeline:

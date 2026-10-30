@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Cecilie Thoresen
 facts:
   - label: Geboren
-    value: 7. März 1858 in Eidsvoll
+    value: 7. März 1858 in Eidsvoll, Norwegen
   - label: Gestorben
-    value: 13. November 1911 in Christiania
+    value: 13. November 1911 in Christiania, Norwegen
   - label: Wirkungsfeld
     value: Politikerin, Frauenrechtlerin, Feministin
 timeline:

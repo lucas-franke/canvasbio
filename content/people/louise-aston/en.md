@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Louise Aston
 facts:
   - label: Born
-    value: November 26, 1814 in Gröningen
+    value: November 26, 1814 in Gröningen, Germany
   - label: Died
-    value: December 21, 1871 in Wangen im Allgäu
+    value: December 21, 1871 in Wangen im Allgäu, Germany
   - label: Field
     value: Writer, Editor, Feminist
 timeline:

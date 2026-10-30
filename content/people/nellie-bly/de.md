@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Nellie Bly
 facts:
   - label: Geboren
-    value: 5. Mai 1864 in Burrell Township
+    value: 5. Mai 1864 in Burrell Township, Vereinigte Staaten
   - label: Gestorben
-    value: 27. Januar 1922 in New York City
+    value: 27. Januar 1922 in New York City, Vereinigte Staaten
   - label: Wirkungsfeld
     value: Schriftstellerin, Journalistin, Romancière, Erfinderin
 timeline:

@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Johanna Naber
 facts:
   - label: Geboren
-    value: 25. März 1859 in Haarlem
+    value: 25. März 1859 in Haarlem, Niederlande
   - label: Gestorben
-    value: 30. Mai 1941 in Den Haag
+    value: 30. Mai 1941 in Den Haag, Niederlande
   - label: Wirkungsfeld
     value: Historikerin, Schriftstellerin, Frauenrechtlerin, Herausgeberin
 timeline:

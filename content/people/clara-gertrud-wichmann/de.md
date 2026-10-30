@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Clara Gertrud Wichmann
 facts:
   - label: Geboren
-    value: 17. August 1885 in Hamburg
+    value: 17. August 1885 in Hamburg, Deutschland
   - label: Gestorben
-    value: 15. Februar 1922 in Den Haag
+    value: 15. Februar 1922 in Den Haag, Niederlande
   - label: Wirkungsfeld
     value: Juristin, Kommentatorin, Schriftstellerin, Frauenrechtlerin
 timeline:

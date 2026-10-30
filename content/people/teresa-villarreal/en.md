@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Teresa Villarreal
 facts:
   - label: Born
-    value: December 2, 1883 in Lampazos de Naranjo
+    value: December 2, 1883 in Lampazos de Naranjo, Mexico
   - label: Died
-    value: in San Antonio
+    value: in San Antonio, United States
   - label: Field
     value: Writer, Politician, Journalist, Feminist
 timeline:

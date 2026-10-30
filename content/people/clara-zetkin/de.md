@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Clara Zetkin
 facts:
   - label: Geboren
-    value: 5. Juli 1857 in Königshain-Wiederau
+    value: 5. Juli 1857 in Königshain-Wiederau, Deutschland
   - label: Gestorben
-    value: 20. Juni 1933 in Arkhangelskoye
+    value: 20. Juni 1933 in Arkhangelskoye, Russland
   - label: Wirkungsfeld
     value: Politikerin, Journalistin, Frauenrechtlerin, Friedensaktivistin
 timeline:

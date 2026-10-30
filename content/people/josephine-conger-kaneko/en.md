@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Josephine Conger-Kaneko
 facts:
   - label: Born
-    value: May 5, 1875 in Centralia
+    value: May 5, 1875 in Centralia, United States
   - label: Died
-    value: July 28, 1934 in Chicago
+    value: July 28, 1934 in Chicago, United States
   - label: Field
     value: Newspaper editor, Editor, Writer, Suffragist
 timeline:

@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Anna Forstenheim
 facts:
   - label: Geboren
-    value: 21. September 1846 in Zagreb
+    value: 21. September 1846 in Zagreb, Kroatien
   - label: Gestorben
-    value: 9. Oktober 1889 in Bad Vöslau
+    value: 9. Oktober 1889 in Bad Vöslau, Österreich
   - label: Wirkungsfeld
     value: Schriftstellerin, Funktionärin, Feministin, Redakteurin
 timeline:

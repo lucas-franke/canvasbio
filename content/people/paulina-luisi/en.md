@@ -5,7 +5,7 @@ summary:
 portraitAlt: Portrait of Paulina Luisi
 facts:
   - label: Born
-    value: September 22, 1875 in Colón
+    value: September 22, 1875 in Colón, Argentina
   - label: Died
     value: July 16, 1950 in Montevideo
   - label: Field

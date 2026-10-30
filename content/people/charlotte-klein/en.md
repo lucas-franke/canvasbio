@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Charlotte Klein
 facts:
   - label: Born
-    value: October 29, 1834 in Helsingør
+    value: October 29, 1834 in Helsingør, Denmark
   - label: Died
-    value: March 9, 1915 in Frederiksberg
+    value: March 9, 1915 in Frederiksberg, Denmark
   - label: Field
     value: Artist, Chairperson of the executive board, Women's rights activist
 timeline:

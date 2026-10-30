@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Mary Collin
 facts:
   - label: Geboren
-    value: 1. April 1860 in Cambridge
+    value: 1. April 1860 in Cambridge, Vereinigtes Königreich
   - label: Gestorben
-    value: 22. Juli 1955 in Cardiff
+    value: 22. Juli 1955 in Cardiff, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Schulleiterin, Frauenrechtlerin
 timeline:

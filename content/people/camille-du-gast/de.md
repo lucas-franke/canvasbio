@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Camille du Gast
 facts:
   - label: Geboren
-    value: 30. Mai 1868 in Paris
+    value: 30. Mai 1868 in Paris, Frankreich
   - label: Gestorben
-    value: 24. April 1942 in Paris
+    value: 24. April 1942 in Paris, Frankreich
   - label: Wirkungsfeld
     value: Krankenpflegerin, Fechterin, Ballonfahrerin, Autorennfahrerin
 timeline:

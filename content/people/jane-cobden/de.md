@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Jane Cobden
 facts:
   - label: Geboren
-    value: 28. April 1851 in London
+    value: 28. April 1851 in London, Vereinigtes Königreich
   - label: Gestorben
-    value: 7. Juli 1947 in Fernhurst
+    value: 7. Juli 1947 in Fernhurst, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Politikerin, Suffragette
 timeline:

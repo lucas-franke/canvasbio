@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Ellen Key
 facts:
   - label: Geboren
-    value: 11. Dezember 1849 in Gladhammar church parish
+    value: 11. Dezember 1849 in Gladhammar church parish, Schweden
   - label: Gestorben
-    value: 25. April 1926 in Västra Tollstad church parish
+    value: 25. April 1926 in Västra Tollstad church parish, Schweden
   - label: Wirkungsfeld
     value: Übersetzerin, Schriftstellerin, Kritikerin, Pädagogin
 timeline:

@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Vera Brittain
 facts:
   - label: Geboren
-    value: 29. Dezember 1893 in Newcastle-under-Lyme
+    value: 29. Dezember 1893 in Newcastle-under-Lyme, Vereinigtes Königreich
   - label: Gestorben
-    value: 29. März 1970 in Wimbledon
+    value: 29. März 1970 in Wimbledon, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Krankenpflegerin, Schriftstellerin, Dichterin, Romancière
 timeline:

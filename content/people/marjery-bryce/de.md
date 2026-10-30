@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Marjery Bryce
 facts:
   - label: Geboren
-    value: 18. Juni 1891 in Marylebone
+    value: 18. Juni 1891 in Marylebone, Vereinigtes Königreich
   - label: Gestorben
-    value: 8. Juni 1973 in Fulham
+    value: 8. Juni 1973 in Fulham, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Schauspielerin, Suffragette
 timeline:

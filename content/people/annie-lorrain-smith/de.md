@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Annie Lorrain Smith
 facts:
   - label: Geboren
-    value: 23. Oktober 1854 in Half Morton
+    value: 23. Oktober 1854 in Half Morton, Vereinigtes Königreich
   - label: Gestorben
-    value: 7. September 1937 in London
+    value: 7. September 1937 in London, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Botanikerin, Lichenologin, Mykologin, Kuratorin
 timeline:

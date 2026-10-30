@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Ida B. Wells
 facts:
   - label: Born
-    value: July 16, 1862 in Holly Springs
+    value: July 16, 1862 in Holly Springs, United States
   - label: Died
-    value: March 25, 1931 in Chicago
+    value: March 25, 1931 in Chicago, United States
   - label: Field
     value: Journalist, Sociologist, Suffragist, Writer
 timeline:

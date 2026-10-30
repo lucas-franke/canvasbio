@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Maria Pognon
 facts:
   - label: Geboren
-    value: 15. Februar 1844 in Honfleur
+    value: 15. Februar 1844 in Honfleur, Frankreich
   - label: Gestorben
-    value: 17. April 1925 in Sydney
+    value: 17. April 1925 in Sydney, Australien
   - label: Wirkungsfeld
     value: Journalistin, Aktivistin, Frauenrechtlerin, Schriftstellerin
 timeline:

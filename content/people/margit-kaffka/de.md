@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Margit Kaffka
 facts:
   - label: Geboren
-    value: 10. Juni 1880 in Großkarol
+    value: 10. Juni 1880 in Großkarol, Rumänien
   - label: Gestorben
-    value: 1. Dezember 1918 in Budapest
+    value: 1. Dezember 1918 in Budapest, Ungarn
   - label: Wirkungsfeld
     value: Dichterin, Schriftstellerin, Frauenrechtlerin, Romancière
 timeline:

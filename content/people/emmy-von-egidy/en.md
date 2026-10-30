@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Emmy von Egidy
 facts:
   - label: Born
-    value: April 5, 1872 in Pirna
+    value: April 5, 1872 in Pirna, Germany
   - label: Died
-    value: December 1, 1946 in Weimar
+    value: December 1, 1946 in Weimar, Germany
   - label: Field
     value: Sculptor, Writer, Feminist
 timeline:

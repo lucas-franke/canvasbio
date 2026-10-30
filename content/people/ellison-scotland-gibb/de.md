@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Ellison Scotland Gibb
 facts:
   - label: Geboren
-    value: 6. März 1879 in Glasgow
+    value: 6. März 1879 in Glasgow, Vereinigtes Königreich
   - label: Gestorben
-    value: 1970 in Ayr
+    value: 1970 in Ayr, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Aktivistin, Suffragette
 timeline:

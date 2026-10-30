@@ -7,7 +7,7 @@ facts:
   - label: Geboren
     value: 2. Mai 1897 in Pretoria
   - label: Gestorben
-    value: 16. Januar 1989 in Amsterdam
+    value: 16. Januar 1989 in Amsterdam, Niederlande
   - label: Wirkungsfeld
     value: Schriftstellerin, Frauenrechtlerin, Widerstandskämpferin, Wirtschaftswissenschaftlerin
 timeline:

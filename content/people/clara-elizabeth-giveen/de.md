@@ -5,7 +5,7 @@ summary:
 portraitAlt: Porträt von Clara Elizabeth Giveen
 facts:
   - label: Geboren
-    value: 22. Mai 1887 in Coleraine
+    value: 22. Mai 1887 in Coleraine, Vereinigtes Königreich
   - label: Gestorben
     value: 16. Mai 1967
   - label: Wirkungsfeld

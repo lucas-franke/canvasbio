@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Annot Robinson
 facts:
   - label: Born
-    value: June 8, 1874 in Montrose
+    value: June 8, 1874 in Montrose, United Kingdom
   - label: Died
-    value: September 29, 1925 in Perth
+    value: September 29, 1925 in Perth, United Kingdom
   - label: Field
     value: Teacher, Suffragist, Pacifist
 timeline:

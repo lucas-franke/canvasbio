@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Augustine De Rothmaler
 facts:
   - label: Born
-    value: November 12, 1859 in Brussels
+    value: November 12, 1859 in Brussels, Belgium
   - label: Died
-    value: November 28, 1942 in Le Lavandou
+    value: November 28, 1942 in Le Lavandou, France
   - label: Field
     value: Pedagogue, Women's rights activist
 timeline:

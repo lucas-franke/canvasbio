@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Victoria Earle Matthews
 facts:
   - label: Geboren
-    value: 27. Mai 1861 in Fort Valley
+    value: 27. Mai 1861 in Fort Valley, Vereinigte Staaten
   - label: Gestorben
-    value: 10. März 1907 in New York City
+    value: 10. März 1907 in New York City, Vereinigte Staaten
   - label: Wirkungsfeld
     value: Missionarin, Suffragette, Journalistin
 timeline:

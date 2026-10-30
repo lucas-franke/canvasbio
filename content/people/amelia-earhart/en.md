@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Amelia Earhart
 facts:
   - label: Born
-    value: July 24, 1897 in Atchison
+    value: July 24, 1897 in Atchison, United States
   - label: Died
-    value: January 5, 1939 in Howland Island
+    value: January 5, 1939 in Howland Island, United States
   - label: Field
     value: Aircraft pilot, Memoirist, Travel writer, Journalist
 timeline:

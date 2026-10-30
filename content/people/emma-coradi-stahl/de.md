@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Emma Coradi-Stahl
 facts:
   - label: Geboren
-    value: 9. November 1846 in Dozwil
+    value: 9. November 1846 in Dozwil, Schweiz
   - label: Gestorben
-    value: 8. April 1912 in Zürich
+    value: 8. April 1912 in Zürich, Schweiz
   - label: Wirkungsfeld
     value: Frauenrechtlerin, Herausgeberin
 timeline:

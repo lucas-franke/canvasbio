@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Gertrude Ansell
 facts:
   - label: Geboren
-    value: 2. Juni 1861 in Bloomsbury
+    value: 2. Juni 1861 in Bloomsbury, Vereinigtes Königreich
   - label: Gestorben
-    value: 7. März 1932 in Saffron Walden
+    value: 7. März 1932 in Saffron Walden, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Suffragette, Textypistin, Geschäftsfrau
 timeline:

@@ -7,7 +7,7 @@ facts:
   - label: Born
     value: August 9, 1872 in Nové Mesto nad Váhom
   - label: Died
-    value: August 19, 1927 in Vienna
+    value: August 19, 1927 in Vienna, Austria
   - label: Field
     value: Women's rights activist, Teacher, Peace activist, Editor
 timeline:

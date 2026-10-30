@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Agnes Bluhm
 facts:
   - label: Born
-    value: January 9, 1862 in Constantinople
+    value: January 9, 1862 in Constantinople, Turkey
   - label: Died
-    value: November 12, 1943 in Beelitz
+    value: November 12, 1943 in Beelitz, Germany
   - label: Field
     value: Racial theorist, Gynecologist, Geneticist, Feminist
 timeline:

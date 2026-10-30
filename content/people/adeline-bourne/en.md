@@ -5,7 +5,7 @@ summary:
 portraitAlt: Portrait of Adeline Bourne
 facts:
   - label: Born
-    value: January 8, 1873 in presidencies and provinces in British India
+    value: January 8, 1873 in presidencies and provinces in British India, United Kingdom
   - label: Died
     value: February 8, 1965
   - label: Field

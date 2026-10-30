@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Elizabeth Cady Stanton
 facts:
   - label: Geboren
-    value: 12. November 1815 in Johnstown
+    value: 12. November 1815 in Johnstown, Vereinigte Staaten
   - label: Gestorben
-    value: 26. Oktober 1902 in New York City
+    value: 26. Oktober 1902 in New York City, Vereinigte Staaten
   - label: Wirkungsfeld
     value: Schriftstellerin, Schauspielerin, Frauenrechtlerin, Abolitionistin
 timeline:

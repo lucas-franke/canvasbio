@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Marie Reisik
 facts:
   - label: Born
-    value: February 6, 1887 in Kilingi-Nõmme
+    value: February 6, 1887 in Kilingi-Nõmme, Estonia
   - label: Died
-    value: August 3, 1941 in Tallinn
+    value: August 3, 1941 in Tallinn, Estonia
   - label: Field
     value: Politician, Journalist, Teacher, Women's rights activist
 timeline:

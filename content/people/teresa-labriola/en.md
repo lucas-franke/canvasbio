@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Teresa Labriola
 facts:
   - label: Born
-    value: February 17, 1873 in Naples
+    value: February 17, 1873 in Naples, Italy
   - label: Died
-    value: February 6, 1941 in Rome
+    value: February 6, 1941 in Rome, Italy
   - label: Field
     value: Jurist, Writer, Suffragette, Lawyer
 timeline:

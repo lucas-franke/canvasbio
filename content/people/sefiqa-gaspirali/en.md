@@ -7,7 +7,7 @@ facts:
   - label: Born
     value: October 14, 1886 in Bakhchysarai
   - label: Died
-    value: August 31, 1975 in Istanbul
+    value: August 31, 1975 in Istanbul, Turkey
   - label: Field
     value: Editor, Public figure, Activist, Journalist
 timeline:

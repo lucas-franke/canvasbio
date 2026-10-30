@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Ellen Hørup
 facts:
   - label: Born
-    value: December 29, 1871 in Copenhagen
+    value: December 29, 1871 in Copenhagen, Denmark
   - label: Died
-    value: March 25, 1953 in Copenhagen
+    value: March 25, 1953 in Copenhagen, Denmark
   - label: Field
     value: Journalist, Feminist, Pacifist, Anti-fascist
 timeline:

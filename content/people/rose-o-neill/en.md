@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Rose O'Neill
 facts:
   - label: Born
-    value: June 25, 1874 in Wilkes-Barre
+    value: June 25, 1874 in Wilkes-Barre, United States
   - label: Died
-    value: April 6, 1944 in Springfield
+    value: April 6, 1944 in Springfield, United States
   - label: Field
     value: Cartoonist, Comics artist, Writer, Suffragist
 timeline:

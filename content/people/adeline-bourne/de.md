@@ -5,7 +5,7 @@ summary:
 portraitAlt: Porträt von Adeline Bourne
 facts:
   - label: Geboren
-    value: 8. Januar 1873 in Provinzen Indiens
+    value: 8. Januar 1873 in Provinzen Indiens, Vereinigtes Königreich
   - label: Gestorben
     value: 8. Februar 1965
   - label: Wirkungsfeld

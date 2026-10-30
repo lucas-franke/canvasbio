@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Aletta Jacobs
 facts:
   - label: Born
-    value: February 9, 1854 in Sappemeer
+    value: February 9, 1854 in Sappemeer, Netherlands
   - label: Died
-    value: August 10, 1929 in Baarn
+    value: August 10, 1929 in Baarn, Netherlands
   - label: Field
     value: Physician, Women's rights activist, Peace activist, Editor
 timeline:

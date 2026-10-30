@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Alice Paul
 facts:
   - label: Born
-    value: January 11, 1885 in Mount Laurel
+    value: January 11, 1885 in Mount Laurel, United States
   - label: Died
-    value: July 9, 1977 in Moorestown
+    value: July 9, 1977 in Moorestown, United States
   - label: Field
     value: Jurist, Women's rights activist, Suffragette
 timeline:

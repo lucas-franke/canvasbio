@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Zona Gale
 facts:
   - label: Born
-    value: August 26, 1874 in Portage
+    value: August 26, 1874 in Portage, United States
   - label: Died
-    value: December 27, 1938 in Chicago
+    value: December 27, 1938 in Chicago, United States
   - label: Field
     value: Novelist, Writer, Playwright, Short story writer
 timeline:

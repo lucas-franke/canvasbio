@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Marie Equi
 facts:
   - label: Born
-    value: April 7, 1872 in New Bedford
+    value: April 7, 1872 in New Bedford, United States
   - label: Died
-    value: July 13, 1952 in Portland
+    value: July 13, 1952 in Portland, United States
   - label: Field
     value: Physician, Trade unionist, Peace activist, Suffragist
 timeline:

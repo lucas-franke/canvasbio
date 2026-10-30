@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Nina E. Allender
 facts:
   - label: Geboren
-    value: 25. Dezember 1873 in Auburn
+    value: 25. Dezember 1873 in Auburn, Vereinigte Staaten
   - label: Gestorben
-    value: 2. April 1957 in Plainfield
+    value: 2. April 1957 in Plainfield, Vereinigte Staaten
   - label: Wirkungsfeld
     value: Künstlerin, Frauenrechtlerin, Cartoonistin, Suffragette
 timeline:

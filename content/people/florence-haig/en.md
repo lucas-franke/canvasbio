@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Florence Haig
 facts:
   - label: Born
-    value: 1856 in Berwickshire
+    value: 1856 in Berwickshire, United Kingdom
   - label: Died
-    value: 1952 in County of London
+    value: 1952 in County of London, United Kingdom
   - label: Field
     value: Artist, Suffragette
 timeline:

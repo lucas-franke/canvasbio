@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Sophia Goudstikker
 facts:
   - label: Born
-    value: January 15, 1865 in Rotterdam
+    value: January 15, 1865 in Rotterdam, Netherlands
   - label: Died
-    value: March 20, 1924 in Munich
+    value: March 20, 1924 in Munich, Germany
   - label: Field
     value: Photographer, Suffragist, Entrepreneur, Jurist
 timeline:

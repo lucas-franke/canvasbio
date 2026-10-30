@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Alexandra Michailowna Kollontai
 facts:
   - label: Born
-    value: March 19, 1872 in Saint Petersburg
+    value: March 19, 1872 in Saint Petersburg, Russia
   - label: Died
-    value: March 9, 1952 in Bahía Blanca
+    value: March 9, 1952 in Bahía Blanca, Argentina
   - label: Field
     value: Revolutionary, Diplomat, Women's rights activist, Writer
 timeline:

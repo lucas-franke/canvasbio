@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Susan B. Anthony
 facts:
   - label: Geboren
-    value: 15. Februar 1820 in Adams
+    value: 15. Februar 1820 in Adams, Vereinigte Staaten
   - label: Gestorben
-    value: 13. März 1906 in Rochester
+    value: 13. März 1906 in Rochester, Vereinigte Staaten
   - label: Wirkungsfeld
     value: Frauenrechtlerin, Menschenrechtlerin, Abolitionistin, Schriftstellerin
 timeline:

@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Marie Calm
 facts:
   - label: Born
-    value: April 3, 1832 in Bad Arolsen
+    value: April 3, 1832 in Bad Arolsen, Germany
   - label: Died
-    value: February 22, 1887 in Kassel
+    value: February 22, 1887 in Kassel, Germany
   - label: Field
     value: Writer, Suffragette, Suffragist
 timeline:

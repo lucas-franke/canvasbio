@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Mary Collin
 facts:
   - label: Born
-    value: April 1, 1860 in Cambridge
+    value: April 1, 1860 in Cambridge, United Kingdom
   - label: Died
-    value: July 22, 1955 in Cardiff
+    value: July 22, 1955 in Cardiff, United Kingdom
   - label: Field
     value: Head mistress, Women's rights activist
 timeline:

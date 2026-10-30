@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Huda Shaarawi
 facts:
   - label: Born
-    value: June 23, 1879 in Minya
+    value: June 23, 1879 in Minya, Egypt
   - label: Died
-    value: December 12, 1947 in Cairo
+    value: December 12, 1947 in Cairo, Egypt
   - label: Field
     value: Politician, Social activist, Poet, Journalist
 timeline:

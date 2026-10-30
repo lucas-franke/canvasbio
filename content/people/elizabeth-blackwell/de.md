@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Elizabeth Blackwell
 facts:
   - label: Geboren
-    value: 3. Februar 1821 in Bristol
+    value: 3. Februar 1821 in Bristol, Vereinigtes Königreich
   - label: Gestorben
-    value: 31. Mai 1910 in Hastings
+    value: 31. Mai 1910 in Hastings, Vereinigtes Königreich
   - label: Wirkungsfeld
     value: Ärztin, Medizinische Autorin, Essayistin, Frauenrechtlerin
 timeline:

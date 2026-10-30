@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Kate Sheppard
 facts:
   - label: Geboren
-    value: 10. März 1847 in Liverpool
+    value: 10. März 1847 in Liverpool, Vereinigtes Königreich
   - label: Gestorben
-    value: 13. Juli 1934 in Riccarton
+    value: 13. Juli 1934 in Riccarton, Neuseeland
   - label: Wirkungsfeld
     value: Frauenrechtlerin, Politische Aktivistin, Wirtschaftswissenschaftlerin, Verlegerin
 timeline:
