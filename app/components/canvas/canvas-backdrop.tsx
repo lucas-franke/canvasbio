@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { siteConfig } from "~/lib/config";
 import { firstPaintScript } from "~/lib/canvas/camera";
@@ -8,6 +8,7 @@ import type { PersonListItem } from "~/lib/content/adapter";
 import { canvasLayout, canvasLimits } from "./canvas-layout";
 import { CanvasTile } from "./canvas-tile";
 import { LAST_CAMERA_KEY, staticView, useCamera } from "./use-camera";
+import { WallPainter } from "./wall-painter";
 
 const { canvas: config, theme } = siteConfig;
 
@@ -32,8 +33,40 @@ export function CanvasBackdrop({
   const layout = useMemo(() => canvasLayout(ordered.length), [ordered.length]);
   const limits = useMemo(() => canvasLimits(layout), [layout]);
   const initialView = useMemo(() => staticView(layout, limits), [layout, limits]);
-  const camera = useCamera({ layout, limits, storageKey: LAST_CAMERA_KEY, initialView });
+  // Painted on a canvas like the wall; the pre-rendered tiles step back once it has painted.
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const painter = useRef<WallPainter | null>(null);
+  const onApply = useCallback(
+    (cam: Parameters<WallPainter["setCamera"]>[0], size: Parameters<WallPainter["setCamera"]>[1]) =>
+      painter.current?.setCamera(cam, size),
+    [],
+  );
+  const camera = useCamera({ layout, limits, storageKey: LAST_CAMERA_KEY, initialView, onApply });
   const { viewportRef, worldRef, view } = camera;
+  const [painted, setPainted] = useState(false);
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const wall = new WallPainter(canvas, {
+      layout,
+      people: ordered,
+      variance: config.sizeVariance,
+      torn: theme.tileEdge === "torn",
+      names: true,
+    });
+    wall.onComplete = () => setPainted(true);
+    wall.setCamera(camera.camera.current, camera.size.current);
+    painter.current = wall;
+    const refresh = () => wall.refreshTheme();
+    const observer = new MutationObserver(refresh);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+    return () => {
+      observer.disconnect();
+      wall.dispose();
+      painter.current = null;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- the camera object is stable in its parts
+  }, [layout, ordered]);
 
   // Slow drift; none with reduced motion. rAF pauses by itself in background tabs.
   useEffect(() => {
@@ -76,11 +109,12 @@ export function CanvasBackdrop({
   return (
     <div aria-hidden="true" inert className="pointer-events-none absolute inset-0 overflow-clip">
       <div ref={viewportRef} className="canvas-viewport absolute inset-0 overflow-clip">
+        <canvas ref={canvasRef} className="pointer-events-none absolute inset-0 size-full" />
         <div
           ref={worldRef}
           // The transform is written outside React (camera, and the script below before hydration).
           suppressHydrationWarning
-          className="canvas-world absolute top-1/2 left-1/2 origin-top-left will-change-transform"
+          className="canvas-world absolute top-1/2 left-1/2 origin-top-left"
         >
           <ul>
             {tiles.map(({ cell, person, origin }) => (
@@ -95,9 +129,9 @@ export function CanvasBackdrop({
                 primary={false}
                 tabbable={false}
                 near
+                painted={painted}
                 active={false}
                 variation={tileVariation(layout, cell, config.sizeVariance)}
-                lod={view?.lod ?? 0}
                 edgeClass={
                   theme.tileEdge === "torn" ? `torn-edge-${tornVariant(cell.col, cell.row)}` : undefined
                 }

@@ -42,11 +42,11 @@ test("the finite wall shows every person exactly once, as a named list", async (
   expect(new Set(exposed).size).toBe(600);
   await expect(page.getByRole("list", { name: "Porträts" }).getByRole("listitem")).toHaveCount(600);
   await expect(tabbableTile(page)).toHaveCount(1);
-  // Only tiles in and around the view carry a portrait; the others are named links without
-  // images (cheap to zoom), so the whole list stays reachable.
-  const images = await page.locator(".canvas-world img").count();
-  expect(images).toBeGreaterThan(0);
-  expect(images).toBeLessThan(600);
+  // The portraits are painted on one canvas; the tiles are transparent links named by the
+  // person (no images in them), so the whole list stays reachable.
+  await expect(page.locator(".canvas-viewport > canvas")).toBeAttached();
+  await expect(page.locator(".canvas-world img")).toHaveCount(0);
+  await expect(page.getByRole("link", { name: "Clara Zetkin", exact: true })).toHaveCount(1);
   // Duplicates (with wrap) would be hidden from assistive tech and out of the tab order.
   const hiddenFocusable = page.locator('li[aria-hidden="true"] a:not([tabindex="-1"])');
   await expect(hiddenFocusable).toHaveCount(0);

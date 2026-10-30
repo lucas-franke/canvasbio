@@ -1,11 +1,10 @@
 import { cn } from "cn";
-import { memo, useRef } from "react";
+import { memo } from "react";
 import { Link } from "react-router";
 
-import { Portrait } from "~/components/portrait";
-import { sizesFor } from "./use-camera";
 import type { TileVariation } from "~/lib/canvas/layout";
 import type { PersonListItem } from "~/lib/content/adapter";
+import { portraitUrl } from "~/lib/content/images";
 import { markPortraitSource } from "~/lib/view-transition";
 
 interface CanvasTileProps {
@@ -24,12 +23,13 @@ interface CanvasTileProps {
   primary: boolean;
   /** Roving tabindex: exactly one tile is in the tab order. */
   tabbable: boolean;
-  /** In or near the view: with portrait and label. Far away only the link and its name. */
+  /**
+   * The wall is painted on a canvas underneath (WallPainter): the tile is only the
+   * transparent link (focus, keyboard, screen readers, taps) at the portrait's place.
+   */
+  painted: boolean;
+  /** Before the canvas has painted (pre-rendered HTML): the tile shows its own portrait. */
   near: boolean;
-  /** On screen right now: its portrait is downloaded before the ones around the view. */
-  visible?: boolean;
-  /** Seen from afar: names are hidden anyway, so only the portrait (cheaper to restyle). */
-  far?: boolean;
   /** Biography of this person is open. */
   active: boolean;
   /**
@@ -39,17 +39,15 @@ interface CanvasTileProps {
   match?: boolean;
   /** Slight size and position variation (see canvas.sizeVariance). */
   variation: TileVariation;
-  /** Rendered tile size bucket (see CanvasView.lod); 0 = not measured yet. */
-  lod: number;
   /** Mask class for the torn paper edge, if enabled. */
   edgeClass?: string;
 }
 
 /**
- * WebP only: AVIF is a few KB smaller per tile but much slower to decode on phones, and many
- * tiles are decoded at once while panning or zooming.
+ * Before the canvas takes over: the file the canvas draws at the starting zoom (so it comes
+ * from the cache then), in WebP, which decodes faster than AVIF on phones.
  */
-const TILE_FORMATS = ["webp"] as const;
+const PRE_PAINT_WIDTH = 320;
 
 /**
  * Props are equal when all are identical, the variation by value (it is computed anew on every
@@ -65,7 +63,11 @@ function sameProps(a: CanvasTileProps, b: CanvasTileProps) {
   );
 }
 
-/** One portrait on the canvas: a link to the biography with the name on a dark gradient. */
+/**
+ * One tile of the wall: a link to the biography at the portrait's place. Painted (the usual
+ * case once the page runs) it is transparent and named by its label; in pre-rendered HTML,
+ * before the canvas has painted, it shows the portrait and name itself.
+ */
 export const CanvasTile = memo(function CanvasTile({
   person,
   cellId,
@@ -75,23 +77,15 @@ export const CanvasTile = memo(function CanvasTile({
   href,
   primary,
   tabbable,
+  painted,
   near,
-  visible = true,
-  far = false,
   active,
   match,
   variation,
-  lod,
   edgeClass,
 }: CanvasTileProps) {
-  // Zooming out never swaps a loaded portrait for a smaller file (a new download that leaves
-  // the tile empty meanwhile); zooming in upgrades it.
-  // (Only while the portrait is shown: a bare tile starts afresh with the size of the moment.)
-  const largest = useRef(lod);
-  if (!near || lod > largest.current) largest.current = lod;
-  const sizes = sizesFor(largest.current);
-  // Until the portrait has loaded: its main colour, darkened, so it reads as a tile and not
-  // as a gap on the light page (many old photos are light beige).
+  const ownPortrait = near && !painted;
+  // Until the portrait has loaded: its main colour, darkened, so it reads as a tile.
   const placeholder = `color-mix(in srgb, ${person.image.color} 70%, var(--c-stage))`;
   return (
     <li
@@ -117,37 +111,33 @@ export const CanvasTile = memo(function CanvasTile({
         data-match={match === undefined ? undefined : match ? "hit" : "miss"}
         aria-current={primary && active ? "page" : undefined}
         tabIndex={tabbable ? 0 : -1}
-        // Bare and far tiles have no visible name: the link is named directly.
-        aria-label={near && !far ? undefined : person.name.display}
+        // Without its own name text, the link is named directly.
+        aria-label={ownPortrait ? undefined : person.name.display}
         className="canvas-tile group block size-full"
-        style={near ? undefined : { backgroundColor: placeholder }}
+        style={ownPortrait || painted ? undefined : { backgroundColor: placeholder }}
       >
-        {/* Away from the view the link is bare, in the portrait's dominant colour (a fast fling). */}
-        {near ? (
+        {ownPortrait && (
           <span
             data-vt-portrait
             data-tint
             className={cn("relative block size-full overflow-hidden bg-stage", edgeClass)}
           >
-            <Portrait
-              slug={person.slug}
-              image={{ ...person.image, color: placeholder }}
+            <img
+              src={portraitUrl(person.slug, "sq", PRE_PAINT_WIDTH, "webp", person.image.hash)}
               alt=""
-              sizes={sizes}
-              loading="eager"
-              fetchPriority={visible ? "high" : "low"}
-              formats={TILE_FORMATS}
-              className="size-full object-cover transition-transform duration-300 group-hover:scale-105"
+              width={PRE_PAINT_WIDTH}
+              height={PRE_PAINT_WIDTH}
+              decoding="async"
+              draggable={false}
+              className="size-full object-cover"
+              style={{ backgroundColor: placeholder }}
             />
-            {/* Dark gradient guarantees contrast for the name regardless of the photo. Seen
-                from afar the names are hidden anyway: no layer to restyle (same portrait element). */}
-            {!far && (
-              <span className="canvas-tile-name absolute inset-x-0 bottom-0 bg-linear-to-t from-stage via-stage/80 to-transparent font-medium text-stage-foreground">
-                <span className="canvas-tile-label">{person.name.display}</span>
-              </span>
-            )}
+            {/* Dark gradient guarantees contrast for the name regardless of the photo. */}
+            <span className="canvas-tile-name absolute inset-x-0 bottom-0 bg-linear-to-t from-stage via-stage/80 to-transparent font-medium text-stage-foreground">
+              <span className="canvas-tile-label">{person.name.display}</span>
+            </span>
           </span>
-        ) : null}
+        )}
       </Link>
     </li>
   );

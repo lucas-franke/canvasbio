@@ -11,7 +11,6 @@ import {
   type Insets,
   type ZoomLimits,
 } from "~/lib/canvas/camera";
-import { SQUARE_WIDTHS } from "~/lib/content/images";
 import {
   cellNear,
   cellOrigin,
@@ -28,7 +27,6 @@ import {
 /**
  * Tiles for pre-rendered HTML, before the viewport size is known: the world area around the
  * pattern centre that a phone or a desktop sees at the starting zoom (about 7 × 7 tiles).
- * `lod: 0` stands for "size unknown" (see `sizesFor`).
  */
 export function staticView(layout: CanvasLayout, limits: ZoomLimits): CanvasView {
   const { x, y } = initialCamera(layout, { width: 1, height: 1 }, limits);
@@ -36,51 +34,25 @@ export function staticView(layout: CanvasLayout, limits: ZoomLimits): CanvasView
   return {
     range: visibleRange(layout, camera, { width: 1900, height: 1800 }, 0),
     center: cellNear(layout, x, y),
-    lod: 0,
-    far: false,
   };
 }
 
-/** Screen density for image choice; above 3 the difference isn't visible on a small tile. */
-const density = () => (typeof window === "undefined" ? 1 : Math.min(3, window.devicePixelRatio || 1));
-
-/**
- * `sizes` for tile images that makes the browser pick exactly the file width `lod` (it
- * multiplies `sizes` by the screen density), or the starting size by viewport width.
- */
-export const sizesFor = (lod: number) =>
-  lod > 0 ? `${Math.floor(lod / density())}px` : "(max-width: 780px) 130px, 280px";
-
-/** What React renders from the camera: changes only when a cell boundary or the image size bucket is crossed. */
+/** What React renders from the camera (the tile links): changes only when a cell boundary is crossed. */
 export interface CanvasView {
   range: CellRange;
   /** Cell at the viewport centre. */
   center: Cell;
-  /** Image file width the tiles need at this zoom and screen density (see `sizesFor`). */
-  lod: number;
-  /** Seen from afar (names hidden): tiles render as bare portraits. */
-  far: boolean;
 }
 
 /**
  * How long the camera has to rest before zoom-dependent details catch up: the constant-size
- * names and focus rings (--s) and the image size (lod). Updating them on every frame of a
- * zoom restyles or re-renders every tile and made zooming stutter.
+ * focus rings (--s) and dropping the will-change hint. Updating --s on every frame of a zoom
+ * restyles every tile.
  */
 const SETTLE_MS = 140;
-/**
- * The smallest portrait file that is sharp enough for a tile of `px` CSS pixels. Slightly
- * soft is fine (15 %): a sharper file is often four times the bytes.
- */
-const lodFor = (px: number) => SQUARE_WIDTHS.find((w) => w >= px * density() * 0.85) ?? SQUARE_WIDTHS.at(-1)!;
 
 const sameView = (a: CanvasView | null, b: CanvasView) =>
-  a !== null &&
-  sameRange(a.range, b.range) &&
-  a.center.col === b.center.col &&
-  a.center.row === b.center.row &&
-  a.lod === b.lod &&
-  a.far === b.far;
+  a !== null && sameRange(a.range, b.range) && a.center.col === b.center.col && a.center.row === b.center.row;
 
 const prefersReducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -150,6 +122,8 @@ interface UseCameraOptions {
   topInset?: () => number;
   /** What to render before the viewport has been measured (pre-rendering, hydration). */
   initialView?: CanvasView;
+  /** Called with every camera position (e.g. to paint the wall), outside of rendering. */
+  onApply?: (camera: Camera, viewport: Size) => void;
 }
 
 /**
@@ -165,6 +139,7 @@ export function useCamera({
   onViewChange,
   topInset,
   initialView,
+  onApply,
 }: UseCameraOptions) {
   const viewportRef = useRef<HTMLDivElement>(null);
   const worldRef = useRef<HTMLDivElement>(null);
@@ -177,13 +152,14 @@ export function useCamera({
   const zoomTarget = useRef<Camera | null>(null);
   const saveTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
   const settleTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
+  const measured = useRef(false);
   const viewRef = useRef<CanvasView | null>(initialView ?? null);
   const [view, setView] = useState<CanvasView | null>(initialView ?? null);
 
   // Latest values for callbacks that are created once.
-  const latest = useRef({ layout, limits, storageKey, canContinue, onViewChange, topInset });
+  const latest = useRef({ layout, limits, storageKey, canContinue, onViewChange, topInset, onApply });
   useLayoutEffect(() => {
-    latest.current = { layout, limits, storageKey, canContinue, onViewChange, topInset };
+    latest.current = { layout, limits, storageKey, canContinue, onViewChange, topInset, onApply };
   });
 
   /** Remembers the position for this history entry (restored after reload or back). */
@@ -205,6 +181,7 @@ export function useCamera({
     });
     const zooming = cam.scale !== camera.current.scale;
     camera.current = cam;
+    latest.current.onApply?.(cam, size.current);
 
     const world = worldRef.current;
     const settle = () => {
@@ -216,36 +193,23 @@ export function useCamera({
         const scale = String(camera.current.scale);
         if (world.style.getPropertyValue("--s") !== scale) world.style.setProperty("--s", scale);
       }
-      const px = latest.current.layout.tile * camera.current.scale;
-      const lod = lodFor(px);
-      const far = px < FAR_TILE_PX;
-      const settled = viewRef.current;
-      if (settled && (settled.lod !== lod || settled.far !== far)) {
-        viewRef.current = { ...settled, lod, far };
-        setView(viewRef.current);
-      }
     };
+    // The first camera with a measured viewport takes effect at once.
+    const first = !measured.current;
+    if (size.current.width > 0) measured.current = true;
     if (world) {
       // Zooming: one composited layer, so the wall isn't repainted at every scale. Panning
       // doesn't need the hint (the translate3d layer just moves), and setting or removing it
       // makes the browser repaint the whole wall, which stuttered at the start of every pan.
-      if (zooming && viewRef.current && viewRef.current.lod !== 0 && world.style.willChange !== "transform")
-        world.style.willChange = "transform";
+      if (zooming && !first && world.style.willChange !== "transform") world.style.willChange = "transform";
       world.style.transform = `translate3d(${-cam.x * cam.scale}px, ${-cam.y * cam.scale}px, 0) scale(${cam.scale})`;
       // Seen from afar: names are hidden (app.css) and a tap zooms in instead of opening.
       world.toggleAttribute("data-far", layout.tile * cam.scale < FAR_TILE_PX);
     }
 
-    // The first camera (and every one without a measured size yet) takes effect at once.
-    const first = !viewRef.current || viewRef.current.lod === 0;
-    // A smaller image size applies at once: tiles coming into view while zooming out load the
-    // small file (loaded tiles keep their sharper one, see CanvasTile). Larger sizes wait.
-    const lod = lodFor(layout.tile * cam.scale);
     const nextView: CanvasView = {
       range: visibleRange(layout, cam, size.current, 1),
       center: cellNear(layout, cam.x, cam.y),
-      lod: first ? lod : Math.min(lod, viewRef.current!.lod),
-      far: first ? layout.tile * cam.scale < FAR_TILE_PX : viewRef.current!.far,
     };
     if (!sameView(viewRef.current, nextView)) {
       viewRef.current = nextView;

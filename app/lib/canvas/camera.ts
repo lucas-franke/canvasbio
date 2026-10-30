@@ -62,7 +62,7 @@ export function defaultScale(layout: CanvasLayout, viewport: Size, limits: ZoomL
  * Inline script that sets the world transform before the first paint of pre-rendered HTML,
  * with the same formula as `defaultScale` (the viewport size is only known in the browser).
  * A position remembered for this history entry wins, like after hydration.
- * Placed right after the viewport element; the world is its first child.
+ * Placed right after the viewport element; the world (.canvas-world) is inside it.
  */
 export function firstPaintScript(
   layout: CanvasLayout,
@@ -74,7 +74,7 @@ export function firstPaintScript(
   const { x, y } = initialCamera(layout, { width: 1, height: 1 }, limits);
   return [
     "(function(){try{",
-    "var v=document.currentScript.previousElementSibling,w=v.firstElementChild,r=v.getBoundingClientRect();",
+    "var v=document.currentScript.previousElementSibling,w=v.querySelector('.canvas-world'),r=v.getBoundingClientRect();",
     `var c={x:${x},y:${y},scale:Math.min(${limits.maxZoom},Math.max(${limits.minZoom},Math.min(280,Math.max(130,r.width/6))/${layout.pitch}))};`,
     "var h=history.state,k=h&&h.key?h.key:'default',s=JSON.parse(sessionStorage.getItem(" +
       JSON.stringify(storagePrefix) +
