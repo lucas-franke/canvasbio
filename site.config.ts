@@ -31,6 +31,8 @@ export default defineSiteConfig({
     list: { de: "liste", en: "list" },
     /** Sub-path of the timeline view ("Zeitstrahl"), e.g. "/personen/zeitstrahl". */
     timeline: { de: "zeitstrahl", en: "timeline" },
+    /** Sub-path of the map view, e.g. "/personen/karte". */
+    map: { de: "karte", en: "map" },
     about: { de: "ueber", en: "about" },
     accessibility: { de: "barrierefreiheit", en: "accessibility" },
     imprint: { de: "impressum", en: "legal-notice" },

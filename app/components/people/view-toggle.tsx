@@ -1,19 +1,19 @@
 import { cn } from "cn";
-import { ChartGantt, Check, ChevronDown, LayoutDashboard, List } from "lucide-react";
+import { ChartGantt, Check, ChevronDown, LayoutDashboard, List, MapIcon } from "lucide-react";
 import { useEffect, useId, useRef, useState, type KeyboardEvent } from "react";
 import { Link } from "react-router";
 
 import { useLocale, useMessages } from "~/lib/i18n";
-import { listPath, pagePath, timelinePath } from "~/lib/i18n/locale";
+import { listPath, mapPath, pagePath, timelinePath } from "~/lib/i18n/locale";
 import { useSearchSuffix } from "~/lib/search/use-search";
 
-type View = "canvas" | "list" | "timeline";
+type View = "canvas" | "list" | "timeline" | "map";
 
 /**
- * "Ansicht": switch between portrait wall, list and timeline. The button shows the active
- * view; it opens a small dropdown with all three views (icon and label; links, the active
+ * "Ansicht": switch between portrait wall, list, timeline and map. The button shows the active
+ * view; it opens a small dropdown with all views (icon and label; links, the active
  * one is aria-current). Escape, a click outside or choosing a view closes it; arrow keys move
- * between the views. Without JavaScript all three views show right away.
+ * between the views. Without JavaScript all views show right away.
  */
 export function ViewToggle({ active }: { active: View }) {
   const locale = useLocale();
@@ -28,6 +28,7 @@ export function ViewToggle({ active }: { active: View }) {
     { view: "canvas", href: pagePath(locale, "people"), label: m.view.canvas, icon: <LayoutDashboard /> },
     { view: "list", href: listPath(locale), label: m.view.list, icon: <List /> },
     { view: "timeline", href: timelinePath(locale), label: m.view.timeline, icon: <ChartGantt /> },
+    { view: "map", href: mapPath(locale), label: m.view.map, icon: <MapIcon /> },
   ] as const;
   const current = options.find((o) => o.view === active)!;
 

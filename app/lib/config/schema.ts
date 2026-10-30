@@ -99,6 +99,8 @@ export const siteConfigSchema = z.object({
     list: z.record(localeCode, z.string().regex(/^[a-z0-9-]+$/)),
     /** Timeline view below the people page. */
     timeline: z.record(localeCode, z.string().regex(/^[a-z0-9-]+$/)),
+    /** Map view below the people page. */
+    map: z.record(localeCode, z.string().regex(/^[a-z0-9-]+$/)),
     about: z.record(localeCode, z.string().regex(/^[a-z0-9-]+$/)),
     /** Accessibility statement (German: Erklärung zur Barrierefreiheit). */
     accessibility: z.record(localeCode, z.string().regex(/^[a-z0-9-]+$/)),

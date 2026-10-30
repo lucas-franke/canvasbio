@@ -90,7 +90,7 @@ test("the view switch shows the active view and opens a dropdown to change it", 
   await expect(group.getByRole("link", { name: "Mosaik" })).toBeFocused();
   await expect(button).toHaveAttribute("aria-expanded", "true");
   // Each view with icon and visible label; arrow keys move between them.
-  await expect(group.getByRole("link")).toHaveText(["Mosaik", "Liste", "Zeitstrahl"]);
+  await expect(group.getByRole("link")).toHaveText(["Mosaik", "Liste", "Zeitstrahl", "Karte"]);
   await page.keyboard.press("ArrowDown");
   await expect(group.getByRole("link", { name: "Liste" })).toBeFocused();
   await page.keyboard.press("ArrowUp");

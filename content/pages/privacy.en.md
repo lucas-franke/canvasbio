@@ -11,7 +11,11 @@ description: Which data is processed when you visit this website, and your right
 
 ## In short
 
-This website sets no cookies, uses no analytics or tracking tools and embeds no third-party content. Fonts and images are loaded from the same server as the page.
+This website sets no cookies, uses no analytics or tracking tools and embeds no third-party content. Fonts, images and the map data are loaded from the same server as the page.
+
+## Map
+
+The map view uses the freely available geodata from Natural Earth. It is stored on our server; opening the map sends no data to map services such as Google Maps or OpenStreetMap.
 
 ## Server log files
 

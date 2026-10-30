@@ -33,14 +33,14 @@ const tabbableTile = (page: Page) => page.locator('[data-cell][tabindex="0"]');
 test("the finite wall shows every person exactly once, as a named list", async ({ page }) => {
   await openCanvas(page);
   // The whole wall is rendered, without repeats.
-  expect(await page.locator("[data-cell]").count()).toBe(200);
+  expect(await page.locator("[data-cell]").count()).toBe(400);
 
   const exposed = await page
     .locator("[data-person]")
     .evaluateAll((els) => els.map((e) => e.getAttribute("data-person")));
-  expect(exposed).toHaveLength(200);
-  expect(new Set(exposed).size).toBe(200);
-  await expect(page.getByRole("list", { name: "Porträts" }).getByRole("listitem")).toHaveCount(200);
+  expect(exposed).toHaveLength(400);
+  expect(new Set(exposed).size).toBe(400);
+  await expect(page.getByRole("list", { name: "Porträts" }).getByRole("listitem")).toHaveCount(400);
   await expect(tabbableTile(page)).toHaveCount(1);
   // Duplicates (with wrap) would be hidden from assistive tech and out of the tab order.
   const hiddenFocusable = page.locator('li[aria-hidden="true"] a:not([tabindex="-1"])');
@@ -178,7 +178,7 @@ test.describe("without JavaScript", () => {
     await expect(tiles.first()).toHaveAttribute("href", /^\/personen\/[a-z0-9-]+$/);
     // Without JavaScript the view switch shows all views right away.
     await page.getByRole("group", { name: "Ansicht" }).getByRole("link", { name: "Liste" }).click();
-    await expect(page.locator("article[data-vt-item]")).toHaveCount(200);
+    await expect(page.locator("article[data-vt-item]")).toHaveCount(400);
   });
 });
 

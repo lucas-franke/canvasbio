@@ -1,7 +1,8 @@
 import { readFile } from "node:fs/promises";
+import path from "node:path";
 
 import type { SiteConfig } from "~/lib/config/schema";
-import type { ContentAdapter, PersonDetail, PersonListItem } from "./adapter";
+import type { ContentAdapter, PersonDetail, PersonListItem, PlaceCoords } from "./adapter";
 import type { PortraitManifest } from "./images";
 import { loadContent, type LoadedContent, type LoadedPerson } from "./load.server";
 
@@ -21,6 +22,7 @@ export function createFsContentAdapter(
   manifestFile: string,
 ): ContentAdapter {
   let loading: Promise<Loaded> | undefined;
+  let placeCoords: Promise<PlaceCoords> | undefined;
 
   const load = () =>
     (loading ??= (async () => {
@@ -94,6 +96,14 @@ export function createFsContentAdapter(
 
     async getTaxonomy() {
       return (await load()).taxonomy;
+    },
+
+    // content/places.json (scripts/add-coords.ts); optional, the map just stays empty without it.
+    async getPlaceCoords() {
+      return (placeCoords ??= readFile(path.join(root, "places.json"), "utf8").then(
+        (json) => JSON.parse(json) as PlaceCoords,
+        () => ({}),
+      ));
     },
   };
 }

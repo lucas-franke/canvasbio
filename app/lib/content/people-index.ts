@@ -3,7 +3,7 @@ import { useMatches } from "react-router";
 
 import { withBase } from "~/lib/base-path";
 import type { FacetLabels } from "~/lib/search/search";
-import type { PersonListItem } from "./adapter";
+import type { PersonListItem, PlaceCoords } from "./adapter";
 import { peopleDataPath } from "./people-data-path";
 
 export { peopleDataLocale, peopleDataPath } from "./people-data-path";
@@ -15,6 +15,8 @@ export interface PeopleIndex {
   tagLabels: Record<string, string>;
   /** Labels of all facet values (search filters, place suggestions). */
   facetLabels: FacetLabels;
+  /** Coordinates of birth and death places (map view). */
+  placeCoords: PlaceCoords;
 }
 
 export interface PeopleIndexState {

@@ -55,12 +55,15 @@ export function SearchDrawer() {
           if ((event.target as Element).closest?.('[role="combobox"][aria-expanded="true"]'))
             event.preventDefault();
         }}
-        // The name field gets focus, not the close button.
+        tabIndex={-1}
+        // The name field gets focus, not the close button. On a phone the keyboard would
+        // cover half the sheet, so there the sheet itself takes focus (no keyboard).
         onOpenAutoFocus={(event) => {
           event.preventDefault();
-          // On a phone the keyboard would cover half the sheet, so the name field is only
-          // focused where there is room; preventScroll keeps the sheet's content at the top.
-          if (desktop) document.getElementById("search-name")?.focus({ preventScroll: true });
+          const target = desktop
+            ? document.getElementById("search-name")
+            : (event.currentTarget as HTMLElement | null);
+          target?.focus({ preventScroll: true });
         }}
       >
         <div className="flex items-center justify-between px-6 pt-2">

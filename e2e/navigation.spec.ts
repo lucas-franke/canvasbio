@@ -115,19 +115,28 @@ test("the start page shows who was born on this day", async ({ page }) => {
   await page.clock.setFixedTime(new Date(2026, 6, 5, 12));
   await page.goto("/");
   const today = page.getByRole("region", { name: "An diesem Tag" });
+  // Two at first, the rest one tap away (nobody is dropped for being less known).
+  await expect(today.getByRole("listitem")).toHaveCount(2);
+  await today.getByRole("button", { name: "1 weitere anzeigen" }).click();
+  await expect(today.getByRole("listitem")).toHaveCount(3);
   await expect(today.getByRole("link", { name: /Clara Zetkin/ })).toBeVisible();
   await expect(today).toContainText("Heute vor 169 Jahren geboren");
+  await expect(today.getByRole("button", { name: "Weniger anzeigen" })).toHaveAttribute(
+    "aria-expanded",
+    "true",
+  );
 });
 
 test("with nobody on this day, the start page shows the next days under their own heading", async ({
   page,
 }) => {
-  // 21 October: nobody in the demo collection; Annie Lorrain Smith was born on 23 October 1854.
-  await page.clock.setFixedTime(new Date(2026, 9, 21, 12));
+  // 4 July: nobody in the demo collection; Clara Zetkin was born on 5 July 1857.
+  await page.clock.setFixedTime(new Date(2026, 6, 4, 12));
   await page.goto("/");
   const soon = page.getByRole("region", { name: "In den nächsten Tagen" });
-  await expect(soon.getByRole("link", { name: /Annie Lorrain Smith/ })).toBeVisible();
-  await expect(soon).toContainText("Geboren am 23. Oktober 1854");
+  await soon.getByRole("button", { name: /weitere anzeigen/ }).click();
+  await expect(soon.getByRole("link", { name: /Clara Zetkin/ })).toBeVisible();
+  await expect(soon).toContainText("Geboren am 5. Juli 1857");
   await expect(page.getByRole("region", { name: "An diesem Tag" })).toHaveCount(0);
 });
 

@@ -20,6 +20,7 @@ export const en: Messages = {
     canvas: "Mosaic",
     list: "List",
     timeline: "Timeline",
+    map: "Map",
   },
   sort: {
     label: "Sort",
@@ -56,6 +57,8 @@ export const en: Messages = {
   start: {
     onThisDay: "On this day",
     comingUp: "Coming up",
+    showMore: (count: number) => `Show ${count} more`,
+    showFewer: "Show fewer",
     anniversaryToday: (kind: "born" | "died", years: number) =>
       `${kind === "born" ? "Born" : "Died"} ${years} years ago today`,
     anniversaryUpcoming: (kind: "born" | "died", date: string) =>
@@ -67,6 +70,7 @@ export const en: Messages = {
     title: "Biographies",
     listTitle: "Biographies as a list",
     timelineTitle: "Biographies on a timeline",
+    mapTitle: "Biographies on a map",
     gridTitle: "Biographies as a mosaic",
     /** Badge in languages where not every biography exists (contentRequired: false): this one does. */
     ownText: "In this language",
@@ -111,6 +115,23 @@ export const en: Messages = {
     controls: "Mosaic controls",
     zoomIn: "Zoom in",
     zoomOut: "Zoom out",
+  },
+  map: {
+    label: "Map of life places",
+    intro: (count: number) =>
+      `${count} biographies on the map. With a screen reader, the list of places is easier to use.`,
+    born: "Places of birth",
+    died: "Places of death",
+    showBy: "Show places",
+    places: "List of places",
+    placesTitle: "Places",
+    closePlaces: "Close list of places",
+    peopleHere: (place: string) => `Biographies from ${place}`,
+    cluster: (count: number) => `${count} biographies here, zoom in`,
+    unplaced: (count: number) => `${count} without a known place are not on the map`,
+    attribution: "Map: Natural Earth (public domain)",
+    loading: "Loading map …",
+    failed: "The map could not be loaded.",
   },
   detail: {
     close: "Close",

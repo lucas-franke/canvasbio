@@ -2,6 +2,8 @@ import type { PortraitManifestEntry, PortraitThumb } from "./images";
 import type { Person, PersonLocalized, PersonText, Taxonomy } from "./schema";
 
 /** Lightweight entry for canvas, list and search: no life story, no timeline. */
+export type PlaceCoords = Record<string, [number, number]>;
+
 export interface PersonListItem {
   slug: string;
   name: Person["name"];
@@ -36,4 +38,6 @@ export interface ContentAdapter {
   getLocales(slug: string): Promise<string[]>;
   listSlugs(): Promise<string[]>;
   getTaxonomy(): Promise<Taxonomy>;
+  /** [longitude, latitude] per place key, for the map view (places without are left out). */
+  getPlaceCoords(): Promise<PlaceCoords>;
 }
