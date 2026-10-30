@@ -1,0 +1,61 @@
+{
+  "slug": "agnes-wabnitz",
+  "name": {
+    "display": "Agnes Wabnitz",
+    "sort": "Wabnitz, Agnes"
+  },
+  "born": {
+    "date": "1841-12-10",
+    "place": "gliwice"
+  },
+  "died": {
+    "date": "1894-08-28",
+    "place": "berlin"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1892",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Agnes_Wabnitz.jpg"
+  },
+  "facets": {
+    "field": [
+      "social"
+    ],
+    "place": [
+      "gliwice",
+      "berlin",
+      "germany"
+    ]
+  },
+  "prominence": 0.45,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q394660",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Agnes Wabnitz",
+      "url": "https://de.wikipedia.org/wiki/Agnes_Wabnitz",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Agnes Wabnitz",
+      "url": "https://en.wikipedia.org/wiki/Agnes_Wabnitz",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q394660"
+}

@@ -1,0 +1,50 @@
+{
+  "slug": "louisa-snelson",
+  "name": {
+    "display": "Louisa Snelson",
+    "sort": "Snelson, Louisa"
+  },
+  "born": {
+    "date": "1844-01-29",
+    "place": "wellington"
+  },
+  "died": {
+    "date": "1919-12-15"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1890",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Louisa_Snelson.jpg"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "wellington"
+    ]
+  },
+  "prominence": 0.19,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q65923023",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Louisa Snelson",
+      "url": "https://en.wikipedia.org/wiki/Louisa_Snelson",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q65923023"
+}

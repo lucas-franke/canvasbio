@@ -1,0 +1,61 @@
+{
+  "slug": "anne-dallas-dudley",
+  "name": {
+    "display": "Anne Dallas Dudley",
+    "sort": "Dudley, Anne Dallas"
+  },
+  "born": {
+    "date": "1876-11-13",
+    "place": "nashville"
+  },
+  "died": {
+    "date": "1955-09-13",
+    "place": "belle-meade"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Bain News Service, publisher, 1915",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mrs._Guilford_Dudley_LCCN2014710247.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "nashville",
+      "belle-meade",
+      "united-states"
+    ]
+  },
+  "prominence": 0.76,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q3784220",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Anne Dallas Dudley",
+      "url": "https://de.wikipedia.org/wiki/Anne_Dallas_Dudley",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Anne Dallas Dudley",
+      "url": "https://en.wikipedia.org/wiki/Anne_Dallas_Dudley",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q3784220"
+}

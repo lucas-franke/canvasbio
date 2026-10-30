@@ -1,0 +1,62 @@
+{
+  "slug": "gina-krog",
+  "name": {
+    "display": "Gina Krog",
+    "sort": "Krog, Gina"
+  },
+  "born": {
+    "date": "1847-06-20",
+    "place": "flakstadoya"
+  },
+  "died": {
+    "date": "1916-04-14",
+    "place": "oslo"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Asta Nørregaard, 1898",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gina_Krog_by_Asta_N%C3%B8rregaard.jpeg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing"
+    ],
+    "place": [
+      "flakstadoya",
+      "oslo",
+      "norway"
+    ]
+  },
+  "prominence": 0.74,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q266912",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Gina Krog",
+      "url": "https://de.wikipedia.org/wiki/Gina_Krog",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Gina Krog",
+      "url": "https://en.wikipedia.org/wiki/Gina_Krog",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q266912"
+}

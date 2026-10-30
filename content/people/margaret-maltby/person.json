@@ -1,0 +1,62 @@
+{
+  "slug": "margaret-maltby",
+  "name": {
+    "display": "Margaret Maltby",
+    "sort": "Maltby, Margaret"
+  },
+  "born": {
+    "date": "1860-12-10",
+    "place": "bristolville"
+  },
+  "died": {
+    "date": "1944-05-03",
+    "place": "new-york-city"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unbekannt",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:SIA-SIA2008-5785_(retuschiert).jpg"
+  },
+  "facets": {
+    "field": [
+      "education",
+      "science"
+    ],
+    "place": [
+      "bristolville",
+      "new-york-city",
+      "united-states"
+    ]
+  },
+  "prominence": 0.79,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q529477",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Margaret Maltby",
+      "url": "https://de.wikipedia.org/wiki/Margaret_Maltby",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Margaret Eliza Maltby",
+      "url": "https://en.wikipedia.org/wiki/Margaret_Eliza_Maltby",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q529477"
+}

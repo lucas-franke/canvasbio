@@ -1,0 +1,53 @@
+{
+  "slug": "elizabeth-bunnell-read",
+  "name": {
+    "display": "Elizabeth Bunnell Read",
+    "sort": "Read, Elizabeth Bunnell"
+  },
+  "born": {
+    "date": "1834-12-24",
+    "place": "syracuse"
+  },
+  "died": {
+    "date": "1909-05-22",
+    "place": "fayetteville"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unbekannt",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:ELIZABETH_C._BUNNELL_READ_A_woman_of_the_century_(page_610_crop)_(cropped_2024).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "syracuse",
+      "fayetteville",
+      "united-states"
+    ]
+  },
+  "prominence": 0.19,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q65554978",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Elizabeth Bunnell Read",
+      "url": "https://en.wikipedia.org/wiki/Elizabeth_Bunnell_Read",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q65554978"
+}

@@ -1,0 +1,62 @@
+{
+  "slug": "ludomila-scheiwiler-von-schreyder",
+  "name": {
+    "display": "Ludomila Scheiwiler-von Schreyder",
+    "sort": "Schreyder, Ludomila Scheiwiler-von"
+  },
+  "born": {
+    "date": "1888-04-10",
+    "place": "tbilisi"
+  },
+  "died": {
+    "date": "1980-02-03",
+    "place": "frauenfeld"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown photographer",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ludomila_Scheiwiler-von_Schreyder_(1888-1980).tif"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "tbilisi",
+      "frauenfeld",
+      "georgia",
+      "switzerland"
+    ]
+  },
+  "prominence": 0.39,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q107187721",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Ludomila Alexandrowna Scheiwiler-von Schreyder",
+      "url": "https://de.wikipedia.org/wiki/Ludomila_Alexandrowna_Scheiwiler-von_Schreyder",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ludomila Alexandrowna Scheiwiler-von Schreyder",
+      "url": "https://en.wikipedia.org/wiki/Ludomila_Alexandrowna_Scheiwiler-von_Schreyder",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q107187721"
+}

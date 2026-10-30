@@ -1,0 +1,53 @@
+{
+  "slug": "leo-wanner",
+  "name": {
+    "display": "Léo Wanner",
+    "sort": "Wanner, Léo"
+  },
+  "born": {
+    "date": "1886-01-04",
+    "place": "bourg-en-bresse"
+  },
+  "died": {
+    "date": "1941-11-05",
+    "place": "paris"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Regards, 1934",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:L%C3%A9o_Wanner_1934-05-25.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "bourg-en-bresse",
+      "paris",
+      "france"
+    ]
+  },
+  "prominence": 0.45,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q115102675",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Léo Wanner",
+      "url": "https://en.wikipedia.org/wiki/L%C3%A9o_Wanner",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q115102675"
+}

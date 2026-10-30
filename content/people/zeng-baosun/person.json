@@ -1,0 +1,64 @@
+{
+  "slug": "zeng-baosun",
+  "name": {
+    "display": "Zeng Baosun",
+    "sort": "Baosun, Zeng"
+  },
+  "born": {
+    "date": "1893-03-09",
+    "place": "xiangxiang-city"
+  },
+  "died": {
+    "date": "1978-07-27",
+    "place": "taipei"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1916",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zeng_Baosun.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "education",
+      "science"
+    ],
+    "place": [
+      "xiangxiang-city",
+      "taipei",
+      "people-s-republic-of-china"
+    ]
+  },
+  "prominence": 0.5,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q11091484",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Zeng Baosun",
+      "url": "https://de.wikipedia.org/wiki/Zeng_Baosun",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Zeng Baosun",
+      "url": "https://en.wikipedia.org/wiki/Zeng_Baosun",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q11091484"
+}

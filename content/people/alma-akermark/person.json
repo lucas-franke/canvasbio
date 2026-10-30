@@ -1,0 +1,55 @@
+{
+  "slug": "alma-akermark",
+  "name": {
+    "display": "Alma Åkermark",
+    "sort": "Åkermark, Alma"
+  },
+  "born": {
+    "date": "1853-06-11",
+    "place": "forshaella-foersamling"
+  },
+  "died": {
+    "date": "1933-06-04",
+    "place": "oscar-fredriks-foersamling"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alma_Akermark.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education",
+      "arts"
+    ],
+    "place": [
+      "forshaella-foersamling",
+      "oscar-fredriks-foersamling",
+      "sweden"
+    ]
+  },
+  "prominence": 0.64,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q23988692",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Alma Åkermark",
+      "url": "https://en.wikipedia.org/wiki/Alma_%C3%85kermark",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q23988692"
+}

@@ -117,8 +117,10 @@ test("the start page shows who was born on this day", async ({ page }) => {
   const today = page.getByRole("region", { name: "An diesem Tag" });
   // Two at first, the rest one tap away (nobody is dropped for being less known).
   await expect(today.getByRole("listitem")).toHaveCount(2);
-  await today.getByRole("button", { name: "1 weitere anzeigen" }).click();
-  await expect(today.getByRole("listitem")).toHaveCount(3);
+  const more = today.getByRole("button", { name: /^\d+ weitere anzeigen$/ });
+  const hidden = Number((await more.textContent())!.match(/\d+/)![0]);
+  await more.click();
+  await expect(today.getByRole("listitem")).toHaveCount(2 + hidden);
   await expect(today.getByRole("link", { name: /Clara Zetkin/ })).toBeVisible();
   await expect(today).toContainText("Heute vor 169 Jahren geboren");
   await expect(today.getByRole("button", { name: "Weniger anzeigen" })).toHaveAttribute(
@@ -130,13 +132,12 @@ test("the start page shows who was born on this day", async ({ page }) => {
 test("with nobody on this day, the start page shows the next days under their own heading", async ({
   page,
 }) => {
-  // 4 July: nobody in the demo collection; Clara Zetkin was born on 5 July 1857.
-  await page.clock.setFixedTime(new Date(2026, 6, 4, 12));
+  // 20 August: nobody in the demo collection; Hannah Jane Patterson died on 21 August 1937.
+  await page.clock.setFixedTime(new Date(2026, 7, 20, 12));
   await page.goto("/");
   const soon = page.getByRole("region", { name: "In den nächsten Tagen" });
-  await soon.getByRole("button", { name: /weitere anzeigen/ }).click();
-  await expect(soon.getByRole("link", { name: /Clara Zetkin/ })).toBeVisible();
-  await expect(soon).toContainText("Geboren am 5. Juli 1857");
+  await expect(soon.getByRole("link", { name: /Hannah Jane Patterson/ })).toBeVisible();
+  await expect(soon).toContainText("Gestorben am 21. August 1937");
   await expect(page.getByRole("region", { name: "An diesem Tag" })).toHaveCount(0);
 });
 

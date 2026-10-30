@@ -1,0 +1,63 @@
+{
+  "slug": "matilde-hidalgo",
+  "name": {
+    "display": "Matilde Hidalgo",
+    "sort": "Hidalgo, Matilde"
+  },
+  "born": {
+    "date": "1889-09-29",
+    "place": "loja"
+  },
+  "died": {
+    "date": "1974",
+    "place": "guayaquil"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Colegio Nacional de Artes Plásticas \"Dra. Matilde Hidalgo de Procel\". Machala - El Oro - Ecuador",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Matilde_Hidalgo.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "medicine"
+    ],
+    "place": [
+      "loja",
+      "guayaquil",
+      "ecuador"
+    ]
+  },
+  "prominence": 0.9,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q187187",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Matilde Hidalgo",
+      "url": "https://de.wikipedia.org/wiki/Matilde_Hidalgo",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Matilde Hidalgo",
+      "url": "https://en.wikipedia.org/wiki/Matilde_Hidalgo",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q187187"
+}

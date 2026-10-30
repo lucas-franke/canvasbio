@@ -1,0 +1,52 @@
+{
+  "slug": "theodora-w-youmans",
+  "name": {
+    "display": "Theodora W. Youmans",
+    "sort": "Youmans, Theodora W."
+  },
+  "born": {
+    "date": "1863-02-01",
+    "place": "ashippun"
+  },
+  "died": {
+    "date": "1932-08-17"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unbekannt",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:THEODORA_WINTON_YOUMANS_A_woman_of_the_century_(page_818_crop).jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing"
+    ],
+    "place": [
+      "ashippun",
+      "united-states"
+    ]
+  },
+  "prominence": 0.31,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q19787066",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Theodora W. Youmans",
+      "url": "https://en.wikipedia.org/wiki/Theodora_W._Youmans",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q19787066"
+}

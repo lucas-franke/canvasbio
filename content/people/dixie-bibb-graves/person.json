@@ -1,0 +1,60 @@
+{
+  "slug": "dixie-bibb-graves",
+  "name": {
+    "display": "Dixie Bibb Graves",
+    "sort": "Graves, Dixie Bibb"
+  },
+  "born": {
+    "date": "1882-07-26",
+    "place": "montgomery"
+  },
+  "died": {
+    "date": "1965-01-21",
+    "place": "montgomery"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unbekannt",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:SenatorDixieBibbGraves.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "montgomery",
+      "united-states"
+    ]
+  },
+  "prominence": 0.82,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q273900",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Dixie Bibb Graves",
+      "url": "https://de.wikipedia.org/wiki/Dixie_Bibb_Graves",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Dixie Bibb Graves",
+      "url": "https://en.wikipedia.org/wiki/Dixie_Bibb_Graves",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q273900"
+}

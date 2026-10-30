@@ -1,0 +1,47 @@
+{
+  "slug": "ester-hofvander-sandberg",
+  "name": {
+    "display": "Ester Hofvander-Sandberg",
+    "sort": "Hofvander-Sandberg, Ester"
+  },
+  "born": {
+    "date": "1888-02-10"
+  },
+  "died": {
+    "date": "1967-10-07"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1920",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ester_Sandberg.png"
+  },
+  "facets": {
+    "field": [
+      "science"
+    ],
+    "place": []
+  },
+  "prominence": 0.5,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q50804672",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ester Hofvander-Sandberg",
+      "url": "https://en.wikipedia.org/wiki/Ester_Hofvander-Sandberg",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q50804672"
+}

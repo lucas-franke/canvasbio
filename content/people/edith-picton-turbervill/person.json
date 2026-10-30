@@ -1,0 +1,53 @@
+{
+  "slug": "edith-picton-turbervill",
+  "name": {
+    "display": "Edith Picton-Turbervill",
+    "sort": "Picton-Turbervill, Edith"
+  },
+  "born": {
+    "date": "1872-06-13",
+    "place": "fownhope"
+  },
+  "died": {
+    "date": "1960-08-31",
+    "place": "cheltenham"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Edith Picton-Turberville (Life time: Died August 1960), 1939",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Edith_Picton-Turberville_portrait.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "fownhope",
+      "cheltenham",
+      "united-kingdom"
+    ]
+  },
+  "prominence": 0.54,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5338643",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Edith Picton-Turbervill",
+      "url": "https://en.wikipedia.org/wiki/Edith_Picton-Turbervill",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5338643"
+}

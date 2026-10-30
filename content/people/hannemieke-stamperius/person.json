@@ -1,0 +1,52 @@
+{
+  "slug": "hannemieke-stamperius",
+  "name": {
+    "display": "Hannemieke Stamperius",
+    "sort": "Stamperius, Hannemieke"
+  },
+  "born": {
+    "date": "1943-09-12",
+    "place": "tiel"
+  },
+  "died": {
+    "date": "2022-11-22"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Fotopersbureau De Boer, 1990",
+    "license": {
+      "name": "CC0",
+      "url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hannemieke_Stamperius,_1990.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "tiel",
+      "netherlands"
+    ]
+  },
+  "prominence": 0.5,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q1977977",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Hannemieke Stamperius",
+      "url": "https://en.wikipedia.org/wiki/Hannemieke_Stamperius",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q1977977"
+}

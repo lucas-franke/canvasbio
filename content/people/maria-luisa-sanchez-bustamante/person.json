@@ -1,0 +1,50 @@
+{
+  "slug": "maria-luisa-sanchez-bustamante",
+  "name": {
+    "display": "María Luisa Sánchez Bustamante",
+    "sort": "Bustamante, María Luisa Sánchez"
+  },
+  "born": {
+    "date": "1896-08-19",
+    "place": "sucre"
+  },
+  "died": {
+    "date": "1988"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown, 1950",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maria_Luisa_S%C3%A1nchez_Bustamante.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "sucre"
+    ]
+  },
+  "prominence": 0.39,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q64025621",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): María Luisa Sánchez Bustamante",
+      "url": "https://en.wikipedia.org/wiki/Mar%C3%ADa_Luisa_S%C3%A1nchez_Bustamante",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q64025621"
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "hubertine-auclert",
+  "name": {
+    "display": "Hubertine Auclert",
+    "sort": "Auclert, Hubertine"
+  },
+  "born": {
+    "date": "1848-04-10",
+    "place": "saint-priest-en-murat"
+  },
+  "died": {
+    "date": "1914-04-08",
+    "place": "paris"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Agence Rol, 1910",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Agence_Rol_-_1910_-_Madame_Hubertine_Auclert.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "saint-priest-en-murat",
+      "paris",
+      "france"
+    ]
+  },
+  "prominence": 0.95,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q448953",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Hubertine Auclert",
+      "url": "https://de.wikipedia.org/wiki/Hubertine_Auclert",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Hubertine Auclert",
+      "url": "https://en.wikipedia.org/wiki/Hubertine_Auclert",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q448953"
+}

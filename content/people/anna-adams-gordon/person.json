@@ -1,0 +1,51 @@
+{
+  "slug": "anna-adams-gordon",
+  "name": {
+    "display": "Anna Adams Gordon",
+    "sort": "Gordon, Anna Adams"
+  },
+  "born": {
+    "date": "1853-07-21",
+    "place": "boston"
+  },
+  "died": {
+    "date": "1931-06-15"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "unknown author, 1908",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anna_Adams_Gordon.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "boston",
+      "united-states"
+    ]
+  },
+  "prominence": 0.5,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q4766809",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Anna Adams Gordon",
+      "url": "https://en.wikipedia.org/wiki/Anna_Adams_Gordon",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q4766809"
+}

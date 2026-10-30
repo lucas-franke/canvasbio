@@ -1,0 +1,65 @@
+{
+  "slug": "milena-rudnyzka",
+  "name": {
+    "display": "Milena Rudnyzka",
+    "sort": "Rudnyzka, Milena"
+  },
+  "born": {
+    "date": "1892-07-15",
+    "place": "zboriv"
+  },
+  "died": {
+    "date": "1976-03-29",
+    "place": "munich"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "unknown-anonymous, 1930",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Milena_Rudnycka.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "education",
+      "social"
+    ],
+    "place": [
+      "zboriv",
+      "munich",
+      "ukraine",
+      "germany"
+    ]
+  },
+  "prominence": 0.93,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q11781202",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Milena Rudnyzka",
+      "url": "https://de.wikipedia.org/wiki/Milena_Rudnyzka",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Milena Rudnytska",
+      "url": "https://en.wikipedia.org/wiki/Milena_Rudnytska",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q11781202"
+}

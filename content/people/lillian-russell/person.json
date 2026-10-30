@@ -1,0 +1,61 @@
+{
+  "slug": "lillian-russell",
+  "name": {
+    "display": "Lillian Russell",
+    "sort": "Russell, Lillian"
+  },
+  "born": {
+    "date": "1861-12-04",
+    "place": "clinton"
+  },
+  "died": {
+    "date": "1922-06-06",
+    "place": "pittsburgh"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1897",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lillian_Russell,_1897.png"
+  },
+  "facets": {
+    "field": [
+      "arts"
+    ],
+    "place": [
+      "clinton",
+      "pittsburgh",
+      "united-states"
+    ]
+  },
+  "prominence": 0.85,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q435415",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Lillian Russell",
+      "url": "https://de.wikipedia.org/wiki/Lillian_Russell",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Lillian Russell",
+      "url": "https://en.wikipedia.org/wiki/Lillian_Russell",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q435415"
+}

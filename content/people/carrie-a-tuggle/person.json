@@ -1,0 +1,54 @@
+{
+  "slug": "carrie-a-tuggle",
+  "name": {
+    "display": "Carrie A. Tuggle",
+    "sort": "Tuggle, Carrie A."
+  },
+  "born": {
+    "date": "1858-05-28",
+    "place": "eufaula"
+  },
+  "died": {
+    "date": "1924-11-05",
+    "place": "birmingham"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1924",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Carrie_A._Tuggle.png"
+  },
+  "facets": {
+    "field": [
+      "education",
+      "social"
+    ],
+    "place": [
+      "eufaula",
+      "birmingham",
+      "united-states"
+    ]
+  },
+  "prominence": 0.19,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q22909502",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Carrie A. Tuggle",
+      "url": "https://en.wikipedia.org/wiki/Carrie_A._Tuggle",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q22909502"
+}

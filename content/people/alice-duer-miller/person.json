@@ -1,0 +1,61 @@
+{
+  "slug": "alice-duer-miller",
+  "name": {
+    "display": "Alice Duer Miller",
+    "sort": "Miller, Alice Duer"
+  },
+  "born": {
+    "date": "1874-07-28",
+    "place": "new-york-city"
+  },
+  "died": {
+    "date": "1942-08-22",
+    "place": "new-york-city"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1920",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alice-Duer-Miller.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "arts"
+    ],
+    "place": [
+      "new-york-city",
+      "united-states"
+    ]
+  },
+  "prominence": 0.77,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q533042",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Alice Duer Miller",
+      "url": "https://de.wikipedia.org/wiki/Alice_Duer_Miller",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Alice Duer Miller",
+      "url": "https://en.wikipedia.org/wiki/Alice_Duer_Miller",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q533042"
+}

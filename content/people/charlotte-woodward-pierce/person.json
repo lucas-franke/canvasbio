@@ -1,0 +1,53 @@
+{
+  "slug": "charlotte-woodward-pierce",
+  "name": {
+    "display": "Charlotte Woodward Pierce",
+    "sort": "Pierce, Charlotte Woodward"
+  },
+  "born": {
+    "date": "1830-01-14",
+    "place": "waterloo"
+  },
+  "died": {
+    "date": "1924-03-15",
+    "place": "philadelphia"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "National Photo Company Collection, 1921",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mrs._Charlotte_Woodward_Pierce,_2-10-21_LCCN2016844937.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "waterloo",
+      "philadelphia",
+      "united-states"
+    ]
+  },
+  "prominence": 0.31,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q59782533",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Charlotte Woodward Pierce",
+      "url": "https://en.wikipedia.org/wiki/Charlotte_Woodward_Pierce",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q59782533"
+}

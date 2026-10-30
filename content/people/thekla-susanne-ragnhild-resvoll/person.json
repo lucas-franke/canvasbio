@@ -1,0 +1,61 @@
+{
+  "slug": "thekla-susanne-ragnhild-resvoll",
+  "name": {
+    "display": "Thekla Susanne Ragnhild Resvoll",
+    "sort": "Resvoll, Thekla Susanne Ragnhild"
+  },
+  "born": {
+    "date": "1871-05-22",
+    "place": "vaga"
+  },
+  "died": {
+    "date": "1948-06-14",
+    "place": "oslo"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Gustav Borgen, 1891",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Thekla_Resvoll.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "vaga",
+      "oslo",
+      "norway"
+    ]
+  },
+  "prominence": 0.93,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q500677",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Thekla Susanne Ragnhild Resvoll",
+      "url": "https://de.wikipedia.org/wiki/Thekla_Susanne_Ragnhild_Resvoll",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Thekla Resvoll",
+      "url": "https://en.wikipedia.org/wiki/Thekla_Resvoll",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q500677"
+}

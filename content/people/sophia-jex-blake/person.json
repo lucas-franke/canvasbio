@@ -1,0 +1,63 @@
+{
+  "slug": "sophia-jex-blake",
+  "name": {
+    "display": "Sophia Jex-Blake",
+    "sort": "Jex-Blake, Sophia"
+  },
+  "born": {
+    "date": "1840-01-21",
+    "place": "hastings"
+  },
+  "died": {
+    "date": "1912-01-07",
+    "place": "mark-cross"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1860",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sophia_Jex-Blake_as_a_young_woman.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education",
+      "medicine"
+    ],
+    "place": [
+      "hastings",
+      "mark-cross",
+      "united-kingdom"
+    ]
+  },
+  "prominence": 0.93,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q452029",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Sophia Jex-Blake",
+      "url": "https://de.wikipedia.org/wiki/Sophia_Jex-Blake",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Sophia Jex-Blake",
+      "url": "https://en.wikipedia.org/wiki/Sophia_Jex-Blake",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q452029"
+}

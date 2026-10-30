@@ -1,0 +1,53 @@
+{
+  "slug": "salwa-mahmasani-mumnah",
+  "name": {
+    "display": "Salwa Mahmasani Mumnah",
+    "sort": "Mumnah, Salwa Mahmasani"
+  },
+  "born": {
+    "date": "1908",
+    "place": "beirut"
+  },
+  "died": {
+    "date": "1957",
+    "place": "beirut"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1957",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Salwa_Mahmasani_Mumnah.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education"
+    ],
+    "place": [
+      "beirut",
+      "lebanon"
+    ]
+  },
+  "prominence": 0.5,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q110990965",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Salwa Mahmasani Moumina",
+      "url": "https://en.wikipedia.org/wiki/Salwa_Mahmasani_Moumina",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q110990965"
+}

@@ -79,7 +79,9 @@ export async function loadContent(root: string, config: SiteConfig): Promise<Loa
     .map((d) => d.name)
     .sort();
 
-  for (const folder of folders) {
+  // Folders are read in parallel (sequential reads of hundreds of people stalled the
+  // pre-rendering server), then added in sorted order.
+  const loadPerson = async (folder: string): Promise<LoadedPerson | null> => {
     const dir = path.join(peopleDir, folder);
     const personFile = path.join(dir, "person.json");
 
@@ -88,12 +90,12 @@ export async function loadContent(root: string, config: SiteConfig): Promise<Loa
       const parsed = personSchema.safeParse(JSON.parse(await readFile(personFile, "utf8")));
       if (!parsed.success) {
         error(personFile, formatZodError(parsed.error));
-        continue;
+        return null;
       }
       person = parsed.data;
     } catch (e) {
       error(personFile, `not readable: ${(e as Error).message}`);
-      continue;
+      return null;
     }
 
     if (person.slug !== folder)
@@ -133,7 +135,10 @@ export async function loadContent(root: string, config: SiteConfig): Promise<Loa
       if (!texts.has(locale)) error(path.join(dir, `${locale}.md`), "required translation is missing");
     }
 
-    people.set(person.slug, { person, texts });
+    return { person, texts };
+  };
+  for (const entry of await Promise.all(folders.map(loadPerson))) {
+    if (entry) people.set(entry.person.slug, entry);
   }
 
   if (people.size === 0) error(peopleDir, "no people found");

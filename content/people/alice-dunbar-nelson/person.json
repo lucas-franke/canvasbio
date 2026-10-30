@@ -1,0 +1,62 @@
+{
+  "slug": "alice-dunbar-nelson",
+  "name": {
+    "display": "Alice Dunbar-Nelson",
+    "sort": "Dunbar-Nelson, Alice"
+  },
+  "born": {
+    "date": "1875-07-19",
+    "place": "new-orleans"
+  },
+  "died": {
+    "date": "1935-09-18",
+    "place": "philadelphia"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown photographer, 1902",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alice_Dunbar-Nelson.png"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education"
+    ],
+    "place": [
+      "new-orleans",
+      "philadelphia",
+      "united-states"
+    ]
+  },
+  "prominence": 0.9,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q3611679",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Alice Dunbar-Nelson",
+      "url": "https://de.wikipedia.org/wiki/Alice_Dunbar-Nelson",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Alice Dunbar Nelson",
+      "url": "https://en.wikipedia.org/wiki/Alice_Dunbar_Nelson",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q3611679"
+}

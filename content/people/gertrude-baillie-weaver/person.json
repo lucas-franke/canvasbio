@@ -1,0 +1,53 @@
+{
+  "slug": "gertrude-baillie-weaver",
+  "name": {
+    "display": "Gertrude Baillie Weaver",
+    "sort": "Weaver, Gertrude Baillie"
+  },
+  "born": {
+    "date": "1855-06-08",
+    "place": "kensington"
+  },
+  "died": {
+    "date": "1926-11-26",
+    "place": "wimbledon"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "AnonymousUnknown author, 1909",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gertrude_Baillie-Weaver.png"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "kensington",
+      "wimbledon",
+      "united-kingdom"
+    ]
+  },
+  "prominence": 0.45,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q18936076",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Gertrude Baillie-Weaver",
+      "url": "https://en.wikipedia.org/wiki/Gertrude_Baillie-Weaver",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q18936076"
+}

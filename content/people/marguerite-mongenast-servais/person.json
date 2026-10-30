@@ -1,0 +1,53 @@
+{
+  "slug": "marguerite-mongenast-servais",
+  "name": {
+    "display": "Marguerite Mongenast-Servais",
+    "sort": "Mongenast-Servais, Marguerite"
+  },
+  "born": {
+    "date": "1882-06-25",
+    "place": "weilerbach"
+  },
+  "died": {
+    "date": "1925-06-13",
+    "place": "saint-nicolas-de-port"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Charles Bernhoeft, 1905",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marguerite_Mongenast-Servais_by_Bernhoeft.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "weilerbach",
+      "saint-nicolas-de-port",
+      "france"
+    ]
+  },
+  "prominence": 0.5,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q16439863",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Marguerite Mongenast-Servais",
+      "url": "https://en.wikipedia.org/wiki/Marguerite_Mongenast-Servais",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q16439863"
+}

@@ -3,6 +3,7 @@ import { memo } from "react";
 import { Link } from "react-router";
 
 import { Portrait } from "~/components/portrait";
+import { portraitUrl } from "~/lib/content/images";
 import type { TileVariation } from "~/lib/canvas/layout";
 import type { PersonListItem } from "~/lib/content/adapter";
 import { markPortraitSource } from "~/lib/view-transition";
@@ -98,9 +99,26 @@ export const CanvasTile = memo(function CanvasTile({
         data-match={match === undefined ? undefined : match ? "hit" : "miss"}
         aria-current={primary && active ? "page" : undefined}
         tabIndex={tabbable ? 0 : -1}
+        // Bare and far tiles have no visible name: the link is named directly.
+        aria-label={near && !far ? undefined : person.name.display}
         className="canvas-tile group block size-full"
+        style={near ? undefined : { backgroundColor: person.image.color }}
       >
-        {near ? (
+        {/* Away from the view the link is bare, in the portrait's dominant colour (a fast fling). */}
+        {near && far ? (
+          // Seen from afar (names hidden, tiles small): one small image, no tint or name layer.
+          <img
+            data-vt-portrait
+            src={portraitUrl(person.slug, "sq", 160, "webp", person.image.hash)}
+            alt=""
+            width={160}
+            height={160}
+            decoding="async"
+            draggable={false}
+            className={cn("block size-full object-cover", edgeClass)}
+            style={{ backgroundColor: person.image.color }}
+          />
+        ) : near ? (
           <span
             data-vt-portrait
             data-tint
@@ -114,20 +132,11 @@ export const CanvasTile = memo(function CanvasTile({
               className="size-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
             {/* Dark gradient guarantees contrast for the name regardless of the photo. */}
-            {far ? (
-              <span className="sr-only">{person.name.display}</span>
-            ) : (
-              <span className="canvas-tile-name absolute inset-x-0 bottom-0 bg-linear-to-t from-stage via-stage/80 to-transparent font-medium text-stage-foreground">
-                <span className="canvas-tile-label">{person.name.display}</span>
-              </span>
-            )}
+            <span className="canvas-tile-name absolute inset-x-0 bottom-0 bg-linear-to-t from-stage via-stage/80 to-transparent font-medium text-stage-foreground">
+              <span className="canvas-tile-label">{person.name.display}</span>
+            </span>
           </span>
-        ) : (
-          // Its dominant colour shows through until it comes near (a fast fling, the far wall).
-          <span className="block size-full" style={{ backgroundColor: person.image.color }}>
-            <span className="sr-only">{person.name.display}</span>
-          </span>
-        )}
+        ) : null}
       </Link>
     </li>
   );

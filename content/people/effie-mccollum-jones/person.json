@@ -1,0 +1,53 @@
+{
+  "slug": "effie-mccollum-jones",
+  "name": {
+    "display": "Effie McCollum Jones",
+    "sort": "Jones, Effie McCollum"
+  },
+  "born": {
+    "date": "1869-03-29",
+    "place": "redfield"
+  },
+  "died": {
+    "date": "1952-07-06",
+    "place": "webster-city"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "No photographer named in original source., 1919",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:EffieMcCollumJones.tif"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "redfield",
+      "webster-city",
+      "united-states"
+    ]
+  },
+  "prominence": 0,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5347468",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Effie McCollum Jones",
+      "url": "https://en.wikipedia.org/wiki/Effie_McCollum_Jones",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5347468"
+}

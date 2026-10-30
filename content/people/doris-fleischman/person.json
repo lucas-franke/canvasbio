@@ -1,0 +1,61 @@
+{
+  "slug": "doris-fleischman",
+  "name": {
+    "display": "Doris Fleischman",
+    "sort": "Fleischman, Doris"
+  },
+  "born": {
+    "date": "1891-07-18",
+    "place": "new-york-city"
+  },
+  "died": {
+    "date": "1980-07-10",
+    "place": "cambridge"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Edward L. Bernays, 1923",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Doris_E._Fleischman_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "new-york-city",
+      "cambridge",
+      "united-states"
+    ]
+  },
+  "prominence": 0.54,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5297930",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Doris Fleischman",
+      "url": "https://de.wikipedia.org/wiki/Doris_Fleischman",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Doris Fleischman",
+      "url": "https://en.wikipedia.org/wiki/Doris_Fleischman",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5297930"
+}

@@ -1,0 +1,63 @@
+{
+  "slug": "anna-kingsford",
+  "name": {
+    "display": "Anna Kingsford",
+    "sort": "Kingsford, Anna"
+  },
+  "born": {
+    "date": "1846-09-16",
+    "place": "maryland"
+  },
+  "died": {
+    "date": "1888-02-22",
+    "place": "london"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1880",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anna_Kingsford_3.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "medicine",
+      "science"
+    ],
+    "place": [
+      "maryland",
+      "london",
+      "united-kingdom"
+    ]
+  },
+  "prominence": 0.93,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q466175",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Anna Kingsford",
+      "url": "https://de.wikipedia.org/wiki/Anna_Kingsford",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Anna Kingsford",
+      "url": "https://en.wikipedia.org/wiki/Anna_Kingsford",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q466175"
+}

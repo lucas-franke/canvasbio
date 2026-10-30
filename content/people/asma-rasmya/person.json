@@ -1,0 +1,51 @@
+{
+  "slug": "asma-rasmya",
+  "name": {
+    "display": "Asma Rasmya",
+    "sort": "Rasmya, Asma"
+  },
+  "born": {
+    "date": "1877",
+    "place": "damascus"
+  },
+  "died": {
+    "date": "1945"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Auguste Léon, 1922",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:1922_Mahmud_Tarzi_and_Asma_Rasmya.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "damascus",
+      "syria"
+    ]
+  },
+  "prominence": 0.64,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q108029601",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Asma Rasmya",
+      "url": "https://en.wikipedia.org/wiki/Asma_Rasmya",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q108029601"
+}

@@ -1,0 +1,53 @@
+{
+  "slug": "kathleen-clare-o-keeffe",
+  "name": {
+    "display": "Kathleen Clare O'Keeffe",
+    "sort": "O'Keeffe, Kathleen Clare"
+  },
+  "born": {
+    "date": "1883-01-09",
+    "place": "maitland"
+  },
+  "died": {
+    "date": "1949",
+    "place": "mosman"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Judith Fletcher, 1929",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kathleen_Clare_O%27Keefe.png"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "maitland",
+      "mosman",
+      "australia"
+    ]
+  },
+  "prominence": 0,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q21536054",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Kathleen Clare O'Keeffe",
+      "url": "https://en.wikipedia.org/wiki/Kathleen_Clare_O'Keeffe",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q21536054"
+}

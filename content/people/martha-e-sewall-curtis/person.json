@@ -1,0 +1,51 @@
+{
+  "slug": "martha-e-sewall-curtis",
+  "name": {
+    "display": "Martha E. Sewall Curtis",
+    "sort": "Curtis, Martha E. Sewall"
+  },
+  "born": {
+    "date": "1858-05-18",
+    "place": "burlington"
+  },
+  "died": {
+    "date": "1915-04-27"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:MARTHA_E._SEWALL_CURTIS.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "burlington",
+      "united-states"
+    ]
+  },
+  "prominence": 0.45,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q60429870",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Martha E. Sewall Curtis",
+      "url": "https://en.wikipedia.org/wiki/Martha_E._Sewall_Curtis",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q60429870"
+}

@@ -1,0 +1,53 @@
+{
+  "slug": "cor-razoux-schultz-metzer",
+  "name": {
+    "display": "Cor Razoux Schultz-Metzer",
+    "sort": "Schultz-Metzer, Cor Razoux"
+  },
+  "born": {
+    "date": "1898-10-27",
+    "place": "doesburg"
+  },
+  "died": {
+    "date": "1992-03-12",
+    "place": "the-hague"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1938",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cornelia_Razoux_Schultz-Metzer.jpg"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "doesburg",
+      "the-hague",
+      "netherlands"
+    ]
+  },
+  "prominence": 0.5,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q19754742",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Cornelia Razoux Schultz-Metzer",
+      "url": "https://en.wikipedia.org/wiki/Cornelia_Razoux_Schultz-Metzer",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q19754742"
+}

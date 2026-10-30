@@ -1,0 +1,53 @@
+{
+  "slug": "muhammadi-begum",
+  "name": {
+    "display": "Muhammadi Begum",
+    "sort": "Begum, Muhammadi"
+  },
+  "born": {
+    "date": "1878",
+    "place": "delhi"
+  },
+  "died": {
+    "date": "1908-11-02",
+    "place": "shimla"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Muhammadi_Begum_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "delhi",
+      "shimla",
+      "india"
+    ]
+  },
+  "prominence": 0.69,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q28034716",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Muhammadi Begum",
+      "url": "https://en.wikipedia.org/wiki/Muhammadi_Begum",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q28034716"
+}

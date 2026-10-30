@@ -1,0 +1,53 @@
+{
+  "slug": "josephine-wilkins",
+  "name": {
+    "display": "Josephine Wilkins",
+    "sort": "Wilkins, Josephine"
+  },
+  "born": {
+    "date": "1893-09-30",
+    "place": "athens"
+  },
+  "died": {
+    "date": "1977-05-30",
+    "place": "port-charlotte"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "undisclosed, 1934",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Josephine_Wilkins.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "athens",
+      "port-charlotte",
+      "united-states"
+    ]
+  },
+  "prominence": 0.31,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q92594042",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Josephine Wilkins",
+      "url": "https://en.wikipedia.org/wiki/Josephine_Wilkins",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q92594042"
+}

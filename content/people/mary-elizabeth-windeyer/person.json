@@ -1,0 +1,54 @@
+{
+  "slug": "mary-elizabeth-windeyer",
+  "name": {
+    "display": "Mary Elizabeth Windeyer",
+    "sort": "Windeyer, Mary Elizabeth"
+  },
+  "born": {
+    "date": "1837",
+    "place": "hove"
+  },
+  "died": {
+    "date": "1912",
+    "place": "tomago"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Madame Praeger, 1889",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lady_Mary_Elizabeth_Windeyer_1890-crop.jpg"
+  },
+  "facets": {
+    "field": [
+      "social"
+    ],
+    "place": [
+      "hove",
+      "tomago",
+      "united-kingdom",
+      "australia"
+    ]
+  },
+  "prominence": 0.58,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q21536174",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mary Windeyer",
+      "url": "https://en.wikipedia.org/wiki/Mary_Windeyer",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q21536174"
+}

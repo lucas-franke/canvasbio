@@ -1,0 +1,52 @@
+{
+  "slug": "mary-c-c-bradford",
+  "name": {
+    "display": "Mary C. C. Bradford",
+    "sort": "Bradford, Mary C. C."
+  },
+  "born": {
+    "date": "1856-08-10",
+    "place": "colorado"
+  },
+  "died": {
+    "date": "1938-01-15",
+    "place": "colorado"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1893",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:MARY_CARROLL_CRAIG_BRADFORD.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "colorado",
+      "united-states"
+    ]
+  },
+  "prominence": 0.31,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q16066508",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mary C. C. Bradford",
+      "url": "https://en.wikipedia.org/wiki/Mary_C._C._Bradford",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q16066508"
+}

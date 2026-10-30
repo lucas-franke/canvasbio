@@ -1,0 +1,61 @@
+{
+  "slug": "prinzessin-sophia-kaur-von-lahore",
+  "name": {
+    "display": "Prinzessin Sophia Kaur von Lahore",
+    "sort": "Lahore, Prinzessin Sophia Kaur von"
+  },
+  "born": {
+    "date": "1876-08-08",
+    "place": "elveden-hall"
+  },
+  "died": {
+    "date": "1948-08-22",
+    "place": "tylers-green"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Lafayette Studio, 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Photograph_of_Princess_Sophia_Duleep_Singh_in_native-dress,_by_Lafayette_Studio,_ca.1900.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "elveden-hall",
+      "tylers-green",
+      "united-kingdom"
+    ]
+  },
+  "prominence": 0.87,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q7562875",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Sophia Duleep Singh",
+      "url": "https://de.wikipedia.org/wiki/Sophia_Duleep_Singh",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Sophia Duleep Singh",
+      "url": "https://en.wikipedia.org/wiki/Sophia_Duleep_Singh",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q7562875"
+}

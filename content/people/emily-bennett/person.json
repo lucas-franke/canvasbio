@@ -1,0 +1,53 @@
+{
+  "slug": "emily-bennett",
+  "name": {
+    "display": "Emily Bennett",
+    "sort": "Bennett, Emily"
+  },
+  "born": {
+    "date": "1871-01-29",
+    "place": "camperdown"
+  },
+  "died": {
+    "date": "1941-05-10",
+    "place": "manly"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unbekannt, 1923",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emily_Benett_Australian_delegate_to_the_International_Woman_Suffrage_Alliance_Congress_in_Rome,_1923_-_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "camperdown",
+      "manly",
+      "australia"
+    ]
+  },
+  "prominence": 0.19,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q24036475",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Emily Bennett",
+      "url": "https://en.wikipedia.org/wiki/Emily_Bennett",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q24036475"
+}

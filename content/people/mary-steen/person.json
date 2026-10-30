@@ -1,0 +1,61 @@
+{
+  "slug": "mary-steen",
+  "name": {
+    "display": "Mary Steen",
+    "sort": "Steen, Mary"
+  },
+  "born": {
+    "date": "1853-10-28",
+    "place": "hvilsager-parish"
+  },
+  "died": {
+    "date": "1939-04-07",
+    "place": "copenhagen"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Mary Steen, 1889",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mary_Steen_1889.jpg"
+  },
+  "facets": {
+    "field": [
+      "arts"
+    ],
+    "place": [
+      "hvilsager-parish",
+      "copenhagen",
+      "denmark"
+    ]
+  },
+  "prominence": 0.67,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q3494893",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Mary Steen",
+      "url": "https://de.wikipedia.org/wiki/Mary_Steen",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mary Steen",
+      "url": "https://en.wikipedia.org/wiki/Mary_Steen",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q3494893"
+}

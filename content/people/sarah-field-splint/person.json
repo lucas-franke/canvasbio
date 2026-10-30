@@ -1,0 +1,51 @@
+{
+  "slug": "sarah-field-splint",
+  "name": {
+    "display": "Sarah Field Splint",
+    "sort": "Splint, Sarah Field"
+  },
+  "born": {
+    "date": "1883",
+    "place": "swarthmore"
+  },
+  "died": {
+    "date": "1959-12-25"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Bain News Service, publisher",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sarah_Field_Splint_LCCN2014681763.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "swarthmore",
+      "united-states"
+    ]
+  },
+  "prominence": 0.31,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q27702488",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Sarah Field Splint",
+      "url": "https://en.wikipedia.org/wiki/Sarah_Field_Splint",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q27702488"
+}

@@ -1,0 +1,51 @@
+{
+  "slug": "mary-dewson",
+  "name": {
+    "display": "Mary Dewson",
+    "sort": "Dewson, Mary"
+  },
+  "born": {
+    "date": "1874",
+    "place": "quincy"
+  },
+  "died": {
+    "date": "1962-10"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Social Security Administration",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dewson2.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "quincy",
+      "united-states"
+    ]
+  },
+  "prominence": 0.31,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6779318",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mary Dewson",
+      "url": "https://en.wikipedia.org/wiki/Mary_Dewson",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6779318"
+}

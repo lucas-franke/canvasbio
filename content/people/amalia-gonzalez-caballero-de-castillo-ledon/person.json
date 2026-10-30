@@ -1,0 +1,63 @@
+{
+  "slug": "amalia-gonzalez-caballero-de-castillo-ledon",
+  "name": {
+    "display": "Amalia González Caballero de Castillo Ledón",
+    "sort": "Ledón, Amalia González Caballero de Castillo"
+  },
+  "born": {
+    "date": "1902-08-18",
+    "place": "santander-jimenez"
+  },
+  "died": {
+    "date": "1986-06-03",
+    "place": "mexico-city"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Paunina.v",
+    "license": {
+      "name": "CC0",
+      "url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Homenaje_a_Amalia_Gonz%C3%A1lez_Caballero_en_Los_Pinos.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing"
+    ],
+    "place": [
+      "santander-jimenez",
+      "mexico-city",
+      "mexico"
+    ]
+  },
+  "prominence": 0.67,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5671619",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Amalia González Caballero de Castillo Ledón",
+      "url": "https://de.wikipedia.org/wiki/Amalia_Gonz%C3%A1lez_Caballero_de_Castillo_Led%C3%B3n",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Amalia González Caballero de Castillo Ledón",
+      "url": "https://en.wikipedia.org/wiki/Amalia_Gonz%C3%A1lez_Caballero_de_Castillo_Led%C3%B3n",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5671619"
+}

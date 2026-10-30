@@ -1,0 +1,53 @@
+{
+  "slug": "isabel-margaret-fidler",
+  "name": {
+    "display": "Isabel Margaret Fidler",
+    "sort": "Fidler, Isabel Margaret"
+  },
+  "born": {
+    "date": "1869-03-21",
+    "place": "sydney"
+  },
+  "died": {
+    "date": "1952-06-05",
+    "place": "lindfield"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Walter Armiger Bowring, 1929",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:BOWRING_Walter_IsabelFidlerARCHIE1929SydUniUSU2009-3.jpg.800x879_q85.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "sydney",
+      "lindfield",
+      "australia"
+    ]
+  },
+  "prominence": 0.19,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q24250687",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Isabel Fidler",
+      "url": "https://en.wikipedia.org/wiki/Isabel_Fidler",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q24250687"
+}

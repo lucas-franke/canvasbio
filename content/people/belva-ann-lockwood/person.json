@@ -1,0 +1,64 @@
+{
+  "slug": "belva-ann-lockwood",
+  "name": {
+    "display": "Belva Ann Lockwood",
+    "sort": "Lockwood, Belva Ann"
+  },
+  "born": {
+    "date": "1830-10-24",
+    "place": "royalton"
+  },
+  "died": {
+    "date": "1917-05-19",
+    "place": "washington-d-c"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Mathew Benjamin Brady / Levin Corbin Handy, 1865",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Belva_Ann_Lockwood_between_1865_and_1880_-_(4)_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "education",
+      "science"
+    ],
+    "place": [
+      "royalton",
+      "washington-d-c",
+      "united-states"
+    ]
+  },
+  "prominence": 0.89,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2895165",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Belva Ann Lockwood",
+      "url": "https://de.wikipedia.org/wiki/Belva_Ann_Lockwood",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Belva Ann Lockwood",
+      "url": "https://en.wikipedia.org/wiki/Belva_Ann_Lockwood",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2895165"
+}

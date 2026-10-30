@@ -1,0 +1,54 @@
+{
+  "slug": "rosa-sevilla-de-alvero",
+  "name": {
+    "display": "Rosa Sevilla de Alvero",
+    "sort": "Alvero, Rosa Sevilla de"
+  },
+  "born": {
+    "date": "1879-03-04",
+    "place": "tondo"
+  },
+  "died": {
+    "date": "1954-05-11",
+    "place": "quezon-city"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1898",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rosa_Sevilla_La_Independencia.png"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education"
+    ],
+    "place": [
+      "tondo",
+      "quezon-city",
+      "philippines"
+    ]
+  },
+  "prominence": 0.5,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q12970135",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Rosa Sevilla",
+      "url": "https://en.wikipedia.org/wiki/Rosa_Sevilla",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q12970135"
+}

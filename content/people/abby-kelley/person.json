@@ -1,0 +1,61 @@
+{
+  "slug": "abby-kelley",
+  "name": {
+    "display": "Abby Kelley",
+    "sort": "Kelley, Abby"
+  },
+  "born": {
+    "date": "1811-01-15",
+    "place": "pelham"
+  },
+  "died": {
+    "date": "1887-01-14",
+    "place": "worcester"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Abby Kelley Foster, 1879",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abby_Kelley_Foster_with_signature.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "pelham",
+      "worcester",
+      "united-states"
+    ]
+  },
+  "prominence": 0.79,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2820848",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Abby Kelley",
+      "url": "https://de.wikipedia.org/wiki/Abby_Kelley",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Abby Kelley Foster",
+      "url": "https://en.wikipedia.org/wiki/Abby_Kelley_Foster",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2820848"
+}

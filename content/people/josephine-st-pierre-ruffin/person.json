@@ -1,0 +1,60 @@
+{
+  "slug": "josephine-st-pierre-ruffin",
+  "name": {
+    "display": "Josephine St. Pierre Ruffin",
+    "sort": "Ruffin, Josephine St. Pierre"
+  },
+  "born": {
+    "date": "1842-08-31",
+    "place": "boston"
+  },
+  "died": {
+    "date": "1924-03-13",
+    "place": "boston"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1902",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Josephine_St._Pierre_Ruffin.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "boston",
+      "united-states"
+    ]
+  },
+  "prominence": 0.82,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6288450",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Josephine St. Pierre Ruffin",
+      "url": "https://de.wikipedia.org/wiki/Josephine_St._Pierre_Ruffin",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Josephine St. Pierre Ruffin",
+      "url": "https://en.wikipedia.org/wiki/Josephine_St._Pierre_Ruffin",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6288450"
+}

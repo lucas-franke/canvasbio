@@ -1,0 +1,61 @@
+{
+  "slug": "phoebe-hearst",
+  "name": {
+    "display": "Phoebe Hearst",
+    "sort": "Hearst, Phoebe"
+  },
+  "born": {
+    "date": "1842-12-03",
+    "place": "saint-clair"
+  },
+  "died": {
+    "date": "1919-04-13",
+    "place": "pleasanton"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1919",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Phoebe_Apperson_Hearst.jpg"
+  },
+  "facets": {
+    "field": [
+      "social"
+    ],
+    "place": [
+      "saint-clair",
+      "pleasanton",
+      "united-states"
+    ]
+  },
+  "prominence": 0.79,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q463046",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Phoebe Hearst",
+      "url": "https://de.wikipedia.org/wiki/Phoebe_Hearst",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Phoebe Hearst",
+      "url": "https://en.wikipedia.org/wiki/Phoebe_Hearst",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q463046"
+}

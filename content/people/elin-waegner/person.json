@@ -1,0 +1,61 @@
+{
+  "slug": "elin-waegner",
+  "name": {
+    "display": "Elin Wägner",
+    "sort": "Wägner, Elin"
+  },
+  "born": {
+    "date": "1882-05-16",
+    "place": "lund-cathedral-parish"
+  },
+  "died": {
+    "date": "1949-01-07",
+    "place": "berg-parish"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown photographer, 1917",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elin_Wagner.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "lund-cathedral-parish",
+      "berg-parish",
+      "sweden"
+    ]
+  },
+  "prominence": 0.98,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q270468",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Elin Wägner",
+      "url": "https://de.wikipedia.org/wiki/Elin_W%C3%A4gner",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Elin Wägner",
+      "url": "https://en.wikipedia.org/wiki/Elin_W%C3%A4gner",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q270468"
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "olive-wharry",
+  "name": {
+    "display": "Olive Wharry",
+    "sort": "Wharry, Olive"
+  },
+  "born": {
+    "date": "1886-12-01",
+    "place": "london"
+  },
+  "died": {
+    "date": "1947-10-02",
+    "place": "torquay"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "British Government, 1913",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Olive-wharry.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "london",
+      "torquay",
+      "united-kingdom"
+    ]
+  },
+  "prominence": 0.54,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q7087218",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Olive Wharry",
+      "url": "https://de.wikipedia.org/wiki/Olive_Wharry",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Olive Wharry",
+      "url": "https://en.wikipedia.org/wiki/Olive_Wharry",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q7087218"
+}

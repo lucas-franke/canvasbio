@@ -1,0 +1,61 @@
+{
+  "slug": "sophie-zaikowska",
+  "name": {
+    "display": "Sophie Zaïkowska",
+    "sort": "Zaïkowska, Sophie"
+  },
+  "born": {
+    "date": "1874-05-17",
+    "place": "vilnius"
+  },
+  "died": {
+    "date": "1939-02-27",
+    "place": "paris"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1923",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zaikowska.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "vilnius",
+      "paris",
+      "france"
+    ]
+  },
+  "prominence": 0.5,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q3490820",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Sophia Zaïkowska",
+      "url": "https://de.wikipedia.org/wiki/Sophia_Za%C3%AFkowska",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Sophie Zaïkowska",
+      "url": "https://en.wikipedia.org/wiki/Sophie_Za%C3%AFkowska",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q3490820"
+}

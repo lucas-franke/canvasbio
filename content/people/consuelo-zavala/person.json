@@ -1,0 +1,53 @@
+{
+  "slug": "consuelo-zavala",
+  "name": {
+    "display": "Consuelo Zavala",
+    "sort": "Zavala, Consuelo"
+  },
+  "born": {
+    "date": "1874-12-14",
+    "place": "merida"
+  },
+  "died": {
+    "date": "1956-06-22",
+    "place": "merida"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Inri",
+    "license": {
+      "name": "CC0",
+      "url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Busto_de_Consuelo_Zavala_Castillo,_M%C3%A9rida,_Yucat%C3%A1n_(01).jpg"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "merida",
+      "mexico"
+    ]
+  },
+  "prominence": 0.39,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5784862",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Consuelo Zavala",
+      "url": "https://en.wikipedia.org/wiki/Consuelo_Zavala",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5784862"
+}

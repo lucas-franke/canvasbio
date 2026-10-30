@@ -1,0 +1,63 @@
+{
+  "slug": "hamida-javanshir",
+  "name": {
+    "display": "Hamida Javanshir",
+    "sort": "Javanshir, Hamida"
+  },
+  "born": {
+    "date": "1873-01-19",
+    "place": "boeyuek-k-hrizli"
+  },
+  "died": {
+    "date": "1955-02-06",
+    "place": "baku"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hamida_Mammadguluzade.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "arts",
+      "social"
+    ],
+    "place": [
+      "boeyuek-k-hrizli",
+      "baku",
+      "azerbaijan"
+    ]
+  },
+  "prominence": 0.87,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5644681",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Həmidə Cavanşir",
+      "url": "https://de.wikipedia.org/wiki/H%C9%99mid%C9%99_Cavan%C5%9Fir",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Hamida Javanshir",
+      "url": "https://en.wikipedia.org/wiki/Hamida_Javanshir",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5644681"
+}

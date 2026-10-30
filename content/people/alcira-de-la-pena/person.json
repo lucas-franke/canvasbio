@@ -1,0 +1,52 @@
+{
+  "slug": "alcira-de-la-pena",
+  "name": {
+    "display": "Alcira de la Peña",
+    "sort": "Peña, Alcira de la"
+  },
+  "born": {
+    "date": "1910-11-08",
+    "place": "buenos-aires"
+  },
+  "died": {
+    "date": "1998-03-15",
+    "place": "buenos-aires"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Confirmado, 1967",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alcira_de_la_Pe%C3%B1a.jpg"
+  },
+  "facets": {
+    "field": [
+      "medicine"
+    ],
+    "place": [
+      "buenos-aires",
+      "argentina"
+    ]
+  },
+  "prominence": 0.31,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5664168",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Alcira de la Peña",
+      "url": "https://en.wikipedia.org/wiki/Alcira_de_la_Pe%C3%B1a",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5664168"
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "henrietta-edwards",
+  "name": {
+    "display": "Henrietta Edwards",
+    "sort": "Edwards, Henrietta"
+  },
+  "born": {
+    "date": "1849-12-18",
+    "place": "montreal"
+  },
+  "died": {
+    "date": "1931-11-10",
+    "place": "fort-macleod"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1930",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Henrietta_Edwards.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "montreal",
+      "fort-macleod",
+      "canada"
+    ]
+  },
+  "prominence": 0.82,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q1395828",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Henrietta Edwards",
+      "url": "https://de.wikipedia.org/wiki/Henrietta_Edwards",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Henrietta Edwards",
+      "url": "https://en.wikipedia.org/wiki/Henrietta_Edwards",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q1395828"
+}

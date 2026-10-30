@@ -1,0 +1,53 @@
+{
+  "slug": "noeline-baker",
+  "name": {
+    "display": "Noeline Baker",
+    "sort": "Baker, Noeline"
+  },
+  "born": {
+    "date": "1878-12-25",
+    "place": "opawa"
+  },
+  "died": {
+    "date": "1958-08-25",
+    "place": "stewart-island-rakiura"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown photographer",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Noeline_Baker_at_Moturoa_Moana_crop.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "arts"
+    ],
+    "place": [
+      "opawa",
+      "stewart-island-rakiura"
+    ]
+  },
+  "prominence": 0.19,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q7047294",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Noeline Baker",
+      "url": "https://en.wikipedia.org/wiki/Noeline_Baker",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q7047294"
+}

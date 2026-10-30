@@ -109,7 +109,7 @@ test("no results: message and reset", async ({ page }) => {
   await expect(page.locator("article[data-vt-item]")).toHaveCount(0);
   await page.getByRole("button", { name: "Suche zurücksetzen" }).click();
   await expect(page).toHaveURL(/\/personen\/liste$/);
-  await expect(page.locator("article[data-vt-item]")).toHaveCount(400);
+  await expect(page.locator("article[data-vt-item]")).toHaveCount(600);
 });
 
 test("the search survives opening and closing a biography and switching views", async ({ page }) => {

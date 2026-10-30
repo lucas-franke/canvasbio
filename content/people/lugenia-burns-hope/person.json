@@ -1,0 +1,53 @@
+{
+  "slug": "lugenia-burns-hope",
+  "name": {
+    "display": "Lugenia Burns Hope",
+    "sort": "Hope, Lugenia Burns"
+  },
+  "born": {
+    "date": "1871-02-19",
+    "place": "st-louis"
+  },
+  "died": {
+    "date": "1947-08-14",
+    "place": "nashville"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1917",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:President_and_Mrs_John_Hope.jpg"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "st-louis",
+      "nashville",
+      "united-states"
+    ]
+  },
+  "prominence": 0.39,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6699765",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Lugenia Burns Hope",
+      "url": "https://en.wikipedia.org/wiki/Lugenia_Burns_Hope",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6699765"
+}

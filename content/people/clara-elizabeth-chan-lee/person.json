@@ -1,0 +1,53 @@
+{
+  "slug": "clara-elizabeth-chan-lee",
+  "name": {
+    "display": "Clara Elizabeth Chan Lee",
+    "sort": "Lee, Clara Elizabeth Chan"
+  },
+  "born": {
+    "date": "1886-10-21",
+    "place": "portland"
+  },
+  "died": {
+    "date": "1993-10-05",
+    "place": "alameda"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Oakland Tribune November 8, 1911, 1911",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clara_Elizabeth_Chan_Lee_voting_in_1911_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "portland",
+      "alameda",
+      "united-states"
+    ]
+  },
+  "prominence": 0.45,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5125977",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Clara Elizabeth Chan Lee",
+      "url": "https://en.wikipedia.org/wiki/Clara_Elizabeth_Chan_Lee",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5125977"
+}

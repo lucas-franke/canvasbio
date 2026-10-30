@@ -1,0 +1,61 @@
+{
+  "slug": "laura-ainsworth",
+  "name": {
+    "display": "Laura Ainsworth",
+    "sort": "Ainsworth, Laura"
+  },
+  "born": {
+    "date": "1885",
+    "place": "blything-rural-district"
+  },
+  "died": {
+    "date": "1958",
+    "place": "yorkshire"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Colonel Linley Blathwayt, 1911",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Suffragette_Laura_Ainsworth_1911._Blathwayt,_Col_Linley.jpg"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "blything-rural-district",
+      "yorkshire",
+      "united-kingdom"
+    ]
+  },
+  "prominence": 0.54,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q42396828",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Laura Ainsworth",
+      "url": "https://de.wikipedia.org/wiki/Laura_Ainsworth",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Laura Ainsworth",
+      "url": "https://en.wikipedia.org/wiki/Laura_Ainsworth",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q42396828"
+}

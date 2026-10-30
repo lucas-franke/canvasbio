@@ -1,0 +1,61 @@
+{
+  "slug": "yayori-matsui",
+  "name": {
+    "display": "Yayori Matsui",
+    "sort": "Matsui, Yayori"
+  },
+  "born": {
+    "date": "1934-04-12",
+    "place": "kyoto"
+  },
+  "died": {
+    "date": "2002-12-27",
+    "place": "tokyo"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "財団法人婦選会館（1983年11月に「財団法人市川房枝記念会」に改称）, 1963",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gekkan-Fujin-Tenbo-1963-March-1.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "kyoto",
+      "tokyo",
+      "japan"
+    ]
+  },
+  "prominence": 0.61,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q11529049",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Yayori Matsui",
+      "url": "https://de.wikipedia.org/wiki/Yayori_Matsui",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Yayori Matsui",
+      "url": "https://en.wikipedia.org/wiki/Yayori_Matsui",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q11529049"
+}

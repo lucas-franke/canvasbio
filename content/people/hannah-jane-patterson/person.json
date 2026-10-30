@@ -1,0 +1,53 @@
+{
+  "slug": "hannah-jane-patterson",
+  "name": {
+    "display": "Hannah Jane Patterson",
+    "sort": "Patterson, Hannah Jane"
+  },
+  "born": {
+    "date": "1879-11-05",
+    "place": "smithton"
+  },
+  "died": {
+    "date": "1937-08-21",
+    "place": "western-pennsylvania-hospital"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author or not provided, 1917",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hannah_J._Patterson,_of_Woman%27s_Committee,_Council_of_National_Defense_-_NARA_-_26432773.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "smithton",
+      "western-pennsylvania-hospital",
+      "united-states"
+    ]
+  },
+  "prominence": 0.31,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q62393939",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Hannah J. Patterson",
+      "url": "https://en.wikipedia.org/wiki/Hannah_J._Patterson",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q62393939"
+}

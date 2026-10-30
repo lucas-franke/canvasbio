@@ -15,7 +15,7 @@ test("the letter index jumps to a letter and follows the scrolling", async ({ pa
   await page.goto("/personen/liste");
   const index = page.getByRole("navigation", { name: "Alphabet" });
   // Only letters with entries are offered.
-  await expect(index.getByRole("link", { name: "Q", exact: true })).toHaveCount(0);
+  await expect(index.getByRole("link", { name: "X", exact: true })).toHaveCount(0);
   await index.getByRole("link", { name: "Z", exact: true }).click();
   await expect(page).toHaveURL(/#buchstabe-z$/);
   const heading = page.getByRole("heading", { level: 2, name: "Z", exact: true });

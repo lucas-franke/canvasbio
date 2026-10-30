@@ -1,0 +1,52 @@
+{
+  "slug": "mary-osborn-douthit",
+  "name": {
+    "display": "Mary Osborn Douthit",
+    "sort": "Douthit, Mary Osborn"
+  },
+  "born": {
+    "date": "1850-08-23"
+  },
+  "died": {
+    "date": "1908-07-25",
+    "place": "oregon"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1908",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mary_Osborn_Douthit.png"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education"
+    ],
+    "place": [
+      "oregon",
+      "united-states"
+    ]
+  },
+  "prominence": 0.31,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q55743952",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mary Osborn Douthit",
+      "url": "https://en.wikipedia.org/wiki/Mary_Osborn_Douthit",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q55743952"
+}

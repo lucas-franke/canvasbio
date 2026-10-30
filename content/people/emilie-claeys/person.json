@@ -1,0 +1,52 @@
+{
+  "slug": "emilie-claeys",
+  "name": {
+    "display": "Emilie Claeys",
+    "sort": "Claeys, Emilie"
+  },
+  "born": {
+    "date": "1855-05-09",
+    "place": "ghent"
+  },
+  "died": {
+    "date": "1943-02-16",
+    "place": "ghent"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown, 1943",
+    "license": {
+      "name": "CC0",
+      "url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emilie_Claeys.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "ghent"
+    ]
+  },
+  "prominence": 0.39,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2689759",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Emilie Claeys",
+      "url": "https://en.wikipedia.org/wiki/Emilie_Claeys",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2689759"
+}

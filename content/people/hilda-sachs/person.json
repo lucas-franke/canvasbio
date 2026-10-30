@@ -1,0 +1,53 @@
+{
+  "slug": "hilda-sachs",
+  "name": {
+    "display": "Hilda Sachs",
+    "sort": "Sachs, Hilda"
+  },
+  "born": {
+    "date": "1857-03-13",
+    "place": "norrkoeping-saint-olof-parish"
+  },
+  "died": {
+    "date": "1935-01-26",
+    "place": "engelbrekt-church-parish"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1923",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hilda_Sachs.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "norrkoeping-saint-olof-parish",
+      "engelbrekt-church-parish",
+      "sweden"
+    ]
+  },
+  "prominence": 0.64,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q4976415",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Hilda Sachs",
+      "url": "https://en.wikipedia.org/wiki/Hilda_Sachs",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q4976415"
+}

@@ -1,0 +1,63 @@
+{
+  "slug": "florence-kelley",
+  "name": {
+    "display": "Florence Kelley",
+    "sort": "Kelley, Florence"
+  },
+  "born": {
+    "date": "1859-09-12",
+    "place": "philadelphia"
+  },
+  "died": {
+    "date": "1932-02-17",
+    "place": "germantown"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:FlorenceKelley.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "science",
+      "social"
+    ],
+    "place": [
+      "philadelphia",
+      "germantown",
+      "united-states"
+    ]
+  },
+  "prominence": 0.84,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q3073993",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Florence Kelley",
+      "url": "https://de.wikipedia.org/wiki/Florence_Kelley",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Florence Kelley",
+      "url": "https://en.wikipedia.org/wiki/Florence_Kelley",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q3073993"
+}

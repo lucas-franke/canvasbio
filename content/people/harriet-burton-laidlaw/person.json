@@ -1,0 +1,53 @@
+{
+  "slug": "harriet-burton-laidlaw",
+  "name": {
+    "display": "Harriet Burton Laidlaw",
+    "sort": "Laidlaw, Harriet Burton"
+  },
+  "born": {
+    "date": "1873-12-16",
+    "place": "albany"
+  },
+  "died": {
+    "date": "1949-01-25",
+    "place": "manhattan"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Bain News Service, publisher, 1915",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mrs._Jas._Lees_Laidlaw_LCCN2014710288.tif"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "albany",
+      "manhattan",
+      "united-states"
+    ]
+  },
+  "prominence": 0.54,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q57191262",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Harriet Burton Laidlaw",
+      "url": "https://en.wikipedia.org/wiki/Harriet_Burton_Laidlaw",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q57191262"
+}

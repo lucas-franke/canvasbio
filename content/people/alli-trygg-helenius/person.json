@@ -1,0 +1,54 @@
+{
+  "slug": "alli-trygg-helenius",
+  "name": {
+    "display": "Alli Trygg-Helenius",
+    "sort": "Trygg-Helenius, Alli"
+  },
+  "born": {
+    "date": "1852-07-16",
+    "place": "raisio"
+  },
+  "died": {
+    "date": "1926-12-02",
+    "place": "helsinki"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Christensen & Morange[1], unknown photographer, 1885",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alli_Trygg.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education"
+    ],
+    "place": [
+      "raisio",
+      "helsinki",
+      "finland"
+    ]
+  },
+  "prominence": 0.45,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q11850973",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Alli Trygg-Helenius",
+      "url": "https://en.wikipedia.org/wiki/Alli_Trygg-Helenius",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q11850973"
+}

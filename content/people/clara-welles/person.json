@@ -1,0 +1,51 @@
+{
+  "slug": "clara-welles",
+  "name": {
+    "display": "Clara Welles",
+    "sort": "Welles, Clara"
+  },
+  "born": {
+    "date": "1868-08-04",
+    "place": "ellenville"
+  },
+  "died": {
+    "date": "1965-03-14"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1906",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clara_Barck_Welles_1906-crop.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "ellenville",
+      "united-states"
+    ]
+  },
+  "prominence": 0.19,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q62031892",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Clara Barck Welles",
+      "url": "https://en.wikipedia.org/wiki/Clara_Barck_Welles",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q62031892"
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "qandeel-baloch",
+  "name": {
+    "display": "Qandeel Baloch",
+    "sort": "Baloch, Qandeel"
+  },
+  "born": {
+    "date": "1990-03-01",
+    "place": "dera-ghazi-khan"
+  },
+  "died": {
+    "date": "2016-07-15",
+    "place": "multan"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Kamran Hayat",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Qandeel_Baloch_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "arts"
+    ],
+    "place": [
+      "dera-ghazi-khan",
+      "multan",
+      "pakistan"
+    ]
+  },
+  "prominence": 1,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q23664715",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Qandeel Baloch",
+      "url": "https://de.wikipedia.org/wiki/Qandeel_Baloch",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Qandeel Baloch",
+      "url": "https://en.wikipedia.org/wiki/Qandeel_Baloch",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q23664715"
+}

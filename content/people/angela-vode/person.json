@@ -1,0 +1,54 @@
+{
+  "slug": "angela-vode",
+  "name": {
+    "display": "Angela Vode",
+    "sort": "Vode, Angela"
+  },
+  "born": {
+    "date": "1892-01-05",
+    "place": "ljubljana"
+  },
+  "died": {
+    "date": "1985-05-05",
+    "place": "ljubljana"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1939",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Angela_Vode_1939.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "education"
+    ],
+    "place": [
+      "ljubljana",
+      "slovenia"
+    ]
+  },
+  "prominence": 0.76,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q4762583",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Angela Vode",
+      "url": "https://en.wikipedia.org/wiki/Angela_Vode",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q4762583"
+}

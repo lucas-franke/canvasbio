@@ -1,0 +1,63 @@
+{
+  "slug": "lucina-hagman",
+  "name": {
+    "display": "Lucina Hagman",
+    "sort": "Hagman, Lucina"
+  },
+  "born": {
+    "date": "1853-06-05",
+    "place": "kaelviae"
+  },
+  "died": {
+    "date": "1946-09-06",
+    "place": "helsinki"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "E. N. Setälä.C. P. Dyrendahl",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lucina_Hagman.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "education"
+    ],
+    "place": [
+      "kaelviae",
+      "helsinki",
+      "finland"
+    ]
+  },
+  "prominence": 0.81,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q4118159",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Lucina Hagman",
+      "url": "https://de.wikipedia.org/wiki/Lucina_Hagman",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Lucina Hagman",
+      "url": "https://en.wikipedia.org/wiki/Lucina_Hagman",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q4118159"
+}

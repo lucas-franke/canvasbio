@@ -1,0 +1,60 @@
+{
+  "slug": "eunice-murray",
+  "name": {
+    "display": "Eunice Murray",
+    "sort": "Murray, Eunice"
+  },
+  "born": {
+    "date": "1878-01-21",
+    "place": "cardross"
+  },
+  "died": {
+    "date": "1960-03-26",
+    "place": "cardross"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown. Entire page of images listed as \"Photographs by Photopress, Claude Harris, Elliott and Fry, Lafayette, Medrington (Liverpool), Russell, Barratt's, Bassano, Lizzie Caswall Smith, and Beresford.\", 1922",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eunice_Murray.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "cardross",
+      "united-kingdom"
+    ]
+  },
+  "prominence": 0.39,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q18528921",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Eunice Murray",
+      "url": "https://de.wikipedia.org/wiki/Eunice_Murray",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Eunice Murray",
+      "url": "https://en.wikipedia.org/wiki/Eunice_Murray",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q18528921"
+}

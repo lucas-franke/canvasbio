@@ -2,7 +2,7 @@
  * Demo content import: pioneers of the women's movement from Wikidata,
  * public-domain portraits from Wikimedia Commons, life stories from Wikipedia.
  *
- *   npx tsx scripts/import-wikidata.ts [--limit 200]
+ *   npx tsx scripts/import-wikidata.ts [--limit 200] [--to-year 1950] [--full]
  *
  * This is a one-off generator for demo data, not part of the build. It overwrites
  * person.json, de.md, en.md and portrait.jpg of imported people, but never touches
@@ -37,11 +37,17 @@ import {
 import { articleUrl, getStory } from "./import/wikipedia";
 
 const { values: args } = parseArgs({
-  options: { limit: { type: "string", default: "200" }, full: { type: "boolean", default: false } },
+  options: {
+    limit: { type: "string", default: "200" },
+    "to-year": { type: "string", default: "1950" },
+    full: { type: "boolean", default: false },
+  },
 });
 /** Total number of people. By default the import only adds to the existing ones; --full starts over. */
 const LIMIT = Number(args.limit);
 const ADD = !args.full;
+/** Latest year of birth. Only people who have died are imported (see "deceased" below). */
+const TO_YEAR = Number(args["to-year"]);
 /** In add mode: at least this many people per continent outside Europe (if enough candidates exist). */
 const MIN_PER_CONTINENT = 25;
 const CONTENT = path.resolve("content");
@@ -343,7 +349,7 @@ function regionalSample<T extends Candidate>(
 async function main() {
   console.log("1/5 Candidates from Wikidata …");
   const existing = ADD ? await readExisting() : { qids: new Set<string>(), slugs: new Set<string>() };
-  const candidates = (await findCandidates())
+  const candidates = (await findCandidates(TO_YEAR))
     .filter((c) => !existing.qids.has(c.qid))
     .sort((a, b) => b.sitelinks - a.sitelinks);
   const need = LIMIT - existing.slugs.size;
@@ -359,7 +365,8 @@ async function main() {
   let regionOf: (c: Candidate) => string = () => "Unknown";
   if (ADD) {
     entities = await getEntities(candidates.map((c) => c.qid));
-    // Without a death date, people born after 1925 may be alive: no portraits of them.
+    // Only people who have died: without a death date, anyone born after 1925 may be alive
+    // (personality rights, GDPR).
     const deceased = candidates.filter((c) => {
       const e = entities.get(c.qid);
       const born = e && Number(yearOf(dateOf(e, "P569") ?? ""));

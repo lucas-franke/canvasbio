@@ -1,0 +1,62 @@
+{
+  "slug": "ana-betancourt",
+  "name": {
+    "display": "Ana Betancourt",
+    "sort": "Betancourt, Ana"
+  },
+  "born": {
+    "date": "1832-02-14",
+    "place": "puerto-principe"
+  },
+  "died": {
+    "date": "1901-02-07",
+    "place": "madrid"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ana_Betancourt.png"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "puerto-principe",
+      "madrid",
+      "cuba",
+      "spain"
+    ]
+  },
+  "prominence": 0.74,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q4750322",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Ana Betancourt",
+      "url": "https://de.wikipedia.org/wiki/Ana_Betancourt",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ana Betancourt",
+      "url": "https://en.wikipedia.org/wiki/Ana_Betancourt",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q4750322"
+}

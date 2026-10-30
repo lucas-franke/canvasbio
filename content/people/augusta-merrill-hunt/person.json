@@ -1,0 +1,51 @@
+{
+  "slug": "augusta-merrill-hunt",
+  "name": {
+    "display": "Augusta Merrill Hunt",
+    "sort": "Hunt, Augusta Merrill"
+  },
+  "born": {
+    "date": "1842-06-06",
+    "place": "portland"
+  },
+  "died": {
+    "date": "1932-06-15"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unbekannt",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:AUGUSTA_MERRILL_HUNT_A_woman_of_the_century_(page_414_crop).jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "portland",
+      "united-states"
+    ]
+  },
+  "prominence": 0.19,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q64520719",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Augusta Merrill Hunt",
+      "url": "https://en.wikipedia.org/wiki/Augusta_Merrill_Hunt",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q64520719"
+}

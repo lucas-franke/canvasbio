@@ -1,0 +1,47 @@
+{
+  "slug": "elizabeth-delia-dixon-carroll",
+  "name": {
+    "display": "Elizabeth Delia Dixon-Carroll",
+    "sort": "Dixon-Carroll, Elizabeth Delia"
+  },
+  "born": {
+    "date": "1872"
+  },
+  "died": {
+    "date": "1934"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "N.C.) Baptist Female University (Raleigh",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dr._Elizabeth_Delia_Dixon-Carroll_1919_(page_8_crop).jpg"
+  },
+  "facets": {
+    "field": [
+      "medicine"
+    ],
+    "place": []
+  },
+  "prominence": 0,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q66699014",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Elizabeth Delia Dixon-Carroll",
+      "url": "https://en.wikipedia.org/wiki/Elizabeth_Delia_Dixon-Carroll",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q66699014"
+}

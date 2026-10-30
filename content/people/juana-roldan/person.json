@@ -1,0 +1,47 @@
+{
+  "slug": "juana-roldan",
+  "name": {
+    "display": "Juana Roldán",
+    "sort": "Roldán, Juana"
+  },
+  "born": {
+    "date": "1851",
+    "place": "santiago"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Osvaldo López, Diccionario Biográfico Obereo (Santiago, Chile: Bellavista) 1912 (Chile copyright law is life of author + 70 years--Osvaldo López, died in 1922 (\"Osvaldo López, fallecido en 1922\") per p 113), 1912",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juana_Rold%C3%A1n.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "santiago"
+    ]
+  },
+  "prominence": 0.31,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q28927558",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Juana Roldán",
+      "url": "https://en.wikipedia.org/wiki/Juana_Rold%C3%A1n",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q28927558"
+}

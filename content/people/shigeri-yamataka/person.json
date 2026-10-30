@@ -1,0 +1,60 @@
+{
+  "slug": "shigeri-yamataka",
+  "name": {
+    "display": "Shigeri Yamataka",
+    "sort": "Yamataka, Shigeri"
+  },
+  "born": {
+    "date": "1899-01-05",
+    "place": "tsu"
+  },
+  "died": {
+    "date": "1977-11-13"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1931",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Photo-Book-of-Fusae-Ichikawa-13.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing"
+    ],
+    "place": [
+      "tsu",
+      "japan"
+    ]
+  },
+  "prominence": 0.67,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q7496377",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Yamataka Shigeri",
+      "url": "https://de.wikipedia.org/wiki/Yamataka_Shigeri",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Shigeri Yamataka",
+      "url": "https://en.wikipedia.org/wiki/Shigeri_Yamataka",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q7496377"
+}

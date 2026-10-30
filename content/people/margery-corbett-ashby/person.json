@@ -1,0 +1,60 @@
+{
+  "slug": "margery-corbett-ashby",
+  "name": {
+    "display": "Margery Corbett Ashby",
+    "sort": "Ashby, Margery Corbett"
+  },
+  "born": {
+    "date": "1882-04-19",
+    "place": "danehill"
+  },
+  "died": {
+    "date": "1981-05-15",
+    "place": "danehill"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown. Whole page of images is listed as \"Photographs by Vandyk, Barratt, Elliott and Fry, Alice Hughes, Lafayette, Topical, Lassano, Hoppe and Russell\" (Life time: N/A), 1923",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Margery_Corbett_Ashby_(1923).jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "danehill",
+      "united-kingdom"
+    ]
+  },
+  "prominence": 0.77,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q528986",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Margery Corbett Ashby",
+      "url": "https://de.wikipedia.org/wiki/Margery_Corbett_Ashby",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Margery Corbett Ashby",
+      "url": "https://en.wikipedia.org/wiki/Margery_Corbett_Ashby",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q528986"
+}

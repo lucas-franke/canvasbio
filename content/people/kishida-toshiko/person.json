@@ -1,0 +1,62 @@
+{
+  "slug": "kishida-toshiko",
+  "name": {
+    "display": "Kishida Toshiko",
+    "sort": "Toshiko, Kishida"
+  },
+  "born": {
+    "date": "1864-01-13",
+    "place": "kyoto-prefecture"
+  },
+  "died": {
+    "date": "1901-05-25",
+    "place": "oiso-machi"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nakajima_(Kishida)_Toshiko.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education"
+    ],
+    "place": [
+      "kyoto-prefecture",
+      "oiso-machi",
+      "japan"
+    ]
+  },
+  "prominence": 0.67,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q521066",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Kishida Toshiko",
+      "url": "https://de.wikipedia.org/wiki/Kishida_Toshiko",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Toshiko Kishida",
+      "url": "https://en.wikipedia.org/wiki/Toshiko_Kishida",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q521066"
+}

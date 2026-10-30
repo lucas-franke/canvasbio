@@ -1,0 +1,55 @@
+{
+  "slug": "chang-mo-chun",
+  "name": {
+    "display": "Chang Mo-chun",
+    "sort": "Mo-chun, Chang"
+  },
+  "born": {
+    "date": "1884-10-05",
+    "place": "xiangxiang-city"
+  },
+  "died": {
+    "date": "1965",
+    "place": "taiwan"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1949",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zhang_Mojun.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "arts"
+    ],
+    "place": [
+      "xiangxiang-city",
+      "taiwan",
+      "people-s-republic-of-china"
+    ]
+  },
+  "prominence": 0.5,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q15907950",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Zhang Mojun",
+      "url": "https://en.wikipedia.org/wiki/Zhang_Mojun",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q15907950"
+}

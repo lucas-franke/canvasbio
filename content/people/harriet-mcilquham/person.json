@@ -1,0 +1,59 @@
+{
+  "slug": "harriet-mcilquham",
+  "name": {
+    "display": "Harriet McIlquham",
+    "sort": "McIlquham, Harriet"
+  },
+  "born": {
+    "date": "1837-08-08",
+    "place": "greater-london"
+  },
+  "died": {
+    "date": "1910-01-24"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Cheltenham Graphic, newspaper from around 1905, 1905",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Photograph_of_Harriet_McIlquham_from_the_Cheltenham_Graphic_around_1905.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "greater-london",
+      "united-kingdom"
+    ]
+  },
+  "prominence": 0.39,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q18730385",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Harriet McIlquham",
+      "url": "https://de.wikipedia.org/wiki/Harriet_McIlquham",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Harriet McIlquham",
+      "url": "https://en.wikipedia.org/wiki/Harriet_McIlquham",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q18730385"
+}

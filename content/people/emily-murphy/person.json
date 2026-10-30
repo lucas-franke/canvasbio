@@ -1,0 +1,61 @@
+{
+  "slug": "emily-murphy",
+  "name": {
+    "display": "Emily Murphy",
+    "sort": "Murphy, Emily"
+  },
+  "born": {
+    "date": "1868-03-14",
+    "place": "london"
+  },
+  "died": {
+    "date": "1933-10-27",
+    "place": "edmonton"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1910",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emily_Murphy_c1917.jpeg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "london",
+      "edmonton",
+      "canada"
+    ]
+  },
+  "prominence": 0.87,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q439355",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Emily Murphy",
+      "url": "https://de.wikipedia.org/wiki/Emily_Murphy",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Emily Murphy",
+      "url": "https://en.wikipedia.org/wiki/Emily_Murphy",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q439355"
+}

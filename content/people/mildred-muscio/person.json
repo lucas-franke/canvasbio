@@ -1,0 +1,53 @@
+{
+  "slug": "mildred-muscio",
+  "name": {
+    "display": "Mildred Muscio",
+    "sort": "Muscio, Mildred"
+  },
+  "born": {
+    "date": "1882-04-28",
+    "place": "copeland"
+  },
+  "died": {
+    "date": "1964-08-17",
+    "place": "ryde"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1940",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mildred_Muscio_1940.png"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "copeland",
+      "ryde",
+      "australia"
+    ]
+  },
+  "prominence": 0.31,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q24205041",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mildred Muscio",
+      "url": "https://en.wikipedia.org/wiki/Mildred_Muscio",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q24205041"
+}

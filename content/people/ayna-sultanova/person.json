@@ -1,0 +1,61 @@
+{
+  "slug": "ayna-sultanova",
+  "name": {
+    "display": "Ayna Sultanova",
+    "sort": "Sultanova, Ayna"
+  },
+  "born": {
+    "date": "1895",
+    "place": "pir-b-dil"
+  },
+  "died": {
+    "date": "1938-07-04",
+    "place": "baku"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1930",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ayna_Sultanova.png"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "pir-b-dil",
+      "baku",
+      "azerbaijan"
+    ]
+  },
+  "prominence": 0.81,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q12836288",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Ayna Sultanova",
+      "url": "https://de.wikipedia.org/wiki/Ayna_Sultanova",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ayna Sultanova",
+      "url": "https://en.wikipedia.org/wiki/Ayna_Sultanova",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q12836288"
+}

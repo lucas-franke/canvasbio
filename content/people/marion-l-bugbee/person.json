@@ -1,0 +1,53 @@
+{
+  "slug": "marion-l-bugbee",
+  "name": {
+    "display": "Marion L. Bugbee",
+    "sort": "Bugbee, Marion L."
+  },
+  "born": {
+    "date": "1871-09-02",
+    "place": "hartford"
+  },
+  "died": {
+    "date": "1950-02-03",
+    "place": "brattleboro-retreat"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Photographer not named., 1919",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marion_Louise_Bugbee.png"
+  },
+  "facets": {
+    "field": [
+      "medicine"
+    ],
+    "place": [
+      "hartford",
+      "brattleboro-retreat",
+      "united-states"
+    ]
+  },
+  "prominence": 0.31,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q117360298",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Marion L. Bugbee",
+      "url": "https://en.wikipedia.org/wiki/Marion_L._Bugbee",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q117360298"
+}

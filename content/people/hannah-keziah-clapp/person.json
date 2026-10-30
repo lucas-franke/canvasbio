@@ -1,0 +1,53 @@
+{
+  "slug": "hannah-keziah-clapp",
+  "name": {
+    "display": "Hannah Keziah Clapp",
+    "sort": "Clapp, Hannah Keziah"
+  },
+  "born": {
+    "date": "1824",
+    "place": "albany"
+  },
+  "died": {
+    "date": "1908-10-08",
+    "place": "palo-alto"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hannah_Keziah_Clapp.jpg"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "albany",
+      "palo-alto",
+      "united-states"
+    ]
+  },
+  "prominence": 0.31,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5648871",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Hannah Keziah Clapp",
+      "url": "https://en.wikipedia.org/wiki/Hannah_Keziah_Clapp",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5648871"
+}

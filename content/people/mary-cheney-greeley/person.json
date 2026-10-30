@@ -1,0 +1,53 @@
+{
+  "slug": "mary-cheney-greeley",
+  "name": {
+    "display": "Mary Cheney Greeley",
+    "sort": "Greeley, Mary Cheney"
+  },
+  "born": {
+    "date": "1811",
+    "place": "litchfield"
+  },
+  "died": {
+    "date": "1872-10-29",
+    "place": "new-york-city"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1850",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mary_Young_Cheney_Greeley.jpg"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "litchfield",
+      "new-york-city",
+      "united-states"
+    ]
+  },
+  "prominence": 0.45,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6779208",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mary Young Cheney Greeley",
+      "url": "https://en.wikipedia.org/wiki/Mary_Young_Cheney_Greeley",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6779208"
+}

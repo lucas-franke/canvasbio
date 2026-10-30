@@ -1,0 +1,63 @@
+{
+  "slug": "maud-gonne",
+  "name": {
+    "display": "Maud Gonne",
+    "sort": "Gonne, Maud"
+  },
+  "born": {
+    "date": "1866-12-21",
+    "place": "farnham"
+  },
+  "died": {
+    "date": "1953-04-27",
+    "place": "clonskeagh"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown photographer",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maud_Gonne,_circa_1890s_(facecrop).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "arts"
+    ],
+    "place": [
+      "farnham",
+      "clonskeagh",
+      "united-kingdom",
+      "ireland"
+    ]
+  },
+  "prominence": 0.96,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q444601",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Maud Gonne",
+      "url": "https://de.wikipedia.org/wiki/Maud_Gonne",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Maud Gonne",
+      "url": "https://en.wikipedia.org/wiki/Maud_Gonne",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q444601"
+}

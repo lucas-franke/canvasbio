@@ -1,0 +1,62 @@
+{
+  "slug": "nellie-mcclung",
+  "name": {
+    "display": "Nellie McClung",
+    "sort": "McClung, Nellie"
+  },
+  "born": {
+    "date": "1873-10-20",
+    "place": "chatsworth"
+  },
+  "died": {
+    "date": "1951-09-01",
+    "place": "victoria"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Cyril Jessop, 1905",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nellie_McClung.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing"
+    ],
+    "place": [
+      "chatsworth",
+      "victoria",
+      "canada"
+    ]
+  },
+  "prominence": 0.87,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q460191",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Nellie McClung",
+      "url": "https://de.wikipedia.org/wiki/Nellie_McClung",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Nellie McClung",
+      "url": "https://en.wikipedia.org/wiki/Nellie_McClung",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q460191"
+}

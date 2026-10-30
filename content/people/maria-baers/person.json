@@ -1,0 +1,52 @@
+{
+  "slug": "maria-baers",
+  "name": {
+    "display": "Maria Baers",
+    "sort": "Baers, Maria"
+  },
+  "born": {
+    "date": "1883-09-20",
+    "place": "antwerp"
+  },
+  "died": {
+    "date": "1959-12-30",
+    "place": "brussels"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cappe_en_Baers.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "antwerp",
+      "brussels"
+    ]
+  },
+  "prominence": 0.5,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q3290883",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Maria Baers",
+      "url": "https://en.wikipedia.org/wiki/Maria_Baers",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q3290883"
+}

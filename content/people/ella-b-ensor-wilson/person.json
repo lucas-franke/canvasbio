@@ -1,0 +1,52 @@
+{
+  "slug": "ella-b-ensor-wilson",
+  "name": {
+    "display": "Ella B. Ensor Wilson",
+    "sort": "Wilson, Ella B. Ensor"
+  },
+  "born": {
+    "date": "1838",
+    "place": "maryland"
+  },
+  "died": {
+    "date": "1913-09-11"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unbekannt",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:MRS._AUGUSTUS_WILSON_A_woman_of_the_century_(page_797_crop).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "social"
+    ],
+    "place": [
+      "maryland",
+      "united-states"
+    ]
+  },
+  "prominence": 0.45,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q64221092",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ella B. Ensor Wilson",
+      "url": "https://en.wikipedia.org/wiki/Ella_B._Ensor_Wilson",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q64221092"
+}

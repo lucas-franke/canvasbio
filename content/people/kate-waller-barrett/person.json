@@ -1,0 +1,51 @@
+{
+  "slug": "kate-waller-barrett",
+  "name": {
+    "display": "Kate Waller Barrett",
+    "sort": "Barrett, Kate Waller"
+  },
+  "born": {
+    "date": "1857-01-24",
+    "place": "falmouth"
+  },
+  "died": {
+    "date": "1925-02-23"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "George Grantham Bain Collection (Library of Congress), 1910",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kate_Waller_Barrett.jpg"
+  },
+  "facets": {
+    "field": [
+      "medicine"
+    ],
+    "place": [
+      "falmouth",
+      "united-states"
+    ]
+  },
+  "prominence": 0.54,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6375844",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Kate Waller Barrett",
+      "url": "https://en.wikipedia.org/wiki/Kate_Waller_Barrett",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6375844"
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "elizabeth-king-ellicott",
+  "name": {
+    "display": "Elizabeth King Ellicott",
+    "sort": "Ellicott, Elizabeth King"
+  },
+  "born": {
+    "date": "1858",
+    "place": "baltimore"
+  },
+  "died": {
+    "date": "1914-05-14"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1914",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elizabeth_King_Ellicott.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "baltimore",
+      "united-states"
+    ]
+  },
+  "prominence": 0.19,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q43096270",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Elizabeth King Ellicott",
+      "url": "https://de.wikipedia.org/wiki/Elizabeth_King_Ellicott",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Elizabeth King Ellicott",
+      "url": "https://en.wikipedia.org/wiki/Elizabeth_King_Ellicott",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q43096270"
+}

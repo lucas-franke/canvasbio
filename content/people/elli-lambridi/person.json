@@ -1,0 +1,54 @@
+{
+  "slug": "elli-lambridi",
+  "name": {
+    "display": "Elli Lambridi",
+    "sort": "Lambridi, Elli"
+  },
+  "born": {
+    "date": "1896-01-09",
+    "place": "athens"
+  },
+  "died": {
+    "date": "1970-01-28",
+    "place": "athens"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Kongar",
+    "license": {
+      "name": "CC0",
+      "url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Scan-Helle-Lambridis.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education",
+      "science"
+    ],
+    "place": [
+      "athens"
+    ]
+  },
+  "prominence": 0.5,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q29032652",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Helle Lambridis",
+      "url": "https://en.wikipedia.org/wiki/Helle_Lambridis",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q29032652"
+}
