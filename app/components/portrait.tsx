@@ -19,6 +19,8 @@ interface PortraitProps {
   sizes: string;
   className?: string;
   loading?: "lazy" | "eager";
+  /** Download priority among the images on the page (e.g. visible first, preloaded later). */
+  fetchPriority?: "high" | "low" | "auto";
 }
 
 /**
@@ -32,6 +34,7 @@ export function Portrait({
   sizes,
   className,
   loading = "lazy",
+  fetchPriority,
 }: PortraitProps) {
   const width = kind === "sq" ? 320 : 640;
   const height = kind === "sq" ? 320 : Math.round((640 * image.height) / image.width);
@@ -53,6 +56,7 @@ export function Portrait({
         width={width}
         height={height}
         loading={loading}
+        fetchPriority={fetchPriority}
         decoding="async"
         draggable={false}
         className={cn("bg-cover bg-center", className)}

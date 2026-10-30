@@ -26,6 +26,8 @@ interface CanvasTileProps {
   tabbable: boolean;
   /** In or near the view: with portrait and label. Far away only the link and its name. */
   near: boolean;
+  /** On screen right now: its portrait is downloaded before the ones around the view. */
+  visible?: boolean;
   /** Seen from afar: names are hidden anyway, so only the portrait (cheaper to restyle). */
   far?: boolean;
   /** Biography of this person is open. */
@@ -68,6 +70,7 @@ export const CanvasTile = memo(function CanvasTile({
   primary,
   tabbable,
   near,
+  visible = true,
   far = false,
   active,
   match,
@@ -125,6 +128,8 @@ export const CanvasTile = memo(function CanvasTile({
               image={{ ...person.image, color: placeholder }}
               alt=""
               sizes={sizes}
+              loading="eager"
+              fetchPriority={visible ? "high" : "low"}
               className="size-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
             {/* Dark gradient guarantees contrast for the name regardless of the photo. Seen

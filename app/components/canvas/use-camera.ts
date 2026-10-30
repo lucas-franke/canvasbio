@@ -208,6 +208,10 @@ export function useCamera({
     const world = worldRef.current;
     const settle = () => {
       if (world) {
+        // At rest the browser paints the wall again at its real zoom, and only what's visible.
+        // A permanent will-change keeps it at the resolution of the start: zoomed out, the
+        // wall then needs more graphics memory than a phone has and parts stay unpainted.
+        world.style.willChange = "";
         const scale = String(camera.current.scale);
         if (world.style.getPropertyValue("--s") !== scale) world.style.setProperty("--s", scale);
       }
@@ -221,6 +225,9 @@ export function useCamera({
       }
     };
     if (world) {
+      // Moving: one composited layer, so panning and zooming don't repaint every frame.
+      if (viewRef.current && viewRef.current.lod !== 0 && world.style.willChange !== "transform")
+        world.style.willChange = "transform";
       world.style.transform = `translate3d(${-cam.x * cam.scale}px, ${-cam.y * cam.scale}px, 0) scale(${cam.scale})`;
       // Seen from afar: names are hidden (app.css) and a tap zooms in instead of opening.
       world.toggleAttribute("data-far", layout.tile * cam.scale < FAR_TILE_PX);

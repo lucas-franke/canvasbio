@@ -422,6 +422,12 @@ export function InfiniteCanvas({
     // Only tiles in and around the view get their portrait and label; the rest of the finite
     // wall is a bare link (same name, same place in the list), so zooming restyles few nodes.
     const NEAR = 1;
+    const onScreen = {
+      col0: view.range.col0 + 1,
+      col1: view.range.col1 - 1,
+      row0: view.range.row0 + 1,
+      row1: view.range.row1 - 1,
+    };
     const near = {
       col0: view.range.col0 - NEAR,
       col1: view.range.col1 + NEAR,
@@ -482,6 +488,8 @@ export function InfiniteCanvas({
           primary: sameCell(primary.get(index)!.cell, cell),
           tabbable: sameCell(cell, tabbable),
           near: inRange(near, cell) || sameCell(cell, current),
+          // view.range has one cell of overscan; inside it is what's on screen.
+          visible: inRange(onScreen, cell),
         },
       ];
     });
@@ -511,10 +519,11 @@ export function InfiniteCanvas({
           ref={worldRef}
           // The transform is written outside React (camera, and the script below before hydration).
           suppressHydrationWarning
-          className="canvas-world absolute top-1/2 left-1/2 origin-top-left will-change-transform"
+          // No permanent will-change (see use-camera: the hint is set only while moving).
+          className="canvas-world absolute top-1/2 left-1/2 origin-top-left"
         >
           <ul aria-label={m.canvas.portraits}>
-            {tiles.map(({ cell, person, origin, primary, tabbable, near }) => (
+            {tiles.map(({ cell, person, origin, primary, tabbable, near, visible }) => (
               <CanvasTile
                 key={cellId(cell)}
                 cellId={cellId(cell)}
@@ -526,6 +535,7 @@ export function InfiniteCanvas({
                 primary={primary}
                 tabbable={tabbable}
                 near={near}
+                visible={visible}
                 far={view?.far ?? false}
                 active={person.slug === activeSlug}
                 match={hitSet ? hitSet.has(person.slug) : undefined}
