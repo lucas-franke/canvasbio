@@ -5,7 +5,7 @@ summary:
 portraitAlt: Porträt von Elena Pop Hossu-Longin
 facts:
   - label: Geboren
-    value: 26. November 1862 in Băsești
+    value: 26. November 1862 in Băsești, Rumänien
   - label: Gestorben
     value: 15. Mai 1940
   - label: Wirkungsfeld

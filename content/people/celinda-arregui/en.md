@@ -5,7 +5,7 @@ summary:
 portraitAlt: Portrait of Celinda Arregui
 facts:
   - label: Born
-    value: 1864 in Santiago
+    value: 1864 in Santiago, Chile
   - label: Died
     value: April 1941
   - label: Field

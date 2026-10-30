@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Magda Portal
 facts:
   - label: Geboren
-    value: 27. Mai 1900 in Lima
+    value: 27. Mai 1900 in Lima, Peru
   - label: Gestorben
-    value: 11. Juli 1989 in Lima
+    value: 11. Juli 1989 in Lima, Peru
   - label: Wirkungsfeld
     value: Schriftstellerin, Dichterin, Romancière, Aktivistin
 timeline:

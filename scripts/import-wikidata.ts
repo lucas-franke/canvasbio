@@ -22,6 +22,7 @@ import { getFreeImages, type CommonsImage } from "./import/commons";
 import { fetchBinary } from "./import/http";
 import {
   dateOf,
+  continentsOf,
   countriesOf,
   entityIds,
   femaleLabel,
@@ -504,6 +505,11 @@ async function main() {
       taxonomy.place[key] ??= { de: label(place, "de")!, en };
       const country = countryKey(place);
       if (country) countryKeys.push(country);
+      // … and the continents, so "Afrika" finds everyone born or died in Africa.
+      for (const continent of continentsOf(countries.get(place.id))) {
+        taxonomy.place[continent.key] ??= { de: continent.de, en: continent.en };
+        countryKeys.push(continent.key);
+      }
       countryOfPlace[key] = country;
       return key;
     };

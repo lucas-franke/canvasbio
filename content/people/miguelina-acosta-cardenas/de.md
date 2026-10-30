@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Miguelina Acosta Cárdenas
 facts:
   - label: Geboren
-    value: 23. November 1887 in Yurimaguas
+    value: 23. November 1887 in Yurimaguas, Peru
   - label: Gestorben
-    value: 26. Oktober 1933 in Lima
+    value: 26. Oktober 1933 in Lima, Peru
   - label: Wirkungsfeld
     value: Rechtsanwältin, Frauenrechtlerin, Anarchosyndikalistin, Hochschullehrerin
 timeline:

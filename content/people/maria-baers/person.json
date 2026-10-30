@@ -26,7 +26,9 @@
     ],
     "place": [
       "antwerp",
-      "brussels"
+      "brussels",
+      "europe",
+      "belgium"
     ]
   },
   "prominence": 0.5,

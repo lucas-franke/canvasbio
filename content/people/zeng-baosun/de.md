@@ -7,7 +7,7 @@ facts:
   - label: Geboren
     value: 9. März 1893 in Xiangxiang, Volksrepublik China
   - label: Gestorben
-    value: 27. Juli 1978 in Taipeh
+    value: 27. Juli 1978 in Taipeh, Taiwan
   - label: Wirkungsfeld
     value: Lehrerin, Frauenrechtlerin, Historikerin, Essayistin
 timeline:

@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Josefa Llanes Escoda
 facts:
   - label: Geboren
-    value: 20. September 1898 in Dingras
+    value: 20. September 1898 in Dingras, Philippinen
   - label: Gestorben
-    value: 6. Januar 1945 in Manila
+    value: 6. Januar 1945 in Manila, Philippinen
   - label: Wirkungsfeld
     value: Suffragette
 timeline:

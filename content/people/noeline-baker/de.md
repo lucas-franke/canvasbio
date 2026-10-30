@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Noeline Baker
 facts:
   - label: Geboren
-    value: 25. Dezember 1878 in Opawa
+    value: 25. Dezember 1878 in Opawa, Neuseeland
   - label: Gestorben
-    value: 25. August 1958 in Stewart Island
+    value: 25. August 1958 in Stewart Island, Neuseeland
   - label: Wirkungsfeld
     value: Suffragette, Gärtnerin, Beamtin, Friedensaktivistin
 timeline:

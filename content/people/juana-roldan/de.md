@@ -5,7 +5,7 @@ summary:
 portraitAlt: Porträt von Juana Roldán
 facts:
   - label: Geboren
-    value: 1851 in Santiago de Chile
+    value: 1851 in Santiago de Chile, Chile
   - label: Wirkungsfeld
     value: Aktivistin, Frauenrechtlerin
 timeline:

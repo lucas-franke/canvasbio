@@ -5,7 +5,7 @@ summary:
 portraitAlt: Porträt von Agnes Wabnitz
 facts:
   - label: Geboren
-    value: 10. Dezember 1841 in Gleiwitz
+    value: 10. Dezember 1841 in Gleiwitz, Polen
   - label: Gestorben
     value: 28. August 1894 in Berlin, Deutschland
   - label: Wirkungsfeld

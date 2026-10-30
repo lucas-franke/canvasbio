@@ -5,7 +5,7 @@ summary:
 portraitAlt: Portrait of Natalia Nordman
 facts:
   - label: Born
-    value: December 14, 1863 in Helsinki
+    value: December 14, 1863 in Helsinki, Finland
   - label: Died
     value: June 30, 1914 in Orselina, Switzerland
   - label: Field

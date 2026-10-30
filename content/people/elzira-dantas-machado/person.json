@@ -26,7 +26,11 @@
     ],
     "place": [
       "rio-de-janeiro",
-      "porto"
+      "porto",
+      "south-america",
+      "europe",
+      "brazil",
+      "portugal"
     ]
   },
   "prominence": 0.54,

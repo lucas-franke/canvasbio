@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Urani Rumbo
 facts:
   - label: Geboren
-    value: 1884 in Stegopul
+    value: 1884 in Stegopul, Albanien
   - label: Gestorben
-    value: 26. März 1936 in Vlora
+    value: 26. März 1936 in Vlora, Albanien
   - label: Wirkungsfeld
     value: Journalistin, Suffragette, Schriftstellerin, Lehrerin
 timeline:

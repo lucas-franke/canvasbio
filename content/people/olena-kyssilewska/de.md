@@ -5,7 +5,7 @@ summary:
 portraitAlt: Porträt von Olena Kyssilewska
 facts:
   - label: Geboren
-    value: 24. März 1869 in Monastyryska
+    value: 24. März 1869 in Monastyryska, Ukraine
   - label: Gestorben
     value: 29. März 1956 in Ottawa, Kanada
   - label: Wirkungsfeld

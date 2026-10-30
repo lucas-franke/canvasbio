@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Adelaide Smith Casely Hayford
 facts:
   - label: Born
-    value: June 27, 1868 in Freetown
+    value: June 27, 1868 in Freetown, Sierra Leone
   - label: Died
-    value: January 16, 1960 in Freetown
+    value: January 16, 1960 in Freetown, Sierra Leone
   - label: Field
     value: Writer, Educator, Women's rights activist, Autobiographer
 timeline:

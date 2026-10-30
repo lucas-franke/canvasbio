@@ -5,7 +5,7 @@ summary:
 portraitAlt: Portrait of Nani Soewondo-Soerasno
 facts:
   - label: Born
-    value: 1918 in Semarang
+    value: 1918 in Semarang, Indonesia
   - label: Field
     value: Women's rights activist
 timeline:

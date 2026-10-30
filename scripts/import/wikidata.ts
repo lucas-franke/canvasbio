@@ -51,16 +51,36 @@ export async function findCandidates(toYear = 1950): Promise<Candidate[]> {
   }));
 }
 
-/** Loads full entities in batches of 50 (API limit). */
+/**
+ * Loads full entities in batches of 50 (API limit). Large entities (countries have thousands
+ * of statements) can exceed the API's response limit: it then silently leaves entities out
+ * and only warns, so such a batch is loaded again in halves.
+ */
 export async function getEntities(ids: string[]): Promise<Map<string, Entity>> {
   const result = new Map<string, Entity>();
   for (const batch of chunk([...new Set(ids)], 50)) {
-    const url = `${API}?action=wbgetentities&format=json&props=labels|descriptions|claims|sitelinks&languages=de|en&ids=${batch.join("|")}`;
-    const data = await fetchJson<{ entities: Record<string, Entity> }>(url);
-    for (const [id, entity] of Object.entries(data.entities)) {
-      if ("missing" in entity) continue;
-      result.set(id, entity);
-    }
+    for (const [id, entity] of await getBatch(batch)) result.set(id, entity);
+  }
+  return result;
+}
+
+async function getBatch(ids: string[]): Promise<Map<string, Entity>> {
+  const url = `${API}?action=wbgetentities&format=json&props=labels|descriptions|claims|sitelinks&languages=de|en&ids=${ids.join("|")}`;
+  const data = await fetchJson<{
+    entities?: Record<string, Entity>;
+    warnings?: { result?: unknown };
+    error?: { info?: string };
+  }>(url);
+  if (!data.entities) throw new Error(`Wikidata: ${data.error?.info ?? "no entities"} (${ids.slice(0, 3).join(", ")} …)`);
+  if (data.warnings?.result && ids.length > 1) {
+    const half = Math.ceil(ids.length / 2);
+    const [a, b] = await Promise.all([getBatch(ids.slice(0, half)), getBatch(ids.slice(half))]);
+    return new Map([...a, ...b]);
+  }
+  const result = new Map<string, Entity>();
+  for (const [id, entity] of Object.entries(data.entities)) {
+    if ("missing" in entity) continue;
+    result.set(id, entity);
   }
   return result;
 }
@@ -154,4 +174,29 @@ export function coordsOf(entity: Entity | undefined): [number, number] | undefin
   if (!value) return undefined;
   const round = (n: number) => Math.round(n * 1000) / 1000;
   return [round(value.longitude), round(value.latitude)];
+}
+
+/** The six continents of the place facet, with fixed labels (Wikidata has several variants). */
+const CONTINENTS: Record<string, { key: string; de: string; en: string }[]> = {
+  Q15: [{ key: "africa", de: "Afrika", en: "Africa" }],
+  Q46: [{ key: "europe", de: "Europa", en: "Europe" }],
+  Q48: [{ key: "asia", de: "Asien", en: "Asia" }],
+  Q49: [{ key: "north-america", de: "Nordamerika", en: "North America" }],
+  Q18: [{ key: "south-america", de: "Südamerika", en: "South America" }],
+  Q538: [{ key: "oceania", de: "Ozeanien", en: "Oceania" }],
+  // Insular Oceania, the Australian continent
+  Q55643: [{ key: "oceania", de: "Ozeanien", en: "Oceania" }],
+  Q3960: [{ key: "oceania", de: "Ozeanien", en: "Oceania" }],
+  // Eurasia
+  Q5401: [
+    { key: "europe", de: "Europa", en: "Europe" },
+    { key: "asia", de: "Asien", en: "Asia" },
+  ],
+};
+
+/** Continents of a country (P30); a country on two (Turkey, Russia) has both. */
+export function continentsOf(country: Entity | undefined): { key: string; de: string; en: string }[] {
+  if (!country) return [];
+  const all = entityIds(country, "P30").flatMap((id) => CONTINENTS[id] ?? []);
+  return all.filter((c, i) => all.findIndex((other) => other.key === c.key) === i);
 }

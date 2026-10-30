@@ -5,7 +5,7 @@ summary:
 portraitAlt: Portrait of Helena Benítez de Zapata
 facts:
   - label: Born
-    value: June 26, 1915 in Caldas Department
+    value: June 26, 1915 in Caldas Department, Colombia
   - label: Died
     value: June 5, 2009 in Colombia
   - label: Field

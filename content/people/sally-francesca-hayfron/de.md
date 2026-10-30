@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Sally Francesca Hayfron
 facts:
   - label: Geboren
-    value: 6. Juni 1931 in Accra
+    value: 6. Juni 1931 in Accra, Ghana
   - label: Gestorben
-    value: 27. Januar 1992 in Parirenyatwa Hospital
+    value: 27. Januar 1992 in Parirenyatwa Hospital, Simbabwe
   - label: Wirkungsfeld
     value: Politikerin, Lehrerin, Feministin
 timeline:

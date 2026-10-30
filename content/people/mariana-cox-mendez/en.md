@@ -5,7 +5,7 @@ summary:
 portraitAlt: Portrait of Mariana Cox Méndez
 facts:
   - label: Born
-    value: 1871 in Punta Arenas
+    value: 1871 in Punta Arenas, Chile
   - label: Died
     value: September 8, 1914 in Paris, France
   - label: Field

@@ -5,7 +5,7 @@ summary:
 portraitAlt: Portrait of Louisa Snelson
 facts:
   - label: Born
-    value: January 29, 1844 in Wellington
+    value: January 29, 1844 in Wellington, New Zealand
   - label: Died
     value: December 15, 1919
   - label: Field

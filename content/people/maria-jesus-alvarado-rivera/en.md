@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of María Jesús Alvarado Rivera
 facts:
   - label: Born
-    value: May 27, 1878 in Chincha Alta
+    value: May 27, 1878 in Chincha Alta, Peru
   - label: Died
-    value: May 6, 1971 in Lima
+    value: May 6, 1971 in Lima, Peru
   - label: Field
     value: Writer, Journalist, Women's rights activist
 timeline:

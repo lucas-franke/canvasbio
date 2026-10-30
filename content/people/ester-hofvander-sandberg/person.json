@@ -22,7 +22,10 @@
     "field": [
       "science"
     ],
-    "place": []
+    "place": [
+      "europe",
+      "sweden"
+    ]
   },
   "prominence": 0.5,
   "sources": [

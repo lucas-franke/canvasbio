@@ -22,7 +22,10 @@
     "field": [
       "education"
     ],
-    "place": []
+    "place": [
+      "asia",
+      "philippines"
+    ]
   },
   "prominence": 0.5,
   "sources": [

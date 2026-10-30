@@ -5,7 +5,7 @@ summary:
 portraitAlt: Portrait of Frederika Wilhelmina Broese van Groenou
 facts:
   - label: Born
-    value: April 1, 1875 in Yogyakarta
+    value: April 1, 1875 in Yogyakarta, Indonesia
   - label: Died
     value: November 11, 1960 in The Hague, Netherlands
   - label: Field

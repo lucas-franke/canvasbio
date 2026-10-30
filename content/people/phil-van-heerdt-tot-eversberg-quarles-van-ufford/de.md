@@ -5,7 +5,7 @@ summary:
 portraitAlt: Porträt von Phil van Heerdt tot Eversberg-Quarles van Ufford
 facts:
   - label: Geboren
-    value: 5. Dezember 1862 in Ketandan
+    value: 5. Dezember 1862 in Ketandan, Indonesien
   - label: Gestorben
     value: 2. Dezember 1939 in Den Haag, Niederlande
   - label: Wirkungsfeld

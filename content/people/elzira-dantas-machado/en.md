@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Elzira Dantas Machado
 facts:
   - label: Born
-    value: December 15, 1865 in Rio de Janeiro
+    value: December 15, 1865 in Rio de Janeiro, Brazil
   - label: Died
-    value: April 22, 1942 in Porto
+    value: April 22, 1942 in Porto, Portugal
   - label: Field
     value: First Lady, Women's rights activist, Feminist, Politician
 timeline:

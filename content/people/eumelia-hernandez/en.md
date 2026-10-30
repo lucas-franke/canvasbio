@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Eumelia Hernández
 facts:
   - label: Born
-    value: October 14, 1913 in Caracas
+    value: October 14, 1913 in Caracas, Venezuela
   - label: Died
-    value: September 17, 1990 in Caracas
+    value: September 17, 1990 in Caracas, Venezuela
   - label: Field
     value: Women's rights activist, Trade unionist
 timeline:

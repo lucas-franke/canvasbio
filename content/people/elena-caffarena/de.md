@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Elena Caffarena
 facts:
   - label: Geboren
-    value: 23. März 1903 in Iquique
+    value: 23. März 1903 in Iquique, Chile
   - label: Gestorben
-    value: 19. Juli 2003 in Santiago de Chile
+    value: 19. Juli 2003 in Santiago de Chile, Chile
   - label: Wirkungsfeld
     value: Politikerin, Rechtsanwältin, Suffragette, Gründerin
 timeline:

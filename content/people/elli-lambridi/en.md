@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Elli Lambridi
 facts:
   - label: Born
-    value: January 9, 1896 in Athens
+    value: January 9, 1896 in Athens, Greece
   - label: Died
-    value: January 28, 1970 in Athens
+    value: January 28, 1970 in Athens, Greece
   - label: Field
     value: Teacher, Philosopher, Writer, Translator
 timeline:

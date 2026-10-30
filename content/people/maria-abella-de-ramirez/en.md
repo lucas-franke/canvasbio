@@ -5,7 +5,7 @@ summary:
 portraitAlt: Portrait of María Abella de Ramírez
 facts:
   - label: Born
-    value: September 28, 1866 in San José Department
+    value: September 28, 1866 in San José Department, Uruguay
   - label: Died
     value: August 5, 1926 in La Plata, Argentina
   - label: Field

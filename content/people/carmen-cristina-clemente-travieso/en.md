@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Carmen Cristina Clemente Travieso
 facts:
   - label: Born
-    value: July 24, 1900 in Caracas
+    value: July 24, 1900 in Caracas, Venezuela
   - label: Died
-    value: January 24, 1983 in Caracas
+    value: January 24, 1983 in Caracas, Venezuela
   - label: Field
     value: Writer, Journalist, Suffragette
 timeline:

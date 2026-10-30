@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Ana Figueroa Gajardo
 facts:
   - label: Born
-    value: June 19, 1907 in Santiago
+    value: June 19, 1907 in Santiago, Chile
   - label: Died
-    value: April 8, 1970 in Santiago
+    value: April 8, 1970 in Santiago, Chile
   - label: Field
     value: Activist, Women's rights activist, Educator, Civil servant
 timeline:

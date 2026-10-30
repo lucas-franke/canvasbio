@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Radhia Haddad
 facts:
   - label: Geboren
-    value: 17. März 1922 in Tunis
+    value: 17. März 1922 in Tunis, Tunesien
   - label: Gestorben
-    value: 20. Oktober 2003 in Karthago
+    value: 20. Oktober 2003 in Karthago, Tunesien
   - label: Wirkungsfeld
     value: Frauenrechtlerin, Politikerin
 timeline:

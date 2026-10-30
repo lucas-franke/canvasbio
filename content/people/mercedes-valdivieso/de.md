@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Mercedes Valdivieso
 facts:
   - label: Geboren
-    value: 1. März 1924 in Santiago de Chile
+    value: 1. März 1924 in Santiago de Chile, Chile
   - label: Gestorben
-    value: 3. August 1993 in Santiago de Chile
+    value: 3. August 1993 in Santiago de Chile, Chile
   - label: Wirkungsfeld
     value: Schriftstellerin, Frauenrechtlerin
 timeline:

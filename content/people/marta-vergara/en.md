@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Marta Vergara
 facts:
   - label: Born
-    value: January 2, 1898 in Valparaíso
+    value: January 2, 1898 in Valparaíso, Chile
   - label: Died
-    value: 1995 in Santiago
+    value: 1995 in Santiago, Chile
   - label: Field
     value: Journalist, Suffragette, Feminist, Writer
 timeline:

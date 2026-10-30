@@ -7,7 +7,7 @@ facts:
   - label: Geboren
     value: 5. Mai 1882 in Trafford, Vereinigtes Königreich
   - label: Gestorben
-    value: 27. September 1960 in Addis Abeba
+    value: 27. September 1960 in Addis Abeba, Äthiopien
   - label: Wirkungsfeld
     value: Journalistin, Frauenrechtlerin, Herausgeberin, Ölmalerin
 timeline:

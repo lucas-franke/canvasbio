@@ -5,7 +5,7 @@ summary:
 portraitAlt: Portrait of Helen Loring Grenfell
 facts:
   - label: Born
-    value: in Valparaíso
+    value: in Valparaíso, Chile
   - label: Died
     value: July 26, 1935 in Denver, United States
   - label: Field

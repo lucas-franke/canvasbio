@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Clotilde Luisi
 facts:
   - label: Geboren
-    value: 24. Juli 1882 in Paysandú
+    value: 24. Juli 1882 in Paysandú, Uruguay
   - label: Gestorben
-    value: 1969 in Rom
+    value: 1969 in Rom, Italien
   - label: Wirkungsfeld
     value: Rechtsanwältin, Hochschullehrerin, Frauenrechtlerin, Dramatikerin
 timeline:

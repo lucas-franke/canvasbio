@@ -3221,6 +3221,74 @@
     "lewiston": {
       "de": "Lewiston",
       "en": "Lewiston"
+    },
+    "north-america": {
+      "de": "Nordamerika",
+      "en": "North America"
+    },
+    "europe": {
+      "de": "Europa",
+      "en": "Europe"
+    },
+    "oceania": {
+      "de": "Ozeanien",
+      "en": "Oceania"
+    },
+    "africa": {
+      "de": "Afrika",
+      "en": "Africa"
+    },
+    "asia": {
+      "de": "Asien",
+      "en": "Asia"
+    },
+    "south-america": {
+      "de": "Südamerika",
+      "en": "South America"
+    },
+    "sierra-leone": {
+      "de": "Sierra Leone",
+      "en": "Sierra Leone"
+    },
+    "venezuela": {
+      "de": "Venezuela",
+      "en": "Venezuela"
+    },
+    "uruguay": {
+      "de": "Uruguay",
+      "en": "Uruguay"
+    },
+    "greece": {
+      "de": "Griechenland",
+      "en": "Greece"
+    },
+    "peru": {
+      "de": "Peru",
+      "en": "Peru"
+    },
+    "algeria": {
+      "de": "Algerien",
+      "en": "Algeria"
+    },
+    "bangladesh": {
+      "de": "Bangladesch",
+      "en": "Bangladesh"
+    },
+    "ghana": {
+      "de": "Ghana",
+      "en": "Ghana"
+    },
+    "zimbabwe": {
+      "de": "Simbabwe",
+      "en": "Zimbabwe"
+    },
+    "ethiopia": {
+      "de": "Äthiopien",
+      "en": "Ethiopia"
+    },
+    "slovakia": {
+      "de": "Slowakei",
+      "en": "Slovakia"
     }
   }
 }

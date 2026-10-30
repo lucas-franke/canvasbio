@@ -5,7 +5,7 @@ summary:
 portraitAlt: Portrait of Gladys Adda
 facts:
   - label: Born
-    value: June 2, 1921 in Gabès
+    value: June 2, 1921 in Gabès, Tunisia
   - label: Died
     value: "1995"
   - label: Field

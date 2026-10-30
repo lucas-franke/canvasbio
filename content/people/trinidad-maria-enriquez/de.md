@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Trinidad María Enríquez
 facts:
   - label: Geboren
-    value: 5. Juni 1846 in Cusco
+    value: 5. Juni 1846 in Cusco, Peru
   - label: Gestorben
-    value: 20. April 1891 in Lima
+    value: 20. April 1891 in Lima, Peru
   - label: Wirkungsfeld
     value: Lehrerin, Frauenrechtlerin
 timeline:

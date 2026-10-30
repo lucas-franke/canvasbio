@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Meriem Belmihoub
 facts:
   - label: Born
-    value: April 1, 1935 in Algiers
+    value: April 1, 1935 in Algiers, Algeria
   - label: Died
-    value: July 27, 2021 in Algiers Province
+    value: July 27, 2021 in Algiers Province, Algeria
   - label: Field
     value: Lawyer, Activist, Politician, Women's rights activist
 timeline:

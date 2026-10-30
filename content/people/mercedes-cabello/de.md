@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Mercedes Cabello
 facts:
   - label: Geboren
-    value: 7. Februar 1845 in Moquegua
+    value: 7. Februar 1845 in Moquegua, Peru
   - label: Gestorben
-    value: 12. Oktober 1909 in Hospital de la Misericordia, Lima
+    value: 12. Oktober 1909 in Hospital de la Misericordia, Lima, Peru
   - label: Wirkungsfeld
     value: Romancière, Essayistin, Frauenrechtlerin, Schriftstellerin
 timeline:

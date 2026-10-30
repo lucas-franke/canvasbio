@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Anbara Salam Khalidy
 facts:
   - label: Geboren
-    value: 4. August 1897 in Beirut
+    value: 4. August 1897 in Beirut, Libanon
   - label: Gestorben
-    value: 1986 in Beirut
+    value: 1986 in Beirut, Libanon
   - label: Wirkungsfeld
     value: Übersetzerin, Dichterin, Schriftstellerin, Frauenrechtlerin
 timeline:

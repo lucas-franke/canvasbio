@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Alzira Soriano
 facts:
   - label: Geboren
-    value: 29. April 1897 in Jardim de Angicos
+    value: 29. April 1897 in Jardim de Angicos, Brasilien
   - label: Gestorben
-    value: 28. Mai 1963 in Natal
+    value: 28. Mai 1963 in Natal, Brasilien
   - label: Wirkungsfeld
     value: Politikerin, Suffragette
 timeline:

@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Isabel Le Brun de Pinochet
 facts:
   - label: Geboren
-    value: 1845 in San Felipe
+    value: 1845 in San Felipe, Chile
   - label: Gestorben
-    value: 25. Juni 1930 in Santiago de Chile
+    value: 25. Juni 1930 in Santiago de Chile, Chile
   - label: Wirkungsfeld
     value: Erzieherin, Lehrerin, Frauenrechtlerin
 timeline:

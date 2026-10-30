@@ -5,9 +5,9 @@ summary:
 portraitAlt: Portrait of Emilie Claeys
 facts:
   - label: Born
-    value: May 9, 1855 in Ghent
+    value: May 9, 1855 in Ghent, Belgium
   - label: Died
-    value: February 16, 1943 in Ghent
+    value: February 16, 1943 in Ghent, Belgium
   - label: Field
     value: Women's rights activist, Editor
 timeline:

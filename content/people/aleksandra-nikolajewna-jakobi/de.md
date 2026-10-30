@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Aleksandra Nikolajewna Jakobi
 facts:
   - label: Geboren
-    value: 24. April 1841 in Jegorjewsk
+    value: 24. April 1841 in Jegorjewsk, Russland
   - label: Gestorben
-    value: 1. Dezember 1918 in Sankt Petersburg
+    value: 1. Dezember 1918 in Sankt Petersburg, Russland
   - label: Wirkungsfeld
     value: Korrespondentin, Journalistin, Redakteurin, Publizistin
 timeline:

@@ -5,7 +5,7 @@ summary:
 portraitAlt: Porträt von Marguerite Mongenast-Servais
 facts:
   - label: Geboren
-    value: 25. Juni 1882 in Weilerbach
+    value: 25. Juni 1882 in Weilerbach, Luxemburg
   - label: Gestorben
     value: 13. Juni 1925 in Saint-Nicolas-de-Port, Frankreich
   - label: Wirkungsfeld

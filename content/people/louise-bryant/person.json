@@ -28,7 +28,9 @@
       "san-francisco",
       "sevres",
       "united-states",
-      "france"
+      "france",
+      "north-america",
+      "europe"
     ]
   },
   "prominence": 0.75,

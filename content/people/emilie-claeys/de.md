@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Emilie Claeys
 facts:
   - label: Geboren
-    value: 9. Mai 1855 in Gent
+    value: 9. Mai 1855 in Gent, Belgien
   - label: Gestorben
-    value: 16. Februar 1943 in Gent
+    value: 16. Februar 1943 in Gent, Belgien
   - label: Wirkungsfeld
     value: Frauenrechtlerin, Herausgeberin
 timeline:

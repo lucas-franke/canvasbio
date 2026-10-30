@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Delia Matte Pérez
 facts:
   - label: Geboren
-    value: 1886 in Santiago de Chile
+    value: 1886 in Santiago de Chile, Chile
   - label: Gestorben
-    value: 15. Juni 1941 in Santiago de Chile
+    value: 15. Juni 1941 in Santiago de Chile, Chile
   - label: Wirkungsfeld
     value: Suffragette
 timeline:

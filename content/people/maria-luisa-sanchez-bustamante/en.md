@@ -5,7 +5,7 @@ summary:
 portraitAlt: Portrait of María Luisa Sánchez Bustamante
 facts:
   - label: Born
-    value: August 19, 1896 in Sucre
+    value: August 19, 1896 in Sucre, Bolivia
   - label: Died
     value: "1988"
   - label: Field

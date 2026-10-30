@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Amanda Labarca
 facts:
   - label: Geboren
-    value: 5. Dezember 1886 in Santiago de Chile
+    value: 5. Dezember 1886 in Santiago de Chile, Chile
   - label: Gestorben
-    value: 2. Januar 1975 in Santiago de Chile
+    value: 2. Januar 1975 in Santiago de Chile, Chile
   - label: Wirkungsfeld
     value: Diplomatin, Politikerin, Professorin, Schriftstellerin
 timeline:

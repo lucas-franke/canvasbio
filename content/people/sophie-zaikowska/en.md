@@ -5,7 +5,7 @@ summary:
 portraitAlt: Portrait of Sophie Zaïkowska
 facts:
   - label: Born
-    value: May 17, 1874 in Vilnius
+    value: May 17, 1874 in Vilnius, Lithuania
   - label: Died
     value: February 27, 1939 in Paris, France
   - label: Field

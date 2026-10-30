@@ -28,7 +28,9 @@
       "osgood",
       "london",
       "united-states",
-      "united-kingdom"
+      "united-kingdom",
+      "north-america",
+      "europe"
     ]
   },
   "prominence": 0.68,

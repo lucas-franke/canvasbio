@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Natalija Kobrynska
 facts:
   - label: Geboren
-    value: 8. Juni 1855 in Beleluja
+    value: 8. Juni 1855 in Beleluja, Ukraine
   - label: Gestorben
-    value: 22. Januar 1920 in Bolechiw
+    value: 22. Januar 1920 in Bolechiw, Ukraine
   - label: Wirkungsfeld
     value: Schriftstellerin, Frauenrechtlerin, Herausgeberin, Feministin
 timeline:

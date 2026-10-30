@@ -5,7 +5,7 @@ summary:
 portraitAlt: Portrait of Zaynab Fawwāz
 facts:
   - label: Born
-    value: 1844 in Tebnine
+    value: 1844 in Tebnine, Lebanon
   - label: Died
     value: 1914 in Cairo, Egypt
   - label: Field

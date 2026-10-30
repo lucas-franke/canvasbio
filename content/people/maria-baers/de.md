@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Maria Baers
 facts:
   - label: Geboren
-    value: 20. September 1883 in Antwerpen
+    value: 20. September 1883 in Antwerpen, Belgien
   - label: Gestorben
-    value: 30. Dezember 1959 in Brüssel
+    value: 30. Dezember 1959 in Brüssel, Belgien
   - label: Wirkungsfeld
     value: Politikerin, Frauenrechtlerin
 timeline:
