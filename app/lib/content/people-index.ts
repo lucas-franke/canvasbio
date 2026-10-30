@@ -17,6 +17,8 @@ export interface PeopleIndex {
   facetLabels: FacetLabels;
   /** Coordinates of birth and death places (map view). */
   placeCoords: PlaceCoords;
+  /** Continents with their countries (place keys), sorted by name: the place suggestions. */
+  placeGroups?: { key: string; countries: string[] }[];
 }
 
 export interface PeopleIndexState {

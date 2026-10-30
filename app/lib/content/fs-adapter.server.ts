@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 
 import type { SiteConfig } from "~/lib/config/schema";
-import type { ContentAdapter, PersonDetail, PersonListItem, PlaceCoords } from "./adapter";
+import type { ContentAdapter, PersonDetail, PersonListItem, PlaceCoords, Regions } from "./adapter";
 import type { PortraitManifest } from "./images";
 import { loadContent, type LoadedContent, type LoadedPerson } from "./load.server";
 
@@ -23,6 +23,7 @@ export function createFsContentAdapter(
 ): ContentAdapter {
   let loading: Promise<Loaded> | undefined;
   let placeCoords: Promise<PlaceCoords> | undefined;
+  let regions: Promise<Regions> | undefined;
 
   const load = () =>
     (loading ??= (async () => {
@@ -102,6 +103,14 @@ export function createFsContentAdapter(
     async getPlaceCoords() {
       return (placeCoords ??= readFile(path.join(root, "places.json"), "utf8").then(
         (json) => JSON.parse(json) as PlaceCoords,
+        () => ({}),
+      ));
+    },
+
+    // content/regions.json (scripts/add-continents.ts); optional, suggestions are then flat.
+    async getRegions() {
+      return (regions ??= readFile(path.join(root, "regions.json"), "utf8").then(
+        (json) => JSON.parse(json) as Regions,
         () => ({}),
       ));
     },

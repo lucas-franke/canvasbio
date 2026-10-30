@@ -4,6 +4,9 @@ import type { Person, PersonLocalized, PersonText, Taxonomy } from "./schema";
 /** Lightweight entry for canvas, list and search: no life story, no timeline. */
 export type PlaceCoords = Record<string, [number, number]>;
 
+/** Place keys of the countries per continent key. */
+export type Regions = Record<string, string[]>;
+
 export interface PersonListItem {
   slug: string;
   name: Person["name"];
@@ -40,4 +43,6 @@ export interface ContentAdapter {
   getTaxonomy(): Promise<Taxonomy>;
   /** [longitude, latitude] per place key, for the map view (places without are left out). */
   getPlaceCoords(): Promise<PlaceCoords>;
+  /** Countries per continent (place keys), for the grouped place suggestions. */
+  getRegions(): Promise<Regions>;
 }

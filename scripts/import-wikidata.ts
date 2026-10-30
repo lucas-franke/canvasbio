@@ -525,6 +525,11 @@ async function main() {
     field: Object.fromEntries([...FIELDS, ACTIVISM].map((f) => [f.key, f.label])),
     place: { ...previous.place },
   };
+  // Countries per continent, for the grouped place suggestions (see scripts/add-continents.ts).
+  const regionsFile = path.join(CONTENT, "regions.json");
+  const regions: Record<string, string[]> = ADD
+    ? JSON.parse(await readFile(regionsFile, "utf8").catch(() => "{}"))
+    : {};
   // Countries too, so searching "Deutschland" finds everyone born or died there.
   const cityEntities = withFreeImage.flatMap((c) =>
     ["P19", "P20"].flatMap((prop) => {
@@ -585,6 +590,7 @@ async function main() {
       for (const continent of continentsOf(countries.get(place.id))) {
         taxonomy.place[continent.key] ??= { de: continent.de, en: continent.en };
         countryKeys.push(continent.key);
+        if (country) regions[continent.key] = [...new Set([...(regions[continent.key] ?? []), country])].sort();
       }
       countryOfPlace[key] = country;
       return key;
@@ -668,6 +674,8 @@ async function main() {
 
   console.log("5/5 Writing taxonomy and cleaning up …");
   await writeFile(path.join(CONTENT, "taxonomy.json"), `${JSON.stringify(taxonomy, null, 2)}\n`);
+  const sortedRegions = Object.fromEntries(Object.entries(regions).sort(([a], [b]) => a.localeCompare(b)));
+  await writeFile(regionsFile, `${JSON.stringify(sortedRegions, null, 2)}\n`);
   const removed = ADD ? [] : await removeStaleFolders(usedSlugs);
 
   console.log(
