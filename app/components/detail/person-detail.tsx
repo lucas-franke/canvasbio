@@ -154,11 +154,21 @@ export function PersonDetail({
       )}
 
       <Tabs value={tab} onValueChange={(value) => setTab(value as TabId)}>
-        <div className="sticky top-16 z-10 -mx-5 bg-surface/95 px-5 py-2 backdrop-blur-sm sm:-mx-10 sm:px-10 print:hidden">
+        {/* Sticks in the top line once scrolled, next to the close button (room kept free on the right). */}
+        <div className="sticky top-0 z-10 -mx-5 flex min-h-16 items-center bg-surface/95 py-2 pr-16 pl-5 backdrop-blur-sm sm:-mx-10 sm:pr-20 sm:pl-10 print:hidden">
           <TabsList aria-label={m.detail.sections}>
             {siteConfig.detail.tabs.map((t) => (
-              <TabsTrigger key={t.id} value={t.id}>
-                {localize(t.label, locale)}
+              <TabsTrigger key={t.id} value={t.id} className="max-sm:px-2.5">
+                {t.shortLabel ? (
+                  <>
+                    <span aria-hidden="true" className="sm:hidden">
+                      {localize(t.shortLabel, locale)}
+                    </span>
+                    <span className="max-sm:sr-only">{localize(t.label, locale)}</span>
+                  </>
+                ) : (
+                  localize(t.label, locale)
+                )}
               </TabsTrigger>
             ))}
           </TabsList>

@@ -169,9 +169,9 @@
   & h3 {
     @apply mt-4 text-h3;
   }
-  /* Jumps from the table of contents land below the sticky bar and tabs of the biography. */
+  /* Jumps from the table of contents land below the sticky tab bar (one line with the close button). */
   & :is(h2, h3, h4) {
-    scroll-margin-top: 9rem;
+    scroll-margin-top: 5rem;
   }
   & h4,
   & h5,

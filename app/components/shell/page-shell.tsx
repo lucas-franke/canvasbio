@@ -48,8 +48,9 @@ export function PageShell({ children, navEnd, aside, inert = false, fullBleed = 
         inert={inert}
         label={m.nav.label}
         start={
-          <NavPill bare>
-            <BrandLink />
+          // Over the mosaic and the map the brand gets a pill like the controls on the right.
+          <NavPill bare={!fullBleed}>
+            <BrandLink contained={fullBleed} />
           </NavPill>
         }
         end={

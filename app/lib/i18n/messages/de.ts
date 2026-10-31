@@ -68,6 +68,9 @@ export const de = {
       `${kind === "born" ? "Geboren" : "Gestorben"} am ${date}`,
     portraitsLabel: "Porträts aus der Sammlung",
     listHint: "Mit Screenreader ist die Listenansicht übersichtlicher.",
+    orList: "oder als Liste",
+    count: (people: number, continents: number) =>
+      continents > 1 ? `${people} Biografien aus ${continents} Kontinenten` : `${people} Biografien`,
   },
   people: {
     title: "Biografien",

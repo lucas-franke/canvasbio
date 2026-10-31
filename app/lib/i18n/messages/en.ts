@@ -65,6 +65,9 @@ export const en: Messages = {
       `${kind === "born" ? "Born" : "Died"} on ${date}`,
     portraitsLabel: "Portraits from the collection",
     listHint: "With a screen reader, the list view is easier to follow.",
+    orList: "or as a list",
+    count: (people: number, continents: number) =>
+      continents > 1 ? `${people} biographies from ${continents} continents` : `${people} biographies`,
   },
   people: {
     title: "Biographies",

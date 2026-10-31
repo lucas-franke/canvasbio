@@ -1,5 +1,5 @@
 import { cn } from "cn";
-import { ChevronDown, LayoutDashboard, List, MapIcon, Quote, Shuffle } from "lucide-react";
+import { ArrowRight, ChevronDown, List, Quote, Shuffle } from "lucide-react";
 import { useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router";
 
@@ -20,7 +20,7 @@ import { loadPeopleIndex } from "~/lib/content/people-index.server";
 import { usePeopleIndex } from "~/lib/content/people-index";
 import { useHydrated } from "~/lib/hooks";
 import { useLocale, useMessages } from "~/lib/i18n";
-import { listPath, localeFromPathname, mapPath, pagePath } from "~/lib/i18n/locale";
+import { listPath, localeFromPathname, pagePath } from "~/lib/i18n/locale";
 import { localize } from "~/lib/i18n/localize";
 import { pageMeta } from "~/lib/meta";
 import { readSeen } from "~/lib/preferences";
@@ -82,6 +82,9 @@ export default function Start({ loaderData }: Route.ComponentProps) {
               {t(start.title)}
             </h1>
             <p className="font-heading text-subline text-balance text-emphasis">{t(start.subtitle)}</p>
+            <p className="text-body-sm text-muted-text">
+              {m.start.count(loaderData.people.length, loaderData.placeGroups.length)}
+            </p>
           </header>
 
           {start.quote && (
@@ -98,40 +101,32 @@ export default function Start({ loaderData }: Route.ComponentProps) {
             </figure>
           )}
 
-          {/* Equal ways in: the mosaic, the map, or the list (the easier one with a screen reader). */}
-          <div role="group" aria-labelledby="start-explore" className="flex flex-col gap-3">
-            <p id="start-explore" className="text-body-sm font-medium text-muted-text">
-              {t(start.cta)}
-            </p>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-              <Button asChild size="lg">
-                <Link
-                  to={pagePath(locale, "people")}
-                  viewTransition
-                  onClick={continueFromLastCamera}
-                  aria-describedby="start-list-hint"
-                >
-                  <LayoutDashboard aria-hidden="true" />
-                  {m.view.canvas}
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link to={mapPath(locale)}>
-                  <MapIcon aria-hidden="true" />
-                  {m.view.map}
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="col-span-2 sm:col-span-1">
-                <Link to={listPath(locale)}>
-                  <List aria-hidden="true" />
-                  {m.view.list}
-                </Link>
-              </Button>
-            </div>
+          {/* One way in: the mosaic continues the wall behind the card. The list is the easier
+              one with a screen reader; map and timeline are in the view switch of every page. */}
+          <div className="flex flex-col gap-3">
+            <Button asChild size="lg" className="self-start">
+              <Link
+                to={pagePath(locale, "people")}
+                viewTransition
+                onClick={continueFromLastCamera}
+                aria-describedby="start-list-hint"
+              >
+                {t(start.cta)}
+                <ArrowRight aria-hidden="true" />
+              </Link>
+            </Button>
             <p id="start-list-hint" hidden>
               {m.start.listHint}
             </p>
-            {features.randomBio && <RandomStart />}
+            <div className="-ml-4 flex flex-wrap items-center">
+              <Button asChild variant="ghost" size="sm">
+                <Link to={listPath(locale)}>
+                  <List aria-hidden="true" />
+                  {m.start.orList}
+                </Link>
+              </Button>
+              {features.randomBio && <RandomStart />}
+            </div>
           </div>
 
           <OnThisDay />
@@ -151,7 +146,6 @@ function RandomStart() {
     <Button
       variant="ghost"
       size="sm"
-      className="-ml-4 self-start"
       onClick={() => {
         const person = index && pickRandom(index.people, { seen: readSeen() });
         navigate(person ? pagePath(locale, "people", person.slug) : pagePath(locale, "people"));
@@ -183,6 +177,24 @@ function OnThisDay() {
     const exact = all.filter((a) => a.inDays === 0);
     return { items: exact.length > 0 ? exact : all, today: exact.length > 0 };
   }, [hydrated, index]);
+  // Until the date is known: keep the room free (heading, two rows, "show more"), so the
+  // centred card doesn't jump when the section appears.
+  if (!hydrated || !index) {
+    return (
+      <div aria-hidden="true" className="flex flex-col gap-3 border-t border-line pt-6">
+        <span className="h-5 w-32 rounded-md bg-emphasis/5" />
+        <span className="flex flex-col gap-1">
+          {Array.from({ length: ON_THIS_DAY_SHOWN }, (_, i) => (
+            <span key={i} className="flex min-h-14 items-center gap-3 py-1">
+              <span className="size-12 shrink-0 rounded-md bg-emphasis/5" />
+              <span className="h-9 w-48 rounded-md bg-emphasis/5" />
+            </span>
+          ))}
+        </span>
+        <span className="min-h-11" />
+      </div>
+    );
+  }
   if (items.length === 0) return null;
   const shown = expanded ? items : items.slice(0, ON_THIS_DAY_SHOWN);
   const more = items.length - ON_THIS_DAY_SHOWN;

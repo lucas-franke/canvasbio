@@ -44,7 +44,7 @@ test("the mosaic button continues the wall where it was, without a camera flight
   const before = await worldTransform(page);
   await expect.poll(() => worldTransform(page)).not.toBe(before);
   const backdropScale = scaleOf(await worldTransform(page));
-  await page.getByRole("link", { name: "Mosaik", exact: true }).click();
+  await page.getByRole("link", { name: "Biografien entdecken", exact: true }).click();
   await expect(page).toHaveURL(/\/personen$/);
   const wall = page.locator("main .canvas-world");
   await expect(wall).toBeAttached();
@@ -56,17 +56,47 @@ test("the mosaic button continues the wall where it was, without a camera flight
   expect(await page.evaluate(() => sessionStorage.getItem("canvas:continue"))).toBeNull();
 });
 
-test("the start page offers mosaic and list as equal ways in, and names its card only once", async ({
+test("the start page has one main way in (the mosaic), the list next to it, and names its card only once", async ({
   page,
 }) => {
   await page.goto("/");
-  const ways = page.getByRole("group", { name: "Biografien entdecken" });
-  await expect(ways.getByRole("link", { name: "Mosaik", exact: true })).toHaveAccessibleDescription(
-    "Mit Screenreader ist die Listenansicht übersichtlicher.",
-  );
+  await expect(page.getByText(/^\d+ Biografien aus \d Kontinenten$/)).toBeVisible();
+  const main = page.getByRole("link", { name: "Biografien entdecken", exact: true });
+  await expect(main).toHaveAttribute("href", "/personen");
+  await expect(main).toHaveAccessibleDescription("Mit Screenreader ist die Listenansicht übersichtlicher.");
+  // The other views are in the view switch of the overview, not on the card.
+  await expect(page.getByRole("link", { name: "Karte", exact: true })).toHaveCount(0);
   await expect(page.getByRole("region", { name: "Ihre Stimme" })).toHaveCount(0);
-  await ways.getByRole("link", { name: "Liste", exact: true }).click();
+  await page.getByRole("link", { name: "oder als Liste", exact: true }).click();
   await expect(page).toHaveURL(/\/personen\/liste$/);
+});
+
+test("the start card doesn't move when the anniversaries appear", async ({ page, browser, viewport }) => {
+  // Without JavaScript the page stays as pre-rendered, i.e. with the reserved room.
+  const plain = await browser.newContext({ javaScriptEnabled: false, viewport });
+  const prerendered = await plain.newPage();
+  await prerendered.goto("/");
+  const before = await prerendered.getByRole("heading", { level: 1 }).boundingBox();
+  await plain.close();
+
+  await page.goto("/");
+  await expect(page.getByRole("heading", { level: 2, name: /An diesem Tag|In den nächsten Tagen/ })).toBeVisible();
+  const after = await page.getByRole("heading", { level: 1 }).boundingBox();
+  // A few pixels at most (heading and rows are reserved, only their exact text height differs).
+  expect(Math.abs(after!.y - before!.y)).toBeLessThan(8);
+});
+
+test("over the mosaic and the map the brand sits in a pill, on the list it stands free", async ({ page }) => {
+  const pill = () => page.getByRole("link", { name: "Ihre Stimme – Startseite" }).locator("xpath=..");
+  for (const [path, contained] of [
+    ["/personen", true],
+    ["/personen/karte", true],
+    ["/personen/liste", false],
+  ] as const) {
+    await page.goto(path);
+    await expect(page.getByRole("main")).toBeVisible();
+    await expect(pill()).toHaveClass(contained ? /\bbg-nav\b/ : /^(?!.*\bbg-nav\b)/);
+  }
 });
 
 test("the brand shows the full name on phones too", async ({ page }) => {

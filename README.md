@@ -2,7 +2,7 @@
 
 White-label template for biography collections. People appear as a portrait mosaic (a zoomable canvas) and as a list. It includes search and filters, a random biography and a detail view. The template is designed for touch and mobile, works with mouse and keyboard, and is accessible to **WCAG 2.2 AA** ([audit report](docs/accessibility-audit.md), in German).
 
-The demo content shows pioneers of the women's movement (1850–1950) from Wikidata, Wikimedia Commons and Wikipedia. It is available in German and English.
+The demo content shows pioneers of the women's movement from around the world (born 1802–1990), from Wikidata, Wikimedia Commons and Wikipedia. It is available in German and English.
 
 ## Features
 

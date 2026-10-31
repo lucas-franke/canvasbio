@@ -87,12 +87,31 @@ test("unknown person shows the not-found page", async ({ page }) => {
   await expect(page.getByRole("heading", { level: 1, name: "Seite nicht gefunden" })).toBeVisible();
 });
 
-test("on phones closing and the tabs stay in reach while reading", async ({ page, isMobile }) => {
-  test.skip(!isMobile, "the sticky bar matters in the full-screen dialog");
-  await page.goto("/personen/clara-zetkin#geschichte");
-  await page.locator(".detail-scroller").evaluate((el) => el.scrollTo(0, 2000));
-  await expect(page.getByRole("link", { name: "Schließen" })).toBeInViewport();
-  await expect(page.getByRole("tablist", { name: "Abschnitte" })).toBeInViewport();
+test("while reading, the tabs stay in reach in one line with the close button", async ({ page }) => {
+  for (const width of [360, 375, page.viewportSize()!.width]) {
+    await page.setViewportSize({ width, height: page.viewportSize()!.height });
+    await page.goto("/personen/clara-zetkin#geschichte");
+    await expect(page.getByRole("tab", { name: "Lebensgeschichte" })).toHaveAttribute("aria-selected", "true");
+    const close = page.getByRole("link", { name: "Schließen" });
+    const tabs = page.getByRole("tablist", { name: "Abschnitte" });
+    const centre = async (l: typeof close) => {
+      const box = (await l.boundingBox())!;
+      return box.y + box.height / 2;
+    };
+    // Same line once scrolled (scrolled again while the page may still reset it on load).
+    await expect
+      .poll(async () => {
+        await page.locator(".detail-scroller").evaluate((el) => el.scrollTo(0, 2000));
+        return Math.abs((await centre(close)) - (await centre(tabs)));
+      })
+      .toBeLessThan(6);
+    const c = (await close.boundingBox())!;
+    const t = (await tabs.boundingBox())!;
+    // Side by side: the tabs end before the button.
+    expect(t.x + t.width).toBeLessThanOrEqual(c.x);
+    // From 375 px (iPhone SE) all tabs fit; narrower, the list scrolls sideways a little.
+    if (width >= 375) expect(await tabs.evaluate((el) => el.scrollWidth <= el.clientWidth)).toBe(true);
+  }
 });
 
 test("if the overview data cannot be loaded, the biography still works and closing loads the overview", async ({

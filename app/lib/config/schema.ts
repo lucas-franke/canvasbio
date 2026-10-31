@@ -189,6 +189,11 @@ export const siteConfigSchema = z.object({
       z.object({
         id: z.enum(["facts", "story", "timeline"]),
         label: localized,
+        /**
+         * Shorter label shown on phones, where the tabs share a line with the close button. Part
+         * of `label`, which stays the accessible name (WCAG 2.5.3).
+         */
+        shortLabel: localized.optional(),
         /** URL segment for the tab; the first tab has none. */
         slug: localizedOptional,
       }),
