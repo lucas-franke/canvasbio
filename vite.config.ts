@@ -42,6 +42,15 @@ export default defineConfig({
   // Path the site is served under, e.g. BASE_PATH=/canvasbio/ for GitHub Pages (default "/").
   base: process.env.BASE_PATH ?? "/",
   plugins: [siteConfigAsData(), tailwindcss(), reactRouter()],
+  server: {
+    watch: {
+      // Generated output and the content folder (read by the content adapter, not part of the
+      // module graph): tens of thousands of files. Watching them made the pre-render's
+      // preview server (React Router starts a watching child dev server) so slow to answer
+      // its first request that it ran into the fixed 10 s timeout.
+      ignored: ["**/build/**", "**/.cache/**", "**/public/portraits/**", "**/.generated/**", "**/content/people/**"],
+    },
+  },
   resolve: {
     tsconfigPaths: true,
     alias: [cnAlias],

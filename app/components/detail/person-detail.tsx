@@ -40,6 +40,8 @@ interface PersonDetailProps {
   /** Locale of the page (the text may be in another one if not translated). */
   locale: string;
   closeHref: string;
+  /** Closes the biography in place of following `closeHref` (e.g. to animate the sheet away first). */
+  onClose?: () => void;
   /** People in overview order, for previous/next and another random one (null while loading). */
   sequence?: PersonListItem[] | null;
   hrefFor?: (slug: string) => string;
@@ -72,6 +74,7 @@ export function PersonDetail({
   related = [],
   locale,
   closeHref,
+  onClose,
   sequence,
   hrefFor,
 }: PersonDetailProps) {
@@ -96,6 +99,11 @@ export function PersonDetail({
           to={closeHref}
           preventScrollReset
           viewTransition
+          onClick={(event) => {
+            if (!onClose || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+            event.preventDefault();
+            onClose();
+          }}
           aria-label={m.detail.close}
           title={m.detail.close}
           className="pointer-events-auto -mr-2 grid size-11 shrink-0 place-items-center rounded-full bg-surface/85 text-emphasis shadow-[0_2px_8px_rgb(0_0_0/0.18)] ring-1 ring-line/60 backdrop-blur-sm transition-colors hover:bg-surface"

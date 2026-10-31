@@ -94,6 +94,8 @@ export function ErrorBoundary() {
 }
 
 export default function Person({ loaderData }: Route.ComponentProps) {
-  const { closeHref, sequence, hrefFor } = useOutletContext<PeopleLayoutContext>();
-  return <PersonDetail {...loaderData} closeHref={closeHref} sequence={sequence} hrefFor={hrefFor} />;
+  const { closeHref, close, sequence, hrefFor } = useOutletContext<PeopleLayoutContext>();
+  return (
+    <PersonDetail {...loaderData} closeHref={closeHref} onClose={close} sequence={sequence} hrefFor={hrefFor} />
+  );
 }
