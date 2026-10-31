@@ -1,0 +1,66 @@
+{
+  "slug": "frances-perkins",
+  "name": {
+    "display": "Frances Perkins",
+    "sort": "Perkins, Frances"
+  },
+  "born": {
+    "date": "1880-04-10",
+    "place": "boston"
+  },
+  "died": {
+    "date": "1965-05-14",
+    "place": "new-york-city"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Clara Sipprell, 1952",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:NPG_77_60_Perkins.tif"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "science",
+      "arts",
+      "social"
+    ],
+    "place": [
+      "boston",
+      "new-york-city",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.78,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q254478",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Frances Perkins",
+      "url": "https://de.wikipedia.org/wiki/Frances_Perkins",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Frances Perkins",
+      "url": "https://en.wikipedia.org/wiki/Frances_Perkins",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q254478"
+}

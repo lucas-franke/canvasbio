@@ -1,0 +1,62 @@
+{
+  "slug": "marta-lynch",
+  "name": {
+    "display": "Marta Lynch",
+    "sort": "Lynch, Marta"
+  },
+  "born": {
+    "date": "1925-03-08",
+    "place": "buenos-aires"
+  },
+  "died": {
+    "date": "1985-10-08",
+    "place": "vicente-lopez"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "unknow. uploader Claudio Elias",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:MartaLynch.JPG"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "buenos-aires",
+      "vicente-lopez",
+      "argentina",
+      "south-america"
+    ]
+  },
+  "prominence": 0.5,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q434892",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Marta Lynch",
+      "url": "https://de.wikipedia.org/wiki/Marta_Lynch",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Marta Lynch",
+      "url": "https://en.wikipedia.org/wiki/Marta_Lynch",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q434892"
+}

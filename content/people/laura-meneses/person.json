@@ -1,0 +1,57 @@
+{
+  "slug": "laura-meneses",
+  "name": {
+    "display": "Laura Meneses",
+    "sort": "Meneses, Laura"
+  },
+  "born": {
+    "date": "1894-03-31",
+    "place": "arequipa"
+  },
+  "died": {
+    "date": "1973-04-15",
+    "place": "havana"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "UNMSM. Stvdivm Generale. Repositorio virtual para la Historia de la Educación., 1913",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:UNMSM_Contenta_a_Laura_Meneses_del_Carpio_1913_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "science"
+    ],
+    "place": [
+      "arequipa",
+      "havana",
+      "peru",
+      "south-america",
+      "cuba",
+      "north-america"
+    ]
+  },
+  "prominence": 0.14,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q64165011",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Laura Meneses",
+      "url": "https://en.wikipedia.org/wiki/Laura_Meneses",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q64165011"
+}

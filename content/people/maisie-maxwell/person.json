@@ -1,0 +1,56 @@
+{
+  "slug": "maisie-maxwell",
+  "name": {
+    "display": "Maisie Maxwell",
+    "sort": "Maxwell, Maisie"
+  },
+  "born": {
+    "date": "1876-10-08",
+    "place": "bendigo"
+  },
+  "died": {
+    "date": "1977-07-24",
+    "place": "jolimont"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Ruskin Studio photographer, 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maisie_Maxwell.tif"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "arts",
+      "social"
+    ],
+    "place": [
+      "bendigo",
+      "jolimont",
+      "australia",
+      "oceania"
+    ]
+  },
+  "prominence": 0,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q24239409",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Maisie Maxwell",
+      "url": "https://en.wikipedia.org/wiki/Maisie_Maxwell",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q24239409"
+}

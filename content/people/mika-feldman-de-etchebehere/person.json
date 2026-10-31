@@ -1,0 +1,64 @@
+{
+  "slug": "mika-feldman-de-etchebehere",
+  "name": {
+    "display": "Mika Feldman de Etchebéhère",
+    "sort": "Etchebéhère, Mika Feldman de"
+  },
+  "born": {
+    "date": "1902-02-02",
+    "place": "moises-ville"
+  },
+  "died": {
+    "date": "1992-07-07",
+    "place": "paris"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1937",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mika_Etcheb%C3%A9h%C3%A8re.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "moises-ville",
+      "paris",
+      "argentina",
+      "france",
+      "south-america",
+      "europe"
+    ]
+  },
+  "prominence": 0.49,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6016012",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Mika Feldman de Etchebéhère",
+      "url": "https://de.wikipedia.org/wiki/Mika_Feldman_de_Etcheb%C3%A9h%C3%A8re",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mika Feldman de Etchebéhère",
+      "url": "https://en.wikipedia.org/wiki/Mika_Feldman_de_Etcheb%C3%A9h%C3%A8re",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6016012"
+}

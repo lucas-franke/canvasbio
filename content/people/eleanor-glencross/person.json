@@ -1,0 +1,54 @@
+{
+  "slug": "eleanor-glencross",
+  "name": {
+    "display": "Eleanor Glencross",
+    "sort": "Glencross, Eleanor"
+  },
+  "born": {
+    "date": "1876-11-11",
+    "place": "sydney"
+  },
+  "died": {
+    "date": "1950-05-02",
+    "place": "cremorne"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1950",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eleanor_Glencross.png"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "sydney",
+      "cremorne",
+      "australia",
+      "oceania"
+    ]
+  },
+  "prominence": 0,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5354284",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Eleanor Glencross",
+      "url": "https://en.wikipedia.org/wiki/Eleanor_Glencross",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5354284"
+}

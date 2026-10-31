@@ -1,0 +1,62 @@
+{
+  "slug": "marjory-stoneman-douglas",
+  "name": {
+    "display": "Marjory Stoneman Douglas",
+    "sort": "Douglas, Marjory Stoneman"
+  },
+  "born": {
+    "date": "1890-04-07",
+    "place": "minneapolis"
+  },
+  "died": {
+    "date": "1998-05-14",
+    "place": "coconut-grove"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Florida Memory, 1890",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marjory_Stoneman_Douglas_(Florida_Memory).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "minneapolis",
+      "coconut-grove",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.85,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q3293969",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Marjory Stoneman Douglas",
+      "url": "https://de.wikipedia.org/wiki/Marjory_Stoneman_Douglas",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Marjory Stoneman Douglas",
+      "url": "https://en.wikipedia.org/wiki/Marjory_Stoneman_Douglas",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q3293969"
+}

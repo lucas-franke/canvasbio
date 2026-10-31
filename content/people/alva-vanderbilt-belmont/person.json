@@ -1,0 +1,64 @@
+{
+  "slug": "alva-vanderbilt-belmont",
+  "name": {
+    "display": "Alva Vanderbilt Belmont",
+    "sort": "Belmont, Alva Vanderbilt"
+  },
+  "born": {
+    "date": "1853-01-17",
+    "place": "mobile"
+  },
+  "died": {
+    "date": "1933-01-26",
+    "place": "augerville-la-riviere"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Adam Cuerden, 1922",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mrs._O.H.P._(Alva)_Belmont_(Cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "mobile",
+      "augerville-la-riviere",
+      "united-states",
+      "france",
+      "north-america",
+      "europe"
+    ]
+  },
+  "prominence": 0.85,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q448169",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Alva Vanderbilt Belmont",
+      "url": "https://de.wikipedia.org/wiki/Alva_Vanderbilt_Belmont",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Alva Belmont",
+      "url": "https://en.wikipedia.org/wiki/Alva_Belmont",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q448169"
+}

@@ -10,6 +10,7 @@ import {
   type FocusEvent,
   type KeyboardEvent,
   type MouseEvent,
+  type PointerEvent,
 } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 
@@ -36,18 +37,22 @@ import { useMessages } from "~/lib/i18n";
 import { readSeen } from "~/lib/preferences";
 import { pickRandom } from "~/lib/random";
 import type { FacetLabels, SearchState } from "~/lib/search/search";
-import { markPortraitSourceElement } from "~/lib/view-transition";
+import { afterViewTransition, markPortraitSourceElement } from "~/lib/view-transition";
 import { CanvasControls } from "./canvas-controls";
 import { CanvasTile } from "./canvas-tile";
 import { defaultScale, firstPaintScript } from "~/lib/canvas/camera";
 import { canvasLayout, canvasLimits } from "./canvas-layout";
-import { sizesFor, staticView, useCamera, type CanvasView } from "./use-camera";
+import { staticView, useCamera, type CanvasView } from "./use-camera";
+import { WallPainter } from "./wall-painter";
 
 const { canvas: config, theme } = siteConfig;
 const tornEdges = theme.tileEdge === "torn";
 
 const cellId = ({ col, row }: Cell) => `${col}:${row}`;
 const sameCell = (a: Cell | null, b: Cell | null) => a?.col === b?.col && a?.row === b?.row;
+
+/** Portrait copies made for the morph into a biography (see WallPainter.snapshotInto). */
+const removeSnapshots = () => document.querySelectorAll(".canvas-snapshot").forEach((el) => el.remove());
 
 function parseCell(element: EventTarget | null): Cell | null {
   const id = element instanceof Element ? element.closest("[data-cell]")?.getAttribute("data-cell") : null;
@@ -142,6 +147,14 @@ export function InfiniteCanvas({
   }, []);
 
   const initialView = useMemo(() => staticView(layout, limits), [layout, limits]);
+  // The portraits are painted on a canvas (WallPainter); the tiles above are transparent links.
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const painter = useRef<WallPainter | null>(null);
+  const onApply = useCallback(
+    (cam: Parameters<WallPainter["setCamera"]>[0], size: Parameters<WallPainter["setCamera"]>[1]) =>
+      painter.current?.setCamera(cam, size),
+    [],
+  );
   const camera = useCamera({
     layout,
     limits,
@@ -150,8 +163,40 @@ export function InfiniteCanvas({
     onViewChange,
     topInset,
     initialView,
+    onApply,
   });
   const { viewportRef, worldRef, view } = camera;
+
+  // Pre-rendered tiles keep their <img> until the canvas has painted the view completely,
+  // so nothing flickers when it takes over.
+  const [painted, setPainted] = useState(false);
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const wall = new WallPainter(canvas, {
+      layout,
+      people: ordered,
+      variance: config.sizeVariance,
+      torn: tornEdges,
+      names: true,
+    });
+    wall.onComplete = () => setPainted(true);
+    wall.setCamera(camera.camera.current, camera.size.current);
+    painter.current = wall;
+    // Light/dark mode: other colours, and the tint is part of the composed portraits.
+    const refresh = () => wall.refreshTheme();
+    const observer = new MutationObserver(refresh);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+    const scheme = window.matchMedia("(prefers-color-scheme: dark)");
+    scheme.addEventListener("change", refresh);
+    return () => {
+      observer.disconnect();
+      scheme.removeEventListener("change", refresh);
+      wall.dispose();
+      painter.current = null;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- the camera object is stable in its parts
+  }, [layout, ordered]);
 
   // Opening a biography (also via search or a link) selects its tile, so focus can return there.
   const [syncedSlug, setSyncedSlug] = useState(activeSlug);
@@ -184,6 +229,22 @@ export function InfiniteCanvas({
 
   // ---- Search ----
   const hitSet = useMemo(() => (hits ? new Set(hits.map((p) => p.slug)) : null), [hits]);
+  useEffect(() => {
+    painter.current?.setState({ hits: hitSet });
+  }, [hitSet, layout, ordered]);
+
+  // The morph copy of a portrait is only needed while its biography opens and closes.
+  useEffect(() => {
+    if (!activeSlug) afterViewTransition(removeSnapshots);
+  }, [activeSlug]);
+
+  /** Before a biography opens from a tile: a copy of its portrait for the morph. */
+  const snapshotFor = (cell: Cell) => {
+    const link = viewportRef.current?.querySelector<HTMLElement>(`[data-cell="${cellId(cell)}"]`);
+    if (!link || !painted || !painter.current) return;
+    removeSnapshots();
+    painter.current.snapshotInto(link, cell);
+  };
   const hitsKey = hits ? hits.map((p) => p.slug).join(",") : "";
   /** Position in `hits` of the match last jumped to with previous/next. */
   const [hitIndex, setHitIndex] = useState(-1);
@@ -258,6 +319,7 @@ export function InfiniteCanvas({
     const open = () => {
       randomBusy.current = false;
       tile()?.removeAttribute("data-pulse");
+      snapshotFor(cell);
       markPortraitSourceElement(tile());
       navigate(hrefFor(person.slug), { preventScrollReset: true, viewTransition: true });
     };
@@ -268,6 +330,7 @@ export function InfiniteCanvas({
     }
     setTimeout(() => {
       tile()?.setAttribute("data-pulse", "");
+      painter.current?.startPulse(cell);
       setTimeout(open, 550);
     }, 450);
   };
@@ -371,7 +434,25 @@ export function InfiniteCanvas({
       event.stopPropagation();
       const { x, y } = cellCenter(layout, cell);
       camera.animateTo({ x, y, scale: defaultScale(layout, camera.measure(), limits) }, 700);
+      return;
     }
+    // Opens the biography (the tile's own click handler names the morph source next).
+    if (cell) snapshotFor(cell);
+  };
+
+  // The tile under the mouse grows a little (painted; touch has no hover).
+  const hovered = useRef<string | null>(null);
+  const onPointerMove = (event: PointerEvent<HTMLDivElement>) => {
+    if (event.pointerType !== "mouse") return;
+    const cell = parseCell(event.target);
+    const id = cell && cellId(cell);
+    if (id === hovered.current) return;
+    hovered.current = id;
+    painter.current?.setState({ hover: cell });
+  };
+  const onPointerLeave = () => {
+    hovered.current = null;
+    painter.current?.setState({ hover: null });
   };
 
   const onFocus = (event: FocusEvent) => {
@@ -472,12 +553,12 @@ export function InfiniteCanvas({
           origin: cellOrigin(layout, cell),
           primary: sameCell(primary.get(index)!.cell, cell),
           tabbable: sameCell(cell, tabbable),
+          // Before the canvas has painted: the tiles in view show their own portrait.
+          near: inRange(view.range, cell),
         },
       ];
     });
   }, [view, layout, current, ordered, hitSet]);
-
-  const sizes = sizesFor(view?.lod ?? 0);
 
   return (
     <div className="relative h-full overflow-clip">
@@ -497,16 +578,24 @@ export function InfiniteCanvas({
         onClickCapture={onClickCapture}
         onFocus={onFocus}
         onKeyDown={onKeyDown}
+        onPointerMove={onPointerMove}
+        onPointerLeave={onPointerLeave}
         className="canvas-viewport absolute inset-0 cursor-grab touch-none overflow-clip select-none active:cursor-grabbing"
       >
+        <canvas
+          ref={canvasRef}
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 size-full"
+        />
         <div
           ref={worldRef}
           // The transform is written outside React (camera, and the script below before hydration).
           suppressHydrationWarning
-          className="canvas-world absolute top-1/2 left-1/2 origin-top-left will-change-transform"
+          // No permanent will-change (see use-camera: the hint is set only while moving).
+          className="canvas-world absolute top-1/2 left-1/2 origin-top-left"
         >
           <ul aria-label={m.canvas.portraits}>
-            {tiles.map(({ cell, person, origin, primary, tabbable }) => (
+            {tiles.map(({ cell, person, origin, primary, tabbable, near }) => (
               <CanvasTile
                 key={cellId(cell)}
                 cellId={cellId(cell)}
@@ -517,10 +606,11 @@ export function InfiniteCanvas({
                 href={hrefFor(person.slug)}
                 primary={primary}
                 tabbable={tabbable}
+                near={near}
+                painted={painted}
                 active={person.slug === activeSlug}
                 match={hitSet ? hitSet.has(person.slug) : undefined}
                 variation={tileVariation(layout, cell, config.sizeVariance)}
-                sizes={sizes}
                 edgeClass={tornEdges ? `torn-edge-${tornVariant(cell.col, cell.row)}` : undefined}
               />
             ))}

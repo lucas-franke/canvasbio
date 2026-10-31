@@ -1,0 +1,53 @@
+{
+  "slug": "elena-pop-hossu-longin",
+  "name": {
+    "display": "Elena Pop Hossu-Longin",
+    "sort": "Hossu-Longin, Elena Pop"
+  },
+  "born": {
+    "date": "1862-11-26",
+    "place": "basesti"
+  },
+  "died": {
+    "date": "1940-05-15"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Danaioana88",
+    "license": {
+      "name": "CC0",
+      "url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elena_Pop_Hossu-Longin.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "basesti",
+      "europe",
+      "romania"
+    ]
+  },
+  "prominence": 0.39,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q20739703",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Elena Pop-Hossu-Longin",
+      "url": "https://en.wikipedia.org/wiki/Elena_Pop-Hossu-Longin",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q20739703"
+}

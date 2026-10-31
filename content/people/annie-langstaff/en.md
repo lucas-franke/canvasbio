@@ -1,0 +1,38 @@
+---
+summary:
+  - Canadian legal scholar, feminist, and aviator
+  - 1887–1975 · Alexandria
+portraitAlt: Portrait of Annie Langstaff
+facts:
+  - label: Born
+    value: June 6, 1887 in Alexandria, Canada
+  - label: Died
+    value: June 29, 1975 in Montreal, Canada
+  - label: Field
+    value: Women's rights activist, Jurist, Suffragist
+timeline:
+  - date: June 6, 1887
+    event: Born in Alexandria
+  - date: June 29, 1975
+    event: Died in Montreal
+---
+
+Annie MacDonald Langstaff (6 June 1887 – 29 June 1975) was a Canadian law student, legal activist, supporter of women's suffrage and an early woman aviator. Born in Ontario in 1887, she graduated from Prescott High School and then married in 1904. Her husband quickly abandoned her, leaving her a single mother. Moving to Montreal in 1906, she began working as a stenographer in the law office of Samuel William Jacobs, who encouraged her to study law. Finding no barriers to her admission, Langstaff enrolled at McGill University in 1911, graduating three years later as a Bachelor of Civil Law. On applying to the Bar of Montreal to practice, she was refused the right to take the examination.
+
+When Langstaff petitioned the Superior Court for a Writ Of Mandamus to compel the bar to admit her as she met all statutory requirements, the court upheld the bar's decision based upon the fact that she neither had her husband's permission to attend law school, nor to become a lawyer. As her husband had abandoned her and her child and she did not know where he was, she was unable to obtain his permission. The refusal led to feminists in support of women's suffrage embracing Langstaff and her cause. She became active in the fight for enfranchisement of women in Quebec, while continuing her fight to become a barrister. In 1915 she filed an appeal with the Court of King's Bench of Quebec (now the Quebec Court of Appeal), which also ruled against her, claiming that her recourse was to petition the legislature, since they had enacted the statute defining who could become a lawyer.
+
+Langstaff was supported in her quest by her employer, with whom she would work for 60 years. Preparing an amendment to the Bar Act, Jacobs argued for the admission of women to the bar before the National Assembly of Quebec in 1915. Numerous attempts were made to change the law, without success. She wrote Canada's first French-English/English-French law dictionary in 1937. In 1940, when women in Quebec won the right to vote, the decision was used as leverage to change the law excluding women from practicing law. The next year, joined by Leona Bell and Elizabeth C. Monk, Langstaff pleaded with the Quebec Bar Association to support their right to practice. The bar agreed to allow women to enter the profession, if the legislature approved, which they did on 29 April 1941. Because of a prerequisite for lawyers admitted to the bar to have obtained a Bachelor of Arts degree, Langstaff was not admitted to the bar in her lifetime. She was posthumously admitted to the Montreal Bar in 2006.
+
+## Early life
+
+Annie MacDonald was born on 6 June 1887 in Alexandria, Glengarry Township, Ontario, to Clara Angela (née  McPhaul) and Archibald B. MacDonald. Her father was a teacher, later an insurance agent, and both of her parents were Catholic. Annie was the oldest sibling in a family of five other children: John, Alice Phyllis Muriel "Phyllis", Mary Jane, Pearl and Eileen. By 1891, the family was living in Prescott, where MacDonald attended Catholic grammar schools and graduated from Prescott High School. On 21 November 1904 in Prescott, MacDonald married Gilbert Samuel Langstaff, a carpenter, with whom she had a daughter, Mary Andrea Langstaff, on 28 April 1906. Soon after their marriage, Langstaff and her husband separated, as he left her. Her husband migrated to New York City in 1905 with another woman whom he claimed to have married in 1904.
+
+## Career
+
+### Law school and bar case (1906–1915)
+
+In 1906, Langstaff moved to Montreal, Quebec, to work for the law firm of Jacobs, Hall and Garneau, as a stenographer for the head partner Samuel William Jacobs, . Her family also moved to Quebec, where her father worked as a customs collector in Saint-Hyacinthe. Langstaff had an affinity for the law and within a few years was performing much of the company incorporation work for Jacobs. With his encouragement, she wrote to McGill University's faculty of law, in 1911, inquiring if she could be admitted. Frederick P. Walton, dean of the faculty, responded that no woman had ever asked for admission before, and while he was unsure of whether his colleagues would approve, she ought to begin attending lectures. Langstaff graduated in 1914 with a Bachelor of Civil Law, first in her class in criminal and company law, and fourth overall with first-class honours. That year, she became the first woman to serve as a court stenographer in the June Special Session of the Montreal Criminal Court.
+
+Langstaff applied to sit for the preliminary bar examination but was refused by the Bar of Montreal despite her law degree. The preliminary examination was open to male students before they began their studies, but anticipating that she might encounter difficulty, Langstaff had not applied until after she had already received her degree. In January 1915, she petitioned the Superior Court for a Writ Of Mandamus. With Jacobs acting as her counsellor, she asked the court to grant her the right to take the examination, as she met all the statutory qualifications. At issue were two questions: whether a woman was admissible at all, and whether as a married woman, Langstaff was admissible as either a law student or lawyer, since her husband had not given his consent. A good deal of the court proceedings focused on the fact that Langstaff was raising her daughter as a single mother and did not know the whereabouts of her husband. In his ruling, Justice Henri-Césaire Saint-Pierre denied her request, stating that to allow her to practice law without her husband's consent would be a "direct infringement upon public order and a manifest violation of the law of good morals and public decency".
+
+After Saint-Pierre's comments had been widely publicized in newspapers throughout the United States and Canada, the issue became a cause célèbre for those involved in the struggle for women's suffrage. Professor Carrie Derick and the Montreal Local Council of Women (French: Conseil local des femmes de Montréal) staged demonstrations protesting the decision. Langstaff was invited regularly to speak at suffragist rallies, where she stressed that equal opportunity was her goal and filed an appeal with the Court of King's Bench. At the September 1915 hearing, the court's focus was again turned to the facts that she was not living with her husband, that he had not agreed to her attending law school, and that she was raising her daughter without his support. In a 4 to 1 decision, issued on 2 November with Justice Joseph Lavergne as Langstaff's sole supporter, her appeal was denied. The basis of the ruling was that the intent of the law in Quebec was to exclude women from the legal profession because hearing cases which involved crimes of a sexual nature or obscenities "would bring into contempt her honor as a spouse or as a mother and to revile herself in the eyes of her husband, her children, and the male sex generally". The judge also noted that the courts were not the appropriate venue for such a decision and that it should be reviewed by the legislature since the law forbade women practicing. On 31 December 1915, her only brother was killed in action while fighting on the front lines in World War I.

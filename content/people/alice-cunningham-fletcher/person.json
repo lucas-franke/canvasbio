@@ -1,0 +1,63 @@
+{
+  "slug": "alice-cunningham-fletcher",
+  "name": {
+    "display": "Alice Cunningham Fletcher",
+    "sort": "Fletcher, Alice Cunningham"
+  },
+  "born": {
+    "date": "1838-03-15",
+    "place": "havana"
+  },
+  "died": {
+    "date": "1923-04-06",
+    "place": "washington-d-c"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1893",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alice_Fletcher.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "havana",
+      "washington-d-c",
+      "cuba",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.79,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q4725807",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Alice Fletcher",
+      "url": "https://de.wikipedia.org/wiki/Alice_Fletcher",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Alice Cunningham Fletcher",
+      "url": "https://en.wikipedia.org/wiki/Alice_Cunningham_Fletcher",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q4725807"
+}

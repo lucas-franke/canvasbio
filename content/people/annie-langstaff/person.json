@@ -1,0 +1,54 @@
+{
+  "slug": "annie-langstaff",
+  "name": {
+    "display": "Annie Langstaff",
+    "sort": "Langstaff, Annie"
+  },
+  "born": {
+    "date": "1887-06-06",
+    "place": "alexandria"
+  },
+  "died": {
+    "date": "1975-06-29",
+    "place": "montreal"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "illegible, 1922",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Annie_MacDonald_Langstaff,_1922.png"
+  },
+  "facets": {
+    "field": [
+      "science"
+    ],
+    "place": [
+      "alexandria",
+      "montreal",
+      "canada",
+      "north-america"
+    ]
+  },
+  "prominence": 0.39,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q56605153",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Annie MacDonald Langstaff",
+      "url": "https://en.wikipedia.org/wiki/Annie_MacDonald_Langstaff",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q56605153"
+}

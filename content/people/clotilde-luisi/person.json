@@ -1,0 +1,66 @@
+{
+  "slug": "clotilde-luisi",
+  "name": {
+    "display": "Clotilde Luisi",
+    "sort": "Luisi, Clotilde"
+  },
+  "born": {
+    "date": "1882-07-24",
+    "place": "paysandu"
+  },
+  "died": {
+    "date": "1969",
+    "place": "rome"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "José E. Suárez (Peloduro), 1948",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clotilde_Luisi.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education",
+      "science"
+    ],
+    "place": [
+      "paysandu",
+      "rome",
+      "south-america",
+      "europe",
+      "uruguay",
+      "italy"
+    ]
+  },
+  "prominence": 0.55,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5772888",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Clotilde Luisi",
+      "url": "https://de.wikipedia.org/wiki/Clotilde_Luisi",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Clotilde Luisi",
+      "url": "https://en.wikipedia.org/wiki/Clotilde_Luisi",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5772888"
+}

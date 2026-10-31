@@ -1,0 +1,52 @@
+{
+  "slug": "labiba-ahmad",
+  "name": {
+    "display": "Labiba Ahmad",
+    "sort": "Ahmad, Labiba"
+  },
+  "born": {
+    "date": "1870",
+    "place": "cairo"
+  },
+  "died": {
+    "date": "1951"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Heshamdiab16",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Labiba_Ahmed.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "cairo",
+      "egypt",
+      "africa"
+    ]
+  },
+  "prominence": 0.29,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q57158989",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Labiba Ahmad",
+      "url": "https://en.wikipedia.org/wiki/Labiba_Ahmad",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q57158989"
+}

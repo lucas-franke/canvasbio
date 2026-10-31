@@ -5,9 +5,9 @@ summary:
 portraitAlt: Porträt von Utako Shimoda
 facts:
   - label: Geboren
-    value: 29. September 1854 in Iwamura Domain
+    value: 29. September 1854 in Iwamura Domain, Japan
   - label: Gestorben
-    value: 8. Oktober 1936 in Tokio
+    value: 8. Oktober 1936 in Tokio, Japan
   - label: Wirkungsfeld
     value: Erzieherin, Frauenrechtlerin, Dichterin
 timeline:

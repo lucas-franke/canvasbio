@@ -1,0 +1,64 @@
+{
+  "slug": "anna-bugge",
+  "name": {
+    "display": "Anna Bugge",
+    "sort": "Bugge, Anna"
+  },
+  "born": {
+    "date": "1862-11-17",
+    "place": "egersund"
+  },
+  "died": {
+    "date": "1928-02-19",
+    "place": "danderyd"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown photographer, 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:ANNA-BUGGE-WICKSELL.JPG"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "science"
+    ],
+    "place": [
+      "egersund",
+      "danderyd",
+      "norway",
+      "sweden",
+      "europe"
+    ]
+  },
+  "prominence": 0.67,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q4766891",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Anna Bugge",
+      "url": "https://de.wikipedia.org/wiki/Anna_Bugge",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Anna Bugge",
+      "url": "https://en.wikipedia.org/wiki/Anna_Bugge",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q4766891"
+}

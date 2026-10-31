@@ -1,0 +1,66 @@
+{
+  "slug": "rosika-schwimmer",
+  "name": {
+    "display": "Rosika Schwimmer",
+    "sort": "Schwimmer, Rosika"
+  },
+  "born": {
+    "date": "1877-09-11",
+    "place": "budapest"
+  },
+  "died": {
+    "date": "1948-08-03",
+    "place": "new-york-city"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Olga Máté (1878-1961)",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Schwimmer,_Rosika_Bc.1910_(22475434393).jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "social"
+    ],
+    "place": [
+      "budapest",
+      "new-york-city",
+      "hungary",
+      "united-states",
+      "north-america",
+      "europe"
+    ]
+  },
+  "prominence": 0.78,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q853932",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Rosika Schwimmer",
+      "url": "https://de.wikipedia.org/wiki/Rosika_Schwimmer",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Rosika Schwimmer",
+      "url": "https://en.wikipedia.org/wiki/Rosika_Schwimmer",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q853932"
+}

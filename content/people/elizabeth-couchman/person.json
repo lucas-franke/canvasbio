@@ -1,0 +1,52 @@
+{
+  "slug": "elizabeth-couchman",
+  "name": {
+    "display": "Elizabeth Couchman",
+    "sort": "Couchman, Elizabeth"
+  },
+  "born": {
+    "date": "1876-04-19",
+    "place": "geelong"
+  },
+  "died": {
+    "date": "1982-11-18"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1926",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elizabeth_Couchman_1926.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "geelong",
+      "australia",
+      "oceania"
+    ]
+  },
+  "prominence": 0.26,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5362625",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Elizabeth Couchman",
+      "url": "https://en.wikipedia.org/wiki/Elizabeth_Couchman",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5362625"
+}

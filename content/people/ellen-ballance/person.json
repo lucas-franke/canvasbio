@@ -1,0 +1,52 @@
+{
+  "slug": "ellen-ballance",
+  "name": {
+    "display": "Ellen Ballance",
+    "sort": "Ballance, Ellen"
+  },
+  "born": {
+    "date": "1846",
+    "place": "wellington"
+  },
+  "died": {
+    "date": "1935"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown photographer at Tesla Denton Studios (Wanganui), 1930",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ellen_Ballance,_circa_1930_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "wellington",
+      "new-zealand",
+      "oceania"
+    ]
+  },
+  "prominence": 0.15,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q105221847",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ellen Ballance",
+      "url": "https://en.wikipedia.org/wiki/Ellen_Ballance",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q105221847"
+}

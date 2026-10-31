@@ -1,0 +1,61 @@
+{
+  "slug": "victoria-ocampo",
+  "name": {
+    "display": "Victoria Ocampo",
+    "sort": "Ocampo, Victoria"
+  },
+  "born": {
+    "date": "1890-04-07",
+    "place": "buenos-aires"
+  },
+  "died": {
+    "date": "1979-01-27",
+    "place": "buenos-aires"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Gisèle Freund, 1939",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Victoria_Ocampo_por_Gis%C3%A8le_Freund_crop.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "buenos-aires",
+      "argentina",
+      "south-america"
+    ]
+  },
+  "prominence": 0.75,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q72790",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Victoria Ocampo",
+      "url": "https://de.wikipedia.org/wiki/Victoria_Ocampo",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Victoria Ocampo",
+      "url": "https://en.wikipedia.org/wiki/Victoria_Ocampo",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q72790"
+}

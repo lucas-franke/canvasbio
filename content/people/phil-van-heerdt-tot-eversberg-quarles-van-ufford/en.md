@@ -5,7 +5,7 @@ summary:
 portraitAlt: Portrait of Phil van Heerdt tot Eversberg-Quarles van Ufford
 facts:
   - label: Born
-    value: December 5, 1862 in Ketandan
+    value: December 5, 1862 in Ketandan, Indonesia
   - label: Died
     value: December 2, 1939 in The Hague, Netherlands
   - label: Field

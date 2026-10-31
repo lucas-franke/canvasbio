@@ -1,0 +1,62 @@
+{
+  "slug": "marguerite-durand",
+  "name": {
+    "display": "Marguerite Durand",
+    "sort": "Durand, Marguerite"
+  },
+  "born": {
+    "date": "1864-01-24",
+    "place": "paris"
+  },
+  "died": {
+    "date": "1936-03-16",
+    "place": "paris"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Agence Rol / Adam Cuerden, 1910",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marguerite_Durand_1910_-_Restoration.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "arts"
+    ],
+    "place": [
+      "paris",
+      "france",
+      "europe"
+    ]
+  },
+  "prominence": 0.75,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q291239",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Marguerite Durand",
+      "url": "https://de.wikipedia.org/wiki/Marguerite_Durand",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Marguerite Durand",
+      "url": "https://en.wikipedia.org/wiki/Marguerite_Durand",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q291239"
+}

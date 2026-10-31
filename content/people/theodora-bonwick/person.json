@@ -1,0 +1,55 @@
+{
+  "slug": "theodora-bonwick",
+  "name": {
+    "display": "Theodora Bonwick",
+    "sort": "Bonwick, Theodora"
+  },
+  "born": {
+    "date": "1876-12-27",
+    "place": "shepherd-s-bush"
+  },
+  "died": {
+    "date": "1928-11-10",
+    "place": "london"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1920",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Theodora_Bonwick_web.jpg"
+  },
+  "facets": {
+    "field": [
+      "education",
+      "social"
+    ],
+    "place": [
+      "shepherd-s-bush",
+      "london",
+      "united-kingdom",
+      "europe"
+    ]
+  },
+  "prominence": 0.19,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q18917480",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Theodora Bonwick",
+      "url": "https://en.wikipedia.org/wiki/Theodora_Bonwick",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q18917480"
+}

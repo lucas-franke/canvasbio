@@ -1,0 +1,57 @@
+{
+  "slug": "antonia-pusich",
+  "name": {
+    "display": "Antónia Pusich",
+    "sort": "Pusich, Antónia"
+  },
+  "born": {
+    "date": "1805-10-01",
+    "place": "sao-nicolau"
+  },
+  "died": {
+    "date": "1883-10-06",
+    "place": "lisbon"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "António Joaquim de Santa Bárbara, 1858",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ant%C3%B3nia_Pusich_1858.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "arts"
+    ],
+    "place": [
+      "sao-nicolau",
+      "lisbon",
+      "cape-verde",
+      "portugal",
+      "africa",
+      "europe"
+    ]
+  },
+  "prominence": 0.42,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q54556162",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Antónia Pusich",
+      "url": "https://en.wikipedia.org/wiki/Ant%C3%B3nia_Pusich",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q54556162"
+}

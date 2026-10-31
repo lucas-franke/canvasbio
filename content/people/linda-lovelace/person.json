@@ -1,0 +1,62 @@
+{
+  "slug": "linda-lovelace",
+  "name": {
+    "display": "Linda Lovelace",
+    "sort": "Lovelace, Linda"
+  },
+  "born": {
+    "date": "1949-01-10",
+    "place": "the-bronx"
+  },
+  "died": {
+    "date": "2002-04-22",
+    "place": "denver"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Bernard Gotfryd, 1986",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Linda_Lovelace_1986.jpg"
+  },
+  "facets": {
+    "field": [
+      "arts"
+    ],
+    "place": [
+      "the-bronx",
+      "denver",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.86,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q407",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Linda Lovelace",
+      "url": "https://de.wikipedia.org/wiki/Linda_Lovelace",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Linda Lovelace",
+      "url": "https://en.wikipedia.org/wiki/Linda_Lovelace",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q407"
+}

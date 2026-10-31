@@ -1,0 +1,61 @@
+{
+  "slug": "ellen-glasgow",
+  "name": {
+    "display": "Ellen Glasgow",
+    "sort": "Glasgow, Ellen"
+  },
+  "born": {
+    "date": "1873-04-22",
+    "place": "richmond"
+  },
+  "died": {
+    "date": "1945-11-21",
+    "place": "richmond"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Aimé Dupont",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait_of_Ellen_Glasgow.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "richmond",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.73,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q433325",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Ellen Glasgow",
+      "url": "https://de.wikipedia.org/wiki/Ellen_Glasgow",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ellen Glasgow",
+      "url": "https://en.wikipedia.org/wiki/Ellen_Glasgow",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q433325"
+}

@@ -16,7 +16,11 @@ description: Welche Daten beim Besuch dieser Website verarbeitet werden und welc
 
 ## Kurz gesagt
 
-Diese Website setzt keine Cookies, verwendet keine Analyse- oder Tracking-Werkzeuge und bindet keine Inhalte von Drittanbietern ein. Schriften und Bilder werden vom selben Server geladen wie die Seite.
+Diese Website setzt keine Cookies, verwendet keine Analyse- oder Tracking-Werkzeuge und bindet keine Inhalte von Drittanbietern ein. Schriften, Bilder und die Kartendaten werden vom selben Server geladen wie die Seite.
+
+## Karte
+
+Die Kartenansicht nutzt die frei verfügbaren Geodaten von Natural Earth. Sie liegen auf unserem Server; beim Öffnen der Karte werden keine Daten an Kartendienste wie Google Maps oder OpenStreetMap übertragen.
 
 ## Server-Logfiles beim Hosting
 

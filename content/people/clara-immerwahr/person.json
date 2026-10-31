@@ -1,0 +1,63 @@
+{
+  "slug": "clara-immerwahr",
+  "name": {
+    "display": "Clara Immerwahr",
+    "sort": "Immerwahr, Clara"
+  },
+  "born": {
+    "date": "1870-06-21",
+    "place": "wojczyce"
+  },
+  "died": {
+    "date": "1915-05-02",
+    "place": "dahlem"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1890",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clara_Immerwahr.jpg"
+  },
+  "facets": {
+    "field": [
+      "science"
+    ],
+    "place": [
+      "wojczyce",
+      "dahlem",
+      "poland",
+      "germany",
+      "europe"
+    ]
+  },
+  "prominence": 0.81,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q7490",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Clara Immerwahr",
+      "url": "https://de.wikipedia.org/wiki/Clara_Immerwahr",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Clara Immerwahr",
+      "url": "https://en.wikipedia.org/wiki/Clara_Immerwahr",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q7490"
+}

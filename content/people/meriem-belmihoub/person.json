@@ -1,0 +1,55 @@
+{
+  "slug": "meriem-belmihoub",
+  "name": {
+    "display": "Meriem Belmihoub",
+    "sort": "Belmihoub, Meriem"
+  },
+  "born": {
+    "date": "1935-04-01",
+    "place": "algiers"
+  },
+  "died": {
+    "date": "2021-07-27",
+    "place": "algiers-province"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1956",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Meriem_Belmihoub_Infirmi%C3%A8re_dans_le_maquis_En_route_pour_le_congr%C3%A8s_de_la_Soummam_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "science"
+    ],
+    "place": [
+      "algiers",
+      "algiers-province",
+      "africa",
+      "algeria"
+    ]
+  },
+  "prominence": 0.55,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q66363348",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Meriem Belmihoub",
+      "url": "https://en.wikipedia.org/wiki/Meriem_Belmihoub",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q66363348"
+}

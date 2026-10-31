@@ -1,0 +1,47 @@
+{
+  "slug": "mary-eugenia-benson-jobson",
+  "name": {
+    "display": "Mary Eugenia Benson Jobson",
+    "sort": "Jobson, Mary Eugenia Benson"
+  },
+  "born": {
+    "date": "1872-05-05"
+  },
+  "died": {
+    "date": "1962-01-10"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Foster Studios, 1915",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mary_Eugenia_Benson_Jobson,_1915_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": []
+  },
+  "prominence": 0.19,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q66750872",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mary Eugenia Benson Jobson",
+      "url": "https://en.wikipedia.org/wiki/Mary_Eugenia_Benson_Jobson",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q66750872"
+}

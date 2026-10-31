@@ -51,6 +51,11 @@ export function timelinePath(locale: string): string {
   return pathFor(siteConfig, locale, "people", [siteConfig.paths.timeline[locale]]);
 }
 
+/** URL of the map view, e.g. "/personen/karte" or "/en/people/map". */
+export function mapPath(locale: string): string {
+  return pathFor(siteConfig, locale, "people", [siteConfig.paths.map[locale]]);
+}
+
 /** Whether a pathname is the list view of the people page. */
 export function isListPath(pathname: string, config: SiteConfig = siteConfig): boolean {
   const { locale, page, rest } = parsePath(pathname, config);
@@ -73,7 +78,7 @@ export function switchLocalePath(pathname: string, target: string, config: SiteC
   if (!page) return pathFor(config, target, "start");
 
   const translated = [...rest];
-  for (const view of ["list", "timeline"] as const) {
+  for (const view of ["list", "timeline", "map"] as const) {
     if (page === "people" && translated[0] === config.paths[view][locale]) {
       translated[0] = config.paths[view][target];
     }

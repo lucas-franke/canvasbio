@@ -7,7 +7,7 @@ facts:
   - label: Geboren
     value: 22. September 1875 in Colón, Argentinien
   - label: Gestorben
-    value: 16. Juli 1950 in Montevideo
+    value: 16. Juli 1950 in Montevideo, Uruguay
   - label: Wirkungsfeld
     value: Lehrerin, Gynäkologin, Politikerin, Ärztin
 timeline:

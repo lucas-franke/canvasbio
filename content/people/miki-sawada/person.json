@@ -1,0 +1,65 @@
+{
+  "slug": "miki-sawada",
+  "name": {
+    "display": "Miki Sawada",
+    "sort": "Sawada, Miki"
+  },
+  "born": {
+    "date": "1901-09-19",
+    "place": "hongo-ku"
+  },
+  "died": {
+    "date": "1980-05-12",
+    "place": "palma"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "朝日新聞社, 1952",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sawada_Miki.JPG"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "social"
+    ],
+    "place": [
+      "hongo-ku",
+      "palma",
+      "japan",
+      "asia",
+      "spain",
+      "europe"
+    ]
+  },
+  "prominence": 0.43,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q11553275",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Sawada Miki",
+      "url": "https://de.wikipedia.org/wiki/Sawada_Miki",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Miki Sawada",
+      "url": "https://en.wikipedia.org/wiki/Miki_Sawada",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q11553275"
+}

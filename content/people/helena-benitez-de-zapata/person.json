@@ -1,0 +1,56 @@
+{
+  "slug": "helena-benitez-de-zapata",
+  "name": {
+    "display": "Helena Benítez de Zapata",
+    "sort": "Zapata, Helena Benítez de"
+  },
+  "born": {
+    "date": "1915-06-26",
+    "place": "caldas-department"
+  },
+  "died": {
+    "date": "2009-06-05",
+    "place": "colombia"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Chuchoweb",
+    "license": {
+      "name": "CC0",
+      "url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Archivo_Helena_Benitez.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "arts"
+    ],
+    "place": [
+      "caldas-department",
+      "colombia",
+      "south-america"
+    ]
+  },
+  "prominence": 0.31,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q134463758",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Helena Benítez de Zapata",
+      "url": "https://en.wikipedia.org/wiki/Helena_Ben%C3%ADtez_de_Zapata",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q134463758"
+}

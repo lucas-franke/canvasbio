@@ -1,0 +1,63 @@
+{
+  "slug": "naziq-al-abid",
+  "name": {
+    "display": "Naziq al-Abid",
+    "sort": "al-Abid, Naziq"
+  },
+  "born": {
+    "date": "1898",
+    "place": "damascus"
+  },
+  "died": {
+    "date": "1959",
+    "place": "beirut"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Not credited, 1920",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Naziq_al-Abid,_1920.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "damascus",
+      "beirut",
+      "syria",
+      "asia",
+      "lebanon"
+    ]
+  },
+  "prominence": 0.66,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q15999354",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Nazik al-Abid",
+      "url": "https://de.wikipedia.org/wiki/Nazik_al-Abid",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Nazik al-Abid",
+      "url": "https://en.wikipedia.org/wiki/Nazik_al-Abid",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q15999354"
+}

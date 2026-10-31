@@ -1,0 +1,62 @@
+{
+  "slug": "laura-montoya",
+  "name": {
+    "display": "Laura Montoya",
+    "sort": "Montoya, Laura"
+  },
+  "born": {
+    "date": "1874-05-26",
+    "place": "jerico"
+  },
+  "died": {
+    "date": "1949-10-21",
+    "place": "medellin"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown photographer",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:SANTA_LAURA.jpg"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "jerico",
+      "medellin",
+      "colombia",
+      "south-america"
+    ]
+  },
+  "prominence": 0.65,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q1141596",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Laura Montoya",
+      "url": "https://de.wikipedia.org/wiki/Laura_Montoya",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Laura Montoya",
+      "url": "https://en.wikipedia.org/wiki/Laura_Montoya",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q1141596"
+}

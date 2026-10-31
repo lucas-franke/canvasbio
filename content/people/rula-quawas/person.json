@@ -1,0 +1,62 @@
+{
+  "slug": "rula-quawas",
+  "name": {
+    "display": "Rula Quawas",
+    "sort": "Quawas, Rula"
+  },
+  "born": {
+    "date": "1960-02-25",
+    "place": "amman"
+  },
+  "died": {
+    "date": "2017-07-25",
+    "place": "amman"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Kaderousse",
+    "license": {
+      "name": "CC0",
+      "url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rula_Quawas.jpg"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "amman",
+      "jordan",
+      "asia"
+    ]
+  },
+  "prominence": 0.58,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q34723978",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Rula Quawas",
+      "url": "https://de.wikipedia.org/wiki/Rula_Quawas",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Rula Quawas",
+      "url": "https://en.wikipedia.org/wiki/Rula_Quawas",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q34723978"
+}

@@ -1,0 +1,64 @@
+{
+  "slug": "mary-church-terrell",
+  "name": {
+    "display": "Mary Church Terrell",
+    "sort": "Terrell, Mary Church"
+  },
+  "born": {
+    "date": "1863-09-23",
+    "place": "memphis"
+  },
+  "died": {
+    "date": "1954-07-24",
+    "place": "annapolis"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown photographer, restored by Adam Cuerden, 1880",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mary_Church_Terrell_-_cph.3b47842.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "education"
+    ],
+    "place": [
+      "memphis",
+      "annapolis",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.81,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q3296160",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Mary Church Terrell",
+      "url": "https://de.wikipedia.org/wiki/Mary_Church_Terrell",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mary Church Terrell",
+      "url": "https://en.wikipedia.org/wiki/Mary_Church_Terrell",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q3296160"
+}

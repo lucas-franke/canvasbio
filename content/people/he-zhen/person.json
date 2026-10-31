@@ -1,0 +1,52 @@
+{
+  "slug": "he-zhen",
+  "name": {
+    "display": "He Zhen",
+    "sort": "Zhen, He"
+  },
+  "born": {
+    "date": "1884",
+    "place": "jiangsu"
+  },
+  "died": {
+    "date": "1920"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1920",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:He_Zhen.png"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "jiangsu",
+      "people-s-republic-of-china",
+      "asia"
+    ]
+  },
+  "prominence": 0.61,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q18715940",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): He-Yin Zhen",
+      "url": "https://en.wikipedia.org/wiki/He-Yin_Zhen",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q18715940"
+}

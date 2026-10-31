@@ -1,0 +1,62 @@
+{
+  "slug": "katherine-sophie-dreier",
+  "name": {
+    "display": "Katherine Sophie Dreier",
+    "sort": "Dreier, Katherine Sophie"
+  },
+  "born": {
+    "date": "1877-09-10",
+    "place": "brooklyn"
+  },
+  "died": {
+    "date": "1952-03-29",
+    "place": "milford"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1910",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:AAA_dreidoro_26655.jpg"
+  },
+  "facets": {
+    "field": [
+      "arts"
+    ],
+    "place": [
+      "brooklyn",
+      "milford",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.82,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q464044",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Katherine Sophie Dreier",
+      "url": "https://de.wikipedia.org/wiki/Katherine_Sophie_Dreier",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Katherine Sophie Dreier",
+      "url": "https://en.wikipedia.org/wiki/Katherine_Sophie_Dreier",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q464044"
+}

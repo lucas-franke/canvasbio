@@ -1,0 +1,54 @@
+{
+  "slug": "celinda-arregui",
+  "name": {
+    "display": "Celinda Arregui",
+    "sort": "Arregui, Celinda"
+  },
+  "born": {
+    "date": "1864",
+    "place": "santiago"
+  },
+  "died": {
+    "date": "1941-04"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1921",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Celinda_Arregui.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "education"
+    ],
+    "place": [
+      "santiago",
+      "south-america",
+      "chile"
+    ]
+  },
+  "prominence": 0.5,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q8343361",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Celinda Arregui",
+      "url": "https://en.wikipedia.org/wiki/Celinda_Arregui",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q8343361"
+}

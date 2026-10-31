@@ -1,0 +1,62 @@
+{
+  "slug": "kusumoto-ine",
+  "name": {
+    "display": "Kusumoto Ine",
+    "sort": "Ine, Kusumoto"
+  },
+  "born": {
+    "date": "1827-05-31",
+    "place": "dejima"
+  },
+  "died": {
+    "date": "1903-08-26",
+    "place": "azabu"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ine_Kusumoto.jpg"
+  },
+  "facets": {
+    "field": [
+      "medicine"
+    ],
+    "place": [
+      "dejima",
+      "azabu",
+      "japan",
+      "asia"
+    ]
+  },
+  "prominence": 0.67,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q449696",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Kusumoto Ine",
+      "url": "https://de.wikipedia.org/wiki/Kusumoto_Ine",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Kusumoto Ine",
+      "url": "https://en.wikipedia.org/wiki/Kusumoto_Ine",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q449696"
+}

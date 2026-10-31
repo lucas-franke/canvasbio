@@ -1,0 +1,64 @@
+{
+  "slug": "arabella-scott",
+  "name": {
+    "display": "Arabella Scott",
+    "sort": "Scott, Arabella"
+  },
+  "born": {
+    "date": "1886-05-07",
+    "place": "dunoon"
+  },
+  "died": {
+    "date": "1980-08-27",
+    "place": "palmdale"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown, 1915",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arabella_Scott.jpg"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "dunoon",
+      "palmdale",
+      "united-kingdom",
+      "australia",
+      "europe",
+      "oceania"
+    ]
+  },
+  "prominence": 0.45,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q50059107",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Arabella Scott",
+      "url": "https://de.wikipedia.org/wiki/Arabella_Scott",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Arabella Scott",
+      "url": "https://en.wikipedia.org/wiki/Arabella_Scott",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q50059107"
+}

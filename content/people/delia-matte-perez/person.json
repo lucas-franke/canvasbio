@@ -1,0 +1,53 @@
+{
+  "slug": "delia-matte-perez",
+  "name": {
+    "display": "Delia Matte Pérez",
+    "sort": "Pérez, Delia Matte"
+  },
+  "born": {
+    "date": "1886",
+    "place": "santiago"
+  },
+  "died": {
+    "date": "1941-06-15",
+    "place": "santiago"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1919",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Delia_Matte.JPG"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "santiago",
+      "south-america",
+      "chile"
+    ]
+  },
+  "prominence": 0.45,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5801818",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Delia Matte Pérez",
+      "url": "https://en.wikipedia.org/wiki/Delia_Matte_P%C3%A9rez",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5801818"
+}

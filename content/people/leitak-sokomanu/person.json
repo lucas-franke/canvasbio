@@ -1,0 +1,48 @@
+{
+  "slug": "leitak-sokomanu",
+  "name": {
+    "display": "Leitak Sokomanu",
+    "sort": "Sokomanu, Leitak"
+  },
+  "born": {
+    "date": "1937"
+  },
+  "died": {
+    "date": "2020-11-14"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Queensland State Archives, 1985",
+    "license": {
+      "name": "CC0",
+      "url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Leitak_Sokomanu.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": []
+  },
+  "prominence": 0,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q136346998",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Leitak Sokomanu",
+      "url": "https://en.wikipedia.org/wiki/Leitak_Sokomanu",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q136346998"
+}

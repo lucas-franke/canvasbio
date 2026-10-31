@@ -1,0 +1,53 @@
+{
+  "slug": "rosa-mercedes-riglos",
+  "name": {
+    "display": "Rosa Mercedes Riglos",
+    "sort": "Riglos, Rosa Mercedes"
+  },
+  "born": {
+    "date": "1826",
+    "place": "lima"
+  },
+  "died": {
+    "date": "1891",
+    "place": "lima"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "AnonymousUnknown author, 1850",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rosa_Mercedes_Riglos.png"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "lima",
+      "peru",
+      "south-america"
+    ]
+  },
+  "prominence": 0.29,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q100774211",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Rosa Mercedes Riglos",
+      "url": "https://en.wikipedia.org/wiki/Rosa_Mercedes_Riglos",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q100774211"
+}

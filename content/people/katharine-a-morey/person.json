@@ -1,0 +1,52 @@
+{
+  "slug": "katharine-a-morey",
+  "name": {
+    "display": "Katharine A. Morey",
+    "sort": "Morey, Katharine A."
+  },
+  "born": {
+    "date": "1892",
+    "place": "brookline"
+  },
+  "died": {
+    "date": "1941-05-21"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Harris & Ewing, Washington, D.C. (Photographer), 1915",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Miss_Katharine_Morey_275010v.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "brookline",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.39,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q56192233",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Katharine A. Morey",
+      "url": "https://en.wikipedia.org/wiki/Katharine_A._Morey",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q56192233"
+}

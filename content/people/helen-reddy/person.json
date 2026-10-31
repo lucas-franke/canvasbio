@@ -1,0 +1,65 @@
+{
+  "slug": "helen-reddy",
+  "name": {
+    "display": "Helen Reddy",
+    "sort": "Reddy, Helen"
+  },
+  "born": {
+    "date": "1941-10-25",
+    "place": "melbourne"
+  },
+  "died": {
+    "date": "2020-09-29",
+    "place": "los-angeles"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Francesco Scavullo, 1975",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Helen_Reddy_1975.JPG"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "arts"
+    ],
+    "place": [
+      "melbourne",
+      "los-angeles",
+      "australia",
+      "united-states",
+      "oceania",
+      "north-america"
+    ]
+  },
+  "prominence": 0.78,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q233362",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Helen Reddy",
+      "url": "https://de.wikipedia.org/wiki/Helen_Reddy",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Helen Reddy",
+      "url": "https://en.wikipedia.org/wiki/Helen_Reddy",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q233362"
+}

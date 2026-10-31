@@ -1,0 +1,52 @@
+{
+  "slug": "minnie-j-terrell-todd",
+  "name": {
+    "display": "Minnie J. Terrell Todd",
+    "sort": "Todd, Minnie J. Terrell"
+  },
+  "born": {
+    "date": "1844-11-26",
+    "place": "lewiston"
+  },
+  "died": {
+    "date": "1929-01-20"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unbekannt",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:MINNIE_J._TERRELL_TODD_A_woman_of_the_century_(page_729_crop).jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "lewiston",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q64666041",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Minnie J. Terrell Todd",
+      "url": "https://en.wikipedia.org/wiki/Minnie_J._Terrell_Todd",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q64666041"
+}

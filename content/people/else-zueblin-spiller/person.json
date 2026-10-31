@@ -1,0 +1,62 @@
+{
+  "slug": "else-zueblin-spiller",
+  "name": {
+    "display": "Else Züblin-Spiller",
+    "sort": "Züblin-Spiller, Else"
+  },
+  "born": {
+    "date": "1881-11-01",
+    "place": "seen"
+  },
+  "died": {
+    "date": "1948-04-11",
+    "place": "kilchberg"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unbekannt, 1948",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Else_Z%C3%BCblin-Spiller.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "seen",
+      "kilchberg",
+      "switzerland",
+      "europe"
+    ]
+  },
+  "prominence": 0.58,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q1333744",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Else Züblin-Spiller",
+      "url": "https://de.wikipedia.org/wiki/Else_Z%C3%BCblin-Spiller",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Else Züblin-Spiller",
+      "url": "https://en.wikipedia.org/wiki/Else_Z%C3%BCblin-Spiller",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q1333744"
+}

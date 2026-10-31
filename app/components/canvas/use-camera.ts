@@ -27,7 +27,6 @@ import {
 /**
  * Tiles for pre-rendered HTML, before the viewport size is known: the world area around the
  * pattern centre that a phone or a desktop sees at the starting zoom (about 7 × 7 tiles).
- * `lod: 0` stands for "size unknown" (see `sizesFor`).
  */
 export function staticView(layout: CanvasLayout, limits: ZoomLimits): CanvasView {
   const { x, y } = initialCamera(layout, { width: 1, height: 1 }, limits);
@@ -35,31 +34,25 @@ export function staticView(layout: CanvasLayout, limits: ZoomLimits): CanvasView
   return {
     range: visibleRange(layout, camera, { width: 1900, height: 1800 }, 0),
     center: cellNear(layout, x, y),
-    lod: 0,
   };
 }
 
-/** `sizes` for tile images: the rendered size, or the starting size by viewport width. */
-export const sizesFor = (lod: number) => (lod > 0 ? `${lod}px` : "(max-width: 780px) 130px, 280px");
-
-/** What React renders from the camera: changes only when a cell boundary or the image size bucket is crossed. */
+/** What React renders from the camera (the tile links): changes only when a cell boundary is crossed. */
 export interface CanvasView {
   range: CellRange;
   /** Cell at the viewport centre. */
   center: Cell;
-  /** Rendered tile size in screen px, rounded up to an image size bucket (for `sizes`). */
-  lod: number;
 }
 
-const LOD_BUCKETS = [96, 160, 240, 320, 480, 640];
-const lodFor = (px: number) => LOD_BUCKETS.find((b) => b >= px) ?? LOD_BUCKETS.at(-1)!;
+/**
+ * How long the camera has to rest before zoom-dependent details catch up: the constant-size
+ * focus rings (--s) and dropping the will-change hint. Updating --s on every frame of a zoom
+ * restyles every tile.
+ */
+const SETTLE_MS = 140;
 
 const sameView = (a: CanvasView | null, b: CanvasView) =>
-  a !== null &&
-  sameRange(a.range, b.range) &&
-  a.center.col === b.center.col &&
-  a.center.row === b.center.row &&
-  a.lod === b.lod;
+  a !== null && sameRange(a.range, b.range) && a.center.col === b.center.col && a.center.row === b.center.row;
 
 const prefersReducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -129,6 +122,8 @@ interface UseCameraOptions {
   topInset?: () => number;
   /** What to render before the viewport has been measured (pre-rendering, hydration). */
   initialView?: CanvasView;
+  /** Called with every camera position (e.g. to paint the wall), outside of rendering. */
+  onApply?: (camera: Camera, viewport: Size) => void;
 }
 
 /**
@@ -144,6 +139,7 @@ export function useCamera({
   onViewChange,
   topInset,
   initialView,
+  onApply,
 }: UseCameraOptions) {
   const viewportRef = useRef<HTMLDivElement>(null);
   const worldRef = useRef<HTMLDivElement>(null);
@@ -155,13 +151,15 @@ export function useCamera({
   /** Where the running zoom animation ends, so quick repeated zooms add up. */
   const zoomTarget = useRef<Camera | null>(null);
   const saveTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
+  const settleTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
+  const measured = useRef(false);
   const viewRef = useRef<CanvasView | null>(initialView ?? null);
   const [view, setView] = useState<CanvasView | null>(initialView ?? null);
 
   // Latest values for callbacks that are created once.
-  const latest = useRef({ layout, limits, storageKey, canContinue, onViewChange, topInset });
+  const latest = useRef({ layout, limits, storageKey, canContinue, onViewChange, topInset, onApply });
   useLayoutEffect(() => {
-    latest.current = { layout, limits, storageKey, canContinue, onViewChange, topInset };
+    latest.current = { layout, limits, storageKey, canContinue, onViewChange, topInset, onApply };
   });
 
   /** Remembers the position for this history entry (restored after reload or back). */
@@ -181,13 +179,30 @@ export function useCamera({
       ...next,
       scale: clamp(next.scale, limits.minZoom, limits.maxZoom),
     });
+    const zooming = cam.scale !== camera.current.scale;
     camera.current = cam;
+    latest.current.onApply?.(cam, size.current);
 
     const world = worldRef.current;
+    const settle = () => {
+      if (world) {
+        // At rest the browser paints the wall again at its real zoom, and only what's visible.
+        // A permanent will-change keeps it at the resolution of the start: zoomed out, the
+        // wall then needs more graphics memory than a phone has and parts stay unpainted.
+        world.style.willChange = "";
+        const scale = String(camera.current.scale);
+        if (world.style.getPropertyValue("--s") !== scale) world.style.setProperty("--s", scale);
+      }
+    };
+    // The first camera with a measured viewport takes effect at once.
+    const first = !measured.current;
+    if (size.current.width > 0) measured.current = true;
     if (world) {
+      // Zooming: one composited layer, so the wall isn't repainted at every scale. Panning
+      // doesn't need the hint (the translate3d layer just moves), and setting or removing it
+      // makes the browser repaint the whole wall, which stuttered at the start of every pan.
+      if (zooming && !first && world.style.willChange !== "transform") world.style.willChange = "transform";
       world.style.transform = `translate3d(${-cam.x * cam.scale}px, ${-cam.y * cam.scale}px, 0) scale(${cam.scale})`;
-      const scale = String(cam.scale);
-      if (world.style.getPropertyValue("--s") !== scale) world.style.setProperty("--s", scale);
       // Seen from afar: names are hidden (app.css) and a tap zooms in instead of opening.
       world.toggleAttribute("data-far", layout.tile * cam.scale < FAR_TILE_PX);
     }
@@ -195,13 +210,15 @@ export function useCamera({
     const nextView: CanvasView = {
       range: visibleRange(layout, cam, size.current, 1),
       center: cellNear(layout, cam.x, cam.y),
-      lod: lodFor(layout.tile * cam.scale),
     };
     if (!sameView(viewRef.current, nextView)) {
       viewRef.current = nextView;
       setView(nextView);
       onViewChange?.(nextView);
     }
+    clearTimeout(settleTimer.current);
+    if (first) settle();
+    else settleTimer.current = setTimeout(settle, SETTLE_MS);
 
     clearTimeout(saveTimer.current);
     saveTimer.current = setTimeout(save, 250);
@@ -361,6 +378,7 @@ export function useCamera({
       window.removeEventListener("pagehide", save);
       observer.disconnect();
       stop();
+      clearTimeout(settleTimer.current);
       save();
     };
   }, [apply, measure, stop, sync]);

@@ -1,0 +1,60 @@
+{
+  "slug": "mabel-ping-hua-lee",
+  "name": {
+    "display": "Mabel Ping-Hua Lee",
+    "sort": "Lee, Mabel Ping-Hua"
+  },
+  "born": {
+    "date": "1896-10-07",
+    "place": "guangzhou"
+  },
+  "died": {
+    "date": "1966"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Bain News Service, publisher, 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dr._Mabel_P._Lee_LCCN2014715831_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "guangzhou",
+      "people-s-republic-of-china",
+      "asia"
+    ]
+  },
+  "prominence": 0.54,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q50745528",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Mabel Ping-Hua Lee",
+      "url": "https://de.wikipedia.org/wiki/Mabel_Ping-Hua_Lee",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mabel Ping-Hua Lee",
+      "url": "https://en.wikipedia.org/wiki/Mabel_Ping-Hua_Lee",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q50745528"
+}

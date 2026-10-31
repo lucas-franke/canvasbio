@@ -1,0 +1,62 @@
+{
+  "slug": "mariama-ba",
+  "name": {
+    "display": "Mariama Bâ",
+    "sort": "Bâ, Mariama"
+  },
+  "born": {
+    "date": "1929-04-17",
+    "place": "dakar"
+  },
+  "died": {
+    "date": "1981-08-17",
+    "place": "dakar"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1958",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mariama_B%C3%A2_vers_1958_Unesco_Domaine_public.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education"
+    ],
+    "place": [
+      "dakar",
+      "senegal",
+      "africa"
+    ]
+  },
+  "prominence": 0.8,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q464389",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Mariama Bâ",
+      "url": "https://de.wikipedia.org/wiki/Mariama_B%C3%A2",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mariama Bâ",
+      "url": "https://en.wikipedia.org/wiki/Mariama_B%C3%A2",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q464389"
+}

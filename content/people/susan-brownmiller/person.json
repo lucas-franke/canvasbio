@@ -1,0 +1,62 @@
+{
+  "slug": "susan-brownmiller",
+  "name": {
+    "display": "Susan Brownmiller",
+    "sort": "Brownmiller, Susan"
+  },
+  "born": {
+    "date": "1935-02-15",
+    "place": "brooklyn"
+  },
+  "died": {
+    "date": "2025-05-24",
+    "place": "new-york-city"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Will-Art Photo Studios, 1952",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Susan_Warhaftig.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "brooklyn",
+      "new-york-city",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.72,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q434521",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Susan Brownmiller",
+      "url": "https://de.wikipedia.org/wiki/Susan_Brownmiller",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Susan Brownmiller",
+      "url": "https://en.wikipedia.org/wiki/Susan_Brownmiller",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q434521"
+}

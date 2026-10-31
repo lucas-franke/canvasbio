@@ -1,0 +1,54 @@
+{
+  "slug": "titia-van-der-tuuk",
+  "name": {
+    "display": "Titia van der Tuuk",
+    "sort": "Tuuk, Titia van der"
+  },
+  "born": {
+    "date": "1854-11-27",
+    "place": "t-zandt"
+  },
+  "died": {
+    "date": "1939-05-07",
+    "place": "zeist"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Bruining Photographers, Arnhem (the Netherlands), 1885",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:TitiavanderTuuk.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "t-zandt",
+      "zeist",
+      "netherlands",
+      "europe"
+    ]
+  },
+  "prominence": 0.58,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q7809987",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Titia van der Tuuk",
+      "url": "https://en.wikipedia.org/wiki/Titia_van_der_Tuuk",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q7809987"
+}

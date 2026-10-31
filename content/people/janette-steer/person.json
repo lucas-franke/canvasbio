@@ -1,0 +1,53 @@
+{
+  "slug": "janette-steer",
+  "name": {
+    "display": "Janette Steer",
+    "sort": "Steer, Janette"
+  },
+  "born": {
+    "date": "1863-07-03",
+    "place": "kolkata"
+  },
+  "died": {
+    "date": "1947-11-24"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Walter Barnett., 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:JanetteSteer1900.tif"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "arts"
+    ],
+    "place": [
+      "kolkata",
+      "india",
+      "asia"
+    ]
+  },
+  "prominence": 0.45,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q47191817",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Janette Steer",
+      "url": "https://en.wikipedia.org/wiki/Janette_Steer",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q47191817"
+}

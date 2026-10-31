@@ -11,7 +11,7 @@ import type { PersonListItem } from "~/lib/content/adapter";
 import { usePeopleIndex } from "~/lib/content/people-index";
 import { WIDE_QUERY, useMediaQuery } from "~/lib/hooks";
 import { useLocale, useMessages } from "~/lib/i18n";
-import { listPath, pagePath, timelinePath } from "~/lib/i18n/locale";
+import { listPath, mapPath, pagePath, timelinePath } from "~/lib/i18n/locale";
 import { sortFor, sortPeople } from "~/lib/content/sort";
 import { filterPeople, isSearchActive, searchSuffix } from "~/lib/search/search";
 import { markSeen } from "~/lib/preferences";
@@ -44,7 +44,9 @@ export default function PeopleLayout() {
     ? "list"
     : leafId.startsWith("people-timeline:")
       ? "timeline"
-      : leafId.startsWith("people:")
+      : leafId.startsWith("people-map:")
+        ? "map"
+        : leafId.startsWith("people:")
         ? "canvas"
         : null;
   const isDetail = leafId.startsWith("person:");
@@ -62,6 +64,7 @@ export default function PeopleLayout() {
     canvas: pagePath(locale, "people"),
     list: listPath(locale),
     timeline: timelinePath(locale),
+    map: mapPath(locale),
   };
   const overviewHref = viewPath[view] + suffix;
 
@@ -76,8 +79,8 @@ export default function PeopleLayout() {
   const modal = isDetail;
   // From `lg` the dialog is a centred card (no swipe-down sheet).
   const wide = useMediaQuery(WIDE_QUERY, false);
-  // The canvas fills the screen (also pre-rendered); the list scrolls like a normal page.
-  const fullBleed = view === "canvas" && Boolean(index);
+  // Canvas and map fill the screen (the canvas also pre-rendered); the list scrolls like a normal page.
+  const fullBleed = (view === "canvas" || view === "map") && Boolean(index);
 
   // Lock page scrolling behind the dialog.
   useEffect(() => {
@@ -135,7 +138,7 @@ export default function PeopleLayout() {
   // order chosen for list or timeline.
   const sequence = useMemo(() => {
     const people = hits ?? index?.people ?? null;
-    if (!people || view === "canvas") return people;
+    if (!people || view === "canvas" || view === "map") return people;
     return sortPeople(people, sortFor(view, search.sort));
   }, [hits, index, view, search.sort]);
 

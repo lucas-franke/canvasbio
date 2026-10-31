@@ -2,7 +2,8 @@
  * Demo content import: pioneers of the women's movement from Wikidata,
  * public-domain portraits from Wikimedia Commons, life stories from Wikipedia.
  *
- *   npx tsx scripts/import-wikidata.ts [--limit 200]
+ *   npx tsx scripts/import-wikidata.ts [--limit 200] [--to-year 1950] [--full]
+ *     [--focus "Africa,Asia,South America,Oceania"]
  *
  * This is a one-off generator for demo data, not part of the build. It overwrites
  * person.json, de.md, en.md and portrait.jpg of imported people, but never touches
@@ -22,7 +23,11 @@ import { getFreeImages, type CommonsImage } from "./import/commons";
 import { fetchBinary } from "./import/http";
 import {
   dateOf,
+  CONTINENT_IDS,
+  continentsOf,
   countriesOf,
+  countriesOn,
+  findRegionalCandidates,
   entityIds,
   femaleLabel,
   findCandidates,
@@ -31,12 +36,27 @@ import {
   qualifierDate,
   statements,
   stringValue,
+  type Candidate,
   type Entity,
 } from "./import/wikidata";
 import { articleUrl, getStory } from "./import/wikipedia";
 
-const { values: args } = parseArgs({ options: { limit: { type: "string", default: "200" } } });
+const { values: args } = parseArgs({
+  options: {
+    limit: { type: "string", default: "200" },
+    "to-year": { type: "string", default: "1950" },
+    /** Continents (English, comma-separated) to add people from, with broader occupations. */
+    focus: { type: "string" },
+    full: { type: "boolean", default: false },
+  },
+});
+/** Total number of people. By default the import only adds to the existing ones; --full starts over. */
 const LIMIT = Number(args.limit);
+const ADD = !args.full;
+/** Latest year of birth. Only people who have died are imported (see "deceased" below). */
+const TO_YEAR = Number(args["to-year"]);
+/** In add mode: at least this many people per continent outside Europe (if enough candidates exist). */
+const MIN_PER_CONTINENT = 25;
 const CONTENT = path.resolve("content");
 const LANGS = ["de", "en"] as const;
 type Lang = (typeof LANGS)[number];
@@ -278,16 +298,165 @@ async function removeStaleFolders(keep: Set<string>): Promise<string[]> {
   return removed;
 }
 
+/* ---------------------------------------------------------------- regions */
+
+/**
+ * People already in content/: Wikidata ids and folder names. The ids in
+ * content/import-exclude.json (removed by hand) count as present, so they never come back.
+ */
+async function readExisting() {
+  const qids = new Set<string>(
+    Object.keys(
+      JSON.parse(await readFile(path.join(CONTENT, "import-exclude.json"), "utf8").catch(() => "{}")),
+    ),
+  );
+  const slugs = new Set<string>();
+  const peopleDir = path.join(CONTENT, "people");
+  for (const entry of await readdir(peopleDir, { withFileTypes: true })) {
+    if (!entry.isDirectory()) continue;
+    slugs.add(entry.name);
+    const person = await readFile(path.join(peopleDir, entry.name, "person.json"), "utf8")
+      .then((json) => JSON.parse(json) as Person)
+      .catch(() => undefined);
+    const qid = person?.sources.map((s) => /wikidata\.org\/wiki\/(Q\d+)/.exec(s.url)?.[1]).find(Boolean);
+    if (qid) qids.add(qid);
+  }
+  return { qids, slugs };
+}
+
+/** English continent name of each person's birth place (via its country), "Unknown" if not resolvable. */
+async function continentsOfBirth(entities: Map<string, Entity>): Promise<Map<string, string>> {
+  const placeOf = (e: Entity) => entityIds(e, "P19")[0] ?? entityIds(e, "P20")[0];
+  const places = await getEntities([...entities.values()].flatMap((e) => placeOf(e) ?? []));
+  const countries = await countriesOf([...places.values()]);
+  const result = new Map<string, string>();
+  for (const [qid, e] of entities) {
+    // Same six continents as the place search (Wikidata's variants folded in).
+    const continent = continentsOf(countries.get(placeOf(e) ?? ""))[0];
+    result.set(qid, continent?.en ?? "Unknown");
+  }
+  return result;
+}
+
+/**
+ * The best-known `perContinent` people of every continent outside Europe, then an even sample of
+ * everyone else up to `count` (most prominent first).
+ */
+function regionalSample<T extends Candidate>(
+  sorted: T[],
+  continentOf: (c: T) => string,
+  count: number,
+  perContinent: number,
+): T[] {
+  const guaranteed = ["Africa", "Asia", "South America", "North America", "Oceania"].flatMap((continent) =>
+    sorted.filter((c) => continentOf(c) === continent).slice(0, perContinent),
+  );
+  const rest = sorted.filter((c) => !guaranteed.includes(c));
+  return [...guaranteed, ...spreadSample(rest, Math.max(0, count - guaranteed.length))].sort(
+    (a, b) => b.sitelinks - a.sitelinks,
+  );
+}
+
+/**
+ * --focus: the people to add come only from these continents, in equal shares (a share a
+ * continent can't fill goes to the others), each an even sample over its prominence range.
+ */
+function focusSample<T extends Candidate>(
+  sorted: T[],
+  continentOf: (c: T) => string,
+  count: number,
+  focus: string[],
+): T[] {
+  const pools = focus.map((continent) => sorted.filter((c) => continentOf(c) === continent));
+  const shares = pools.map(() => 0);
+  let left = count;
+  // Hand out places one round at a time, so a small pool's rest goes to the others.
+  while (left > 0 && pools.some((pool, i) => pool.length > shares[i]!)) {
+    pools.forEach((pool, i) => {
+      if (left > 0 && pool.length > shares[i]!) {
+        shares[i]!++;
+        left--;
+      }
+    });
+  }
+  return pools.flatMap((pool, i) => spreadSample(pool, shares[i]!)).sort((a, b) => b.sitelinks - a.sitelinks);
+}
+
+/** Candidates of the broader regional search, as entities checked like the main search. */
+async function regionalCandidates(focus: string[], exclude: Set<string>) {
+  const continentOf = new Map<string, string>();
+  for (const continent of focus) {
+    const countries = await countriesOn(CONTINENT_IDS[continent]!);
+    console.log(`    ${continent}: ${countries.length} countries …`);
+    for (const country of countries) {
+      for (const qid of await findRegionalCandidates(country)) {
+        if (!exclude.has(qid) && !continentOf.has(qid)) continentOf.set(qid, continent);
+      }
+    }
+  }
+  return continentOf;
+}
+
 /* ------------------------------------------------------------------ main */
 
 async function main() {
   console.log("1/5 Candidates from Wikidata …");
-  const candidates = (await findCandidates()).sort((a, b) => b.sitelinks - a.sitelinks);
-  console.log(`    ${candidates.length} candidates found`);
+  const existing = ADD ? await readExisting() : { qids: new Set<string>(), slugs: new Set<string>() };
+  const candidates = (await findCandidates(TO_YEAR))
+    .filter((c) => !existing.qids.has(c.qid))
+    .sort((a, b) => b.sitelinks - a.sitelinks);
+  const need = LIMIT - existing.slugs.size;
+  console.log(`    ${candidates.length} candidates found, ${existing.slugs.size} people already present`);
+  if (ADD && need <= 0) {
+    console.log("Nothing to add (raise --limit).");
+    return;
+  }
+
+  // --focus: also the broader search in those continents (by citizenship).
+  const focus = args.focus ? args.focus.split(",").map((s) => s.trim()) : [];
+  for (const continent of focus) if (!CONTINENT_IDS[continent]) throw new Error(`Unknown continent "${continent}"`);
+  const regional = focus.length
+    ? await regionalCandidates(focus, new Set([...existing.qids, ...candidates.map((c) => c.qid)]))
+    : new Map<string, string>();
+  if (focus.length) console.log(`    ${regional.size} more candidates from the broader regional search`);
 
   // Oversample: some portraits will turn out not to be public domain.
-  const sample = spreadSample(candidates, Math.min(candidates.length, Math.round(LIMIT * 1.8)));
-  const entities = await getEntities(sample.map((c) => c.qid));
+  let sample: Candidate[];
+  let entities: Map<string, Entity>;
+  let regionOf: (c: Candidate) => string = () => "Unknown";
+  if (ADD) {
+    entities = await getEntities([...candidates.map((c) => c.qid), ...regional.keys()]);
+    // The regional ones: same rules as the main search (born in range, English article).
+    for (const qid of regional.keys()) {
+      const e = entities.get(qid);
+      const born = e && Number(yearOf(dateOf(e, "P569") ?? ""));
+      if (!e || !born || born < 1800 || born > TO_YEAR || !e.sitelinks.enwiki) continue;
+      candidates.push({ qid, sitelinks: Object.keys(e.sitelinks).length });
+    }
+    candidates.sort((a, b) => b.sitelinks - a.sitelinks);
+    // Only people who have died: without a death date, anyone born after 1925 may be alive
+    // (personality rights, GDPR).
+    const deceased = candidates.filter((c) => {
+      const e = entities.get(c.qid);
+      const born = e && Number(yearOf(dateOf(e, "P569") ?? ""));
+      return e && (dateOf(e, "P570") || (born && born <= 1925));
+    });
+    const continents = await continentsOfBirth(entities);
+    const counts: Record<string, number> = {};
+    for (const c of deceased) counts[continents.get(c.qid)!] = (counts[continents.get(c.qid)!] ?? 0) + 1;
+    console.log("    candidates by continent:", counts);
+    // Birth continent; for the regional search, else the continent of the citizenship.
+    regionOf = (c) => {
+      const birth = continents.get(c.qid)!;
+      return birth === "Unknown" ? (regional.get(c.qid) ?? birth) : birth;
+    };
+    sample = focus.length
+      ? focusSample(deceased, regionOf, Math.round(need * 1.8), focus)
+      : regionalSample(deceased, regionOf, Math.round(need * 1.8), MIN_PER_CONTINENT * 2);
+  } else {
+    sample = spreadSample(candidates, Math.min(candidates.length, Math.round(LIMIT * 1.8)));
+    entities = await getEntities(sample.map((c) => c.qid));
+  }
 
   console.log("2/5 Checking image licences on Commons …");
   const imageFile = (e: Entity) => stringValue(e, "P18");
@@ -299,7 +468,11 @@ async function main() {
     const file = entities.get(c.qid) && imageFile(entities.get(c.qid)!);
     return file && images.has(file);
   });
-  const selected = spreadSample(withFreeImage, LIMIT);
+  const selected = !ADD
+    ? spreadSample(withFreeImage, LIMIT)
+    : focus.length
+      ? focusSample(withFreeImage, regionOf, need, focus)
+      : regionalSample(withFreeImage, regionOf, need, MIN_PER_CONTINENT);
   // Stand-ins in case a portrait can't be downloaded, closest in prominence first.
   const reserves = withFreeImage.filter((c) => !selected.includes(c));
   console.log(`    ${withFreeImage.length} with a free portrait, ${selected.length} selected`);
@@ -347,10 +520,16 @@ async function main() {
 
   const maxLog = Math.log(withFreeImage[0]?.sitelinks ?? 1);
   const minLog = Math.log(withFreeImage[withFreeImage.length - 1]?.sitelinks ?? 1);
+  const previous: Taxonomy = ADD ? JSON.parse(await readFile(path.join(CONTENT, "taxonomy.json"), "utf8")) : {};
   const taxonomy: Taxonomy = {
     field: Object.fromEntries([...FIELDS, ACTIVISM].map((f) => [f.key, f.label])),
-    place: {},
+    place: { ...previous.place },
   };
+  // Countries per continent, for the grouped place suggestions (see scripts/add-continents.ts).
+  const regionsFile = path.join(CONTENT, "regions.json");
+  const regions: Record<string, string[]> = ADD
+    ? JSON.parse(await readFile(regionsFile, "utf8").catch(() => "{}"))
+    : {};
   // Countries too, so searching "Deutschland" finds everyone born or died there.
   const cityEntities = withFreeImage.flatMap((c) =>
     ["P19", "P20"].flatMap((prop) => {
@@ -363,11 +542,11 @@ async function main() {
     const country = countries.get(place.id);
     const en = label(country, "en");
     if (!country || !en) return undefined;
-    const key = slugify(en);
+    const key = slugify(en) || slugify(label(country, "de") ?? "") || country.id.toLowerCase();
     taxonomy.place[key] ??= { de: label(country, "de") ?? en, en };
     return key;
   };
-  const usedSlugs = new Set<string>();
+  const usedSlugs = new Set<string>(existing.slugs);
   const skipped: string[] = [];
   let downloaded = 0;
 
@@ -376,7 +555,7 @@ async function main() {
   while (queue.length > 0 && usedSlugs.size < LIMIT) {
     const candidate = queue.shift()!;
     const e = entities.get(candidate.qid)!;
-    const name = label(e, "de")!;
+    const name = label(e, "de") ?? e.sitelinks.enwiki?.title ?? e.id;
     let slug = slugify(name);
     for (let n = 2; usedSlugs.has(slug); n++) slug = `${slugify(name)}-${n}`;
     const dir = path.join(CONTENT, "people", slug);
@@ -403,10 +582,16 @@ async function main() {
       const place = cityOf(refs.get(entityIds(e, prop)[0]));
       const en = label(place, "en");
       if (!place || !en) return undefined;
-      const key = slugify(en);
+      const key = slugify(en) || slugify(label(place, "de") ?? "") || place.id.toLowerCase();
       taxonomy.place[key] ??= { de: label(place, "de")!, en };
       const country = countryKey(place);
       if (country) countryKeys.push(country);
+      // … and the continents, so "Afrika" finds everyone born or died in Africa.
+      for (const continent of continentsOf(countries.get(place.id))) {
+        taxonomy.place[continent.key] ??= { de: continent.de, en: continent.en };
+        countryKeys.push(continent.key);
+        if (country) regions[continent.key] = [...new Set([...(regions[continent.key] ?? []), country])].sort();
+      }
       countryOfPlace[key] = country;
       return key;
     };
@@ -437,9 +622,9 @@ async function main() {
           : Math.round(((Math.log(candidate.sitelinks) - minLog) / (maxLog - minLog)) * 100) / 100,
       sources: [
         { label: "Wikidata", url: `https://www.wikidata.org/wiki/${e.id}`, license: WIKIDATA_LICENSE },
-        ...LANGS.map((lang) => ({
-          label: `Wikipedia (${lang}): ${e.sitelinks[`${lang}wiki`].title}`,
-          url: articleUrl(lang, e.sitelinks[`${lang}wiki`].title),
+        ...LANGS.filter((lang) => e.sitelinks[`${lang}wiki`]).map((lang) => ({
+          label: `Wikipedia (${lang}): ${e.sitelinks[`${lang}wiki`]!.title}`,
+          url: articleUrl(lang, e.sitelinks[`${lang}wiki`]!.title),
           license: WIKIPEDIA_LICENSE,
         })),
       ],
@@ -477,7 +662,10 @@ async function main() {
         ],
         timeline: buildTimeline(e, refs, lang, { born: place(bornPlace), died: place(diedPlace) }),
       };
-      const story = await getStory(lang, e.sitelinks[`${lang}wiki`].title);
+      // No article in this language: the English one is used and the page says so.
+      const storyLang = e.sitelinks[`${lang}wiki`] ? lang : "en";
+      const story = await getStory(storyLang, e.sitelinks[`${storyLang}wiki`]!.title);
+      if (storyLang !== lang) text.storyLang = storyLang;
       await writeFile(path.join(dir, `${lang}.md`), frontmatterDoc(text, story));
     }
 
@@ -486,7 +674,9 @@ async function main() {
 
   console.log("5/5 Writing taxonomy and cleaning up …");
   await writeFile(path.join(CONTENT, "taxonomy.json"), `${JSON.stringify(taxonomy, null, 2)}\n`);
-  const removed = await removeStaleFolders(usedSlugs);
+  const sortedRegions = Object.fromEntries(Object.entries(regions).sort(([a], [b]) => a.localeCompare(b)));
+  await writeFile(regionsFile, `${JSON.stringify(sortedRegions, null, 2)}\n`);
+  const removed = ADD ? [] : await removeStaleFolders(usedSlugs);
 
   console.log(
     `Done: ${usedSlugs.size} people, ${Object.keys(taxonomy.place).length} places, ` +

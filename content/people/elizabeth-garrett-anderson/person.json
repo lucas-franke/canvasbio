@@ -1,0 +1,64 @@
+{
+  "slug": "elizabeth-garrett-anderson",
+  "name": {
+    "display": "Elizabeth Garrett Anderson",
+    "sort": "Anderson, Elizabeth Garrett"
+  },
+  "born": {
+    "date": "1836-06-09",
+    "place": "whitechapel"
+  },
+  "died": {
+    "date": "1917-12-17",
+    "place": "alde-house"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1860",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eganderson.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "medicine"
+    ],
+    "place": [
+      "whitechapel",
+      "alde-house",
+      "united-kingdom",
+      "europe"
+    ]
+  },
+  "prominence": 0.78,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q235464",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Elizabeth Garrett Anderson",
+      "url": "https://de.wikipedia.org/wiki/Elizabeth_Garrett_Anderson",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Elizabeth Garrett Anderson",
+      "url": "https://en.wikipedia.org/wiki/Elizabeth_Garrett_Anderson",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q235464"
+}

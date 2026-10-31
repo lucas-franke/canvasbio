@@ -1,0 +1,52 @@
+{
+  "slug": "malladi-subbamma",
+  "name": {
+    "display": "Malladi Subbamma",
+    "sort": "Subbamma, Malladi"
+  },
+  "born": {
+    "date": "1924-08-02",
+    "place": "andhra-pradesh"
+  },
+  "died": {
+    "date": "2014-05-15"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Malladi Subbamma",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Malladi_Subbamma.png"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "andhra-pradesh",
+      "india",
+      "asia"
+    ]
+  },
+  "prominence": 0.61,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q13005770",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Malladi Subbamma",
+      "url": "https://en.wikipedia.org/wiki/Malladi_Subbamma",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q13005770"
+}

@@ -1,0 +1,54 @@
+{
+  "slug": "dolores-veintimilla",
+  "name": {
+    "display": "Dolores Veintimilla",
+    "sort": "Veintimilla, Dolores"
+  },
+  "born": {
+    "date": "1829",
+    "place": "quito"
+  },
+  "died": {
+    "date": "1857-05-23",
+    "place": "cuenca"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1909",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dolores_Veintimilla.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "quito",
+      "cuenca",
+      "ecuador",
+      "south-america"
+    ]
+  },
+  "prominence": 0.46,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5812615",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Dolores Veintimilla",
+      "url": "https://en.wikipedia.org/wiki/Dolores_Veintimilla",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5812615"
+}

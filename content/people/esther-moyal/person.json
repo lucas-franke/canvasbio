@@ -1,0 +1,52 @@
+{
+  "slug": "esther-moyal",
+  "name": {
+    "display": "Esther Moyal",
+    "sort": "Moyal, Esther"
+  },
+  "born": {
+    "date": "1874",
+    "place": "beirut"
+  },
+  "died": {
+    "date": "1948"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "AnonymousUnknown author, 1894",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Esther_Moyal.PNG"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "beirut",
+      "lebanon",
+      "asia"
+    ]
+  },
+  "prominence": 0.61,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q16133080",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Esther Moyal",
+      "url": "https://en.wikipedia.org/wiki/Esther_Moyal",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q16133080"
+}

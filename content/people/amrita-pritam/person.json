@@ -1,0 +1,64 @@
+{
+  "slug": "amrita-pritam",
+  "name": {
+    "display": "Amrita Pritam",
+    "sort": "Pritam, Amrita"
+  },
+  "born": {
+    "date": "1919-08-31",
+    "place": "gujranwala"
+  },
+  "died": {
+    "date": "2005-10-31",
+    "place": "delhi"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Amarjit Chandan Collection, 1948",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Amrita_Pritam_(1919_%E2%80%93_2005)_,_in_1948.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing"
+    ],
+    "place": [
+      "gujranwala",
+      "delhi",
+      "pakistan",
+      "asia",
+      "india"
+    ]
+  },
+  "prominence": 0.83,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q1705018",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Amrita Pritam",
+      "url": "https://de.wikipedia.org/wiki/Amrita_Pritam",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Amrita Pritam",
+      "url": "https://en.wikipedia.org/wiki/Amrita_Pritam",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q1705018"
+}

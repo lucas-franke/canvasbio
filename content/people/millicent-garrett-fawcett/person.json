@@ -1,0 +1,64 @@
+{
+  "slug": "millicent-garrett-fawcett",
+  "name": {
+    "display": "Millicent Garrett Fawcett",
+    "sort": "Fawcett, Millicent Garrett"
+  },
+  "born": {
+    "date": "1847-06-11",
+    "place": "aldeburgh"
+  },
+  "died": {
+    "date": "1929-08-05",
+    "place": "gower-street"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Adam Cuerden, 1913",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Millicent_Fawcett.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "science"
+    ],
+    "place": [
+      "aldeburgh",
+      "gower-street",
+      "united-kingdom",
+      "europe"
+    ]
+  },
+  "prominence": 0.77,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q442818",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Millicent Garrett Fawcett",
+      "url": "https://de.wikipedia.org/wiki/Millicent_Garrett_Fawcett",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Millicent Fawcett",
+      "url": "https://en.wikipedia.org/wiki/Millicent_Fawcett",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q442818"
+}

@@ -1,0 +1,64 @@
+{
+  "slug": "laetitia-withall",
+  "name": {
+    "display": "Laetitia Withall",
+    "sort": "Withall, Laetitia"
+  },
+  "born": {
+    "date": "1881-08-30",
+    "place": "adelaide"
+  },
+  "died": {
+    "date": "1963-03-11",
+    "place": "broadstairs"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1911",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Force-feeding_(suffragettes).jpeg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "adelaide",
+      "broadstairs",
+      "australia",
+      "united-kingdom",
+      "oceania",
+      "europe"
+    ]
+  },
+  "prominence": 0.38,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q81555173",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Laetitia Withall",
+      "url": "https://de.wikipedia.org/wiki/Laetitia_Withall",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Laetitia Withall",
+      "url": "https://en.wikipedia.org/wiki/Laetitia_Withall",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q81555173"
+}

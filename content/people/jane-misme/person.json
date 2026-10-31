@@ -1,0 +1,62 @@
+{
+  "slug": "jane-misme",
+  "name": {
+    "display": "Jane Misme",
+    "sort": "Misme, Jane"
+  },
+  "born": {
+    "date": "1865-03-21",
+    "place": "valence"
+  },
+  "died": {
+    "date": "1935-05-23",
+    "place": "paris"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jane_Misme_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "valence",
+      "paris",
+      "france",
+      "europe"
+    ]
+  },
+  "prominence": 0.53,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q19893459",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Jane Misme",
+      "url": "https://de.wikipedia.org/wiki/Jane_Misme",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Jane Misme",
+      "url": "https://en.wikipedia.org/wiki/Jane_Misme",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q19893459"
+}

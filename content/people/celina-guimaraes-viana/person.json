@@ -1,0 +1,54 @@
+{
+  "slug": "celina-guimaraes-viana",
+  "name": {
+    "display": "Celina Guimarães Viana",
+    "sort": "Viana, Celina Guimarães"
+  },
+  "born": {
+    "date": "1890-11-15",
+    "place": "natal"
+  },
+  "died": {
+    "date": "1972-07-11",
+    "place": "belo-horizonte"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1928",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Primeiro_voto_feminino_-_Mossor%C3%B3_(RN),_1928.jpeg"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "natal",
+      "belo-horizonte",
+      "brazil",
+      "south-america"
+    ]
+  },
+  "prominence": 0.44,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q8343360",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Celina Guimarães Viana",
+      "url": "https://en.wikipedia.org/wiki/Celina_Guimar%C3%A3es_Viana",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q8343360"
+}

@@ -1,0 +1,62 @@
+{
+  "slug": "haydee-santamaria",
+  "name": {
+    "display": "Haydée Santamaría",
+    "sort": "Santamaría, Haydée"
+  },
+  "born": {
+    "date": "1922-12-30",
+    "place": "villa-clara-province"
+  },
+  "died": {
+    "date": "1980-07-28",
+    "place": "havana"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Casa de las Américas, 1968",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hayd%C3%A9e_Santamar%C3%ADa.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "villa-clara-province",
+      "havana",
+      "cuba",
+      "north-america"
+    ]
+  },
+  "prominence": 0.82,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q442556",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Haydée Santamaría",
+      "url": "https://de.wikipedia.org/wiki/Hayd%C3%A9e_Santamar%C3%ADa",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Haydée Santamaría",
+      "url": "https://en.wikipedia.org/wiki/Hayd%C3%A9e_Santamar%C3%ADa",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q442556"
+}

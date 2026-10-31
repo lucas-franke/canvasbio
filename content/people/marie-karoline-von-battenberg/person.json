@@ -1,0 +1,63 @@
+{
+  "slug": "marie-karoline-von-battenberg",
+  "name": {
+    "display": "Marie Karoline von Battenberg",
+    "sort": "Battenberg, Marie Karoline von"
+  },
+  "born": {
+    "date": "1852-07-15",
+    "place": "strasbourg"
+  },
+  "died": {
+    "date": "1923-06-20",
+    "place": "schoenberg"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Franz Backofen, 1874",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Princess_Marie_of_Battenberg,_Countess_of_Erbach-Schonberg.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "strasbourg",
+      "schoenberg",
+      "france",
+      "germany",
+      "europe"
+    ]
+  },
+  "prominence": 0.82,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q67441",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Marie Karoline von Battenberg",
+      "url": "https://de.wikipedia.org/wiki/Marie_Karoline_von_Battenberg",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Princess Marie of Battenberg",
+      "url": "https://en.wikipedia.org/wiki/Princess_Marie_of_Battenberg",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q67441"
+}

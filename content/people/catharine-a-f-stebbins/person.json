@@ -1,0 +1,49 @@
+{
+  "slug": "catharine-a-f-stebbins",
+  "name": {
+    "display": "Catharine A. F. Stebbins",
+    "sort": "Stebbins, Catharine A. F."
+  },
+  "born": {
+    "date": "1823-08-17",
+    "place": "farmington"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unbekannt",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:CATHARINE_A._F._STEBBINS_A_woman_of_the_century_(page_691_crop).jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "farmington",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.31,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q65048719",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Catharine A. F. Stebbins",
+      "url": "https://en.wikipedia.org/wiki/Catharine_A._F._Stebbins",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q65048719"
+}

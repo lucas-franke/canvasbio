@@ -1,0 +1,63 @@
+{
+  "slug": "bertha-lutz",
+  "name": {
+    "display": "Bertha Lutz",
+    "sort": "Lutz, Bertha"
+  },
+  "born": {
+    "date": "1894-08-02",
+    "place": "sao-paulo"
+  },
+  "died": {
+    "date": "1976-09-16",
+    "place": "rio-de-janeiro"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Adam Cuerden, 1925",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bertha_Lutz_1925.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing"
+    ],
+    "place": [
+      "sao-paulo",
+      "rio-de-janeiro",
+      "brazil",
+      "south-america"
+    ]
+  },
+  "prominence": 0.73,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q1264246",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Bertha Lutz",
+      "url": "https://de.wikipedia.org/wiki/Bertha_Lutz",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Bertha Lutz",
+      "url": "https://en.wikipedia.org/wiki/Bertha_Lutz",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q1264246"
+}

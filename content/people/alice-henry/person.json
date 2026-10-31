@@ -1,0 +1,55 @@
+{
+  "slug": "alice-henry",
+  "name": {
+    "display": "Alice Henry",
+    "sort": "Henry, Alice"
+  },
+  "born": {
+    "date": "1857-03-21",
+    "place": "melbourne"
+  },
+  "died": {
+    "date": "1943-02-14",
+    "place": "city-of-malvern"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unbekannt, 1897",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:SLNSW_822163_46_Alice_Henry.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "social"
+    ],
+    "place": [
+      "melbourne",
+      "city-of-malvern",
+      "australia",
+      "oceania"
+    ]
+  },
+  "prominence": 0.58,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q4725914",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Alice Henry",
+      "url": "https://en.wikipedia.org/wiki/Alice_Henry",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q4725914"
+}

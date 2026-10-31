@@ -1,0 +1,64 @@
+{
+  "slug": "violet-tillard",
+  "name": {
+    "display": "Violet Tillard",
+    "sort": "Tillard, Violet"
+  },
+  "born": {
+    "date": "1874-12-29",
+    "place": "chennai"
+  },
+  "died": {
+    "date": "1922-02-19",
+    "place": "buzuluk"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1920",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Violet_Tillard.jpg"
+  },
+  "facets": {
+    "field": [
+      "medicine"
+    ],
+    "place": [
+      "chennai",
+      "buzuluk",
+      "india",
+      "asia",
+      "russia",
+      "europe"
+    ]
+  },
+  "prominence": 0.14,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q7933284",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Violet Tillard",
+      "url": "https://de.wikipedia.org/wiki/Violet_Tillard",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Violet Tillard",
+      "url": "https://en.wikipedia.org/wiki/Violet_Tillard",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q7933284"
+}

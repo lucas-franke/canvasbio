@@ -1,0 +1,53 @@
+{
+  "slug": "raquel-camana",
+  "name": {
+    "display": "Raquel Camaña",
+    "sort": "Camaña, Raquel"
+  },
+  "born": {
+    "date": "1882-09-30",
+    "place": "buenos-aires"
+  },
+  "died": {
+    "date": "1915-10-21",
+    "place": "buenos-aires"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Humanidad Nueva, 1915",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Raquel_Cama%C3%B1a_-_Humanidad_Nueva.png"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "buenos-aires",
+      "argentina",
+      "south-america"
+    ]
+  },
+  "prominence": 0.39,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5636965",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Raquel Camaña",
+      "url": "https://en.wikipedia.org/wiki/Raquel_Cama%C3%B1a",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5636965"
+}

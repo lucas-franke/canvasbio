@@ -1,0 +1,55 @@
+{
+  "slug": "shahrzad",
+  "name": {
+    "display": "Shahrzad",
+    "sort": "Shahrzad"
+  },
+  "born": {
+    "date": "1950-12-09",
+    "place": "tehran"
+  },
+  "died": {
+    "date": "2025-08-17",
+    "place": "kerman"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "File:روی جلد کتاب توبا - اثر هوشنگ کلهر.jpg: Houshang Kalhor derivative work: Carl",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%DA%A9%D8%A8%D8%B1%D8%A7_%D8%B3%D8%B9%DB%8C%D8%AF%DB%8C_(%D8%B4%D9%87%D8%B1%D8%B2%D8%A7%D8%AF).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "arts"
+    ],
+    "place": [
+      "tehran",
+      "kerman",
+      "iran",
+      "asia"
+    ]
+  },
+  "prominence": 0.37,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5952556",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Shahrzad (actress)",
+      "url": "https://en.wikipedia.org/wiki/Shahrzad_(actress)",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5952556"
+}

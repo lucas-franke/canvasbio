@@ -1,0 +1,63 @@
+{
+  "slug": "rosalynn-carter",
+  "name": {
+    "display": "Rosalynn Carter",
+    "sort": "Carter, Rosalynn"
+  },
+  "born": {
+    "date": "1927-08-18",
+    "place": "plains"
+  },
+  "died": {
+    "date": "2023-11-19",
+    "place": "jimmy-carter-house"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "File:Rose Carter, official color photo, 1977.jpg: White House derivative work: Hagar (User talk:Hagar)",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rose_Carter,_official_color_photo,_1977-cropped.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing"
+    ],
+    "place": [
+      "plains",
+      "jimmy-carter-house",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.92,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q219353",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Rosalynn Carter",
+      "url": "https://de.wikipedia.org/wiki/Rosalynn_Carter",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Rosalynn Carter",
+      "url": "https://en.wikipedia.org/wiki/Rosalynn_Carter",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q219353"
+}

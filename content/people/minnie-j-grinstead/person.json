@@ -1,0 +1,54 @@
+{
+  "slug": "minnie-j-grinstead",
+  "name": {
+    "display": "Minnie J. Grinstead",
+    "sort": "Grinstead, Minnie J."
+  },
+  "born": {
+    "date": "1869-09-30",
+    "place": "crawford-county"
+  },
+  "died": {
+    "date": "1925-12-24",
+    "place": "liberal"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1920",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Minnie_J._Grinstead_(circa_1920).jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "crawford-county",
+      "liberal",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q22059201",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Minnie J. Grinstead",
+      "url": "https://en.wikipedia.org/wiki/Minnie_J._Grinstead",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q22059201"
+}

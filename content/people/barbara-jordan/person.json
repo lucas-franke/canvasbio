@@ -1,0 +1,65 @@
+{
+  "slug": "barbara-jordan",
+  "name": {
+    "display": "Barbara Jordan",
+    "sort": "Jordan, Barbara"
+  },
+  "born": {
+    "date": "1936-02-21",
+    "place": "houston"
+  },
+  "died": {
+    "date": "1996-01-17",
+    "place": "austin"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Adam Cuerden",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rep._Barbara_Jordan_-_Restoration.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "education",
+      "science"
+    ],
+    "place": [
+      "houston",
+      "austin",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.77,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q461657",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Barbara Jordan (Politikerin)",
+      "url": "https://de.wikipedia.org/wiki/Barbara_Jordan_(Politikerin)",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Barbara Jordan",
+      "url": "https://en.wikipedia.org/wiki/Barbara_Jordan",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q461657"
+}

@@ -1,0 +1,56 @@
+{
+  "slug": "elzira-dantas-machado",
+  "name": {
+    "display": "Elzira Dantas Machado",
+    "sort": "Machado, Elzira Dantas"
+  },
+  "born": {
+    "date": "1865-12-15",
+    "place": "rio-de-janeiro"
+  },
+  "died": {
+    "date": "1942-04-22",
+    "place": "porto"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1912",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elzira_Dantas_Machado,_enquanto_jovem_solteira_(pre-1882).png"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "rio-de-janeiro",
+      "porto",
+      "south-america",
+      "europe",
+      "brazil",
+      "portugal"
+    ]
+  },
+  "prominence": 0.54,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q25429562",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Elzira Dantas Machado",
+      "url": "https://en.wikipedia.org/wiki/Elzira_Dantas_Machado",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q25429562"
+}

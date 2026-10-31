@@ -1,0 +1,62 @@
+{
+  "slug": "julia-ward-howe",
+  "name": {
+    "display": "Julia Ward Howe",
+    "sort": "Howe, Julia Ward"
+  },
+  "born": {
+    "date": "1819-05-27",
+    "place": "new-york-city"
+  },
+  "died": {
+    "date": "1910-10-17",
+    "place": "portsmouth"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unbekannt, 1908",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Julia_Ward_Howe_2.png"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "new-york-city",
+      "portsmouth",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.77,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q241299",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Julia Ward Howe",
+      "url": "https://de.wikipedia.org/wiki/Julia_Ward_Howe",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Julia Ward Howe",
+      "url": "https://en.wikipedia.org/wiki/Julia_Ward_Howe",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q241299"
+}

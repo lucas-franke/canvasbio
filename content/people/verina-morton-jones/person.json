@@ -1,0 +1,54 @@
+{
+  "slug": "verina-morton-jones",
+  "name": {
+    "display": "Verina Morton Jones",
+    "sort": "Jones, Verina Morton"
+  },
+  "born": {
+    "date": "1865-01-28",
+    "place": "cleveland"
+  },
+  "died": {
+    "date": "1943-02-03",
+    "place": "brooklyn"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "No photographer is named in the original source., 1912",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:VMortonJones.tif"
+  },
+  "facets": {
+    "field": [
+      "medicine"
+    ],
+    "place": [
+      "cleveland",
+      "brooklyn",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.45,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q19881088",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Verina Morton Jones",
+      "url": "https://en.wikipedia.org/wiki/Verina_Morton_Jones",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q19881088"
+}

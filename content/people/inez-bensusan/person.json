@@ -1,0 +1,61 @@
+{
+  "slug": "inez-bensusan",
+  "name": {
+    "display": "Inez Bensusan",
+    "sort": "Bensusan, Inez"
+  },
+  "born": {
+    "date": "1871-09-11",
+    "place": "sydney"
+  },
+  "died": {
+    "date": "1967-10-10"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Cecil William Rea died 1935, 1924",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait_of_Inez_Bensusan_1924_by_Cecil_William_Rea.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "arts"
+    ],
+    "place": [
+      "sydney",
+      "australia",
+      "oceania"
+    ]
+  },
+  "prominence": 0.47,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q43396578",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Inez Bensusan",
+      "url": "https://de.wikipedia.org/wiki/Inez_Bensusan",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Inez Bensusan",
+      "url": "https://en.wikipedia.org/wiki/Inez_Bensusan",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q43396578"
+}

@@ -1,0 +1,54 @@
+{
+  "slug": "olga-cossettini",
+  "name": {
+    "display": "Olga Cossettini",
+    "sort": "Cossettini, Olga"
+  },
+  "born": {
+    "date": "1898-08-18",
+    "place": "san-jorge"
+  },
+  "died": {
+    "date": "1987-05-24",
+    "place": "rosario"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Archivo Pedagógico Cossettini, 1941",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Olga_Cossettini_-_1941.JPG"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "san-jorge",
+      "rosario",
+      "argentina",
+      "south-america"
+    ]
+  },
+  "prominence": 0.29,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q9052012",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Olga Cossettini",
+      "url": "https://en.wikipedia.org/wiki/Olga_Cossettini",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q9052012"
+}

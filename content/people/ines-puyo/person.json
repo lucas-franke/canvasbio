@@ -1,0 +1,62 @@
+{
+  "slug": "ines-puyo",
+  "name": {
+    "display": "Inés Puyó",
+    "sort": "Puyó, Inés"
+  },
+  "born": {
+    "date": "1906-12-09",
+    "place": "santiago"
+  },
+  "died": {
+    "date": "1996-03-21",
+    "place": "santiago"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1927",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:In%C3%A9s_Puy%C3%B3.png"
+  },
+  "facets": {
+    "field": [
+      "education",
+      "arts"
+    ],
+    "place": [
+      "santiago",
+      "chile",
+      "south-america"
+    ]
+  },
+  "prominence": 0.33,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q20789784",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Inés Puyó",
+      "url": "https://de.wikipedia.org/wiki/In%C3%A9s_Puy%C3%B3",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Inés Puyó",
+      "url": "https://en.wikipedia.org/wiki/In%C3%A9s_Puy%C3%B3",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q20789784"
+}

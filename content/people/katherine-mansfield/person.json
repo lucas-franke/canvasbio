@@ -1,0 +1,64 @@
+{
+  "slug": "katherine-mansfield",
+  "name": {
+    "display": "Katherine Mansfield",
+    "sort": "Mansfield, Katherine"
+  },
+  "born": {
+    "date": "1888-10-14",
+    "place": "wellington"
+  },
+  "died": {
+    "date": "1923-01-09",
+    "place": "avon"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Original: UnknownUnknown Derivative work: Carnby",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Katherine_Mansfield_(no_signature).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "wellington",
+      "avon",
+      "new-zealand",
+      "oceania",
+      "france",
+      "europe"
+    ]
+  },
+  "prominence": 1,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q270632",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Katherine Mansfield",
+      "url": "https://de.wikipedia.org/wiki/Katherine_Mansfield",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Katherine Mansfield",
+      "url": "https://en.wikipedia.org/wiki/Katherine_Mansfield",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q270632"
+}

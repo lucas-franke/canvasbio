@@ -1,0 +1,52 @@
+{
+  "slug": "elizabeth-webb-nicholls",
+  "name": {
+    "display": "Elizabeth Webb Nicholls",
+    "sort": "Nicholls, Elizabeth Webb"
+  },
+  "born": {
+    "date": "1850-02-21",
+    "place": "rundle-street"
+  },
+  "died": {
+    "date": "1943-08-03"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Bartletto Studio, photographer, 1895",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elizabeth_Webb_Nicholls.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "rundle-street",
+      "australia",
+      "oceania"
+    ]
+  },
+  "prominence": 0.38,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q19876276",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Elizabeth Webb Nicholls",
+      "url": "https://en.wikipedia.org/wiki/Elizabeth_Webb_Nicholls",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q19876276"
+}

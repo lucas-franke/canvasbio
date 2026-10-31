@@ -1,0 +1,52 @@
+{
+  "slug": "caroline-brown-buell",
+  "name": {
+    "display": "Caroline Brown Buell",
+    "sort": "Buell, Caroline Brown"
+  },
+  "born": {
+    "date": "1843-10-24",
+    "place": "middlesex-county"
+  },
+  "died": {
+    "date": "1927"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:CAROLINE_BROWN_BUELL.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "middlesex-county",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.31,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q38381285",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Caroline Brown Buell",
+      "url": "https://en.wikipedia.org/wiki/Caroline_Brown_Buell",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q38381285"
+}

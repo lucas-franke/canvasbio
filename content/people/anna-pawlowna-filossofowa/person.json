@@ -1,0 +1,62 @@
+{
+  "slug": "anna-pawlowna-filossofowa",
+  "name": {
+    "display": "Anna Pawlowna Filossofowa",
+    "sort": "Filossofowa, Anna Pawlowna"
+  },
+  "born": {
+    "date": "1837-08-05",
+    "place": "saint-petersburg"
+  },
+  "died": {
+    "date": "1912-03-17",
+    "place": "saint-petersburg"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1870",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anna_Filosovova.jpg"
+  },
+  "facets": {
+    "field": [
+      "social"
+    ],
+    "place": [
+      "saint-petersburg",
+      "russia",
+      "europe",
+      "asia"
+    ]
+  },
+  "prominence": 0.93,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q4767002",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Anna Pawlowna Filossofowa",
+      "url": "https://de.wikipedia.org/wiki/Anna_Pawlowna_Filossofowa",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Anna Filosofova",
+      "url": "https://en.wikipedia.org/wiki/Anna_Filosofova",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q4767002"
+}

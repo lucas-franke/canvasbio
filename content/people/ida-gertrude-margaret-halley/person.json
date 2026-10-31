@@ -1,0 +1,54 @@
+{
+  "slug": "ida-gertrude-margaret-halley",
+  "name": {
+    "display": "Ida Gertrude Margaret Halley",
+    "sort": "Halley, Ida Gertrude Margaret"
+  },
+  "born": {
+    "date": "1867-08-01",
+    "place": "ballarat"
+  },
+  "died": {
+    "date": "1939-10-01",
+    "place": "maylands"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1896",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gertrude_Halley.png"
+  },
+  "facets": {
+    "field": [
+      "medicine"
+    ],
+    "place": [
+      "ballarat",
+      "maylands",
+      "australia",
+      "oceania"
+    ]
+  },
+  "prominence": 0,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q21539210",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Gertrude Halley",
+      "url": "https://en.wikipedia.org/wiki/Gertrude_Halley",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q21539210"
+}

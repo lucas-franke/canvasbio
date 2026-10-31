@@ -1,0 +1,62 @@
+{
+  "slug": "vijaya-lakshmi-pandit",
+  "name": {
+    "display": "Vijaya Lakshmi Pandit",
+    "sort": "Pandit, Vijaya Lakshmi"
+  },
+  "born": {
+    "date": "1900-08-18",
+    "place": "prayagraj"
+  },
+  "died": {
+    "date": "1990-12-01",
+    "place": "dehradun"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Bassano, 1938",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vijaya_Lakshmi_Pandit.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "prayagraj",
+      "dehradun",
+      "india",
+      "asia"
+    ]
+  },
+  "prominence": 0.83,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q465047",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Vijaya Lakshmi Pandit",
+      "url": "https://de.wikipedia.org/wiki/Vijaya_Lakshmi_Pandit",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Vijaya Lakshmi Pandit",
+      "url": "https://en.wikipedia.org/wiki/Vijaya_Lakshmi_Pandit",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q465047"
+}

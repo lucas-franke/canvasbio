@@ -1,0 +1,60 @@
+{
+  "slug": "sasaki-toyoju",
+  "name": {
+    "display": "Sasaki Toyoju",
+    "sort": "Toyoju, Sasaki"
+  },
+  "born": {
+    "date": "1853-05-06",
+    "place": "sendai"
+  },
+  "died": {
+    "date": "1901-06-15"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1889",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sasaki_Toyoju_at_the_World_WCTU_group_published_1889_by_Frances_E_Willard_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "sendai",
+      "japan",
+      "asia"
+    ]
+  },
+  "prominence": 0.5,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q11382017",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Sasaki Toyoju",
+      "url": "https://de.wikipedia.org/wiki/Sasaki_Toyoju",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Sasaki Toyoju",
+      "url": "https://en.wikipedia.org/wiki/Sasaki_Toyoju",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q11382017"
+}

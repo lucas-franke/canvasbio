@@ -1,0 +1,54 @@
+{
+  "slug": "julie-ramsing",
+  "name": {
+    "display": "Julie Ramsing",
+    "sort": "Ramsing, Julie"
+  },
+  "born": {
+    "date": "1871-09-12",
+    "place": "aalborg"
+  },
+  "died": {
+    "date": "1954-03-17",
+    "place": "gentofte-hospital"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1919",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Julie_Ramsing_med_ferieb%C3%B8rn.jpg"
+  },
+  "facets": {
+    "field": [
+      "social"
+    ],
+    "place": [
+      "aalborg",
+      "gentofte-hospital",
+      "denmark",
+      "europe"
+    ]
+  },
+  "prominence": 0.31,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q62080675",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Julie Ramsing",
+      "url": "https://en.wikipedia.org/wiki/Julie_Ramsing",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q62080675"
+}

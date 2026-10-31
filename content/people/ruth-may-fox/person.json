@@ -1,0 +1,56 @@
+{
+  "slug": "ruth-may-fox",
+  "name": {
+    "display": "Ruth May Fox",
+    "sort": "Fox, Ruth May"
+  },
+  "born": {
+    "date": "1853-11-16",
+    "place": "westbury"
+  },
+  "died": {
+    "date": "1958-04-12",
+    "place": "salt-lake-city"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Andrew Jenson, 1936",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ruth_May_Fox.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "westbury",
+      "salt-lake-city",
+      "united-kingdom",
+      "united-states",
+      "europe",
+      "north-america"
+    ]
+  },
+  "prominence": 0.3,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q7383117",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ruth May Fox",
+      "url": "https://en.wikipedia.org/wiki/Ruth_May_Fox",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q7383117"
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "jeanette-schwerin",
+  "name": {
+    "display": "Jeanette Schwerin",
+    "sort": "Schwerin, Jeanette"
+  },
+  "born": {
+    "date": "1852-11-21",
+    "place": "berlin"
+  },
+  "died": {
+    "date": "1899-07-14",
+    "place": "berlin"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1890",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jeannette_Schwerin.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "berlin",
+      "germany",
+      "europe"
+    ]
+  },
+  "prominence": 0.38,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q1685999",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Jeanette Schwerin",
+      "url": "https://de.wikipedia.org/wiki/Jeanette_Schwerin",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Jeanette Schwerin",
+      "url": "https://en.wikipedia.org/wiki/Jeanette_Schwerin",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q1685999"
+}

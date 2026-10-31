@@ -1,0 +1,63 @@
+{
+  "slug": "angelina-grimke",
+  "name": {
+    "display": "Angelina Grimké",
+    "sort": "Grimké, Angelina"
+  },
+  "born": {
+    "date": "1805-02-20",
+    "place": "charleston"
+  },
+  "died": {
+    "date": "1879-10-26",
+    "place": "hyde-park"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1805",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Angelina_Emily_Grimke.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing"
+    ],
+    "place": [
+      "charleston",
+      "hyde-park",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.86,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2849426",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Angelina Emily Grimké",
+      "url": "https://de.wikipedia.org/wiki/Angelina_Emily_Grimk%C3%A9",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Angelina Grimké",
+      "url": "https://en.wikipedia.org/wiki/Angelina_Grimk%C3%A9",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2849426"
+}

@@ -1,0 +1,55 @@
+{
+  "slug": "laura-mclaren",
+  "name": {
+    "display": "Laura McLaren",
+    "sort": "McLaren, Laura"
+  },
+  "born": {
+    "date": "1854-05-14",
+    "place": "broughton"
+  },
+  "died": {
+    "date": "1933-01-04",
+    "place": "antibes"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "James Tissot, 1878",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Laura_McLaren,_Baroness_Aberconway.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "broughton",
+      "antibes",
+      "united-kingdom",
+      "france",
+      "europe"
+    ]
+  },
+  "prominence": 0.45,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6499193",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Laura McLaren, Baroness Aberconway",
+      "url": "https://en.wikipedia.org/wiki/Laura_McLaren%2C_Baroness_Aberconway",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6499193"
+}

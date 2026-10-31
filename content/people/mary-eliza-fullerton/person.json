@@ -1,0 +1,64 @@
+{
+  "slug": "mary-eliza-fullerton",
+  "name": {
+    "display": "Mary Eliza Fullerton",
+    "sort": "Fullerton, Mary Eliza"
+  },
+  "born": {
+    "date": "1868-05-14",
+    "place": "glenmaggie"
+  },
+  "died": {
+    "date": "1946-02-23",
+    "place": "maresfield"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mary_Eliza_Fullerton.png"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "glenmaggie",
+      "maresfield",
+      "australia",
+      "united-kingdom",
+      "oceania",
+      "europe"
+    ]
+  },
+  "prominence": 0.51,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6779396",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Mary Eliza Fullerton",
+      "url": "https://de.wikipedia.org/wiki/Mary_Eliza_Fullerton",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mary Eliza Fullerton",
+      "url": "https://en.wikipedia.org/wiki/Mary_Eliza_Fullerton",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6779396"
+}

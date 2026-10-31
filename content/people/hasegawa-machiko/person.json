@@ -1,0 +1,62 @@
+{
+  "slug": "hasegawa-machiko",
+  "name": {
+    "display": "Hasegawa Machiko",
+    "sort": "Machiko, Hasegawa"
+  },
+  "born": {
+    "date": "1920-01-30",
+    "place": "taku"
+  },
+  "died": {
+    "date": "1992-05-27",
+    "place": "tokyo"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "産業経済新聞社（Sankei Shinbun Co., Ltd.）, 1955",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hasegawa-Machiko-1.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "taku",
+      "tokyo",
+      "japan",
+      "asia"
+    ]
+  },
+  "prominence": 0.65,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q265148",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Hasegawa Machiko",
+      "url": "https://de.wikipedia.org/wiki/Hasegawa_Machiko",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Machiko Hasegawa",
+      "url": "https://en.wikipedia.org/wiki/Machiko_Hasegawa",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q265148"
+}

@@ -1,0 +1,62 @@
+{
+  "slug": "maria-andrea-villarreal-gonzalez",
+  "name": {
+    "display": "Maria Andrea Villarreal Gonzalez",
+    "sort": "Gonzalez, Maria Andrea Villarreal"
+  },
+  "born": {
+    "date": "1881-01-20",
+    "place": "lampazos-de-naranjo"
+  },
+  "died": {
+    "date": "1963-01-19",
+    "place": "monterrey"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Photographer not named., 1909",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Andrea_Villarreal_Gonz%C3%A1lez_1909.png"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "lampazos-de-naranjo",
+      "monterrey",
+      "mexico",
+      "north-america"
+    ]
+  },
+  "prominence": 0.64,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q1865556",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Andrea Villarreal",
+      "url": "https://de.wikipedia.org/wiki/Andrea_Villarreal",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Andrea Villarreal",
+      "url": "https://en.wikipedia.org/wiki/Andrea_Villarreal",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q1865556"
+}

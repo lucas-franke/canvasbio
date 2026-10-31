@@ -1,0 +1,63 @@
+{
+  "slug": "durriyyah-shafiq",
+  "name": {
+    "display": "Durriyyah Shafīq",
+    "sort": "Shafīq, Durriyyah"
+  },
+  "born": {
+    "date": "1908-12-14",
+    "place": "tanta"
+  },
+  "died": {
+    "date": "1975-09-20",
+    "place": "cairo"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Al-Ahram Weekly, 1928",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Doria_Shafik.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "science"
+    ],
+    "place": [
+      "tanta",
+      "cairo",
+      "egypt",
+      "africa"
+    ]
+  },
+  "prominence": 0.76,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q4120224",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Durrīya Schafīq",
+      "url": "https://de.wikipedia.org/wiki/Durr%C4%ABya_Schaf%C4%ABq",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Doria Shafik",
+      "url": "https://en.wikipedia.org/wiki/Doria_Shafik",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q4120224"
+}

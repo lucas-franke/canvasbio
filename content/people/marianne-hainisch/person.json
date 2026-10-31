@@ -1,0 +1,62 @@
+{
+  "slug": "marianne-hainisch",
+  "name": {
+    "display": "Marianne Hainisch",
+    "sort": "Hainisch, Marianne"
+  },
+  "born": {
+    "date": "1839-03-25",
+    "place": "baden"
+  },
+  "died": {
+    "date": "1936-05-05",
+    "place": "vienna"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Österreichisches Volkshochschularchiv, 1872",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marianne_Hainisch.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "baden",
+      "vienna",
+      "austria",
+      "europe"
+    ]
+  },
+  "prominence": 0.95,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q87555",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Marianne Hainisch",
+      "url": "https://de.wikipedia.org/wiki/Marianne_Hainisch",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Marianne Hainisch",
+      "url": "https://en.wikipedia.org/wiki/Marianne_Hainisch",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q87555"
+}

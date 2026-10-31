@@ -1,0 +1,47 @@
+{
+  "slug": "eileen-furley",
+  "name": {
+    "display": "Eileen Furley",
+    "sort": "Furley, Eileen"
+  },
+  "born": {
+    "date": "1900-03-13"
+  },
+  "died": {
+    "date": "1985-09-20"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1952",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eileen_Furley_OBE_(1900-1985).png"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": []
+  },
+  "prominence": 0.16,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5349371",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Eileen Furley",
+      "url": "https://en.wikipedia.org/wiki/Eileen_Furley",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5349371"
+}

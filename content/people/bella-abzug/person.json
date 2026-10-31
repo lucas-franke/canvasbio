@@ -1,0 +1,63 @@
+{
+  "slug": "bella-abzug",
+  "name": {
+    "display": "Bella Abzug",
+    "sort": "Abzug, Bella"
+  },
+  "born": {
+    "date": "1920-07-24",
+    "place": "new-york-city"
+  },
+  "died": {
+    "date": "1998-03-31",
+    "place": "new-york-city"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Library of Congress, 1970",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bella_Savitsky_Abzug.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "science",
+      "social"
+    ],
+    "place": [
+      "new-york-city",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.82,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q464724",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Bella Abzug",
+      "url": "https://de.wikipedia.org/wiki/Bella_Abzug",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Bella Abzug",
+      "url": "https://en.wikipedia.org/wiki/Bella_Abzug",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q464724"
+}

@@ -1,0 +1,64 @@
+{
+  "slug": "jane-ellen-harrison",
+  "name": {
+    "display": "Jane Ellen Harrison",
+    "sort": "Harrison, Jane Ellen"
+  },
+  "born": {
+    "date": "1850-09-09",
+    "place": "cottingham"
+  },
+  "died": {
+    "date": "1928-04-15",
+    "place": "bloomsbury"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "https://persons-info.com/persons/KHARRISON_Dzhein_Ellen, 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jane_Ellen_Harrison_02.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education",
+      "science"
+    ],
+    "place": [
+      "cottingham",
+      "bloomsbury",
+      "united-kingdom",
+      "europe"
+    ]
+  },
+  "prominence": 0.96,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q437675",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Jane Ellen Harrison",
+      "url": "https://de.wikipedia.org/wiki/Jane_Ellen_Harrison",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Jane Ellen Harrison",
+      "url": "https://en.wikipedia.org/wiki/Jane_Ellen_Harrison",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q437675"
+}

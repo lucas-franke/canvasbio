@@ -1,0 +1,65 @@
+{
+  "slug": "clara-campoamor",
+  "name": {
+    "display": "Clara Campoamor",
+    "sort": "Campoamor, Clara"
+  },
+  "born": {
+    "date": "1888-02-12",
+    "place": "albacete"
+  },
+  "died": {
+    "date": "1972-04-30",
+    "place": "lausanne"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Virgilio Muro (1891-1967), 1930",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clara_Campoamor-2.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "science"
+    ],
+    "place": [
+      "albacete",
+      "lausanne",
+      "spain",
+      "switzerland",
+      "europe"
+    ]
+  },
+  "prominence": 0.76,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q3321142",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Clara Campoamor (Politikerin)",
+      "url": "https://de.wikipedia.org/wiki/Clara_Campoamor_(Politikerin)",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Clara Campoamor",
+      "url": "https://en.wikipedia.org/wiki/Clara_Campoamor",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q3321142"
+}

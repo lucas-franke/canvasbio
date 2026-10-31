@@ -1,0 +1,57 @@
+{
+  "slug": "ellen-clark",
+  "name": {
+    "display": "Ellen Clark",
+    "sort": "Clark, Ellen"
+  },
+  "born": {
+    "date": "1915-03-25",
+    "place": "geraldton"
+  },
+  "died": {
+    "date": "1988-05-02",
+    "place": "santa-clara"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1939",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ellen_Clark.png"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education"
+    ],
+    "place": [
+      "geraldton",
+      "santa-clara",
+      "australia",
+      "oceania",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.33,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q21537300",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ellen Clark",
+      "url": "https://en.wikipedia.org/wiki/Ellen_Clark",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q21537300"
+}

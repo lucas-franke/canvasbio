@@ -1,0 +1,54 @@
+{
+  "slug": "josefa-llanes-escoda",
+  "name": {
+    "display": "Josefa Llanes Escoda",
+    "sort": "Escoda, Josefa Llanes"
+  },
+  "born": {
+    "date": "1898-09-20",
+    "place": "dingras"
+  },
+  "died": {
+    "date": "1945-01-06",
+    "place": "manila"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "United States Department of State, 1922",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Josefa_Llanes_Escoda%27s_passport_application_(without_signature).jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "dingras",
+      "manila",
+      "asia",
+      "philippines"
+    ]
+  },
+  "prominence": 0.55,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q3184073",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Josefa Llanes Escoda",
+      "url": "https://en.wikipedia.org/wiki/Josefa_Llanes_Escoda",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q3184073"
+}

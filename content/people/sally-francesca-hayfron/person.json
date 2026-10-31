@@ -1,0 +1,64 @@
+{
+  "slug": "sally-francesca-hayfron",
+  "name": {
+    "display": "Sally Francesca Hayfron",
+    "sort": "Hayfron, Sally Francesca"
+  },
+  "born": {
+    "date": "1931-06-06",
+    "place": "accra"
+  },
+  "died": {
+    "date": "1992-01-27",
+    "place": "parirenyatwa-hospital"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "TSGT James F. Clawson, 1983",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sally_Hayfron.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "education"
+    ],
+    "place": [
+      "accra",
+      "parirenyatwa-hospital",
+      "africa",
+      "ghana",
+      "zimbabwe"
+    ]
+  },
+  "prominence": 0.56,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q465908",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Sally Francesca Hayfron",
+      "url": "https://de.wikipedia.org/wiki/Sally_Francesca_Hayfron",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Sally Mugabe",
+      "url": "https://en.wikipedia.org/wiki/Sally_Mugabe",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q465908"
+}

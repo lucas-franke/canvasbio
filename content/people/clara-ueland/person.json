@@ -1,0 +1,52 @@
+{
+  "slug": "clara-ueland",
+  "name": {
+    "display": "Clara Ueland",
+    "sort": "Ueland, Clara"
+  },
+  "born": {
+    "date": "1860-10-10",
+    "place": "akron"
+  },
+  "died": {
+    "date": "1927-03-01"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Photographer not named., 1917",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clara_Hampson_Ueland_(The_Woman_Citizen,_v.2,_Dec._1917).png"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "akron",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.31,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5126055",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Clara Ueland",
+      "url": "https://en.wikipedia.org/wiki/Clara_Ueland",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5126055"
+}

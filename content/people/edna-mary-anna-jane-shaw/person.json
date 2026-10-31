@@ -1,0 +1,52 @@
+{
+  "slug": "edna-mary-anna-jane-shaw",
+  "name": {
+    "display": "Edna Mary Anna Jane Shaw",
+    "sort": "Shaw, Edna Mary Anna Jane"
+  },
+  "born": {
+    "date": "1891-06-07",
+    "place": "murrumburrah"
+  },
+  "died": {
+    "date": "1974"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Sam Hood, 1936",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:SLNSW_10743_Matron_nursing_sisters_nurses_and_babies_Royal_Hospital_for_Women_Paddington_Christmas_1936.jpg"
+  },
+  "facets": {
+    "field": [
+      "medicine"
+    ],
+    "place": [
+      "murrumburrah",
+      "australia",
+      "oceania"
+    ]
+  },
+  "prominence": 0.16,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q21537029",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Edna Shaw",
+      "url": "https://en.wikipedia.org/wiki/Edna_Shaw",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q21537029"
+}

@@ -5,7 +5,7 @@ summary:
 portraitAlt: Portrait of Vilma Glücklich
 facts:
   - label: Born
-    value: August 9, 1872 in Nové Mesto nad Váhom
+    value: August 9, 1872 in Nové Mesto nad Váhom, Slovakia
   - label: Died
     value: August 19, 1927 in Vienna, Austria
   - label: Field

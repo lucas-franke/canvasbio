@@ -1,0 +1,67 @@
+{
+  "slug": "afet-inan",
+  "name": {
+    "display": "Afet İnan",
+    "sort": "İnan, Afet"
+  },
+  "born": {
+    "date": "1908-11-29",
+    "place": "salonica-vilayet"
+  },
+  "died": {
+    "date": "1985-06-08",
+    "place": "ankara"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1930",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yamzu.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "education",
+      "science"
+    ],
+    "place": [
+      "salonica-vilayet",
+      "ankara",
+      "ottoman-empire",
+      "asia",
+      "europe",
+      "africa",
+      "turkey"
+    ]
+  },
+  "prominence": 0.67,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q382163",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Afet İnan",
+      "url": "https://de.wikipedia.org/wiki/Afet_%C4%B0nan",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Afet İnan",
+      "url": "https://en.wikipedia.org/wiki/Afet_%C4%B0nan",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q382163"
+}

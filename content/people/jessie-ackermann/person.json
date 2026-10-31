@@ -1,0 +1,63 @@
+{
+  "slug": "jessie-ackermann",
+  "name": {
+    "display": "Jessie Ackermann",
+    "sort": "Ackermann, Jessie"
+  },
+  "born": {
+    "date": "1857-07-04",
+    "place": "frankfort"
+  },
+  "died": {
+    "date": "1951-03-31",
+    "place": "pomona"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1950",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Miss-Jessie-Ackermann.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "social"
+    ],
+    "place": [
+      "frankfort",
+      "pomona",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.72,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6187595",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Jessie Ackermann",
+      "url": "https://de.wikipedia.org/wiki/Jessie_Ackermann",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Jessie Ackermann",
+      "url": "https://en.wikipedia.org/wiki/Jessie_Ackermann",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6187595"
+}

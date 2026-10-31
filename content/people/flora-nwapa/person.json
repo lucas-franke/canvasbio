@@ -1,0 +1,63 @@
+{
+  "slug": "flora-nwapa",
+  "name": {
+    "display": "Flora Nwapa",
+    "sort": "Nwapa, Flora"
+  },
+  "born": {
+    "date": "1931-01-13",
+    "place": "oguta"
+  },
+  "died": {
+    "date": "1993-10-16",
+    "place": "enugu"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "ThePortraitLady",
+    "license": {
+      "name": "CC0",
+      "url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flora_Nwapa.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "oguta",
+      "enugu",
+      "nigeria",
+      "africa"
+    ]
+  },
+  "prominence": 0.72,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5460344",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Flora Nwapa",
+      "url": "https://de.wikipedia.org/wiki/Flora_Nwapa",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Flora Nwapa",
+      "url": "https://en.wikipedia.org/wiki/Flora_Nwapa",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5460344"
+}

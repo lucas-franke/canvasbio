@@ -1,0 +1,62 @@
+{
+  "slug": "vera-wentworth",
+  "name": {
+    "display": "Vera Wentworth",
+    "sort": "Wentworth, Vera"
+  },
+  "born": {
+    "date": "1890-06",
+    "place": "westminster"
+  },
+  "died": {
+    "date": "1957-08-05",
+    "place": "elizabeth-garrett-anderson-and-obstetric-hospital"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Colonel Linley Blathwayt, 1909",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vera_Wentworth_1909._Blathwayt,_Col_Linley.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "westminster",
+      "elizabeth-garrett-anderson-and-obstetric-hospital",
+      "united-kingdom",
+      "europe"
+    ]
+  },
+  "prominence": 0.44,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q42319554",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Vera Wentworth",
+      "url": "https://de.wikipedia.org/wiki/Vera_Wentworth",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Vera Wentworth",
+      "url": "https://en.wikipedia.org/wiki/Vera_Wentworth",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q42319554"
+}

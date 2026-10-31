@@ -1,0 +1,56 @@
+{
+  "slug": "rabab-al-kadhimi",
+  "name": {
+    "display": "Rabab al-Kadhimi",
+    "sort": "al-Kadhimi, Rabab"
+  },
+  "born": {
+    "date": "1918-07-30",
+    "place": "cairo"
+  },
+  "died": {
+    "date": "1998-02-09",
+    "place": "london"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown, republished by http://www.almoajam.org main page, 1940",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rabab_al-Kazimi_-_1940s.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "cairo",
+      "london",
+      "egypt",
+      "africa",
+      "united-kingdom",
+      "europe"
+    ]
+  },
+  "prominence": 0.48,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q47121035",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Rabab Al-Kadhimi",
+      "url": "https://en.wikipedia.org/wiki/Rabab_Al-Kadhimi",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q47121035"
+}

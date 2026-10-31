@@ -1,0 +1,64 @@
+{
+  "slug": "eva-peron",
+  "name": {
+    "display": "Eva Perón",
+    "sort": "Perón, Eva"
+  },
+  "born": {
+    "date": "1919-05-07",
+    "place": "junin"
+  },
+  "died": {
+    "date": "1952-07-26",
+    "place": "buenos-aires"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Pinélides Fusco, 1948",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Evita_(cropped2).JPG"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "arts",
+      "social"
+    ],
+    "place": [
+      "junin",
+      "buenos-aires",
+      "argentina",
+      "south-america"
+    ]
+  },
+  "prominence": 1,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q40933",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Eva Perón",
+      "url": "https://de.wikipedia.org/wiki/Eva_Per%C3%B3n",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Eva Perón",
+      "url": "https://en.wikipedia.org/wiki/Eva_Per%C3%B3n",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q40933"
+}

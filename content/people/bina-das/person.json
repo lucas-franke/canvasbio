@@ -1,0 +1,56 @@
+{
+  "slug": "bina-das",
+  "name": {
+    "display": "Bina Das",
+    "sort": "Das, Bina"
+  },
+  "born": {
+    "date": "1911-08-24",
+    "place": "krishnanagar"
+  },
+  "died": {
+    "date": "1986-12-26",
+    "place": "rishikesh"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "K.Venkataramana",
+    "license": {
+      "name": "CC0",
+      "url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bina_Das_(1911_%E2%80%93_1986)_,_Indian_revolutionary_and_nationalist,_Victorial_memorial,_Kolkata.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing"
+    ],
+    "place": [
+      "krishnanagar",
+      "rishikesh",
+      "india",
+      "asia"
+    ]
+  },
+  "prominence": 0.57,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q4913805",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Bina Das",
+      "url": "https://en.wikipedia.org/wiki/Bina_Das",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q4913805"
+}

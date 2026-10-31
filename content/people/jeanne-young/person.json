@@ -1,0 +1,54 @@
+{
+  "slug": "jeanne-young",
+  "name": {
+    "display": "Jeanne Young",
+    "sort": "Young, Jeanne"
+  },
+  "born": {
+    "date": "1866-07-01",
+    "place": "unley"
+  },
+  "died": {
+    "date": "1955-04-11",
+    "place": "rose-park"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1902",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jeanne_Young.png"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "unley",
+      "rose-park",
+      "australia",
+      "oceania"
+    ]
+  },
+  "prominence": 0.23,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6172218",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Jeanne Young",
+      "url": "https://en.wikipedia.org/wiki/Jeanne_Young",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6172218"
+}

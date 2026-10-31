@@ -1,0 +1,47 @@
+{
+  "slug": "ruth-l-bennett",
+  "name": {
+    "display": "Ruth L. Bennett",
+    "sort": "Bennett, Ruth L."
+  },
+  "born": {
+    "date": "1866-06-21"
+  },
+  "died": {
+    "date": "1947-02-24"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Chester Times (Delaware County Daily Times), 1946",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ruth_L._Bennett_headshot.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": []
+  },
+  "prominence": 0.39,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q112075120",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ruth L. Bennett",
+      "url": "https://en.wikipedia.org/wiki/Ruth_L._Bennett",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q112075120"
+}

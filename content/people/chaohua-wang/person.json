@@ -1,0 +1,52 @@
+{
+  "slug": "chaohua-wang",
+  "name": {
+    "display": "Chaohua Wang",
+    "sort": "Wang, Chaohua"
+  },
+  "born": {
+    "date": "1952-11-02",
+    "place": "beijing"
+  },
+  "died": {
+    "date": "1989-12-13"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "美国之音 容易",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:VOA_Chinese_Wang_ChaoHua_31Jan11_300.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "beijing",
+      "people-s-republic-of-china",
+      "asia"
+    ]
+  },
+  "prominence": 0.29,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5072767",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Wang Chaohua",
+      "url": "https://en.wikipedia.org/wiki/Wang_Chaohua",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5072767"
+}

@@ -1,0 +1,54 @@
+{
+  "slug": "vada-somerville",
+  "name": {
+    "display": "Vada Somerville",
+    "sort": "Somerville, Vada"
+  },
+  "born": {
+    "date": "1885-11-01",
+    "place": "pomona"
+  },
+  "died": {
+    "date": "1972-10-28",
+    "place": "los-angeles-county"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1912",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vada_Somerville,_1912.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "pomona",
+      "los-angeles-county",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.31,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q29855687",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Vada Somerville",
+      "url": "https://en.wikipedia.org/wiki/Vada_Somerville",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q29855687"
+}

@@ -1,0 +1,54 @@
+{
+  "slug": "winona-flett",
+  "name": {
+    "display": "Winona Flett",
+    "sort": "Flett, Winona"
+  },
+  "born": {
+    "date": "1884-06-10",
+    "place": "county-of-brant"
+  },
+  "died": {
+    "date": "1922-05-16",
+    "place": "winnipeg"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1914",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Winona_Flett.png"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "county-of-brant",
+      "winnipeg",
+      "canada",
+      "north-america"
+    ]
+  },
+  "prominence": 0.19,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q8025884",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Winona Flett",
+      "url": "https://en.wikipedia.org/wiki/Winona_Flett",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q8025884"
+}

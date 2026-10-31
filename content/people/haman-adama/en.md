@@ -1,0 +1,26 @@
+---
+summary:
+  - Cameroonian politician
+  - 1950–2024 · Maroua
+portraitAlt: Portrait of Haman Adama
+facts:
+  - label: Born
+    value: 1950 in Maroua, Cameroon
+  - label: Died
+    value: April 29, 2024 in Yaoundé, Cameroon
+  - label: Field
+    value: Politician, Minister
+timeline:
+  - date: "1950"
+    event: Born in Maroua
+  - date: August 8, 2004
+    event: Minister of Education of Cameroon
+  - date: April 29, 2024
+    event: Died in Yaoundé
+---
+
+Haman Adama, formerly known as Halimatou Mahonde from Garoua (1950 – 29 April 2024), was a Cameroonian politician who served as Minister of Education from 2004 to 2009.
+
+Born in 1950, Adama originally hailed from the Bénoué department. She received her training at the National School of Administration and Magistracy (ENAM). She joined the government on 18 March 2000, as the Secretary of State for National Education. Later, she held the position of Minister of Basic Education from 8 August 2004 to 30 June 2009.
+
+Adama died on 29 April 2024.

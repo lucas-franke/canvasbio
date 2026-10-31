@@ -23,6 +23,7 @@ export const de = {
     canvas: "Mosaik",
     list: "Liste",
     timeline: "Zeitstrahl",
+    map: "Karte",
   },
   sort: {
     label: "Sortieren",
@@ -59,6 +60,8 @@ export const de = {
   start: {
     onThisDay: "An diesem Tag",
     comingUp: "In den nächsten Tagen",
+    showMore: (count: number) => `${count} weitere anzeigen`,
+    showFewer: "Weniger anzeigen",
     anniversaryToday: (kind: "born" | "died", years: number) =>
       `Heute vor ${years} Jahren ${kind === "born" ? "geboren" : "gestorben"}`,
     anniversaryUpcoming: (kind: "born" | "died", date: string) =>
@@ -70,6 +73,7 @@ export const de = {
     title: "Biografien",
     listTitle: "Biografien als Liste",
     timelineTitle: "Biografien als Zeitstrahl",
+    mapTitle: "Biografien auf der Karte",
     gridTitle: "Biografien als Mosaik",
     /** Badge in languages where not every biography exists (contentRequired: false): this one does. */
     ownText: "In Leichter Sprache",
@@ -117,6 +121,23 @@ export const de = {
     zoomIn: "Vergrößern",
     zoomOut: "Verkleinern",
   },
+  map: {
+    label: "Karte der Lebensorte",
+    intro: (count: number) =>
+      `${count} Biografien auf der Karte. Mit Screenreader ist die Ortsliste übersichtlicher.`,
+    born: "Geburtsorte",
+    died: "Sterbeorte",
+    showBy: "Orte zeigen",
+    places: "Ortsliste",
+    placesTitle: "Orte",
+    closePlaces: "Ortsliste schließen",
+    peopleHere: (place: string) => `Biografien aus ${place}`,
+    cluster: (count: number) => `${count} Biografien hier, vergrößern`,
+    unplaced: (count: number) => `${count} ohne bekannten Ort nicht auf der Karte`,
+    attribution: "Karte: Natural Earth (gemeinfrei)",
+    loading: "Karte wird geladen …",
+    failed: "Die Karte konnte nicht geladen werden.",
+  },
   detail: {
     close: "Schließen",
     more: "Weitere Biografien",
@@ -137,6 +158,7 @@ export const de = {
     related: "Ähnliche Biografien",
     readingTime: (minutes: number) => `${minutes} ${minutes === 1 ? "Minute" : "Minuten"} Lesezeit`,
     outline: "Inhalt",
+    storyOnlyIn: (language: string) => `Dieser Text liegt nur auf ${language} vor.`,
     sameEra: "Zur selben Zeit",
   },
   error: {

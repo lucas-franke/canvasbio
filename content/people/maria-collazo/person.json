@@ -1,0 +1,54 @@
+{
+  "slug": "maria-collazo",
+  "name": {
+    "display": "María Collazo",
+    "sort": "Collazo, María"
+  },
+  "born": {
+    "date": "1884-03-06",
+    "place": "montevideo"
+  },
+  "died": {
+    "date": "1942-03-22",
+    "place": "montevideo"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1907",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Collazo,_Mar%C3%ADa.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "social"
+    ],
+    "place": [
+      "montevideo",
+      "uruguay",
+      "south-america"
+    ]
+  },
+  "prominence": 0.43,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q29514500",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): María Collazo",
+      "url": "https://en.wikipedia.org/wiki/Mar%C3%ADa_Collazo",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q29514500"
+}

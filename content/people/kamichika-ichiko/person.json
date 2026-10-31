@@ -1,0 +1,63 @@
+{
+  "slug": "kamichika-ichiko",
+  "name": {
+    "display": "Kamichika Ichiko",
+    "sort": "Ichiko, Kamichika"
+  },
+  "born": {
+    "date": "1888-06-06",
+    "place": "saza"
+  },
+  "died": {
+    "date": "1981-08-01",
+    "place": "aobadai"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1956",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:KAMICHIKA_Ichiko.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing"
+    ],
+    "place": [
+      "saza",
+      "aobadai",
+      "japan",
+      "asia"
+    ]
+  },
+  "prominence": 0.45,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q11590905",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Kamichika Ichiko",
+      "url": "https://de.wikipedia.org/wiki/Kamichika_Ichiko",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ichiko Kamichika",
+      "url": "https://en.wikipedia.org/wiki/Ichiko_Kamichika",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q11590905"
+}

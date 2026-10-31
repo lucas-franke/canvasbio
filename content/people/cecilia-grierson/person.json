@@ -1,0 +1,63 @@
+{
+  "slug": "cecilia-grierson",
+  "name": {
+    "display": "Cecilia Grierson",
+    "sort": "Grierson, Cecilia"
+  },
+  "born": {
+    "date": "1859-11-22",
+    "place": "buenos-aires"
+  },
+  "died": {
+    "date": "1934-04-10",
+    "place": "buenos-aires"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1910",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Retrato_Cecilia_Grierson.jpg"
+  },
+  "facets": {
+    "field": [
+      "education",
+      "medicine",
+      "social"
+    ],
+    "place": [
+      "buenos-aires",
+      "argentina",
+      "south-america"
+    ]
+  },
+  "prominence": 0.66,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5056433",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Cecilia Grierson",
+      "url": "https://de.wikipedia.org/wiki/Cecilia_Grierson",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Cecilia Grierson",
+      "url": "https://en.wikipedia.org/wiki/Cecilia_Grierson",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5056433"
+}

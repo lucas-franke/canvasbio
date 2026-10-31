@@ -11,7 +11,7 @@ import siteConfig from "../site.config";
  */
 const localeRoutes = siteConfig.locales.flatMap(({ code, prefix }) => {
   const at = (...segments: string[]) => [prefix, ...segments].filter(Boolean).join("/");
-  const { people, list, timeline, about, accessibility, imprint, privacy } = siteConfig.paths;
+  const { people, list, timeline, map, about, accessibility, imprint, privacy } = siteConfig.paths;
   return [
     prefix
       ? route(prefix, "routes/start.tsx", { id: `start:${code}` })
@@ -22,6 +22,7 @@ const localeRoutes = siteConfig.locales.flatMap(({ code, prefix }) => {
       route(at(people[code], timeline[code]), "routes/people-timeline.tsx", {
         id: `people-timeline:${code}`,
       }),
+      route(at(people[code], map[code]), "routes/people-map.tsx", { id: `people-map:${code}` }),
       route(at(people[code], ":slug"), "routes/person.tsx", { id: `person:${code}` }),
     ]),
     route(at(about[code]), "routes/page.tsx", { id: `about:${code}` }),

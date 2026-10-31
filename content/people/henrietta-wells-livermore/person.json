@@ -1,0 +1,52 @@
+{
+  "slug": "henrietta-wells-livermore",
+  "name": {
+    "display": "Henrietta Wells Livermore",
+    "sort": "Livermore, Henrietta Wells"
+  },
+  "born": {
+    "date": "1864-05-22",
+    "place": "san-francisco"
+  },
+  "died": {
+    "date": "1933-10-15"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "The original uploader was Richard Arthur Norton (1958- ) at English Wikipedia.",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Livermore_4586278125_05331e39e0_o.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "san-francisco",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.3,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5716069",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Henrietta Wells Livermore",
+      "url": "https://en.wikipedia.org/wiki/Henrietta_Wells_Livermore",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5716069"
+}

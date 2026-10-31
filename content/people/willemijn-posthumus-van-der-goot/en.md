@@ -5,7 +5,7 @@ summary:
 portraitAlt: Portrait of Willemijn Posthumus-van der Goot
 facts:
   - label: Born
-    value: May 2, 1897 in Pretoria
+    value: May 2, 1897 in Pretoria, South Africa
   - label: Died
     value: January 16, 1989 in Amsterdam, Netherlands
   - label: Field

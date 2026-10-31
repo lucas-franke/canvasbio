@@ -1,0 +1,61 @@
+{
+  "slug": "lucy-burns",
+  "name": {
+    "display": "Lucy Burns",
+    "sort": "Burns, Lucy"
+  },
+  "born": {
+    "date": "1879-07-28",
+    "place": "brooklyn"
+  },
+  "died": {
+    "date": "1966-12-22",
+    "place": "brooklyn"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Clinedinst Studio, Washington, D.C., 1913",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lucy_Burns_1913_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "brooklyn",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.89,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q451583",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Lucy Burns",
+      "url": "https://de.wikipedia.org/wiki/Lucy_Burns",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Lucy Burns",
+      "url": "https://en.wikipedia.org/wiki/Lucy_Burns",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q451583"
+}

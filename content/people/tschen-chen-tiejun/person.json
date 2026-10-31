@@ -1,0 +1,47 @@
+{
+  "slug": "tschen-chen-tiejun",
+  "name": {
+    "display": "Tschen / Chen Tiejun",
+    "sort": "Tiejun, Tschen / Chen"
+  },
+  "born": {
+    "date": "1904"
+  },
+  "died": {
+    "date": "1928-02-06"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "未知 （存活时间：1927）, 1927",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chen_Tiejun.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": []
+  },
+  "prominence": 0.15,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q88966732",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Chen Tiejun",
+      "url": "https://en.wikipedia.org/wiki/Chen_Tiejun",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q88966732"
+}

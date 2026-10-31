@@ -1,0 +1,62 @@
+{
+  "slug": "radhia-haddad",
+  "name": {
+    "display": "Radhia Haddad",
+    "sort": "Haddad, Radhia"
+  },
+  "born": {
+    "date": "1922-03-17",
+    "place": "tunis"
+  },
+  "died": {
+    "date": "2003-10-20",
+    "place": "carthage"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1980",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Radhia_Haddad_%D8%B1%D8%A7%D8%B6%D9%8A%D8%A9_%D8%A7%D9%84%D8%AD%D8%AF%D8%A7%D8%AF.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "tunis",
+      "carthage",
+      "africa",
+      "tunisia"
+    ]
+  },
+  "prominence": 0.47,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q3416437",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Radhia Haddad",
+      "url": "https://de.wikipedia.org/wiki/Radhia_Haddad",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Radhia Haddad",
+      "url": "https://en.wikipedia.org/wiki/Radhia_Haddad",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q3416437"
+}

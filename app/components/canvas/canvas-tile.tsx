@@ -2,9 +2,9 @@ import { cn } from "cn";
 import { memo } from "react";
 import { Link } from "react-router";
 
-import { Portrait } from "~/components/portrait";
 import type { TileVariation } from "~/lib/canvas/layout";
 import type { PersonListItem } from "~/lib/content/adapter";
+import { portraitUrl } from "~/lib/content/images";
 import { markPortraitSource } from "~/lib/view-transition";
 
 interface CanvasTileProps {
@@ -23,6 +23,13 @@ interface CanvasTileProps {
   primary: boolean;
   /** Roving tabindex: exactly one tile is in the tab order. */
   tabbable: boolean;
+  /**
+   * The wall is painted on a canvas underneath (WallPainter): the tile is only the
+   * transparent link (focus, keyboard, screen readers, taps) at the portrait's place.
+   */
+  painted: boolean;
+  /** Before the canvas has painted (pre-rendered HTML): the tile shows its own portrait. */
+  near: boolean;
   /** Biography of this person is open. */
   active: boolean;
   /**
@@ -32,11 +39,15 @@ interface CanvasTileProps {
   match?: boolean;
   /** Slight size and position variation (see canvas.sizeVariance). */
   variation: TileVariation;
-  /** `sizes` value matching the rendered tile size. */
-  sizes: string;
   /** Mask class for the torn paper edge, if enabled. */
   edgeClass?: string;
 }
+
+/**
+ * Before the canvas takes over: the file the canvas draws at the starting zoom (so it comes
+ * from the cache then), in WebP, which decodes faster than AVIF on phones.
+ */
+const PRE_PAINT_WIDTH = 320;
 
 /**
  * Props are equal when all are identical, the variation by value (it is computed anew on every
@@ -52,7 +63,11 @@ function sameProps(a: CanvasTileProps, b: CanvasTileProps) {
   );
 }
 
-/** One portrait on the canvas: a link to the biography with the name on a dark gradient. */
+/**
+ * One tile of the wall: a link to the biography at the portrait's place. Painted (the usual
+ * case once the page runs) it is transparent and named by its label; in pre-rendered HTML,
+ * before the canvas has painted, it shows the portrait and name itself.
+ */
 export const CanvasTile = memo(function CanvasTile({
   person,
   cellId,
@@ -62,12 +77,16 @@ export const CanvasTile = memo(function CanvasTile({
   href,
   primary,
   tabbable,
+  painted,
+  near,
   active,
   match,
   variation,
-  sizes,
   edgeClass,
 }: CanvasTileProps) {
+  const ownPortrait = near && !painted;
+  // Until the portrait has loaded: its main colour, darkened, so it reads as a tile.
+  const placeholder = `color-mix(in srgb, ${person.image.color} 70%, var(--c-stage))`;
   return (
     <li
       data-vt-item
@@ -92,25 +111,33 @@ export const CanvasTile = memo(function CanvasTile({
         data-match={match === undefined ? undefined : match ? "hit" : "miss"}
         aria-current={primary && active ? "page" : undefined}
         tabIndex={tabbable ? 0 : -1}
+        // Without its own name text, the link is named directly.
+        aria-label={ownPortrait ? undefined : person.name.display}
         className="canvas-tile group block size-full"
+        style={ownPortrait || painted ? undefined : { backgroundColor: placeholder }}
       >
-        <span
-          data-vt-portrait
-          data-tint
-          className={cn("relative block size-full overflow-hidden bg-stage", edgeClass)}
-        >
-          <Portrait
-            slug={person.slug}
-            image={person.image}
-            alt=""
-            sizes={sizes}
-            className="size-full object-cover transition-transform duration-300 group-hover:scale-105"
-          />
-          {/* Dark gradient guarantees contrast for the name regardless of the photo. */}
-          <span className="canvas-tile-name absolute inset-x-0 bottom-0 bg-linear-to-t from-stage via-stage/80 to-transparent font-medium text-stage-foreground">
-            <span className="canvas-tile-label">{person.name.display}</span>
+        {ownPortrait && (
+          <span
+            data-vt-portrait
+            data-tint
+            className={cn("relative block size-full overflow-hidden bg-stage", edgeClass)}
+          >
+            <img
+              src={portraitUrl(person.slug, "sq", PRE_PAINT_WIDTH, "webp", person.image.hash)}
+              alt=""
+              width={PRE_PAINT_WIDTH}
+              height={PRE_PAINT_WIDTH}
+              decoding="async"
+              draggable={false}
+              className="size-full object-cover"
+              style={{ backgroundColor: placeholder }}
+            />
+            {/* Dark gradient guarantees contrast for the name regardless of the photo. */}
+            <span className="canvas-tile-name absolute inset-x-0 bottom-0 bg-linear-to-t from-stage via-stage/80 to-transparent font-medium text-stage-foreground">
+              <span className="canvas-tile-label">{person.name.display}</span>
+            </span>
           </span>
-        </span>
+        )}
       </Link>
     </li>
   );

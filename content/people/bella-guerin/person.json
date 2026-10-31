@@ -1,0 +1,54 @@
+{
+  "slug": "bella-guerin",
+  "name": {
+    "display": "Bella Guerin",
+    "sort": "Guerin, Bella"
+  },
+  "born": {
+    "date": "1858-04-23",
+    "place": "williamstown"
+  },
+  "died": {
+    "date": "1923-07-26",
+    "place": "adelaide"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "T. Humphrey & Co., 1910",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bella_Guerin.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "williamstown",
+      "adelaide",
+      "australia",
+      "oceania"
+    ]
+  },
+  "prominence": 0.51,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q4883360",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Bella Guerin",
+      "url": "https://en.wikipedia.org/wiki/Bella_Guerin",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q4883360"
+}

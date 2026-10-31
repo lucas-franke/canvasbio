@@ -1,0 +1,62 @@
+{
+  "slug": "cecile-tormay",
+  "name": {
+    "display": "Cécile Tormay",
+    "sort": "Tormay, Cécile"
+  },
+  "born": {
+    "date": "1876-10-08",
+    "place": "budapest"
+  },
+  "died": {
+    "date": "1937-04-02",
+    "place": "matrahaza"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Ismeretlen, 1938",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:TormayCecil.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "budapest",
+      "matrahaza",
+      "hungary",
+      "europe"
+    ]
+  },
+  "prominence": 0.63,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q241470",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Cécile Tormay",
+      "url": "https://de.wikipedia.org/wiki/C%C3%A9cile_Tormay",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Cécile Tormay",
+      "url": "https://en.wikipedia.org/wiki/C%C3%A9cile_Tormay",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q241470"
+}

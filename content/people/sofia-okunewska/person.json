@@ -1,0 +1,65 @@
+{
+  "slug": "sofia-okunewska",
+  "name": {
+    "display": "Sofia Okunewska",
+    "sort": "Okunewska, Sofia"
+  },
+  "born": {
+    "date": "1865-05-12",
+    "place": "dovzhanka"
+  },
+  "died": {
+    "date": "1926-02-24",
+    "place": "lviv"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9E%D0%BA%D1%83%D0%BD%D0%B5%D0%B2%D1%81%D1%8C%D0%BA%D0%B0_%D0%A1%D0%BE%D1%84%D1%96%D1%8F.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education",
+      "medicine",
+      "science"
+    ],
+    "place": [
+      "dovzhanka",
+      "lviv",
+      "ukraine",
+      "europe"
+    ]
+  },
+  "prominence": 0.96,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q12135505",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Sofia Okunewska",
+      "url": "https://de.wikipedia.org/wiki/Sofia_Okunewska",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Sofia Okunevska",
+      "url": "https://en.wikipedia.org/wiki/Sofia_Okunevska",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q12135505"
+}

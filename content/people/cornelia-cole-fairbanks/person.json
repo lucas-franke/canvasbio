@@ -1,0 +1,62 @@
+{
+  "slug": "cornelia-cole-fairbanks",
+  "name": {
+    "display": "Cornelia Cole Fairbanks",
+    "sort": "Fairbanks, Cornelia Cole"
+  },
+  "born": {
+    "date": "1852-01-14",
+    "place": "marysville"
+  },
+  "died": {
+    "date": "1913-10-25",
+    "place": "indianapolis"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "The original uploader was Richard Arthur Norton (1958- ) at English Wikipedia.",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fairbanks_4408868314_de2f1cd85b_o.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "marysville",
+      "indianapolis",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.51,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q441366",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Cornelia Cole Fairbanks",
+      "url": "https://de.wikipedia.org/wiki/Cornelia_Cole_Fairbanks",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Cornelia Cole Fairbanks",
+      "url": "https://en.wikipedia.org/wiki/Cornelia_Cole_Fairbanks",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q441366"
+}

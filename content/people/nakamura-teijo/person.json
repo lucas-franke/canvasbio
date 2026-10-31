@@ -1,0 +1,62 @@
+{
+  "slug": "nakamura-teijo",
+  "name": {
+    "display": "Nakamura Teijo",
+    "sort": "Teijo, Nakamura"
+  },
+  "born": {
+    "date": "1900-04-11",
+    "place": "kumamoto"
+  },
+  "died": {
+    "date": "1988-09-20",
+    "place": "tokyo"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "朝日新聞社, 1948",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nakamura_Teijo.JPG"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "kumamoto",
+      "tokyo",
+      "japan",
+      "asia"
+    ]
+  },
+  "prominence": 0.4,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q534317",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Nakamura Teijo",
+      "url": "https://de.wikipedia.org/wiki/Nakamura_Teijo",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Teijo Nakamura",
+      "url": "https://en.wikipedia.org/wiki/Teijo_Nakamura",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q534317"
+}

@@ -1,0 +1,56 @@
+{
+  "slug": "fatima-achimo",
+  "name": {
+    "display": "Fatima Achimo",
+    "sort": "Achimo, Fatima"
+  },
+  "born": {
+    "date": "1931-01-08",
+    "place": "ambanja"
+  },
+  "died": {
+    "date": "2011-05-13",
+    "place": "antananarivo"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Jacob Gino",
+    "license": {
+      "name": "CC0",
+      "url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fatima_Achimo_Senateur.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "education"
+    ],
+    "place": [
+      "ambanja",
+      "antananarivo",
+      "madagascar",
+      "africa"
+    ]
+  },
+  "prominence": 0.4,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q56613086",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Fatima Achimo",
+      "url": "https://en.wikipedia.org/wiki/Fatima_Achimo",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q56613086"
+}

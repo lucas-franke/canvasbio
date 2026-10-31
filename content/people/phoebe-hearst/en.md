@@ -1,0 +1,60 @@
+---
+summary:
+  - American philanthropist, feminist and suffragist
+  - 1842–1919 · Saint Clair
+portraitAlt: Portrait of Phoebe Hearst
+facts:
+  - label: Born
+    value: December 3, 1842 in Saint Clair, United States
+  - label: Died
+    value: April 13, 1919 in Pleasanton, United States
+  - label: Field
+    value: Philanthropist, Socialite, Women's rights activist, Suffragist
+timeline:
+  - date: December 3, 1842
+    event: Born in Saint Clair
+  - date: June 15, 1862
+    event: Marriage to George Hearst
+  - date: April 13, 1919
+    event: Died in Pleasanton
+---
+
+Phoebe Elizabeth Apperson Hearst (December 3, 1842 – April 13, 1919) was an American philanthropist, feminist and suffragist. Hearst was the founder of the University of California Museum of Anthropology, now called the Phoebe A. Hearst Museum of Anthropology, and the co-founder of the National Parent-Teacher Association.
+
+## Early life
+
+She was born Phoebe Elizabeth Apperson in St. Clair, Missouri, in Franklin County, the daughter of Drucilla (Whitmire) and Randolph Walker Apperson. In her early years, Phoebe studied to be a teacher. Her childhood consisted of helping her father with finances at his store, learning French, and playing the piano. In 1860, businessman George Hearst met Phoebe when he returned to St. Clair to care for his dying mother. When they married on June 15, 1862, George Hearst was 41 years old, and Phoebe was 19.
+
+## Family life
+
+Soon after their marriage, the couple left Missouri and moved to San Francisco, California, where Phoebe gave birth to their only child, William Randolph Hearst. As a very successful miner who later became a U.S. senator, George often left Phoebe alone during his work. She and her son were close and had many similar interests, including art and design. After Phoebe's death in 1919, William inherited a $10 million fortune.
+
+## Philanthropy
+
+In the 1880s, she became a major benefactor and director of the Golden Gate Kindergarten Association and the first president of the Century Club of California. In 1902, Hearst funded the construction of a building to provide teacher training and to house kindergarten classes and the association's offices.  The association had 26 schools at the time of the San Francisco earthquake in 1906.
+
+Hearst was a major benefactor of the University of California, Berkeley, and its first woman regent, serving on the board from 1897 until her death. That year, she contributed to the establishment of the National Congress of Mothers, which evolved eventually into the National Parent-Teacher Association. In 1900, she co-founded the all-girls National Cathedral School in Washington, DC.  In addition, a nearby public elementary school bears her name. Hearst funded the Hearst Free Library in Anaconda, Montana, in 1898. She maintained it until 1904.
+
+Hearst became a close friend of Dr. William Pepper, provost of the University of Pennsylvania, who was also a medical doctor who treated her for a heart condition.  In 1896, in her first major act of museum philanthropy, she donated more than two hundred objects to the Penn Museum, many of them items such as Anasazi ceramics excavated from the Cliff Palace site of Mesa Verde, Colorado.  Later, she also funded a Penn Museum expedition to Russia, and sent the Aztec specialist, Zelia Nuttall, to Moscow for this purpose.
+
+In 1901, Phoebe Hearst founded the University of California Museum of Anthropology, later called the Robert H. Lowie Museum of Anthropology and renamed the Phoebe A. Hearst Museum of Anthropology in 1992. The original collection comprised 230,000 objects representing cultures and civilizations throughout history.
+
+The museum now contains about 3.8 million objects. Throughout her lifetime and as provided in her will, Hearst donated over 60,000 objects to the museum. She also funded expeditions such as the Pepper–Hearst expedition (1895–1897) on the coast of Florida, near Tarpon Springs. Most notable are the 1899 expeditions in Egypt by American archaeologist George A. Reisner and in Peru by German archaeologist Max Uhle. These ventures further contributed to the museum's collection. Among these are approximately 20,000 ancient Egyptian artifacts, the largest such collection west of Chicago. Hearst also realized the importance of preserving Native Californian culture. With her support, anthropologist Alfred L. Kroeber and his students, including Robert F. Heizer, documented Native Californian culture in the form of photographs, audio recordings, texts, and artifacts. This research helped to preserve approximately 250,000 Native Californian artifacts, the most extensive in the world. The museum collection is available to students and researchers for examination. A gallery located on the University of California Berkeley campus is available for public view.
+
+Hearst was named to the Mount Vernon Ladies' Association as the second vice-regent representing California. She held that position from 1889 to 1918, contributing much time and money to the restoration of George Washington's home at Mount Vernon, furnishing it with Washington-owned objects and improving the visitor experience. The William Randolph Hearst Foundation continues to fund projects at Mount Vernon in her memory.
+
+Hearst also donated money to the restoration of Pohick Church in Virginia, and donated a pipe organ to St. Stephen's Church in California, where she was also a parishioner.
+
+Hearst chose a "different way" than radical feminists. While she believed in women having financial freedom, in her support for women's suffrage she did not strongly believe in women gaining political power. She thought women should have the right to vote "to protect homes and children." In 1895, when the Women's Congress resolved for the passage of a federal amendment, Hearst supported it "distantly". She officially declared herself in favor of suffrage in the summer of 1911, saying it would enable "the betterment of conditions affecting children and women particularly."
+
+## Religion
+
+Hearst was raised a member of the Christian Cumberland Presbyterian community in the 1840s. In 1898 she declared her belief in the Baháʼí Faith, and helped play a key role in the spread of the religion in the United States.
+
+Hearst had already been an early investor in the initiative of Sarah Farmer using the Greenacre Inn as a summer center of cross-religion gatherings and cultural development shortly after the 1893 Parliament of Religions. In November 1898, Hearst, with Lua Getsinger and others, briefly stopped off in Paris, on their way to Palestine, and was shocked to see May Bolles (later Maxwell), later a well known American member of the Baháʼí Faith, bedridden with the chronic malady with which she had been afflicted. Hearst invited Bolles to travel to Palestine with her, believing that the change of air would be conducive to her health. Getsinger disclosed to Bolles the purpose of the journey: a pilgrimage to visit the then head of the Baháʼí Faith: ʻAbdu'l-Bahá. The group travelled to Akka and Haifa in Ottoman Palestine on pilgrimage, arriving on December 14, 1898. They were the very first Westerners to make the pilgrimage and meet ʻAbdu'l-Bahá. Hearst later wrote, "Those three days were the most memorable days of my life." Yet after the first pilgrimage attempts at correspondence on behalf of Hearst by Lua Getsinger were leaked naming her involvement in the religion at a time of rising considerations of her son's political activities and so Hearst dismissed the Getsingers from their stay at her home in 1901.Kindle:6195 Still in the spring of 1901 Hearst also met with Sarah Farmer again, and invested again in Green Acre, as it came to be called, in 1902, and, further, an agent of Hearst acted for Sarah Farmer when she changed her will in 1909 to bequeath Green Acre to the Baháʼís in the event of Farmer's death. Hearst had also been a victim of an incident seeking to extort money from her, which had caused her estrangement from some Bahá'ís. In October 1912, she invited ʻAbdu'l-Bahá, who was travelling throughout the United States, to stay at her home for a long weekend, even though at that time she had become estranged from the Bahá'í community. During his stay, ʻAbdu'l-Bahá mentioned that anyone who tried to extort money or goods from others should not be considered a true Bahá'í.
+
+## Death and legacy
+
+She died at her home, Hacienda del Pozo de Verona, in Pleasanton, California, aged 76, on April 13, 1919, during the worldwide influenza epidemic of 1918–1919, and was buried at Cypress Lawn Memorial Park in Colma, California.
+
+Both Phoebe Apperson Hearst Elementary School in Pleasanton, California and Phoebe A. Hearst Elementary School in Sacramento, California are named after her.

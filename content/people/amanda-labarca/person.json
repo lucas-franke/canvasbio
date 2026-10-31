@@ -1,0 +1,64 @@
+{
+  "slug": "amanda-labarca",
+  "name": {
+    "display": "Amanda Labarca",
+    "sort": "Labarca, Amanda"
+  },
+  "born": {
+    "date": "1886-12-05",
+    "place": "santiago"
+  },
+  "died": {
+    "date": "1975-01-02",
+    "place": "santiago"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1920",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Amanda_Labarca.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "education",
+      "science"
+    ],
+    "place": [
+      "santiago",
+      "south-america",
+      "chile"
+    ]
+  },
+  "prominence": 0.53,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q4739670",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Amanda Labarca",
+      "url": "https://de.wikipedia.org/wiki/Amanda_Labarca",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Amanda Labarca",
+      "url": "https://en.wikipedia.org/wiki/Amanda_Labarca",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q4739670"
+}

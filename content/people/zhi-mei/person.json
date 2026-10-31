@@ -1,0 +1,54 @@
+{
+  "slug": "zhi-mei",
+  "name": {
+    "display": "Zhi Mei",
+    "sort": "Mei, Zhi"
+  },
+  "born": {
+    "date": "1914",
+    "place": "nanchang"
+  },
+  "died": {
+    "date": "2004",
+    "place": "beijing"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1933",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hu_feng_and_his_wife.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "nanchang",
+      "beijing",
+      "people-s-republic-of-china",
+      "asia"
+    ]
+  },
+  "prominence": 0.33,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q8259617",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mei Zhi",
+      "url": "https://en.wikipedia.org/wiki/Mei_Zhi",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q8259617"
+}

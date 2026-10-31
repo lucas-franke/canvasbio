@@ -1,0 +1,53 @@
+{
+  "slug": "anbara-salam-khalidy",
+  "name": {
+    "display": "Anbara Salam Khalidy",
+    "sort": "Khalidy, Anbara Salam"
+  },
+  "born": {
+    "date": "1897-08-04",
+    "place": "beirut"
+  },
+  "died": {
+    "date": "1986",
+    "place": "beirut"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1966",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anbara_Salam_Khalidi.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "beirut",
+      "asia",
+      "lebanon"
+    ]
+  },
+  "prominence": 0.56,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q16011654",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Anbara Salam Khalidi",
+      "url": "https://en.wikipedia.org/wiki/Anbara_Salam_Khalidi",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q16011654"
+}

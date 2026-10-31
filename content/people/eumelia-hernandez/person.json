@@ -1,0 +1,53 @@
+{
+  "slug": "eumelia-hernandez",
+  "name": {
+    "display": "Eumelia Hernández",
+    "sort": "Hernández, Eumelia"
+  },
+  "born": {
+    "date": "1913-10-14",
+    "place": "caracas"
+  },
+  "died": {
+    "date": "1990-09-17",
+    "place": "caracas"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1930",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Agrupaci%C3%B3n_Cultural_Femenina_(1).jpg"
+  },
+  "facets": {
+    "field": [
+      "social"
+    ],
+    "place": [
+      "caracas",
+      "south-america",
+      "venezuela"
+    ]
+  },
+  "prominence": 0.5,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q78007491",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Eumelia Hernández",
+      "url": "https://en.wikipedia.org/wiki/Eumelia_Hern%C3%A1ndez",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q78007491"
+}

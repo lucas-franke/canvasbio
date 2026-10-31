@@ -55,12 +55,15 @@ export function SearchDrawer() {
           if ((event.target as Element).closest?.('[role="combobox"][aria-expanded="true"]'))
             event.preventDefault();
         }}
-        // The name field gets focus, not the close button.
+        tabIndex={-1}
+        // The name field gets focus, not the close button. On a phone the keyboard would
+        // cover half the sheet, so there the sheet itself takes focus (no keyboard).
         onOpenAutoFocus={(event) => {
           event.preventDefault();
-          // On a phone the keyboard would cover half the sheet, so the name field is only
-          // focused where there is room; preventScroll keeps the sheet's content at the top.
-          if (desktop) document.getElementById("search-name")?.focus({ preventScroll: true });
+          const target = desktop
+            ? document.getElementById("search-name")
+            : (event.currentTarget as HTMLElement | null);
+          target?.focus({ preventScroll: true });
         }}
       >
         <div className="flex items-center justify-between px-6 pt-2">
@@ -143,7 +146,12 @@ function SearchForm({ index }: { index: PeopleIndex }) {
   };
 
   return (
-    <form onSubmit={onSubmit} role="search" className="flex min-h-0 flex-1 flex-col" aria-label={m.search.title}>
+    <form
+      onSubmit={onSubmit}
+      role="search"
+      className="flex min-h-0 flex-1 flex-col"
+      aria-label={m.search.title}
+    >
       <div className="flex min-h-0 scroll-pt-6 scroll-pb-4 flex-col gap-6 overflow-y-auto overscroll-contain px-6 pt-6 pb-4">
         <div className="flex flex-col gap-2">
           <label htmlFor="search-name" className="text-label font-medium text-emphasis">
@@ -329,7 +337,17 @@ function MultiFacet({
   );
 }
 
-/** Most suggestions shown at once; typing narrows them down. */
+/** A place suggestion; `level` 1 = a country under its continent (`group`). */
+interface Option {
+  label: string;
+  count: number;
+  /** Normalised label, for matching. */
+  key: string;
+  level: 0 | 1;
+  group: string;
+}
+
+/** Most suggestions shown at once while typing; typing narrows them down. */
 const MAX_PLACE_OPTIONS = 8;
 
 /**
@@ -356,20 +374,42 @@ function AutocompleteFacet({
   const [active, setActive] = useState(-1);
 
   // Labels of the values people actually have, with how many people have each.
-  const all = useMemo(() => {
-    const labels = index.facetLabels[facet.key] ?? {};
-    const counts = new Map<string, number>();
+  const labels = useMemo(() => index.facetLabels[facet.key] ?? {}, [index, facet.key]);
+  const counts = useMemo(() => {
+    const byValue = new Map<string, number>();
     for (const person of index.people) {
-      for (const v of person.facets[facet.key] ?? []) {
-        const label = labels[v] ?? v;
-        counts.set(label, (counts.get(label) ?? 0) + 1);
-      }
+      for (const v of person.facets[facet.key] ?? []) byValue.set(v, (byValue.get(v) ?? 0) + 1);
     }
-    return [...counts].map(([label, count]) => ({ label, count, key: normalize(label) }));
+    return byValue;
   }, [index, facet.key]);
+  const all = useMemo(() => {
+    const byLabel = new Map<string, number>();
+    for (const [v, count] of counts) {
+      const label = labels[v] ?? v;
+      byLabel.set(label, (byLabel.get(label) ?? 0) + count);
+    }
+    return [...byLabel].map(([label, count]) => ({ label, count, key: normalize(label) }));
+  }, [counts, labels]);
 
-  const options = useMemo(() => {
-    const query = normalize(value.trim());
+  // Nothing typed yet: the continents, each followed by its countries, to browse (the place
+  // facet only). While typing: the matching places of any kind, best first.
+  const groups = useMemo(() => (facet.key === "place" ? (index.placeGroups ?? []) : []), [facet.key, index]);
+  const query = normalize(value.trim());
+  const grouped = !query && groups.length > 0;
+  const options = useMemo((): Option[] => {
+    if (grouped) {
+      const option = (v: string, level: 0 | 1, group: string): Option => ({
+        label: labels[v] ?? v,
+        count: counts.get(v) ?? 0,
+        key: normalize(labels[v] ?? v),
+        level,
+        group,
+      });
+      return groups.flatMap((g) => [
+        option(g.key, 0, g.key),
+        ...g.countries.filter((c) => counts.get(c)).map((c) => option(c, 1, g.key)),
+      ]);
+    }
     const matches = query ? all.filter((o) => o.key.includes(query)) : [...all];
     return matches
       .sort(
@@ -379,10 +419,11 @@ function AutocompleteFacet({
           b.count - a.count ||
           a.label.localeCompare(b.label, locale),
       )
-      .slice(0, MAX_PLACE_OPTIONS);
-  }, [all, value, locale]);
+      .slice(0, MAX_PLACE_OPTIONS)
+      .map((o) => ({ ...o, level: 0 as const, group: "" }));
+  }, [grouped, groups, labels, counts, all, query, locale]);
 
-  const exact = options.length === 1 && options[0]!.key === normalize(value.trim());
+  const exact = options.length === 1 && options[0]!.key === query;
   const expanded = open && options.length > 0 && !exact;
   const hint = facet.hint ? localize(facet.hint, locale) : undefined;
   const optionId = (i: number) => `${id}-option-${i}`;
@@ -392,6 +433,12 @@ function AutocompleteFacet({
     setOpen(false);
     setActive(-1);
   };
+
+  // The list scrolls on its own (long when grouped): keep the active option in view.
+  useEffect(() => {
+    if (!expanded || active < 0) return;
+    document.getElementById(`${id}-option-${active}`)?.scrollIntoView({ block: "nearest" });
+  }, [active, expanded, id]);
 
   const onKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "ArrowDown" || event.key === "ArrowUp") {
@@ -415,6 +462,34 @@ function AutocompleteFacet({
       setActive(-1);
     }
   };
+
+  // Mouse: keep focus in the input (no blur before the click) and pick on click.
+  // Keyboard users pick with the arrow keys and Enter (aria-activedescendant).
+  const renderOption = (option: Option, i: number) => (
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+    <div
+      key={`${option.group}:${option.label}`}
+      id={optionId(i)}
+      role="option"
+      tabIndex={-1}
+      aria-selected={i === active}
+      onMouseDown={(event) => event.preventDefault()}
+      onClick={() => choose(option.label)}
+      className={cn(
+        "flex min-h-11 cursor-pointer items-center justify-between gap-3 rounded-lg px-3 text-body text-emphasis hover:bg-emphasis/5",
+        // A continent (when grouped) leads its countries; the countries are indented under it.
+        grouped && option.level === 0 && "font-semibold",
+        option.level === 1 && "ml-3 rounded-l-none border-l-2 border-line pl-4 text-body-sm",
+        i === active && "bg-brand text-brand-foreground hover:bg-brand",
+      )}
+    >
+      {option.label}
+      <span className={cn("text-body-xs font-normal tabular-nums", i !== active && "text-muted-text")}>
+        <span aria-hidden="true">{option.count}</span>
+        <span className="sr-only">{m.search.peopleCount(option.count)}</span>
+      </span>
+    </div>
+  );
 
   return (
     <div ref={root} className="flex flex-col gap-2">
@@ -449,11 +524,14 @@ function AutocompleteFacet({
             setActive(-1);
           }}
           onKeyDown={onKeyDown}
+          // Opens the suggestions right away (grouped by continent when nothing is typed).
+          onClick={() => setOpen(true)}
           // The on-screen keyboard shrinks the sheet; keep label, field and suggestions in view
           // instead of letting the browser scroll just the field (which hides the label).
-          onFocus={() =>
-            setTimeout(() => root.current?.scrollIntoView({ block: "nearest", behavior: "smooth" }), 300)
-          }
+          onFocus={() => {
+            setOpen(true);
+            setTimeout(() => root.current?.scrollIntoView({ block: "nearest", behavior: "smooth" }), 300);
+          }}
           onBlur={() => setOpen(false)}
           className={cn(fieldClass, "pr-12 pl-12")}
         />
@@ -476,32 +554,24 @@ function AutocompleteFacet({
         role="listbox"
         aria-label={localize(facet.label, locale)}
         hidden={!expanded}
-        className="flex flex-col rounded-xl border-2 border-control bg-surface p-1"
+        className="flex max-h-80 flex-col overflow-y-auto overscroll-contain rounded-xl border-2 border-control bg-surface p-1"
       >
-        {options.map((option, i) => (
-          // Mouse: keep focus in the input (no blur before the click) and pick on click.
-          // Keyboard users pick with the arrow keys and Enter (aria-activedescendant).
-          // eslint-disable-next-line jsx-a11y/click-events-have-key-events
-          <div
-            key={option.label}
-            id={optionId(i)}
-            role="option"
-            tabIndex={-1}
-            aria-selected={i === active}
-            onMouseDown={(event) => event.preventDefault()}
-            onClick={() => choose(option.label)}
-            className={cn(
-              "flex min-h-11 cursor-pointer items-center justify-between gap-3 rounded-lg px-3 text-body text-emphasis hover:bg-emphasis/5",
-              i === active && "bg-brand text-brand-foreground hover:bg-brand",
-            )}
-          >
-            {option.label}
-            <span className={cn("text-body-xs tabular-nums", i !== active && "text-muted-text")}>
-              <span aria-hidden="true">{option.count}</span>
-              <span className="sr-only">{m.search.peopleCount(option.count)}</span>
-            </span>
-          </div>
-        ))}
+        {grouped
+          ? groups.map((g) => {
+              const items = options.flatMap((o, i) => (o.group === g.key ? [{ o, i }] : []));
+              if (items.length === 0) return null;
+              return (
+                <div
+                  key={g.key}
+                  role="group"
+                  aria-label={items[0]!.o.label}
+                  className="flex flex-col border-b border-line py-1 last:border-b-0"
+                >
+                  {items.map(({ o, i }) => renderOption(o, i))}
+                </div>
+              );
+            })
+          : options.map((o, i) => renderOption(o, i))}
       </div>
     </div>
   );

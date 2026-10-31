@@ -1,0 +1,63 @@
+{
+  "slug": "voltairine-de-cleyre",
+  "name": {
+    "display": "Voltairine de Cleyre",
+    "sort": "Cleyre, Voltairine de"
+  },
+  "born": {
+    "date": "1866-11-17",
+    "place": "leslie"
+  },
+  "died": {
+    "date": "1912-06-20",
+    "place": "chicago"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "William J. Kuebler Jr., 1891",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:VoltairinedeCleyre.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "science"
+    ],
+    "place": [
+      "leslie",
+      "chicago",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.8,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q235361",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Voltairine de Cleyre",
+      "url": "https://de.wikipedia.org/wiki/Voltairine_de_Cleyre",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Voltairine de Cleyre",
+      "url": "https://en.wikipedia.org/wiki/Voltairine_de_Cleyre",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q235361"
+}

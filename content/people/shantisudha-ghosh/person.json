@@ -1,0 +1,57 @@
+{
+  "slug": "shantisudha-ghosh",
+  "name": {
+    "display": "Shantisudha Ghosh",
+    "sort": "Ghosh, Shantisudha"
+  },
+  "born": {
+    "date": "1907-06-27",
+    "place": "barishal"
+  },
+  "died": {
+    "date": "1992-05-07",
+    "place": "kolkata"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Prabaasi Patrika, 1928",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shantisudha_Ghosh.png"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "education"
+    ],
+    "place": [
+      "barishal",
+      "kolkata",
+      "bangladesh",
+      "asia",
+      "india"
+    ]
+  },
+  "prominence": 0.29,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q31726173",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Shantisudha Ghosh",
+      "url": "https://en.wikipedia.org/wiki/Shantisudha_Ghosh",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q31726173"
+}

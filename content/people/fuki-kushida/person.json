@@ -1,0 +1,54 @@
+{
+  "slug": "fuki-kushida",
+  "name": {
+    "display": "Fuki Kushida",
+    "sort": "Kushida, Fuki"
+  },
+  "born": {
+    "date": "1899-02-17",
+    "place": "yamaguchi-prefecture"
+  },
+  "died": {
+    "date": "2001-02-05",
+    "place": "tokyo"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1916",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fuki-Kushida-1.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "yamaguchi-prefecture",
+      "tokyo",
+      "japan",
+      "asia"
+    ]
+  },
+  "prominence": 0.23,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q29278618",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Fuki Kushida",
+      "url": "https://en.wikipedia.org/wiki/Fuki_Kushida",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q29278618"
+}

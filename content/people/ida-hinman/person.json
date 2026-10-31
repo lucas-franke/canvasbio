@@ -1,0 +1,54 @@
+{
+  "slug": "ida-hinman",
+  "name": {
+    "display": "Ida Hinman",
+    "sort": "Hinman, Ida"
+  },
+  "born": {
+    "date": "1854",
+    "place": "keokuk"
+  },
+  "died": {
+    "date": "1926-02",
+    "place": "brooklyn"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1890",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ida_Hinman,_ca_1890.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "keokuk",
+      "brooklyn",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.34,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q36476113",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ida Hinman",
+      "url": "https://en.wikipedia.org/wiki/Ida_Hinman",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q36476113"
+}

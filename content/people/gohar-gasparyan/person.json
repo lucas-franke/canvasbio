@@ -1,0 +1,66 @@
+{
+  "slug": "gohar-gasparyan",
+  "name": {
+    "display": "Gohar Gasparyan",
+    "sort": "Gasparyan, Gohar"
+  },
+  "born": {
+    "date": "1924-12-14",
+    "place": "cairo"
+  },
+  "died": {
+    "date": "2007-05-16",
+    "place": "yerevan"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Vahagn Mkrtchyan (HayPost)",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gohar_Gasparyan_2024_stamp_of_Armenia.png"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "education",
+      "arts"
+    ],
+    "place": [
+      "cairo",
+      "yerevan",
+      "egypt",
+      "africa",
+      "armenia",
+      "asia"
+    ]
+  },
+  "prominence": 0.73,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q1971489",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Gohar Gasparyan",
+      "url": "https://de.wikipedia.org/wiki/Gohar_Gasparyan",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Gohar Gasparyan",
+      "url": "https://en.wikipedia.org/wiki/Gohar_Gasparyan",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q1971489"
+}

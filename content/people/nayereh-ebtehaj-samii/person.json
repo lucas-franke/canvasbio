@@ -1,0 +1,52 @@
+{
+  "slug": "nayereh-ebtehaj-samii",
+  "name": {
+    "display": "Nayereh Ebtehaj-Samii",
+    "sort": "Ebtehaj-Samii, Nayereh"
+  },
+  "born": {
+    "date": "1914",
+    "place": "rasht"
+  },
+  "died": {
+    "date": "2017-04-20"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "rijaldb.com, 1979",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nayereh_Ebtehaj-Samii.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "rasht",
+      "iran",
+      "asia"
+    ]
+  },
+  "prominence": 0.33,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q16053469",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Nayereh Ebtehaj-Samii",
+      "url": "https://en.wikipedia.org/wiki/Nayereh_Ebtehaj-Samii",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q16053469"
+}

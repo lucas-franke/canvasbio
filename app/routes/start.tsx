@@ -1,5 +1,6 @@
-import { LayoutDashboard, List, Quote, Shuffle } from "lucide-react";
-import { useMemo } from "react";
+import { cn } from "cn";
+import { ChevronDown, LayoutDashboard, List, MapIcon, Quote, Shuffle } from "lucide-react";
+import { useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router";
 
 import type { Route } from "./+types/start";
@@ -19,7 +20,7 @@ import { loadPeopleIndex } from "~/lib/content/people-index.server";
 import { usePeopleIndex } from "~/lib/content/people-index";
 import { useHydrated } from "~/lib/hooks";
 import { useLocale, useMessages } from "~/lib/i18n";
-import { listPath, localeFromPathname, pagePath } from "~/lib/i18n/locale";
+import { listPath, localeFromPathname, mapPath, pagePath } from "~/lib/i18n/locale";
 import { localize } from "~/lib/i18n/localize";
 import { pageMeta } from "~/lib/meta";
 import { readSeen } from "~/lib/preferences";
@@ -97,12 +98,12 @@ export default function Start({ loaderData }: Route.ComponentProps) {
             </figure>
           )}
 
-          {/* Two equal ways in: the mosaic, or the list (the easier one with a screen reader). */}
+          {/* Equal ways in: the mosaic, the map, or the list (the easier one with a screen reader). */}
           <div role="group" aria-labelledby="start-explore" className="flex flex-col gap-3">
             <p id="start-explore" className="text-body-sm font-medium text-muted-text">
               {t(start.cta)}
             </p>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
               <Button asChild size="lg">
                 <Link
                   to={pagePath(locale, "people")}
@@ -115,6 +116,12 @@ export default function Start({ loaderData }: Route.ComponentProps) {
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline">
+                <Link to={mapPath(locale)}>
+                  <MapIcon aria-hidden="true" />
+                  {m.view.map}
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="col-span-2 sm:col-span-1">
                 <Link to={listPath(locale)}>
                   <List aria-hidden="true" />
                   {m.view.list}
@@ -161,25 +168,32 @@ function RandomStart() {
  * so it doesn't claim to be today). Computed in the browser: the pre-rendered page doesn't
  * know the date it is read on.
  */
+/** Anniversaries shown before "show more". */
+const ON_THIS_DAY_SHOWN = 2;
+
 function OnThisDay() {
   const locale = useLocale();
   const m = useMessages();
   const hydrated = useHydrated();
   const { index } = usePeopleIndex(locale);
+  const [expanded, setExpanded] = useState(false);
   const { items, today } = useMemo(() => {
+    // Day by day; nobody is left out for being less known: the rest is one tap away.
     const all = hydrated && index ? anniversaries(index.people, new Date(), 6) : [];
     const exact = all.filter((a) => a.inDays === 0);
-    return { items: (exact.length > 0 ? exact : all).slice(0, 2), today: exact.length > 0 };
+    return { items: exact.length > 0 ? exact : all, today: exact.length > 0 };
   }, [hydrated, index]);
   if (items.length === 0) return null;
+  const shown = expanded ? items : items.slice(0, ON_THIS_DAY_SHOWN);
+  const more = items.length - ON_THIS_DAY_SHOWN;
 
   return (
     <section aria-labelledby="on-this-day" className="flex flex-col gap-3 border-t border-line pt-6">
       <h2 id="on-this-day" className="font-sans text-body-sm font-medium tracking-normal text-muted-text">
         {today ? m.start.onThisDay : m.start.comingUp}
       </h2>
-      <ul className="flex flex-col gap-1">
-        {items.map(({ person, kind, years, inDays }) => (
+      <ul id="on-this-day-list" className="flex flex-col gap-1">
+        {shown.map(({ person, kind, years, inDays }) => (
           <li key={`${person.slug}-${kind}`}>
             <Link
               to={pagePath(locale, "people", person.slug)}
@@ -206,6 +220,19 @@ function OnThisDay() {
           </li>
         ))}
       </ul>
+      {more > 0 && (
+        <Button
+          variant="ghost"
+          size="sm"
+          className="-ml-4 self-start"
+          aria-expanded={expanded}
+          aria-controls="on-this-day-list"
+          onClick={() => setExpanded((value) => !value)}
+        >
+          {expanded ? m.start.showFewer : m.start.showMore(more)}
+          <ChevronDown aria-hidden="true" className={cn("transition-transform", expanded && "rotate-180")} />
+        </Button>
+      )}
     </section>
   );
 }

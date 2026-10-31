@@ -1,0 +1,55 @@
+{
+  "slug": "minnie-steckel",
+  "name": {
+    "display": "Minnie Steckel",
+    "sort": "Steckel, Minnie"
+  },
+  "born": {
+    "date": "1890-03-19",
+    "place": "woodbine"
+  },
+  "died": {
+    "date": "1952-12-01",
+    "place": "montevallo"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1928",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Minnie_L._Steckel.jpg"
+  },
+  "facets": {
+    "field": [
+      "education",
+      "science"
+    ],
+    "place": [
+      "woodbine",
+      "montevallo",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.19,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q102157877",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Minnie Steckel",
+      "url": "https://en.wikipedia.org/wiki/Minnie_Steckel",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q102157877"
+}

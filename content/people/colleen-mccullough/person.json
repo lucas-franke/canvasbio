@@ -1,0 +1,63 @@
+{
+  "slug": "colleen-mccullough",
+  "name": {
+    "display": "Colleen McCullough",
+    "sort": "McCullough, Colleen"
+  },
+  "born": {
+    "date": "1937-06-01",
+    "place": "wellington"
+  },
+  "died": {
+    "date": "2015-01-29",
+    "place": "burnt-pine"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Associated Press, 1977",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Colleen_McCullough_(1977).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "medicine"
+    ],
+    "place": [
+      "wellington",
+      "burnt-pine",
+      "australia",
+      "oceania"
+    ]
+  },
+  "prominence": 0.95,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q228801",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Colleen McCullough",
+      "url": "https://de.wikipedia.org/wiki/Colleen_McCullough",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Colleen McCullough",
+      "url": "https://en.wikipedia.org/wiki/Colleen_McCullough",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q228801"
+}

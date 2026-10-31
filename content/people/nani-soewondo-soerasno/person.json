@@ -1,0 +1,49 @@
+{
+  "slug": "nani-soewondo-soerasno",
+  "name": {
+    "display": "Nani Soewondo-Soerasno",
+    "sort": "Soewondo-Soerasno, Nani"
+  },
+  "born": {
+    "date": "1918",
+    "place": "semarang"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1957",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nani_Soewondo-Soerasno_(Nani_Suwondo)_with_Cora_Vreede-De_Stuers_in_1957.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "semarang",
+      "asia",
+      "indonesia"
+    ]
+  },
+  "prominence": 0.19,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q112626158",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Nani Soewondo-Soerasno",
+      "url": "https://en.wikipedia.org/wiki/Nani_Soewondo-Soerasno",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q112626158"
+}

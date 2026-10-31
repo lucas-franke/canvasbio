@@ -1,0 +1,63 @@
+{
+  "slug": "heo-jong-suk",
+  "name": {
+    "display": "Heo Jong-suk",
+    "sort": "Jong-suk, Heo"
+  },
+  "born": {
+    "date": "1902-07-16",
+    "place": "seoul"
+  },
+  "died": {
+    "date": "1991-06-05",
+    "place": "pyongyang"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1930",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Huh_Jung-sook.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "seoul",
+      "pyongyang",
+      "south-korea",
+      "north-korea",
+      "asia"
+    ]
+  },
+  "prominence": 0.74,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q466457",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Ho Jong-suk",
+      "url": "https://de.wikipedia.org/wiki/Ho_Jong-suk",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ho Jong-suk",
+      "url": "https://en.wikipedia.org/wiki/Ho_Jong-suk",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q466457"
+}

@@ -1,6 +1,6 @@
 import { expect, test, type Page } from "@playwright/test";
 
-import { switchView, waitForHydration } from "./helpers";
+import { switchView, waitForHydration, peopleCount } from "./helpers";
 
 const openPanel = async (page: Page) => {
   await page.getByRole("button", { name: "Suche", exact: true }).click();
@@ -11,11 +11,12 @@ const openPanel = async (page: Page) => {
 
 const submit = (dialog: ReturnType<Page["getByRole"]>) => dialog.locator('button[type="submit"]');
 
-test("name search on the canvas highlights the match and counts live", async ({ page }) => {
+test("name search on the canvas highlights the match and counts live", async ({ page, isMobile }) => {
   await page.goto("/personen");
   await page.locator("[data-cell]").first().waitFor({ state: "attached" });
   const dialog = await openPanel(page);
-  await expect(dialog.getByLabel("Nach Namen suchen")).toBeFocused();
+  // Phones: the sheet itself takes focus, so the keyboard doesn't cover it right away.
+  await expect(isMobile ? dialog : dialog.getByLabel("Nach Namen suchen")).toBeFocused();
   await dialog.getByLabel("Nach Namen suchen").fill("zetkin");
   await expect(submit(dialog)).toHaveText("1 Ergebnis anzeigen");
   await submit(dialog).click();
@@ -108,7 +109,7 @@ test("no results: message and reset", async ({ page }) => {
   await expect(page.locator("article[data-vt-item]")).toHaveCount(0);
   await page.getByRole("button", { name: "Suche zurücksetzen" }).click();
   await expect(page).toHaveURL(/\/personen\/liste$/);
-  await expect(page.locator("article[data-vt-item]")).toHaveCount(200);
+  await expect(page.locator("article[data-vt-item]")).toHaveCount(await peopleCount(page));
 });
 
 test("the search survives opening and closing a biography and switching views", async ({ page }) => {

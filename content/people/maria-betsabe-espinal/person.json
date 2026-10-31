@@ -1,0 +1,62 @@
+{
+  "slug": "maria-betsabe-espinal",
+  "name": {
+    "display": "María Betsabé Espinal",
+    "sort": "Espinal, María Betsabé"
+  },
+  "born": {
+    "date": "1896-12-01",
+    "place": "bello"
+  },
+  "died": {
+    "date": "1932-11-16",
+    "place": "medellin"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "AnonymousUnknown author, 1920",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Betsab%C3%A9_Espinal.png"
+  },
+  "facets": {
+    "field": [
+      "social"
+    ],
+    "place": [
+      "bello",
+      "medellin",
+      "colombia",
+      "south-america"
+    ]
+  },
+  "prominence": 0.4,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q50376098",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Betsabé Espinal",
+      "url": "https://de.wikipedia.org/wiki/Betsab%C3%A9_Espinal",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Betsabé Espinal",
+      "url": "https://en.wikipedia.org/wiki/Betsab%C3%A9_Espinal",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q50376098"
+}

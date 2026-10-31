@@ -1,0 +1,62 @@
+{
+  "slug": "miles-franklin",
+  "name": {
+    "display": "Miles Franklin",
+    "sort": "Franklin, Miles"
+  },
+  "born": {
+    "date": "1879-10-14",
+    "place": "talbingo"
+  },
+  "died": {
+    "date": "1954-09-19",
+    "place": "drummoyne"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unbekannt",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Miles_franklin.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "talbingo",
+      "drummoyne",
+      "australia",
+      "oceania"
+    ]
+  },
+  "prominence": 0.77,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q984",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Miles Franklin",
+      "url": "https://de.wikipedia.org/wiki/Miles_Franklin",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Miles Franklin",
+      "url": "https://en.wikipedia.org/wiki/Miles_Franklin",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q984"
+}

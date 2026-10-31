@@ -1,0 +1,55 @@
+{
+  "slug": "vida-newsom",
+  "name": {
+    "display": "Vida Newsom",
+    "sort": "Newsom, Vida"
+  },
+  "born": {
+    "date": "1873-01-04",
+    "place": "sand-creek-township"
+  },
+  "died": {
+    "date": "1938-07-08",
+    "place": "columbus"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "No photographer credited, 1919",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:VidaNewsom1919.png"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "science"
+    ],
+    "place": [
+      "sand-creek-township",
+      "columbus",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.45,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q106241893",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Vida Newsom",
+      "url": "https://en.wikipedia.org/wiki/Vida_Newsom",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q106241893"
+}

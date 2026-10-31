@@ -1,0 +1,67 @@
+{
+  "slug": "alicia-moreau-de-justo",
+  "name": {
+    "display": "Alicia Moreau de Justo",
+    "sort": "Justo, Alicia Moreau de"
+  },
+  "born": {
+    "date": "1885-10-11",
+    "place": "london"
+  },
+  "died": {
+    "date": "1986-05-12",
+    "place": "buenos-aires"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1915",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alicia_Moreau_de_Justo.JPG"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "education",
+      "medicine"
+    ],
+    "place": [
+      "london",
+      "buenos-aires",
+      "united-kingdom",
+      "argentina",
+      "europe",
+      "south-america"
+    ]
+  },
+  "prominence": 0.92,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q518850",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Alicia Moreau de Justo",
+      "url": "https://de.wikipedia.org/wiki/Alicia_Moreau_de_Justo",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Alicia Moreau de Justo",
+      "url": "https://en.wikipedia.org/wiki/Alicia_Moreau_de_Justo",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q518850"
+}

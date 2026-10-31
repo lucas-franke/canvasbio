@@ -1,0 +1,51 @@
+{
+  "slug": "luisa-lynch",
+  "name": {
+    "display": "Luisa Lynch",
+    "sort": "Lynch, Luisa"
+  },
+  "born": {
+    "date": "1862",
+    "place": "chile"
+  },
+  "died": {
+    "date": "1937"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Auguste Rodin",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Auguste_Rodin_Madame_Vicuna_Gsell_249.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "chile",
+      "south-america"
+    ]
+  },
+  "prominence": 0.45,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q9025463",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Luisa Lynch",
+      "url": "https://en.wikipedia.org/wiki/Luisa_Lynch",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q9025463"
+}

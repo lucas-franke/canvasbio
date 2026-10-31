@@ -1,0 +1,62 @@
+{
+  "slug": "kamaladevi-chattopadhyay",
+  "name": {
+    "display": "Kamaladevi Chattopadhyay",
+    "sort": "Chattopadhyay, Kamaladevi"
+  },
+  "born": {
+    "date": "1903-04-03",
+    "place": "mangaluru"
+  },
+  "died": {
+    "date": "1988-10-29",
+    "place": "mumbai"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kamaladevi_Chattopadhyay.png"
+  },
+  "facets": {
+    "field": [
+      "social"
+    ],
+    "place": [
+      "mangaluru",
+      "mumbai",
+      "india",
+      "asia"
+    ]
+  },
+  "prominence": 0.66,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q3347911",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Kamaladevi Chattopadhyay",
+      "url": "https://de.wikipedia.org/wiki/Kamaladevi_Chattopadhyay",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Kamaladevi Chattopadhyay",
+      "url": "https://en.wikipedia.org/wiki/Kamaladevi_Chattopadhyay",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q3347911"
+}

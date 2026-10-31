@@ -1,0 +1,62 @@
+{
+  "slug": "winifred-carney",
+  "name": {
+    "display": "Winifred Carney",
+    "sort": "Carney, Winifred"
+  },
+  "born": {
+    "date": "1887-12-04",
+    "place": "bangor"
+  },
+  "died": {
+    "date": "1943-11-21",
+    "place": "belfast"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unbekannt, 1912",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Winnie_Carney.jpg"
+  },
+  "facets": {
+    "field": [
+      "social"
+    ],
+    "place": [
+      "bangor",
+      "belfast",
+      "united-kingdom",
+      "europe"
+    ]
+  },
+  "prominence": 0.61,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q8025374",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Winifred Carney",
+      "url": "https://de.wikipedia.org/wiki/Winifred_Carney",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Winifred Carney",
+      "url": "https://en.wikipedia.org/wiki/Winifred_Carney",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q8025374"
+}

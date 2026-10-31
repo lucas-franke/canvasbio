@@ -28,7 +28,9 @@
       "honfleur",
       "sydney",
       "france",
-      "australia"
+      "australia",
+      "europe",
+      "oceania"
     ]
   },
   "prominence": 0.4,

@@ -1,0 +1,54 @@
+{
+  "slug": "mary-gray-peck",
+  "name": {
+    "display": "Mary Gray Peck",
+    "sort": "Peck, Mary Gray"
+  },
+  "born": {
+    "date": "1867-10-21",
+    "place": "seneca-castle"
+  },
+  "died": {
+    "date": "1957-01-11",
+    "place": "jenkintown"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown photographer, 1895",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mary_Gray_Peck_between_1895_and_1909.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "seneca-castle",
+      "jenkintown",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.42,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q62108619",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mary Gray Peck",
+      "url": "https://en.wikipedia.org/wiki/Mary_Gray_Peck",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q62108619"
+}

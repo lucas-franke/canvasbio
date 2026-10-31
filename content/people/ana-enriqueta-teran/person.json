@@ -1,0 +1,63 @@
+{
+  "slug": "ana-enriqueta-teran",
+  "name": {
+    "display": "Ana Enriqueta Terán",
+    "sort": "Terán, Ana Enriqueta"
+  },
+  "born": {
+    "date": "1918-05-04",
+    "place": "valera"
+  },
+  "died": {
+    "date": "2017-12-18",
+    "place": "valencia"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1940",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Young_Ana_Enriqueta_Ter%C3%A1n.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing"
+    ],
+    "place": [
+      "valera",
+      "valencia",
+      "venezuela",
+      "south-america"
+    ]
+  },
+  "prominence": 0.5,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2844976",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Ana Enriqueta Terán",
+      "url": "https://de.wikipedia.org/wiki/Ana_Enriqueta_Ter%C3%A1n",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ana Enriqueta Terán",
+      "url": "https://en.wikipedia.org/wiki/Ana_Enriqueta_Ter%C3%A1n",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2844976"
+}

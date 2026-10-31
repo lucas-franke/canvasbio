@@ -1,0 +1,54 @@
+{
+  "slug": "sarala-debi",
+  "name": {
+    "display": "Sarala Debi",
+    "sort": "Debi, Sarala"
+  },
+  "born": {
+    "date": "1904-08-09",
+    "place": "central-division"
+  },
+  "died": {
+    "date": "1986-10-04"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1957",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sarala_Devi.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "social"
+    ],
+    "place": [
+      "central-division",
+      "india",
+      "asia"
+    ]
+  },
+  "prominence": 0.72,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q20872926",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Sarala Devi",
+      "url": "https://en.wikipedia.org/wiki/Sarala_Devi",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q20872926"
+}

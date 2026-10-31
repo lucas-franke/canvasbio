@@ -1,0 +1,55 @@
+{
+  "slug": "zoulikha-nasri",
+  "name": {
+    "display": "Zoulikha Nasri",
+    "sort": "Nasri, Zoulikha"
+  },
+  "born": {
+    "date": "1935",
+    "place": "oujda"
+  },
+  "died": {
+    "date": "2015-12-16",
+    "place": "rabat"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Environmental Protection Agency. Office of the Administrator. Office of External Affairs and Environmental Education. Office of Multimedia. (2011 - )",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zoulikha_Nasri.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "science"
+    ],
+    "place": [
+      "oujda",
+      "rabat",
+      "morocco",
+      "africa"
+    ]
+  },
+  "prominence": 0.33,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q3576178",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Zoulikha Nasri",
+      "url": "https://en.wikipedia.org/wiki/Zoulikha_Nasri",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q3576178"
+}

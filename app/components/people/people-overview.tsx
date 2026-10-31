@@ -1,4 +1,5 @@
 import { Shuffle } from "lucide-react";
+import { lazy, Suspense } from "react";
 import { useNavigate } from "react-router";
 
 import { InfiniteCanvas } from "~/components/canvas/infinite-canvas";
@@ -14,12 +15,16 @@ import type { PeopleIndex } from "~/lib/content/people-index";
 import { chaptersOf, sortFor } from "~/lib/content/sort";
 import { useLocale, useMessages } from "~/lib/i18n";
 import { localeConfig } from "~/lib/i18n/locale";
+import { useHydrated } from "~/lib/hooks";
 import { readSeen } from "~/lib/preferences";
 import { pickRandom } from "~/lib/random";
 import type { SearchState } from "~/lib/search/search";
 import { markPortraitSourceElement } from "~/lib/view-transition";
 
-export type OverviewView = "canvas" | "list" | "timeline";
+// MapLibre is large: loaded only when the map is opened, and only in the browser.
+const PeopleMap = lazy(() => import("~/components/map/people-map"));
+
+export type OverviewView = "canvas" | "list" | "timeline" | "map";
 
 interface PeopleOverviewProps {
   index: PeopleIndex;
@@ -72,6 +77,15 @@ export function PeopleOverview({
           hits={hits}
           facetLabels={index.facetLabels}
         />
+      </>
+    );
+  }
+
+  if (view === "map") {
+    return (
+      <>
+        {status}
+        <MapView index={index} hits={hits} search={search} hrefFor={hrefFor} activeSlug={activeSlug} />
       </>
     );
   }
@@ -151,5 +165,38 @@ export function PeopleOverview({
         )}
       </ChapterLayout>
     </>
+  );
+}
+
+function MapView({
+  index,
+  hits,
+  search,
+  hrefFor,
+  activeSlug,
+}: Pick<PeopleOverviewProps, "index" | "hits" | "search" | "hrefFor" | "activeSlug">) {
+  const m = useMessages();
+  // Pre-rendered pages show the loading line; the map itself needs the browser (WebGL).
+  const mounted = useHydrated();
+  const loading = (
+    <p role="status" className="grid h-full place-items-center bg-page text-muted-text">
+      {m.map.loading}
+    </p>
+  );
+  if (!mounted) return loading;
+  return (
+    <Suspense fallback={loading}>
+      <PeopleMap
+        people={index.people}
+        hits={hits}
+        search={search}
+        placeCoords={index.placeCoords ?? {}}
+        facetLabels={index.facetLabels}
+        tagLabels={index.tagLabels}
+        tagFacet={index.tagFacet}
+        hrefFor={hrefFor}
+        activeSlug={activeSlug}
+      />
+    </Suspense>
   );
 }

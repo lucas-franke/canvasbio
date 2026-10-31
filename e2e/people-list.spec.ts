@@ -14,8 +14,11 @@ test("list groups people under letter headings", async ({ page }) => {
 test("the letter index jumps to a letter and follows the scrolling", async ({ page }) => {
   await page.goto("/personen/liste");
   const index = page.getByRole("navigation", { name: "Alphabet" });
-  // Only letters with entries are offered.
-  await expect(index.getByRole("link", { name: "Q", exact: true })).toHaveCount(0);
+  // Only letters with entries are offered: each links to its chapter heading.
+  for (const link of await index.getByRole("link").all()) {
+    const id = (await link.getAttribute("href"))!.slice(1);
+    await expect(page.locator(`[id="${id}"]`)).toHaveCount(1);
+  }
   await index.getByRole("link", { name: "Z", exact: true }).click();
   await expect(page).toHaveURL(/#buchstabe-z$/);
   const heading = page.getByRole("heading", { level: 2, name: "Z", exact: true });
@@ -90,7 +93,7 @@ test("the view switch shows the active view and opens a dropdown to change it", 
   await expect(group.getByRole("link", { name: "Mosaik" })).toBeFocused();
   await expect(button).toHaveAttribute("aria-expanded", "true");
   // Each view with icon and visible label; arrow keys move between them.
-  await expect(group.getByRole("link")).toHaveText(["Mosaik", "Liste", "Zeitstrahl"]);
+  await expect(group.getByRole("link")).toHaveText(["Mosaik", "Liste", "Zeitstrahl", "Karte"]);
   await page.keyboard.press("ArrowDown");
   await expect(group.getByRole("link", { name: "Liste" })).toBeFocused();
   await page.keyboard.press("ArrowUp");

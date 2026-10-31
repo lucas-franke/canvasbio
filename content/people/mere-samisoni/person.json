@@ -1,0 +1,48 @@
+{
+  "slug": "mere-samisoni",
+  "name": {
+    "display": "Mere Samisoni",
+    "sort": "Samisoni, Mere"
+  },
+  "born": {
+    "date": "1938-07-28"
+  },
+  "died": {
+    "date": "2023-08-11"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Stemoc",
+    "license": {
+      "name": "CC0",
+      "url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mere_Samisoni_2014.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": []
+  },
+  "prominence": 0,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6818879",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mere Samisoni",
+      "url": "https://en.wikipedia.org/wiki/Mere_Samisoni",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6818879"
+}

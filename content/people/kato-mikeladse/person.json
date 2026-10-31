@@ -1,0 +1,60 @@
+{
+  "slug": "kato-mikeladse",
+  "name": {
+    "display": "Kato Mikeladse",
+    "sort": "Mikeladse, Kato"
+  },
+  "born": {
+    "date": "1878-09-18",
+    "place": "kulashi"
+  },
+  "died": {
+    "date": "1942"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kato_Mikeladze_circa_1930s.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "kulashi",
+      "georgia",
+      "europe"
+    ]
+  },
+  "prominence": 0.74,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q20560069",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Kato Mikeladse",
+      "url": "https://de.wikipedia.org/wiki/Kato_Mikeladse",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Kato Mikeladze",
+      "url": "https://en.wikipedia.org/wiki/Kato_Mikeladze",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q20560069"
+}

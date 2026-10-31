@@ -1,0 +1,61 @@
+{
+  "slug": "daisy-solomon",
+  "name": {
+    "display": "Daisy Solomon",
+    "sort": "Solomon, Daisy"
+  },
+  "born": {
+    "date": "1882",
+    "place": "cape-town"
+  },
+  "died": {
+    "date": "1978",
+    "place": "south-africa"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1909",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Daisy_Solomon_Human_Letter_1909-02-24_Daily_Mirror.png"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "cape-town",
+      "south-africa",
+      "africa"
+    ]
+  },
+  "prominence": 0.42,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q101022206",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Daisy Solomon",
+      "url": "https://de.wikipedia.org/wiki/Daisy_Solomon",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Daisy Solomon",
+      "url": "https://en.wikipedia.org/wiki/Daisy_Solomon",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q101022206"
+}

@@ -1,0 +1,55 @@
+{
+  "slug": "maria-lacerda-de-moura",
+  "name": {
+    "display": "Maria Lacerda de Moura",
+    "sort": "Moura, Maria Lacerda de"
+  },
+  "born": {
+    "date": "1897-05-16",
+    "place": "manhuacu"
+  },
+  "died": {
+    "date": "1945-03-20",
+    "place": "rio-de-janeiro"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Gioconda Rizzo, 1926",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mlacerda.png"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education"
+    ],
+    "place": [
+      "manhuacu",
+      "rio-de-janeiro",
+      "brazil",
+      "south-america"
+    ]
+  },
+  "prominence": 0.53,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q3030431",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Maria Lacerda de Moura",
+      "url": "https://en.wikipedia.org/wiki/Maria_Lacerda_de_Moura",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q3030431"
+}

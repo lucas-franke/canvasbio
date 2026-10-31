@@ -1,0 +1,56 @@
+{
+  "slug": "charlotte-wilson",
+  "name": {
+    "display": "Charlotte Wilson",
+    "sort": "Wilson, Charlotte"
+  },
+  "born": {
+    "date": "1854-05-06",
+    "place": "kemerton"
+  },
+  "died": {
+    "date": "1944-04-28",
+    "place": "irvington"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1874",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Charlotte_Mary_Wilson_(1854%E2%80%931944)_anarchist_and_Fabian_c.1874.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "kemerton",
+      "irvington",
+      "united-kingdom",
+      "united-states",
+      "europe",
+      "north-america"
+    ]
+  },
+  "prominence": 0.53,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5086196",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Charlotte Wilson",
+      "url": "https://en.wikipedia.org/wiki/Charlotte_Wilson",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5086196"
+}

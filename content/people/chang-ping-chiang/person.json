@@ -1,0 +1,47 @@
+{
+  "slug": "chang-ping-chiang",
+  "name": {
+    "display": "Chang Ping-chiang",
+    "sort": "Ping-chiang, Chang"
+  },
+  "born": {
+    "date": "1902"
+  },
+  "died": {
+    "date": "1975-01-21"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "《圖畫時報》, 1926",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%BC%B5%E5%B9%B3%E6%B1%9F.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": []
+  },
+  "prominence": 0.23,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q65047918",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Chang Ping-chiang",
+      "url": "https://en.wikipedia.org/wiki/Chang_Ping-chiang",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q65047918"
+}

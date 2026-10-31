@@ -1,0 +1,52 @@
+{
+  "slug": "itoko-koyama",
+  "name": {
+    "display": "Itoko Koyama",
+    "sort": "Koyama, Itoko"
+  },
+  "born": {
+    "date": "1901-07-13",
+    "place": "nankoku"
+  },
+  "died": {
+    "date": "1989-07-25"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "大日本社会女性教育会, 1956",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Josei-Kyoyo-1956-January-1.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "nankoku",
+      "japan",
+      "asia"
+    ]
+  },
+  "prominence": 0.29,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q11459771",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Itoko Koyama",
+      "url": "https://en.wikipedia.org/wiki/Itoko_Koyama",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q11459771"
+}

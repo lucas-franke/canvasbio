@@ -1,0 +1,54 @@
+{
+  "slug": "dewi-sartika",
+  "name": {
+    "display": "Dewi Sartika",
+    "sort": "Sartika, Dewi"
+  },
+  "born": {
+    "date": "1884-12-04",
+    "place": "cicalengka"
+  },
+  "died": {
+    "date": "1947-09-11",
+    "place": "tasikmalaya"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dewi_Sartika.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "cicalengka",
+      "tasikmalaya",
+      "indonesia",
+      "asia"
+    ]
+  },
+  "prominence": 0.68,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q3140305",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Dewi Sartika",
+      "url": "https://en.wikipedia.org/wiki/Dewi_Sartika",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q3140305"
+}

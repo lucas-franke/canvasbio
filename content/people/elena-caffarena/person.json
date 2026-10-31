@@ -1,0 +1,63 @@
+{
+  "slug": "elena-caffarena",
+  "name": {
+    "display": "Elena Caffarena",
+    "sort": "Caffarena, Elena"
+  },
+  "born": {
+    "date": "1903-03-23",
+    "place": "iquique"
+  },
+  "died": {
+    "date": "2003-07-19",
+    "place": "santiago"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1938",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elena_Caffarena_1938.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "science"
+    ],
+    "place": [
+      "iquique",
+      "santiago",
+      "south-america",
+      "chile"
+    ]
+  },
+  "prominence": 0.53,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5829177",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Elena Caffarena",
+      "url": "https://de.wikipedia.org/wiki/Elena_Caffarena",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Elena Caffarena",
+      "url": "https://en.wikipedia.org/wiki/Elena_Caffarena",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5829177"
+}

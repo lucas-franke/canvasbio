@@ -1,0 +1,54 @@
+{
+  "slug": "alzira-soriano",
+  "name": {
+    "display": "Alzira Soriano",
+    "sort": "Soriano, Alzira"
+  },
+  "born": {
+    "date": "1897-04-29",
+    "place": "jardim-de-angicos"
+  },
+  "died": {
+    "date": "1963-05-28",
+    "place": "natal"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Não identificado, 1940",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alzira_Soriano.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "jardim-de-angicos",
+      "natal",
+      "south-america",
+      "brazil"
+    ]
+  },
+  "prominence": 0.54,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q8196874",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Alzira Soriano",
+      "url": "https://en.wikipedia.org/wiki/Alzira_Soriano",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q8196874"
+}

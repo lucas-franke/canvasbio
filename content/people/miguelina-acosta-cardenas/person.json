@@ -1,0 +1,63 @@
+{
+  "slug": "miguelina-acosta-cardenas",
+  "name": {
+    "display": "Miguelina Acosta Cárdenas",
+    "sort": "Cárdenas, Miguelina Acosta"
+  },
+  "born": {
+    "date": "1887-11-23",
+    "place": "yurimaguas"
+  },
+  "died": {
+    "date": "1933-10-26",
+    "place": "lima"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Archivo Familia Acosta, 1920",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Miguelina_Acosta_Cardenas_Lima_26_ene_1920.jpg"
+  },
+  "facets": {
+    "field": [
+      "education",
+      "science"
+    ],
+    "place": [
+      "yurimaguas",
+      "lima",
+      "south-america",
+      "peru"
+    ]
+  },
+  "prominence": 0.49,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q62576348",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Miguelina Acosta Cárdenas",
+      "url": "https://de.wikipedia.org/wiki/Miguelina_Acosta_C%C3%A1rdenas",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Miguelina Acosta Cárdenas",
+      "url": "https://en.wikipedia.org/wiki/Miguelina_Acosta_C%C3%A1rdenas",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q62576348"
+}

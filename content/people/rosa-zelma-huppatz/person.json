@@ -1,0 +1,54 @@
+{
+  "slug": "rosa-zelma-huppatz",
+  "name": {
+    "display": "Rosa Zelma Huppatz",
+    "sort": "Huppatz, Rosa Zelma"
+  },
+  "born": {
+    "date": "1906-07-20",
+    "place": "peters-hill"
+  },
+  "died": {
+    "date": "1982-12-13",
+    "place": "adelaide"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1939",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rosa_Zelma_Huppatz.png"
+  },
+  "facets": {
+    "field": [
+      "medicine"
+    ],
+    "place": [
+      "peters-hill",
+      "adelaide",
+      "australia",
+      "oceania"
+    ]
+  },
+  "prominence": 0,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q21537649",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Rosa Zelma Huppatz",
+      "url": "https://en.wikipedia.org/wiki/Rosa_Zelma_Huppatz",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q21537649"
+}

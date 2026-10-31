@@ -1,0 +1,64 @@
+{
+  "slug": "blanka-teleki",
+  "name": {
+    "display": "Blanka Teleki",
+    "sort": "Teleki, Blanka"
+  },
+  "born": {
+    "date": "1806-07-05",
+    "place": "satulung"
+  },
+  "died": {
+    "date": "1862-10-23",
+    "place": "paris"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Léon Cogniet, 1862",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Teleki_Blanka.jpg"
+  },
+  "facets": {
+    "field": [
+      "education",
+      "arts"
+    ],
+    "place": [
+      "satulung",
+      "paris",
+      "romania",
+      "france",
+      "europe"
+    ]
+  },
+  "prominence": 0.69,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q1317675",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Blanka Teleki",
+      "url": "https://de.wikipedia.org/wiki/Blanka_Teleki",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Blanka Teleki",
+      "url": "https://en.wikipedia.org/wiki/Blanka_Teleki",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q1317675"
+}

@@ -1,0 +1,58 @@
+{
+  "slug": "modesta-sangines-uriarte",
+  "name": {
+    "display": "Modesta Sanginés Uriarte",
+    "sort": "Uriarte, Modesta Sanginés"
+  },
+  "born": {
+    "date": "1832-02-26",
+    "place": "la-paz"
+  },
+  "died": {
+    "date": "1887-02-05",
+    "place": "paris"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "No especificado, 1918",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Modesta_Sangin%C3%A9s.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "arts",
+      "social"
+    ],
+    "place": [
+      "la-paz",
+      "paris",
+      "bolivia",
+      "france",
+      "south-america",
+      "europe"
+    ]
+  },
+  "prominence": 0.51,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q19690084",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Modesta Sanginés Uriarte",
+      "url": "https://en.wikipedia.org/wiki/Modesta_Sangin%C3%A9s_Uriarte",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q19690084"
+}

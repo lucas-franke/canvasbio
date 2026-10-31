@@ -1,0 +1,52 @@
+{
+  "slug": "edith-tiempo",
+  "name": {
+    "display": "Edith Tiempo",
+    "sort": "Tiempo, Edith"
+  },
+  "born": {
+    "date": "1919-04-22",
+    "place": "bayombong"
+  },
+  "died": {
+    "date": "2011-08-21"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Philippine Postal Corporation",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Edith_Tiempo_2019_stamp_of_the_Philippines.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "bayombong",
+      "philippines",
+      "asia"
+    ]
+  },
+  "prominence": 0.53,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2577431",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Edith Tiempo",
+      "url": "https://en.wikipedia.org/wiki/Edith_Tiempo",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2577431"
+}

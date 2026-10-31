@@ -1,0 +1,52 @@
+{
+  "slug": "jane-strachey",
+  "name": {
+    "display": "Jane Strachey",
+    "sort": "Strachey, Jane"
+  },
+  "born": {
+    "date": "1840-03-13",
+    "place": "cape-of-good-hope"
+  },
+  "died": {
+    "date": "1928-12-14"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Dora Carrington (died &gt;70 years ag), 1920",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jane_Maria_Strachey_by_Dora_Carrington.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "cape-of-good-hope",
+      "south-africa",
+      "africa"
+    ]
+  },
+  "prominence": 0.34,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q18529964",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Jane Maria Strachey",
+      "url": "https://en.wikipedia.org/wiki/Jane_Maria_Strachey",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q18529964"
+}

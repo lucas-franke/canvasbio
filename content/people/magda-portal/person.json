@@ -1,0 +1,62 @@
+{
+  "slug": "magda-portal",
+  "name": {
+    "display": "Magda Portal",
+    "sort": "Portal, Magda"
+  },
+  "born": {
+    "date": "1900-05-27",
+    "place": "lima"
+  },
+  "died": {
+    "date": "1989-07-11",
+    "place": "lima"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Sin datos, c. 1930",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Magda_Portal.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing"
+    ],
+    "place": [
+      "lima",
+      "south-america",
+      "peru"
+    ]
+  },
+  "prominence": 0.62,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q9026820",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Magda Portal",
+      "url": "https://de.wikipedia.org/wiki/Magda_Portal",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Magda Portal",
+      "url": "https://en.wikipedia.org/wiki/Magda_Portal",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q9026820"
+}

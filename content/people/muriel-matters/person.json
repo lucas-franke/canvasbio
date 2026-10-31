@@ -1,0 +1,65 @@
+{
+  "slug": "muriel-matters",
+  "name": {
+    "display": "Muriel Matters",
+    "sort": "Matters, Muriel"
+  },
+  "born": {
+    "date": "1877-11-12",
+    "place": "adelaide"
+  },
+  "died": {
+    "date": "1969-11-17",
+    "place": "st-leonards"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1909",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Muriel_Matters_in_an_airship.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "arts"
+    ],
+    "place": [
+      "adelaide",
+      "st-leonards",
+      "australia",
+      "united-kingdom",
+      "oceania",
+      "europe"
+    ]
+  },
+  "prominence": 0.42,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6938651",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Muriel Matters",
+      "url": "https://de.wikipedia.org/wiki/Muriel_Matters",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Muriel Matters",
+      "url": "https://en.wikipedia.org/wiki/Muriel_Matters",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6938651"
+}

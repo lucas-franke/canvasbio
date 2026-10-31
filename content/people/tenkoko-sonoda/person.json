@@ -1,0 +1,54 @@
+{
+  "slug": "tenkoko-sonoda",
+  "name": {
+    "display": "Tenkoko Sonoda",
+    "sort": "Sonoda, Tenkoko"
+  },
+  "born": {
+    "date": "1919-01-23",
+    "place": "tokyo"
+  },
+  "died": {
+    "date": "2015-01-29",
+    "place": "tokyo"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "朝日新聞社, 1949",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Matsutani_Tenkoko.JPG"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing"
+    ],
+    "place": [
+      "tokyo",
+      "japan",
+      "asia"
+    ]
+  },
+  "prominence": 0.33,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q7699921",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Tenkoko Sonoda",
+      "url": "https://en.wikipedia.org/wiki/Tenkoko_Sonoda",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q7699921"
+}

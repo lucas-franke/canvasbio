@@ -1,0 +1,54 @@
+{
+  "slug": "rosa-dixon-bowser",
+  "name": {
+    "display": "Rosa Dixon Bowser",
+    "sort": "Bowser, Rosa Dixon"
+  },
+  "born": {
+    "date": "1855-01-07",
+    "place": "amelia-county"
+  },
+  "died": {
+    "date": "1931-02-07",
+    "place": "richmond"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rosa_D._Bowser_(cropped).png"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "amelia-county",
+      "richmond",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.3,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q28654077",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Rosa Dixon Bowser",
+      "url": "https://en.wikipedia.org/wiki/Rosa_Dixon_Bowser",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q28654077"
+}

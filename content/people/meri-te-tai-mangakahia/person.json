@@ -1,0 +1,62 @@
+{
+  "slug": "meri-te-tai-mangakahia",
+  "name": {
+    "display": "Meri Te Tai Mangakahia",
+    "sort": "Mangakahia, Meri Te Tai"
+  },
+  "born": {
+    "date": "1868-05-22",
+    "place": "hokianga-harbour"
+  },
+  "died": {
+    "date": "1920-10-10",
+    "place": "panguru"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "FW Mason, photographers, Emerson St, Napier, New Zealand, 1890",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:MeriMangakahia1890s.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "hokianga-harbour",
+      "panguru",
+      "new-zealand",
+      "oceania"
+    ]
+  },
+  "prominence": 0.64,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q129294",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Meri Te Tai Mangakāhia",
+      "url": "https://de.wikipedia.org/wiki/Meri_Te_Tai_Mangak%C4%81hia",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Meri Mangakāhia",
+      "url": "https://en.wikipedia.org/wiki/Meri_Mangak%C4%81hia",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q129294"
+}

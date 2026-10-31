@@ -1,0 +1,52 @@
+{
+  "slug": "elizabeth-m-richards-tilton",
+  "name": {
+    "display": "Elizabeth M. Richards Tilton",
+    "sort": "Tilton, Elizabeth M. Richards"
+  },
+  "born": {
+    "date": "1834-05-28",
+    "place": "brooklyn"
+  },
+  "died": {
+    "date": "1897-04-13"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Pendleton Photographers. 350 Bowery., 1870",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elizabeth_Richards_Tilton_ca.1870.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "brooklyn",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.3,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q72219950",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Elizabeth Richards Tilton",
+      "url": "https://en.wikipedia.org/wiki/Elizabeth_Richards_Tilton",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q72219950"
+}

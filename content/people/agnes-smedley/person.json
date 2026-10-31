@@ -1,0 +1,64 @@
+{
+  "slug": "agnes-smedley",
+  "name": {
+    "display": "Agnes Smedley",
+    "sort": "Smedley, Agnes"
+  },
+  "born": {
+    "date": "1892-02-23",
+    "place": "osgood"
+  },
+  "died": {
+    "date": "1950-05-06",
+    "place": "london"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "The original uploader was Iflwlou at Chinese Wikipedia.",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Agnes_Smedley.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "osgood",
+      "london",
+      "united-states",
+      "united-kingdom",
+      "north-america",
+      "europe"
+    ]
+  },
+  "prominence": 0.68,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q394649",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Agnes Smedley",
+      "url": "https://de.wikipedia.org/wiki/Agnes_Smedley",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Agnes Smedley",
+      "url": "https://en.wikipedia.org/wiki/Agnes_Smedley",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q394649"
+}

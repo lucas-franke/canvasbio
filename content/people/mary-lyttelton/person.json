@@ -1,0 +1,60 @@
+{
+  "slug": "mary-lyttelton",
+  "name": {
+    "display": "Mary Lyttelton",
+    "sort": "Lyttelton, Mary"
+  },
+  "born": {
+    "date": "1856-02-27",
+    "place": "belgravia"
+  },
+  "died": {
+    "date": "1907-01-12"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1880",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kathleen_Lyttelton,_Oxford,_1880.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "belgravia",
+      "united-kingdom",
+      "europe"
+    ]
+  },
+  "prominence": 0.42,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q18576730",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Kathleen Lyttelton",
+      "url": "https://de.wikipedia.org/wiki/Kathleen_Lyttelton",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Kathleen Lyttelton",
+      "url": "https://en.wikipedia.org/wiki/Kathleen_Lyttelton",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q18576730"
+}

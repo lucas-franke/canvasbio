@@ -53,6 +53,11 @@ const maskUrl = (path: string) =>
 
 export const TORN_VARIANTS = 4;
 
+/** The torn outline of a variant as an SVG path in a 1000 × 1000 box (canvas drawing). */
+export const tornEdgePath = (variant: number): string => edgePath(1009 * (variant + 1));
+/** Size of the box `tornEdgePath` is drawn in. */
+export const TORN_PATH_SIZE = SIZE;
+
 /** CSS rules `.torn-edge-0` … `.torn-edge-3` with the mask images. */
 export function tornEdgeCss(): string {
   return Array.from({ length: TORN_VARIANTS }, (_, i) => {
@@ -61,11 +66,16 @@ export function tornEdgeCss(): string {
   }).join("\n");
 }
 
-/** Mask class for a portrait outside the canvas, stable per person. */
-export function tornEdgeClass(slug: string): string {
+/** Variant for a person, stable everywhere (canvas wall, list, biography). */
+export function tornVariantOf(slug: string): number {
   let hash = 0;
   for (let i = 0; i < slug.length; i++) hash = (hash * 31 + slug.charCodeAt(i)) | 0;
-  return `torn-edge-${((hash % TORN_VARIANTS) + TORN_VARIANTS) % TORN_VARIANTS}`;
+  return ((hash % TORN_VARIANTS) + TORN_VARIANTS) % TORN_VARIANTS;
+}
+
+/** Mask class for a portrait outside the canvas, stable per person. */
+export function tornEdgeClass(slug: string): string {
+  return `torn-edge-${tornVariantOf(slug)}`;
 }
 
 /** Variant for a cell: stable per position, varied between neighbours. */

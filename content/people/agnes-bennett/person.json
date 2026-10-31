@@ -1,0 +1,63 @@
+{
+  "slug": "agnes-bennett",
+  "name": {
+    "display": "Agnes Bennett",
+    "sort": "Bennett, Agnes"
+  },
+  "born": {
+    "date": "1872-06-24",
+    "place": "sydney"
+  },
+  "died": {
+    "date": "1960-11-27",
+    "place": "wellington"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "McLaren, Eva Shaw, 1919",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dr._Agnes_Bennett_(Scottish_Women%27s_Hospital_-_Ostrovo).png"
+  },
+  "facets": {
+    "field": [
+      "medicine"
+    ],
+    "place": [
+      "sydney",
+      "wellington",
+      "australia",
+      "oceania",
+      "new-zealand"
+    ]
+  },
+  "prominence": 0.52,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q4693030",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Agnes Bennett",
+      "url": "https://de.wikipedia.org/wiki/Agnes_Bennett",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Agnes Bennett",
+      "url": "https://en.wikipedia.org/wiki/Agnes_Bennett",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q4693030"
+}

@@ -1,0 +1,52 @@
+{
+  "slug": "concepcion-felix-roque",
+  "name": {
+    "display": "Concepción Felix Roque",
+    "sort": "Roque, Concepción Felix"
+  },
+  "born": {
+    "date": "1884-02-09",
+    "place": "tondo"
+  },
+  "died": {
+    "date": "1967-01-26"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1936",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Concepci%C3%B3n_F%C3%A9lix_de_Rodr%C3%ADguez.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "tondo",
+      "philippines",
+      "asia"
+    ]
+  },
+  "prominence": 0.5,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q23301398",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Concepción Felix",
+      "url": "https://en.wikipedia.org/wiki/Concepci%C3%B3n_Felix",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q23301398"
+}

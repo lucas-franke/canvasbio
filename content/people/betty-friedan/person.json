@@ -1,0 +1,63 @@
+{
+  "slug": "betty-friedan",
+  "name": {
+    "display": "Betty Friedan",
+    "sort": "Friedan, Betty"
+  },
+  "born": {
+    "date": "1921-02-04",
+    "place": "peoria"
+  },
+  "died": {
+    "date": "2006-02-04",
+    "place": "washington-d-c"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Fred Palumbo, World Telegram staff photographer. Restored by Adam Cuerden, 1960",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Betty_Friedan_1960.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "science"
+    ],
+    "place": [
+      "peoria",
+      "washington-d-c",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.91,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q234604",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Betty Friedan",
+      "url": "https://de.wikipedia.org/wiki/Betty_Friedan",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Betty Friedan",
+      "url": "https://en.wikipedia.org/wiki/Betty_Friedan",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q234604"
+}

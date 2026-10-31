@@ -1,0 +1,54 @@
+{
+  "slug": "maria-ulfah-santoso",
+  "name": {
+    "display": "Maria Ulfah Santoso",
+    "sort": "Santoso, Maria Ulfah"
+  },
+  "born": {
+    "date": "1911-08-18",
+    "place": "serang"
+  },
+  "died": {
+    "date": "1988-04-15",
+    "place": "jakarta"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Uncredited, possibly IPPHOS (Indonesian Press Photo Service), 1947",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maria_Ulfah_Santoso_29_March_1947_KR.JPG"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "serang",
+      "jakarta",
+      "indonesia",
+      "asia"
+    ]
+  },
+  "prominence": 0.58,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6761642",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Maria Ulfah Santoso",
+      "url": "https://en.wikipedia.org/wiki/Maria_Ulfah_Santoso",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6761642"
+}

@@ -1,0 +1,63 @@
+{
+  "slug": "amalie-skram",
+  "name": {
+    "display": "Amalie Skram",
+    "sort": "Skram, Amalie"
+  },
+  "born": {
+    "date": "1846-08-22",
+    "place": "bergen"
+  },
+  "died": {
+    "date": "1905-03-15",
+    "place": "copenhagen"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unbekannt",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Amalie_Skram2_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "bergen",
+      "copenhagen",
+      "norway",
+      "denmark",
+      "europe"
+    ]
+  },
+  "prominence": 0.67,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q291676",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Amalie Skram",
+      "url": "https://de.wikipedia.org/wiki/Amalie_Skram",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Amalie Skram",
+      "url": "https://en.wikipedia.org/wiki/Amalie_Skram",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q291676"
+}

@@ -24,7 +24,12 @@ test("desktop: the biography is a centred dialog, a click outside closes it", as
   await expect(heading(page, "Helen Keller")).toBeFocused();
   const box = (await dialog.boundingBox())!;
   const viewport = page.viewportSize()!;
-  expect(Math.abs(box.x + box.width / 2 - viewport.width / 2)).toBeLessThan(2);
+  // Centred in the layer it sits in (which leaves out a reserved scrollbar gutter).
+  const layer = await dialog.evaluate((el) => {
+    const r = el.closest(".fixed")!.getBoundingClientRect();
+    return r.x + r.width / 2;
+  });
+  expect(Math.abs(box.x + box.width / 2 - layer)).toBeLessThan(2);
   expect(box.width).toBeLessThan(viewport.width);
 
   // Clicking the dimmed backdrop beside the card closes it; focus returns to the person.

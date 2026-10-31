@@ -89,6 +89,8 @@ export const personTextSchema = z.object({
     })
     .optional(),
   timeline: z.array(z.object({ date: z.string().min(1), event: z.string().min(1) })),
+  /** Language of the life story if it differs from the page (no article in this language yet). */
+  storyLang: z.string().optional(),
 });
 
 export type PersonText = z.infer<typeof personTextSchema>;

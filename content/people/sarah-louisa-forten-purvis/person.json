@@ -1,0 +1,53 @@
+{
+  "slug": "sarah-louisa-forten-purvis",
+  "name": {
+    "display": "Sarah Louisa Forten Purvis",
+    "sort": "Purvis, Sarah Louisa Forten"
+  },
+  "born": {
+    "date": "1814",
+    "place": "philadelphia"
+  },
+  "died": {
+    "date": "1884-10-29",
+    "place": "philadelphia"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unbekannt",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Liberator,_Issue_No.1,_1831.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "philadelphia",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.23,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q61834412",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Sarah Louisa Forten Purvis",
+      "url": "https://en.wikipedia.org/wiki/Sarah_Louisa_Forten_Purvis",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q61834412"
+}

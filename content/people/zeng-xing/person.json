@@ -1,0 +1,47 @@
+{
+  "slug": "zeng-xing",
+  "name": {
+    "display": "Zeng Xing",
+    "sort": "Xing, Zeng"
+  },
+  "born": {
+    "date": "1882"
+  },
+  "died": {
+    "date": "1954"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown photographer, 1925",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%9B%BE%E9%86%92.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": []
+  },
+  "prominence": 0.23,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q8264089",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Zeng Xing",
+      "url": "https://en.wikipedia.org/wiki/Zeng_Xing",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q8264089"
+}

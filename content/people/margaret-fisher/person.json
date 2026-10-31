@@ -1,0 +1,54 @@
+{
+  "slug": "margaret-fisher",
+  "name": {
+    "display": "Margaret Fisher",
+    "sort": "Fisher, Margaret"
+  },
+  "born": {
+    "date": "1874",
+    "place": "nanango"
+  },
+  "died": {
+    "date": "1958-06-15",
+    "place": "melbourne"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "T. Humphrey & Co., 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Margaret_Fisher.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "nanango",
+      "melbourne",
+      "australia",
+      "oceania"
+    ]
+  },
+  "prominence": 0.31,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q20739156",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Margaret Fisher",
+      "url": "https://en.wikipedia.org/wiki/Margaret_Fisher",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q20739156"
+}

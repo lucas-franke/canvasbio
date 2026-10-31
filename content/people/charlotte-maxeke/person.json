@@ -1,0 +1,62 @@
+{
+  "slug": "charlotte-maxeke",
+  "name": {
+    "display": "Charlotte Maxeke",
+    "sort": "Maxeke, Charlotte"
+  },
+  "born": {
+    "date": "1871-04-07",
+    "place": "fort-beaufort"
+  },
+  "died": {
+    "date": "1939-10-16",
+    "place": "johannesburg"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Kennedy, 1895",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Charlotte_Manye,_Ohio,_1890s.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "fort-beaufort",
+      "johannesburg",
+      "south-africa",
+      "africa"
+    ]
+  },
+  "prominence": 0.63,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5086065",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Charlotte Maxeke",
+      "url": "https://de.wikipedia.org/wiki/Charlotte_Maxeke",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Charlotte Maxeke",
+      "url": "https://en.wikipedia.org/wiki/Charlotte_Maxeke",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5086065"
+}

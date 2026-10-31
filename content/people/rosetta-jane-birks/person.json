@@ -1,0 +1,53 @@
+{
+  "slug": "rosetta-jane-birks",
+  "name": {
+    "display": "Rosetta Jane Birks",
+    "sort": "Birks, Rosetta Jane"
+  },
+  "born": {
+    "date": "1856-03-12",
+    "place": "adelaide"
+  },
+  "died": {
+    "date": "1911",
+    "place": "adelaide"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Stump & Co, 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rosetta_Biks_Y.W.C.A._Committee_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "adelaide",
+      "australia",
+      "oceania"
+    ]
+  },
+  "prominence": 0.34,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q18645986",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Rosetta Jane Birks",
+      "url": "https://en.wikipedia.org/wiki/Rosetta_Jane_Birks",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q18645986"
+}

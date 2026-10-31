@@ -1,0 +1,54 @@
+{
+  "slug": "kay-brownbill",
+  "name": {
+    "display": "Kay Brownbill",
+    "sort": "Brownbill, Kay"
+  },
+  "born": {
+    "date": "1914-07-21",
+    "place": "adelaide"
+  },
+  "died": {
+    "date": "2002-02-03",
+    "place": "adelaide"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Parliamentary Handbook, 1966",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kay_Brownbill.png"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing"
+    ],
+    "place": [
+      "adelaide",
+      "australia",
+      "oceania"
+    ]
+  },
+  "prominence": 0.38,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6380155",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Kay Brownbill",
+      "url": "https://en.wikipedia.org/wiki/Kay_Brownbill",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6380155"
+}

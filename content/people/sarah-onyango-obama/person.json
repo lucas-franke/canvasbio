@@ -1,0 +1,55 @@
+{
+  "slug": "sarah-onyango-obama",
+  "name": {
+    "display": "Sarah Onyango Obama",
+    "sort": "Obama, Sarah Onyango"
+  },
+  "born": {
+    "date": "1922",
+    "place": "kenya"
+  },
+  "died": {
+    "date": "2021-03-29",
+    "place": "kisumu"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "VOA",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sarah_Obama_2014.jpg"
+  },
+  "facets": {
+    "field": [
+      "education",
+      "arts",
+      "social"
+    ],
+    "place": [
+      "kenya",
+      "kisumu",
+      "africa"
+    ]
+  },
+  "prominence": 0.4,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q24004768",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Sarah Onyango Obama",
+      "url": "https://en.wikipedia.org/wiki/Sarah_Onyango_Obama",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q24004768"
+}

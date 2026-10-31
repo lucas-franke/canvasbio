@@ -1,0 +1,57 @@
+{
+  "slug": "bahire-bedis-morova-aydilek",
+  "name": {
+    "display": "Bahire Bediş Morova Aydilek",
+    "sort": "Aydilek, Bahire Bediş Morova"
+  },
+  "born": {
+    "date": "1897",
+    "place": "bosnia-vilayet"
+  },
+  "died": {
+    "date": "1965-11-10",
+    "place": "turkey"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1935",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bediz_Morova.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "arts"
+    ],
+    "place": [
+      "bosnia-vilayet",
+      "turkey",
+      "ottoman-empire",
+      "asia",
+      "europe",
+      "africa"
+    ]
+  },
+  "prominence": 0.4,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6016835",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Bahire Bediş Morova Aydilek",
+      "url": "https://en.wikipedia.org/wiki/Bahire_Bedi%C5%9F_Morova_Aydilek",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6016835"
+}

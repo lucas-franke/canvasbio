@@ -1,0 +1,57 @@
+{
+  "slug": "maria-abella-de-ramirez",
+  "name": {
+    "display": "María Abella de Ramírez",
+    "sort": "Ramírez, María Abella de"
+  },
+  "born": {
+    "date": "1866-09-28",
+    "place": "san-jose-department"
+  },
+  "died": {
+    "date": "1926-08-05",
+    "place": "la-plata"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1902",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abella_foto_de_Revista_Nosotras.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "education"
+    ],
+    "place": [
+      "san-jose-department",
+      "la-plata",
+      "argentina",
+      "south-america",
+      "uruguay"
+    ]
+  },
+  "prominence": 0.42,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5488449",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): María Abella",
+      "url": "https://en.wikipedia.org/wiki/Mar%C3%ADa_Abella",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5488449"
+}

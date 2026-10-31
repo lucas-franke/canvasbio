@@ -1,0 +1,65 @@
+{
+  "slug": "musine-kokalari",
+  "name": {
+    "display": "Musine Kokalari",
+    "sort": "Kokalari, Musine"
+  },
+  "born": {
+    "date": "1917-02-10",
+    "place": "adana"
+  },
+  "died": {
+    "date": "1983-08-24",
+    "place": "rreshen"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "AnonymousUnknown author, 1930",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Musine_Kokalari.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing"
+    ],
+    "place": [
+      "adana",
+      "rreshen",
+      "turkey",
+      "albania",
+      "asia",
+      "europe"
+    ]
+  },
+  "prominence": 0.73,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q3301350",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Musine Kokalari",
+      "url": "https://de.wikipedia.org/wiki/Musine_Kokalari",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Musine Kokalari",
+      "url": "https://en.wikipedia.org/wiki/Musine_Kokalari",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q3301350"
+}

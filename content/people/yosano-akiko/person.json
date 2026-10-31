@@ -1,0 +1,62 @@
+{
+  "slug": "yosano-akiko",
+  "name": {
+    "display": "Yosano Akiko",
+    "sort": "Akiko, Yosano"
+  },
+  "born": {
+    "date": "1878-12-07",
+    "place": "sakai"
+  },
+  "died": {
+    "date": "1942-05-29",
+    "place": "ogikubo"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1942",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:YOSANO_Akiko.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "sakai",
+      "ogikubo",
+      "japan",
+      "asia"
+    ]
+  },
+  "prominence": 0.82,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q464104",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Yosano Akiko",
+      "url": "https://de.wikipedia.org/wiki/Yosano_Akiko",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Yosano Akiko",
+      "url": "https://en.wikipedia.org/wiki/Yosano_Akiko",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q464104"
+}

@@ -1,0 +1,56 @@
+{
+  "slug": "frederika-wilhelmina-broese-van-groenou",
+  "name": {
+    "display": "Frederika Wilhelmina Broese van Groenou",
+    "sort": "Groenou, Frederika Wilhelmina Broese van"
+  },
+  "born": {
+    "date": "1875-04-01",
+    "place": "yogyakarta"
+  },
+  "died": {
+    "date": "1960-11-11",
+    "place": "the-hague"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Painted by Floris Arntzenius (1864-1925), 1896",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Frederika_Wilhelmina_van_Wulfften_Palthe-Broese_van_Groenou_by_Floris_Arntzenius_(1896).png"
+  },
+  "facets": {
+    "field": [
+      "arts"
+    ],
+    "place": [
+      "yogyakarta",
+      "the-hague",
+      "netherlands",
+      "europe",
+      "asia",
+      "indonesia"
+    ]
+  },
+  "prominence": 0.5,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q28064323",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mien van Wulfften Palthe",
+      "url": "https://en.wikipedia.org/wiki/Mien_van_Wulfften_Palthe",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q28064323"
+}

@@ -1,0 +1,54 @@
+{
+  "slug": "amalia-galarraga",
+  "name": {
+    "display": "Amalia Galárraga",
+    "sort": "Galárraga, Amalia"
+  },
+  "born": {
+    "date": "1885",
+    "place": "san-sebastian"
+  },
+  "died": {
+    "date": "1971-09-28",
+    "place": "madrid"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Not stated, 1928",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:1928-12-15,_La_Gaceta_Literaria,_Amalia_G._de_Salaverr%C3%ADa.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "san-sebastian",
+      "madrid",
+      "spain",
+      "europe"
+    ]
+  },
+  "prominence": 0.58,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q50285393",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Amalia Galárraga",
+      "url": "https://en.wikipedia.org/wiki/Amalia_Gal%C3%A1rraga",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q50285393"
+}

@@ -1,0 +1,52 @@
+{
+  "slug": "luella-dowd-smith",
+  "name": {
+    "display": "Luella Dowd Smith",
+    "sort": "Smith, Luella Dowd"
+  },
+  "born": {
+    "date": "1847-06-16",
+    "place": "sheffield"
+  },
+  "died": {
+    "date": "1941"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unbekannt",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:LUELLA_DOWD_SMITH_A_woman_of_the_century_(page_676_crop).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "sheffield",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.5,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q43185308",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Luella Dowd Smith",
+      "url": "https://en.wikipedia.org/wiki/Luella_Dowd_Smith",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q43185308"
+}

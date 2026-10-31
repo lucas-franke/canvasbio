@@ -1,0 +1,54 @@
+{
+  "slug": "jeanne-elizabeth-wier",
+  "name": {
+    "display": "Jeanne Elizabeth Wier",
+    "sort": "Wier, Jeanne Elizabeth"
+  },
+  "born": {
+    "date": "1870-04-08",
+    "place": "grinnell"
+  },
+  "died": {
+    "date": "1950-04-19",
+    "place": "reno"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1911",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jeanne_Elizabeth_Wier_c._1911.jpg"
+  },
+  "facets": {
+    "field": [
+      "science"
+    ],
+    "place": [
+      "grinnell",
+      "reno",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.31,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q15983806",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Jeanne Wier",
+      "url": "https://en.wikipedia.org/wiki/Jeanne_Wier",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q15983806"
+}

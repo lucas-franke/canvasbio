@@ -1,0 +1,52 @@
+{
+  "slug": "ernestina-perez-barahona",
+  "name": {
+    "display": "Ernestina Pérez Barahona",
+    "sort": "Barahona, Ernestina Pérez"
+  },
+  "born": {
+    "date": "1868-08-08",
+    "place": "valparaiso"
+  },
+  "died": {
+    "date": "1951"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1904",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ernestina_P%C3%A9rez_Barahona.jpg"
+  },
+  "facets": {
+    "field": [
+      "medicine"
+    ],
+    "place": [
+      "valparaiso",
+      "chile",
+      "south-america"
+    ]
+  },
+  "prominence": 0.51,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q8777339",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ernestina Pérez Barahona",
+      "url": "https://en.wikipedia.org/wiki/Ernestina_P%C3%A9rez_Barahona",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q8777339"
+}

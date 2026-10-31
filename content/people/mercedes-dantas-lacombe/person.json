@@ -1,0 +1,54 @@
+{
+  "slug": "mercedes-dantas-lacombe",
+  "name": {
+    "display": "Mercedes Dantas Lacombe",
+    "sort": "Lacombe, Mercedes Dantas"
+  },
+  "born": {
+    "date": "1888-07-05",
+    "place": "buenos-aires"
+  },
+  "died": {
+    "date": "1966-03-26",
+    "place": "buenos-aires"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1928",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:1929-05-04,_La_Esfera,_La_doctora_Dantas_de_Lacombe,_presidenta_del_Club_Argentino_de_Mujeres_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education"
+    ],
+    "place": [
+      "buenos-aires",
+      "argentina",
+      "south-america"
+    ]
+  },
+  "prominence": 0.39,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q28653835",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mercedes Dantas Lacombe",
+      "url": "https://en.wikipedia.org/wiki/Mercedes_Dantas_Lacombe",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q28653835"
+}

@@ -1,0 +1,52 @@
+{
+  "slug": "lilian-sophia-locke",
+  "name": {
+    "display": "Lilian Sophia Locke",
+    "sort": "Locke, Lilian Sophia"
+  },
+  "born": {
+    "date": "1869-06-06"
+  },
+  "died": {
+    "date": "1950-07-01",
+    "place": "north-sydney"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unbekannt, 1905",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:StateLibQld_1_113808_Lilian_Locke-Burns.jpg"
+  },
+  "facets": {
+    "field": [
+      "social"
+    ],
+    "place": [
+      "north-sydney",
+      "australia",
+      "oceania"
+    ]
+  },
+  "prominence": 0.3,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q24240013",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Lilian Locke",
+      "url": "https://en.wikipedia.org/wiki/Lilian_Locke",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q24240013"
+}

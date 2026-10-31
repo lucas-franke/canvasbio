@@ -1,0 +1,55 @@
+{
+  "slug": "helen-loring-grenfell",
+  "name": {
+    "display": "Helen Loring Grenfell",
+    "sort": "Grenfell, Helen Loring"
+  },
+  "born": {
+    "place": "valparaiso"
+  },
+  "died": {
+    "date": "1935-07-26",
+    "place": "denver"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Bain, 1920",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Helen_Thatcher_Loring_Grenfell_circa_1920_(oval_crop).png"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "valparaiso",
+      "denver",
+      "united-states",
+      "south-america",
+      "north-america",
+      "chile"
+    ]
+  },
+  "prominence": 0.39,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q43298636",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Helen Loring Grenfell",
+      "url": "https://en.wikipedia.org/wiki/Helen_Loring_Grenfell",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q43298636"
+}

@@ -1,0 +1,53 @@
+{
+  "slug": "teresa-lopez-bustamante",
+  "name": {
+    "display": "Teresa López Bustamante",
+    "sort": "Bustamante, Teresa López"
+  },
+  "born": {
+    "date": "1888-10-24",
+    "place": "maracaibo"
+  },
+  "died": {
+    "date": "1942",
+    "place": "maracaibo"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Arturo Lares Baralt, 1912",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Teresa_L%C3%B3pez_Bustamante.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "maracaibo",
+      "venezuela",
+      "south-america"
+    ]
+  },
+  "prominence": 0.37,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q7425047",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Teresa López Bustamante",
+      "url": "https://en.wikipedia.org/wiki/Teresa_L%C3%B3pez_Bustamante",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q7425047"
+}

@@ -1,0 +1,54 @@
+{
+  "slug": "ruth-bedford",
+  "name": {
+    "display": "Ruth Bedford",
+    "sort": "Bedford, Ruth"
+  },
+  "born": {
+    "date": "1882-08-02",
+    "place": "petersham"
+  },
+  "died": {
+    "date": "1963-07-24",
+    "place": "paddington"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1915",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ruth_Bedford_1915.png"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "petersham",
+      "paddington",
+      "australia",
+      "oceania"
+    ]
+  },
+  "prominence": 0.42,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q7382892",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ruth Bedford",
+      "url": "https://en.wikipedia.org/wiki/Ruth_Bedford",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q7382892"
+}

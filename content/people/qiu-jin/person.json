@@ -1,0 +1,62 @@
+{
+  "slug": "qiu-jin",
+  "name": {
+    "display": "Qiu Jin",
+    "sort": "Jin, Qiu"
+  },
+  "born": {
+    "date": "1875-11-08",
+    "place": "xiamen"
+  },
+  "died": {
+    "date": "1907-07-15",
+    "place": "shaoxing"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown, photographed in Qing Dynasty china, 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Qiu_jin.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "xiamen",
+      "shaoxing",
+      "people-s-republic-of-china",
+      "asia"
+    ]
+  },
+  "prominence": 0.81,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q465324",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Qiu Jin",
+      "url": "https://de.wikipedia.org/wiki/Qiu_Jin",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Qiu Jin",
+      "url": "https://en.wikipedia.org/wiki/Qiu_Jin",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q465324"
+}

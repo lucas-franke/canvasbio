@@ -5,7 +5,7 @@ summary:
 portraitAlt: Portrait of Şefiqa Gaspıralı
 facts:
   - label: Born
-    value: October 14, 1886 in Bakhchysarai
+    value: October 14, 1886 in Bakhchysarai, Ukraine
   - label: Died
     value: August 31, 1975 in Istanbul, Turkey
   - label: Field

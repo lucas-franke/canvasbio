@@ -1,0 +1,54 @@
+{
+  "slug": "chisho-takaoka",
+  "name": {
+    "display": "Chishō Takaoka",
+    "sort": "Takaoka, Chishō"
+  },
+  "born": {
+    "date": "1896-04-22",
+    "place": "nara-prefecture"
+  },
+  "died": {
+    "date": "1994-10-22",
+    "place": "gio-ji"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1920",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Teruha_postcard.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "nara-prefecture",
+      "gio-ji",
+      "japan",
+      "asia"
+    ]
+  },
+  "prominence": 0.48,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q14918723",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Chishō Takaoka",
+      "url": "https://en.wikipedia.org/wiki/Chish%C5%8D_Takaoka",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q14918723"
+}

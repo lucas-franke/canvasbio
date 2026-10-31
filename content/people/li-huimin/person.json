@@ -1,0 +1,47 @@
+{
+  "slug": "li-huimin",
+  "name": {
+    "display": "Li Huimin",
+    "sort": "Huimin, Li"
+  },
+  "born": {
+    "date": "1918"
+  },
+  "died": {
+    "date": "1987-12-23"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "立法院立法委員名鑑指導委員會, 民42, 1953",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%9D%8E%E6%85%A7%E6%B0%91.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": []
+  },
+  "prominence": 0.14,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q65060379",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Li Hui-min",
+      "url": "https://en.wikipedia.org/wiki/Li_Hui-min",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q65060379"
+}

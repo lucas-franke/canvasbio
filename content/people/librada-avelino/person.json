@@ -1,0 +1,50 @@
+{
+  "slug": "librada-avelino",
+  "name": {
+    "display": "Librada Avelino",
+    "sort": "Avelino, Librada"
+  },
+  "born": {
+    "date": "1873-01-17"
+  },
+  "died": {
+    "date": "1934-11-09"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1935",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Librada_Avelino.png"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "asia",
+      "philippines"
+    ]
+  },
+  "prominence": 0.5,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q11931853",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Librada Avelino",
+      "url": "https://en.wikipedia.org/wiki/Librada_Avelino",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q11931853"
+}

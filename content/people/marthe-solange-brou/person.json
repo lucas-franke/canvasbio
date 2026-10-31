@@ -1,0 +1,53 @@
+{
+  "slug": "marthe-solange-brou",
+  "name": {
+    "display": "Marthe Solange Brou",
+    "sort": "Brou, Marthe Solange"
+  },
+  "born": {
+    "date": "1949"
+  },
+  "died": {
+    "date": "2011-11-10",
+    "place": "abidjan"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Aristidek5maya",
+    "license": {
+      "name": "CC0",
+      "url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marthe_Solange_Achy_Brou.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "abidjan",
+      "ivory-coast",
+      "africa"
+    ]
+  },
+  "prominence": 0.37,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q100341292",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Marthe Solange Achy Brou",
+      "url": "https://en.wikipedia.org/wiki/Marthe_Solange_Achy_Brou",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q100341292"
+}

@@ -1,0 +1,62 @@
+{
+  "slug": "mari-beyleryan",
+  "name": {
+    "display": "Mari Beyleryan",
+    "sort": "Beyleryan, Mari"
+  },
+  "born": {
+    "date": "1877-03-31",
+    "place": "istanbul"
+  },
+  "died": {
+    "date": "1915-04-24",
+    "place": "istanbul"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown photographer, 1915",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mari_Beyleryan.png"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "istanbul",
+      "turkey",
+      "asia",
+      "europe"
+    ]
+  },
+  "prominence": 0.64,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6760891",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Mari Beyleryan",
+      "url": "https://de.wikipedia.org/wiki/Mari_Beyleryan",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mari Beyleryan",
+      "url": "https://en.wikipedia.org/wiki/Mari_Beyleryan",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6760891"
+}

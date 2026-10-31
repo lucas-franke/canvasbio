@@ -1,0 +1,54 @@
+{
+  "slug": "liu-wang-liming",
+  "name": {
+    "display": "Liu-Wang Liming",
+    "sort": "Liming, Liu-Wang"
+  },
+  "born": {
+    "date": "1896-01-01",
+    "place": "taihu-county"
+  },
+  "died": {
+    "date": "1970-04-15",
+    "place": "shanghai"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "政協秘書處, 1949",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E5%8A%89%E7%8E%8B%E7%AB%8B%E6%98%8E.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "taihu-county",
+      "shanghai",
+      "people-s-republic-of-china",
+      "asia"
+    ]
+  },
+  "prominence": 0.54,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q8248716",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Liu-Wang Liming",
+      "url": "https://en.wikipedia.org/wiki/Liu-Wang_Liming",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q8248716"
+}

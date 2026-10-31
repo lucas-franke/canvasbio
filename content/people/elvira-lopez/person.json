@@ -1,0 +1,52 @@
+{
+  "slug": "elvira-lopez",
+  "name": {
+    "display": "Elvira López",
+    "sort": "López, Elvira"
+  },
+  "born": {
+    "date": "1871",
+    "place": "buenos-aires"
+  },
+  "died": {
+    "date": "1956"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "AnonymousUnknown author, 1901",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elvira_Virginia_L%C3%B3pez.jpg"
+  },
+  "facets": {
+    "field": [
+      "science"
+    ],
+    "place": [
+      "buenos-aires",
+      "argentina",
+      "south-america"
+    ]
+  },
+  "prominence": 0.47,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q107533126",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Elvira López (feminist)",
+      "url": "https://en.wikipedia.org/wiki/Elvira_L%C3%B3pez_(feminist)",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q107533126"
+}

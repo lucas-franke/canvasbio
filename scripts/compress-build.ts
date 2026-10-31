@@ -9,7 +9,7 @@ import { brotliCompress, constants, gzip } from "node:zlib";
 import { promisify } from "node:util";
 
 const ROOT = path.resolve("build/client");
-const TEXT = /\.(html|js|css|json|svg|txt|xml|webmanifest|data)$/;
+const TEXT = /\.(html|m?js|css|json|svg|txt|xml|webmanifest|data)$/;
 /** Smaller files don't benefit from compression. */
 const MIN_BYTES = 1024;
 

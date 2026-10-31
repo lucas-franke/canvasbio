@@ -1,0 +1,63 @@
+{
+  "slug": "adriana-olguin",
+  "name": {
+    "display": "Adriana Olguín",
+    "sort": "Olguín, Adriana"
+  },
+  "born": {
+    "date": "1911-11-18",
+    "place": "valparaiso"
+  },
+  "died": {
+    "date": "2015-12-24",
+    "place": "vina-del-mar"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Gobierno de Chile, 1952",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ministra_de_Justicia_Adriana_Olguin_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "science"
+    ],
+    "place": [
+      "valparaiso",
+      "vina-del-mar",
+      "chile",
+      "south-america"
+    ]
+  },
+  "prominence": 0.48,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q8189774",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Adriana Olguín",
+      "url": "https://de.wikipedia.org/wiki/Adriana_Olgu%C3%ADn",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Adriana Olguín",
+      "url": "https://en.wikipedia.org/wiki/Adriana_Olgu%C3%ADn",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q8189774"
+}

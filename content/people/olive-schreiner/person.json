@@ -1,0 +1,65 @@
+{
+  "slug": "olive-schreiner",
+  "name": {
+    "display": "Olive Schreiner",
+    "sort": "Schreiner, Olive"
+  },
+  "born": {
+    "date": "1855-03-24",
+    "place": "cape-colony"
+  },
+  "died": {
+    "date": "1920-12-11",
+    "place": "cape-town"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1889",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Olive_Schreiner00.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "science"
+    ],
+    "place": [
+      "cape-colony",
+      "cape-town",
+      "british-empire",
+      "south-africa",
+      "europe",
+      "africa"
+    ]
+  },
+  "prominence": 0.79,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q151180",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Olive Schreiner",
+      "url": "https://de.wikipedia.org/wiki/Olive_Schreiner",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Olive Schreiner",
+      "url": "https://en.wikipedia.org/wiki/Olive_Schreiner",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q151180"
+}

@@ -1,0 +1,62 @@
+{
+  "slug": "enedina-alves-marques",
+  "name": {
+    "display": "Enedina Alves Marques",
+    "sort": "Marques, Enedina Alves"
+  },
+  "born": {
+    "date": "1913-01-13",
+    "place": "curitiba"
+  },
+  "died": {
+    "date": "1981-08-20",
+    "place": "curitiba"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Xandi",
+    "license": {
+      "name": "CC0",
+      "url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Enedina.png"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "curitiba",
+      "brazil",
+      "south-america"
+    ]
+  },
+  "prominence": 0.43,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q21290119",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Enedina Alves Marques",
+      "url": "https://de.wikipedia.org/wiki/Enedina_Alves_Marques",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Enedina Alves Marques",
+      "url": "https://en.wikipedia.org/wiki/Enedina_Alves_Marques",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q21290119"
+}

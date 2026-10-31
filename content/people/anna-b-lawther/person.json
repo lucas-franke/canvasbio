@@ -1,0 +1,52 @@
+{
+  "slug": "anna-b-lawther",
+  "name": {
+    "display": "Anna B. Lawther",
+    "sort": "Lawther, Anna B."
+  },
+  "born": {
+    "date": "1872-09-08",
+    "place": "dubuque"
+  },
+  "died": {
+    "date": "1957-10-21"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Grace Partridge Smith, 1920",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anna_Bell_Lawther.png"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "dubuque",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q19893051",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Anna B. Lawther",
+      "url": "https://en.wikipedia.org/wiki/Anna_B._Lawther",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q19893051"
+}

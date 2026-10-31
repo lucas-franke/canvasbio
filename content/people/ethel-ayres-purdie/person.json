@@ -1,0 +1,62 @@
+{
+  "slug": "ethel-ayres-purdie",
+  "name": {
+    "display": "Ethel Ayres Purdie",
+    "sort": "Purdie, Ethel Ayres"
+  },
+  "born": {
+    "date": "1874-10-02",
+    "place": "islington"
+  },
+  "died": {
+    "date": "1923-03-26",
+    "place": "charing-cross"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1923",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ethel_Ayres_Purdie_1.png"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "islington",
+      "charing-cross",
+      "united-kingdom",
+      "europe"
+    ]
+  },
+  "prominence": 0.54,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q23900769",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Ethel Ayres Purdie",
+      "url": "https://de.wikipedia.org/wiki/Ethel_Ayres_Purdie",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ethel Ayres Purdie",
+      "url": "https://en.wikipedia.org/wiki/Ethel_Ayres_Purdie",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q23900769"
+}

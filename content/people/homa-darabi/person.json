@@ -1,0 +1,62 @@
+{
+  "slug": "homa-darabi",
+  "name": {
+    "display": "Homa Darabi",
+    "sort": "Darabi, Homa"
+  },
+  "born": {
+    "date": "1940-01-01",
+    "place": "tehran"
+  },
+  "died": {
+    "date": "1994-02-21",
+    "place": "tehran"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1961",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D9%87%D9%85%D8%A7_%D8%AF%D8%A7%D8%B1%D8%A7%D8%A8%DB%8C_%D8%AA%D9%87%D8%B1%D8%A7%D9%86%DB%8C%D8%8C_%D8%B3%D8%A7%D9%84_%D8%B3%D9%88%D9%85_%D9%BE%D8%B2%D8%B4%DA%A9%DB%8C.JPG"
+  },
+  "facets": {
+    "field": [
+      "education",
+      "medicine"
+    ],
+    "place": [
+      "tehran",
+      "iran",
+      "asia"
+    ]
+  },
+  "prominence": 0.69,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q165488",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Homa Darabi",
+      "url": "https://de.wikipedia.org/wiki/Homa_Darabi",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Homa Darabi",
+      "url": "https://en.wikipedia.org/wiki/Homa_Darabi",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q165488"
+}

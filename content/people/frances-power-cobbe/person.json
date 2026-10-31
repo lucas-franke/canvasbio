@@ -1,0 +1,63 @@
+{
+  "slug": "frances-power-cobbe",
+  "name": {
+    "display": "Frances Power Cobbe",
+    "sort": "Cobbe, Frances Power"
+  },
+  "born": {
+    "date": "1822-12-04",
+    "place": "dublin"
+  },
+  "died": {
+    "date": "1904-04-05"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Believed to be Elliott & Fry",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:FrancesPowerCobb.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "science",
+      "social"
+    ],
+    "place": [
+      "dublin",
+      "ireland",
+      "europe",
+      "united-kingdom"
+    ]
+  },
+  "prominence": 0.93,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q466162",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Frances Power Cobbe",
+      "url": "https://de.wikipedia.org/wiki/Frances_Power_Cobbe",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Frances Power Cobbe",
+      "url": "https://en.wikipedia.org/wiki/Frances_Power_Cobbe",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q466162"
+}

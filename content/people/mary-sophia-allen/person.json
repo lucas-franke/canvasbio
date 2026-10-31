@@ -1,0 +1,62 @@
+{
+  "slug": "mary-sophia-allen",
+  "name": {
+    "display": "Mary Sophia Allen",
+    "sort": "Allen, Mary Sophia"
+  },
+  "born": {
+    "date": "1878-03-12",
+    "place": "cardiff"
+  },
+  "died": {
+    "date": "1964-12-16",
+    "place": "croydon"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Christina Broom",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mary_Sophia_Allen_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "cardiff",
+      "croydon",
+      "united-kingdom",
+      "europe"
+    ]
+  },
+  "prominence": 0.64,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6780744",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Mary Sophia Allen",
+      "url": "https://de.wikipedia.org/wiki/Mary_Sophia_Allen",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mary Sophia Allen",
+      "url": "https://en.wikipedia.org/wiki/Mary_Sophia_Allen",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6780744"
+}

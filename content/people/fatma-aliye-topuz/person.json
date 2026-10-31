@@ -1,0 +1,62 @@
+{
+  "slug": "fatma-aliye-topuz",
+  "name": {
+    "display": "Fatma Aliye Topuz",
+    "sort": "Topuz, Fatma Aliye"
+  },
+  "born": {
+    "date": "1862-10-09",
+    "place": "istanbul"
+  },
+  "died": {
+    "date": "1936-07-13",
+    "place": "istanbul"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1936",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fatma_Aliye_Portrait_(cropped).png"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "istanbul",
+      "turkey",
+      "asia",
+      "europe"
+    ]
+  },
+  "prominence": 0.77,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q1136761",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Fatma Aliye Topuz",
+      "url": "https://de.wikipedia.org/wiki/Fatma_Aliye_Topuz",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Fatma Aliye Topuz",
+      "url": "https://en.wikipedia.org/wiki/Fatma_Aliye_Topuz",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q1136761"
+}

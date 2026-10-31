@@ -1,0 +1,53 @@
+{
+  "slug": "netiva-ben-yehuda",
+  "name": {
+    "display": "Netiva Ben-Yehuda",
+    "sort": "Ben-Yehuda, Netiva"
+  },
+  "born": {
+    "date": "1928-07-26",
+    "place": "tel-aviv"
+  },
+  "died": {
+    "date": "2011-02-28",
+    "place": "tel-aviv"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "חובבשירה",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Netiva.JPG"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "tel-aviv",
+      "israel",
+      "asia"
+    ]
+  },
+  "prominence": 0.37,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2911163",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Netiva Ben-Yehuda",
+      "url": "https://en.wikipedia.org/wiki/Netiva_Ben-Yehuda",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2911163"
+}

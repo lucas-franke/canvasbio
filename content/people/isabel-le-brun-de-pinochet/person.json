@@ -1,0 +1,63 @@
+{
+  "slug": "isabel-le-brun-de-pinochet",
+  "name": {
+    "display": "Isabel Le Brun de Pinochet",
+    "sort": "Pinochet, Isabel Le Brun de"
+  },
+  "born": {
+    "date": "1845",
+    "place": "san-felipe"
+  },
+  "died": {
+    "date": "1930-06-25",
+    "place": "santiago"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Biblioteca Nacional Digital de Chile, 1895",
+    "license": {
+      "name": "CC0",
+      "url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Isabel_Le_Brun_de_Pinochet.jpg"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "san-felipe",
+      "santiago",
+      "south-america",
+      "chile"
+    ]
+  },
+  "prominence": 0.49,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6077680",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Isabel Le Brun de Pinochet",
+      "url": "https://de.wikipedia.org/wiki/Isabel_Le_Brun_de_Pinochet",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Isabel Le Brun de Pinochet",
+      "url": "https://en.wikipedia.org/wiki/Isabel_Le_Brun_de_Pinochet",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6077680"
+}

@@ -1,0 +1,62 @@
+{
+  "slug": "inji-aflatoun",
+  "name": {
+    "display": "Inji Aflatoun",
+    "sort": "Aflatoun, Inji"
+  },
+  "born": {
+    "date": "1924-04-16",
+    "place": "shobra"
+  },
+  "died": {
+    "date": "1989-04-17",
+    "place": "cairo"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unavailable",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Inji_Aflatoun.jpg"
+  },
+  "facets": {
+    "field": [
+      "arts"
+    ],
+    "place": [
+      "shobra",
+      "cairo",
+      "egypt",
+      "africa"
+    ]
+  },
+  "prominence": 0.71,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6034343",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Inji Efflatoun",
+      "url": "https://de.wikipedia.org/wiki/Inji_Efflatoun",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Inji Aflatoun",
+      "url": "https://en.wikipedia.org/wiki/Inji_Aflatoun",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6034343"
+}

@@ -5,7 +5,7 @@ summary:
 portraitAlt: Porträt von Roquia Sakhawat Hussain
 facts:
   - label: Geboren
-    value: 9. Dezember 1880 in Rangpur
+    value: 9. Dezember 1880 in Rangpur, Bangladesch
   - label: Gestorben
     value: 9. Dezember 1932 in Kolkata, Indien
   - label: Wirkungsfeld

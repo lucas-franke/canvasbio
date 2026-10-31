@@ -1,0 +1,47 @@
+{
+  "slug": "sarah-rowell-wright",
+  "name": {
+    "display": "Sarah Rowell Wright",
+    "sort": "Wright, Sarah Rowell"
+  },
+  "born": {
+    "date": "1862"
+  },
+  "died": {
+    "date": "1930"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Photographer not named., 1930",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sara_Alice_Rowell_Wright_(Standard_encyc._of_the_alcohol_problem,_1930).png"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": []
+  },
+  "prominence": 0,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q138009454",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Sarah Rowell Wright",
+      "url": "https://en.wikipedia.org/wiki/Sarah_Rowell_Wright",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q138009454"
+}

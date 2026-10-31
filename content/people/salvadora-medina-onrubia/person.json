@@ -1,0 +1,62 @@
+{
+  "slug": "salvadora-medina-onrubia",
+  "name": {
+    "display": "Salvadora Medina Onrubia",
+    "sort": "Onrubia, Salvadora Medina"
+  },
+  "born": {
+    "date": "1894-03-23",
+    "place": "la-plata"
+  },
+  "died": {
+    "date": "1972-07-21",
+    "place": "buenos-aires"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "AnonymousUnknown author, 1915",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Salvadora_Medina_Onrubia.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "la-plata",
+      "buenos-aires",
+      "argentina",
+      "south-america"
+    ]
+  },
+  "prominence": 0.54,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6117843",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Salvadora Medina Onrubia",
+      "url": "https://de.wikipedia.org/wiki/Salvadora_Medina_Onrubia",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Salvadora Medina Onrubia",
+      "url": "https://en.wikipedia.org/wiki/Salvadora_Medina_Onrubia",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6117843"
+}

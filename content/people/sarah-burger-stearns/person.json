@@ -1,0 +1,54 @@
+{
+  "slug": "sarah-burger-stearns",
+  "name": {
+    "display": "Sarah Burger Stearns",
+    "sort": "Stearns, Sarah Burger"
+  },
+  "born": {
+    "date": "1836-11-30",
+    "place": "new-york-city"
+  },
+  "died": {
+    "date": "1904-10-26",
+    "place": "los-angeles"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Photographer unidentified, 1897",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sarah_Burger_Stearns_from_American_Women,_1897.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "new-york-city",
+      "los-angeles",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.3,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q42718290",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Sarah Burger Stearns",
+      "url": "https://en.wikipedia.org/wiki/Sarah_Burger_Stearns",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q42718290"
+}

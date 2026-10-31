@@ -1,0 +1,57 @@
+{
+  "slug": "bettina-borrmann-wells",
+  "name": {
+    "display": "Bettina Borrmann Wells",
+    "sort": "Wells, Bettina Borrmann"
+  },
+  "born": {
+    "date": "1874",
+    "place": "nuremberg"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "No photographer credited., 1907",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:BettinaBorrmannWells1907.tif"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "nuremberg",
+      "germany",
+      "europe"
+    ]
+  },
+  "prominence": 0.34,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q54187792",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Bettina Borrmann Wells",
+      "url": "https://de.wikipedia.org/wiki/Bettina_Borrmann_Wells",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Bettina Borrmann Wells",
+      "url": "https://en.wikipedia.org/wiki/Bettina_Borrmann_Wells",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q54187792"
+}

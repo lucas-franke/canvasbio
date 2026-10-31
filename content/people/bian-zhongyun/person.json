@@ -1,0 +1,54 @@
+{
+  "slug": "bian-zhongyun",
+  "name": {
+    "display": "Bian Zhongyun",
+    "sort": "Zhongyun, Bian"
+  },
+  "born": {
+    "date": "1916-06-19",
+    "place": "wuwei-city"
+  },
+  "died": {
+    "date": "1966-08-05",
+    "place": "beijing"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "unknown author, 1964",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bian_zhongyun.jpg"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "wuwei-city",
+      "beijing",
+      "people-s-republic-of-china",
+      "asia"
+    ]
+  },
+  "prominence": 0.37,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q3373900",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Bian Zhongyun",
+      "url": "https://en.wikipedia.org/wiki/Bian_Zhongyun",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q3373900"
+}

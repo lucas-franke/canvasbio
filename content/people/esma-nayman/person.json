@@ -1,0 +1,54 @@
+{
+  "slug": "esma-nayman",
+  "name": {
+    "display": "Esma Nayman",
+    "sort": "Nayman, Esma"
+  },
+  "born": {
+    "date": "1899",
+    "place": "istanbul"
+  },
+  "died": {
+    "date": "1967-12-16",
+    "place": "istanbul"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1935",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Esma_Nayman.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "istanbul",
+      "turkey",
+      "asia",
+      "europe"
+    ]
+  },
+  "prominence": 0.37,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6043674",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Esma Nayman",
+      "url": "https://en.wikipedia.org/wiki/Esma_Nayman",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6043674"
+}

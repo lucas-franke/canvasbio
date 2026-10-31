@@ -1,0 +1,65 @@
+{
+  "slug": "nancy-wake",
+  "name": {
+    "display": "Nancy Wake",
+    "sort": "Wake, Nancy"
+  },
+  "born": {
+    "date": "1912-08-30",
+    "place": "roseneath"
+  },
+  "died": {
+    "date": "2011-08-07",
+    "place": "kingston-upon-thames"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unbekannt, 1945",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nancy_Wake_(1945).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "medicine"
+    ],
+    "place": [
+      "roseneath",
+      "kingston-upon-thames",
+      "new-zealand",
+      "oceania",
+      "united-kingdom",
+      "europe"
+    ]
+  },
+  "prominence": 0.88,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q234134",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Nancy Wake",
+      "url": "https://de.wikipedia.org/wiki/Nancy_Wake",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Nancy Wake",
+      "url": "https://en.wikipedia.org/wiki/Nancy_Wake",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q234134"
+}

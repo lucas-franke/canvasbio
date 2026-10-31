@@ -1,0 +1,52 @@
+{
+  "slug": "hanayo-ikuta",
+  "name": {
+    "display": "Hanayo Ikuta",
+    "sort": "Ikuta, Hanayo"
+  },
+  "born": {
+    "date": "1888-10-14",
+    "place": "kamiita"
+  },
+  "died": {
+    "date": "1970-12-08"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1945",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hanayo_Ikuta.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "kamiita",
+      "japan",
+      "asia"
+    ]
+  },
+  "prominence": 0.33,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q11574816",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Hanayo Ikuta",
+      "url": "https://en.wikipedia.org/wiki/Hanayo_Ikuta",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q11574816"
+}

@@ -1,0 +1,63 @@
+{
+  "slug": "nina-wassiljewna-popowa",
+  "name": {
+    "display": "Nina Wassiljewna Popowa",
+    "sort": "Popowa, Nina Wassiljewna"
+  },
+  "born": {
+    "date": "1908-01-09",
+    "place": "yelets"
+  },
+  "died": {
+    "date": "1994-05-30",
+    "place": "moscow"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1946",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9D%D0%B8%D0%BD%D0%B0_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%BD%D0%B0_%D0%9F%D0%BE%D0%BF%D0%BE%D0%B2%D0%B0.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "yelets",
+      "moscow",
+      "russia",
+      "europe",
+      "asia"
+    ]
+  },
+  "prominence": 0.61,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q4372656",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Nina Wassiljewna Popowa",
+      "url": "https://de.wikipedia.org/wiki/Nina_Wassiljewna_Popowa",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Nina Popova (official)",
+      "url": "https://en.wikipedia.org/wiki/Nina_Popova_(official)",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q4372656"
+}

@@ -1,0 +1,56 @@
+{
+  "slug": "georgina-ribas",
+  "name": {
+    "display": "Georgina Ribas",
+    "sort": "Ribas, Georgina"
+  },
+  "born": {
+    "date": "1882-04-22",
+    "place": "ambriz"
+  },
+  "died": {
+    "date": "1951-05-04",
+    "place": "lisbon"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Africa Magazine, 1932",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Georgina_Ribas.jpg"
+  },
+  "facets": {
+    "field": [
+      "education"
+    ],
+    "place": [
+      "ambriz",
+      "lisbon",
+      "angola",
+      "portugal",
+      "africa",
+      "europe"
+    ]
+  },
+  "prominence": 0.34,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q106378586",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Georgina Ribas",
+      "url": "https://en.wikipedia.org/wiki/Georgina_Ribas",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q106378586"
+}

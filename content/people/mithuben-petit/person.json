@@ -1,0 +1,54 @@
+{
+  "slug": "mithuben-petit",
+  "name": {
+    "display": "Mithuben Petit",
+    "sort": "Petit, Mithuben"
+  },
+  "born": {
+    "date": "1892-04-11",
+    "place": "mumbai"
+  },
+  "died": {
+    "date": "1973-07-16",
+    "place": "surat"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1930",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mithuben_Petit_5_April_1930_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "mumbai",
+      "surat",
+      "india",
+      "asia"
+    ]
+  },
+  "prominence": 0.55,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q31436151",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mithuben Petit",
+      "url": "https://en.wikipedia.org/wiki/Mithuben_Petit",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q31436151"
+}

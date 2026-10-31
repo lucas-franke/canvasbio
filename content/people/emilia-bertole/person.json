@@ -1,0 +1,54 @@
+{
+  "slug": "emilia-bertole",
+  "name": {
+    "display": "Emilia Bertolé",
+    "sort": "Bertolé, Emilia"
+  },
+  "born": {
+    "date": "1896-06-21",
+    "place": "rosario"
+  },
+  "died": {
+    "date": "1949",
+    "place": "rosario"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "unknown she died in 1949, 1920",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emilia_Bertole_FB.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "arts"
+    ],
+    "place": [
+      "rosario",
+      "argentina",
+      "south-america"
+    ]
+  },
+  "prominence": 0.4,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5830817",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Emilia Bertolé",
+      "url": "https://en.wikipedia.org/wiki/Emilia_Bertol%C3%A9",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5830817"
+}

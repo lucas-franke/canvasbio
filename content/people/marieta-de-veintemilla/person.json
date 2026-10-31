@@ -1,0 +1,54 @@
+{
+  "slug": "marieta-de-veintemilla",
+  "name": {
+    "display": "Marieta de Veintemilla",
+    "sort": "Veintemilla, Marieta de"
+  },
+  "born": {
+    "date": "1855-09-08",
+    "place": "guayaquil"
+  },
+  "died": {
+    "date": "1907-03-11",
+    "place": "quito"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marieta_de_Veintimilla.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "guayaquil",
+      "quito",
+      "ecuador",
+      "south-america"
+    ]
+  },
+  "prominence": 0.48,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q5998221",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Marieta de Veintemilla",
+      "url": "https://en.wikipedia.org/wiki/Marieta_de_Veintemilla",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q5998221"
+}

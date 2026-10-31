@@ -1,0 +1,62 @@
+{
+  "slug": "alice-mabota",
+  "name": {
+    "display": "Alice Mabota",
+    "sort": "Mabota, Alice"
+  },
+  "born": {
+    "date": "1949-04-08",
+    "place": "maputo"
+  },
+  "died": {
+    "date": "2023-10-12",
+    "place": "south-africa"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Embassy of the US in Mozambique",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alice_Mabota,_Machamba_de_Tecnologias,_Maputo_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "maputo",
+      "south-africa",
+      "mozambique",
+      "africa"
+    ]
+  },
+  "prominence": 0.48,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q26761021",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Alice Mabota",
+      "url": "https://de.wikipedia.org/wiki/Alice_Mabota",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Alice Mabota",
+      "url": "https://en.wikipedia.org/wiki/Alice_Mabota",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q26761021"
+}

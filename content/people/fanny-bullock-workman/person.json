@@ -1,0 +1,64 @@
+{
+  "slug": "fanny-bullock-workman",
+  "name": {
+    "display": "Fanny Bullock Workman",
+    "sort": "Workman, Fanny Bullock"
+  },
+  "born": {
+    "date": "1859-01-08",
+    "place": "worcester"
+  },
+  "died": {
+    "date": "1925-01-22",
+    "place": "cannes"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Photographer: Maull & Fox, 187A Picadilly, London.[1] Restoration: Adam Cuerden, 1890",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maull_%26_Fox_-_Fanny_Bullock_Workman.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "worcester",
+      "cannes",
+      "united-states",
+      "france",
+      "north-america",
+      "europe"
+    ]
+  },
+  "prominence": 0.73,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q522167",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Fanny Bullock Workman",
+      "url": "https://de.wikipedia.org/wiki/Fanny_Bullock_Workman",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Fanny Bullock Workman",
+      "url": "https://en.wikipedia.org/wiki/Fanny_Bullock_Workman",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q522167"
+}

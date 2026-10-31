@@ -1,0 +1,52 @@
+{
+  "slug": "naomi-anderson",
+  "name": {
+    "display": "Naomi Anderson",
+    "sort": "Anderson, Naomi"
+  },
+  "born": {
+    "date": "1843-03-01",
+    "place": "michigan-city"
+  },
+  "died": {
+    "date": "1899-06-09"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Monroe A. Majors., 1893",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Naomi_Anderson.png"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "michigan-city",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.61,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q18148812",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Naomi Anderson",
+      "url": "https://en.wikipedia.org/wiki/Naomi_Anderson",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q18148812"
+}

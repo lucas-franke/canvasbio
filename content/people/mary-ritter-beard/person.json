@@ -1,0 +1,63 @@
+{
+  "slug": "mary-ritter-beard",
+  "name": {
+    "display": "Mary Ritter Beard",
+    "sort": "Beard, Mary Ritter"
+  },
+  "born": {
+    "date": "1876-08-05",
+    "place": "indianapolis"
+  },
+  "died": {
+    "date": "1958-08-14",
+    "place": "phoenix"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Underwood & Underwood",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mary_Ritter_Beard_cph.3b16401.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "science"
+    ],
+    "place": [
+      "indianapolis",
+      "phoenix",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.71,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6780609",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Mary Ritter Beard",
+      "url": "https://de.wikipedia.org/wiki/Mary_Ritter_Beard",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Mary Ritter Beard",
+      "url": "https://en.wikipedia.org/wiki/Mary_Ritter_Beard",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6780609"
+}

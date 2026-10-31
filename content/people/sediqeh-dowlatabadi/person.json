@@ -1,0 +1,62 @@
+{
+  "slug": "sediqeh-dowlatabadi",
+  "name": {
+    "display": "Sediqeh Dowlatabadi",
+    "sort": "Dowlatabadi, Sediqeh"
+  },
+  "born": {
+    "date": "1882",
+    "place": "isfahan"
+  },
+  "died": {
+    "date": "1961-07-30",
+    "place": "tehran"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "iranian.com, 1950",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sediqeh_Dowlatabadi_3.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "isfahan",
+      "tehran",
+      "iran",
+      "asia"
+    ]
+  },
+  "prominence": 0.64,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q7445322",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Sediqeh Dowlatabadi",
+      "url": "https://de.wikipedia.org/wiki/Sediqeh_Dowlatabadi",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Sediqeh Dowlatabadi",
+      "url": "https://en.wikipedia.org/wiki/Sediqeh_Dowlatabadi",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q7445322"
+}

@@ -1,0 +1,62 @@
+{
+  "slug": "marie-hankel",
+  "name": {
+    "display": "Marie Hankel",
+    "sort": "Hankel, Marie"
+  },
+  "born": {
+    "date": "1844-02-02",
+    "place": "schwerin"
+  },
+  "died": {
+    "date": "1929-12-15",
+    "place": "dresden"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Hugo Erfurth, 1908",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marie_Hankel_c._1908.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "schwerin",
+      "dresden",
+      "germany",
+      "europe"
+    ]
+  },
+  "prominence": 0.84,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q77483",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Marie Hankel",
+      "url": "https://de.wikipedia.org/wiki/Marie_Hankel",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Marie Hankel",
+      "url": "https://en.wikipedia.org/wiki/Marie_Hankel",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q77483"
+}

@@ -1,0 +1,64 @@
+{
+  "slug": "marion-hatton",
+  "name": {
+    "display": "Marion Hatton",
+    "sort": "Hatton, Marion"
+  },
+  "born": {
+    "date": "1835-09-08",
+    "place": "stogumber"
+  },
+  "died": {
+    "date": "1905-06-06",
+    "place": "dunedin"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1905",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marion_Hatton.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "stogumber",
+      "dunedin",
+      "united-kingdom",
+      "new-zealand",
+      "europe",
+      "oceania"
+    ]
+  },
+  "prominence": 0.23,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q16031216",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Marion Hatton",
+      "url": "https://de.wikipedia.org/wiki/Marion_Hatton",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Marion Hatton",
+      "url": "https://en.wikipedia.org/wiki/Marion_Hatton",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q16031216"
+}

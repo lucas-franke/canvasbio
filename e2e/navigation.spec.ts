@@ -115,19 +115,29 @@ test("the start page shows who was born on this day", async ({ page }) => {
   await page.clock.setFixedTime(new Date(2026, 6, 5, 12));
   await page.goto("/");
   const today = page.getByRole("region", { name: "An diesem Tag" });
+  // Two at first, the rest one tap away (nobody is dropped for being less known).
+  await expect(today.getByRole("listitem")).toHaveCount(2);
+  const more = today.getByRole("button", { name: /^\d+ weitere anzeigen$/ });
+  const hidden = Number((await more.textContent())!.match(/\d+/)![0]);
+  await more.click();
+  await expect(today.getByRole("listitem")).toHaveCount(2 + hidden);
   await expect(today.getByRole("link", { name: /Clara Zetkin/ })).toBeVisible();
   await expect(today).toContainText("Heute vor 169 Jahren geboren");
+  await expect(today.getByRole("button", { name: "Weniger anzeigen" })).toHaveAttribute(
+    "aria-expanded",
+    "true",
+  );
 });
 
 test("with nobody on this day, the start page shows the next days under their own heading", async ({
   page,
 }) => {
-  // 21 October: nobody in the demo collection; Annie Lorrain Smith was born on 23 October 1854.
-  await page.clock.setFixedTime(new Date(2026, 9, 21, 12));
+  // 6 December: nobody in the demo collection; Yosano Akiko was born on 7 December 1878.
+  await page.clock.setFixedTime(new Date(2026, 11, 6, 12));
   await page.goto("/");
   const soon = page.getByRole("region", { name: "In den nächsten Tagen" });
-  await expect(soon.getByRole("link", { name: /Annie Lorrain Smith/ })).toBeVisible();
-  await expect(soon).toContainText("Geboren am 23. Oktober 1854");
+  await expect(soon.getByRole("link", { name: /Yosano Akiko/ })).toBeVisible();
+  await expect(soon).toContainText("Geboren am 7. Dezember 1878");
   await expect(page.getByRole("region", { name: "An diesem Tag" })).toHaveCount(0);
 });
 

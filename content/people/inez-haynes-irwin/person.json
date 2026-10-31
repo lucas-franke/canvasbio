@@ -1,0 +1,64 @@
+{
+  "slug": "inez-haynes-irwin",
+  "name": {
+    "display": "Inez Haynes Irwin",
+    "sort": "Irwin, Inez Haynes"
+  },
+  "born": {
+    "date": "1873-03-02",
+    "place": "rio-de-janeiro"
+  },
+  "died": {
+    "date": "1970-09-30",
+    "place": "scituate"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "National Photo Company Collection (Library of Congress), 1923",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Inez_Haynes_Irwin_1923.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "rio-de-janeiro",
+      "scituate",
+      "brazil",
+      "united-states",
+      "south-america",
+      "north-america"
+    ]
+  },
+  "prominence": 0.56,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q6028696",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Inez Haynes Irwin",
+      "url": "https://de.wikipedia.org/wiki/Inez_Haynes_Irwin",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Inez Haynes Irwin",
+      "url": "https://en.wikipedia.org/wiki/Inez_Haynes_Irwin",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q6028696"
+}

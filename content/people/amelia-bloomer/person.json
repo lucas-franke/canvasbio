@@ -1,0 +1,62 @@
+{
+  "slug": "amelia-bloomer",
+  "name": {
+    "display": "Amelia Bloomer",
+    "sort": "Bloomer, Amelia"
+  },
+  "born": {
+    "date": "1818-05-27",
+    "place": "homer"
+  },
+  "died": {
+    "date": "1894-12-30",
+    "place": "council-bluffs"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Binksternet (talk), 1860",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:AmeliaBloomer-sig.png"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "homer",
+      "council-bluffs",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.77,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q442759",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Amelia Bloomer",
+      "url": "https://de.wikipedia.org/wiki/Amelia_Bloomer",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Amelia Bloomer",
+      "url": "https://en.wikipedia.org/wiki/Amelia_Bloomer",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q442759"
+}

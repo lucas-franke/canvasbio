@@ -1,0 +1,62 @@
+{
+  "slug": "marthe-bray",
+  "name": {
+    "display": "Marthe Bray",
+    "sort": "Bray, Marthe"
+  },
+  "born": {
+    "date": "1884-07-30",
+    "place": "le-bouscat"
+  },
+  "died": {
+    "date": "1949-06-03",
+    "place": "capdenac-gare"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Photographer not mentioned 8 Sept 1926, 1926",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marthe_Bray_French_feminist_in_1926_(cropped).png"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "le-bouscat",
+      "capdenac-gare",
+      "france",
+      "europe"
+    ]
+  },
+  "prominence": 0.45,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q76591083",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Marthe Bray",
+      "url": "https://de.wikipedia.org/wiki/Marthe_Bray",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Marthe Bray",
+      "url": "https://en.wikipedia.org/wiki/Marthe_Bray",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q76591083"
+}

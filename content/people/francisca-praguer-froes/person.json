@@ -1,0 +1,55 @@
+{
+  "slug": "francisca-praguer-froes",
+  "name": {
+    "display": "Francisca Praguer Fróes",
+    "sort": "Fróes, Francisca Praguer"
+  },
+  "born": {
+    "date": "1872-10-21",
+    "place": "cachoeira"
+  },
+  "died": {
+    "date": "1931-11-16",
+    "place": "rio-de-janeiro"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Praguer_Froes.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "medicine"
+    ],
+    "place": [
+      "cachoeira",
+      "rio-de-janeiro",
+      "brazil",
+      "south-america"
+    ]
+  },
+  "prominence": 0.46,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q8962257",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Francisca Praguer Fróes",
+      "url": "https://en.wikipedia.org/wiki/Francisca_Praguer_Fr%C3%B3es",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q8962257"
+}

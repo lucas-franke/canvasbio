@@ -1,0 +1,62 @@
+{
+  "slug": "sofja-lwowna-perowskaja",
+  "name": {
+    "display": "Sofja Lwowna Perowskaja",
+    "sort": "Perowskaja, Sofja Lwowna"
+  },
+  "born": {
+    "date": "1853-09-13",
+    "place": "saint-petersburg"
+  },
+  "died": {
+    "date": "1881-04-03",
+    "place": "saint-petersburg"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1881",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:S_Perovskaya.jpg"
+  },
+  "facets": {
+    "field": [
+      "activism"
+    ],
+    "place": [
+      "saint-petersburg",
+      "russia",
+      "europe",
+      "asia"
+    ]
+  },
+  "prominence": 0.96,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q1823663",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Sofja Lwowna Perowskaja",
+      "url": "https://de.wikipedia.org/wiki/Sofja_Lwowna_Perowskaja",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Sophia Perovskaya",
+      "url": "https://en.wikipedia.org/wiki/Sophia_Perovskaya",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q1823663"
+}

@@ -30,7 +30,10 @@
       "concord",
       "moscow",
       "united-states",
-      "russia"
+      "russia",
+      "north-america",
+      "europe",
+      "asia"
     ]
   },
   "prominence": 0.67,

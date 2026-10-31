@@ -1,0 +1,52 @@
+{
+  "slug": "maria-urbelina-tejada",
+  "name": {
+    "display": "María Urbelina Tejada",
+    "sort": "Tejada, María Urbelina"
+  },
+  "born": {
+    "date": "1922-05-16",
+    "place": "san-juan"
+  },
+  "died": {
+    "date": "2015-12-20"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mar%C3%ADa_Urbelina_Tejada_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "politics"
+    ],
+    "place": [
+      "san-juan",
+      "argentina",
+      "south-america"
+    ]
+  },
+  "prominence": 0.29,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q96065498",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): María Urbelina Tejada",
+      "url": "https://en.wikipedia.org/wiki/Mar%C3%ADa_Urbelina_Tejada",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q96065498"
+}

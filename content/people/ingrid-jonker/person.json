@@ -1,0 +1,62 @@
+{
+  "slug": "ingrid-jonker",
+  "name": {
+    "display": "Ingrid Jonker",
+    "sort": "Jonker, Ingrid"
+  },
+  "born": {
+    "date": "1933-09-19",
+    "place": "kimberley"
+  },
+  "died": {
+    "date": "1965-07-19",
+    "place": "three-anchor-bay"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1956",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ingrid_Jonker_1956.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "kimberley",
+      "three-anchor-bay",
+      "south-africa",
+      "africa"
+    ]
+  },
+  "prominence": 0.66,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q455266",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Ingrid Jonker",
+      "url": "https://de.wikipedia.org/wiki/Ingrid_Jonker",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ingrid Jonker",
+      "url": "https://en.wikipedia.org/wiki/Ingrid_Jonker",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q455266"
+}

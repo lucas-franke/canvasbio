@@ -1,0 +1,54 @@
+{
+  "slug": "nina-murdoch",
+  "name": {
+    "display": "Nina Murdoch",
+    "sort": "Murdoch, Nina"
+  },
+  "born": {
+    "date": "1890-10-19",
+    "place": "carlton-north"
+  },
+  "died": {
+    "date": "1976-04-16",
+    "place": "camberwell"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unbekannt, 1936",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:StateLibQld_2_211316_Nina_Murdoch.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "carlton-north",
+      "camberwell",
+      "australia",
+      "oceania"
+    ]
+  },
+  "prominence": 0.16,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q7038053",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Nina Murdoch",
+      "url": "https://en.wikipedia.org/wiki/Nina_Murdoch",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q7038053"
+}

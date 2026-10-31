@@ -1,0 +1,65 @@
+{
+  "slug": "anna-leonowens",
+  "name": {
+    "display": "Anna Leonowens",
+    "sort": "Leonowens, Anna"
+  },
+  "born": {
+    "date": "1831-11-06",
+    "place": "ahilyanagar"
+  },
+  "died": {
+    "date": "1915-01-19",
+    "place": "montreal"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1915",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anna_Leonowens_(1831-1915).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "education"
+    ],
+    "place": [
+      "ahilyanagar",
+      "montreal",
+      "india",
+      "canada",
+      "asia",
+      "north-america"
+    ]
+  },
+  "prominence": 0.74,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q234244",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Anna Leonowens",
+      "url": "https://de.wikipedia.org/wiki/Anna_Leonowens",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Anna Leonowens",
+      "url": "https://en.wikipedia.org/wiki/Anna_Leonowens",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q234244"
+}

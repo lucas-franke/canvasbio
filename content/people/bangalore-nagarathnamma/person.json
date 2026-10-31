@@ -1,0 +1,55 @@
+{
+  "slug": "bangalore-nagarathnamma",
+  "name": {
+    "display": "Bangalore Nagarathnamma",
+    "sort": "Nagarathnamma, Bangalore"
+  },
+  "born": {
+    "date": "1878-11-03",
+    "place": "nanjangud"
+  },
+  "died": {
+    "date": "1952-05-19",
+    "place": "thiruvaiyaru"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1929",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bangalore_Nagarathnamma.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "arts"
+    ],
+    "place": [
+      "nanjangud",
+      "thiruvaiyaru",
+      "india",
+      "asia"
+    ]
+  },
+  "prominence": 0.51,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q4855067",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Bangalore Nagarathnamma",
+      "url": "https://en.wikipedia.org/wiki/Bangalore_Nagarathnamma",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q4855067"
+}
