@@ -67,7 +67,7 @@ test("the start page has one main way in (the mosaic), the list next to it, and 
   // The other views are in the view switch of the overview, not on the card.
   await expect(page.getByRole("link", { name: "Karte", exact: true })).toHaveCount(0);
   await expect(page.getByRole("region", { name: "Ihre Stimme" })).toHaveCount(0);
-  await page.getByRole("link", { name: "oder als Liste", exact: true }).click();
+  await page.getByRole("link", { name: "Als Liste öffnen", exact: true }).click();
   await expect(page).toHaveURL(/\/personen\/liste$/);
 });
 
