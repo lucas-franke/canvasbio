@@ -154,9 +154,13 @@ export function PersonDetail({
       )}
 
       <Tabs value={tab} onValueChange={(value) => setTab(value as TabId)}>
-        {/* Sticks in the top line once scrolled, next to the close button (room kept free on the right). */}
-        <div className="sticky top-0 z-10 -mx-5 flex min-h-16 items-center bg-surface/95 py-2 pr-16 pl-5 backdrop-blur-sm sm:-mx-10 sm:pr-20 sm:pl-10 print:hidden">
-          <TabsList aria-label={m.detail.sections}>
+        {/* Sticks in the top line once scrolled, next to the close button (room kept free on the
+            right). No bar background: like the close button, the tabs float on their own. */}
+        <div className="pointer-events-none sticky top-0 z-10 -mx-5 flex min-h-16 items-center py-2 pr-16 pl-5 sm:-mx-10 sm:pr-20 sm:pl-10 print:hidden">
+          <TabsList
+            aria-label={m.detail.sections}
+            className="pointer-events-auto bg-surface/85 shadow-[0_2px_8px_rgb(0_0_0/0.18)] backdrop-blur-sm"
+          >
             {siteConfig.detail.tabs.map((t) => (
               <TabsTrigger key={t.id} value={t.id} className="max-sm:px-2.5">
                 {t.shortLabel ? (
