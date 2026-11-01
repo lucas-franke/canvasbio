@@ -1,5 +1,5 @@
 import { cn } from "cn";
-import type { ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 import { useMessages } from "~/lib/i18n";
 import { SearchDrawer } from "~/components/search/search-drawer";
@@ -12,7 +12,20 @@ import { TopNav, NavPill } from "./nav";
  * the content scrolls on beneath the pills (which carry their own).
  */
 function SiteHeader() {
-  return <div aria-hidden="true" className="h-[calc(5rem+env(safe-area-inset-top))] shrink-0" />;
+  return <div aria-hidden="true" className="h-[calc(4rem+env(safe-area-inset-top))] shrink-0 sm:h-[calc(5rem+env(safe-area-inset-top))]" />;
+}
+
+/** The page has scrolled away from its top (content now runs beneath the navigation). */
+function useScrolled(enabled: boolean): boolean {
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    if (!enabled) return;
+    const update = () => setScrolled(window.scrollY > 8);
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    return () => window.removeEventListener("scroll", update);
+  }, [enabled]);
+  return enabled && scrolled;
 }
 
 interface PageShellProps {
@@ -34,6 +47,9 @@ interface PageShellProps {
  */
 export function PageShell({ children, navEnd, aside, inert = false, fullBleed = false }: PageShellProps) {
   const m = useMessages();
+  // Over the mosaic and the map, and once a page has scrolled, the brand gets a pill like the
+  // controls on the right; at the top of a page it stands free on the page colour.
+  const contained = useScrolled(!fullBleed) || fullBleed;
 
   return (
     <div
@@ -48,9 +64,8 @@ export function PageShell({ children, navEnd, aside, inert = false, fullBleed = 
         inert={inert}
         label={m.nav.label}
         start={
-          // Over the mosaic and the map the brand gets a pill like the controls on the right.
-          <NavPill bare={!fullBleed}>
-            <BrandLink contained={fullBleed} />
+          <NavPill bare={!contained}>
+            <BrandLink contained={contained} />
           </NavPill>
         }
         end={
@@ -67,7 +82,7 @@ export function PageShell({ children, navEnd, aside, inert = false, fullBleed = 
         inert={inert || undefined}
       >
         {!fullBleed && <SiteHeader />}
-        <main id="main" className={fullBleed ? "absolute inset-0" : "flex-1 px-4 pt-8 pb-24 sm:px-8"}>
+        <main id="main" className={fullBleed ? "absolute inset-0" : "flex-1 px-4 pt-4 pb-24 sm:px-8 sm:pt-8"}>
           {children}
         </main>
       </div>

@@ -93,7 +93,8 @@ export function PersonDetail({
         {/* Grab handle: the sheet on phones can be swiped down to close (app/lib/swipe-to-close.ts). */}
         <span
           aria-hidden="true"
-          className="absolute top-1.5 left-1/2 h-1 w-10 -translate-x-1/2 rounded-full bg-surface/80 shadow-sm lg:hidden"
+          // Light with a dark ring: visible on the portrait and on the page colour alike.
+          className="absolute top-1.5 left-1/2 h-1 w-10 -translate-x-1/2 rounded-full bg-surface shadow-sm ring-1 ring-emphasis/25 lg:hidden"
         />
         <Link
           to={closeHref}

@@ -56,14 +56,11 @@ export function SearchDrawer() {
             event.preventDefault();
         }}
         tabIndex={-1}
-        // The name field gets focus, not the close button. On a phone the keyboard would
-        // cover half the sheet, so there the sheet itself takes focus (no keyboard).
+        // The name field gets focus, not the close button: whoever opens the search wants to
+        // type (on phones the keyboard covers the filters until it is closed).
         onOpenAutoFocus={(event) => {
           event.preventDefault();
-          const target = desktop
-            ? document.getElementById("search-name")
-            : (event.currentTarget as HTMLElement | null);
-          target?.focus({ preventScroll: true });
+          document.getElementById("search-name")?.focus({ preventScroll: true });
         }}
       >
         <div className="flex items-center justify-between px-6 pt-2">

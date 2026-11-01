@@ -78,15 +78,25 @@ export function PersonRow({ person, href, tags, active = false, badge }: PersonR
           ))}
         </div>
         {tags.length > 0 && (
+          // Narrow columns: the first tag and "+2" (the others wrapped one per line and made
+          // each row a screen high); screen readers still get all of them.
           <ul className="flex flex-wrap gap-2 pt-1">
-            {tags.map((tag) => (
+            {tags.map((tag, i) => (
               <li
                 key={tag}
-                className="rounded-lg border border-control px-2 py-0.5 text-body-xs text-emphasis"
+                className={cn(
+                  "rounded-lg border border-control px-2 py-0.5 text-body-xs text-emphasis",
+                  i > 0 && "@max-lg:sr-only",
+                )}
               >
                 {tag}
               </li>
             ))}
+            {tags.length > 1 && (
+              <li aria-hidden="true" className="py-0.5 text-body-xs text-muted-text @lg:hidden">
+                +{tags.length - 1}
+              </li>
+            )}
           </ul>
         )}
       </div>

@@ -13,12 +13,12 @@ test("list groups people under letter headings", async ({ page }) => {
 
 test("the letter index jumps to a letter and follows the scrolling", async ({ page }) => {
   await page.goto("/personen/liste");
+  // After hydration the index knows its height (and may show dots for some letters).
+  await waitForHydration(page);
   const index = page.getByRole("navigation", { name: "Alphabet" });
   // Only letters with entries are offered: each links to its chapter heading.
-  for (const link of await index.getByRole("link").all()) {
-    const id = (await link.getAttribute("href"))!.slice(1);
-    await expect(page.locator(`[id="${id}"]`)).toHaveCount(1);
-  }
+  const ids = await index.locator("[data-chapter]").evaluateAll((all) => all.map((a) => a.getAttribute("data-chapter")!));
+  for (const id of ids) await expect(page.locator(`[id="${id}"]`)).toHaveCount(1);
   await index.getByRole("link", { name: "Z", exact: true }).click();
   await expect(page).toHaveURL(/#buchstabe-z$/);
   const heading = page.getByRole("heading", { level: 2, name: "Z", exact: true });
@@ -30,6 +30,22 @@ test("the letter index jumps to a letter and follows the scrolling", async ({ pa
     .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
     .analyze();
   expect(axe.violations.map((v) => v.id)).toEqual([]);
+});
+
+test("on a short screen the whole letter index stays on screen, with dots between letters", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 360, height: 520 });
+  await page.goto("/personen/liste");
+  await waitForHydration(page);
+  const index = page.getByRole("navigation", { name: "Alphabet" });
+  await expect(index.locator("span[data-chapter]").first()).toBeAttached();
+  for (const entry of await index.locator("[data-chapter]").all()) await expect(entry).toBeInViewport();
+  // First and last letter keep their links (24 px targets).
+  for (const letter of ["A", "Z"]) {
+    const box = (await index.getByRole("link", { name: letter, exact: true }).boundingBox())!;
+    expect(box.height).toBeGreaterThanOrEqual(24);
+  }
 });
 
 test("sliding along the letter index scrolls with it (desktop)", async ({ page, isMobile }) => {

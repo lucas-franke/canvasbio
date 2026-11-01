@@ -207,7 +207,8 @@ function Axis({
     <div
       className={cn(
         ROW_GRID,
-        "sticky top-22 z-30 -mb-6 items-center rounded-xl bg-surface px-2 py-2 shadow-sm ring-2 ring-control",
+        // Floats like the navigation pills: same light surface, soft shadow, thin ring.
+        "sticky top-[4.75rem] z-30 -mb-6 items-center rounded-xl bg-surface/95 px-2 py-2 shadow-[0_2px_12px_rgb(0_0_0/0.12)] ring-1 ring-line/70 backdrop-blur-sm sm:top-22",
       )}
     >
       <span className="@2xl:col-span-2" />

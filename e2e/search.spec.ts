@@ -11,12 +11,12 @@ const openPanel = async (page: Page) => {
 
 const submit = (dialog: ReturnType<Page["getByRole"]>) => dialog.locator('button[type="submit"]');
 
-test("name search on the canvas highlights the match and counts live", async ({ page, isMobile }) => {
+test("name search on the canvas highlights the match and counts live", async ({ page }) => {
   await page.goto("/personen");
   await page.locator("[data-cell]").first().waitFor({ state: "attached" });
   const dialog = await openPanel(page);
-  // Phones: the sheet itself takes focus, so the keyboard doesn't cover it right away.
-  await expect(isMobile ? dialog : dialog.getByLabel("Nach Namen suchen")).toBeFocused();
+  // On every screen: whoever opens the search wants to type.
+  await expect(dialog.getByLabel("Nach Namen suchen")).toBeFocused();
   await dialog.getByLabel("Nach Namen suchen").fill("zetkin");
   await expect(submit(dialog)).toHaveText("1 Ergebnis anzeigen");
   await submit(dialog).click();

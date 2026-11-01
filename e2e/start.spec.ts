@@ -97,6 +97,9 @@ test("over the mosaic and the map the brand sits in a pill, on the list it stand
     await expect(page.getByRole("main")).toBeVisible();
     await expect(pill()).toHaveClass(contained ? /\bbg-nav\b/ : /^(?!.*\bbg-nav\b)/);
   }
+  // Once the list scrolls beneath it, the brand gets its pill there too.
+  await page.evaluate(() => window.scrollTo(0, 600));
+  await expect(pill()).toHaveClass(/\bbg-nav\b/);
 });
 
 test("the brand shows the full name on phones too", async ({ page }) => {

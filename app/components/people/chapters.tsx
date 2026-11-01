@@ -1,5 +1,14 @@
 import { cn } from "cn";
-import { useEffect, useRef, useState, type MouseEvent, type PointerEvent, type ReactNode } from "react";
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type MouseEvent,
+  type PointerEvent,
+  type ReactNode,
+  type RefObject,
+} from "react";
 
 import type { Chapter, SortKey } from "~/lib/content/sort";
 import { useMessages, type Messages } from "~/lib/i18n";
@@ -111,6 +120,36 @@ function IndexLabel({ chapter, full }: { chapter: Chapter<unknown>; full: string
   );
 }
 
+/** Height of an index link and of a dot (px). */
+const ENTRY = 24;
+const DOT = 12;
+
+/**
+ * Which entries of the index get a link, given the height of its track: all if they fit,
+ * else as many as fit next to dots for the others, spread evenly (first and last always).
+ * Until measured (pre-rendered HTML) all.
+ */
+function useShownEntries(track: RefObject<HTMLElement | null>, count: number): Set<number> {
+  const [height, setHeight] = useState<number | null>(null);
+  useEffect(() => {
+    const el = track.current;
+    if (!el) return;
+    const observer = new ResizeObserver(() => setHeight(el.clientHeight));
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [track]);
+  return useMemo(() => {
+    const all = new Set(Array.from({ length: count }, (_, i) => i));
+    // 8 px: the list's own padding.
+    const room = height === null ? Infinity : height - 8;
+    if (count * ENTRY <= room) return all;
+    // links·ENTRY + (count − links)·DOT ≤ room
+    const links = Math.max(2, Math.floor((room - count * DOT) / (ENTRY - DOT)));
+    if (links >= count) return all;
+    return new Set(Array.from({ length: links }, (_, j) => Math.round((j * (count - 1)) / (links - 1))));
+  }, [height, count]);
+}
+
 /** Movement (px) after which pressing the index becomes scrubbing instead of a tap. */
 const SCRUB_THRESHOLD = 6;
 
@@ -118,7 +157,9 @@ const SCRUB_THRESHOLD = 6;
  * Index along the right edge, as in a phone's contacts app: every chapter of the current
  * order, the current one marked while scrolling. Tapping a chapter jumps there; sliding a
  * finger (or the mouse) along the index scrolls with it, with the chapter shown large beside it.
- * Each entry is a link (keyboard, screen readers) of at least 24 × 24 px (WCAG 2.5.8).
+ * Each entry is a link (keyboard, screen readers) of at least 24 × 24 px (WCAG 2.5.8). When
+ * the screen is too short for all of them, some become small dots in between (as in iOS
+ * contacts) instead of the index scrolling, which a finger couldn't reach.
  */
 function ChapterIndex({ chapters, sort }: ChapterNavProps) {
   const m = useMessages();
@@ -126,6 +167,8 @@ function ChapterIndex({ chapters, sort }: ChapterNavProps) {
   const scrub = useRef<{ startY: number; moved: boolean; id: string | null } | null>(null);
   const suppressClick = useRef(false);
   const [bubble, setBubble] = useState<{ label: string; top: number } | null>(null);
+  const track = useRef<HTMLDivElement>(null);
+  const shown = useShownEntries(track, chapters.length);
 
   const onPointerDown = (event: PointerEvent<HTMLElement>) => {
     if (event.button !== 0) return;
@@ -174,9 +217,12 @@ function ChapterIndex({ chapters, sort }: ChapterNavProps) {
       // A track as high as the content; the index sticks in it (below the navigation).
       className="pointer-events-none absolute inset-y-0 -right-3 z-30 sm:-right-6 lg:-right-4 print:hidden"
     >
-      {/* Sticks exactly where the content starts (below the 5rem page header and the main
+      {/* Sticks exactly where the content starts (below the page header and the main
           padding), so it never shifts once the page scrolls. */}
-      <div className="sticky top-28 flex h-[calc(100dvh-8rem)] max-h-full flex-col justify-center">
+      <div
+        ref={track}
+        className="sticky top-20 flex h-[calc(100dvh-6rem)] max-h-full flex-col justify-center sm:top-28 sm:h-[calc(100dvh-8rem)]"
+      >
         <ul
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
@@ -188,22 +234,33 @@ function ChapterIndex({ chapters, sort }: ChapterNavProps) {
             event.preventDefault();
             event.stopPropagation();
           }}
-          className="pointer-events-auto flex max-h-full touch-none flex-col items-center overflow-y-auto rounded-full bg-surface/80 px-0.5 py-1 shadow-sm ring-1 ring-line/60 backdrop-blur-sm select-none"
+          className="pointer-events-auto flex max-h-full touch-none flex-col items-center overflow-hidden rounded-full bg-surface/80 px-0.5 py-1 shadow-sm ring-1 ring-line/60 backdrop-blur-sm select-none"
         >
-          {chapters.map((chapter) => (
-            <li key={chapter.id}>
-              <a
-                href={`#${chapter.id}`}
-                data-chapter={chapter.id}
-                onClick={(event) => jumpTo(event, chapter.id)}
-                aria-current={chapter.id === current ? "true" : undefined}
-                draggable={false}
-                className="flex min-h-6 min-w-6 items-center justify-center rounded-full px-1 text-body-xs font-semibold text-muted-text tabular-nums hover:text-emphasis aria-[current=true]:bg-brand aria-[current=true]:text-brand-foreground"
-              >
-                <IndexLabel chapter={chapter} full={chapterText(chapter, m).label} />
-              </a>
-            </li>
-          ))}
+          {chapters.map((chapter, i) =>
+            shown.has(i) ? (
+              <li key={chapter.id}>
+                <a
+                  href={`#${chapter.id}`}
+                  data-chapter={chapter.id}
+                  onClick={(event) => jumpTo(event, chapter.id)}
+                  aria-current={chapter.id === current ? "true" : undefined}
+                  draggable={false}
+                  className="flex min-h-6 min-w-6 items-center justify-center rounded-full px-1 text-body-xs font-semibold text-muted-text tabular-nums hover:text-emphasis aria-[current=true]:bg-brand aria-[current=true]:text-brand-foreground"
+                >
+                  <IndexLabel chapter={chapter} full={chapterText(chapter, m).label} />
+                </a>
+              </li>
+            ) : (
+              // A dot stands for a chapter without room of its own; scrubbing still reaches it.
+              <li key={chapter.id} aria-hidden="true">
+                <span
+                  data-chapter={chapter.id}
+                  data-current={chapter.id === current ? "" : undefined}
+                  className="grid h-3 w-6 place-items-center before:size-1 before:rounded-full before:bg-muted-text before:content-[''] data-current:before:size-1.5 data-current:before:bg-brand"
+                />
+              </li>
+            ),
+          )}
         </ul>
         {bubble && (
           <span

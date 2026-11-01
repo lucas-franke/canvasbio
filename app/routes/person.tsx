@@ -8,8 +8,10 @@ import { requestPath } from "~/lib/base-path";
 import { content } from "~/lib/content/index.server";
 import { renderMarkdown, type Heading } from "~/lib/content/markdown.server";
 import { loadPeopleIndex } from "~/lib/content/people-index.server";
-import { relatedPeople } from "~/lib/content/related";
+import { relatedPeople, type RelatedReason } from "~/lib/content/related";
+import { siteConfig } from "~/lib/config";
 import { messagesFor } from "~/lib/i18n";
+import { localize } from "~/lib/i18n/localize";
 import { localeFromPathname } from "~/lib/i18n/locale";
 import { portraitUrl } from "~/lib/content/images";
 import { pageMeta } from "~/lib/meta";
@@ -17,6 +19,8 @@ import type { PeopleLayoutContext } from "./people-layout";
 
 /** Average silent reading speed (German and English prose). */
 const WORDS_PER_MINUTE = 200;
+
+const reasonGroup = (r: RelatedReason) => (r.kind === "era" ? "era" : r.facet);
 
 export async function loader({ request, params }: Route.LoaderArgs) {
   const locale = localeFromPathname(requestPath(request));
@@ -35,10 +39,22 @@ export async function loader({ request, params }: Route.LoaderArgs) {
     footnoteBackLabel: m.detail.footnoteBack,
   });
 
-  const { people, tagFacet, facetLabels } = await loadPeopleIndex(locale);
+  const { people, tagFacet, facetLabels, placeGroups } = await loadPeopleIndex(locale);
   const tags = (tagFacet ? (person.facets[tagFacet] ?? []) : [])
     .map((value) => facetLabels[tagFacet!]?.[value])
     .filter((label): label is string => Boolean(label));
+
+  // A shared continent says little (and Russia counts as Europe and Asia): never a reason.
+  const continents = new Set(placeGroups.map((g) => g.key));
+  const reasonText = (r: RelatedReason) => {
+    if (r.kind === "era") return m.detail.sameEra;
+    const value = facetLabels[r.facet]?.[r.value] ?? r.value;
+    // Tags read on their own ("Bildung"); other facets name themselves ("Ort: Russland"),
+    // so a shared place doesn't read as where the other person comes from.
+    if (r.facet === tagFacet) return value;
+    const facet = siteConfig.facets.find((f) => f.key === r.facet);
+    return facet ? `${localize(facet.label, locale)}: ${value}` : value;
+  };
 
   // Computed while pre-rendering: the links are in the HTML, the browser gets only four entries.
   const related: RelatedPerson[] = relatedPeople(person, people).map(({ person: p, reasons }) => ({
@@ -48,8 +64,11 @@ export async function loader({ request, params }: Route.LoaderArgs) {
     died: p.died,
     image: p.image,
     reasons: reasons
+      .filter((r) => !(r.kind === "facet" && r.facet !== tagFacet && continents.has(r.value)))
+      // One reason per facet: the strongest (rarest) one, e.g. the city rather than its country.
+      .filter((r, i, all) => all.findIndex((o) => reasonGroup(o) === reasonGroup(r)) === i)
       .slice(0, 2)
-      .map((r) => (r.kind === "era" ? m.detail.sameEra : (facetLabels[r.facet]?.[r.value] ?? r.value))),
+      .map(reasonText),
   }));
 
   // A table of contents only pays off for longer stories with several sections.
