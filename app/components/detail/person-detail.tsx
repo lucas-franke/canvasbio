@@ -107,9 +107,9 @@ export function PersonDetail({
           }}
           aria-label={m.detail.close}
           title={m.detail.close}
-          className="pointer-events-auto -mr-2 grid size-11 shrink-0 place-items-center rounded-full bg-surface/85 text-emphasis shadow-[0_2px_8px_rgb(0_0_0/0.18)] ring-1 ring-line/60 backdrop-blur-sm transition-colors hover:bg-surface"
+          className="hit-44 pointer-events-auto -mr-1.5 grid size-10 shrink-0 place-items-center rounded-full bg-surface/85 text-emphasis shadow-[0_2px_8px_rgb(0_0_0/0.18)] ring-1 ring-line/60 backdrop-blur-sm transition-colors hover:bg-surface"
         >
-          <X aria-hidden="true" className="size-6" />
+          <X aria-hidden="true" className="size-5" />
         </Link>
       </div>
 

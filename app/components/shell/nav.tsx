@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 /*
  * Building blocks of the floating navigation, fixed at the top of every screen size.
- * All targets are at least 44 px (mobile) / 40 px (desktop) high.
+ * Controls look 40 px high; their tap area is at least 44 px (`hit-44`).
  */
 
 /** Dark rounded container. `bare` drops the background (used on the dark stage of the start page). */
@@ -12,7 +12,7 @@ export function NavPill({ bare = false, className, ...props }: ComponentProps<"d
   return (
     <div
       className={cn(
-        "pointer-events-auto flex items-center gap-1 rounded-full p-1",
+        "pointer-events-auto flex items-center gap-1 rounded-full p-0.5 lg:p-1",
         !bare && "bg-nav text-nav-foreground shadow-[0_2px_12px_rgb(0_0_0/0.12)] ring-1 ring-line/70",
         className,
       )}
@@ -29,7 +29,7 @@ export function NavTextLink({ className, ...props }: ComponentProps<typeof Link>
   return (
     <Link
       className={cn(
-        "inline-flex h-12 items-center rounded-full px-5 text-label font-medium whitespace-nowrap lg:h-11",
+        "hit-44 inline-flex h-10 items-center rounded-full px-4 text-body-sm font-medium whitespace-nowrap sm:text-label lg:h-11 lg:px-5",
         outlined,
         className,
       )}
@@ -60,7 +60,7 @@ export function NavIconButton({
       type="button"
       title={label}
       className={cn(
-        "grid size-11 shrink-0 place-items-center rounded-full lg:size-10 [&_svg]:size-5",
+        "hit-44 grid size-10 shrink-0 place-items-center rounded-full [&_svg]:size-5",
         outlined,
         className,
       )}
@@ -85,20 +85,25 @@ export function TopNav({
   center,
   end,
   inert = false,
+  hidden = false,
 }: {
   label: string;
   start: ReactNode;
   center?: ReactNode;
   end?: ReactNode;
   inert?: boolean;
+  /** Phones: slide up out of view while the reader scrolls down (keyboard focus brings it back). */
+  hidden?: boolean;
 }) {
   return (
     <nav
       aria-label={label}
       inert={inert || undefined}
+      data-hidden={hidden || undefined}
       // Own view-transition layer: stays put (and on top) while pages and panels animate.
       className={cn(
         "pointer-events-none fixed inset-x-0 top-0 z-40 flex items-center justify-between gap-2 px-3 pt-[max(0.75rem,env(safe-area-inset-top))] [view-transition-name:site-nav] sm:px-6 lg:px-8",
+        "transition-transform duration-200 ease-out motion-reduce:transition-none max-lg:data-hidden:-translate-y-[calc(100%+1rem)] max-lg:data-hidden:focus-within:translate-y-0",
         // Behind an open dialog (inert) the nav is part of the page snapshot, so it fades and
         // blurs together with the rest instead of staying sharp on its own layer.
         "[&[inert]]:[view-transition-name:none]",

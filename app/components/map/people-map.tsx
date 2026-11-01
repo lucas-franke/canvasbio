@@ -412,7 +412,7 @@ export default function PeopleMap({
               type="button"
               aria-pressed={mode === value}
               onClick={() => setMode(value)}
-              className="min-h-11 rounded-full px-4 text-label font-medium transition-colors hover:bg-nav-foreground/10 aria-pressed:bg-nav-foreground aria-pressed:text-nav lg:min-h-10"
+              className="hit-44 min-h-10 rounded-full px-3.5 text-body-sm font-medium transition-colors hover:bg-nav-foreground/10 aria-pressed:bg-nav-foreground aria-pressed:text-nav sm:px-4 sm:text-label"
             >
               {m.map[value]}
             </button>
@@ -422,9 +422,9 @@ export default function PeopleMap({
           type="button"
           aria-expanded={panel?.kind === "places"}
           onClick={() => setPanel(panel?.kind === "places" ? null : { kind: "places" })}
-          className="inline-flex min-h-11 items-center gap-2 rounded-full bg-nav px-4 text-label font-medium text-nav-foreground shadow-[0_2px_10px_rgb(0_0_0/0.12)] hover:bg-nav/90 lg:min-h-10"
+          className="hit-44 inline-flex min-h-10 items-center gap-2 rounded-full bg-nav px-3.5 text-body-sm font-medium text-nav-foreground shadow-[0_2px_10px_rgb(0_0_0/0.12)] hover:bg-nav/90 sm:px-4 sm:text-label"
         >
-          <List aria-hidden="true" className="size-5" />
+          <List aria-hidden="true" className="size-4 sm:size-5" />
           {m.map.places}
         </button>
         <p className="text-body-xs text-muted-text">{m.map.attribution}</p>
@@ -451,7 +451,7 @@ export default function PeopleMap({
               aria-label={m.map.closePlaces}
               // Without WebGL the list of places is all there is: closing a place goes back to it.
               onClick={() => setPanel(failed ? { kind: "places" } : null)}
-              className="grid size-11 place-items-center rounded-full text-emphasis hover:bg-emphasis/5"
+              className="hit-44 grid size-10 place-items-center rounded-full text-emphasis hover:bg-emphasis/5"
             >
               <X aria-hidden="true" className="size-5" />
             </button>

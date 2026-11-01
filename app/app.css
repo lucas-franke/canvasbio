@@ -206,6 +206,25 @@
 }
 
 /*
+ * Controls that look smaller than 44 px (40 px on phones) keep a 44 × 44 px tap area:
+ * an invisible pseudo-element centred on them (project standard; WCAG 2.5.8 needs 24).
+ * Not for elements that use ::after themselves or are positioned otherwise.
+ */
+@utility hit-44 {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: max(100%, 2.75rem);
+    height: max(100%, 2.75rem);
+    translate: -50% -50%;
+  }
+}
+
+/*
  * Programmatic focus targets (headings with tabindex="-1" that receive focus when a
  * biography opens or after a jump). They aren't interactive, so no focus indicator.
  */

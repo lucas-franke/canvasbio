@@ -27,7 +27,7 @@ import {
 } from "~/lib/search/use-search";
 
 const fieldClass =
-  "min-h-12 w-full rounded-xl border-2 border-control bg-surface px-4 text-body text-emphasis placeholder:text-muted-text";
+  "min-h-11 w-full rounded-xl border-2 border-control bg-surface px-4 text-body text-emphasis placeholder:text-muted-text";
 
 /**
  * The search button in the navigation: a sheet with name, place and field filters (Figma
@@ -68,10 +68,10 @@ export function SearchDrawer() {
             {m.search.title}
           </DrawerTitle>
           <DrawerClose
-            className="grid size-12 place-items-center rounded-full border-2 border-control text-emphasis hover:bg-emphasis/5"
+            className="hit-44 grid size-10 place-items-center rounded-full border border-control text-emphasis hover:bg-emphasis/5"
             aria-label={m.search.close}
           >
-            <X aria-hidden="true" className="size-6" />
+            <X aria-hidden="true" className="size-5" />
           </DrawerClose>
         </div>
         <SearchPanelBody />
@@ -305,7 +305,7 @@ function MultiFacet({
             <label
               key={value}
               className={cn(
-                "relative inline-flex min-h-11 cursor-pointer items-center gap-1.5 rounded-full border-2 px-4 text-body-sm font-medium transition-colors",
+                "hit-44 inline-flex min-h-10 cursor-pointer items-center gap-1.5 rounded-full border px-3.5 text-body-sm font-medium transition-colors",
                 "has-[:focus-visible]:shadow-[0_0_0_6px_var(--c-focus-halo)] has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-focus",
                 checked
                   ? "border-brand bg-brand text-brand-foreground"

@@ -133,6 +133,46 @@ test("language switch keeps the list view", async ({ page }) => {
   await expect(page.getByRole("heading", { level: 1, name: "Biographies as a list" })).toBeAttached();
 });
 
+test("phones: the navigation makes room while scrolling down and returns on scrolling up", async ({
+  page,
+  isMobile,
+}) => {
+  await page.goto("/personen/liste");
+  await waitForHydration(page);
+  const nav = page.getByRole("navigation", { name: "Hauptnavigation" }).first();
+  const scrollBy = (y: number) => page.evaluate((dy) => window.scrollBy(0, dy), y);
+  await scrollBy(1500);
+  if (!isMobile) {
+    // Desktop: always there.
+    await expect(page.getByRole("button", { name: "Suche", exact: true })).toBeInViewport();
+    return;
+  }
+  await expect(nav).toHaveAttribute("data-hidden", "true");
+  await expect(page.getByRole("button", { name: "Suche", exact: true })).not.toBeInViewport();
+  await scrollBy(-200);
+  await expect(nav).not.toHaveAttribute("data-hidden");
+  await expect(page.getByRole("button", { name: "Suche", exact: true })).toBeInViewport();
+  // Keyboard focus brings a hidden navigation back.
+  await scrollBy(1500);
+  await expect(nav).toHaveAttribute("data-hidden", "true");
+  await page.getByRole("link", { name: "Ihre Stimme – Startseite" }).focus();
+  await expect(page.getByRole("link", { name: "Ihre Stimme – Startseite" })).toBeInViewport();
+});
+
+test("phones: the navigation's controls look 40 px but take taps across 44 px", async ({ page }) => {
+  await page.setViewportSize({ width: 393, height: 852 });
+  await page.goto("/personen/liste");
+  const search = page.getByRole("button", { name: "Suche", exact: true });
+  const box = (await search.boundingBox())!;
+  expect(box.height).toBeLessThanOrEqual(40);
+  // 1.5 px below the visible edge still hits the button.
+  const hit = await page.evaluate(
+    ({ x, y }) => document.elementFromPoint(x, y)?.closest("button")?.getAttribute("title"),
+    { x: box.x + box.width / 2, y: box.y + box.height + 1.5 },
+  );
+  expect(hit).toBe("Suche");
+});
+
 test("the list offers a random biography without covering any entry", async ({ page }) => {
   await page.goto("/personen/liste");
   const random = page.getByRole("button", { name: "Zufällige Biografie" });

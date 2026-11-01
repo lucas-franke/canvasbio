@@ -27,7 +27,7 @@ export function BrandLink({ className, contained = false }: { className?: string
       to={home}
       aria-current={pathname === home ? "page" : undefined}
       className={cn(
-        "inline-flex h-11 shrink-0 items-center rounded-full transition-opacity hover:opacity-75 lg:h-10",
+        "hit-44 inline-flex h-10 shrink-0 items-center rounded-full transition-opacity hover:opacity-75",
         className,
       )}
     >

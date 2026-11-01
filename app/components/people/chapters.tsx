@@ -221,7 +221,8 @@ function ChapterIndex({ chapters, sort }: ChapterNavProps) {
           padding), so it never shifts once the page scrolls. */}
       <div
         ref={track}
-        className="sticky top-20 flex h-[calc(100dvh-6rem)] max-h-full flex-col justify-center sm:top-28 sm:h-[calc(100dvh-8rem)]"
+        // Phones: moves up with the navigation when it makes room while scrolling down.
+        className="sticky top-20 flex h-[calc(100dvh-6rem)] max-h-full flex-col justify-center transition-[top] duration-200 ease-out motion-reduce:transition-none sm:top-28 sm:h-[calc(100dvh-8rem)] max-lg:[html[data-nav-hidden]_&]:top-4"
       >
         <ul
           onPointerDown={onPointerDown}

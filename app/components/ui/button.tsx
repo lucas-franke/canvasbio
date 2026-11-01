@@ -4,8 +4,9 @@ import { cn } from "cn";
 import { Slot } from "radix-ui";
 
 /*
- * Project button. Sizes never go below 44×44 px (WCAG 2.5.8 + touch target
- * project standard); focus styling comes from the global :focus-visible rule.
+ * Project button. The tap area never goes below 44×44 px (WCAG 2.5.8 + touch target
+ * project standard): smaller sizes look 40 px and extend their tap area (`hit-44`).
+ * Focus styling comes from the global :focus-visible rule.
  */
 const buttonVariants = cva(
   "group/button inline-flex shrink-0 items-center justify-center gap-2 rounded-full border border-transparent font-medium whitespace-nowrap transition-colors select-none disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-5",
@@ -24,11 +25,11 @@ const buttonVariants = cva(
         link: "rounded-sm text-brand underline underline-offset-4 hover:decoration-2",
       },
       size: {
-        default: "min-h-12 px-6 py-2 text-label lg:min-h-11 lg:px-5",
-        sm: "min-h-11 px-4 py-1.5 text-body-sm",
-        lg: "min-h-14 px-8 py-3 text-label lg:min-h-12 lg:px-6",
-        icon: "size-12 lg:size-11",
-        "icon-sm": "size-11",
+        default: "min-h-11 px-5 py-2 text-body-sm sm:text-label",
+        sm: "hit-44 min-h-10 px-4 py-1.5 text-body-sm",
+        lg: "min-h-12 px-6 py-2.5 text-body-sm sm:text-label",
+        icon: "hit-44 size-10 lg:size-11",
+        "icon-sm": "hit-44 size-10",
       },
     },
     defaultVariants: {

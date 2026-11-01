@@ -15,17 +15,45 @@ function SiteHeader() {
   return <div aria-hidden="true" className="h-[calc(4rem+env(safe-area-inset-top))] shrink-0 sm:h-[calc(5rem+env(safe-area-inset-top))]" />;
 }
 
-/** The page has scrolled away from its top (content now runs beneath the navigation). */
-function useScrolled(enabled: boolean): boolean {
-  const [scrolled, setScrolled] = useState(false);
+/** Scrolling this far in one direction counts as a change of direction. */
+const TURN = 8;
+/** Below this, the navigation always shows (the top of the page). */
+const HIDE_AFTER = 120;
+
+/**
+ * `scrolled`: the page has left its top (content now runs beneath the navigation).
+ * `hidden`: the reader scrolls down, so on phones the navigation makes room; any scroll back
+ * up brings it back. Also marked on <html> (`data-nav-hidden`) for bars that stick below it.
+ */
+function useNavScroll(enabled: boolean): { scrolled: boolean; hidden: boolean } {
+  const [state, setState] = useState({ scrolled: false, hidden: false });
   useEffect(() => {
     if (!enabled) return;
-    const update = () => setScrolled(window.scrollY > 8);
+    // Furthest point reached in the current direction: lowest while shown, highest while hidden.
+    let anchor = window.scrollY;
+    let hidden = false;
+    const update = () => {
+      const y = window.scrollY;
+      if (y < HIDE_AFTER) {
+        hidden = false;
+        anchor = y;
+      } else if (hidden ? y > anchor : y < anchor) {
+        anchor = y;
+      } else if (Math.abs(y - anchor) > TURN) {
+        hidden = !hidden;
+        anchor = y;
+      }
+      document.documentElement.toggleAttribute("data-nav-hidden", hidden);
+      setState((s) => (s.scrolled === y > 8 && s.hidden === hidden ? s : { scrolled: y > 8, hidden }));
+    };
     update();
     window.addEventListener("scroll", update, { passive: true });
-    return () => window.removeEventListener("scroll", update);
+    return () => {
+      window.removeEventListener("scroll", update);
+      document.documentElement.removeAttribute("data-nav-hidden");
+    };
   }, [enabled]);
-  return enabled && scrolled;
+  return enabled ? state : { scrolled: false, hidden: false };
 }
 
 interface PageShellProps {
@@ -49,7 +77,8 @@ export function PageShell({ children, navEnd, aside, inert = false, fullBleed = 
   const m = useMessages();
   // Over the mosaic and the map, and once a page has scrolled, the brand gets a pill like the
   // controls on the right; at the top of a page it stands free on the page colour.
-  const contained = useScrolled(!fullBleed) || fullBleed;
+  const { scrolled, hidden } = useNavScroll(!fullBleed);
+  const contained = scrolled || fullBleed;
 
   return (
     <div
@@ -62,6 +91,7 @@ export function PageShell({ children, navEnd, aside, inert = false, fullBleed = 
       {/* First in the DOM, as on screen: Tab and screen readers reach it before the content (WCAG 2.4.3). */}
       <TopNav
         inert={inert}
+        hidden={hidden}
         label={m.nav.label}
         start={
           <NavPill bare={!contained}>
