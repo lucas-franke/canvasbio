@@ -134,7 +134,7 @@ export function PeopleOverview({
         {toolbar}
         {hits && <SearchSummary state={search} count={hits.length} labels={index.facetLabels} />}
         {view === "timeline" ? (
-          <TimelineView chapters={chapters} hrefFor={hrefFor} activeSlug={activeSlug} />
+          <TimelineView chapters={chapters} sort={sort} hrefFor={hrefFor} activeSlug={activeSlug} />
         ) : (
           chapters.map((chapter) => (
             <section key={chapter.id} aria-labelledby={chapter.id}>

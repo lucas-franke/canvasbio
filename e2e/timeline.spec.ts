@@ -99,3 +99,54 @@ test("the timeline can be sorted by year of death and by life span", async ({ pa
   // Unknown values come last.
   await expect(page.locator("main h2").last()).toHaveText("Lebensdauer unbekannt");
 });
+
+test("while scrolling, the axis names the chapter the index marks, and rows slide under it", async ({
+  page,
+}) => {
+  await page.goto("/personen/zeitstrahl");
+  await waitForHydration(page);
+  const axis = page.locator("[data-timeline-axis]");
+  const label = axis.locator("[data-current-chapter]");
+  const marked = () =>
+    page
+      .getByRole("navigation", { name: "Jahrzehnte" })
+      .locator('[aria-current="true"]')
+      .getAttribute("data-chapter");
+
+  let previous = "";
+  for (const y of [2500, 6000]) {
+    await page.evaluate((y) => window.scrollTo(0, y), y);
+    // The same chapter the index marks, and a later one each time ("1810er" < "1850er" as text).
+    const settled = async () => {
+      const text = (await label.textContent()) ?? "";
+      const heading = await page.locator(`#${await marked()}`).textContent();
+      return text === heading && text > previous ? text : null;
+    };
+    await expect.poll(settled).not.toBeNull();
+    previous = (await settled())!;
+
+    // Right above the axis there is no half-cut row, only the page.
+    await expect(axis).toHaveAttribute("data-stuck", "");
+    const box = (await axis.boundingBox())!;
+    const above = await page.evaluate(
+      ([x, y]) => document.elementFromPoint(x!, y!)?.closest("article") == null,
+      [box.x + box.width / 2, box.y - 4],
+    );
+    expect(above).toBe(true);
+  }
+});
+
+test("phones: the years are always on their own line below the name", async ({ page, isMobile }) => {
+  test.skip(!isMobile, "the narrow layout");
+  await page.goto("/personen/zeitstrahl");
+  const rows = page.locator("main article").filter({ has: page.locator("h3") });
+  await expect(rows.first()).toBeVisible();
+  const stacked = await rows.evaluateAll((all) =>
+    all.slice(0, 20).every((row) => {
+      const name = row.querySelector("h3")!.getBoundingClientRect();
+      const years = row.querySelector("h3 + span")!.getBoundingClientRect();
+      return years.top >= name.bottom - 1;
+    }),
+  );
+  expect(stacked).toBe(true);
+});

@@ -1,8 +1,8 @@
 import { cn } from "cn";
-import { memo, useCallback, useMemo, useState, type CSSProperties } from "react";
+import { memo, useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { Link } from "react-router";
 
-import { chapterText } from "~/components/people/chapters";
+import { chapterText, chaptersName, useCurrentChapter } from "~/components/people/chapters";
 import { Portrait } from "~/components/portrait";
 import { tornEdgeClass } from "~/lib/canvas/torn-edge";
 import { siteConfig } from "~/lib/config";
@@ -14,7 +14,7 @@ import {
   type ChronologyRow,
   type TimeScale,
 } from "~/lib/content/chronology";
-import type { Chapter } from "~/lib/content/sort";
+import type { Chapter, SortKey } from "~/lib/content/sort";
 import { lifeYears } from "~/lib/content/format";
 import { useLocale, useMessages } from "~/lib/i18n";
 import { localize } from "~/lib/i18n/localize";
@@ -43,6 +43,8 @@ const spanOf = (row: ChronologyRow<unknown>): [number, number] => [row.from, row
 interface TimelineViewProps {
   /** People in the chosen order, divided into chapters (decades of birth or death, life spans). */
   chapters: Chapter<PersonListItem>[];
+  /** The chosen order (names the chapters in the axis). */
+  sort: SortKey;
   hrefFor: (slug: string) => string;
   activeSlug?: string;
 }
@@ -57,13 +59,22 @@ interface TimelineViewProps {
  * The bars are decoration: the years are in the text, the list order carries the
  * chronology, and the key dates are listed as text above the axis.
  */
-export function TimelineView({ chapters, hrefFor, activeSlug }: TimelineViewProps) {
+export function TimelineView({ chapters, sort, hrefFor, activeSlug }: TimelineViewProps) {
   const m = useMessages();
   const locale = useLocale();
   const groups = useMemo(
     () => chapters.map((chapter) => ({ chapter, rows: chapter.items.map(rowFor) })),
     [chapters],
   );
+  // The chapter being read, shown in the axis (the same one the index marks).
+  const currentId = useCurrentChapter(chapters.map((c) => c.id));
+  const current = chapters.find((c) => c.id === currentId) ?? chapters[0];
+  const chapterLabel = current
+    ? {
+        order: chaptersName(sort, m),
+        label: chapterText(current, m).label,
+      }
+    : null;
   const scale = useMemo(() => scaleOfRows(groups.flatMap((g) => g.rows)), [groups]);
   const events = useMemo(
     () =>
@@ -115,7 +126,14 @@ export function TimelineView({ chapters, hrefFor, activeSlug }: TimelineViewProp
       )}
 
       <div className="relative flex flex-col gap-10">
-        {scale && <Axis scale={scale} events={events.map((e) => e.year)} highlight={highlight} />}
+        {scale && (
+          <Axis
+            scale={scale}
+            events={events.map((e) => e.year)}
+            highlight={highlight}
+            chapter={chapterLabel}
+          />
+        )}
         {/* The highlighted life span as a band across all decades. */}
         {scale && highlight && (
           <div aria-hidden="true" className={cn(TRACK_BOX, "pointer-events-none")}>
@@ -193,51 +211,116 @@ function GridLines({ scale, events }: { scale: TimeScale; events: number[] }) {
   );
 }
 
-/** Years along the top, sticky while scrolling; each label is centred on its grid line. */
+/** Whether a sticky element is stuck (scrolled to its `top`), updated while scrolling. */
+function useStuck() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [stuck, setStuck] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const top = parseFloat(getComputedStyle(el).top) || 0;
+      // Before its sticky position the element sits further down; a pixel of slack for rounding.
+      setStuck(el.getBoundingClientRect().top <= top + 1 && window.scrollY > 0);
+    };
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(frame);
+    };
+  }, []);
+  return [ref, stuck] as const;
+}
+
+/**
+ * Years along the top, sticky while scrolling; each label is centred on its grid line. On the
+ * left, the chapter being read. While stuck, a page-coloured shelf fills the room above it, so
+ * the rows slide under it instead of peeking out half-cut above.
+ */
 function Axis({
   scale,
   events,
   highlight,
+  chapter,
 }: {
   scale: TimeScale;
   events: number[];
   highlight: [number, number] | null;
+  /** Name of the order and label of the current chapter ("Jahrzehnte", "1820er"). */
+  chapter: { order: string; label: string } | null;
 }) {
+  const [ref, stuck] = useStuck();
   return (
     <div
+      ref={ref}
+      data-timeline-axis=""
+      data-stuck={stuck ? "" : undefined}
       className={cn(
-        ROW_GRID,
-        // Floats like the navigation pills: same light surface, soft shadow, thin ring.
-        "sticky top-16 z-30 -mb-6 items-center rounded-xl bg-surface/95 px-2 py-2 shadow-[0_2px_12px_rgb(0_0_0/0.12)] ring-1 ring-line/70 backdrop-blur-sm transition-[top] duration-200 ease-out motion-reduce:transition-none lg:top-22",
+        "sticky top-16 z-30 -mb-6 transition-[top] duration-200 ease-out motion-reduce:transition-none lg:top-22",
         // Phones: moves up with the navigation when it makes room while scrolling down.
         "max-lg:[html[data-nav-hidden]_&]:top-3",
       )}
     >
-      <span className="@2xl:col-span-2" />
-      <div aria-hidden="true" className={cn("relative h-7", TRACK_END)}>
-        {highlight && (
-          <div
-            className="absolute inset-y-0 rounded-md bg-brand/15 transition-[left,width] duration-200 motion-reduce:transition-none"
-            style={band(scale, highlight)}
-          />
+      {stuck && <div aria-hidden="true" className="absolute -inset-x-2 -top-[100vh] bottom-1/2 bg-page" />}
+      <div
+        className={cn(
+          ROW_GRID,
+          // Floats like the navigation pills: same light surface, soft shadow, thin ring.
+          // Opaque: the rows sliding under it would show through.
+          "relative items-center gap-y-0.5 rounded-xl bg-surface px-2 py-2 shadow-[0_2px_12px_rgb(0_0_0/0.12)] ring-1 ring-line/70",
         )}
-        {scale.ticks.map((tick) => (
-          <span
-            key={tick}
-            className="absolute top-0 -translate-x-1/2 font-sans text-body-xs font-medium text-emphasis tabular-nums"
-            style={{ left: `${scalePercent(scale, tick)}%` }}
-          >
-            {tick}
-          </span>
-        ))}
-        {/* Key dates: small diamonds on the lower edge, explained in the list above. */}
-        {events.map((year) => (
-          <span
-            key={year}
-            className="absolute bottom-0 size-2 -translate-x-1/2 rotate-45 bg-brand"
-            style={{ left: `${scalePercent(scale, year)}%` }}
-          />
-        ))}
+      >
+        {/* For the eye only: screen readers have the chapter headings (and the index marks
+            the current one), so nothing is announced on every scroll. */}
+        {/* Narrow: a line of its own above the years (the portrait column is too narrow for
+            it). Wide: beside the years, above the names. */}
+        <span
+          aria-hidden="true"
+          className="col-span-2 flex min-w-0 items-baseline gap-2 px-1 @2xl:flex-col @2xl:gap-0 @2xl:px-0"
+        >
+          {chapter && (
+            <>
+              <span className="font-sans text-body-xs font-medium text-muted-text">{chapter.order}</span>
+              <span
+                data-current-chapter=""
+                className="truncate font-heading text-body-sm text-brand @2xl:text-body"
+              >
+                {chapter.label}
+              </span>
+            </>
+          )}
+        </span>
+        <div aria-hidden="true" className={cn("relative col-start-2 h-7 @2xl:col-start-3", TRACK_END)}>
+          {highlight && (
+            <div
+              className="absolute inset-y-0 rounded-md bg-brand/15 transition-[left,width] duration-200 motion-reduce:transition-none"
+              style={band(scale, highlight)}
+            />
+          )}
+          {scale.ticks.map((tick) => (
+            <span
+              key={tick}
+              className="absolute top-0 -translate-x-1/2 font-sans text-body-xs font-medium text-emphasis tabular-nums"
+              style={{ left: `${scalePercent(scale, tick)}%` }}
+            >
+              {tick}
+            </span>
+          ))}
+          {/* Key dates: small diamonds on the lower edge, explained in the list above. */}
+          {events.map((year) => (
+            <span
+              key={year}
+              className="absolute bottom-0 size-2 -translate-x-1/2 rotate-45 bg-brand"
+              style={{ left: `${scalePercent(scale, year)}%` }}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -295,7 +378,8 @@ const TimelineRow = memo(function TimelineRow({
         />
       </div>
       <div className="flex min-w-0 flex-col gap-2 @2xl:contents">
-        <div className="flex flex-wrap items-baseline gap-x-3 @2xl:flex-col @2xl:gap-0">
+        {/* Name, then years: always in this order, so the years line up in one column. */}
+        <div className="flex flex-col">
           <h3 className="font-heading text-body text-emphasis @lg:text-h3">
             <Link
               to={href}
