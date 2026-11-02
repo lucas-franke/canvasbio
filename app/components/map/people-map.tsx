@@ -258,10 +258,16 @@ export default function PeopleMap({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Fit the people shown (search results, birth or death places) into view.
+  // Fit the people shown (search results, birth or death places) into view. Only when they
+  // really change: closing a biography reloads the route data (new arrays, the same people),
+  // and the map has to stay where the reader left it.
+  const fitted = useRef("");
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !ready || points.length === 0) return;
+    const key = points.map((p) => `${p.properties.slug}@${p.properties.place}`).join(",");
+    if (key === fitted.current) return;
+    fitted.current = key;
     const bounds = new maplibregl.LngLatBounds();
     for (const point of points) {
       const [x, y] = point.geometry.coordinates;
