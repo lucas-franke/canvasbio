@@ -24,14 +24,6 @@ export default defineConfig({
   projects: [
     { name: "desktop-chrome", use: { ...devices["Desktop Chrome"] } },
     { name: "mobile-android", use: { ...devices["Pixel 7"] } },
-    {
-      name: "mobile-ios",
-      use: { ...devices["iPhone 15"] },
-      // Playwright's WebKit build crashes now and then during view transitions on the long
-      // list and timeline pages (the page closes; more often the more people there are). A
-      // retry keeps the suite meaningful; such tests are still reported as "flaky".
-      // Real Safari is unverified.
-      retries: 1,
-    },
+    { name: "mobile-ios", use: { ...devices["iPhone 15"] } },
   ],
 });

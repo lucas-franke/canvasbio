@@ -5,7 +5,7 @@ import { navPillBoxes, overlaps } from "./helpers";
 test("start page leads to the biographies", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { level: 1, name: "Ihre Stimme" })).toBeVisible();
-  await page.getByRole("link", { name: "Mosaik", exact: true }).click();
+  await page.getByRole("link", { name: "Biografien entdecken", exact: true }).click();
   await expect(page).toHaveURL(/\/personen$/);
   await expect(page.getByRole("heading", { level: 1, name: "Biografien" })).toBeVisible();
 });

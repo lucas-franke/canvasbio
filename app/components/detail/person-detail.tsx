@@ -40,6 +40,8 @@ interface PersonDetailProps {
   /** Locale of the page (the text may be in another one if not translated). */
   locale: string;
   closeHref: string;
+  /** Closes the biography in place of following `closeHref` (e.g. to animate the sheet away first). */
+  onClose?: () => void;
   /** People in overview order, for previous/next and another random one (null while loading). */
   sequence?: PersonListItem[] | null;
   hrefFor?: (slug: string) => string;
@@ -72,6 +74,7 @@ export function PersonDetail({
   related = [],
   locale,
   closeHref,
+  onClose,
   sequence,
   hrefFor,
 }: PersonDetailProps) {
@@ -90,17 +93,23 @@ export function PersonDetail({
         {/* Grab handle: the sheet on phones can be swiped down to close (app/lib/swipe-to-close.ts). */}
         <span
           aria-hidden="true"
-          className="absolute top-1.5 left-1/2 h-1 w-10 -translate-x-1/2 rounded-full bg-surface/80 shadow-sm lg:hidden"
+          // Light with a dark ring: visible on the portrait and on the page colour alike.
+          className="absolute top-1.5 left-1/2 h-1 w-10 -translate-x-1/2 rounded-full bg-surface shadow-sm ring-1 ring-emphasis/25 lg:hidden"
         />
         <Link
           to={closeHref}
           preventScrollReset
           viewTransition
+          onClick={(event) => {
+            if (!onClose || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+            event.preventDefault();
+            onClose();
+          }}
           aria-label={m.detail.close}
           title={m.detail.close}
-          className="pointer-events-auto -mr-2 grid size-11 shrink-0 place-items-center rounded-full bg-surface/85 text-emphasis shadow-[0_2px_8px_rgb(0_0_0/0.18)] ring-1 ring-line/60 backdrop-blur-sm transition-colors hover:bg-surface"
+          className="hit-44 pointer-events-auto -mr-1.5 grid size-10 shrink-0 place-items-center rounded-full bg-surface/85 text-emphasis shadow-[0_2px_8px_rgb(0_0_0/0.18)] ring-1 ring-line/60 backdrop-blur-sm transition-colors hover:bg-surface"
         >
-          <X aria-hidden="true" className="size-6" />
+          <X aria-hidden="true" className="size-5" />
         </Link>
       </div>
 
@@ -146,11 +155,25 @@ export function PersonDetail({
       )}
 
       <Tabs value={tab} onValueChange={(value) => setTab(value as TabId)}>
-        <div className="sticky top-16 z-10 -mx-5 bg-surface/95 px-5 py-2 backdrop-blur-sm sm:-mx-10 sm:px-10 print:hidden">
-          <TabsList aria-label={m.detail.sections}>
+        {/* Sticks in the top line once scrolled, next to the close button (room kept free on the
+            right). No bar background: like the close button, the tabs float on their own. */}
+        <div className="pointer-events-none sticky top-0 z-10 -mx-5 flex min-h-16 items-center py-2 pr-16 pl-5 sm:-mx-10 sm:pr-20 sm:pl-10 print:hidden">
+          <TabsList
+            aria-label={m.detail.sections}
+            className="pointer-events-auto bg-surface/85 shadow-[0_2px_8px_rgb(0_0_0/0.18)] backdrop-blur-sm"
+          >
             {siteConfig.detail.tabs.map((t) => (
-              <TabsTrigger key={t.id} value={t.id}>
-                {localize(t.label, locale)}
+              <TabsTrigger key={t.id} value={t.id} className="max-sm:px-2.5">
+                {t.shortLabel ? (
+                  <>
+                    <span aria-hidden="true" className="sm:hidden">
+                      {localize(t.shortLabel, locale)}
+                    </span>
+                    <span className="max-sm:sr-only">{localize(t.label, locale)}</span>
+                  </>
+                ) : (
+                  localize(t.label, locale)
+                )}
               </TabsTrigger>
             ))}
           </TabsList>

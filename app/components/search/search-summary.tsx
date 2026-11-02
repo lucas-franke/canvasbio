@@ -121,7 +121,7 @@ export function SearchSummary({
                 applySearch(filter.without);
                 focusAfterRemoval(heading.current, filter.without);
               }}
-              className="inline-flex min-h-11 items-center gap-1.5 rounded-full border-2 border-control px-3 text-body-sm font-medium text-emphasis hover:bg-emphasis/5"
+              className="hit-44 inline-flex min-h-10 items-center gap-1.5 rounded-full border border-control px-3 text-body-sm font-medium text-emphasis hover:bg-emphasis/5"
             >
               {filter.label}
               <X aria-hidden="true" className="size-4" />

@@ -202,9 +202,18 @@ export default function PeopleMap({
     });
     // Keep the view on seam … seam + 360. The map reports its centre wrapped to −180 … 180,
     // so it is first taken onto that range.
+    // Not during camera animations (zooming into a cluster or to a place): jumpTo would stop
+    // them on their first frame (on wide screens the whole world fits, so every frame
+    // "needs" clamping). They are clamped once they end instead.
     let clamping = false;
-    const clampView = () => {
-      if (clamping) return;
+    // A movement without a user event behind it is one of our camera animations.
+    let animating = false;
+    map.on("movestart", (event) => {
+      // The clamping jump itself doesn't count (it happens in the middle of a drag).
+      if (!clamping) animating = !event.originalEvent;
+    });
+    const clampView = (event: { type: string }) => {
+      if (clamping || (animating && event.type === "move")) return;
       const seam = seamRef.current;
       const bounds = map.getBounds();
       const half = (bounds.getEast() - bounds.getWest()) / 2;
@@ -217,6 +226,7 @@ export default function PeopleMap({
       clamping = false;
     };
     map.on("move", clampView);
+    map.on("moveend", clampView);
     map.touchZoomRotate.disableRotation();
     map.keyboard.disableRotation();
     map.getCanvas().setAttribute("aria-label", m.map.label);
@@ -301,20 +311,25 @@ export default function PeopleMap({
         if (!person) continue;
         const count = isCluster ? props.point_count : 1;
 
+        // MapLibre positions the marker element with `transform`. Scaling that element (the
+        // `scale` property applies after it) would scale its position too and make it jump
+        // away under the pointer, so the hover zoom lives on an inner element.
         const element: HTMLElement = document.createElement(isCluster ? "button" : "a");
-        element.className = cn(
-          "group block size-11 rounded-full border-2 border-surface bg-surface shadow-[0_2px_8px_rgb(0_0_0/0.25)] transition-transform hover:scale-110 focus-visible:scale-110",
-          isCluster && "size-13",
+        element.className = cn("group block size-11 rounded-full", isCluster && "size-13");
+        const face = document.createElement("span");
+        face.className = cn(
+          "relative block size-full rounded-full border-2 border-surface bg-surface shadow-[0_2px_8px_rgb(0_0_0/0.25)] transition-transform group-hover:scale-110 group-focus-visible:scale-110 motion-reduce:transition-none",
           slug === activeSlug && "border-brand",
         );
-        element.append(portrait(person));
+        face.append(portrait(person));
+        element.append(face);
         if (isCluster) {
           const badge = document.createElement("span");
           badge.className =
             "absolute -top-1.5 -right-2 min-w-6 rounded-full bg-brand px-1.5 text-center text-body-xs leading-6 font-semibold text-brand-foreground tabular-nums";
           badge.textContent = String(count);
           badge.setAttribute("aria-hidden", "true");
-          element.append(badge);
+          face.append(badge);
           element.setAttribute("type", "button");
           element.setAttribute("aria-label", m.map.cluster(count));
           const clusterId = props.cluster_id;
@@ -412,7 +427,7 @@ export default function PeopleMap({
               type="button"
               aria-pressed={mode === value}
               onClick={() => setMode(value)}
-              className="min-h-11 rounded-full px-4 text-label font-medium transition-colors hover:bg-nav-foreground/10 aria-pressed:bg-nav-foreground aria-pressed:text-nav lg:min-h-10"
+              className="hit-44 min-h-10 rounded-full px-3.5 text-body-sm font-medium transition-colors hover:bg-nav-foreground/10 aria-pressed:bg-nav-foreground aria-pressed:text-nav sm:px-4 sm:text-label"
             >
               {m.map[value]}
             </button>
@@ -422,9 +437,9 @@ export default function PeopleMap({
           type="button"
           aria-expanded={panel?.kind === "places"}
           onClick={() => setPanel(panel?.kind === "places" ? null : { kind: "places" })}
-          className="inline-flex min-h-11 items-center gap-2 rounded-full bg-nav px-4 text-label font-medium text-nav-foreground shadow-[0_2px_10px_rgb(0_0_0/0.12)] hover:bg-nav/90 lg:min-h-10"
+          className="hit-44 inline-flex min-h-10 items-center gap-2 rounded-full bg-nav px-3.5 text-body-sm font-medium text-nav-foreground shadow-[0_2px_10px_rgb(0_0_0/0.12)] hover:bg-nav/90 sm:px-4 sm:text-label"
         >
-          <List aria-hidden="true" className="size-5" />
+          <List aria-hidden="true" className="size-4 sm:size-5" />
           {m.map.places}
         </button>
         <p className="text-body-xs text-muted-text">{m.map.attribution}</p>
@@ -451,7 +466,7 @@ export default function PeopleMap({
               aria-label={m.map.closePlaces}
               // Without WebGL the list of places is all there is: closing a place goes back to it.
               onClick={() => setPanel(failed ? { kind: "places" } : null)}
-              className="grid size-11 place-items-center rounded-full text-emphasis hover:bg-emphasis/5"
+              className="hit-44 grid size-10 place-items-center rounded-full text-emphasis hover:bg-emphasis/5"
             >
               <X aria-hidden="true" className="size-5" />
             </button>

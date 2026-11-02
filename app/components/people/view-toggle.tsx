@@ -96,7 +96,7 @@ export function ViewToggle({ active }: { active: View }) {
           title={m.view.label}
           onClick={() => setOpen((value) => !value)}
           // The chevron (and from md the view's name) shows that it opens.
-          className="inline-flex h-11 shrink-0 items-center gap-1.5 rounded-full px-3 text-nav-foreground transition-colors hover:bg-nav-foreground/10 aria-expanded:bg-nav-foreground/10 lg:h-10 [&_svg]:size-5"
+          className="hit-44 inline-flex h-10 shrink-0 items-center gap-1.5 rounded-full px-3 text-nav-foreground transition-colors hover:bg-nav-foreground/10 aria-expanded:bg-nav-foreground/10 [&_svg]:size-5"
         >
           <span aria-hidden="true">{current.icon}</span>
           <span aria-hidden="true" className="hidden text-label font-medium md:inline">
@@ -149,7 +149,7 @@ export function ViewToggle({ active }: { active: View }) {
             aria-current={option.view === active ? "page" : undefined}
             aria-label={option.label}
             title={option.label}
-            className="grid size-11 shrink-0 place-items-center rounded-full text-nav-foreground hover:bg-nav-foreground/10 aria-[current=page]:bg-nav-foreground aria-[current=page]:text-nav lg:size-10 [&_svg]:size-5"
+            className="hit-44 grid size-10 shrink-0 place-items-center rounded-full text-nav-foreground hover:bg-nav-foreground/10 aria-[current=page]:bg-nav-foreground aria-[current=page]:text-nav [&_svg]:size-5"
           >
             <span aria-hidden="true">{option.icon}</span>
           </Link>

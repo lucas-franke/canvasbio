@@ -14,8 +14,8 @@ export default defineSiteConfig({
     wordmark: { de: "Ihre Stimme", en: "Her Voice" },
     monogram: "S",
     description: {
-      de: "Biografien von Pionierinnen der Frauenbewegung, 1850–1950.",
-      en: "Biographies of pioneers of the women's movement, 1850–1950.",
+      de: "Biografien von Pionierinnen der Frauenbewegung aus aller Welt.",
+      en: "Biographies of pioneers of the women's movement from around the world.",
     },
   },
 
@@ -105,10 +105,10 @@ export default defineSiteConfig({
 
   start: {
     title: { de: "Ihre Stimme", en: "Her Voice" },
-    // ⁠ (word joiner) keeps "1850–1950" from breaking at the dash.
+    // No years: the collection spans births from 1802 to 1990 and keeps growing.
     subtitle: {
-      de: "Pionierinnen der Frauenbewegung, 1850–\u20601950",
-      en: "Pioneers of the women's movement, 1850–\u20601950",
+      de: "Pionierinnen der Frauenbewegung aus aller Welt",
+      en: "Pioneers of the women's movement from around the world",
     },
     quote: {
       text: {
@@ -146,6 +146,7 @@ export default defineSiteConfig({
       {
         id: "story",
         label: { de: "Lebensgeschichte", en: "Life story" },
+        shortLabel: { de: "Geschichte", en: "Story" },
         slug: { de: "geschichte", en: "story" },
       },
       {

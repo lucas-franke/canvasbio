@@ -3,7 +3,7 @@ title: Über das Projekt
 description: Worum es geht, woher die Inhalte stammen und wie die Seite bedient wird.
 ---
 
-„Ihre Stimme“ erzählt von Frauen, die zwischen 1850 und 1950 für Wahlrecht, Bildung und Gleichberechtigung gekämpft haben. Manche Namen sind weltbekannt, viele sind heute fast vergessen. Die Bildwand stellt sie gleichberechtigt nebeneinander. Die Schaltfläche „Zufällige Biografie“ bringt bewusst auch weniger bekannte Lebensgeschichten nach vorn.
+„Ihre Stimme“ erzählt von Frauen aus aller Welt, die für Wahlrecht, Bildung und Gleichberechtigung gekämpft haben – die meisten im 19. und 20. Jahrhundert. Manche Namen sind weltbekannt, viele sind heute fast vergessen. Die Bildwand stellt sie gleichberechtigt nebeneinander. Die Schaltfläche „Zufällige Biografie“ bringt bewusst auch weniger bekannte Lebensgeschichten nach vorn.
 
 ## Drei Ansichten
 

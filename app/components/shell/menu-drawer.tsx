@@ -47,7 +47,7 @@ export const SIDE_SHEET =
 
 /** Menu entries; the current one is marked calmly (accent text and a bar), not filled. */
 const itemClass =
-  "relative flex min-h-12 items-center rounded-xl px-4 text-label font-medium text-emphasis hover:bg-emphasis/5 aria-[current=page]:font-semibold aria-[current=page]:text-brand aria-[current=page]:before:absolute aria-[current=page]:before:top-1/2 aria-[current=page]:before:left-1 aria-[current=page]:before:h-5 aria-[current=page]:before:w-1 aria-[current=page]:before:-translate-y-1/2 aria-[current=page]:before:rounded-full aria-[current=page]:before:bg-brand aria-[current=page]:before:content-['']";
+  "relative flex min-h-11 items-center rounded-xl px-4 text-label font-medium text-emphasis hover:bg-emphasis/5 aria-[current=page]:font-semibold aria-[current=page]:text-brand aria-[current=page]:before:absolute aria-[current=page]:before:top-1/2 aria-[current=page]:before:left-1 aria-[current=page]:before:h-5 aria-[current=page]:before:w-1 aria-[current=page]:before:-translate-y-1/2 aria-[current=page]:before:rounded-full aria-[current=page]:before:bg-brand aria-[current=page]:before:content-['']";
 
 export function MenuDrawer() {
   const [open, setOpen] = useState(false);
@@ -81,10 +81,10 @@ export function MenuDrawer() {
         <div className="flex items-center justify-between px-6 pt-2">
           <DrawerTitle className="font-heading text-h2 font-normal text-emphasis">{m.nav.menu}</DrawerTitle>
           <DrawerClose
-            className="grid size-12 place-items-center rounded-full border-2 border-control text-emphasis hover:bg-emphasis/5"
+            className="hit-44 grid size-10 place-items-center rounded-full border border-control text-emphasis hover:bg-emphasis/5"
             aria-label={m.nav.closeMenu}
           >
-            <X aria-hidden="true" className="size-6" />
+            <X aria-hidden="true" className="size-5" />
           </DrawerClose>
         </div>
         <DrawerDescription className="sr-only">{siteConfig.brand.name[locale]}</DrawerDescription>
@@ -120,7 +120,7 @@ export function MenuDrawer() {
                       lang={l.htmlLang}
                       hrefLang={l.htmlLang}
                       aria-current={l.code === locale ? "page" : undefined}
-                      className="inline-flex min-h-11 items-center rounded-full border border-control/55 px-5 text-label font-medium text-emphasis hover:border-control hover:bg-emphasis/5 aria-[current=page]:border-brand aria-[current=page]:bg-brand aria-[current=page]:text-brand-foreground"
+                      className="hit-44 inline-flex min-h-10 items-center rounded-full border border-control/55 px-4 text-body-sm font-medium sm:text-label text-emphasis hover:border-control hover:bg-emphasis/5 aria-[current=page]:border-brand aria-[current=page]:bg-brand aria-[current=page]:text-brand-foreground"
                     >
                       {l.label}
                     </Link>
@@ -146,7 +146,7 @@ export function MenuDrawer() {
                       value={choice}
                       title={m.theme[choice]}
                       className={cn(
-                        "flex min-h-11 items-center justify-center gap-1.5 rounded-full px-2 text-body-sm font-medium text-emphasis hover:bg-emphasis/5",
+                        "hit-44 flex min-h-10 items-center justify-center gap-1.5 rounded-full px-2 text-body-sm font-medium text-emphasis hover:bg-emphasis/5",
                         "data-[state=checked]:bg-emphasis data-[state=checked]:text-surface",
                       )}
                     >

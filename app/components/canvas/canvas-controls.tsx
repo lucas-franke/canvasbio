@@ -16,7 +16,7 @@ function ControlButton({
       aria-label={label}
       title={label}
       className={cn(
-        "grid size-11 place-items-center rounded-full text-nav-foreground transition-colors hover:bg-nav-foreground/10 lg:size-10 [&_svg]:size-5",
+        "hit-44 grid size-10 place-items-center rounded-full text-nav-foreground transition-colors hover:bg-nav-foreground/10 [&_svg]:size-5",
         className,
       )}
       {...props}

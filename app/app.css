@@ -169,9 +169,9 @@
   & h3 {
     @apply mt-4 text-h3;
   }
-  /* Jumps from the table of contents land below the sticky bar and tabs of the biography. */
+  /* Jumps from the table of contents land below the sticky tab bar (one line with the close button). */
   & :is(h2, h3, h4) {
-    scroll-margin-top: 9rem;
+    scroll-margin-top: 5rem;
   }
   & h4,
   & h5,
@@ -203,6 +203,25 @@
   font-weight: 700;
   letter-spacing: -0.06em;
   line-height: 1;
+}
+
+/*
+ * Controls that look smaller than 44 px (40 px on phones) keep a 44 × 44 px tap area:
+ * an invisible pseudo-element centred on them (project standard; WCAG 2.5.8 needs 24).
+ * Not for elements that use ::after themselves or are positioned otherwise.
+ */
+@utility hit-44 {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: max(100%, 2.75rem);
+    height: max(100%, 2.75rem);
+    translate: -50% -50%;
+  }
 }
 
 /*
@@ -370,16 +389,6 @@
     transform: scale(0.98);
   }
 }
-@keyframes vt-slide-in-up {
-  from {
-    transform: translateY(100%);
-  }
-}
-@keyframes vt-slide-out-down {
-  to {
-    transform: translateY(100%);
-  }
-}
 
 ::view-transition-group(*) {
   animation-duration: 380ms;
@@ -391,26 +400,18 @@
   animation-duration: 220ms;
 }
 
-/* Small screens: the biography is a sheet that slides up and back down. */
-::view-transition-new(detail-panel):only-child {
-  animation: vt-slide-in-up 380ms cubic-bezier(0.22, 1, 0.36, 1);
-}
 /*
+ * The biography card fades in, slightly growing (the backdrop is part of the root
+ * cross-fade). Only wide screens have view transitions; the sheet on phones animates itself
+ * (app/routes/people-layout.tsx).
  * "forwards": the transition runs as long as its longest animation (the 380 ms groups).
- * Without it the closing panel would jump back into view for the remaining time.
+ * Without it the closing card would jump back into view for the remaining time.
  */
-::view-transition-old(detail-panel):only-child {
-  animation: vt-slide-out-down 260ms cubic-bezier(0.4, 0, 1, 1) forwards;
+::view-transition-new(detail-panel):only-child {
+  animation: vt-zoom-in 380ms cubic-bezier(0.22, 1, 0.36, 1);
 }
-
-/* Wide screens: the biography card fades in, slightly growing (the backdrop is part of the root cross-fade). */
-@media (min-width: 64rem) {
-  ::view-transition-new(detail-panel):only-child {
-    animation-name: vt-zoom-in;
-  }
-  ::view-transition-old(detail-panel):only-child {
-    animation-name: vt-zoom-out;
-  }
+::view-transition-old(detail-panel):only-child {
+  animation: vt-zoom-out 260ms cubic-bezier(0.4, 0, 1, 1) forwards;
 }
 
 /* Switching between two biographies: a quick cross-fade inside the dialog. */

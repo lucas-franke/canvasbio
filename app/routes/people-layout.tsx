@@ -19,9 +19,13 @@ import { useSearch } from "~/lib/search/use-search";
 import { useSwipeToClose } from "~/lib/swipe-to-close";
 import { afterViewTransition, markPortraitTarget } from "~/lib/view-transition";
 
+const prefersReducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
 /** Passed to the detail route via <Outlet context>. */
 export interface PeopleLayoutContext {
   closeHref: string;
+  /** Closes the biography (on phones after the sheet has slid down). */
+  close: () => void;
   /** People in overview order (search results when searching), for previous/next; null while loading. */
   sequence: PersonListItem[] | null;
   hrefFor: (slug: string) => string;
@@ -93,18 +97,6 @@ export default function PeopleLayout() {
     };
   }, [modal]);
 
-  // Escape closes the biography (unless another dialog, e.g. the menu, handles it).
-  useEffect(() => {
-    if (!isDetail) return;
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key !== "Escape" || event.defaultPrevented) return;
-      if (document.querySelector('[role="dialog"][data-state="open"]')) return;
-      navigate(overviewHref, { preventScrollReset: true, viewTransition: true });
-    };
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
-  }, [isDetail, navigate, overviewHref]);
-
   // Portrait morph: name the element it ends on, within the commit (before the new snapshot).
   const transitionSlug = useRef<string | undefined>(slug);
   useLayoutEffect(() => {
@@ -142,9 +134,59 @@ export default function PeopleLayout() {
     return sortPeople(people, sortFor(view, search.sort));
   }, [hits, index, view, search.sort]);
 
+  // Phones: the sheet slides up when a biography opens (not on a page load) and back down
+  // before it closes, from wherever a swipe left it. No view transition there (see
+  // app/lib/view-transition.ts); wide screens use the transition's card animation instead.
+  const sheetRef = useRef<HTMLElement>(null);
+  const wasDetail = useRef(isDetail);
+  const closing = useRef(false);
+  const animateSheet = !wide && typeof window !== "undefined" && !prefersReducedMotion();
+  useLayoutEffect(() => {
+    if (isDetail && !wasDetail.current && animateSheet) {
+      sheetRef.current?.animate([{ transform: "translateY(100%)" }, { transform: "none" }], {
+        duration: 380,
+        easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+      });
+    }
+    wasDetail.current = isDetail;
+    closing.current = false;
+  }, [isDetail, animateSheet]);
+
+  const close = () => {
+    const leave = () => navigate(overviewHref, { preventScrollReset: true, viewTransition: true });
+    const sheet = sheetRef.current;
+    if (!sheet || !animateSheet) return leave();
+    if (closing.current) return;
+    closing.current = true;
+    sheet
+      .animate([{ transform: "none" }, { transform: "translateY(100%)" }], {
+        duration: 260,
+        easing: "cubic-bezier(0.4, 0, 1, 1)",
+        fill: "forwards",
+      })
+      .finished.then(leave, leave);
+  };
+  const closeRef = useRef(close);
+  useLayoutEffect(() => {
+    closeRef.current = close;
+  });
+
+  // Escape closes the biography (unless another dialog, e.g. the menu, handles it).
+  useEffect(() => {
+    if (!isDetail) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== "Escape" || event.defaultPrevented) return;
+      if (document.querySelector('[role="dialog"][data-state="open"]')) return;
+      closeRef.current();
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [isDetail]);
+
   const hrefFor = (personSlug: string) => pagePath(locale, "people", personSlug) + suffix;
   const context: PeopleLayoutContext = {
     closeHref: overviewHref,
+    close,
     sequence,
     hrefFor,
   };
@@ -154,7 +196,6 @@ export default function PeopleLayout() {
   useLayoutEffect(() => {
     asideRef.current?.scrollTo({ top: 0 });
   }, [slug]);
-  const close = () => navigate(overviewHref, { preventScrollReset: true, viewTransition: true });
   // Phones: swipe the biography sheet down to close it.
   useSwipeToClose(asideRef, modal && !wide, close);
 
@@ -176,6 +217,7 @@ export default function PeopleLayout() {
             {/* The card clips to its rounded corners; the scrolling happens inside it, so the
                 scrollbar stays within the card (browsers don't round scrollbars themselves). */}
             <section
+              ref={sheetRef}
               aria-labelledby={PERSON_HEADING_ID}
               role="dialog"
               aria-modal="true"
