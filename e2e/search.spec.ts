@@ -41,7 +41,7 @@ test("field filter narrows the list; typos and umlauts are forgiven", async ({ p
 
   const heading = page.getByRole("heading", { name: /^Ergebnisse \(\d+\)$/ });
   await expect(heading).toBeVisible();
-  const rows = page.locator("article[data-vt-item]");
+  const rows = page.locator("main article");
   const count = await rows.count();
   expect(count).toBeGreaterThan(5);
   await expect(page.getByRole("heading", { name: `Ergebnisse (${count})` })).toBeVisible();
@@ -56,7 +56,7 @@ test("field filter narrows the list; typos and umlauts are forgiven", async ({ p
 test("place filter matches the place names", async ({ page }) => {
   await page.goto("/personen/liste?place=Berlin");
   await expect(page.getByRole("button", { name: "Filter „Berlin“ entfernen" })).toBeVisible();
-  await expect(page.locator("article[data-vt-item]").first()).toBeVisible();
+  await expect(page.locator("main article").first()).toBeVisible();
 });
 
 test("place suggestions work as a combobox with keyboard and pointer", async ({ page }) => {
@@ -106,10 +106,10 @@ test("removing a filter chip updates the results and keeps focus in the bar", as
 test("no results: message and reset", async ({ page }) => {
   await page.goto("/personen/liste?q=xyzxyz");
   await expect(page.getByRole("heading", { name: "Keine Personen gefunden" })).toBeVisible();
-  await expect(page.locator("article[data-vt-item]")).toHaveCount(0);
+  await expect(page.locator("main article")).toHaveCount(0);
   await page.getByRole("button", { name: "Suche zurücksetzen" }).click();
   await expect(page).toHaveURL(/\/personen\/liste$/);
-  await expect(page.locator("article[data-vt-item]")).toHaveCount(await peopleCount(page));
+  await expect(page.locator("main article")).toHaveCount(await peopleCount(page));
 });
 
 test("the search survives opening and closing a biography and switching views", async ({ page }) => {

@@ -17,7 +17,9 @@ test("the letter index jumps to a letter and follows the scrolling", async ({ pa
   await waitForHydration(page);
   const index = page.getByRole("navigation", { name: "Alphabet" });
   // Only letters with entries are offered: each links to its chapter heading.
-  const ids = await index.locator("[data-chapter]").evaluateAll((all) => all.map((a) => a.getAttribute("data-chapter")!));
+  const ids = await index
+    .locator("[data-chapter]")
+    .evaluateAll((all) => all.map((a) => a.getAttribute("data-chapter")!));
   for (const id of ids) await expect(page.locator(`[id="${id}"]`)).toHaveCount(1);
   await index.getByRole("link", { name: "Z", exact: true }).click();
   await expect(page).toHaveURL(/#buchstabe-z$/);
@@ -147,7 +149,12 @@ test("phones: the navigation makes room while scrolling down and returns on scro
     await expect(page.getByRole("button", { name: "Suche", exact: true })).toBeInViewport();
     return;
   }
-  await expect(nav).toHaveAttribute("data-hidden", "true");
+  // The scroll listener may attach just after hydration and then start counting from here:
+  // keep scrolling down until the navigation makes room.
+  await expect(async () => {
+    await scrollBy(300);
+    await expect(nav).toHaveAttribute("data-hidden", "true", { timeout: 500 });
+  }).toPass();
   await expect(page.getByRole("button", { name: "Suche", exact: true })).not.toBeInViewport();
   await scrollBy(-200);
   await expect(nav).not.toHaveAttribute("data-hidden");

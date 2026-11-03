@@ -5,7 +5,8 @@ import { Link } from "react-router";
 import type { TileVariation } from "~/lib/canvas/layout";
 import type { PersonListItem } from "~/lib/content/adapter";
 import { portraitUrl } from "~/lib/content/images";
-import { markPortraitSource } from "~/lib/view-transition";
+
+import { HIT_LIFT } from "./wall-painter";
 
 interface CanvasTileProps {
   person: PersonListItem;
@@ -87,23 +88,27 @@ export const CanvasTile = memo(function CanvasTile({
   const ownPortrait = near && !painted;
   // Until the portrait has loaded: its main colour, darkened, so it reads as a tile.
   const placeholder = `color-mix(in srgb, ${person.image.color} 70%, var(--c-stage))`;
+  // Placed by margins in one shared grid cell (see the list in infinite-canvas.tsx), neither
+  // positioned nor transformed: Chrome gives each positioned or transformed element its own
+  // paint layer, and re-layerized hundreds of them on every frame of a pan (dropped frames).
+  // Search matches are lifted as in the painted wall (by size: a transform would be a layer too).
+  const side = size * variation.scale * (match ? HIT_LIFT : 1);
+  const inset = (size - side) / 2;
   return (
     <li
-      data-vt-item
       aria-hidden={primary && match !== false ? undefined : true}
-      className="absolute top-0 left-0"
+      className="self-start justify-self-start [grid-area:1/1]"
       style={{
-        width: size,
-        height: size,
-        transform: `translate(${x + variation.dx}px, ${y + variation.dy}px)`,
-        ["--tile-scale" as string]: variation.scale,
+        marginLeft: x + variation.dx + inset,
+        marginTop: y + variation.dy + inset,
+        width: side,
+        height: side,
       }}
     >
       <Link
         to={href}
         preventScrollReset
         viewTransition
-        onClick={markPortraitSource}
         draggable={false}
         data-cell={cellId}
         data-person={primary ? person.slug : undefined}
@@ -118,7 +123,7 @@ export const CanvasTile = memo(function CanvasTile({
       >
         {ownPortrait && (
           <span
-            data-vt-portrait
+            data-tile-portrait
             data-tint
             className={cn("relative block size-full overflow-hidden bg-stage", edgeClass)}
           >

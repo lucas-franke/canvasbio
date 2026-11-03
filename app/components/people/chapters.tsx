@@ -57,7 +57,7 @@ function landingTop(heading: HTMLElement): number {
 }
 
 /** The chapter whose heading has most recently scrolled past the top (sticky bars included). */
-function useCurrentChapter(ids: string[]): string | null {
+export function useCurrentChapter(ids: string[]): string | null {
   const [current, setCurrent] = useState<string | null>(null);
   const key = ids.join(",");
   useEffect(() => {

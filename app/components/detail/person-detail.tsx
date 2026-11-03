@@ -101,13 +101,21 @@ export function PersonDetail({
           preventScrollReset
           viewTransition
           onClick={(event) => {
-            if (!onClose || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+            if (
+              !onClose ||
+              event.button !== 0 ||
+              event.metaKey ||
+              event.ctrlKey ||
+              event.shiftKey ||
+              event.altKey
+            )
+              return;
             event.preventDefault();
             onClose();
           }}
           aria-label={m.detail.close}
           title={m.detail.close}
-          className="hit-44 pointer-events-auto -mr-1.5 grid size-10 shrink-0 place-items-center rounded-full bg-surface/85 text-emphasis shadow-[0_2px_8px_rgb(0_0_0/0.18)] ring-1 ring-line/60 backdrop-blur-sm transition-colors hover:bg-surface"
+          className="pointer-events-auto hit-44 -mr-1.5 grid size-10 shrink-0 place-items-center rounded-full bg-surface/85 text-emphasis shadow-[0_2px_8px_rgb(0_0_0/0.18)] ring-1 ring-line/60 backdrop-blur-sm transition-colors hover:bg-surface"
         >
           <X aria-hidden="true" className="size-5" />
         </Link>
@@ -339,10 +347,8 @@ function FactsPanel({ person }: { person: PersonDetailProps["person"] }) {
         </div>
 
         <figure className="flex w-full max-w-64 flex-col gap-2 @2xl/facts:w-72 @2xl/facts:max-w-none @2xl/facts:shrink-0">
-          {/* Target of the portrait morph from the overview (app/lib/view-transition.ts).
-              On phones the portrait is at the top of the biography; the credit stays here. */}
+          {/* On phones the portrait is at the top of the biography; the credit stays here. */}
           <div
-            data-vt-detail-portrait
             data-tint
             className={cn(
               "hidden lg:block",
@@ -426,7 +432,9 @@ function StoryPanel({
       )}
       {foreignStory && (
         <p className="-mt-4 text-body-sm text-muted-text">
-          {m.detail.storyOnlyIn(foreignStory === "en" ? (locale === "de" ? "Englisch" : "English") : foreignStory)}
+          {m.detail.storyOnlyIn(
+            foreignStory === "en" ? (locale === "de" ? "Englisch" : "English") : foreignStory,
+          )}
         </p>
       )}
       <div className="prose-content" lang={foreignStory} dangerouslySetInnerHTML={{ __html: storyHtml }} />

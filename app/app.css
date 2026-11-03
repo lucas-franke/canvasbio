@@ -272,15 +272,6 @@
   opacity: 0;
 }
 
-/* Copy of a painted portrait in its (transparent) tile link, for the morph into a biography. */
-.canvas-snapshot {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
 /* Long names end with an ellipsis after three lines (the full name stays the link text). */
 .canvas-tile-label {
   display: -webkit-box;
@@ -306,19 +297,17 @@
     outline-color: var(--c-focus);
   }
 
-  /* Slight size variation per tile (canvas.sizeVariance), set on the list item. */
-  --scale: var(--tile-scale, 1);
-  transform: scale(var(--scale));
+  /* The slight size variation per tile (canvas.sizeVariance) is the list item's size; no
+     transform here, see canvas-tile.tsx. */
 
-  /* Search: matches are lifted, the others fade back but keep their place (context). */
-  transition: transform 300ms ease;
-
-  &[data-match="hit"] {
-    transform: scale(calc(var(--scale) * 1.08));
+  /* Search: matches are lifted (larger, see canvas-tile.tsx), the others fade back but keep
+     their place (context). The shadow only where the tile shows its own portrait (pre-rendered
+     HTML); the painted wall draws its own. */
+  &[data-match="hit"] [data-tile-portrait] {
     filter: drop-shadow(0 calc(6px / var(--s)) calc(10px / var(--s)) rgb(0 0 0 / 0.35));
   }
 
-  &[data-match="miss"] [data-vt-portrait] {
+  &[data-match="miss"] [data-tile-portrait] {
     opacity: 0.18;
     filter: grayscale(1);
   }
@@ -368,14 +357,14 @@
 
 @keyframes tile-pulse {
   40% {
-    transform: scale(calc(var(--scale) * 1.12));
+    transform: scale(1.12);
   }
 }
 
 /*
  * View transitions between overview and biography (links with `viewTransition`).
- * Layers: root (cross-fade), detail-panel, person-portrait (shared element, see
- * app/lib/view-transition.ts), site-nav (stays put on top).
+ * Layers: root (cross-fade), detail-panel (the biography card), site-nav (stays put on top).
+ * No portrait flies from the overview into the card: a calm fade reads better.
  */
 @keyframes vt-zoom-in {
   from {
@@ -420,13 +409,9 @@
   animation-duration: 200ms;
 }
 
-/* The dialog stays above the nav while it appears or goes, and the portrait flies above both. */
+/* The dialog stays above the nav while it appears or goes. */
 ::view-transition-group(detail-panel) {
   z-index: 1;
-}
-::view-transition-group(person-portrait) {
-  z-index: 2;
-  animation-duration: 420ms;
 }
 
 /* The scrollbar inside the biography card: thin, on a transparent track. */

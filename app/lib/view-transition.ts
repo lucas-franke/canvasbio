@@ -1,19 +1,12 @@
-import type { MouseEvent } from "react";
-
 import { WIDE_QUERY } from "./hooks";
 
 /*
- * Shared-element morph between a portrait in the overview (canvas tile or list row) and the
- * portrait of the open biography, using the View Transitions API (navigations with
- * `viewTransition`). A transition name must be unique on the page, so it is set imperatively
- * on exactly one element per state:
- * - old state: the clicked overview portrait (set on click, before the navigation starts),
- * - new state: the biography portrait, or when closing, the overview portrait of that person
- *   (set in a layout effect, i.e. in the commit inside the transition's update callback).
- * Browsers without View Transitions simply navigate. Only on wide screens, where the
- * biography is a centred card: on small screens it slides up as a sheet and its portrait
- * may be off screen.
+ * View transitions between overview and biography (navigations with `viewTransition`): on
+ * wide screens the biography card fades in over the page (app/app.css). Browsers without
+ * View Transitions simply navigate.
  */
+
+const wideView = () => typeof window !== "undefined" && window.matchMedia(WIDE_QUERY).matches;
 
 /*
  * The running transition, so focus can wait for it: moving focus while the old and new
@@ -28,7 +21,9 @@ import { WIDE_QUERY } from "./hooks";
 let running: Promise<void> | null = null;
 
 function withoutTransition(update: (() => unknown) | undefined): ViewTransition {
-  const updateCallbackDone = Promise.resolve().then(() => update?.()).then(() => undefined);
+  const updateCallbackDone = Promise.resolve()
+    .then(() => update?.())
+    .then(() => undefined);
   const ready = updateCallbackDone.then(() => Promise.reject(new DOMException("Skipped", "AbortError")));
   ready.catch(() => undefined);
   return {
@@ -65,48 +60,4 @@ if (typeof document !== "undefined" && typeof document.startViewTransition === "
 export function afterViewTransition(callback: () => void) {
   if (running) void running.then(callback);
   else callback();
-}
-
-const NAME = "person-portrait";
-let named: HTMLElement[] = [];
-
-function setName(element: HTMLElement | null | undefined) {
-  if (!element) return;
-  element.style.viewTransitionName = NAME;
-  named.push(element);
-}
-
-export function clearPortraitTransition() {
-  for (const element of named) element.style.viewTransitionName = "";
-  named = [];
-}
-
-const wideView = () => typeof window !== "undefined" && window.matchMedia(WIDE_QUERY).matches;
-
-/** Overview portrait of a person: the element marked `data-vt-portrait` in its `data-vt-item`. */
-function overviewPortrait(from: Element | null) {
-  return from?.closest("[data-vt-item]")?.querySelector<HTMLElement>("[data-vt-portrait]");
-}
-
-/** onClick of an overview link: its portrait becomes the source of the morph. */
-export function markPortraitSource(event: MouseEvent<HTMLElement>) {
-  if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-  markPortraitSourceElement(event.currentTarget);
-}
-
-/** Same for a navigation started in code (e.g. the random biography): `element` is the overview item. */
-export function markPortraitSourceElement(element: Element | null | undefined) {
-  clearPortraitTransition();
-  if (wideView()) setName(overviewPortrait(element ?? null));
-}
-
-/** After a biography opened (or closed): name the element the morph should end on. */
-export function markPortraitTarget(slug: string | undefined, previousSlug: string | undefined) {
-  clearPortraitTransition();
-  if (!wideView()) return;
-  if (slug) {
-    setName(document.querySelector<HTMLElement>("[data-vt-detail-portrait]"));
-  } else if (previousSlug) {
-    setName(overviewPortrait(document.querySelector(`[data-person="${CSS.escape(previousSlug)}"]`)));
-  }
 }
