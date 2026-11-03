@@ -19,7 +19,6 @@ import { useHydrated } from "~/lib/hooks";
 import { readSeen } from "~/lib/preferences";
 import { pickRandom } from "~/lib/random";
 import type { SearchState } from "~/lib/search/search";
-import { markPortraitSourceElement } from "~/lib/view-transition";
 
 // MapLibre is large: loaded only when the map is opened, and only in the browser.
 const PeopleMap = lazy(() => import("~/components/map/people-map"));
@@ -94,7 +93,6 @@ export function PeopleOverview({
   const showRandom = () => {
     const person = pickRandom(hits ?? index.people, { seen: readSeen(), exclude: activeSlug });
     if (!person) return;
-    markPortraitSourceElement(document.querySelector(`[data-person="${CSS.escape(person.slug)}"]`));
     navigate(hrefFor(person.slug), { preventScrollReset: true, viewTransition: true });
   };
 

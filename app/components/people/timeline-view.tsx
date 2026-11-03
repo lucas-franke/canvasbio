@@ -18,7 +18,6 @@ import type { Chapter, SortKey } from "~/lib/content/sort";
 import { lifeYears } from "~/lib/content/format";
 import { useLocale, useMessages } from "~/lib/i18n";
 import { localize } from "~/lib/i18n/localize";
-import { markPortraitSource } from "~/lib/view-transition";
 
 /**
  * Row columns, shared by axis and rows so the years line up. Narrow: portrait, then name
@@ -350,7 +349,6 @@ const TimelineRow = memo(function TimelineRow({
     // The listeners only highlight the life span (visual); the link inside is the control.
     // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
     <article
-      data-vt-item
       onPointerEnter={(event) => event.pointerType === "mouse" && onPoint(person.slug)}
       onPointerLeave={(event) => event.pointerType === "mouse" && onPoint(null)}
       onFocus={() => onPoint(person.slug)}
@@ -362,7 +360,6 @@ const TimelineRow = memo(function TimelineRow({
       )}
     >
       <div
-        data-vt-portrait
         data-tint
         className={cn(
           "size-12 overflow-hidden @lg:size-16",
@@ -385,7 +382,6 @@ const TimelineRow = memo(function TimelineRow({
               to={href}
               preventScrollReset
               viewTransition
-              onClick={markPortraitSource}
               data-person={person.slug}
               aria-current={active ? "page" : undefined}
               className={

@@ -3,7 +3,6 @@ import { Link } from "react-router";
 
 import { tornEdgeClass } from "~/lib/canvas/torn-edge";
 import { siteConfig } from "~/lib/config";
-import { markPortraitSource } from "~/lib/view-transition";
 
 import { Portrait } from "~/components/portrait";
 import type { PersonListItem } from "~/lib/content/adapter";
@@ -26,14 +25,12 @@ interface PersonRowProps {
 export function PersonRow({ person, href, tags, active = false, badge }: PersonRowProps) {
   return (
     <article
-      data-vt-item
       className={cn(
         "group relative flex items-start gap-4 rounded-2xl p-2 transition-colors focus-within:bg-emphasis/5 hover:bg-emphasis/5 @lg:gap-5",
         active && "bg-brand/10 hover:bg-brand/10",
       )}
     >
       <div
-        data-vt-portrait
         data-tint
         className={cn(
           "size-20 shrink-0 overflow-hidden @lg:size-28 @2xl:size-36",
@@ -54,7 +51,6 @@ export function PersonRow({ person, href, tags, active = false, badge }: PersonR
             to={href}
             preventScrollReset
             viewTransition
-            onClick={markPortraitSource}
             data-person={person.slug}
             aria-current={active ? "page" : undefined}
             className={

@@ -5,7 +5,6 @@ import { Link } from "react-router";
 import type { TileVariation } from "~/lib/canvas/layout";
 import type { PersonListItem } from "~/lib/content/adapter";
 import { portraitUrl } from "~/lib/content/images";
-import { markPortraitSource } from "~/lib/view-transition";
 
 import { HIT_LIFT } from "./wall-painter";
 
@@ -97,7 +96,6 @@ export const CanvasTile = memo(function CanvasTile({
   const inset = (size - side) / 2;
   return (
     <li
-      data-vt-item
       aria-hidden={primary && match !== false ? undefined : true}
       className="self-start justify-self-start [grid-area:1/1]"
       style={{
@@ -111,7 +109,6 @@ export const CanvasTile = memo(function CanvasTile({
         to={href}
         preventScrollReset
         viewTransition
-        onClick={markPortraitSource}
         draggable={false}
         data-cell={cellId}
         data-person={primary ? person.slug : undefined}
@@ -126,7 +123,7 @@ export const CanvasTile = memo(function CanvasTile({
       >
         {ownPortrait && (
           <span
-            data-vt-portrait
+            data-tile-portrait
             data-tint
             className={cn("relative block size-full overflow-hidden bg-stage", edgeClass)}
           >

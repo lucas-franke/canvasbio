@@ -17,7 +17,7 @@ import { filterPeople, isSearchActive, searchSuffix } from "~/lib/search/search"
 import { markSeen } from "~/lib/preferences";
 import { useSearch } from "~/lib/search/use-search";
 import { useSwipeToClose } from "~/lib/swipe-to-close";
-import { afterViewTransition, markPortraitTarget } from "~/lib/view-transition";
+import { afterViewTransition } from "~/lib/view-transition";
 
 const prefersReducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -51,8 +51,8 @@ export default function PeopleLayout() {
       : leafId.startsWith("people-map:")
         ? "map"
         : leafId.startsWith("people:")
-        ? "canvas"
-        : null;
+          ? "canvas"
+          : null;
   const isDetail = leafId.startsWith("person:");
 
   // The overview behind a biography keeps whichever view was used last.
@@ -96,14 +96,6 @@ export default function PeopleLayout() {
       root.style.overflow = previous;
     };
   }, [modal]);
-
-  // Portrait morph: name the element it ends on, within the commit (before the new snapshot).
-  const transitionSlug = useRef<string | undefined>(slug);
-  useLayoutEffect(() => {
-    if (slug === transitionSlug.current) return;
-    markPortraitTarget(slug, transitionSlug.current);
-    transitionSlug.current = slug;
-  }, [slug]);
 
   // Focus: opening a biography moves focus to its name, closing returns it to the person
   // in the overview (WCAG 2.4.3). Nothing moves on the initial page load. Waits for the

@@ -207,7 +207,7 @@ test.describe("without JavaScript", () => {
     await expect(tiles.first()).toHaveAttribute("href", /^\/personen\/[a-z0-9-]+$/);
     // Without JavaScript the view switch shows all views right away.
     await page.getByRole("group", { name: "Ansicht" }).getByRole("link", { name: "Liste" }).click();
-    await expect(page.locator("article[data-vt-item]")).toHaveCount(await peopleCount(page));
+    await expect(page.locator("main article")).toHaveCount(await peopleCount(page));
   });
 });
 

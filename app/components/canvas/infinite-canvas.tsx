@@ -37,7 +37,6 @@ import { useMessages } from "~/lib/i18n";
 import { readSeen } from "~/lib/preferences";
 import { pickRandom } from "~/lib/random";
 import type { FacetLabels, SearchState } from "~/lib/search/search";
-import { afterViewTransition, markPortraitSourceElement } from "~/lib/view-transition";
 import { CanvasControls } from "./canvas-controls";
 import { CanvasTile } from "./canvas-tile";
 import { defaultScale, firstPaintScript } from "~/lib/canvas/camera";
@@ -50,9 +49,6 @@ const tornEdges = theme.tileEdge === "torn";
 
 const cellId = ({ col, row }: Cell) => `${col}:${row}`;
 const sameCell = (a: Cell | null, b: Cell | null) => a?.col === b?.col && a?.row === b?.row;
-
-/** Portrait copies made for the morph into a biography (see WallPainter.snapshotInto). */
-const removeSnapshots = () => document.querySelectorAll(".canvas-snapshot").forEach((el) => el.remove());
 
 function parseCell(element: EventTarget | null): Cell | null {
   const id = element instanceof Element ? element.closest("[data-cell]")?.getAttribute("data-cell") : null;
@@ -235,18 +231,6 @@ export function InfiniteCanvas({
     painter.current?.setState({ hits: hitSet });
   }, [hitSet, layout, ordered]);
 
-  // The morph copy of a portrait is only needed while its biography opens and closes.
-  useEffect(() => {
-    if (!activeSlug) afterViewTransition(removeSnapshots);
-  }, [activeSlug]);
-
-  /** Before a biography opens from a tile: a copy of its portrait for the morph. */
-  const snapshotFor = (cell: Cell) => {
-    const link = viewportRef.current?.querySelector<HTMLElement>(`[data-cell="${cellId(cell)}"]`);
-    if (!link || !painted || !painter.current) return;
-    removeSnapshots();
-    painter.current.snapshotInto(link, cell);
-  };
   const hitsKey = hits ? hits.map((p) => p.slug).join(",") : "";
   /** Position in `hits` of the match last jumped to with previous/next. */
   const [hitIndex, setHitIndex] = useState(-1);
@@ -321,8 +305,6 @@ export function InfiniteCanvas({
     const open = () => {
       randomBusy.current = false;
       tile()?.removeAttribute("data-pulse");
-      snapshotFor(cell);
-      markPortraitSourceElement(tile());
       navigate(hrefFor(person.slug), { preventScrollReset: true, viewTransition: true });
     };
     // Reduced motion: the camera jumps and nothing pulses.
@@ -438,8 +420,6 @@ export function InfiniteCanvas({
       camera.animateTo({ x, y, scale: defaultScale(layout, camera.measure(), limits) }, 700);
       return;
     }
-    // Opens the biography (the tile's own click handler names the morph source next).
-    if (cell) snapshotFor(cell);
   };
 
   // The tile under the mouse grows a little (painted; touch has no hover).

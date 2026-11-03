@@ -176,31 +176,6 @@ export class WallPainter {
     this.invalidate();
   }
 
-  /**
-   * The portrait of a tile as an element inside `host` (marked data-vt-portrait), for the
-   * shared-element view transition to the biography. Drawn at once from the loaded image.
-   */
-  snapshotInto(host: HTMLElement, cell: Cell): HTMLCanvasElement | null {
-    const index = personAt(this.options.layout, cell);
-    const person = index === undefined ? undefined : this.options.people[index];
-    if (!person) return null;
-    const width = imageWidthFor(this.options.layout.tile * this.camera.scale * this.dpr());
-    const image = this.images.get(person.slug, person.image.hash, width, 0);
-    const snapshot = document.createElement("canvas");
-    snapshot.width = snapshot.height = image?.width ?? 2;
-    const ctx = snapshot.getContext("2d")!;
-    if (image) ctx.drawImage(image, 0, 0);
-    else {
-      ctx.fillStyle = this.placeholder(person);
-      ctx.fillRect(0, 0, 2, 2);
-    }
-    snapshot.setAttribute("data-vt-portrait", "");
-    snapshot.setAttribute("aria-hidden", "true");
-    snapshot.className = "canvas-snapshot";
-    host.append(snapshot);
-    return snapshot;
-  }
-
   dispose() {
     this.disposed = true;
     cancelAnimationFrame(this.frame);
