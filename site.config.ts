@@ -91,9 +91,12 @@ export default defineSiteConfig({
       },
     },
     fonts: {
-      heading: '"IBM Plex Serif", ui-serif, Georgia, serif',
-      body: '"IBM Plex Sans Variable", "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif',
-      wordmark: '"IBM Plex Sans Variable", "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif',
+      // One sans for everything (Libre Franklin, after Franklin Gothic, 1902); the serif
+      // only for quotes.
+      heading: '"Libre Franklin Variable", "Libre Franklin", ui-sans-serif, system-ui, sans-serif',
+      body: '"Libre Franklin Variable", "Libre Franklin", ui-sans-serif, system-ui, sans-serif',
+      wordmark: '"Libre Franklin Variable", "Libre Franklin", ui-sans-serif, system-ui, sans-serif',
+      quote: '"IBM Plex Serif", ui-serif, Georgia, serif',
     },
     radius: 0.75,
     imageTreatment: "sepia",

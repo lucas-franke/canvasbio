@@ -170,7 +170,7 @@ export function PersonDetail({
             className="pointer-events-auto bg-surface/85 shadow-[0_2px_8px_rgb(0_0_0/0.18)] backdrop-blur-sm"
           >
             {siteConfig.detail.tabs.map((t) => (
-              <TabsTrigger key={t.id} value={t.id} className="max-sm:px-2.5">
+              <TabsTrigger key={t.id} value={t.id} className="max-sm:px-2 max-sm:tracking-[-0.01em]">
                 {t.shortLabel ? (
                   <>
                     <span aria-hidden="true" className="sm:hidden">
@@ -233,7 +233,7 @@ function RelatedPeople({ people, hrefFor }: { people: RelatedPerson[]; hrefFor: 
                 className="size-16 shrink-0 rounded-lg object-cover"
               />
               <span className="flex min-w-0 flex-col">
-                <span className="font-heading text-body text-emphasis">{p.name.display}</span>
+                <span className="font-heading text-body font-semibold text-emphasis">{p.name.display}</span>
                 <span className="text-body-xs text-muted-text">
                   {lifeYears(p.born, p.died)}
                   {p.reasons.length > 0 && <> · {p.reasons.join(" · ")}</>}
@@ -282,7 +282,7 @@ function MoreBiographies({
             <ArrowLeft aria-hidden="true" className="size-4" />
             {m.detail.previous}
           </span>
-          <span className="font-heading text-h3 text-emphasis">{previous.name.display}</span>
+          <span className="font-heading text-h3 font-semibold text-emphasis">{previous.name.display}</span>
         </Link>
         <Link
           to={hrefFor(next.slug)}
@@ -294,7 +294,7 @@ function MoreBiographies({
             {m.detail.next}
             <ArrowRight aria-hidden="true" className="size-4" />
           </span>
-          <span className="font-heading text-h3 text-emphasis">{next.name.display}</span>
+          <span className="font-heading text-h3 font-semibold text-emphasis">{next.name.display}</span>
         </Link>
       </div>
       <Button
@@ -334,7 +334,7 @@ function FactsPanel({ person }: { person: PersonDetailProps["person"] }) {
           {text.quote && (
             <figure className="flex flex-col gap-3">
               <Quote aria-hidden="true" className="size-9 rotate-180 fill-brand stroke-none" />
-              <blockquote lang={text.quote.lang} className="font-heading text-subline text-brand italic">
+              <blockquote lang={text.quote.lang} className="font-quote text-subline text-brand italic">
                 <p>„{text.quote.text}“</p>
               </blockquote>
               <figcaption className="flex items-start gap-3 text-body-sm text-muted-text">

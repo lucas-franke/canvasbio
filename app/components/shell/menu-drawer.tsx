@@ -1,5 +1,5 @@
 import { cn } from "cn";
-import { Globe, Menu, Monitor, Moon, Sun, X } from "lucide-react";
+import { Globe, Menu, Monitor, Moon, Sun, SunMoon, X } from "lucide-react";
 import { RadioGroup as RadioGroupPrimitive } from "radix-ui";
 import { useState, type ReactNode } from "react";
 import { Link, useLocation } from "react-router";
@@ -20,6 +20,11 @@ import { useTheme, type ThemeChoice } from "~/lib/theme/use-theme";
 import { NavIconButton } from "./nav";
 
 const THEME_ICONS = { system: Monitor, light: Sun, dark: Moon } as const;
+
+/** Language and appearance: the same segmented control, the chosen one in the accent colour. */
+const segmentsClass = "grid gap-1 rounded-full border border-control/55 p-1";
+const segmentClass =
+  "hit-44 flex min-h-10 items-center justify-center gap-1.5 rounded-full px-2 text-body-sm font-medium text-emphasis hover:bg-emphasis/5";
 
 function Section({ title, icon, children }: { title: string; icon?: ReactNode; children: ReactNode }) {
   const id = `menu-${title.toLowerCase().replace(/\W+/g, "-")}`;
@@ -79,7 +84,7 @@ export function MenuDrawer() {
         )}
       >
         <div className="flex items-center justify-between px-6 pt-2">
-          <DrawerTitle className="font-heading text-h2 font-normal text-emphasis">{m.nav.menu}</DrawerTitle>
+          <DrawerTitle className="font-heading text-h3 font-semibold text-emphasis">{m.nav.menu}</DrawerTitle>
           <DrawerClose
             className="hit-44 grid size-10 place-items-center rounded-full border border-control text-emphasis hover:bg-emphasis/5"
             aria-label={m.nav.closeMenu}
@@ -109,9 +114,13 @@ export function MenuDrawer() {
 
           {siteConfig.locales.length > 1 && (
             <Section title={m.language.label} icon={<Globe />}>
-              <ul className="flex flex-wrap gap-2">
+              {/* Links, not radios: each language has its own address. */}
+              <ul
+                className={segmentsClass}
+                style={{ gridTemplateColumns: `repeat(${siteConfig.locales.length}, minmax(0, 1fr))` }}
+              >
                 {siteConfig.locales.map((l) => (
-                  <li key={l.code}>
+                  <li key={l.code} className="flex">
                     <Link
                       to={
                         switchLocalePath(pathname, l.code) + search + switchLocaleHash(hash, locale, l.code)
@@ -120,7 +129,10 @@ export function MenuDrawer() {
                       lang={l.htmlLang}
                       hrefLang={l.htmlLang}
                       aria-current={l.code === locale ? "page" : undefined}
-                      className="hit-44 inline-flex min-h-10 items-center rounded-full border border-control/55 px-4 text-body-sm font-medium sm:text-label text-emphasis hover:border-control hover:bg-emphasis/5 aria-[current=page]:border-brand aria-[current=page]:bg-brand aria-[current=page]:text-brand-foreground"
+                      className={cn(
+                        segmentClass,
+                        "flex-1 aria-[current=page]:bg-brand aria-[current=page]:text-brand-foreground",
+                      )}
                     >
                       {l.label}
                     </Link>
@@ -131,12 +143,12 @@ export function MenuDrawer() {
           )}
 
           {siteConfig.features.themeToggle && (
-            <Section title={m.theme.label}>
+            <Section title={m.theme.label} icon={<SunMoon />}>
               <RadioGroupPrimitive.Root
                 value={theme}
                 onValueChange={(value) => setTheme(value as ThemeChoice)}
                 aria-label={m.theme.label}
-                className="grid grid-cols-3 gap-1 rounded-full border border-control/55 p-1"
+                className={cn(segmentsClass, "grid-cols-3")}
               >
                 {(["system", "light", "dark"] as const).map((choice) => {
                   const Icon = THEME_ICONS[choice];
@@ -146,8 +158,8 @@ export function MenuDrawer() {
                       value={choice}
                       title={m.theme[choice]}
                       className={cn(
-                        "hit-44 flex min-h-10 items-center justify-center gap-1.5 rounded-full px-2 text-body-sm font-medium text-emphasis hover:bg-emphasis/5",
-                        "data-[state=checked]:bg-emphasis data-[state=checked]:text-surface",
+                        segmentClass,
+                        "data-[state=checked]:bg-brand data-[state=checked]:text-brand-foreground",
                       )}
                     >
                       <Icon aria-hidden="true" className="size-4 shrink-0" />

@@ -182,7 +182,9 @@ function ListPreview({ people }: { people: PersonListItem[] }) {
             />
           </span>
           <span className="flex min-w-0 flex-col">
-            <span className="truncate font-heading text-body text-emphasis">{person.name.display}</span>
+            <span className="truncate font-heading text-body font-semibold text-emphasis">
+              {person.name.display}
+            </span>
             <span className="truncate text-body-sm text-muted-text">
               {person.summary[0] ?? lifeYears(person.born, person.died)}
             </span>

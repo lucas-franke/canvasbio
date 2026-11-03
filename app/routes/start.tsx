@@ -78,7 +78,7 @@ export default function Start({ loaderData }: Route.ComponentProps) {
         <header className="flex flex-col gap-4 lg:col-start-1 lg:row-start-1">
           <h1
             id="start-title"
-            className="font-heading text-[clamp(2.25rem,1.5rem+3vw,4rem)] leading-[1.05] text-balance text-brand"
+            className="font-heading text-[clamp(2rem,1.4rem+2.4vw,3.25rem)] leading-[1.08] tracking-[-0.025em] text-balance text-emphasis"
           >
             {t(start.subtitle)}
           </h1>
@@ -100,7 +100,7 @@ export default function Start({ loaderData }: Route.ComponentProps) {
           <figure className="flex flex-col gap-3 lg:col-start-1 lg:row-start-2">
             {/* Lucide only ships the closing "99" mark; rotated it becomes the opening "66" from the design. */}
             <Quote aria-hidden="true" className="size-8 rotate-180 fill-brand stroke-none" />
-            <blockquote className="font-heading text-[clamp(1.25rem,1.1rem+0.6vw,1.625rem)] leading-tight tracking-[-0.04em] text-emphasis italic">
+            <blockquote className="font-quote text-[clamp(1.25rem,1.1rem+0.6vw,1.625rem)] leading-tight tracking-[-0.04em] text-emphasis italic">
               <p>„{t(start.quote.text)}“</p>
             </blockquote>
             <figcaption className="flex items-start gap-3 text-body-sm text-muted-text">

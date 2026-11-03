@@ -22,6 +22,7 @@ export function themeToCss(theme: SiteConfig["theme"]): string {
     `--font-heading-family:${theme.fonts.heading};` +
     `--font-body-family:${theme.fonts.body};` +
     `--font-wordmark-family:${theme.fonts.wordmark};` +
+    `--font-quote-family:${theme.fonts.quote};` +
     `--radius:${theme.radius}rem;` +
     (theme.portraitTint
       ? `--tint-color:${theme.portraitTint.color ?? "var(--c-accent)"};` +
