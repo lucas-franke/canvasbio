@@ -66,23 +66,14 @@ export const de = {
       `Heute vor ${years} Jahren ${kind === "born" ? "geboren" : "gestorben"}`,
     anniversaryUpcoming: (kind: "born" | "died", date: string) =>
       `${kind === "born" ? "Geboren" : "Gestorben"} am ${date}`,
-    portraitsLabel: "Porträts aus der Sammlung",
     listHint: "Mit Screenreader ist die Listenansicht übersichtlicher.",
-    orList: "Als Liste öffnen",
     /** The view preview on the start page (tabs) and the button that opens the chosen view. */
     previews: "Ansichten",
-    randomHint: (people: number) => `Eine von ${people}, per Zufall gewählt`,
     open: {
       canvas: "Mosaik öffnen",
       list: "Liste öffnen",
       timeline: "Zeitstrahl öffnen",
       map: "Karte öffnen",
-    },
-    previewText: {
-      canvas: (people: number) => `Alle ${people} Porträts als Wand: ziehen, zoomen, entdecken.`,
-      list: "Alle Biografien von A bis Z, mit Kurzbeschreibung.",
-      timeline: "Lebensspannen nebeneinander: Wer lebte zur selben Zeit?",
-      map: (places: number) => `Geburtsorte auf der Weltkarte: ${places} Orte.`,
     },
     count: (people: number, continents: number) =>
       continents > 1 ? `${people} Biografien aus ${continents} Kontinenten` : `${people} Biografien`,
@@ -122,8 +113,6 @@ export const de = {
     loading: "Wird geladen …",
   },
   timeline: {
-    legend: "Jeder Balken zeigt eine Lebenszeit. Wer übereinander liegt, lebte zur selben Zeit.",
-    legendInteractive: "Zeigen Sie auf eine Person, um ihre Zeitgenossen hervorzuheben.",
     events: "Wichtige Daten",
   },
   random: {
@@ -152,7 +141,6 @@ export const de = {
     peopleHere: (place: string) => `Biografien aus ${place}`,
     cluster: (count: number) => `${count} Biografien hier, vergrößern`,
     unplaced: (count: number) => `${count} ohne bekannten Ort nicht auf der Karte`,
-    attribution: "Karte: Natural Earth (gemeinfrei)",
     loading: "Karte wird geladen …",
     failed: "Die Karte konnte nicht geladen werden.",
   },
@@ -174,7 +162,6 @@ export const de = {
     loadFailed: "Die Übersicht konnte nicht geladen werden. Bitte prüfen Sie die Internetverbindung.",
     retry: "Erneut versuchen",
     related: "Ähnliche Biografien",
-    readingTime: (minutes: number) => `${minutes} ${minutes === 1 ? "Minute" : "Minuten"} Lesezeit`,
     outline: "Inhalt",
     storyOnlyIn: (language: string) => `Dieser Text liegt nur auf ${language} vor.`,
     sameEra: "Zur selben Zeit",

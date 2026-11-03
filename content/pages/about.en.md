@@ -11,7 +11,7 @@ In the **mosaic**, all portraits sit side by side in staggered rows. You can mov
 
 ## Where the content comes from
 
-This site is a demonstration. Data about the people comes from [Wikidata](https://www.wikidata.org/) (CC0), the portraits from [Wikimedia Commons](https://commons.wikimedia.org/) and are in the public domain or CC0. The life stories are excerpts from [Wikipedia](https://en.wikipedia.org/), licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Each person links to their sources; the authors of the texts are listed in each article's revision history.
+This site is a demonstration. Data about the people comes from [Wikidata](https://www.wikidata.org/) (CC0), the portraits from [Wikimedia Commons](https://commons.wikimedia.org/) and are in the public domain or CC0. The life stories are excerpts from [Wikipedia](https://en.wikipedia.org/), licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Each person links to their sources; the authors of the texts are listed in each article's revision history. The map draws land, lakes and borders from [Natural Earth](https://www.naturalearthdata.com/) (public domain).
 
 The data was compiled automatically and has not been editorially reviewed. Errors are possible.
 

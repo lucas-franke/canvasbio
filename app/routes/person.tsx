@@ -17,9 +17,6 @@ import { portraitUrl } from "~/lib/content/images";
 import { pageMeta } from "~/lib/meta";
 import type { PeopleLayoutContext } from "./people-layout";
 
-/** Average silent reading speed (German and English prose). */
-const WORDS_PER_MINUTE = 200;
-
 const reasonGroup = (r: RelatedReason) => (r.kind === "era" ? "era" : r.facet);
 
 export async function loader({ request, params }: Route.LoaderArgs) {
@@ -76,7 +73,6 @@ export async function loader({ request, params }: Route.LoaderArgs) {
   const outline = headings.filter((h) => h.level === topLevel);
   const storyInfo = {
     outline: outline.length >= 3 ? outline.map(({ id, text }) => ({ id, text })) : [],
-    readingMinutes: Math.max(1, Math.round(story.split(/\s+/).filter(Boolean).length / WORDS_PER_MINUTE)),
   };
 
   return { person, storyHtml, storyInfo, tags, related, locale };
@@ -115,6 +111,12 @@ export function ErrorBoundary() {
 export default function Person({ loaderData }: Route.ComponentProps) {
   const { closeHref, close, sequence, hrefFor } = useOutletContext<PeopleLayoutContext>();
   return (
-    <PersonDetail {...loaderData} closeHref={closeHref} onClose={close} sequence={sequence} hrefFor={hrefFor} />
+    <PersonDetail
+      {...loaderData}
+      closeHref={closeHref}
+      onClose={close}
+      sequence={sequence}
+      hrefFor={hrefFor}
+    />
   );
 }

@@ -95,33 +95,30 @@ export function TimelineView({ chapters, sort, hrefFor, activeSlug }: TimelineVi
 
   return (
     <>
-      {scale && (
-        <div className="flex flex-col gap-4 px-2 text-body-sm text-text">
-          <p>
-            {m.timeline.legend} <span className="pointer-coarse:hidden">{m.timeline.legendInteractive}</span>
-          </p>
-          {events.length > 0 && (
-            <section aria-labelledby="timeline-events" className="flex flex-col gap-2">
-              <h2
-                id="timeline-events"
-                className="font-sans text-body-sm font-semibold tracking-normal text-emphasis"
-              >
-                {m.timeline.events}
-              </h2>
-              <ul className="grid gap-x-6 gap-y-1 @xl:grid-cols-2">
-                {events.map((event) => (
-                  <li key={event.year} className="flex gap-3">
-                    <span aria-hidden="true" className="mt-2 size-2 shrink-0 rotate-45 bg-brand" />
-                    <span>
-                      <span className="font-semibold text-emphasis tabular-nums">{event.year}</span>{" "}
-                      {localize(event.label, locale)}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )}
-        </div>
+      {/* The key dates, explaining the diamonds on the axis. */}
+      {scale && events.length > 0 && (
+        <section
+          aria-labelledby="timeline-events"
+          className="flex flex-col gap-2 px-2 text-body-sm text-text"
+        >
+          <h2
+            id="timeline-events"
+            className="font-sans text-body-sm font-semibold tracking-normal text-emphasis"
+          >
+            {m.timeline.events}
+          </h2>
+          <ul className="grid gap-x-6 gap-y-1 @xl:grid-cols-2">
+            {events.map((event) => (
+              <li key={event.year} className="flex gap-3">
+                <span aria-hidden="true" className="mt-2 size-2 shrink-0 rotate-45 bg-brand" />
+                <span>
+                  <span className="font-semibold text-emphasis tabular-nums">{event.year}</span>{" "}
+                  {localize(event.label, locale)}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
       )}
 
       <div className="relative flex flex-col gap-10">

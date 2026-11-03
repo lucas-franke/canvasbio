@@ -91,7 +91,10 @@ test("while reading, the tabs stay in reach in one line with the close button", 
   for (const width of [360, 375, page.viewportSize()!.width]) {
     await page.setViewportSize({ width, height: page.viewportSize()!.height });
     await page.goto("/personen/clara-zetkin#geschichte");
-    await expect(page.getByRole("tab", { name: "Lebensgeschichte" })).toHaveAttribute("aria-selected", "true");
+    await expect(page.getByRole("tab", { name: "Lebensgeschichte" })).toHaveAttribute(
+      "aria-selected",
+      "true",
+    );
     const close = page.getByRole("link", { name: "Schließen" });
     const tabs = page.getByRole("tablist", { name: "Abschnitte" });
     const centre = async (l: typeof close) => {
@@ -152,8 +155,15 @@ test("previous and next continue in list order", async ({ page }) => {
   await expect(page.getByRole("heading", { level: 1 })).toContainText(/Clara|Klara|Klára/);
 });
 
-test("closing animation ends off screen and stays there (no flash)", async ({ page, browserName, isMobile }) => {
-  test.skip(browserName !== "chromium" || isMobile, "checks the view transition animations in Chromium (wide screens)");
+test("closing animation ends off screen and stays there (no flash)", async ({
+  page,
+  browserName,
+  isMobile,
+}) => {
+  test.skip(
+    browserName !== "chromium" || isMobile,
+    "checks the view transition animations in Chromium (wide screens)",
+  );
   await page.goto("/personen/liste");
   await page.getByRole("link", { name: "Clara Zetkin", exact: true }).click();
   await expect(page.getByRole("heading", { level: 1, name: "Clara Zetkin" })).toBeFocused();
@@ -176,7 +186,10 @@ test("closing animation ends off screen and stays there (no flash)", async ({ pa
   expect(await fills.jsonValue()).toEqual(["forwards"]);
 });
 
-test("phones: the sheet slides down before it closes, without a view transition", async ({ page, isMobile }) => {
+test("phones: the sheet slides down before it closes, without a view transition", async ({
+  page,
+  isMobile,
+}) => {
   test.skip(!isMobile, "the sheet only exists on phones");
   await page.goto("/personen/liste");
   await page.getByRole("link", { name: "Clara Zetkin", exact: true }).click();
@@ -184,7 +197,9 @@ test("phones: the sheet slides down before it closes, without a view transition"
   await page.getByRole("link", { name: "Schließen" }).click();
   // Still open while it slides out, held at the end of its animation until it is gone.
   const dialog = page.getByRole("dialog");
-  const fill = await dialog.evaluate((el) => el.getAnimations().map((a) => a.effect!.getComputedTiming().fill));
+  const fill = await dialog.evaluate((el) =>
+    el.getAnimations().map((a) => a.effect!.getComputedTiming().fill),
+  );
   expect(fill).toEqual(["forwards"]);
   await expect(dialog).toBeHidden();
   await expect(page).toHaveURL(/\/personen\/liste$/);
@@ -205,12 +220,11 @@ test("related biographies link to people with something in common", async ({ pag
   await expect(heading(page, name)).toBeFocused();
 });
 
-test("life story shows reading time and a table of contents for longer stories", async ({ page }) => {
+test("life story shows a table of contents for longer stories", async ({ page }) => {
   await page.goto("/personen/ada-wells#geschichte");
   const panel = page.getByRole("tabpanel", { name: "Lebensgeschichte" });
-  // 742 words at 200 words per minute.
-  await expect(panel.getByText("4 Minuten Lesezeit")).toBeVisible();
   const outline = panel.getByRole("navigation", { name: "Inhalt" });
+  await expect(outline).toBeVisible();
   const entries = outline.getByRole("link");
   expect(await entries.count()).toBeGreaterThanOrEqual(3);
 

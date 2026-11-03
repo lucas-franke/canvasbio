@@ -100,8 +100,8 @@ test("a random biography is one more row below the anniversaries", async ({ page
   await page.goto("/");
   const anniversaries = page.getByRole("heading", { level: 2, name: /An diesem Tag|In den nächsten Tagen/ });
   await expect(anniversaries).toBeVisible();
-  const random = page.getByRole("button", { name: /^Zufällige Biografie/ });
-  await expect(random).toHaveAccessibleName(/^Zufällige Biografie Eine von \d+, per Zufall gewählt$/);
+  const random = page.getByRole("button", { name: "Zufällige Biografie", exact: true });
+  await expect(random).toBeVisible();
   // Below the anniversaries, in the same column.
   const heading = (await anniversaries.boundingBox())!;
   const row = (await random.boundingBox())!;

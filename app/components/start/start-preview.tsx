@@ -46,22 +46,11 @@ interface StartPreviewProps {
 /**
  * A look into the four views (tabs), and the start page's way in: one link covers each
  * preview, named by the button in its corner ("Mosaik öffnen"). The previews themselves are
- * pictures only; a line of text below says what the view is.
+ * pictures only.
  */
 export function StartPreview({ people, placeCoords, view, onViewChange }: StartPreviewProps) {
   const m = useMessages();
   const locale = useLocale();
-  const places = useMemo(
-    () =>
-      new Set(people.flatMap((p) => (p.born.place && placeCoords[p.born.place] ? [p.born.place] : []))).size,
-    [people, placeCoords],
-  );
-  const text: Record<StartView, string> = {
-    canvas: m.start.previewText.canvas(people.length),
-    list: m.start.previewText.list,
-    timeline: m.start.previewText.timeline,
-    map: m.start.previewText.map(places),
-  };
 
   return (
     <Tabs value={view} onValueChange={(value) => onViewChange(value as StartView)} className="gap-3">
@@ -112,7 +101,6 @@ export function StartPreview({ people, placeCoords, view, onViewChange }: StartP
               </span>
             </Link>
           </div>
-          <p className="text-body-sm text-muted-text">{text[v]}</p>
         </TabsContent>
       ))}
       {/* Read with the mosaic link (aria-describedby). */}

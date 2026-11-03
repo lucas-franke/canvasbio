@@ -110,7 +110,7 @@ export default function Start({ loaderData }: Route.ComponentProps) {
         {/* Single biographies: the anniversaries and one picked at random. */}
         <div className="flex flex-col gap-3 border-t border-line pt-6 lg:col-start-1 lg:row-start-3 lg:self-start">
           <OnThisDay />
-          {features.randomBio && <RandomStart count={loaderData.people.length} />}
+          {features.randomBio && <RandomStart />}
         </div>
       </main>
     </div>
@@ -121,7 +121,7 @@ export default function Start({ loaderData }: Route.ComponentProps) {
  * A random (weighted) biography, as one more row below the anniversaries: it opens a single
  * biography like them, so it looks like them instead of competing with the main button.
  */
-function RandomStart({ count }: { count: number }) {
+function RandomStart() {
   const locale = useLocale();
   const m = useMessages();
   const navigate = useNavigate();
@@ -143,10 +143,7 @@ function RandomStart({ count }: { count: number }) {
         >
           <Shuffle className="size-5 text-brand" />
         </span>
-        <span className="flex min-w-0 flex-col">
-          <span className="font-medium text-emphasis">{m.random.label}</span>
-          <span className="text-body-sm text-muted-text">{m.start.randomHint(count)}</span>
-        </span>
+        <span className="font-medium text-emphasis">{m.random.label}</span>
       </button>
     </div>
   );

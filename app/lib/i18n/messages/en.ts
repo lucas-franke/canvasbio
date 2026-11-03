@@ -63,23 +63,14 @@ export const en: Messages = {
       `${kind === "born" ? "Born" : "Died"} ${years} years ago today`,
     anniversaryUpcoming: (kind: "born" | "died", date: string) =>
       `${kind === "born" ? "Born" : "Died"} on ${date}`,
-    portraitsLabel: "Portraits from the collection",
     listHint: "With a screen reader, the list view is easier to follow.",
-    orList: "Open as list",
     /** The view preview on the start page (tabs) and the button that opens the chosen view. */
     previews: "Views",
-    randomHint: (people: number) => `One of ${people}, picked at random`,
     open: {
       canvas: "Open the mosaic",
       list: "Open the list",
       timeline: "Open the timeline",
       map: "Open the map",
-    },
-    previewText: {
-      canvas: (people: number) => `All ${people} portraits as a wall: drag, zoom, discover.`,
-      list: "All biographies from A to Z, with a short description.",
-      timeline: "Life spans side by side: who lived at the same time?",
-      map: (places: number) => `Places of birth on the world map: ${places} places.`,
     },
     count: (people: number, continents: number) =>
       continents > 1 ? `${people} biographies from ${continents} continents` : `${people} biographies`,
@@ -117,8 +108,6 @@ export const en: Messages = {
     loading: "Loading …",
   },
   timeline: {
-    legend: "Each bar shows a lifetime. Bars above each other lived at the same time.",
-    legendInteractive: "Point at a person to highlight who lived at the same time.",
     events: "Key dates",
   },
   random: {
@@ -147,7 +136,6 @@ export const en: Messages = {
     peopleHere: (place: string) => `Biographies from ${place}`,
     cluster: (count: number) => `${count} biographies here, zoom in`,
     unplaced: (count: number) => `${count} without a known place are not on the map`,
-    attribution: "Map: Natural Earth (public domain)",
     loading: "Loading map …",
     failed: "The map could not be loaded.",
   },
@@ -169,7 +157,6 @@ export const en: Messages = {
     loadFailed: "The overview could not be loaded. Please check your internet connection.",
     retry: "Try again",
     related: "Related biographies",
-    readingTime: (minutes: number) => `${minutes} min read`,
     outline: "Contents",
     storyOnlyIn: (language: string) => `This text is only available in ${language}.`,
     sameEra: "Same era",
