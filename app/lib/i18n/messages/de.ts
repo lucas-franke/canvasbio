@@ -68,6 +68,8 @@ export const de = {
       `${kind === "born" ? "Geboren" : "Gestorben"} am ${date}`,
     listHint: "Mit Screenreader ist die Listenansicht übersichtlicher.",
     /** The view preview on the start page (tabs) and the button that opens the chosen view. */
+    pause: "Bewegung anhalten",
+    play: "Bewegung fortsetzen",
     previews: "Ansichten",
     open: {
       canvas: "Mosaik öffnen",

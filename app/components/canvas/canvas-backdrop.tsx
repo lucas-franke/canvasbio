@@ -25,9 +25,12 @@ const DRIFT = { x: 9, y: 5 };
 export function CanvasBackdrop({
   people,
   hrefFor,
+  paused = false,
 }: {
   people: PersonListItem[];
   hrefFor: (slug: string) => string;
+  /** Stops the drift (the start page's pause button, WCAG 2.2.2). */
+  paused?: boolean;
 }) {
   const ordered = useMemo(() => seededShuffle(people, "canvas"), [people]);
   const layout = useMemo(() => canvasLayout(ordered.length), [ordered.length]);
@@ -68,9 +71,9 @@ export function CanvasBackdrop({
     // eslint-disable-next-line react-hooks/exhaustive-deps -- the camera object is stable in its parts
   }, [layout, ordered]);
 
-  // Slow drift; none with reduced motion. rAF pauses by itself in background tabs.
+  // Slow drift; none with reduced motion or while paused. rAF pauses by itself in background tabs.
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (paused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     let frame = 0;
     let last = performance.now();
     const direction = { x: 1, y: 1 };
@@ -92,7 +95,7 @@ export function CanvasBackdrop({
     frame = requestAnimationFrame(step);
     return () => cancelAnimationFrame(frame);
     // eslint-disable-next-line react-hooks/exhaustive-deps -- the camera object is stable in its parts
-  }, []);
+  }, [paused]);
 
   const tiles = useMemo(() => {
     if (!view || layout.count === 0) return [];

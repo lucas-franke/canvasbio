@@ -65,6 +65,8 @@ export const en: Messages = {
       `${kind === "born" ? "Born" : "Died"} on ${date}`,
     listHint: "With a screen reader, the list view is easier to follow.",
     /** The view preview on the start page (tabs) and the button that opens the chosen view. */
+    pause: "Pause the motion",
+    play: "Resume the motion",
     previews: "Views",
     open: {
       canvas: "Open the mosaic",

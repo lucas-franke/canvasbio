@@ -1,4 +1,4 @@
-import { ArrowRight, ChartGantt, LayoutDashboard, List, MapIcon } from "lucide-react";
+import { ArrowRight, ChartGantt, LayoutDashboard, List, MapIcon, Pause, Play } from "lucide-react";
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { Link } from "react-router";
 
@@ -12,6 +12,7 @@ import { seededShuffle } from "~/lib/canvas/layout";
 import type { PersonListItem, PlaceCoords } from "~/lib/content/adapter";
 import { rowFor, scaleOfRows, scalePercent } from "~/lib/content/chronology";
 import { lifeYears } from "~/lib/content/format";
+import { useMediaQuery } from "~/lib/hooks";
 import { useLocale, useMessages } from "~/lib/i18n";
 import { listPath, mapPath, pagePath, timelinePath } from "~/lib/i18n/locale";
 
@@ -51,6 +52,10 @@ interface StartPreviewProps {
 export function StartPreview({ people, placeCoords, view, onViewChange }: StartPreviewProps) {
   const m = useMessages();
   const locale = useLocale();
+  // The wall and the map drift; one pause for both (WCAG 2.2.2). Nothing moves with reduced
+  // motion, so there is no button then.
+  const [paused, setPaused] = useState(false);
+  const still = useMediaQuery("(prefers-reduced-motion: reduce)", false);
 
   return (
     <Tabs value={view} onValueChange={(value) => onViewChange(value as StartView)} className="gap-3">
@@ -78,18 +83,25 @@ export function StartPreview({ people, placeCoords, view, onViewChange }: StartP
               className="absolute inset-0 opacity-80 saturate-[0.85] transition-transform duration-500 ease-out group-hover/card:scale-[1.03] motion-reduce:transition-none"
             >
               {v === "canvas" && (
-                <CanvasBackdrop people={people} hrefFor={(slug) => pagePath(locale, "people", slug)} />
+                <CanvasBackdrop
+                  people={people}
+                  hrefFor={(slug) => pagePath(locale, "people", slug)}
+                  paused={paused}
+                />
               )}
               {v === "list" && <ListPreview people={people} />}
               {v === "timeline" && <TimelinePreview people={people} />}
-              {v === "map" && <MapPreview people={people} placeCoords={placeCoords} />}
+              {v === "map" && <MapPreview people={people} placeCoords={placeCoords} paused={paused} />}
             </div>
-            {/* Vignette: the edges fade into the card, like a view through a window; the bottom
-                fades further, behind the button. */}
-            <span
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,var(--c-surface)_100%)]"
-            />
+            {/* Wall and map: a vignette, the edges fade into the card like a view through a
+                window (list and timeline have clear edges of their own). The bottom fades for
+                all, behind the button. */}
+            {(v === "canvas" || v === "map") && (
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,var(--c-surface)_100%)]"
+              />
+            )}
             <span
               aria-hidden="true"
               className="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-linear-to-t from-surface via-surface/60 to-transparent"
@@ -115,6 +127,26 @@ export function StartPreview({ people, placeCoords, view, onViewChange }: StartP
                 <ArrowRight aria-hidden="true" />
               </span>
             </Link>
+            {(v === "canvas" || v === "map") && !still && (
+              <button
+                type="button"
+                onClick={() => setPaused((value) => !value)}
+                aria-label={paused ? m.start.play : m.start.pause}
+                title={paused ? m.start.play : m.start.pause}
+                className={buttonVariants({
+                  variant: "secondary",
+                  size: "icon-sm",
+                  className:
+                    "absolute top-3 right-3 bg-surface/90 shadow-sm backdrop-blur-sm hover:bg-surface",
+                })}
+              >
+                {paused ? (
+                  <Play aria-hidden="true" className="size-4" />
+                ) : (
+                  <Pause aria-hidden="true" className="size-4" />
+                )}
+              </button>
+            )}
           </div>
         </TabsContent>
       ))}
@@ -221,18 +253,34 @@ function TimelinePreview({ people }: { people: PersonListItem[] }) {
   );
 }
 
-/** The view of the world used by the map preview (degrees): no Antarctica, little Arctic. */
-const WORLD = { west: -170, east: 190, north: 80, south: -56 };
+/** The latitudes the map preview shows (degrees): no Antarctica, little Arctic. */
+const WORLD = { north: 80, south: -56 };
+/** Drift of the map preview, in screen pixels per second. */
+const DRIFT = 8;
 
 type Ring = [number, number][];
 
 /**
  * The map: places of birth as dots (larger where more people were born) on the land outline,
- * drawn into a canvas. The outline is the map's own basemap file, loaded only when this
+ * drawn into a canvas. It fills the box and drifts slowly around the world, like the mosaic.
+ * The outline is the map's own basemap file, loaded only when this
  * preview is shown (the map view then has it cached).
  */
-function MapPreview({ people, placeCoords }: { people: PersonListItem[]; placeCoords: PlaceCoords }) {
+function MapPreview({
+  people,
+  placeCoords,
+  paused,
+}: {
+  people: PersonListItem[];
+  placeCoords: PlaceCoords;
+  paused: boolean;
+}) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  // Read by the running drift, so pausing doesn't redraw the map from the start.
+  const pausedRef = useRef(paused);
+  useEffect(() => {
+    pausedRef.current = paused;
+  }, [paused]);
   const [land, setLand] = useState<Ring[] | null>(null);
   const dots = useMemo(() => {
     const counts = new Map<string, number>();
@@ -267,68 +315,108 @@ function MapPreview({ people, placeCoords }: { people: PersonListItem[]; placeCo
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const draw = () => {
-      const { width, height } = canvas.getBoundingClientRect();
-      const dpr = Math.min(2, window.devicePixelRatio || 1);
-      canvas.width = Math.round(width * dpr);
-      canvas.height = Math.round(height * dpr);
-      const ctx = canvas.getContext("2d")!;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      ctx.clearRect(0, 0, width, height);
+    const ctx = canvas.getContext("2d")!;
+    const dpr = Math.min(2, window.devicePixelRatio || 1);
+    // The whole world as one strip, drawn once per size or theme; each frame only copies it.
+    let strip: HTMLCanvasElement | null = null;
+    let scale = 1;
+    let offset = 0;
+    let box = { width: 0, height: 0 };
+
+    const paintStrip = () => {
+      box = canvas.getBoundingClientRect();
+      canvas.width = Math.round(box.width * dpr);
+      canvas.height = Math.round(box.height * dpr);
+      // Cover the box: the world's height fills it, the sides run on (and wrap around).
+      scale = box.height / (WORLD.north - WORLD.south);
+      const width = 360 * scale;
+      strip = document.createElement("canvas");
+      strip.width = Math.ceil(width * dpr);
+      strip.height = Math.ceil(box.height * dpr);
+      const c = strip.getContext("2d")!;
+      c.setTransform(dpr, 0, 0, dpr, 0, 0);
       const token = (name: string) =>
         getComputedStyle(document.documentElement).getPropertyValue(`--c-${name}`).trim();
-      // Fit the world into the box (contain), centred.
-      const s = Math.min(width / (WORLD.east - WORLD.west), height / (WORLD.north - WORLD.south));
-      const ox = (width - (WORLD.east - WORLD.west) * s) / 2;
-      const oy = (height - (WORLD.north - WORLD.south) * s) / 2;
-      const x = (lng: number) => ox + ((lng < WORLD.west ? lng + 360 : lng) - WORLD.west) * s;
-      const y = (lat: number) => oy + (WORLD.north - lat) * s;
-
-      // Only the world box (Antarctica and the far north stay outside).
-      ctx.save();
-      ctx.beginPath();
-      ctx.rect(ox, oy, (WORLD.east - WORLD.west) * s, (WORLD.north - WORLD.south) * s);
-      ctx.clip();
+      const x = (lng: number) => (lng + 180) * scale;
+      const y = (lat: number) => (WORLD.north - lat) * scale;
       if (land) {
-        ctx.fillStyle = token("emphasis");
-        ctx.globalAlpha = 0.08;
-        ctx.beginPath();
+        c.fillStyle = token("emphasis");
+        c.globalAlpha = 0.08;
+        c.beginPath();
         for (const ring of land) {
-          // Rings crossing the edge of the view: drawn where they start (good enough at this size).
-          const shift = ring[0]![0] < WORLD.west ? 360 : 0;
-          ring.forEach(([lng, lat], i) => {
-            const px = ox + (lng + shift - WORLD.west) * s;
-            if (i === 0) ctx.moveTo(px, y(lat));
-            else ctx.lineTo(px, y(lat));
-          });
-          ctx.closePath();
+          ring.forEach(([lng, lat], i) => (i === 0 ? c.moveTo(x(lng), y(lat)) : c.lineTo(x(lng), y(lat))));
+          c.closePath();
         }
-        ctx.fill();
+        c.fill();
       }
-      ctx.globalAlpha = 0.8;
-      ctx.fillStyle = token("accent");
-      ctx.strokeStyle = token("surface");
-      ctx.lineWidth = 1;
+      c.globalAlpha = 0.8;
+      c.fillStyle = token("accent");
+      c.strokeStyle = token("surface");
+      c.lineWidth = 1;
       for (const { coords, count } of dots) {
-        ctx.beginPath();
-        ctx.arc(x(coords[0]), y(coords[1]), 1.8 + Math.sqrt(count) * 1.4, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.stroke();
+        c.beginPath();
+        c.arc(x(coords[0]), y(coords[1]), 2.2 + Math.sqrt(count) * 1.6, 0, Math.PI * 2);
+        c.fill();
+        c.stroke();
       }
-      ctx.globalAlpha = 1;
-      ctx.restore();
+      // Start over the region where most of the women were born.
+      const centre =
+        dots.reduce((sum, d) => sum + d.coords[0] * d.count, 0) /
+        Math.max(
+          1,
+          dots.reduce((n, d) => n + d.count, 0),
+        );
+      offset = x(centre) - box.width / 2;
     };
-    draw();
-    const resize = new ResizeObserver(draw);
+
+    const frame = () => {
+      if (!strip) return;
+      const width = 360 * scale;
+      const from = ((offset % width) + width) % width;
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // The strip twice, side by side: the world continues past 180°.
+      for (const start of [-from, -from + width]) {
+        ctx.drawImage(strip, Math.round(start * dpr), 0);
+      }
+    };
+
+    paintStrip();
+    frame();
+    // Slow drift, as on the mosaic; none with reduced motion. rAF pauses in background tabs.
+    let raf = 0;
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      let last = performance.now();
+      const step = (now: number) => {
+        if (!pausedRef.current) {
+          offset += DRIFT * Math.min(0.1, (now - last) / 1000);
+          frame();
+        }
+        last = now;
+        raf = requestAnimationFrame(step);
+      };
+      raf = requestAnimationFrame(step);
+    }
+    const repaint = () => {
+      const keep = offset;
+      paintStrip();
+      offset = keep;
+      frame();
+    };
+    const resize = new ResizeObserver(() => {
+      paintStrip();
+      frame();
+    });
     resize.observe(canvas);
-    const theme = new MutationObserver(draw);
+    const theme = new MutationObserver(repaint);
     theme.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
     const scheme = window.matchMedia("(prefers-color-scheme: dark)");
-    scheme.addEventListener("change", draw);
+    scheme.addEventListener("change", repaint);
     return () => {
+      cancelAnimationFrame(raf);
       resize.disconnect();
       theme.disconnect();
-      scheme.removeEventListener("change", draw);
+      scheme.removeEventListener("change", repaint);
     };
   }, [land, dots]);
 
