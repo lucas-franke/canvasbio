@@ -20,3 +20,5 @@
 # Generated icons (scripts/build-icons.ts)
 /public/icons/
 /public/site.webmanifest
+# Generated preview image for shared links (scripts/build-share-image.ts)
+/public/share.jpg
