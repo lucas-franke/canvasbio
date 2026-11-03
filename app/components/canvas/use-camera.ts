@@ -303,7 +303,12 @@ export function useCamera({
         const decay = 0.95 ** (dt / 16);
         vx *= decay;
         vy *= decay;
+        const before = camera.current;
         panBy(vx * dt, vy * dt);
+        // Against the wall's edge the camera doesn't move: stop in that direction. Otherwise a
+        // wall that looks still would keep "gliding", and a tap would only stop it.
+        if (camera.current.x === before.x) vx = 0;
+        if (camera.current.y === before.y) vy = 0;
         frame.current = Math.hypot(vx, vy) > 0.02 ? requestAnimationFrame(step) : 0;
       };
       frame.current = requestAnimationFrame(step);

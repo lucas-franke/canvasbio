@@ -43,7 +43,8 @@ const MAX_DPR = 2;
 const PULSE_MS = 550;
 /** The tile under the mouse grows a little (the torn edge is part of the image). */
 const HOVER_ZOOM = 1.04;
-const HIT_LIFT = 1.08;
+/** Search matches are lifted (also the size of their tile link, see canvas-tile.tsx). */
+export const HIT_LIFT = 1.08;
 const MISS_OPACITY = 0.18;
 
 interface Theme {

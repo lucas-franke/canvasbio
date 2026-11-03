@@ -120,6 +120,8 @@ export function InfiniteCanvas({
   // Mixed, but the same on every visit.
   const ordered = useMemo(() => seededShuffle(people, "canvas"), [people]);
   const indexBySlug = useMemo(() => new Map(ordered.map((p, i) => [p.slug, i])), [ordered]);
+  // Built once, not for every tile on every view change while panning.
+  const hrefs = useMemo(() => new Map(ordered.map((p) => [p.slug, hrefFor(p.slug)])), [ordered, hrefFor]);
   const layout = useMemo(() => canvasLayout(ordered.length), [ordered.length]);
   const limits = useMemo(() => canvasLimits(layout), [layout]);
 
@@ -580,7 +582,7 @@ export function InfiniteCanvas({
         onKeyDown={onKeyDown}
         onPointerMove={onPointerMove}
         onPointerLeave={onPointerLeave}
-        className="canvas-viewport absolute inset-0 cursor-grab touch-none overflow-clip select-none active:cursor-grabbing"
+        className="canvas-viewport absolute inset-0 cursor-grab touch-none overflow-clip select-none"
       >
         <canvas
           ref={canvasRef}
@@ -594,7 +596,8 @@ export function InfiniteCanvas({
           // No permanent will-change (see use-camera: the hint is set only while moving).
           className="canvas-world absolute top-1/2 left-1/2 origin-top-left"
         >
-          <ul aria-label={m.canvas.portraits}>
+          {/* All tiles share the grid's one cell, placed by their margins (see CanvasTile). */}
+          <ul aria-label={m.canvas.portraits} className="grid">
             {tiles.map(({ cell, person, origin, primary, tabbable, near }) => (
               <CanvasTile
                 key={cellId(cell)}
@@ -603,7 +606,7 @@ export function InfiniteCanvas({
                 x={origin.x}
                 y={origin.y}
                 size={layout.tile}
-                href={hrefFor(person.slug)}
+                href={hrefs.get(person.slug)!}
                 primary={primary}
                 tabbable={tabbable}
                 near={near}

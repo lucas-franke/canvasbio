@@ -124,6 +124,29 @@ test("dragging pans without opening a biography; a tap opens one", async ({ page
   await expect(page).toHaveURL(new RegExp(`/personen/${slug}$`));
 });
 
+test("after a flick into the wall's edge, the first tap opens a biography", async ({ page }) => {
+  await openCanvas(page);
+  // A fast flick towards the top left: the glide runs into the edge of the wall.
+  const viewport = page.viewportSize()!;
+  await page.mouse.move(viewport.width / 2, viewport.height / 2);
+  await page.mouse.down();
+  await page.mouse.move(viewport.width / 2 + 400, viewport.height / 2 + 400, { steps: 3 });
+  await page.mouse.up();
+  // Once the wall stands still, nothing may still be "gliding" and swallow the tap.
+  await settledCamera(page);
+  const { slug, x, y } = await page.evaluate(({ width, height }) => {
+    const tiles = [...document.querySelectorAll("[data-person]")].map((el) => {
+      const r = el.getBoundingClientRect();
+      const x = r.x + r.width / 2;
+      const y = r.y + r.height / 2;
+      return { slug: el.getAttribute("data-person"), x, y, d: (x - width / 2) ** 2 + (y - height / 2) ** 2 };
+    });
+    return tiles.sort((a, b) => a.d - b.d)[0]!;
+  }, viewport);
+  await page.mouse.click(x, y);
+  await expect(page).toHaveURL(new RegExp(`/personen/${slug}$`));
+});
+
 test("zoom buttons work without pinching (WCAG 2.5.1)", async ({ page }) => {
   await openCanvas(page);
   const start = await camera(page);
