@@ -1,5 +1,5 @@
 import { cn } from "cn";
-import { ArrowLeft, ArrowRight, Clock, Quote, Shuffle, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Quote, Shuffle, X } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router";
 
 import { Portrait } from "~/components/portrait";
@@ -28,7 +28,6 @@ export type RelatedPerson = Pick<PersonListItem, "slug" | "name" | "born" | "die
 export interface StoryInfo {
   /** Sections of the life story (only for longer stories). */
   outline: { id: string; text: string }[];
-  readingMinutes: number;
 }
 
 interface PersonDetailProps {
@@ -404,10 +403,6 @@ function StoryPanel({
     <div className="flex flex-col gap-10">
       {info && (
         <div className="-mt-2 flex flex-col gap-4 print:hidden">
-          <p className="flex items-center gap-2 text-body-sm text-muted-text">
-            <Clock aria-hidden="true" className="size-4" />
-            {m.detail.readingTime(info.readingMinutes)}
-          </p>
           {info.outline.length > 0 && (
             <nav aria-labelledby="outline-heading" className="rounded-xl border border-line p-4">
               <h3 id="outline-heading" className="mb-2 font-sans text-label font-semibold text-emphasis">

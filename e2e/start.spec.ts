@@ -8,13 +8,21 @@ const worldTransform = (page: Page) =>
     .first()
     .evaluate((el) => (el as HTMLElement).style.transform);
 
-test("the start page shows the living wall as a decorative backdrop", async ({ page }) => {
+test("the mosaic preview shows the living wall, decorative only", async ({ page }) => {
   await page.goto("/");
   const backdrop = page.locator(".canvas-world").first().locator("xpath=ancestor::*[@inert]").first();
   await expect(backdrop).toHaveAttribute("aria-hidden", "true");
   await expect(page.locator("[data-cell]").first()).toBeAttached();
   // Nothing in it can be focused, and screen readers don't see it.
   await expect(page.getByRole("link", { name: "Clara Zetkin" })).toHaveCount(0);
+
+  // Its tiles lie side by side in the brick pattern, several per row (not stacked in one column).
+  const { tiles, rows } = await page.locator(".canvas-world li").evaluateAll((all) => ({
+    tiles: all.length,
+    rows: new Set(all.map((li) => Math.round(li.getBoundingClientRect().top / 100))).size,
+  }));
+  expect(tiles).toBeGreaterThan(8);
+  expect(rows).toBeLessThan(tiles / 2);
 
   // It drifts slowly.
   const before = await worldTransform(page);
@@ -44,8 +52,10 @@ test("the mosaic button continues the wall where it was, without a camera flight
   const before = await worldTransform(page);
   await expect.poll(() => worldTransform(page)).not.toBe(before);
   const backdropScale = scaleOf(await worldTransform(page));
-  await page.getByRole("link", { name: "Biografien entdecken", exact: true }).click();
+  await page.getByRole("link", { name: "Mosaik öffnen", exact: true }).click();
   await expect(page).toHaveURL(/\/personen$/);
+  // The start page (with its preview wall) is gone, so this is the mosaic's own wall.
+  await expect(page.getByRole("tablist", { name: "Ansichten" })).toHaveCount(0);
   const wall = page.locator("main .canvas-world");
   await expect(wall).toBeAttached();
   // Same zoom as the backdrop, and it stays put.
@@ -56,22 +66,53 @@ test("the mosaic button continues the wall where it was, without a camera flight
   expect(await page.evaluate(() => sessionStorage.getItem("canvas:continue"))).toBeNull();
 });
 
-test("the start page has one main way in (the mosaic), the list next to it, and names its card only once", async ({
-  page,
-}) => {
+test("the preview tabs choose the view the main button opens", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByText(/^\d+ Biografien aus \d Kontinenten$/)).toBeVisible();
-  const main = page.getByRole("link", { name: "Biografien entdecken", exact: true });
-  await expect(main).toHaveAttribute("href", "/personen");
-  await expect(main).toHaveAccessibleDescription("Mit Screenreader ist die Listenansicht übersichtlicher.");
-  // The other views are in the view switch of the overview, not on the card.
-  await expect(page.getByRole("link", { name: "Karte", exact: true })).toHaveCount(0);
   await expect(page.getByRole("region", { name: "Ihre Stimme" })).toHaveCount(0);
-  await page.getByRole("link", { name: "Als Liste öffnen", exact: true }).click();
-  await expect(page).toHaveURL(/\/personen\/liste$/);
+  const tabs = page.getByRole("tablist", { name: "Ansichten" });
+  // The mosaic first; with a screen reader the list is the easier one.
+  const mosaic = page.getByRole("link", { name: "Mosaik öffnen", exact: true });
+  await expect(mosaic).toHaveAttribute("href", "/personen");
+  await expect(mosaic).toHaveAccessibleDescription("Mit Screenreader ist die Listenansicht übersichtlicher.");
+  for (const [tab, button, href] of [
+    ["Liste", "Liste öffnen", "/personen/liste"],
+    ["Zeitstrahl", "Zeitstrahl öffnen", "/personen/zeitstrahl"],
+    ["Karte", "Karte öffnen", "/personen/karte"],
+  ] as const) {
+    await tabs.getByRole("tab", { name: tab }).click();
+    await expect(tabs.getByRole("tab", { name: tab })).toHaveAttribute("aria-selected", "true");
+    await expect(page.getByRole("link", { name: button, exact: true })).toHaveAttribute("href", href);
+  }
+  // The button is part of the preview, and the whole preview is its click area: a click in
+  // the top right corner, away from the button, opens the view as well.
+  const link = page.getByRole("link", { name: "Karte öffnen", exact: true });
+  const card = (await link.boundingBox())!;
+  const button = (await link.locator("span").first().boundingBox())!;
+  expect(button.x).toBeGreaterThanOrEqual(card.x);
+  expect(button.y + button.height).toBeLessThanOrEqual(card.y + card.height);
+  expect(card.height).toBeGreaterThan(button.height * 3);
+  await page.mouse.click(card.x + card.width - 20, card.y + 20);
+  await expect(page).toHaveURL(/\/personen\/karte$/);
 });
 
-test("the start card doesn't move when the anniversaries appear", async ({ page, browser, viewport }) => {
+test("a random biography is one more row below the anniversaries", async ({ page }) => {
+  await page.goto("/");
+  const anniversaries = page.getByRole("heading", { level: 2, name: /An diesem Tag|In den nächsten Tagen/ });
+  await expect(anniversaries).toBeVisible();
+  const random = page.getByRole("button", { name: "Zufällige Biografie", exact: true });
+  await expect(random).toBeVisible();
+  // Below the anniversaries, in the same column.
+  const heading = (await anniversaries.boundingBox())!;
+  const row = (await random.boundingBox())!;
+  expect(row.y).toBeGreaterThan(heading.y);
+  expect(Math.abs(row.x - heading.x)).toBeLessThan(12);
+  await random.click();
+  await expect(page).toHaveURL(/\/personen\/[a-z0-9-]+$/);
+  await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+});
+
+test("the title doesn't move when the anniversaries appear", async ({ page, browser, viewport }) => {
   // Without JavaScript the page stays as pre-rendered, i.e. with the reserved room.
   const plain = await browser.newContext({ javaScriptEnabled: false, viewport });
   const prerendered = await plain.newPage();
@@ -80,7 +121,9 @@ test("the start card doesn't move when the anniversaries appear", async ({ page,
   await plain.close();
 
   await page.goto("/");
-  await expect(page.getByRole("heading", { level: 2, name: /An diesem Tag|In den nächsten Tagen/ })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { level: 2, name: /An diesem Tag|In den nächsten Tagen/ }),
+  ).toBeVisible();
   const after = await page.getByRole("heading", { level: 1 }).boundingBox();
   // A few pixels at most (heading and rows are reserved, only their exact text height differs).
   expect(Math.abs(after!.y - before!.y)).toBeLessThan(8);

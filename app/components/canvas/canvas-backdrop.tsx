@@ -116,7 +116,8 @@ export function CanvasBackdrop({
           suppressHydrationWarning
           className="canvas-world absolute top-1/2 left-1/2 origin-top-left"
         >
-          <ul>
+          {/* All tiles share the grid's one cell, placed by their margins (see CanvasTile). */}
+          <ul className="grid">
             {tiles.map(({ cell, person, origin }) => (
               <CanvasTile
                 key={`${cell.col}:${cell.row}`}

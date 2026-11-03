@@ -1,5 +1,5 @@
 import { cn } from "cn";
-import { ArrowRight, ChevronDown, List, Quote, Shuffle } from "lucide-react";
+import { ChevronDown, Quote, Shuffle } from "lucide-react";
 import { useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router";
 
@@ -8,9 +8,8 @@ import { SearchDrawer } from "~/components/search/search-drawer";
 import { TopNav, NavPill, NavTextLink } from "~/components/shell/nav";
 import { BrandLink } from "~/components/shell/brand-link";
 import { MenuDrawer } from "~/components/shell/menu-drawer";
-import { CanvasBackdrop } from "~/components/canvas/canvas-backdrop";
-import { continueFromLastCamera } from "~/components/canvas/use-camera";
 import { Portrait } from "~/components/portrait";
+import { StartPreview, type StartView } from "~/components/start/start-preview";
 import { Button } from "~/components/ui/button";
 import { requestPath } from "~/lib/base-path";
 import { siteConfig } from "~/lib/config";
@@ -20,7 +19,7 @@ import { loadPeopleIndex } from "~/lib/content/people-index.server";
 import { usePeopleIndex } from "~/lib/content/people-index";
 import { useHydrated } from "~/lib/hooks";
 import { useLocale, useMessages } from "~/lib/i18n";
-import { listPath, localeFromPathname, pagePath } from "~/lib/i18n/locale";
+import { localeFromPathname, pagePath } from "~/lib/i18n/locale";
 import { localize } from "~/lib/i18n/localize";
 import { pageMeta } from "~/lib/meta";
 import { readSeen } from "~/lib/preferences";
@@ -43,22 +42,16 @@ export default function Start({ loaderData }: Route.ComponentProps) {
   const { start, features } = siteConfig;
   const t = (record: Record<string, string>) => localize(record, locale);
 
+  // The chosen preview tab (its card holds the button that opens the view).
+  const [view, setView] = useState<StartView>("canvas");
+
   return (
     <div className="relative min-h-dvh bg-page">
-      {/* The living wall: drifts slowly behind the card; "Mosaik" continues right
-          there on the canvas. A vignette in the page colour (light or dark) calms it down. */}
-      <div aria-hidden="true" className="pointer-events-none fixed inset-0 overflow-hidden">
-        <div className="absolute inset-0 opacity-70">
-          <CanvasBackdrop people={loaderData.people} hrefFor={(slug) => pagePath(locale, "people", slug)} />
-        </div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,color-mix(in_srgb,var(--c-page)_55%,transparent)_0%,var(--c-page)_90%)]" />
-      </div>
-
       {/* First in the DOM, as on screen: Tab and screen readers reach it before the content (WCAG 2.4.3). */}
       <TopNav
         label={m.nav.label}
         // Same order as on every page: brand on the left; about, search and menu on the right.
-        // "Biografien" needs no nav link here: the card's main button leads there.
+        // "Biografien" needs no nav link here: the main button leads there.
         start={
           <NavPill bare>
             <BrandLink />
@@ -74,86 +67,85 @@ export default function Start({ loaderData }: Route.ComponentProps) {
           </NavPill>
         }
       />
-      <main id="main" className="relative grid min-h-dvh place-items-center px-4 pt-28 pb-12 sm:px-8">
-        {/* No region around the card: it is the whole content, and its h1 already names it. */}
-        <div className="start-card flex w-full max-w-2xl flex-col gap-8 rounded-card bg-surface p-6 shadow-2xl sm:gap-12 sm:p-12 lg:p-16">
-          <header className="flex flex-col gap-4">
-            <h1 id="start-title" className="wordmark text-[clamp(2.75rem,2rem+4vw,4.5rem)] text-brand">
-              {t(start.title)}
-            </h1>
-            <p className="font-heading text-subline text-balance text-emphasis">{t(start.subtitle)}</p>
-            <p className="text-body-sm text-muted-text">
-              {m.start.count(loaderData.people.length, loaderData.placeGroups.length)}
-            </p>
-          </header>
+      {/* Phones: title, the preview (with the button that opens it), quote, anniversaries.
+          From lg two columns: title, quote and anniversaries on the left, the preview on the
+          right. */}
+      <main
+        id="main"
+        className="mx-auto grid min-h-dvh w-full max-w-7xl content-center gap-6 px-4 pt-20 pb-12 sm:gap-8 sm:px-8 sm:pt-24 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] lg:grid-rows-[auto_auto_1fr] lg:gap-x-16 lg:gap-y-10 lg:pt-28"
+      >
+        <header className="flex flex-col gap-4 lg:col-start-1 lg:row-start-1">
+          <h1 id="start-title" className="wordmark text-[clamp(2.75rem,2rem+4vw,5rem)] text-brand">
+            {t(start.title)}
+          </h1>
+          <p className="font-heading text-subline text-balance text-emphasis">{t(start.subtitle)}</p>
+          <p className="text-body-sm text-muted-text">
+            {m.start.count(loaderData.people.length, loaderData.placeGroups.length)}
+          </p>
+        </header>
 
-          {start.quote && (
-            <figure className="flex flex-col gap-3">
-              {/* Lucide only ships the closing "99" mark; rotated it becomes the opening "66" from the design. */}
-              <Quote aria-hidden="true" className="size-10 rotate-180 fill-brand stroke-none" />
-              <blockquote className="font-heading text-[clamp(1.25rem,1.1rem+0.6vw,1.625rem)] leading-tight tracking-[-0.04em] text-brand italic">
-                <p>„{t(start.quote.text)}“</p>
-              </blockquote>
-              <figcaption className="flex items-start gap-3 text-body-sm text-muted-text">
-                <span aria-hidden="true" className="mt-[0.775em] h-px w-6 shrink-0 bg-muted-text" />
-                {t(start.quote.source)}
-              </figcaption>
-            </figure>
-          )}
+        <div className="min-w-0 lg:col-start-2 lg:row-span-3 lg:row-start-1 lg:self-center">
+          <StartPreview
+            people={loaderData.people}
+            placeCoords={loaderData.placeCoords}
+            view={view}
+            onViewChange={setView}
+          />
+        </div>
 
-          {/* One way in: the mosaic continues the wall behind the card. The list is the easier
-              one with a screen reader; map and timeline are in the view switch of every page. */}
-          <div className="flex flex-col gap-3">
-            <Button asChild size="lg" className="self-start">
-              <Link
-                to={pagePath(locale, "people")}
-                viewTransition
-                onClick={continueFromLastCamera}
-                aria-describedby="start-list-hint"
-              >
-                {t(start.cta)}
-                <ArrowRight aria-hidden="true" />
-              </Link>
-            </Button>
-            <p id="start-list-hint" hidden>
-              {m.start.listHint}
-            </p>
-            <div className="-ml-4 flex flex-wrap items-center">
-              <Button asChild variant="ghost" size="sm">
-                <Link to={listPath(locale)}>
-                  <List aria-hidden="true" />
-                  {m.start.orList}
-                </Link>
-              </Button>
-              {features.randomBio && <RandomStart />}
-            </div>
-          </div>
+        {start.quote && (
+          <figure className="flex flex-col gap-3 lg:col-start-1 lg:row-start-2">
+            {/* Lucide only ships the closing "99" mark; rotated it becomes the opening "66" from the design. */}
+            <Quote aria-hidden="true" className="size-8 rotate-180 fill-brand stroke-none" />
+            <blockquote className="font-heading text-[clamp(1.25rem,1.1rem+0.6vw,1.625rem)] leading-tight tracking-[-0.04em] text-emphasis italic">
+              <p>„{t(start.quote.text)}“</p>
+            </blockquote>
+            <figcaption className="flex items-start gap-3 text-body-sm text-muted-text">
+              <span aria-hidden="true" className="mt-[0.775em] h-px w-6 shrink-0 bg-muted-text" />
+              {t(start.quote.source)}
+            </figcaption>
+          </figure>
+        )}
 
+        {/* Single biographies: the anniversaries and one picked at random. */}
+        <div className="flex flex-col gap-3 border-t border-line pt-6 lg:col-start-1 lg:row-start-3 lg:self-start">
           <OnThisDay />
+          {features.randomBio && <RandomStart />}
         </div>
       </main>
     </div>
   );
 }
 
-/** Secondary entry: straight into a (weighted) random biography. */
+/**
+ * A random (weighted) biography, as one more row below the anniversaries: it opens a single
+ * biography like them, so it looks like them instead of competing with the main button.
+ */
 function RandomStart() {
   const locale = useLocale();
   const m = useMessages();
   const navigate = useNavigate();
   const { index } = usePeopleIndex(locale);
   return (
-    <Button
-      variant="ghost"
-      size="sm"
-      onClick={() => {
-        const person = index && pickRandom(index.people, { seen: readSeen() });
-        navigate(person ? pagePath(locale, "people", person.slug) : pagePath(locale, "people"));
-      }}
-    >
-      {m.random.label}
-      <Shuffle aria-hidden="true" />
-    </Button>
+    // After the anniversaries (if any), set off by a line.
+    <div className="not-first:mt-1 not-first:border-t not-first:border-line not-first:pt-3">
+      <button
+        type="button"
+        onClick={() => {
+          const person = index && pickRandom(index.people, { seen: readSeen() });
+          navigate(person ? pagePath(locale, "people", person.slug) : pagePath(locale, "people"));
+        }}
+        className="-mx-2 flex min-h-14 w-[calc(100%+1rem)] items-center gap-3 rounded-xl px-2 py-1 text-left hover:bg-emphasis/5"
+      >
+        <span
+          aria-hidden="true"
+          className="grid size-12 shrink-0 place-items-center rounded-md bg-emphasis/5"
+        >
+          <Shuffle className="size-5 text-brand" />
+        </span>
+        <span className="font-medium text-emphasis">{m.random.label}</span>
+      </button>
+    </div>
   );
 }
 
@@ -178,10 +170,10 @@ function OnThisDay() {
     return { items: exact.length > 0 ? exact : all, today: exact.length > 0 };
   }, [hydrated, index]);
   // Until the date is known: keep the room free (heading, two rows, "show more"), so the
-  // centred card doesn't jump when the section appears.
+  // page doesn't jump when the section appears.
   if (!hydrated || !index) {
     return (
-      <div aria-hidden="true" className="flex flex-col gap-3 border-t border-line pt-6">
+      <div aria-hidden="true" className="flex flex-col gap-3">
         <span className="h-5 w-32 rounded-md bg-emphasis/5" />
         <span className="flex flex-col gap-1">
           {Array.from({ length: ON_THIS_DAY_SHOWN }, (_, i) => (
@@ -200,7 +192,7 @@ function OnThisDay() {
   const more = items.length - ON_THIS_DAY_SHOWN;
 
   return (
-    <section aria-labelledby="on-this-day" className="flex flex-col gap-3 border-t border-line pt-6">
+    <section aria-labelledby="on-this-day" className="flex flex-col gap-3">
       <h2 id="on-this-day" className="font-sans text-body-sm font-medium tracking-normal text-muted-text">
         {today ? m.start.onThisDay : m.start.comingUp}
       </h2>

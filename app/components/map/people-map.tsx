@@ -448,7 +448,6 @@ export default function PeopleMap({
           <List aria-hidden="true" className="size-4 sm:size-5" />
           {m.map.places}
         </button>
-        <p className="text-body-xs text-muted-text">{m.map.attribution}</p>
       </div>
 
       {ready && (

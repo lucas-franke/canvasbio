@@ -11,7 +11,7 @@ Im **Mosaik** stehen alle Porträts versetzt nebeneinander auf einer Fläche. Si
 
 ## Woher die Inhalte stammen
 
-Diese Seite ist eine Demonstration. Die Angaben zu den Personen stammen aus [Wikidata](https://www.wikidata.org/) (CC0), die Porträts aus [Wikimedia Commons](https://commons.wikimedia.org/) und sind gemeinfrei oder CC0. Die Lebensgeschichten sind Auszüge aus der [Wikipedia](https://de.wikipedia.org/) und stehen unter der Lizenz [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.de). Bei jeder Person sind die Quellen mit Link angegeben; die Autorinnen und Autoren der Texte finden sich in der Versionsgeschichte des jeweiligen Artikels.
+Diese Seite ist eine Demonstration. Die Angaben zu den Personen stammen aus [Wikidata](https://www.wikidata.org/) (CC0), die Porträts aus [Wikimedia Commons](https://commons.wikimedia.org/) und sind gemeinfrei oder CC0. Die Lebensgeschichten sind Auszüge aus der [Wikipedia](https://de.wikipedia.org/) und stehen unter der Lizenz [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.de). Bei jeder Person sind die Quellen mit Link angegeben; die Autorinnen und Autoren der Texte finden sich in der Versionsgeschichte des jeweiligen Artikels. Die Karte zeichnet Land, Seen und Grenzen aus [Natural Earth](https://www.naturalearthdata.com/) (gemeinfrei).
 
 Die Daten wurden automatisch zusammengestellt und nicht redaktionell geprüft. Fehler sind möglich.
 
