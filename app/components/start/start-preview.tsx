@@ -70,8 +70,13 @@ export function StartPreview({ people, placeCoords, view, onViewChange }: StartP
       </TabsList>
       {START_VIEWS.map((v) => (
         <TabsContent key={v} value={v} className="flex flex-col gap-3">
-          <div className="relative h-[clamp(13rem,32svh,22rem)] overflow-hidden rounded-card bg-surface shadow-[0_12px_40px_rgb(0_0_0/0.12)] ring-1 ring-line/70 lg:h-[min(36rem,calc(100dvh-16rem))]">
-            <div aria-hidden="true" className="absolute inset-0">
+          <div className="group/card relative h-[clamp(13rem,32svh,22rem)] overflow-hidden rounded-card bg-surface shadow-[0_12px_40px_rgb(0_0_0/0.12)] ring-1 ring-line/70 lg:h-[min(36rem,calc(100dvh-16rem))]">
+            {/* A picture of the view, not its content: muted, and it moves closer when pointed
+                at, so a click reads as "open this view" rather than "open this person". */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 opacity-80 saturate-[0.85] transition-transform duration-500 ease-out group-hover/card:scale-[1.03] motion-reduce:transition-none"
+            >
               {v === "canvas" && (
                 <CanvasBackdrop people={people} hrefFor={(slug) => pagePath(locale, "people", slug)} />
               )}
@@ -79,6 +84,16 @@ export function StartPreview({ people, placeCoords, view, onViewChange }: StartP
               {v === "timeline" && <TimelinePreview people={people} />}
               {v === "map" && <MapPreview people={people} placeCoords={placeCoords} />}
             </div>
+            {/* Vignette: the edges fade into the card, like a view through a window; the bottom
+                fades further, behind the button. */}
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,var(--c-surface)_100%)]"
+            />
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-linear-to-t from-surface via-surface/60 to-transparent"
+            />
             {/* Laid over the picture, not around it: the mosaic preview has links of its own
                 (its tiles), and a link inside a link is invalid HTML. The whole card is the
                 click area; the corner shows what it does. */}
