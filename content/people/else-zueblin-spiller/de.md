@@ -9,7 +9,7 @@ facts:
   - label: Gestorben
     value: 11. April 1948 in Kilchberg, Schweiz
   - label: Wirkungsfeld
-    value: Journalistin, Abstinenzler, Frauenrechtlerin
+    value: Journalistin, Abstinenzlerin, Frauenrechtlerin
 timeline:
   - date: 1. November 1881
     event: Geboren in Seen

@@ -1,6 +1,6 @@
 ---
 summary:
-  - Abstinenzler, Führungskraft, Redakteurin
+  - Abstinenzlerin, Führungskraft, Redakteurin
   - 1862–1930
 portraitAlt: Porträt von Sarah Rowell Wright
 facts:
@@ -9,7 +9,7 @@ facts:
   - label: Gestorben
     value: "1930"
   - label: Wirkungsfeld
-    value: Abstinenzler, Führungskraft, Redakteurin, Schriftstellerin
+    value: Abstinenzlerin, Führungskraft, Redakteurin, Schriftstellerin
 timeline:
   - date: "1862"
     event: Geboren

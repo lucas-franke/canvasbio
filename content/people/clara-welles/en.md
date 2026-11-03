@@ -1,6 +1,6 @@
 ---
 summary:
-  - ", silversmith and designer"
+  - silversmith and designer
   - 1868–1965 · Ellenville
 portraitAlt: Portrait of Clara Welles
 facts:

@@ -9,7 +9,7 @@ facts:
   - label: Gestorben
     value: 25. März 1953 in Kopenhagen, Dänemark
   - label: Wirkungsfeld
-    value: Journalistin, Feministin, Pazifistin, Antifaschist
+    value: Journalistin, Feministin, Pazifistin, Antifaschistin
 timeline:
   - date: 29. Dezember 1871
     event: Geboren in Kopenhagen

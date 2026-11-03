@@ -9,7 +9,7 @@ facts:
   - label: Gestorben
     value: 1. Januar 2009 in Johannesburg, Südafrika
   - label: Wirkungsfeld
-    value: Politikerin, Aktivistin, Apartheidgegner, Schriftstellerin
+    value: Politikerin, Aktivistin, Apartheidgegnerin, Schriftstellerin
 timeline:
   - date: 7. November 1917
     event: Geboren in Germiston

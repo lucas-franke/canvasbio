@@ -1,6 +1,6 @@
 ---
 summary:
-  - (1886-1916) American suffragist, lawyer
+  - American suffragist, lawyer
   - 1886–1916 · Brooklyn
 portraitAlt: Portrait of Inez Milholland
 facts:

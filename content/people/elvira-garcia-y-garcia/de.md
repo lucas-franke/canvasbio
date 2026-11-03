@@ -1,6 +1,6 @@
 ---
 summary:
-  - Peruanischer Lehrerin und Journalistin
+  - Peruanische Lehrerin und Journalistin
   - 1862–1951 · Lambayeque
 portraitAlt: Porträt von Elvira García y García
 facts:

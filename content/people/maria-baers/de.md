@@ -1,6 +1,6 @@
 ---
 summary:
-  - Belgischer Politiker
+  - Belgische Politikerin
   - 1883–1959 · Antwerpen
 portraitAlt: Porträt von Maria Baers
 facts:

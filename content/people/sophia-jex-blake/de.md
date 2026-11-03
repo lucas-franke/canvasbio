@@ -1,6 +1,6 @@
 ---
 summary:
-  - Britische Ärztin, Feminist und Mitbegründer der "London School of Medicine for Women"
+  - Britische Ärztin, Feministin und Mitbegründerin der "London School of Medicine for Women"
   - 1840–1912 · Hastings
 portraitAlt: Porträt von Sophia Jex-Blake
 facts:

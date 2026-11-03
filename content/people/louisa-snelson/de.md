@@ -1,6 +1,6 @@
 ---
 summary:
-  - Kunstlehrerin, Fundraiser, Suffragette
+  - Kunstlehrerin, Fundraiserin, Suffragette
   - 1844–1919 · Wellington
 portraitAlt: Porträt von Louisa Snelson
 facts:
@@ -9,7 +9,7 @@ facts:
   - label: Gestorben
     value: 15. Dezember 1919
   - label: Wirkungsfeld
-    value: Kunstlehrerin, Fundraiser, Suffragette
+    value: Kunstlehrerin, Fundraiserin, Suffragette
 timeline:
   - date: 29. Januar 1844
     event: Geboren in Wellington

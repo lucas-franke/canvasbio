@@ -1,6 +1,6 @@
 ---
 summary:
-  - Herausgeberin, Abstinenzler, Suffragette
+  - Herausgeberin, Abstinenzlerin, Suffragette
   - 1853–1930
 portraitAlt: Porträt von Florence Collins Porter
 facts:
@@ -9,7 +9,7 @@ facts:
   - label: Gestorben
     value: 31. Dezember 1930
   - label: Wirkungsfeld
-    value: Herausgeberin, Abstinenzler, Suffragette
+    value: Herausgeberin, Abstinenzlerin, Suffragette
 timeline:
   - date: 14. August 1853
     event: Geboren

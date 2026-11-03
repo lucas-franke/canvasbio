@@ -1,6 +1,8 @@
-# Builds the static site and publishes it on GitHub Pages at https://<owner>.github.io/<repo>/.
-# One-time setup: Settings → Pages → Build and deployment → Source: "GitHub Actions".
-# With a custom domain the site lives at the root: set BASE_PATH to "/" below.
+# Builds the static site and publishes it on GitHub Pages, at the custom domain lauterfrauen.de
+# (Settings → Pages → Custom domain). One-time setup: Settings → Pages → Build and deployment →
+# Source: "GitHub Actions".
+# Without a custom domain the site lives at https://<owner>.github.io/<repo>/: set BASE_PATH to
+# /${{ github.event.repository.name }}/ below.
 name: Deploy to GitHub Pages
 
 on:
@@ -22,7 +24,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      BASE_PATH: /${{ github.event.repository.name }}/
+      # The custom domain serves the site at the root.
+      BASE_PATH: /
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

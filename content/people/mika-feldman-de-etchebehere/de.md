@@ -1,6 +1,6 @@
 ---
 summary:
-  - War eine argentinische Anarchistin und Marxistin
+  - Argentinische Anarchistin und Marxistin
   - 1902–1992 · Moisés Ville
 portraitAlt: Porträt von Mika Feldman de Etchebéhère
 facts:

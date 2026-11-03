@@ -9,7 +9,7 @@ facts:
   - label: Gestorben
     value: 24. September 1920 in Naltschik, Russland
   - label: Wirkungsfeld
-    value: Revolutionärin, Herausgeberin, Politikerin, Kommunist
+    value: Revolutionärin, Herausgeberin, Politikerin, Kommunistin
 timeline:
   - date: 26. April 1874
     event: Geboren in Paris

@@ -1,6 +1,6 @@
 ---
 summary:
-  - (1869-1950) feminist and socialist
+  - feminist and socialist
   - 1869–1950
 portraitAlt: Portrait of Lilian Sophia Locke
 facts:

@@ -9,7 +9,7 @@ facts:
   - label: Gestorben
     value: 28. Januar 1956 in Düsseldorf, Deutschland
   - label: Wirkungsfeld
-    value: Politikerin, Dienstbotin, Fabrikarbeiter, Krankenpfleger
+    value: Politikerin, Dienstbotin, Fabrikarbeiterin, Krankenpflegerin
 timeline:
   - date: 15. März 1879
     event: Geboren in Gorzów Wielkopolski

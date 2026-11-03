@@ -1,6 +1,6 @@
 ---
 summary:
-  - Schriftstellerin, Suffragette, Abstinenzler
+  - Schriftstellerin, Suffragette, Abstinenzlerin
   - 1843–1927 · Middlesex County
 portraitAlt: Porträt von Caroline Brown Buell
 facts:
@@ -9,7 +9,7 @@ facts:
   - label: Gestorben
     value: "1927"
   - label: Wirkungsfeld
-    value: Schriftstellerin, Suffragette, Abstinenzler
+    value: Schriftstellerin, Suffragette, Abstinenzlerin
 timeline:
   - date: 24. Oktober 1843
     event: Geboren in Middlesex County

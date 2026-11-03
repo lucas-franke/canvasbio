@@ -1,6 +1,6 @@
 ---
 summary:
-  - Suffragette, Abstinenzler
+  - Suffragette, Abstinenzlerin
   - 1842–1932 · Portland
 portraitAlt: Porträt von Augusta Merrill Hunt
 facts:
@@ -9,7 +9,7 @@ facts:
   - label: Gestorben
     value: 15. Juni 1932
   - label: Wirkungsfeld
-    value: Suffragette, Abstinenzler
+    value: Suffragette, Abstinenzlerin
 timeline:
   - date: 6. Juni 1842
     event: Geboren in Portland

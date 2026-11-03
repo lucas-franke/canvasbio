@@ -1,6 +1,6 @@
 ---
 summary:
-  - (1867-1939) medical officer and feminist
+  - medical officer and feminist
   - 1867–1939 · Ballarat
 portraitAlt: Portrait of Ida Gertrude Margaret Halley
 facts:

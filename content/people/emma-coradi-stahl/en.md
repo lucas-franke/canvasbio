@@ -1,6 +1,6 @@
 ---
 summary:
-  - (1846-1912), editor
+  - editor
   - 1846–1912 · Dozwil
 portraitAlt: Portrait of Emma Coradi-Stahl
 facts:

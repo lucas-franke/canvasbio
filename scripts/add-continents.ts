@@ -61,4 +61,7 @@ await writeFile(taxonomyFile, `${JSON.stringify(taxonomy, null, 2)}\n`);
 const sorted = Object.fromEntries(Object.entries(regions).sort(([a], [b]) => a.localeCompare(b)));
 await writeFile(regionsFile, `${JSON.stringify(sorted, null, 2)}\n`);
 console.log(`${updated} people updated. People per continent:`, counts);
-console.log("Countries per continent:", Object.fromEntries(Object.entries(sorted).map(([k, v]) => [k, v.length])));
+console.log(
+  "Countries per continent:",
+  Object.fromEntries(Object.entries(sorted).map(([k, v]) => [k, v.length])),
+);

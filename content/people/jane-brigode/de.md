@@ -1,6 +1,6 @@
 ---
 summary:
-  - Belgischer Politiker
+  - Belgische Politikerin
   - 1870–1952 · Geetbets
 portraitAlt: Porträt von Jane Brigode
 facts:

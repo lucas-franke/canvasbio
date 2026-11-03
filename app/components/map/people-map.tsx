@@ -301,7 +301,10 @@ export default function PeopleMap({
     };
 
     const render = () => {
-      const zoom = Math.round(map.getZoom());
+      // Clusters of the zoom level at or below the view: drawn at least as spread out as they
+      // were computed (rounding up drew the next level's clusters up to 30 % closer together,
+      // and the portraits overlapped).
+      const zoom = Math.floor(map.getZoom() + 1e-6);
       const seen = new Set<string>();
       for (const feature of clusters.getClusters([-180, -85, 180, 85], zoom)) {
         const props = feature.properties as (PointProps | (ClusterProps & Supercluster.ClusterProperties)) & {

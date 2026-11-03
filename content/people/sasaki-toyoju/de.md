@@ -9,7 +9,7 @@ facts:
   - label: Gestorben
     value: 15. Juni 1901
   - label: Wirkungsfeld
-    value: Abstinenzler, Frauenrechtlerin
+    value: Abstinenzlerin, Frauenrechtlerin
 timeline:
   - date: 6. Mai 1853
     event: Geboren in Sendai

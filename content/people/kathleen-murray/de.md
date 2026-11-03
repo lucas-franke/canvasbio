@@ -1,6 +1,6 @@
 ---
 summary:
-  - Landwirtin, Aktivistin, Apartheidgegner
+  - Landwirtin, Aktivistin, Apartheidgegnerin
   - 1891–1984 · Kenilworth
 portraitAlt: Porträt von Kathleen Murray
 facts:
@@ -9,7 +9,7 @@ facts:
   - label: Gestorben
     value: 9. Februar 1984
   - label: Wirkungsfeld
-    value: Landwirtin, Aktivistin, Apartheidgegner, Philanthropin
+    value: Landwirtin, Aktivistin, Apartheidgegnerin, Philanthropin
 timeline:
   - date: 9. August 1891
     event: Geboren in Kenilworth

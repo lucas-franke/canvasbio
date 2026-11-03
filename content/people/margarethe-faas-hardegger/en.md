@@ -1,6 +1,6 @@
 ---
 summary:
-  - Swiss activist (1882-1963), editor
+  - Swiss activist, editor
   - 1882–1963 · Bern
 portraitAlt: Portrait of Margarethe Faas-Hardegger
 facts:

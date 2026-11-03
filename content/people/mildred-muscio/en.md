@@ -1,6 +1,6 @@
 ---
 summary:
-  - (1882-1964) feminist
+  - feminist
   - 1882–1964 · Copeland
 portraitAlt: Portrait of Mildred Muscio
 facts:

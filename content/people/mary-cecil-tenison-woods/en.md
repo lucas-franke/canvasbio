@@ -1,6 +1,6 @@
 ---
 summary:
-  - (1893-1971) lawyer
+  - lawyer
   - 1893–1971 · Adelaide
 portraitAlt: Portrait of Mary Cecil Tenison Woods
 facts:

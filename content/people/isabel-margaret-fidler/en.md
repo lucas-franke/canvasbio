@@ -1,6 +1,6 @@
 ---
 summary:
-  - (1869-1952) tutor to women students
+  - tutor to women students
   - 1869–1952 · Sydney
 portraitAlt: Portrait of Isabel Margaret Fidler
 facts:

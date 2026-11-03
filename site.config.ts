@@ -6,8 +6,8 @@ import { defineSiteConfig } from "./app/lib/config/schema.ts";
  * plus the `content/` folder. See README for details.
  */
 export default defineSiteConfig({
-  // Public address once deployed (enables share previews and canonical URLs), e.g.:
-  // siteUrl: "https://lauterfrauen.de",
+  // Public address (enables share previews and canonical URLs).
+  siteUrl: "https://lauterfrauen.de",
 
   brand: {
     // A proper name in both languages ("nothing but women" and "louder women").

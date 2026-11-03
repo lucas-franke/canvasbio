@@ -1,6 +1,6 @@
 ---
 summary:
-  - Abstinenzler, Frauenrechtlerin
+  - Abstinenzlerin, Frauenrechtlerin
   - 1876–1950 · Sydney
 portraitAlt: Porträt von Eleanor Glencross
 facts:
@@ -9,7 +9,7 @@ facts:
   - label: Gestorben
     value: 2. Mai 1950 in Cremorne, Australien
   - label: Wirkungsfeld
-    value: Abstinenzler, Frauenrechtlerin
+    value: Abstinenzlerin, Frauenrechtlerin
 timeline:
   - date: 11. November 1876
     event: Geboren in Sydney

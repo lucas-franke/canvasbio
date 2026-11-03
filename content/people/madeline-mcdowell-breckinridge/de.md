@@ -1,6 +1,6 @@
 ---
 summary:
-  - Eine US-amerikanische Reformerin und Sozialaktivistin
+  - US-amerikanische Reformerin und Sozialaktivistin
   - 1872–1920 · Franklin County
 portraitAlt: Porträt von Madeline McDowell Breckinridge
 facts:

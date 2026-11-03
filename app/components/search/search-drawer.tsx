@@ -26,8 +26,12 @@ import {
   useSearchSuffix,
 } from "~/lib/search/use-search";
 
+/**
+ * Text fields. Focused, the focus ring takes the place of the border (one ring, not the
+ * border plus the ring 2 px apart); the halo stays outside.
+ */
 const fieldClass =
-  "min-h-11 w-full rounded-xl border-2 border-control bg-surface px-4 text-body text-emphasis placeholder:text-muted-text";
+  "min-h-11 w-full rounded-xl border-2 border-control bg-surface px-4 text-body text-emphasis placeholder:text-muted-text focus-visible:border-focus focus-visible:outline-offset-[-2px]";
 
 /**
  * The search button in the navigation: a sheet with name, place and field filters (Figma

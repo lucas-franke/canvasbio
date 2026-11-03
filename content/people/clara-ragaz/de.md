@@ -9,7 +9,7 @@ facts:
   - label: Gestorben
     value: 7. Oktober 1957 in Zürich, Schweiz
   - label: Wirkungsfeld
-    value: Lehrerin, Pazifistin, Abstinenzler, Frauenrechtlerin
+    value: Lehrerin, Pazifistin, Abstinenzlerin, Frauenrechtlerin
 timeline:
   - date: 30. März 1874
     event: Geboren in Chur

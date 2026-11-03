@@ -1,6 +1,6 @@
 ---
 summary:
-  - Murray, Eunice Guthrie (1878–1960), suffragist and author
+  - suffragist and author
   - 1878–1960 · Cardross
 portraitAlt: Portrait of Eunice Murray
 facts:
