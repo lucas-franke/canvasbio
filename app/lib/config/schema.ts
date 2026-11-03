@@ -132,6 +132,8 @@ export const siteConfigSchema = z.object({
       heading: z.string(),
       body: z.string(),
       wordmark: z.string(),
+      /** Quotes (start page, biographies): set apart from everything else. */
+      quote: z.string(),
     }),
     /** Base corner radius in rem; cards use a multiple of it. */
     radius: z.number().min(0).max(3),

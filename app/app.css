@@ -51,6 +51,7 @@
   --font-heading: var(--font-heading-family);
   --font-sans: var(--font-body-family);
   --font-wordmark: var(--font-wordmark-family);
+  --font-quote: var(--font-quote-family);
 
   --radius-sm: calc(var(--radius) * 0.5);
   --radius-md: calc(var(--radius) * 0.75);
@@ -65,27 +66,27 @@
    */
   --text-h1: clamp(2rem, 1.7rem + 1.2vw, 2.5rem);
   --text-h1--line-height: 1.15;
-  --text-h1--letter-spacing: -0.04em;
+  --text-h1--letter-spacing: -0.025em;
   --text-h2: clamp(1.5rem, 1.35rem + 0.6vw, 1.75rem);
   --text-h2--line-height: 1.15;
-  --text-h2--letter-spacing: -0.04em;
+  --text-h2--letter-spacing: -0.02em;
   --text-subline: clamp(1.25rem, 1.15rem + 0.45vw, 1.5rem);
   --text-subline--line-height: 1.15;
-  --text-subline--letter-spacing: -0.04em;
+  --text-subline--letter-spacing: -0.015em;
   --text-h3: clamp(1.1875rem, 1.13rem + 0.25vw, 1.3125rem);
   --text-h3--line-height: 1.25;
-  --text-h3--letter-spacing: -0.03em;
+  --text-h3--letter-spacing: -0.015em;
   --text-body: clamp(1rem, 0.97rem + 0.12vw, 1.0625rem);
   --text-body--line-height: 1.55;
-  --text-body--letter-spacing: -0.01em;
+  --text-body--letter-spacing: 0em;
   --text-body-sm: 0.9375rem;
   --text-body-sm--line-height: 1.55;
-  --text-body-sm--letter-spacing: -0.01em;
+  --text-body-sm--letter-spacing: 0em;
   --text-body-xs: 0.875rem;
   --text-body-xs--line-height: 1.5;
   --text-label: 1rem;
   --text-label--line-height: 1.2;
-  --text-label--letter-spacing: -0.01em;
+  --text-label--letter-spacing: 0em;
 }
 
 @layer base {
@@ -118,7 +119,7 @@
   h1,
   h2,
   h3 {
-    @apply font-heading font-normal text-emphasis;
+    @apply font-heading font-semibold text-emphasis;
   }
 
   button:not(:disabled),
@@ -201,7 +202,7 @@
 @utility wordmark {
   font-family: var(--font-wordmark);
   font-weight: 700;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.045em;
   line-height: 1;
 }
 

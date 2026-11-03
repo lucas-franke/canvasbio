@@ -12,7 +12,12 @@ import { TopNav, NavPill } from "./nav";
  * the content scrolls on beneath the pills (which carry their own).
  */
 function SiteHeader() {
-  return <div aria-hidden="true" className="h-[calc(4rem+env(safe-area-inset-top))] shrink-0 sm:h-[calc(5rem+env(safe-area-inset-top))]" />;
+  return (
+    <div
+      aria-hidden="true"
+      className="h-[calc(4rem+env(safe-area-inset-top))] shrink-0 sm:h-[calc(5rem+env(safe-area-inset-top))]"
+    />
+  );
 }
 
 /** Scrolling this far in one direction counts as a change of direction. */

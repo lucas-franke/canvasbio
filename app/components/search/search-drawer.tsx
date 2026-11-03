@@ -68,7 +68,7 @@ export function SearchDrawer() {
         }}
       >
         <div className="flex items-center justify-between px-6 pt-2">
-          <DrawerTitle className="font-heading text-h2 font-normal text-emphasis">
+          <DrawerTitle className="font-heading text-h3 font-semibold text-emphasis">
             {m.search.title}
           </DrawerTitle>
           <DrawerClose

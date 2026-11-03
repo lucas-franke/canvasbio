@@ -1,7 +1,6 @@
 import { Search, X } from "lucide-react";
 
 import type { Route } from "./+types/styleguide";
-import { FontComparison } from "~/components/styleguide/font-comparison";
 import { Button } from "~/components/ui/button";
 import { siteConfig } from "~/lib/config";
 import type { ColorTokens } from "~/lib/config/schema";
@@ -12,10 +11,11 @@ export function meta(_: Route.MetaArgs) {
 }
 
 const typeScale = [
-  ["text-h1 font-heading", "Überschrift h1"],
-  ["text-h2 font-heading", "Überschrift h2"],
+  ["text-h1 font-heading font-semibold", "Überschrift h1"],
+  ["text-h2 font-heading font-semibold", "Überschrift h2"],
   ["text-subline font-heading", "Subline"],
-  ["text-h3 font-heading", "Überschrift h3"],
+  ["text-h3 font-heading font-semibold", "Überschrift h3"],
+  ["text-subline font-quote italic", "Zitat – „Die Menschenrechte haben kein Geschlecht.“"],
   ["text-body", "Fließtext body – Die Menschenrechte haben kein Geschlecht."],
   ["text-body-sm", "Fließtext body-sm – Bildnachweis und Quellen"],
   ["text-body-xs", "Fließtext body-xs – Kleingedrucktes"],
@@ -112,7 +112,6 @@ export default function Styleguide() {
   return (
     <main id="main">
       <h1 className="sr-only">Styleguide</h1>
-      <FontComparison />
       <ThemePanel mode="light" />
       <ThemePanel mode="dark" />
     </main>

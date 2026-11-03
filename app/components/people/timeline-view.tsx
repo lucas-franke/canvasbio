@@ -285,7 +285,7 @@ function Axis({
               <span className="font-sans text-body-xs font-medium text-muted-text">{chapter.order}</span>
               <span
                 data-current-chapter=""
-                className="truncate font-heading text-body-sm text-brand @2xl:text-body"
+                className="truncate font-heading text-body-sm font-semibold text-brand @2xl:text-body"
               >
                 {chapter.label}
               </span>

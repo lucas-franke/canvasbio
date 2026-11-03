@@ -46,8 +46,10 @@ export function BrandLink({ className, contained = false }: { className?: string
         <>
           <span
             className={cn(
-              "px-2 wordmark text-[1.125rem] whitespace-nowrap min-[24rem]:text-[1.25rem] text-brand sm:text-[1.375rem]",
-              contained ? "px-3" : "[text-shadow:0_0_6px_var(--c-page),0_0_14px_var(--c-page),0_0_24px_var(--c-page)]",
+              "px-2 wordmark text-[1.125rem] whitespace-nowrap text-brand min-[24rem]:text-[1.25rem] sm:text-[1.375rem]",
+              contained
+                ? "px-3"
+                : "[text-shadow:0_0_6px_var(--c-page),0_0_14px_var(--c-page),0_0_24px_var(--c-page)]",
             )}
           >
             {wordmark}

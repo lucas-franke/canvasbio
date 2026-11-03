@@ -266,7 +266,7 @@ function ChapterIndex({ chapters, sort }: ChapterNavProps) {
         {bubble && (
           <span
             aria-hidden="true"
-            className="absolute right-full mr-3 grid min-w-14 -translate-y-1/2 place-items-center rounded-full bg-brand px-3 py-3 font-heading text-h3 text-brand-foreground tabular-nums shadow-lg"
+            className="absolute right-full mr-3 grid min-w-14 -translate-y-1/2 place-items-center rounded-full bg-brand px-3 py-3 font-heading text-h3 font-semibold text-brand-foreground tabular-nums shadow-lg"
             style={{ top: bubble.top }}
           >
             {bubble.label}
