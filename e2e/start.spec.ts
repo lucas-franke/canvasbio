@@ -16,6 +16,14 @@ test("the start page shows the living wall as a decorative backdrop", async ({ p
   // Nothing in it can be focused, and screen readers don't see it.
   await expect(page.getByRole("link", { name: "Clara Zetkin" })).toHaveCount(0);
 
+  // Its tiles lie side by side in the brick pattern, several per row (not stacked in one column).
+  const { tiles, rows } = await page.locator(".canvas-world li").evaluateAll((all) => ({
+    tiles: all.length,
+    rows: new Set(all.map((li) => Math.round(li.getBoundingClientRect().top / 100))).size,
+  }));
+  expect(tiles).toBeGreaterThan(8);
+  expect(rows).toBeLessThan(tiles / 2);
+
   // It drifts slowly.
   const before = await worldTransform(page);
   await page.waitForTimeout(1200);
