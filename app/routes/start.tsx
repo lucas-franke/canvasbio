@@ -1,5 +1,5 @@
 import { cn } from "cn";
-import { ArrowRight, ChevronDown, Quote, Shuffle } from "lucide-react";
+import { ChevronDown, Quote, Shuffle } from "lucide-react";
 import { useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router";
 
@@ -8,9 +8,8 @@ import { SearchDrawer } from "~/components/search/search-drawer";
 import { TopNav, NavPill, NavTextLink } from "~/components/shell/nav";
 import { BrandLink } from "~/components/shell/brand-link";
 import { MenuDrawer } from "~/components/shell/menu-drawer";
-import { continueFromLastCamera } from "~/components/canvas/use-camera";
 import { Portrait } from "~/components/portrait";
-import { StartPreview, viewHref, type StartView } from "~/components/start/start-preview";
+import { StartPreview, type StartView } from "~/components/start/start-preview";
 import { Button } from "~/components/ui/button";
 import { requestPath } from "~/lib/base-path";
 import { siteConfig } from "~/lib/config";
@@ -43,7 +42,7 @@ export default function Start({ loaderData }: Route.ComponentProps) {
   const { start, features } = siteConfig;
   const t = (record: Record<string, string>) => localize(record, locale);
 
-  // The chosen preview tab: the main button opens that view.
+  // The chosen preview tab (its card holds the button that opens the view).
   const [view, setView] = useState<StartView>("canvas");
 
   return (
@@ -68,12 +67,12 @@ export default function Start({ loaderData }: Route.ComponentProps) {
           </NavPill>
         }
       />
-      {/* Phones: title, the preview, the button that opens it, then quote and anniversaries.
-          From lg two columns: title, quote, button and anniversaries on the left, the preview
-          on the right (the DOM keeps the phone order, so the button follows its tabs). */}
+      {/* Phones: title, the preview (with the button that opens it), quote, anniversaries.
+          From lg two columns: title, quote and anniversaries on the left, the preview on the
+          right. */}
       <main
         id="main"
-        className="mx-auto grid min-h-dvh w-full max-w-7xl content-center gap-6 px-4 pt-20 pb-12 sm:gap-8 sm:px-8 sm:pt-24 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] lg:grid-rows-[auto_auto_auto_1fr] lg:gap-x-16 lg:gap-y-10 lg:pt-28"
+        className="mx-auto grid min-h-dvh w-full max-w-7xl content-center gap-6 px-4 pt-20 pb-12 sm:gap-8 sm:px-8 sm:pt-24 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] lg:grid-rows-[auto_auto_1fr] lg:gap-x-16 lg:gap-y-10 lg:pt-28"
       >
         <header className="flex flex-col gap-4 lg:col-start-1 lg:row-start-1">
           <h1 id="start-title" className="wordmark text-[clamp(2.75rem,2rem+4vw,5rem)] text-brand">
@@ -85,7 +84,7 @@ export default function Start({ loaderData }: Route.ComponentProps) {
           </p>
         </header>
 
-        <div className="min-w-0 lg:col-start-2 lg:row-span-4 lg:row-start-1 lg:self-center">
+        <div className="min-w-0 lg:col-start-2 lg:row-span-3 lg:row-start-1 lg:self-center">
           <StartPreview
             people={loaderData.people}
             placeCoords={loaderData.placeCoords}
@@ -94,35 +93,11 @@ export default function Start({ loaderData }: Route.ComponentProps) {
           />
         </div>
 
-        {/* The way in: the view chosen in the preview (the mosaic first). The list is the easier
-            one with a screen reader. */}
-        <div className="flex flex-col gap-3 lg:col-start-1 lg:row-start-3">
-          <Button asChild size="lg" className="self-start">
-            <Link
-              to={viewHref(locale, view)}
-              viewTransition
-              onClick={view === "canvas" ? continueFromLastCamera : undefined}
-              aria-describedby={view === "canvas" ? "start-list-hint" : undefined}
-            >
-              {m.start.open[view]}
-              <ArrowRight aria-hidden="true" />
-            </Link>
-          </Button>
-          <p id="start-list-hint" hidden>
-            {m.start.listHint}
-          </p>
-          {features.randomBio && (
-            <div className="-ml-4 flex flex-wrap items-center">
-              <RandomStart />
-            </div>
-          )}
-        </div>
-
         {start.quote && (
           <figure className="flex flex-col gap-3 lg:col-start-1 lg:row-start-2">
             {/* Lucide only ships the closing "99" mark; rotated it becomes the opening "66" from the design. */}
-            <Quote aria-hidden="true" className="size-10 rotate-180 fill-brand stroke-none" />
-            <blockquote className="font-heading text-[clamp(1.25rem,1.1rem+0.6vw,1.625rem)] leading-tight tracking-[-0.04em] text-brand italic">
+            <Quote aria-hidden="true" className="size-8 rotate-180 fill-brand stroke-none" />
+            <blockquote className="font-heading text-[clamp(1.25rem,1.1rem+0.6vw,1.625rem)] leading-tight tracking-[-0.04em] text-emphasis italic">
               <p>„{t(start.quote.text)}“</p>
             </blockquote>
             <figcaption className="flex items-start gap-3 text-body-sm text-muted-text">
@@ -132,32 +107,48 @@ export default function Start({ loaderData }: Route.ComponentProps) {
           </figure>
         )}
 
-        <div className="lg:col-start-1 lg:row-start-4 lg:self-start">
+        {/* Single biographies: the anniversaries and one picked at random. */}
+        <div className="flex flex-col gap-3 border-t border-line pt-6 lg:col-start-1 lg:row-start-3 lg:self-start">
           <OnThisDay />
+          {features.randomBio && <RandomStart count={loaderData.people.length} />}
         </div>
       </main>
     </div>
   );
 }
 
-/** Secondary entry: straight into a (weighted) random biography. */
-function RandomStart() {
+/**
+ * A random (weighted) biography, as one more row below the anniversaries: it opens a single
+ * biography like them, so it looks like them instead of competing with the main button.
+ */
+function RandomStart({ count }: { count: number }) {
   const locale = useLocale();
   const m = useMessages();
   const navigate = useNavigate();
   const { index } = usePeopleIndex(locale);
   return (
-    <Button
-      variant="ghost"
-      size="sm"
-      onClick={() => {
-        const person = index && pickRandom(index.people, { seen: readSeen() });
-        navigate(person ? pagePath(locale, "people", person.slug) : pagePath(locale, "people"));
-      }}
-    >
-      {m.random.label}
-      <Shuffle aria-hidden="true" />
-    </Button>
+    // After the anniversaries (if any), set off by a line.
+    <div className="not-first:mt-1 not-first:border-t not-first:border-line not-first:pt-3">
+      <button
+        type="button"
+        onClick={() => {
+          const person = index && pickRandom(index.people, { seen: readSeen() });
+          navigate(person ? pagePath(locale, "people", person.slug) : pagePath(locale, "people"));
+        }}
+        className="-mx-2 flex min-h-14 w-[calc(100%+1rem)] items-center gap-3 rounded-xl px-2 py-1 text-left hover:bg-emphasis/5"
+      >
+        <span
+          aria-hidden="true"
+          className="grid size-12 shrink-0 place-items-center rounded-md bg-emphasis/5"
+        >
+          <Shuffle className="size-5 text-brand" />
+        </span>
+        <span className="flex min-w-0 flex-col">
+          <span className="font-medium text-emphasis">{m.random.label}</span>
+          <span className="text-body-sm text-muted-text">{m.start.randomHint(count)}</span>
+        </span>
+      </button>
+    </div>
   );
 }
 
@@ -185,7 +176,7 @@ function OnThisDay() {
   // page doesn't jump when the section appears.
   if (!hydrated || !index) {
     return (
-      <div aria-hidden="true" className="flex flex-col gap-3 border-t border-line pt-6">
+      <div aria-hidden="true" className="flex flex-col gap-3">
         <span className="h-5 w-32 rounded-md bg-emphasis/5" />
         <span className="flex flex-col gap-1">
           {Array.from({ length: ON_THIS_DAY_SHOWN }, (_, i) => (
@@ -204,7 +195,7 @@ function OnThisDay() {
   const more = items.length - ON_THIS_DAY_SHOWN;
 
   return (
-    <section aria-labelledby="on-this-day" className="flex flex-col gap-3 border-t border-line pt-6">
+    <section aria-labelledby="on-this-day" className="flex flex-col gap-3">
       <h2 id="on-this-day" className="font-sans text-body-sm font-medium tracking-normal text-muted-text">
         {today ? m.start.onThisDay : m.start.comingUp}
       </h2>

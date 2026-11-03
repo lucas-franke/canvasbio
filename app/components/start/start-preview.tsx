@@ -1,9 +1,11 @@
-import { ChartGantt, LayoutDashboard, List, MapIcon } from "lucide-react";
+import { ArrowRight, ChartGantt, LayoutDashboard, List, MapIcon } from "lucide-react";
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { useNavigate } from "react-router";
+import { Link } from "react-router";
 
 import { CanvasBackdrop } from "~/components/canvas/canvas-backdrop";
+import { continueFromLastCamera } from "~/components/canvas/use-camera";
 import { Portrait } from "~/components/portrait";
+import { buttonVariants } from "~/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
 import { withBase } from "~/lib/base-path";
 import { seededShuffle } from "~/lib/canvas/layout";
@@ -42,14 +44,13 @@ interface StartPreviewProps {
 }
 
 /**
- * A look into the four views (tabs). The previews are pictures only: a click on one opens
- * the view, and the start page's main button names and opens the chosen view (keyboard and
- * screen readers use that button; each panel has a line of text saying what the view is).
+ * A look into the four views (tabs), and the start page's way in: one link covers each
+ * preview, named by the button in its corner ("Mosaik öffnen"). The previews themselves are
+ * pictures only; a line of text below says what the view is.
  */
 export function StartPreview({ people, placeCoords, view, onViewChange }: StartPreviewProps) {
   const m = useMessages();
   const locale = useLocale();
-  const navigate = useNavigate();
   const places = useMemo(
     () =>
       new Set(people.flatMap((p) => (p.born.place && placeCoords[p.born.place] ? [p.born.place] : []))).size,
@@ -79,23 +80,44 @@ export function StartPreview({ people, placeCoords, view, onViewChange }: StartP
       </TabsList>
       {START_VIEWS.map((v) => (
         <TabsContent key={v} value={v} className="flex flex-col gap-3">
-          {/* A picture of the view; the click is a shortcut for pointers (the main button
-              is the control for everyone). */}
-          <div
-            aria-hidden="true"
-            onClick={() => navigate(viewHref(locale, v))}
-            className="relative h-[clamp(13rem,32svh,22rem)] cursor-pointer overflow-hidden rounded-card bg-surface shadow-[0_12px_40px_rgb(0_0_0/0.12)] ring-1 ring-line/70 lg:h-[min(36rem,calc(100dvh-16rem))]"
-          >
-            {v === "canvas" && (
-              <CanvasBackdrop people={people} hrefFor={(slug) => pagePath(locale, "people", slug)} />
-            )}
-            {v === "list" && <ListPreview people={people} />}
-            {v === "timeline" && <TimelinePreview people={people} />}
-            {v === "map" && <MapPreview people={people} placeCoords={placeCoords} />}
+          <div className="relative h-[clamp(13rem,32svh,22rem)] overflow-hidden rounded-card bg-surface shadow-[0_12px_40px_rgb(0_0_0/0.12)] ring-1 ring-line/70 lg:h-[min(36rem,calc(100dvh-16rem))]">
+            <div aria-hidden="true" className="absolute inset-0">
+              {v === "canvas" && (
+                <CanvasBackdrop people={people} hrefFor={(slug) => pagePath(locale, "people", slug)} />
+              )}
+              {v === "list" && <ListPreview people={people} />}
+              {v === "timeline" && <TimelinePreview people={people} />}
+              {v === "map" && <MapPreview people={people} placeCoords={placeCoords} />}
+            </div>
+            {/* Laid over the picture, not around it: the mosaic preview has links of its own
+                (its tiles), and a link inside a link is invalid HTML. The whole card is the
+                click area; the corner shows what it does. */}
+            <Link
+              to={viewHref(locale, v)}
+              viewTransition
+              onClick={v === "canvas" ? continueFromLastCamera : undefined}
+              aria-describedby={v === "canvas" ? "start-list-hint" : undefined}
+              className="group absolute inset-0 rounded-card"
+            >
+              <span
+                className={buttonVariants({
+                  size: "lg",
+                  className:
+                    "absolute bottom-4 left-4 shadow-[0_8px_24px_rgb(0_0_0/0.25)] group-hover:bg-brand/90",
+                })}
+              >
+                {m.start.open[v]}
+                <ArrowRight aria-hidden="true" />
+              </span>
+            </Link>
           </div>
           <p className="text-body-sm text-muted-text">{text[v]}</p>
         </TabsContent>
       ))}
+      {/* Read with the mosaic link (aria-describedby). */}
+      <p id="start-list-hint" hidden>
+        {m.start.listHint}
+      </p>
     </Tabs>
   );
 }

@@ -68,6 +68,7 @@ export const en: Messages = {
     orList: "Open as list",
     /** The view preview on the start page (tabs) and the button that opens the chosen view. */
     previews: "Views",
+    randomHint: (people: number) => `One of ${people}, picked at random`,
     open: {
       canvas: "Open the mosaic",
       list: "Open the list",

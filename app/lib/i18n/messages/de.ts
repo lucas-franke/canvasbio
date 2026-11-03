@@ -71,6 +71,7 @@ export const de = {
     orList: "Als Liste öffnen",
     /** The view preview on the start page (tabs) and the button that opens the chosen view. */
     previews: "Ansichten",
+    randomHint: (people: number) => `Eine von ${people}, per Zufall gewählt`,
     open: {
       canvas: "Mosaik öffnen",
       list: "Liste öffnen",

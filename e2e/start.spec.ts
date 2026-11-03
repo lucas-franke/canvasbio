@@ -84,8 +84,32 @@ test("the preview tabs choose the view the main button opens", async ({ page }) 
     await expect(tabs.getByRole("tab", { name: tab })).toHaveAttribute("aria-selected", "true");
     await expect(page.getByRole("link", { name: button, exact: true })).toHaveAttribute("href", href);
   }
-  await page.getByRole("link", { name: "Karte öffnen", exact: true }).click();
+  // The button is part of the preview, and the whole preview is its click area: a click in
+  // the top right corner, away from the button, opens the view as well.
+  const link = page.getByRole("link", { name: "Karte öffnen", exact: true });
+  const card = (await link.boundingBox())!;
+  const button = (await link.locator("span").first().boundingBox())!;
+  expect(button.x).toBeGreaterThanOrEqual(card.x);
+  expect(button.y + button.height).toBeLessThanOrEqual(card.y + card.height);
+  expect(card.height).toBeGreaterThan(button.height * 3);
+  await page.mouse.click(card.x + card.width - 20, card.y + 20);
   await expect(page).toHaveURL(/\/personen\/karte$/);
+});
+
+test("a random biography is one more row below the anniversaries", async ({ page }) => {
+  await page.goto("/");
+  const anniversaries = page.getByRole("heading", { level: 2, name: /An diesem Tag|In den nächsten Tagen/ });
+  await expect(anniversaries).toBeVisible();
+  const random = page.getByRole("button", { name: /^Zufällige Biografie/ });
+  await expect(random).toHaveAccessibleName(/^Zufällige Biografie Eine von \d+, per Zufall gewählt$/);
+  // Below the anniversaries, in the same column.
+  const heading = (await anniversaries.boundingBox())!;
+  const row = (await random.boundingBox())!;
+  expect(row.y).toBeGreaterThan(heading.y);
+  expect(Math.abs(row.x - heading.x)).toBeLessThan(12);
+  await random.click();
+  await expect(page).toHaveURL(/\/personen\/[a-z0-9-]+$/);
+  await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
 });
 
 test("the title doesn't move when the anniversaries appear", async ({ page, browser, viewport }) => {
