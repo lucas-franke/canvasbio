@@ -23,7 +23,10 @@
     "build:share": "tsx scripts/build-share-image.ts"
   },
   "dependencies": {
+    "@fontsource-variable/atkinson-hyperlegible-next": "^5.3.0",
     "@fontsource-variable/ibm-plex-sans": "^5.3.0",
+    "@fontsource-variable/libre-franklin": "^5.3.0",
+    "@fontsource-variable/source-sans-3": "^5.3.1",
     "@fontsource/ibm-plex-serif": "^5.3.0",
     "@react-router/node": "^8.5.0",
     "@use-gesture/react": "^10.3.1",

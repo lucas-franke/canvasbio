@@ -1,6 +1,7 @@
 import { Search, X } from "lucide-react";
 
 import type { Route } from "./+types/styleguide";
+import { FontComparison } from "~/components/styleguide/font-comparison";
 import { Button } from "~/components/ui/button";
 import { siteConfig } from "~/lib/config";
 import type { ColorTokens } from "~/lib/config/schema";
@@ -111,6 +112,7 @@ export default function Styleguide() {
   return (
     <main id="main">
       <h1 className="sr-only">Styleguide</h1>
+      <FontComparison />
       <ThemePanel mode="light" />
       <ThemePanel mode="dark" />
     </main>
