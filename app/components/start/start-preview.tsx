@@ -66,15 +66,16 @@ export function StartPreview({ people, placeCoords, view, onViewChange }: StartP
   return (
     <Tabs value={view} onValueChange={(value) => onViewChange(value as StartView)} className="gap-3">
       <TabsList aria-label={m.start.previews} className="bg-surface">
-        {/* Phones: labels only, so all four tabs fit. */}
+        {/* Phones: the chosen view with icon and label, the others as icons only (their
+            label stays for screen readers), so the tabs take less room and attention. */}
         {START_VIEWS.map((v) => (
           <TabsTrigger
             key={v}
             value={v}
-            className="inline-flex items-center gap-2 [&_svg]:hidden [&_svg]:size-4 sm:[&_svg]:block"
+            className="group/tab inline-flex items-center gap-2 max-sm:data-[state=inactive]:px-3 [&_svg]:size-4"
           >
             {ICONS[v]}
-            {m.view[v]}
+            <span className="max-sm:group-data-[state=inactive]/tab:sr-only">{m.view[v]}</span>
           </TabsTrigger>
         ))}
       </TabsList>
