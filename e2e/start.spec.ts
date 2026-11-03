@@ -85,14 +85,14 @@ test("the preview tabs choose the view the main button opens", async ({ page }) 
     await expect(page.getByRole("link", { name: button, exact: true })).toHaveAttribute("href", href);
   }
   // The button is part of the preview, and the whole preview is its click area: a click in
-  // the top right corner, away from the button, opens the view as well.
+  // the top left corner, away from the button (top right is the pause button), opens the view as well.
   const link = page.getByRole("link", { name: "Karte öffnen", exact: true });
   const card = (await link.boundingBox())!;
   const button = (await link.locator("span").first().boundingBox())!;
   expect(button.x).toBeGreaterThanOrEqual(card.x);
   expect(button.y + button.height).toBeLessThanOrEqual(card.y + card.height);
   expect(card.height).toBeGreaterThan(button.height * 3);
-  await page.mouse.click(card.x + card.width - 20, card.y + 20);
+  await page.mouse.click(card.x + 20, card.y + 20);
   await expect(page).toHaveURL(/\/personen\/karte$/);
 });
 
@@ -166,4 +166,27 @@ test("the start page names the project once (in the navigation); its title says 
     .evaluateAll((all) => all.filter((el) => (el as HTMLElement).offsetParent !== null).length);
   expect(visibleNames).toBe(1);
   await expect(page).toHaveTitle(/Lauter Frauen/);
+});
+
+test("the moving preview can be paused and resumed (WCAG 2.2.2)", async ({ page }) => {
+  await page.goto("/");
+  const before = await worldTransform(page);
+  await expect.poll(() => worldTransform(page)).not.toBe(before);
+  await page.getByRole("button", { name: "Bewegung anhalten" }).click();
+  const resume = page.getByRole("button", { name: "Bewegung fortsetzen" });
+  await expect(resume).toBeVisible();
+  // Stopped: the wall stays where it is, and the page didn't open the mosaic.
+  const stopped = await worldTransform(page);
+  await page.waitForTimeout(800);
+  expect(await worldTransform(page)).toBe(stopped);
+  await expect(page).toHaveURL(/\/$/);
+  await resume.click();
+  await expect.poll(() => worldTransform(page)).not.toBe(stopped);
+});
+
+test("with reduced motion there is nothing to pause", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.goto("/");
+  await expect(page.getByRole("link", { name: "Mosaik öffnen", exact: true })).toBeVisible();
+  await expect(page.getByRole("button", { name: /Bewegung/ })).toHaveCount(0);
 });

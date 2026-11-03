@@ -1,4 +1,4 @@
-import { ArrowRight, ChartGantt, LayoutDashboard, List, MapIcon } from "lucide-react";
+import { ArrowRight, ChartGantt, LayoutDashboard, List, MapIcon, Pause, Play } from "lucide-react";
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { Link } from "react-router";
 
@@ -12,6 +12,7 @@ import { seededShuffle } from "~/lib/canvas/layout";
 import type { PersonListItem, PlaceCoords } from "~/lib/content/adapter";
 import { rowFor, scaleOfRows, scalePercent } from "~/lib/content/chronology";
 import { lifeYears } from "~/lib/content/format";
+import { useMediaQuery } from "~/lib/hooks";
 import { useLocale, useMessages } from "~/lib/i18n";
 import { listPath, mapPath, pagePath, timelinePath } from "~/lib/i18n/locale";
 
@@ -51,6 +52,10 @@ interface StartPreviewProps {
 export function StartPreview({ people, placeCoords, view, onViewChange }: StartPreviewProps) {
   const m = useMessages();
   const locale = useLocale();
+  // The wall drifts: it can be paused (WCAG 2.2.2). Nothing moves with reduced motion, so
+  // there is no button then.
+  const [paused, setPaused] = useState(false);
+  const still = useMediaQuery("(prefers-reduced-motion: reduce)", false);
 
   return (
     <Tabs value={view} onValueChange={(value) => onViewChange(value as StartView)} className="gap-3">
@@ -70,15 +75,37 @@ export function StartPreview({ people, placeCoords, view, onViewChange }: StartP
       </TabsList>
       {START_VIEWS.map((v) => (
         <TabsContent key={v} value={v} className="flex flex-col gap-3">
-          <div className="relative h-[clamp(13rem,32svh,22rem)] overflow-hidden rounded-card bg-surface shadow-[0_12px_40px_rgb(0_0_0/0.12)] ring-1 ring-line/70 lg:h-[min(36rem,calc(100dvh-16rem))]">
-            <div aria-hidden="true" className="absolute inset-0">
+          <div className="group/card relative h-[clamp(13rem,32svh,22rem)] overflow-hidden rounded-card bg-surface shadow-[0_12px_40px_rgb(0_0_0/0.12)] ring-1 ring-line/70 lg:h-[min(36rem,calc(100dvh-16rem))]">
+            {/* A picture of the view, not its content: muted, and it moves closer when pointed
+                at, so a click reads as "open this view" rather than "open this person". */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 opacity-80 saturate-[0.85] transition-transform duration-500 ease-out group-hover/card:scale-[1.03] motion-reduce:transition-none"
+            >
               {v === "canvas" && (
-                <CanvasBackdrop people={people} hrefFor={(slug) => pagePath(locale, "people", slug)} />
+                <CanvasBackdrop
+                  people={people}
+                  hrefFor={(slug) => pagePath(locale, "people", slug)}
+                  paused={paused}
+                />
               )}
               {v === "list" && <ListPreview people={people} />}
               {v === "timeline" && <TimelinePreview people={people} />}
               {v === "map" && <MapPreview people={people} placeCoords={placeCoords} />}
             </div>
+            {/* Wall and map: a vignette, the edges fade into the card like a view through a
+                window (list and timeline have clear edges of their own). The bottom fades for
+                all, behind the button. */}
+            {(v === "canvas" || v === "map") && (
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,var(--c-surface)_100%)]"
+              />
+            )}
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-linear-to-t from-surface via-surface/60 to-transparent"
+            />
             {/* Laid over the picture, not around it: the mosaic preview has links of its own
                 (its tiles), and a link inside a link is invalid HTML. The whole card is the
                 click area; the corner shows what it does. */}
@@ -100,6 +127,26 @@ export function StartPreview({ people, placeCoords, view, onViewChange }: StartP
                 <ArrowRight aria-hidden="true" />
               </span>
             </Link>
+            {v === "canvas" && !still && (
+              <button
+                type="button"
+                onClick={() => setPaused((value) => !value)}
+                aria-label={paused ? m.start.play : m.start.pause}
+                title={paused ? m.start.play : m.start.pause}
+                className={buttonVariants({
+                  variant: "secondary",
+                  size: "icon-sm",
+                  className:
+                    "absolute top-3 right-3 bg-surface/90 shadow-sm backdrop-blur-sm hover:bg-surface",
+                })}
+              >
+                {paused ? (
+                  <Play aria-hidden="true" className="size-4" />
+                ) : (
+                  <Pause aria-hidden="true" className="size-4" />
+                )}
+              </button>
+            )}
           </div>
         </TabsContent>
       ))}
@@ -206,14 +253,17 @@ function TimelinePreview({ people }: { people: PersonListItem[] }) {
   );
 }
 
-/** The view of the world used by the map preview (degrees): no Antarctica, little Arctic. */
-const WORLD = { west: -170, east: 190, north: 80, south: -56 };
+/** The latitudes the map preview shows (degrees): no Antarctica, little Arctic. */
+const WORLD = { north: 80, south: -56 };
+/** Share of the box height the world takes in the map preview. */
+const WORLD_SHARE = 0.68;
 
 type Ring = [number, number][];
 
 /**
  * The map: places of birth as dots (larger where more people were born) on the land outline,
- * drawn into a canvas. The outline is the map's own basemap file, loaded only when this
+ * drawn into a canvas, a little closer than the whole world and repeated at the edges.
+ * The outline is the map's own basemap file, loaded only when this
  * preview is shown (the map view then has it cached).
  */
 function MapPreview({ people, placeCoords }: { people: PersonListItem[]; placeCoords: PlaceCoords }) {
@@ -253,40 +303,43 @@ function MapPreview({ people, placeCoords }: { people: PersonListItem[]; placeCo
     const canvas = canvasRef.current;
     if (!canvas) return;
     const draw = () => {
-      const { width, height } = canvas.getBoundingClientRect();
+      const box = canvas.getBoundingClientRect();
       const dpr = Math.min(2, window.devicePixelRatio || 1);
-      canvas.width = Math.round(width * dpr);
-      canvas.height = Math.round(height * dpr);
+      canvas.width = Math.round(box.width * dpr);
+      canvas.height = Math.round(box.height * dpr);
       const ctx = canvas.getContext("2d")!;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      ctx.clearRect(0, 0, width, height);
+      ctx.clearRect(0, 0, box.width, box.height);
       const token = (name: string) =>
         getComputedStyle(document.documentElement).getPropertyValue(`--c-${name}`).trim();
-      // Fit the world into the box (contain), centred.
-      const s = Math.min(width / (WORLD.east - WORLD.west), height / (WORLD.north - WORLD.south));
-      const ox = (width - (WORLD.east - WORLD.west) * s) / 2;
-      const oy = (height - (WORLD.north - WORLD.south) * s) / 2;
-      const x = (lng: number) => ox + ((lng < WORLD.west ? lng + 360 : lng) - WORLD.west) * s;
-      const y = (lat: number) => oy + (WORLD.north - lat) * s;
 
-      // Only the world box (Antarctica and the far north stay outside).
-      ctx.save();
-      ctx.beginPath();
-      ctx.rect(ox, oy, (WORLD.east - WORLD.west) * s, (WORLD.north - WORLD.south) * s);
-      ctx.clip();
+      // A little closer than the whole world: its height fills part of the box, centred on
+      // where most of the women were born; the world repeats at the edges (no empty sides).
+      const scale = (box.height * WORLD_SHARE) / (WORLD.north - WORLD.south);
+      const width = 360 * scale;
+      const total = dots.reduce((n, d) => n + d.count, 0);
+      const centre = dots.reduce((sum, d) => sum + d.coords[0] * d.count, 0) / Math.max(1, total);
+      const first = box.width / 2 - (centre + 180) * scale;
+      const top = (box.height - (WORLD.north - WORLD.south) * scale) / 2;
+      const y = (lat: number) => top + (WORLD.north - lat) * scale;
+      // Copies of the world from the left edge to the right one.
+      const copies: number[] = [];
+      for (let left = first - Math.ceil(first / width) * width; left < box.width; left += width)
+        copies.push(left);
+
       if (land) {
         ctx.fillStyle = token("emphasis");
         ctx.globalAlpha = 0.08;
         ctx.beginPath();
-        for (const ring of land) {
-          // Rings crossing the edge of the view: drawn where they start (good enough at this size).
-          const shift = ring[0]![0] < WORLD.west ? 360 : 0;
-          ring.forEach(([lng, lat], i) => {
-            const px = ox + (lng + shift - WORLD.west) * s;
-            if (i === 0) ctx.moveTo(px, y(lat));
-            else ctx.lineTo(px, y(lat));
-          });
-          ctx.closePath();
+        for (const left of copies) {
+          for (const ring of land) {
+            ring.forEach(([lng, lat], i) => {
+              const px = left + (lng + 180) * scale;
+              if (i === 0) ctx.moveTo(px, y(lat));
+              else ctx.lineTo(px, y(lat));
+            });
+            ctx.closePath();
+          }
         }
         ctx.fill();
       }
@@ -294,14 +347,15 @@ function MapPreview({ people, placeCoords }: { people: PersonListItem[]; placeCo
       ctx.fillStyle = token("accent");
       ctx.strokeStyle = token("surface");
       ctx.lineWidth = 1;
-      for (const { coords, count } of dots) {
-        ctx.beginPath();
-        ctx.arc(x(coords[0]), y(coords[1]), 1.8 + Math.sqrt(count) * 1.4, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.stroke();
+      for (const left of copies) {
+        for (const { coords, count } of dots) {
+          ctx.beginPath();
+          ctx.arc(left + (coords[0] + 180) * scale, y(coords[1]), 2 + Math.sqrt(count) * 1.5, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.stroke();
+        }
       }
       ctx.globalAlpha = 1;
-      ctx.restore();
     };
     draw();
     const resize = new ResizeObserver(draw);

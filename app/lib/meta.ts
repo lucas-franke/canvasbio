@@ -20,7 +20,16 @@ const absolute = (path: string) => (siteConfig.siteUrl ? new URL(path, siteConfi
  * URLs in these tags must be absolute, so canonical, og:url and og:image need
  * `siteUrl` in site.config.ts; without it they are left out.
  */
-export function pageMeta({ title, description, locale, path, image }: PageMetaOptions) {
+/** Pages without a portrait of their own: a collage of portraits (scripts/build-share-image.ts). */
+const shareImage = (locale: string) => ({
+  path: withBase("/share.jpg"),
+  alt: localize(siteConfig.brand.description, locale),
+  width: 1200,
+  height: 630,
+});
+
+export function pageMeta({ title, description, locale, path, image: own }: PageMetaOptions) {
+  const image = own ?? shareImage(locale);
   const brand = localize(siteConfig.brand.name, locale);
   const fullTitle = title ? `${title} – ${brand}` : brand;
   const text = description ?? localize(siteConfig.brand.description, locale);
@@ -33,7 +42,8 @@ export function pageMeta({ title, description, locale, path, image }: PageMetaOp
     { property: "og:title", content: fullTitle },
     { property: "og:description", content: text },
     { property: "og:site_name", content: brand },
-    { property: "og:type", content: image ? "article" : "website" },
+    // A biography (with its own portrait) is an article; the other pages are the website.
+    { property: "og:type", content: own ? "article" : "website" },
     { property: "og:locale", content: htmlLangFor(locale).replace("-", "_") },
     ...(url
       ? [
