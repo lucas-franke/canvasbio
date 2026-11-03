@@ -9,7 +9,7 @@ facts:
   - label: Gestorben
     value: 28. November 1949 in London, Vereinigtes Königreich
   - label: Wirkungsfeld
-    value: Akademikerin, Erziehungwissenschaftler, Suffragette, Hochschullehrerin
+    value: Akademikerin, Erziehungswissenschaftlerin, Suffragette, Hochschullehrerin
 timeline:
   - date: 10. Dezember 1858
     event: Geboren in Arbroath

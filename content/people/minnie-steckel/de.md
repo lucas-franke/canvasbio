@@ -1,6 +1,6 @@
 ---
 summary:
-  - Schulleiterin, Schulpsychologe, akademische Administratorin
+  - Schulleiterin, Schulpsychologin, akademische Administratorin
   - 1890–1952 · Woodbine
 portraitAlt: Porträt von Minnie Steckel
 facts:
@@ -9,7 +9,7 @@ facts:
   - label: Gestorben
     value: 1. Dezember 1952 in Montevallo, Vereinigte Staaten
   - label: Wirkungsfeld
-    value: Schulleiterin, Schulpsychologe, Akademische Administratorin, Clubwoman
+    value: Schulleiterin, Schulpsychologin, Akademische Administratorin, Clubwoman
 timeline:
   - date: 19. März 1890
     event: Geboren in Woodbine

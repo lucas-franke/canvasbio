@@ -1,6 +1,6 @@
 ---
 summary:
-  - 1840-1928
+  - Schriftstellerin, Suffragette, Herausgeberin
   - 1840–1928 · Kap der Guten Hoffnung
 portraitAlt: Porträt von Jane Strachey
 facts:

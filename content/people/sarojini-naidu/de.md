@@ -9,7 +9,7 @@ facts:
   - label: Gestorben
     value: 2. März 1949 in Lucknow, Indien
   - label: Wirkungsfeld
-    value: Dichterin, Politikerin, Unabhängigkeitsaktivist, Freiheitskämpferin
+    value: Dichterin, Politikerin, Unabhängigkeitsaktivistin, Freiheitskämpferin
 timeline:
   - date: 13. Februar 1879
     event: Geboren in Hyderabad

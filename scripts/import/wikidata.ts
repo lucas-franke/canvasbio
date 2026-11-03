@@ -145,7 +145,8 @@ async function getBatch(ids: string[]): Promise<Map<string, Entity>> {
     warnings?: { result?: unknown };
     error?: { info?: string };
   }>(url);
-  if (!data.entities) throw new Error(`Wikidata: ${data.error?.info ?? "no entities"} (${ids.slice(0, 3).join(", ")} …)`);
+  if (!data.entities)
+    throw new Error(`Wikidata: ${data.error?.info ?? "no entities"} (${ids.slice(0, 3).join(", ")} …)`);
   if (data.warnings?.result && ids.length > 1) {
     const half = Math.ceil(ids.length / 2);
     const [a, b] = await Promise.all([getBatch(ids.slice(0, half)), getBatch(ids.slice(half))]);
@@ -242,9 +243,10 @@ export async function countriesOf(places: Entity[]): Promise<Map<string, Entity>
 
 /** [longitude, latitude] of an entity's coordinate location (P625), rounded to ~100 m. */
 export function coordsOf(entity: Entity | undefined): [number, number] | undefined {
-  const value = entity && (statements(entity, "P625")[0]?.mainsnak.datavalue?.value as
-    | { latitude: number; longitude: number }
-    | undefined);
+  const value =
+    entity &&
+    (statements(entity, "P625")[0]?.mainsnak.datavalue?.value as
+      { latitude: number; longitude: number } | undefined);
   if (!value) return undefined;
   const round = (n: number) => Math.round(n * 1000) / 1000;
   return [round(value.longitude), round(value.latitude)];

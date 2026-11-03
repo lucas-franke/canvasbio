@@ -1,6 +1,6 @@
 ---
 summary:
-  - McIlquham [M'Ilquham; née Medley], Harriett (1837–1910), British local politician, suffragist
+  - British local politician, suffragist
   - 1837–1910 · Greater London
 portraitAlt: Portrait of Harriet McIlquham
 facts:

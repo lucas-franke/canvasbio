@@ -9,7 +9,7 @@ facts:
   - label: Gestorben
     value: 17. Februar 1898 in New York City, Vereinigte Staaten
   - label: Wirkungsfeld
-    value: Suffragette, Schriftstellerin, Abstinenzler, Vortragsrednerin
+    value: Suffragette, Schriftstellerin, Abstinenzlerin, Vortragsrednerin
 timeline:
   - date: 28. September 1839
     event: Geboren in Churchville

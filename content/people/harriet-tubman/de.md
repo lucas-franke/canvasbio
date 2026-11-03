@@ -1,6 +1,6 @@
 ---
 summary:
-  - US-amerikanische Aktivistin für die Abschaffung der Sklaverei; Krankenschwester und Wohltäterin, 1822-1913
+  - US-amerikanische Aktivistin für die Abschaffung der Sklaverei; Krankenschwester und Wohltäterin
   - 1821–1913 · Dorchester County
 portraitAlt: Porträt von Harriet Tubman
 facts:

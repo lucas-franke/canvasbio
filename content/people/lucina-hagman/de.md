@@ -1,6 +1,6 @@
 ---
 summary:
-  - Finnischer Politiker
+  - Finnische Politikerin
   - 1853–1946 · Kälviä
 portraitAlt: Porträt von Lucina Hagman
 facts:

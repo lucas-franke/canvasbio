@@ -1,6 +1,6 @@
 ---
 summary:
-  - 1876–1928
+  - Aktivistin, Schulleiterin, Gewerkschafterin
   - 1876–1928 · Shepherd’s Bush
 portraitAlt: Porträt von Theodora Bonwick
 facts:

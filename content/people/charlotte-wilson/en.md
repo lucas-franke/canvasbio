@@ -1,6 +1,6 @@
 ---
 summary:
-  - British anarchist (1854-1944), editor
+  - British anarchist, editor
   - 1854–1944 · Kemerton
 portraitAlt: Portrait of Charlotte Wilson
 facts:

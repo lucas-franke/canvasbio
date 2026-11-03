@@ -1,6 +1,6 @@
 ---
 summary:
-  - (1876–1928), educationist and women's rights activist
+  - educationist and women's rights activist
   - 1876–1928 · Shepherd's Bush
 portraitAlt: Portrait of Theodora Bonwick
 facts:

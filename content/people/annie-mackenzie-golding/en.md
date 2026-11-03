@@ -1,6 +1,6 @@
 ---
 summary:
-  - (1855-1934) feminist teacher
+  - feminist teacher
   - 1855–1934 · Tambaroora
 portraitAlt: Portrait of Annie Mackenzie Golding
 facts:

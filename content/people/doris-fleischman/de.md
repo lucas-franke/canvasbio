@@ -9,7 +9,7 @@ facts:
   - label: Gestorben
     value: 10. Juli 1980 in Cambridge, Vereinigte Staaten
   - label: Wirkungsfeld
-    value: Journalistin, Essayistin, Frauenrechtlerin, PR-Berater
+    value: Journalistin, Essayistin, Frauenrechtlerin, PR-Beraterin
 timeline:
   - date: 18. Juli 1891
     event: Geboren in New York City

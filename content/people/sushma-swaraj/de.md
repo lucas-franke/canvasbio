@@ -9,7 +9,7 @@ facts:
   - label: Gestorben
     value: 6. August 2019 in Neu-Delhi, Indien
   - label: Wirkungsfeld
-    value: Politikerin, Rechtsanwältin, Juristin, Außenminister
+    value: Politikerin, Rechtsanwältin, Juristin, Außenministerin
 timeline:
   - date: 14. Februar 1952
     event: Geboren in Ambala Cantonment

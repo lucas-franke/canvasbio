@@ -1,6 +1,6 @@
 ---
 summary:
-  - Aktivist, Frankreich
+  - Aktivistin, Frankreich
   - 1935–2021 · Algier
 portraitAlt: Porträt von Meriem Belmihoub
 facts:

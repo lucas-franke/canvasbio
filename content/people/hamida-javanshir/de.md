@@ -9,7 +9,7 @@ facts:
   - label: Gestorben
     value: 6. Februar 1955 in Baku, Aserbaidschan
   - label: Wirkungsfeld
-    value: Wohltäter, Philanthropin, Publizistin, Memoirenschreiberin
+    value: Wohltäterin, Philanthropin, Publizistin, Memoirenschreiberin
 timeline:
   - date: 19. Januar 1873
     event: Geboren in Böyük Kəhrizli

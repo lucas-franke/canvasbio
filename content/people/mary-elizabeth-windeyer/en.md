@@ -1,6 +1,6 @@
 ---
 summary:
-  - (1837-1912) community worker in New South Wales, Australia
+  - community worker in New South Wales, Australia
   - 1837–1912 · Hove
 portraitAlt: Portrait of Mary Elizabeth Windeyer
 facts:

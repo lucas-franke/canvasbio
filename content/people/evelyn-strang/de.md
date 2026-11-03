@@ -1,6 +1,6 @@
 ---
 summary:
-  - Abstinenzler, Führungskraft, Suffragette
+  - Abstinenzlerin, Führungskraft, Suffragette
   - 1867–1954 · Sydney
 portraitAlt: Porträt von Evelyn Strang
 facts:
@@ -9,7 +9,7 @@ facts:
   - label: Gestorben
     value: 14. Mai 1954 in Wahroonga, Australien
   - label: Wirkungsfeld
-    value: Abstinenzler, Führungskraft, Suffragette
+    value: Abstinenzlerin, Führungskraft, Suffragette
 timeline:
   - date: 23. Februar 1867
     event: Geboren in Sydney

@@ -1,6 +1,6 @@
 ---
 summary:
-  - Tunesische Feminist und Aktivistin
+  - Tunesische Feministin und Aktivistin
   - 1921–1995 · Gabès
 portraitAlt: Porträt von Gladys Adda
 facts:
@@ -9,7 +9,7 @@ facts:
   - label: Gestorben
     value: "1995"
   - label: Wirkungsfeld
-    value: Frauenrechtlerin, Aktivistin, Unabhängigkeitsaktivist
+    value: Frauenrechtlerin, Aktivistin, Unabhängigkeitsaktivistin
 timeline:
   - date: 2. Juni 1921
     event: Geboren in Gabès

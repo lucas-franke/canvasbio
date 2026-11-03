@@ -9,7 +9,7 @@ facts:
   - label: Gestorben
     value: 27. Februar 1939 in Paris, Frankreich
   - label: Wirkungsfeld
-    value: Frauenrechtlerin, Schriftstellerin, Ernährungsberater
+    value: Frauenrechtlerin, Schriftstellerin, Ernährungsberaterin
 timeline:
   - date: 17. Mai 1874
     event: Geboren in Vilnius

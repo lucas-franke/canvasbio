@@ -1,6 +1,6 @@
 ---
 summary:
-  - US-amerikanische Feministin und Ärztin, 1832–1919
+  - US-amerikanische Feministin und Ärztin
   - 1832–1919 · Oswego
 portraitAlt: Porträt von Mary Edwards Walker
 facts:

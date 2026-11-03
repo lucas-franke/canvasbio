@@ -1,6 +1,6 @@
 ---
 summary:
-  - "Chilenische Pädagogin und Politikerin | geboren: 19. Juni 1907 | Geburtsort: Santiago de Chile | gestorben: 1970"
+  - Chilenische Pädagogin und Politikerin
   - 1907–1970 · Santiago de Chile
 portraitAlt: Porträt von Ana Figueroa Gajardo
 facts:

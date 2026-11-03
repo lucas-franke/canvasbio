@@ -1,6 +1,6 @@
 ---
 summary:
-  - Menschenrechtler, Niederländisch-Indien
+  - Menschenrechtlerin, Niederländisch-Indien
   - 1911–1988 · Serang
 portraitAlt: Porträt von Maria Ulfah Santoso
 facts:

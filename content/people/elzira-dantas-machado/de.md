@@ -1,6 +1,6 @@
 ---
 summary:
-  - Portugiesischer Feminist
+  - Portugiesische Feministin
   - 1865–1942 · Rio de Janeiro
 portraitAlt: Porträt von Elzira Dantas Machado
 facts:

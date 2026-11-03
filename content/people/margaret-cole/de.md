@@ -9,7 +9,7 @@ facts:
   - label: Gestorben
     value: 7. Mai 1980 in Goring-on-Thames, Vereinigtes Königreich
   - label: Wirkungsfeld
-    value: Politikerin, Lecturer, Historikerin, Biografin
+    value: Politikerin, Dozentin, Historikerin, Biografin
 timeline:
   - date: 6. Mai 1893
     event: Geboren in Cambridge

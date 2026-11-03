@@ -1,6 +1,6 @@
 ---
 summary:
-  - 1983-2016
+  - Aktivistin
   - 1983–2016 · Hualañé
 portraitAlt: Porträt von Macarena Valdés
 facts:

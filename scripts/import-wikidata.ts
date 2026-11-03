@@ -20,6 +20,7 @@ import { formatPartialDate, slugify, sortName, yearOf } from "../app/lib/content
 import { parseFrontmatter } from "../app/lib/content/frontmatter";
 import type { Person, PersonText, Taxonomy } from "../app/lib/content/schema";
 import { getFreeImages, type CommonsImage } from "./import/commons";
+import { cleanDescription, feminine } from "./import/descriptions";
 import { fetchBinary } from "./import/http";
 import {
   dateOf,
@@ -169,9 +170,7 @@ function dateAndPlace(
   lang: Lang,
 ) {
   const where = place && (country && country !== place ? `${place}, ${country}` : place);
-  return [date && formatPartialDate(date, lang), where && `${T.in[lang]} ${where}`]
-    .filter(Boolean)
-    .join(" ");
+  return [date && formatPartialDate(date, lang), where && `${T.in[lang]} ${where}`].filter(Boolean).join(" ");
 }
 
 interface TimelineEntry {
@@ -414,7 +413,8 @@ async function main() {
 
   // --focus: also the broader search in those continents (by citizenship).
   const focus = args.focus ? args.focus.split(",").map((s) => s.trim()) : [];
-  for (const continent of focus) if (!CONTINENT_IDS[continent]) throw new Error(`Unknown continent "${continent}"`);
+  for (const continent of focus)
+    if (!CONTINENT_IDS[continent]) throw new Error(`Unknown continent "${continent}"`);
   const regional = focus.length
     ? await regionalCandidates(focus, new Set([...existing.qids, ...candidates.map((c) => c.qid)]))
     : new Map<string, string>();
@@ -520,7 +520,9 @@ async function main() {
 
   const maxLog = Math.log(withFreeImage[0]?.sitelinks ?? 1);
   const minLog = Math.log(withFreeImage[withFreeImage.length - 1]?.sitelinks ?? 1);
-  const previous: Taxonomy = ADD ? JSON.parse(await readFile(path.join(CONTENT, "taxonomy.json"), "utf8")) : {};
+  const previous: Taxonomy = ADD
+    ? JSON.parse(await readFile(path.join(CONTENT, "taxonomy.json"), "utf8"))
+    : {};
   const taxonomy: Taxonomy = {
     field: Object.fromEntries([...FIELDS, ACTIVISM].map((f) => [f.key, f.label])),
     place: { ...previous.place },
@@ -590,7 +592,8 @@ async function main() {
       for (const continent of continentsOf(countries.get(place.id))) {
         taxonomy.place[continent.key] ??= { de: continent.de, en: continent.en };
         countryKeys.push(continent.key);
-        if (country) regions[continent.key] = [...new Set([...(regions[continent.key] ?? []), country])].sort();
+        if (country)
+          regions[continent.key] = [...new Set([...(regions[continent.key] ?? []), country])].sort();
       }
       countryOfPlace[key] = country;
       return key;
@@ -635,13 +638,23 @@ async function main() {
 
     for (const lang of LANGS) {
       const occupationNames = [
-        ...new Set(occupations.map((o) => femaleLabel(o, lang)).filter(Boolean)),
-      ] as string[];
+        ...new Set(
+          occupations
+            .map((o) => femaleLabel(o, lang))
+            .filter((name): name is string => Boolean(name))
+            // Wikidata has no feminine form for some occupations: the label is masculine then.
+            .map((name) => (lang === "de" ? feminine(name) : name)),
+        ),
+      ];
       const place = (key?: string) => (key ? taxonomy.place[key][lang] : undefined);
       const countryOf = (key?: string) => (key ? countryOfPlace[key] : undefined);
       const lifespan = [born && yearOf(born), died && yearOf(died)].filter(Boolean).join("–");
-      // Lifespan is shown on its own line, so "(1874-1939)" at the end of descriptions is redundant.
-      const description = e.descriptions[lang]?.value.replace(/\s*\(\d{4}\s*[–-]\s*\d{4}\)\s*$/, "");
+      // Lifespan is shown on its own line; descriptions that were only the years are empty.
+      const cleaned = cleanDescription(e.descriptions[lang]?.value ?? "", {
+        born: born && yearOf(born),
+        died: died && yearOf(died),
+      });
+      const description = lang === "de" ? feminine(cleaned) : cleaned;
 
       const text: PersonText = {
         summary: [
@@ -651,10 +664,20 @@ async function main() {
         portraitAlt: curated?.portraitAlt[lang] ?? T.portraitAlt[lang](name),
         facts: [
           ...(born || bornPlace
-            ? [{ label: T.born[lang], value: dateAndPlace(born, place(bornPlace), place(countryOf(bornPlace)), lang) }]
+            ? [
+                {
+                  label: T.born[lang],
+                  value: dateAndPlace(born, place(bornPlace), place(countryOf(bornPlace)), lang),
+                },
+              ]
             : []),
           ...(died || diedPlace
-            ? [{ label: T.died[lang], value: dateAndPlace(died, place(diedPlace), place(countryOf(diedPlace)), lang) }]
+            ? [
+                {
+                  label: T.died[lang],
+                  value: dateAndPlace(died, place(diedPlace), place(countryOf(diedPlace)), lang),
+                },
+              ]
             : []),
           ...(occupationNames.length > 0
             ? [{ label: T.field[lang], value: occupationNames.slice(0, 4).map(capitalize).join(", ") }]

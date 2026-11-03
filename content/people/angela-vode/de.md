@@ -9,7 +9,7 @@ facts:
   - label: Gestorben
     value: 5. Mai 1985 in Ljubljana, Slowenien
   - label: Wirkungsfeld
-    value: Menschenrechtlerin, Defectologist, Sonderpädagogin, Publizistin
+    value: Menschenrechtlerin, Defektologin, Sonderpädagogin, Publizistin
 timeline:
   - date: 5. Januar 1892
     event: Geboren in Ljubljana

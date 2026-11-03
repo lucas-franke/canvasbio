@@ -1,6 +1,6 @@
 ---
 summary:
-  - Tunesische Feminist und Politikerin
+  - Tunesische Feministin und Politikerin
   - 1922–2003 · Tunis
 portraitAlt: Porträt von Radhia Haddad
 facts:

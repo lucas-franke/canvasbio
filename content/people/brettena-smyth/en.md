@@ -1,6 +1,6 @@
 ---
 summary:
-  - (1840-1898) campaigner for women's health reform and women's political rights
+  - campaigner for women's health reform and women's political rights
   - 1840–1898 · Kyneton
 portraitAlt: Portrait of Brettena Smyth
 facts:

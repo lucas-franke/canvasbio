@@ -1,6 +1,6 @@
 ---
 summary:
-  - Survivor of the sinking of the Titanic (1867–1932), women's rights activist, philanthropist
+  - Survivor of the sinking of the Titanic, women's rights activist, philanthropist
   - 1867–1932 · Hannibal
 portraitAlt: Portrait of Margaret Brown
 facts:

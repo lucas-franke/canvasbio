@@ -1,6 +1,6 @@
 ---
 summary:
-  - (1891-1974) Australian hospital matron
+  - Australian hospital matron
   - 1891–1974 · Murrumburrah
 portraitAlt: Portrait of Edna Mary Anna Jane Shaw
 facts:

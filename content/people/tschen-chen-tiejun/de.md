@@ -1,6 +1,6 @@
 ---
 summary:
-  - "Chinesische Revolutionärin und Feministin | geboren: 1904 | gestorben: 6. Februar 1928"
+  - Chinesische Revolutionärin und Feministin
   - 1904–1928
 portraitAlt: Porträt von Tschen / Chen Tiejun
 facts:

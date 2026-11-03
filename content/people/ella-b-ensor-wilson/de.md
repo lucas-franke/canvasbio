@@ -9,7 +9,7 @@ facts:
   - label: Gestorben
     value: 11. September 1913
   - label: Wirkungsfeld
-    value: Journalistin, Schriftstellerin, Sozialreformerin, Abstinenzler
+    value: Journalistin, Schriftstellerin, Sozialreformerin, Abstinenzlerin
 timeline:
   - date: "1838"
     event: Geboren in Maryland

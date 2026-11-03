@@ -1,6 +1,6 @@
 ---
 summary:
-  - (1883-1949) public servant and campaigner for equal pay for women
+  - public servant and campaigner for equal pay for women
   - 1883–1949 · Maitland
 portraitAlt: Portrait of Kathleen Clare O'Keeffe
 facts:

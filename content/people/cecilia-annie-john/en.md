@@ -1,6 +1,6 @@
 ---
 summary:
-  - (1877-1955) singer, feminist and pacifist
+  - singer, feminist and pacifist
   - 1877–1955 · Hobart
 portraitAlt: Portrait of Cecilia Annie John
 facts:

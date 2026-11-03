@@ -1,6 +1,6 @@
 ---
 summary:
-  - Duval [née Dugdale], Una Harriet Ella Stratford (1879–1975), British suffragette, marriage reformer
+  - British suffragette, marriage reformer
   - 1880–1975 · Upper Norwood
 portraitAlt: Portrait of Una Duval
 facts:

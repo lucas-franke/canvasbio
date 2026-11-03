@@ -1,6 +1,6 @@
 ---
 summary:
-  - Politiker aus Côte d'Ivoire
+  - Politikerin aus Côte d'Ivoire
   - 1949–2011
 portraitAlt: Porträt von Marthe Solange Brou
 facts:

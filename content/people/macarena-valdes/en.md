@@ -1,6 +1,6 @@
 ---
 summary:
-  - 1983-2016, Chilean activist
+  - Chilean activist
   - 1983–2016 · Hualañé
 portraitAlt: Portrait of Macarena Valdés
 facts:

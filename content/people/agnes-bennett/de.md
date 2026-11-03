@@ -9,7 +9,7 @@ facts:
   - label: Gestorben
     value: 27. November 1960 in Wellington, Neuseeland
   - label: Wirkungsfeld
-    value: Ärztin, Sanitätsoffizier, Of­fi­zie­rin
+    value: Ärztin, Sanitätsoffizierin, Offizierin
 timeline:
   - date: 24. Juni 1872
     event: Geboren in Sydney
