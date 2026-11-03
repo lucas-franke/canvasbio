@@ -89,3 +89,27 @@ test("closing a biography leaves the map where the reader left it", async ({ pag
   await page.waitForTimeout(1000);
   expect(await markerPositions(page)).toBe(before);
 });
+
+test("the portraits on the map don't cover each other", async ({ page }) => {
+  await page.goto("/personen/karte");
+  await expect(page.locator(".maplibregl-marker").first()).toBeAttached({ timeout: 20_000 });
+  // Let the opening fit settle.
+  await page.waitForTimeout(1500);
+  const overlapping = await page.locator(".maplibregl-marker > span").evaluateAll((all) => {
+    const boxes = all
+      .map((el) => el.getBoundingClientRect())
+      .filter((b) => b.right > 0 && b.left < innerWidth && b.bottom > 0 && b.top < innerHeight);
+    let pairs = 0;
+    for (let i = 0; i < boxes.length; i++)
+      for (let j = i + 1; j < boxes.length; j++) {
+        const a = boxes[i]!;
+        const b = boxes[j]!;
+        const w = Math.min(a.right, b.right) - Math.max(a.left, b.left);
+        const h = Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top);
+        // More than a quarter of the smaller one hidden.
+        if (w > 0 && h > 0 && w * h > 0.25 * Math.min(a.width * a.height, b.width * b.height)) pairs++;
+      }
+    return pairs;
+  });
+  expect(overlapping).toBe(0);
+});
