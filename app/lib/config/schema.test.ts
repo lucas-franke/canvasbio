@@ -18,8 +18,8 @@ describe("defineSiteConfig", () => {
 
   it("rejects missing translations", () => {
     const input = clone();
-    input.start.cta = { de: "Los" };
-    expect(() => defineSiteConfig(input)).toThrow(/config\.start\.cta: en/);
+    input.start.subtitle = { de: "Pionierinnen" };
+    expect(() => defineSiteConfig(input)).toThrow(/config\.start\.subtitle: en/);
   });
 
   it("rejects colors that aren't 6-digit hex", () => {

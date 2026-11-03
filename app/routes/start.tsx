@@ -74,11 +74,14 @@ export default function Start({ loaderData }: Route.ComponentProps) {
         id="main"
         className="mx-auto grid min-h-dvh w-full max-w-7xl content-center gap-6 px-4 pt-20 pb-12 sm:gap-8 sm:px-8 sm:pt-24 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] lg:grid-rows-[auto_auto_1fr] lg:gap-x-16 lg:gap-y-10 lg:pt-28"
       >
+        {/* The title says what the site is about; the name is in the navigation (only once). */}
         <header className="flex flex-col gap-4 lg:col-start-1 lg:row-start-1">
-          <h1 id="start-title" className="wordmark text-[clamp(2.75rem,2rem+4vw,5rem)] text-brand">
-            {t(start.title)}
+          <h1
+            id="start-title"
+            className="font-heading text-[clamp(2.25rem,1.5rem+3vw,4rem)] leading-[1.05] text-balance text-brand"
+          >
+            {t(start.subtitle)}
           </h1>
-          <p className="font-heading text-subline text-balance text-emphasis">{t(start.subtitle)}</p>
           <p className="text-body-sm text-muted-text">
             {m.start.count(loaderData.people.length, loaderData.placeGroups.length)}
           </p>

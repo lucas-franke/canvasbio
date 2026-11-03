@@ -1,6 +1,6 @@
 # Prüfbericht Barrierefreiheit (WCAG 2.2 AA)
 
-**Stand:** 21. Oktober 2026 · **Gegenstand:** Template „CanvasBio“ mit Demo-Inhalten („Ihre Stimme“) · **Art:** Selbstbewertung
+**Stand:** 21. Oktober 2026 · **Gegenstand:** Template „CanvasBio“ mit Demo-Inhalten („Lauter Frauen“) · **Art:** Selbstbewertung
 
 Dieser Bericht ist die Grundlage der [Erklärung zur Barrierefreiheit](../content/pages/accessibility.de.md). Bei einem neuen Projekt aus dem Template wird er mit den eigenen Inhalten wiederholt – vor allem die inhaltlichen Punkte (Alternativtexte, Sprache von Textteilen, Leichte Sprache) hängen vom Projekt ab.
 
@@ -67,7 +67,7 @@ Legende: ✅ erfüllt · ◐ teilweise · — nicht anwendbar
 | 2.2.2 Pausieren, beenden, ausblenden    | A     | ✅     | Nichts bewegt sich von selbst; Animationen nur auf Aktion und kürzer als 5 s.                                                                                         |
 | 2.3.1 Grenzwert von dreimaligem Blitzen | A     | ✅     | Keine blinkenden Inhalte.                                                                                                                                             |
 | 2.4.1 Blöcke umgehen                    | A     | ✅     | „Zum Inhalt springen“; in der Bildwand „Zur Listenansicht“.                                                                                                           |
-| 2.4.2 Seite mit Titel                   | A     | ✅     | Eindeutiger Titel je Seite und Person („Clara Zetkin – Ihre Stimme“).                                                                                                 |
+| 2.4.2 Seite mit Titel                   | A     | ✅     | Eindeutiger Titel je Seite und Person („Clara Zetkin – Lauter Frauen“).                                                                                                 |
 | 2.4.3 Fokus-Reihenfolge                 | A     | ✅     | Beim Öffnen einer Biografie Fokus auf ihren Namen, beim Schließen zurück auf Kachel bzw. Listeneintrag; erst nach dem Übergang. Tests.                                |
 | 2.4.4 Linkzweck (im Kontext)            | A     | ✅     | Alle Links mit sprechendem Namen (axe).                                                                                                                               |
 | 2.4.5 Verschiedene Methoden             | AA    | ✅     | Bildwand, Liste mit A–Z, Suche und Filter, Zufällige Biografie.                                                                                                       |

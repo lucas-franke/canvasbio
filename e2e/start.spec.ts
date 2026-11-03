@@ -69,7 +69,7 @@ test("the mosaic button continues the wall where it was, without a camera flight
 test("the preview tabs choose the view the main button opens", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByText(/^\d+ Biografien aus \d Kontinenten$/)).toBeVisible();
-  await expect(page.getByRole("region", { name: "Ihre Stimme" })).toHaveCount(0);
+  await expect(page.getByRole("region", { name: "Lauter Frauen" })).toHaveCount(0);
   const tabs = page.getByRole("tablist", { name: "Ansichten" });
   // The mosaic first; with a screen reader the list is the easier one.
   const mosaic = page.getByRole("link", { name: "Mosaik öffnen", exact: true });
@@ -130,7 +130,7 @@ test("the title doesn't move when the anniversaries appear", async ({ page, brow
 });
 
 test("over the mosaic and the map the brand sits in a pill, on the list it stands free", async ({ page }) => {
-  const pill = () => page.getByRole("link", { name: "Ihre Stimme – Startseite" }).locator("xpath=..");
+  const pill = () => page.getByRole("link", { name: "Lauter Frauen – Startseite" }).locator("xpath=..");
   for (const [path, contained] of [
     ["/personen", true],
     ["/personen/karte", true],
@@ -148,7 +148,22 @@ test("over the mosaic and the map the brand sits in a pill, on the list it stand
 test("the brand shows the full name on phones too", async ({ page }) => {
   await page.setViewportSize({ width: 360, height: 740 });
   await page.goto("/");
-  const brand = page.getByRole("link", { name: "Ihre Stimme – Startseite" });
+  const brand = page.getByRole("link", { name: "Lauter Frauen – Startseite" });
   await expect(brand).toBeVisible();
-  await expect(brand).toContainText("Ihre Stimme");
+  await expect(brand).toContainText("Lauter Frauen");
+});
+
+test("the start page names the project once (in the navigation); its title says what it is about", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+    "Pionierinnen der Frauenbewegung aus aller Welt",
+  );
+  // The visible name: only the brand in the navigation, not a second time as the title.
+  const visibleNames = await page
+    .getByText("Lauter Frauen", { exact: true })
+    .evaluateAll((all) => all.filter((el) => (el as HTMLElement).offsetParent !== null).length);
+  expect(visibleNames).toBe(1);
+  await expect(page).toHaveTitle(/Lauter Frauen/);
 });

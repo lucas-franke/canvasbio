@@ -3,7 +3,7 @@ title: About the project
 description: What this is about, where the content comes from and how to use the site.
 ---
 
-“Her Voice” tells the stories of women from around the world who fought for suffrage, education and equal rights, most of them in the 19th and 20th centuries. Some names are world-famous; many are almost forgotten today. The portrait wall places them side by side as equals. The “Random biography” button deliberately brings lesser-known lives to the front.
+“Lauter Frauen” tells the stories of women from around the world who fought for suffrage, education and equal rights, most of them in the 19th and 20th centuries. Some names are world-famous; many are almost forgotten today. The portrait wall places them side by side as equals. The “Random biography” button deliberately brings lesser-known lives to the front. The name is German for “nothing but women” – and for “louder women”.
 
 ## Four views
 

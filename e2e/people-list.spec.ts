@@ -162,8 +162,8 @@ test("phones: the navigation makes room while scrolling down and returns on scro
   // Keyboard focus brings a hidden navigation back.
   await scrollBy(1500);
   await expect(nav).toHaveAttribute("data-hidden", "true");
-  await page.getByRole("link", { name: "Ihre Stimme – Startseite" }).focus();
-  await expect(page.getByRole("link", { name: "Ihre Stimme – Startseite" })).toBeInViewport();
+  await page.getByRole("link", { name: "Lauter Frauen – Startseite" }).focus();
+  await expect(page.getByRole("link", { name: "Lauter Frauen – Startseite" })).toBeInViewport();
 });
 
 test("phones: the navigation's controls look 40 px but take taps across 44 px", async ({ page }) => {

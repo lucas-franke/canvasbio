@@ -4,7 +4,9 @@ import { navPillBoxes, overlaps } from "./helpers";
 
 test("start page leads to the biographies", async ({ page }) => {
   await page.goto("/");
-  await expect(page.getByRole("heading", { level: 1, name: "Ihre Stimme" })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { level: 1, name: "Pionierinnen der Frauenbewegung aus aller Welt" }),
+  ).toBeVisible();
   await page.getByRole("link", { name: "Mosaik öffnen", exact: true }).click();
   await expect(page).toHaveURL(/\/personen$/);
   await expect(page.getByRole("heading", { level: 1, name: "Biografien" })).toBeVisible();
@@ -47,7 +49,7 @@ test("the brand in the navigation leads to the start page, in the same place eve
 }) => {
   const brand = page
     .getByRole("navigation", { name: "Main navigation" })
-    .getByRole("link", { name: /Her Voice – Home$/ });
+    .getByRole("link", { name: /Lauter Frauen – Home$/ });
   for (const path of ["/en/about", "/en/people", "/en/people/list"]) {
     await page.goto(path);
     // At the left edge (top on desktop, bottom on phones).
