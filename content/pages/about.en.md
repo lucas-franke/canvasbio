@@ -5,9 +5,9 @@ description: What this is about, where the content comes from and how to use the
 
 “Her Voice” tells the stories of women from around the world who fought for suffrage, education and equal rights, most of them in the 19th and 20th centuries. Some names are world-famous; many are almost forgotten today. The portrait wall places them side by side as equals. The “Random biography” button deliberately brings lesser-known lives to the front.
 
-## Three views
+## Four views
 
-In the **mosaic**, all portraits sit side by side in staggered rows. You can move and zoom it with your finger, mouse or keyboard. The **list view** shows the same people sorted by name or year of birth. The **timeline** arranges them by lifetime and shows who lived at the same time. All views contain the same people; the list works especially well with screen readers.
+In the **mosaic**, all portraits sit side by side in staggered rows. You can move and zoom it with your finger, mouse or keyboard. The **list view** shows the same people sorted by name, year of birth or year of death. The **timeline** arranges them by lifetime and shows who lived at the same time. The **map** shows where they were born or died. All views contain the same people; the list works especially well with screen readers.
 
 ## Where the content comes from
 
