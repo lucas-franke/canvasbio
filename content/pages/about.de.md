@@ -5,9 +5,9 @@ description: Worum es geht, woher die Inhalte stammen und wie die Seite bedient 
 
 „Ihre Stimme“ erzählt von Frauen aus aller Welt, die für Wahlrecht, Bildung und Gleichberechtigung gekämpft haben – die meisten im 19. und 20. Jahrhundert. Manche Namen sind weltbekannt, viele sind heute fast vergessen. Die Bildwand stellt sie gleichberechtigt nebeneinander. Die Schaltfläche „Zufällige Biografie“ bringt bewusst auch weniger bekannte Lebensgeschichten nach vorn.
 
-## Drei Ansichten
+## Vier Ansichten
 
-Im **Mosaik** stehen alle Porträts versetzt nebeneinander auf einer Fläche. Sie lässt sich verschieben und vergrößern – mit dem Finger, der Maus oder der Tastatur. Die **Listen-Ansicht** zeigt dieselben Personen nach Name oder Geburtsjahr sortiert. Der **Zeitstrahl** ordnet sie nach Lebenszeit und zeigt, wer zur selben Zeit gelebt hat. Alle Ansichten enthalten dieselben Personen; die Liste eignet sich besonders für Screenreader.
+Im **Mosaik** stehen alle Porträts versetzt nebeneinander auf einer Fläche. Sie lässt sich verschieben und vergrößern – mit dem Finger, der Maus oder der Tastatur. Die **Listen-Ansicht** zeigt dieselben Personen nach Name, Geburts- oder Todesjahr sortiert. Der **Zeitstrahl** ordnet sie nach Lebenszeit und zeigt, wer zur selben Zeit gelebt hat. Die **Karte** zeigt, wo sie geboren wurden oder gestorben sind. Alle Ansichten enthalten dieselben Personen; die Liste eignet sich besonders für Screenreader.
 
 ## Woher die Inhalte stammen
 
