@@ -420,32 +420,6 @@
   scrollbar-color: var(--c-border-control) transparent;
 }
 
-/*
- * Start page → canvas: the wall behind the start page is the same wall at the same spot, so
- * the root cross-fade only brightens it; the welcome card sinks away (and comes back home).
- */
-.start-card {
-  view-transition-name: start-card;
-}
-@keyframes vt-card-out {
-  to {
-    opacity: 0;
-    transform: translateY(1rem) scale(0.97);
-  }
-}
-@keyframes vt-card-in {
-  from {
-    opacity: 0;
-    transform: translateY(1rem) scale(0.97);
-  }
-}
-::view-transition-old(start-card):only-child {
-  animation: vt-card-out 300ms cubic-bezier(0.4, 0, 1, 1) forwards;
-}
-::view-transition-new(start-card):only-child {
-  animation: vt-card-in 420ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-group(*),
   ::view-transition-old(*),

@@ -66,6 +66,20 @@ export const en: Messages = {
     portraitsLabel: "Portraits from the collection",
     listHint: "With a screen reader, the list view is easier to follow.",
     orList: "Open as list",
+    /** The view preview on the start page (tabs) and the button that opens the chosen view. */
+    previews: "Views",
+    open: {
+      canvas: "Open the mosaic",
+      list: "Open the list",
+      timeline: "Open the timeline",
+      map: "Open the map",
+    },
+    previewText: {
+      canvas: (people: number) => `All ${people} portraits as a wall: drag, zoom, discover.`,
+      list: "All biographies from A to Z, with a short description.",
+      timeline: "Life spans side by side: who lived at the same time?",
+      map: (places: number) => `Places of birth on the world map: ${places} places.`,
+    },
     count: (people: number, continents: number) =>
       continents > 1 ? `${people} biographies from ${continents} continents` : `${people} biographies`,
   },

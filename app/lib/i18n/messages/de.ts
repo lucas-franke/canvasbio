@@ -69,6 +69,20 @@ export const de = {
     portraitsLabel: "Porträts aus der Sammlung",
     listHint: "Mit Screenreader ist die Listenansicht übersichtlicher.",
     orList: "Als Liste öffnen",
+    /** The view preview on the start page (tabs) and the button that opens the chosen view. */
+    previews: "Ansichten",
+    open: {
+      canvas: "Mosaik öffnen",
+      list: "Liste öffnen",
+      timeline: "Zeitstrahl öffnen",
+      map: "Karte öffnen",
+    },
+    previewText: {
+      canvas: (people: number) => `Alle ${people} Porträts als Wand: ziehen, zoomen, entdecken.`,
+      list: "Alle Biografien von A bis Z, mit Kurzbeschreibung.",
+      timeline: "Lebensspannen nebeneinander: Wer lebte zur selben Zeit?",
+      map: (places: number) => `Geburtsorte auf der Weltkarte: ${places} Orte.`,
+    },
     count: (people: number, continents: number) =>
       continents > 1 ? `${people} Biografien aus ${continents} Kontinenten` : `${people} Biografien`,
   },
