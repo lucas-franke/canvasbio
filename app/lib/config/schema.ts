@@ -158,11 +158,9 @@ export const siteConfigSchema = z.object({
   }),
 
   start: z.object({
-    title: localized,
+    /** The start page's title: what the site is about (the name is in the navigation). */
     subtitle: localized,
     quote: z.object({ text: localized, source: localized }).optional(),
-    /** Label above the two ways in (mosaic, list). */
-    cta: localized,
   }),
 
   /**

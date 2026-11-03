@@ -1,4 +1,4 @@
-/** Monogram of the wordmark: "Ihre Stimme" → "IS", "Her Voice" → "HV", single words → first letter. */
+/** Monogram of the wordmark: "Lauter Frauen" → "LF", single words → first letter. */
 export function brandInitials(wordmark: string): string {
   return wordmark
     .split(/\s+/)

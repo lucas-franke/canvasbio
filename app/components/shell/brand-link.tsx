@@ -11,7 +11,7 @@ import { localize } from "~/lib/i18n/localize";
  * on every screen size, or the project's own logo (`brand.logo`) instead.
  * It stands free, without a pill, on the pages; a soft glow in the page colour keeps the
  * wordmark readable. Over the mosaic and the map it sits in a nav pill (`contained`) instead.
- * The link's name starts with the visible label (WCAG 2.5.3): "Ihre Stimme – Startseite".
+ * The link's name starts with the visible label (WCAG 2.5.3): "Lauter Frauen – Startseite".
  */
 export function BrandLink({ className, contained = false }: { className?: string; contained?: boolean }) {
   const locale = useLocale();

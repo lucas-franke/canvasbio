@@ -7,12 +7,12 @@ import { defineSiteConfig } from "./app/lib/config/schema.ts";
  */
 export default defineSiteConfig({
   // Public address once deployed (enables share previews and canonical URLs), e.g.:
-  // siteUrl: "https://ihre-stimme.example.org",
+  // siteUrl: "https://lauterfrauen.de",
 
   brand: {
-    name: { de: "Ihre Stimme", en: "Her Voice" },
-    wordmark: { de: "Ihre Stimme", en: "Her Voice" },
-    monogram: "S",
+    // A proper name in both languages ("nothing but women" and "louder women").
+    name: { de: "Lauter Frauen", en: "Lauter Frauen" },
+    wordmark: { de: "Lauter Frauen", en: "Lauter Frauen" },
     description: {
       de: "Biografien von Pionierinnen der Frauenbewegung aus aller Welt.",
       en: "Biographies of pioneers of the women's movement from around the world.",
@@ -41,8 +41,8 @@ export default defineSiteConfig({
 
   operator: {
     organisation: {
-      de: "Demo-Projekt „Ihre Stimme“",
-      en: "Demo project “Her Voice”",
+      de: "Demo-Projekt „Lauter Frauen“",
+      en: "Demo project “Lauter Frauen”",
     },
     // Demo values: replace with the real operator before going live.
     address: ["Musterstraße 1", "12345 Musterstadt"],
@@ -104,7 +104,6 @@ export default defineSiteConfig({
   },
 
   start: {
-    title: { de: "Ihre Stimme", en: "Her Voice" },
     // No years: the collection spans births from 1802 to 1990 and keeps growing.
     subtitle: {
       de: "Pionierinnen der Frauenbewegung aus aller Welt",
@@ -120,7 +119,6 @@ export default defineSiteConfig({
         en: "Hedwig Dohm, “Der Frauen Natur und Recht”, 1876",
       },
     },
-    cta: { de: "Biografien entdecken", en: "Explore biographies" },
   },
 
   facets: [

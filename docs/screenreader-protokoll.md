@@ -16,7 +16,7 @@ Bewertung je Schritt: **ok** · **Problem** (mit Beschreibung) · **nicht geprü
 
 | #   | Ablauf                                                      | Erwartung                                                                                              | Ergebnis | Notiz |
 | --- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | -------- | ----- |
-| 1   | Startseite öffnen, mit Überschriften-Navigation durchgehen  | Navigation zuerst; Titel „Ihre Stimme“ nur einmal (keine Region); Hinweis auf die Listenansicht        |          |       |
+| 1   | Startseite öffnen, mit Überschriften-Navigation durchgehen  | Navigation zuerst; Titel „Pionierinnen der Frauenbewegung aus aller Welt“, der Name nur in der Navigation (keine Region); Hinweis auf die Listenansicht        |          |       |
 | 2   | „Mosaik“ aktivieren (Gruppe „Biografien entdecken“)                           | Zuerst der Hinweis: Bildfläche, Liste übersichtlicher; Link zur Liste             |          |       |
 | 3   | In der Bildwand per Wischen / Tab eine Kachel erreichen     | Liste „Porträts“ mit 200 Einträgen und Ende; Name der Person; keine Doppelungen                        |          |       |
 | 4   | „Zur Listenansicht“ nutzen                                  | Liste mit Buchstaben-Überschriften; Anzahl der Einträge je Liste                                       |          |       |
