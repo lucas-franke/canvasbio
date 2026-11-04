@@ -6,7 +6,7 @@
   },
   "born": {
     "date": "1893-09-30",
-    "place": "athens"
+    "place": "athens-united-states"
   },
   "died": {
     "date": "1977-05-30",
@@ -25,7 +25,7 @@
       "activism"
     ],
     "place": [
-      "athens",
+      "athens-united-states",
       "port-charlotte",
       "united-states",
       "north-america"

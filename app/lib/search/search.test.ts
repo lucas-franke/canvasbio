@@ -118,6 +118,27 @@ describe("filterPeople", () => {
     expect(search("", { place: ["munchen"] })).toEqual(["Helene Müller"]);
     expect(search("", { place: ["königs"] })).toEqual(["Clara Zetkin"]);
   });
+
+  it("matches a place's full name exactly, so places with the same name stay apart", () => {
+    const hamburg = [
+      person("Clara Gertrud Wichmann", "Wichmann, Clara Gertrud", [], ["hamburg"]),
+      person("A. Viola Neblett", "Neblett, A. Viola", [], ["hamburg-united-states"]),
+    ];
+    const names = {
+      ...labels,
+      place: { hamburg: "Hamburg", "hamburg-united-states": "Hamburg (Vereinigte Staaten)" },
+    };
+    const find = (place: string) =>
+      filterPeople(hamburg, { q: "", facets: { place: [place] }, sort: "" }, facets, names).map(
+        (p) => p.name.display,
+      );
+    // A chosen suggestion: only that place.
+    expect(find("Hamburg")).toEqual(["Clara Gertrud Wichmann"]);
+    expect(find("hamburg")).toEqual(["Clara Gertrud Wichmann"]);
+    expect(find("Hamburg (Vereinigte Staaten)")).toEqual(["A. Viola Neblett"]);
+    // Typed in part: every place containing it.
+    expect(find("hambu")).toEqual(["Clara Gertrud Wichmann", "A. Viola Neblett"]);
+  });
 });
 
 describe("suggestPeople", () => {

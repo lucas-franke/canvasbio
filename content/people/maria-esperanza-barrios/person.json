@@ -6,7 +6,7 @@
   },
   "born": {
     "date": "1892-12-18",
-    "place": "san-carlos"
+    "place": "san-carlos-uruguay"
   },
   "died": {
     "date": "1931-10-02"
@@ -24,7 +24,7 @@
       "writing"
     ],
     "place": [
-      "san-carlos",
+      "san-carlos-uruguay",
       "uruguay",
       "south-america"
     ]

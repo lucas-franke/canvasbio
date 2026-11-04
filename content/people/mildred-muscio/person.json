@@ -10,7 +10,7 @@
   },
   "died": {
     "date": "1964-08-17",
-    "place": "ryde"
+    "place": "ryde-australia"
   },
   "portrait": {
     "file": "portrait.jpg",
@@ -26,7 +26,7 @@
     ],
     "place": [
       "copeland",
-      "ryde",
+      "ryde-australia",
       "australia",
       "oceania"
     ]

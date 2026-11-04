@@ -6,7 +6,7 @@
   },
   "born": {
     "date": "1869-04-13",
-    "place": "portland"
+    "place": "portland-australia"
   },
   "died": {
     "date": "1949-08-15",
@@ -26,7 +26,7 @@
       "writing"
     ],
     "place": [
-      "portland",
+      "portland-australia",
       "south-yarra",
       "australia",
       "oceania"

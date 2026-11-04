@@ -178,6 +178,17 @@ export function filterPeople(
   labels: FacetLabels,
 ): PersonListItem[] {
   if (!isSearchActive(state)) return [...people];
+  // Free text that is exactly a value's name (a chosen suggestion: "Hamburg") matches only
+  // that value, not every name containing it ("Hamburg (Vereinigte Staaten)").
+  const exact = new Map<string, boolean>();
+  for (const facet of facets) {
+    const text = state.facets[facet.key]?.[0];
+    if (facet.type === "multi" || !text) continue;
+    exact.set(
+      facet.key,
+      Object.values(labels[facet.key] ?? {}).some((l) => normalize(l) === normalize(text)),
+    );
+  }
   return people.filter((person) => {
     if (state.q && !nameMatches(state.q, `${person.name.display} ${person.name.sort}`)) return false;
     for (const facet of facets) {
@@ -189,7 +200,10 @@ export function filterPeople(
       } else {
         const text = normalize(wanted[0]!);
         const names = values.map((v) => normalize(labels[facet.key]?.[v] ?? v));
-        if (!names.some((name) => name.includes(text))) return false;
+        const matches = exact.get(facet.key)
+          ? (name: string) => name === text
+          : (name: string) => name.includes(text);
+        if (!names.some(matches)) return false;
       }
     }
     return true;

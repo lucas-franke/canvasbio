@@ -10,7 +10,7 @@
   },
   "died": {
     "date": "1950-03-15",
-    "place": "cambridge"
+    "place": "cambridge-united-states"
   },
   "portrait": {
     "file": "portrait.jpg",
@@ -26,7 +26,7 @@
     ],
     "place": [
       "new-jersey",
-      "cambridge",
+      "cambridge-united-states",
       "united-states",
       "north-america"
     ]

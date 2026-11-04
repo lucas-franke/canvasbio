@@ -6,7 +6,7 @@
   },
   "born": {
     "date": "1875-02-06",
-    "place": "boston"
+    "place": "boston-united-kingdom"
   },
   "died": {
     "date": "1953-11-12",
@@ -26,6 +26,7 @@
     ],
     "place": [
       "boston",
+      "boston-united-kingdom",
       "united-kingdom",
       "united-states",
       "europe",
