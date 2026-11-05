@@ -645,7 +645,11 @@ export function InfiniteCanvas({
         </div>
       )}
 
-      <CanvasControls onZoomIn={() => camera.zoomBy(1.4)} onZoomOut={() => camera.zoomBy(1 / 1.4)} />
+      <CanvasControls
+        onZoomIn={() => camera.zoomBy(1.4)}
+        onZoomOut={() => camera.zoomBy(1 / 1.4)}
+        zoomEdge={camera.zoomEdge}
+      />
 
       {siteConfig.features.randomBio && (hits === null || hits.length > 0) && (
         <div

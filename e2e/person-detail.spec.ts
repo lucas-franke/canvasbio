@@ -1,5 +1,7 @@
 import { expect, test } from "@playwright/test";
 
+import { waitForHydration } from "./helpers";
+
 const heading = (page: import("@playwright/test").Page, name: string) =>
   page.getByRole("heading", { level: 1, name, exact: true });
 
@@ -290,4 +292,13 @@ test("desktop: the dialog scrolls inside its rounded card, with a thin scrollbar
   await expect(scroller).toHaveCSS("overflow-y", "auto");
   await expect(scroller).toHaveCSS("scrollbar-width", "thin");
   expect(await scroller.evaluate((el) => el.scrollHeight > el.clientHeight)).toBe(true);
+});
+
+test("a life story only in another language says so in the page's language", async ({ page }) => {
+  await page.goto("/personen/a-viola-neblett");
+  await waitForHydration(page);
+  await page.getByRole("tab", { name: "Lebensgeschichte" }).click();
+  await expect(page.getByText("Dieser Text liegt nur auf Englisch vor.")).toBeVisible();
+  await page.goto("/en/people/a-viola-neblett");
+  await expect(page.getByText(/only available in/)).toHaveCount(0);
 });

@@ -150,3 +150,31 @@ test("phones: the years are always on their own line below the name", async ({ p
   );
   expect(stacked).toBe(true);
 });
+
+test("keyboard focus moving up stops clear of the sticky year axis (WCAG 2.4.11)", async ({
+  page,
+  browserName,
+}) => {
+  test.skip(browserName === "webkit", "Tab skips links in WebKit unless set otherwise");
+  await page.goto("/personen/zeitstrahl");
+  await waitForHydration(page);
+  await page.evaluate(() => window.scrollTo(0, 4000));
+  // The first person fully on screen below the axis, then backwards from there.
+  const axis = page.locator("[data-timeline-axis] > div").last();
+  await expect(page.locator("[data-timeline-axis]")).toHaveAttribute("data-stuck", "");
+  const axisBottom = (await axis.boundingBox())!;
+  const start = await page
+    .locator("main article a[data-person]")
+    .evaluateAll(
+      (links, bottom) =>
+        links.findIndex((a) => a.closest("article")!.getBoundingClientRect().top > bottom + 40),
+      axisBottom.y + axisBottom.height,
+    );
+  await page.locator("main article a[data-person]").nth(start).focus();
+  for (let i = 0; i < 6; i++) {
+    await page.keyboard.press("Shift+Tab");
+    const row = (await page.locator("main article:focus-within").boundingBox())!;
+    const bar = (await axis.boundingBox())!;
+    expect(row.y).toBeGreaterThanOrEqual(bar.y + bar.height - 1);
+  }
+});

@@ -147,7 +147,7 @@ export function TimelineView({ chapters, sort, hrefFor, activeSlug }: TimelineVi
               <h2
                 id={id}
                 tabIndex={-1}
-                className="scroll-mt-16 border-b border-brand px-2 pb-2 text-h2 text-brand focus-target"
+                className="scroll-mt-4 border-b border-brand px-2 pb-2 text-h2 text-brand focus-target"
               >
                 {chapterText(chapter, m).heading}
               </h2>

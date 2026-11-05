@@ -2,8 +2,15 @@ import * as React from "react";
 import { cn } from "cn";
 import { Drawer as DrawerPrimitive } from "vaul";
 
-function Drawer({ ...props }: React.ComponentProps<typeof DrawerPrimitive.Root>) {
-  return <DrawerPrimitive.Root data-slot="drawer" {...props} />;
+/**
+ * `autoFocus` on by default (vaul turns it off): opening moves focus into the drawer, to its
+ * first control, as in any modal dialog. Without it focus stays on the trigger, which is hidden
+ * from assistive tech behind the open drawer.
+ */
+function Drawer({ autoFocus = true, ...props }: React.ComponentProps<typeof DrawerPrimitive.Root>) {
+  // vaul's prop (focus into the open dialog), not the HTML autofocus attribute.
+  // eslint-disable-next-line jsx-a11y/no-autofocus
+  return <DrawerPrimitive.Root data-slot="drawer" autoFocus={autoFocus} {...props} />;
 }
 
 function DrawerTrigger({ ...props }: React.ComponentProps<typeof DrawerPrimitive.Trigger>) {

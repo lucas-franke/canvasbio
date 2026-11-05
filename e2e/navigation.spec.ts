@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-import { navPillBoxes, overlaps } from "./helpers";
+import { navPillBoxes, overlaps, waitForHydration } from "./helpers";
 
 test("start page leads to the biographies", async ({ page }) => {
   await page.goto("/");
@@ -153,4 +153,68 @@ test("the navigation comes before the content, as on screen (focus order)", asyn
     });
     expect(navFirst).toBe(true);
   }
+});
+
+test.describe("menu focus (WCAG 2.4.3)", () => {
+  test("opening moves focus into the menu, Escape returns it to the menu button", async ({ page }) => {
+    await page.goto("/ueber");
+    await waitForHydration(page);
+    const button = page.getByRole("button", { name: "Menü", exact: true });
+    await button.focus();
+    await page.keyboard.press("Enter");
+    await expect(page.getByRole("button", { name: "Menü schließen" })).toBeFocused();
+    await page.keyboard.press("Escape");
+    await expect(page.getByRole("dialog", { name: "Menü" })).toBeHidden();
+    await expect(button).toBeFocused();
+  });
+
+  test("following a link lands on the new page's heading", async ({ page }) => {
+    await page.goto("/ueber");
+    await waitForHydration(page);
+    await page.getByRole("button", { name: "Menü", exact: true }).click();
+    await page.getByRole("dialog").getByRole("link", { name: "Barrierefreiheit" }).click();
+    await expect(page).toHaveURL(/\/barrierefreiheit$/);
+    await expect(
+      page.getByRole("heading", { level: 1, name: "Erklärung zur Barrierefreiheit" }),
+    ).toBeFocused();
+  });
+
+  test("the start page's own link to a page also lands on its heading", async ({ page, isMobile }) => {
+    test.skip(isMobile, "the about link in the navigation shows from sm up");
+    await page.goto("/");
+    await waitForHydration(page);
+    await page
+      .getByRole("navigation", { name: "Hauptnavigation" })
+      .getByRole("link", { name: "Über das Projekt" })
+      .click();
+    await expect(page.getByRole("heading", { level: 1, name: "Über das Projekt" })).toBeFocused();
+  });
+
+  test("inside the people pages too (the menu button stays, focus still moves on)", async ({ page }) => {
+    await page.goto("/personen/liste");
+    await waitForHydration(page);
+    await page.getByRole("button", { name: "Menü", exact: true }).click();
+    await page.getByRole("dialog").getByRole("link", { name: "Biografien" }).click();
+    await expect(page).toHaveURL(/\/personen$/);
+    await expect(page.getByRole("heading", { level: 1, name: "Biografien als Mosaik" })).toBeFocused();
+  });
+
+  test("switching the language lands on the heading in the other language", async ({ page }) => {
+    await page.goto("/ueber");
+    await waitForHydration(page);
+    await page.getByRole("button", { name: "Menü", exact: true }).click();
+    await page.getByRole("dialog").getByRole("link", { name: "English" }).click();
+    await expect(page).toHaveURL(/\/en\/about$/);
+    await expect(page.getByRole("heading", { level: 1, name: "About the project" })).toBeFocused();
+  });
+
+  test("the link to the current page just closes the menu, focus returns to the button", async ({ page }) => {
+    await page.goto("/ueber");
+    await waitForHydration(page);
+    const button = page.getByRole("button", { name: "Menü", exact: true });
+    await button.click();
+    await page.getByRole("dialog").getByRole("link", { name: "Über das Projekt" }).click();
+    await expect(page.getByRole("dialog", { name: "Menü" })).toBeHidden();
+    await expect(button).toBeFocused();
+  });
 });

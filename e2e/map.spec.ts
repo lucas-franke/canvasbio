@@ -113,3 +113,59 @@ test("the portraits on the map don't cover each other", async ({ page }) => {
   });
   expect(overlapping).toBe(0);
 });
+
+test.describe("map focus (WCAG 2.4.3)", () => {
+  test("the list of places takes focus, Escape returns it to its button", async ({ page }) => {
+    await page.goto("/personen/karte");
+    await expect(page.locator(".maplibregl-marker").first()).toBeAttached({ timeout: 20_000 });
+    const button = page.getByRole("button", { name: "Ortsliste" });
+    await button.click();
+    await expect(page.getByRole("heading", { name: "Orte" })).toBeFocused();
+    // Picking a place: focus moves to the people there, not to the page.
+    await page
+      .getByRole("region", { name: "Orte" })
+      .getByRole("listitem")
+      .first()
+      .getByRole("button")
+      .click();
+    await expect(page.getByRole("heading", { name: /^Biografien aus / })).toBeFocused();
+    await page.keyboard.press("Escape");
+    await expect(page.getByRole("region", { name: /^Biografien aus / })).toHaveCount(0);
+    await expect(button).toBeFocused();
+  });
+
+  test("a cluster opened with the keyboard keeps focus on the map's markers", async ({ page }) => {
+    await page.goto("/personen/karte");
+    const cluster = await visibleCluster(page);
+    await cluster.focus();
+    await page.keyboard.press("Enter");
+    await expect
+      .poll(() =>
+        page.evaluate(() => {
+          const active = document.activeElement;
+          return Boolean(active?.classList.contains("maplibregl-marker") || active?.closest("[role=region]"));
+        }),
+      )
+      .toBe(true);
+    // Not left on the cluster that is gone.
+    expect(await page.evaluate(() => document.activeElement !== document.body)).toBe(true);
+  });
+});
+
+test("Tab goes through the markers as seen: in rows from top to bottom, each from left to right", async ({
+  page,
+}) => {
+  await page.goto("/personen/karte");
+  await visibleCluster(page);
+  const rows = await page.locator(".maplibregl-marker").evaluateAll((all) =>
+    all.map((el) => {
+      const box = el.getBoundingClientRect();
+      return { row: Math.floor((box.top + box.height / 2) / 56), x: box.left };
+    }),
+  );
+  expect(rows.length).toBeGreaterThan(3);
+  for (let i = 1; i < rows.length; i++) {
+    const [a, b] = [rows[i - 1]!, rows[i]!];
+    expect(a.row < b.row || (a.row === b.row && a.x <= b.x)).toBe(true);
+  }
+});

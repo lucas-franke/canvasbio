@@ -83,6 +83,8 @@ export function SearchSummary({
           ref={heading}
           id={headingId}
           tabIndex={-1}
+          // Focus lands here after a search is applied (see SearchDrawer).
+          data-search-results=""
           className="mr-auto font-sans text-label font-semibold tracking-normal text-emphasis focus-target"
         >
           {count === 0 ? m.search.empty : m.search.results(count)}

@@ -20,7 +20,7 @@ Diese Website ist mit den genannten Anforderungen **teilweise vereinbar**. Die E
 
 ## Nicht barrierefreie Inhalte
 
-- **Leichte Sprache:** Informationen in Leichter Sprache werden derzeit nicht angeboten.
+- **Leichte Sprache:** Informationen in Leichter Sprache werden nicht angeboten. Die Biografien stammen aus der Wikipedia, für die es keine Fassungen in Leichter Sprache gibt, und eine eigene Übertragung ist uns nicht möglich.
 - **Lebensgeschichten:** Die Texte sind automatisch übernommene Auszüge aus der Wikipedia. Fremdsprachige Wörter und Zitate darin sind nicht als solche ausgezeichnet, sodass Screenreader sie mit deutscher Aussprache vorlesen können.
 - **Bildbeschreibungen:** Die Porträts haben einen Alternativtext mit dem Namen der Person, aber keine ausführliche Beschreibung des Bildes.
 - **Gebärdensprache:** Informationen in Deutscher Gebärdensprache werden derzeit nicht angeboten.

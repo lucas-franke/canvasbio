@@ -1,7 +1,7 @@
 import { cn } from "cn";
 import { Globe, Menu, Monitor, Moon, Sun, SunMoon, X } from "lucide-react";
 import { RadioGroup as RadioGroupPrimitive } from "radix-ui";
-import { useState, type ReactNode } from "react";
+import { useRef, useState, type ReactNode } from "react";
 import { Link, useLocation } from "react-router";
 
 import {
@@ -16,7 +16,9 @@ import { siteConfig } from "~/lib/config";
 import { useLocale, useMessages } from "~/lib/i18n";
 import { pagePath, parsePath, switchLocaleHash, switchLocalePath, type Page } from "~/lib/i18n/locale";
 import { WIDE_QUERY, useMediaQuery } from "~/lib/hooks";
+import { focusPageHeading } from "~/lib/route-focus";
 import { useTheme, type ThemeChoice } from "~/lib/theme/use-theme";
+import { afterViewTransition } from "~/lib/view-transition";
 import { NavIconButton } from "./nav";
 
 const THEME_ICONS = { system: Monitor, light: Sun, dark: Moon } as const;
@@ -63,7 +65,14 @@ export function MenuDrawer() {
   const [theme, setTheme] = useTheme();
   // Desktop: the menu button is at the top right, so the menu slides in from the right.
   const desktop = useMediaQuery(WIDE_QUERY, false);
-  const close = () => setOpen(false);
+  // A link to another page was followed: focus goes to that page once the menu has closed,
+  // not back to the menu button (which belonged to the page that was left, or no longer
+  // leads anywhere new).
+  const followed = useRef(false);
+  const follow = (to: string) => {
+    followed.current = to.split(/[?#]/)[0] !== pathname;
+    setOpen(false);
+  };
 
   const pages: { page: Page; label: string }[] = [
     { page: "start", label: m.nav.home },
@@ -82,6 +91,14 @@ export function MenuDrawer() {
           "bg-surface text-text",
           desktop ? SIDE_SHEET : "mx-auto max-h-[90dvh] w-full rounded-t-card md:max-w-lg",
         )}
+        // Runs once the menu has gone (also when its page was replaced), after the rest of the
+        // page is no longer hidden from assistive tech.
+        onCloseAutoFocus={(event) => {
+          if (!followed.current) return;
+          followed.current = false;
+          event.preventDefault();
+          afterViewTransition(focusPageHeading);
+        }}
       >
         <div className="flex items-center justify-between px-6 pt-2">
           <DrawerTitle className="font-heading text-h3 font-semibold text-emphasis">{m.nav.menu}</DrawerTitle>
@@ -101,7 +118,7 @@ export function MenuDrawer() {
                 <li key={page}>
                   <Link
                     to={pagePath(locale, page)}
-                    onClick={close}
+                    onClick={() => follow(pagePath(locale, page))}
                     aria-current={current === page ? "page" : undefined}
                     className={itemClass}
                   >
@@ -125,7 +142,7 @@ export function MenuDrawer() {
                       to={
                         switchLocalePath(pathname, l.code) + search + switchLocaleHash(hash, locale, l.code)
                       }
-                      onClick={close}
+                      onClick={() => follow(switchLocalePath(pathname, l.code))}
                       lang={l.htmlLang}
                       hrefLang={l.htmlLang}
                       aria-current={l.code === locale ? "page" : undefined}
@@ -177,7 +194,7 @@ export function MenuDrawer() {
                 <li key={page}>
                   <Link
                     to={pagePath(locale, page)}
-                    onClick={close}
+                    onClick={() => follow(pagePath(locale, page))}
                     aria-current={current === page ? "page" : undefined}
                     className="inline-flex min-h-11 items-center rounded-sm text-body-sm text-text underline underline-offset-4 hover:decoration-2 aria-[current=page]:font-semibold"
                   >

@@ -376,6 +376,15 @@ function FactsPanel({ person }: { person: PersonDetailProps["person"] }) {
   );
 }
 
+/** Name of a language in the page's language ("en" → "Englisch" on German pages). */
+function languageName(code: string, locale: string): string {
+  try {
+    return new Intl.DisplayNames([htmlLangFor(locale)], { type: "language" }).of(code) ?? code;
+  } catch {
+    return code;
+  }
+}
+
 function StoryPanel({
   person,
   storyHtml,
@@ -427,9 +436,7 @@ function StoryPanel({
       )}
       {foreignStory && (
         <p className="-mt-4 text-body-sm text-muted-text">
-          {m.detail.storyOnlyIn(
-            foreignStory === "en" ? (locale === "de" ? "Englisch" : "English") : foreignStory,
-          )}
+          {m.detail.storyOnlyIn(languageName(foreignStory, locale))}
         </p>
       )}
       <div className="prose-content" lang={foreignStory} dangerouslySetInnerHTML={{ __html: storyHtml }} />

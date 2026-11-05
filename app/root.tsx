@@ -17,6 +17,7 @@ import { messagesFor } from "~/lib/i18n";
 import { localeFromPathname } from "~/lib/i18n/locale";
 import { htmlLangFor } from "~/lib/i18n/localize";
 import { pageMeta } from "~/lib/meta";
+import { useRouteFocus } from "~/lib/route-focus";
 import { tornEdgeCss } from "~/lib/canvas/torn-edge";
 import { themeToCss } from "~/lib/theme/css";
 
@@ -81,6 +82,8 @@ export function meta() {
 }
 
 export default function App() {
+  // Client-side navigations move focus to the new page when it was lost (WCAG 2.4.3).
+  useRouteFocus();
   return <Outlet />;
 }
 

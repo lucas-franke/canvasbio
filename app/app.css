@@ -103,6 +103,11 @@
     text-size-adjust: 100%;
   }
 
+  /* The timeline's year axis sticks below the nav: focus stops clear of it too. */
+  html:has([data-timeline-axis]) {
+    scroll-padding-top: 10rem;
+  }
+
   body {
     @apply min-h-dvh bg-page text-body text-text antialiased;
   }

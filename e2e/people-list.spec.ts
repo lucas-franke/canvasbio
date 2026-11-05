@@ -193,3 +193,17 @@ test("the list offers a random biography without covering any entry", async ({ p
   await random.click();
   await expect(page).toHaveURL(/\/personen\/[a-z0-9-]+$/);
 });
+
+test("Tab out of the open view list closes it", async ({ page }) => {
+  await page.goto("/personen/liste");
+  await waitForHydration(page);
+  const button = page.getByRole("button", { name: "Ansicht: Liste" });
+  await button.click();
+  const group = page.getByRole("group", { name: "Ansicht" });
+  await expect(group.getByRole("link", { name: "Liste" })).toBeFocused();
+  // From the last view on, Tab leaves the list.
+  await page.keyboard.press("End");
+  await page.keyboard.press("Tab");
+  await expect(group).toHaveCount(0);
+  await expect(button).toHaveAttribute("aria-expanded", "false");
+});
