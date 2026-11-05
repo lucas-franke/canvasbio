@@ -92,7 +92,8 @@ export const de = {
   search: {
     title: "Suche",
     suggestions: "Passende Personen",
-    clearName: "Eingabe löschen",
+    clearName: "Name löschen",
+    clearField: (label: string) => `„${label}“ löschen`,
     peopleCount: (n: number) => (n === 1 ? "1 Person" : `${n} Personen`),
     close: "Suche schließen",
     name: "Nach Namen suchen",

@@ -25,6 +25,8 @@ maplibregl.setWorkerUrl(workerUrl);
 const MAX_ZOOM = 8;
 /** People at the same place stay one marker up to the last zoom level; it then opens a list. */
 const CLUSTER_RADIUS = 52;
+/** Height of a row of markers when ordering them for Tab (about one marker high). */
+const MARKER_ROW = 56;
 
 type Mode = "born" | "died";
 
@@ -120,10 +122,47 @@ export default function PeopleMap({
   const container = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
   const [ready, setReady] = useState(false);
+  /** At the closest or farthest zoom: the zoom buttons say so. */
+  const [zoomEdge, setZoomEdge] = useState<"in" | "out" | null>(null);
   // No WebGL (old devices, some privacy settings): the list of places is shown instead.
   const [failed] = useState(() => !hasWebGL());
   const [mode, setMode] = useState<Mode>("born");
   const [panel, setPanel] = useState<Panel>(failed ? { kind: "places" } : null);
+
+  // ---- Focus around the panel (WCAG 2.4.3) ----
+  const panelRef = useRef<HTMLElement>(null);
+  const panelHeading = useRef<HTMLHeadingElement>(null);
+  const placesButton = useRef<HTMLButtonElement>(null);
+  /** What opened the panel (the places button or a marker): focus returns there on closing. */
+  const opener = useRef<HTMLElement | null>(null);
+  /** Set when the reader opened or changed the panel: its heading takes focus once shown. */
+  const focusPanel = useRef(false);
+  const openPanel = (next: NonNullable<Panel>) => {
+    // A tap doesn't focus a button in Safari: then focus returns to the places button.
+    const active = document.activeElement;
+    if (!panelRef.current?.contains(active)) {
+      opener.current = active instanceof HTMLElement && active !== document.body ? active : null;
+    }
+    focusPanel.current = true;
+    setPanel(next);
+  };
+  const closePanel = () => {
+    // Without WebGL the list of places is all there is: closing a place goes back to it.
+    if (failed) return openPanel({ kind: "places" });
+    const back = opener.current?.isConnected ? opener.current : placesButton.current;
+    opener.current = null;
+    setPanel(null);
+    back?.focus();
+  };
+  useEffect(() => {
+    if (!focusPanel.current || !panel) return;
+    focusPanel.current = false;
+    panelHeading.current?.focus();
+  }, [panel]);
+  const openPanelRef = useRef(openPanel);
+  useEffect(() => {
+    openPanelRef.current = openPanel;
+  });
 
   const shown = hits ?? people;
   const bySlug = useMemo(() => new Map(people.map((p) => [p.slug, p])), [people]);
@@ -231,6 +270,12 @@ export default function PeopleMap({
     map.keyboard.disableRotation();
     map.getCanvas().setAttribute("aria-label", m.map.label);
     map.on("load", () => setReady(true));
+    const updateZoomEdge = () => {
+      const zoom = map.getZoom();
+      setZoomEdge(zoom >= map.getMaxZoom() - 1e-3 ? "in" : zoom <= map.getMinZoom() + 1e-3 ? "out" : null);
+    };
+    map.on("zoom", updateZoomEdge);
+    updateZoomEdge();
     map.on("error", (event) => {
       if (!map.loaded()) console.warn("map:", event.error);
     });
@@ -282,6 +327,11 @@ export default function PeopleMap({
 
   // ---- Markers: portraits as links, clusters as buttons ----
   const markers = useRef(new Map<string, Marker>());
+  /**
+   * A focused cluster was activated: it is replaced by the clusters (or people) it splits into
+   * when the zoom ends. Focus moves on to the one showing the same portrait, not to the page.
+   */
+  const refocus = useRef<string | null>(null);
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !ready) return;
@@ -341,6 +391,7 @@ export default function PeopleMap({
           face.append(badge);
           element.setAttribute("type", "button");
           element.setAttribute("aria-label", m.map.cluster(count));
+          element.dataset.top = slug;
           const clusterId = props.cluster_id;
           const [x, lat] = feature.geometry.coordinates as [number, number];
           const lng = fromCluster(x, seam);
@@ -350,12 +401,13 @@ export default function PeopleMap({
               // Everyone at one place: list them instead of zooming further.
               const leaves = clusters.getLeaves(clusterId, Infinity).map((l) => l.properties);
               const place = leaves[0]?.place;
-              setPanel({
+              openPanelRef.current({
                 kind: "people",
                 title: m.map.peopleHere(place ? (placeLabels[place] ?? place) : ""),
                 slugs: leaves.map((l) => l.slug),
               });
             } else {
+              refocus.current = document.activeElement === element ? slug : null;
               map.easeTo({ center: [lng, lat], zoom: next, duration: 500 });
             }
           });
@@ -381,12 +433,45 @@ export default function PeopleMap({
         marker.remove();
         current.delete(key);
       }
+      const slug = refocus.current;
+      if (slug) {
+        refocus.current = null;
+        const lost = document.activeElement === document.body || !document.activeElement?.isConnected;
+        const next = [...current.values()]
+          .map((marker) => marker.getElement())
+          .find((el) => el.dataset.top === slug || el.dataset.person === slug);
+        if (lost) next?.focus({ preventScroll: true });
+      }
+      order();
+    };
+
+    // Tab follows the map as seen (WCAG 1.3.2, 2.4.3): the markers in rows from top to bottom,
+    // each from left to right, instead of in the order they were added. Reordered after every
+    // move. The focused marker stays where it is (moving it would drop its focus); the others
+    // are placed around it.
+    const order = () => {
+      const anchor = map.getCanvas();
+      const placed = [...current.values()].map((marker) => {
+        const element = marker.getElement();
+        const box = element.getBoundingClientRect();
+        return { element, row: Math.floor((box.top + box.height / 2) / MARKER_ROW), x: box.left };
+      });
+      placed.sort((a, b) => a.row - b.row || a.x - b.x);
+      let cursor: Element = anchor;
+      for (const { element } of placed) {
+        if (element !== document.activeElement && cursor.nextElementSibling !== element) {
+          cursor.after(element);
+        }
+        cursor = element;
+      }
     };
 
     render();
     map.on("zoomend", render);
+    map.on("moveend", order);
     return () => {
       map.off("zoomend", render);
+      map.off("moveend", order);
       for (const marker of current.values()) marker.remove();
       current.clear();
     };
@@ -443,9 +528,10 @@ export default function PeopleMap({
           ))}
         </div>
         <button
+          ref={placesButton}
           type="button"
           aria-expanded={panel?.kind === "places"}
-          onClick={() => setPanel(panel?.kind === "places" ? null : { kind: "places" })}
+          onClick={() => (panel?.kind === "places" ? closePanel() : openPanel({ kind: "places" }))}
           className="hit-44 inline-flex min-h-10 items-center gap-2 rounded-full bg-nav px-3.5 text-body-sm font-medium text-nav-foreground shadow-[0_2px_10px_rgb(0_0_0/0.12)] hover:bg-nav/90 sm:px-4 sm:text-label"
         >
           <List aria-hidden="true" className="size-4 sm:size-5" />
@@ -457,23 +543,32 @@ export default function PeopleMap({
         <CanvasControls
           onZoomIn={() => mapRef.current?.zoomIn()}
           onZoomOut={() => mapRef.current?.zoomOut()}
+          zoomEdge={zoomEdge}
         />
       )}
 
       {panel && (
+        // Escape closes the panel like the close button (the keys inside are its own controls).
+        // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
         <section
+          ref={panelRef}
           aria-labelledby="map-panel-title"
+          onKeyDown={(event) => {
+            if (event.key !== "Escape") return;
+            event.preventDefault();
+            event.stopPropagation();
+            closePanel();
+          }}
           className="absolute inset-x-3 top-24 bottom-44 z-30 flex flex-col overflow-hidden rounded-card bg-surface shadow-[0_12px_40px_rgb(0_0_0/0.25)] sm:right-6 sm:left-auto sm:w-96 lg:top-28 lg:bottom-28"
         >
           <div className="flex items-center justify-between gap-2 border-b border-line px-4 py-2">
-            <h2 id="map-panel-title" className="text-h3">
+            <h2 ref={panelHeading} id="map-panel-title" tabIndex={-1} className="text-h3 focus-target">
               {panel.kind === "places" ? m.map.placesTitle : panel.title}
             </h2>
             <button
               type="button"
               aria-label={m.map.closePlaces}
-              // Without WebGL the list of places is all there is: closing a place goes back to it.
-              onClick={() => setPanel(failed ? { kind: "places" } : null)}
+              onClick={closePanel}
               className="hit-44 grid size-10 place-items-center rounded-full text-emphasis hover:bg-emphasis/5"
             >
               <X aria-hidden="true" className="size-5" />
@@ -488,7 +583,7 @@ export default function PeopleMap({
                       <button
                         type="button"
                         onClick={() => {
-                          setPanel({
+                          openPanel({
                             kind: "people",
                             title: m.map.peopleHere(place.label),
                             slugs: place.slugs,

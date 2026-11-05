@@ -34,7 +34,9 @@ export default function TextPage({ loaderData }: Route.ComponentProps) {
   return (
     <PageShell>
       <article lang={lang} className="mx-auto flex max-w-[68ch] flex-col gap-6">
-        <h1 className="text-h1">{page.title}</h1>
+        <h1 tabIndex={-1} className="text-h1 focus-target">
+          {page.title}
+        </h1>
         <div className="prose-content" dangerouslySetInnerHTML={{ __html: page.html }} />
       </article>
     </PageShell>

@@ -19,5 +19,9 @@ export function meta({ location }: Route.MetaArgs) {
 }
 
 export default function PeopleMap() {
-  return <h1 className="sr-only">{useMessages().people.mapTitle}</h1>;
+  return (
+    <h1 tabIndex={-1} className="sr-only focus-target">
+      {useMessages().people.mapTitle}
+    </h1>
+  );
 }

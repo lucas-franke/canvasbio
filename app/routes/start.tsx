@@ -78,7 +78,8 @@ export default function Start({ loaderData }: Route.ComponentProps) {
         <header className="flex flex-col gap-4 lg:col-start-1 lg:row-start-1">
           <h1
             id="start-title"
-            className="font-heading text-[clamp(2rem,1.4rem+2.4vw,3.25rem)] leading-[1.08] tracking-[-0.025em] text-balance text-emphasis"
+            tabIndex={-1}
+            className="font-heading text-[clamp(2rem,1.4rem+2.4vw,3.25rem)] leading-[1.08] tracking-[-0.025em] text-balance text-emphasis focus-target"
           >
             {t(start.subtitle)}
           </h1>

@@ -86,6 +86,16 @@ function readStoredCamera(key: string, limits: ZoomLimits): Camera | null {
  * The wall seen last, shared by the start page backdrop and the canvas: the backdrop starts
  * where the canvas was left, and its own drift is stored here as well.
  */
+/** A zoom at one of its limits: "in" = can't zoom in any further, "out" = can't zoom out. */
+export type ZoomEdge = "in" | "out" | null;
+
+export function zoomEdgeOf(scale: number, limits: ZoomLimits): ZoomEdge {
+  const slack = 1e-6;
+  if (scale >= limits.maxZoom - slack) return "in";
+  if (scale <= limits.minZoom + slack) return "out";
+  return null;
+}
+
 export const LAST_CAMERA_KEY = "canvas:last";
 /** One-shot flag: the next canvas starts at LAST_CAMERA_KEY (set by the start page CTA). */
 const CONTINUE_KEY = "canvas:continue";
@@ -155,6 +165,9 @@ export function useCamera({
   const measured = useRef(false);
   const viewRef = useRef<CanvasView | null>(initialView ?? null);
   const [view, setView] = useState<CanvasView | null>(initialView ?? null);
+  /** At the closest or farthest zoom (the zoom buttons say so); changes rarely, unlike the camera. */
+  const [zoomEdge, setZoomEdge] = useState<ZoomEdge>(null);
+  const zoomEdgeRef = useRef<ZoomEdge>(null);
 
   // Latest values for callbacks that are created once.
   const latest = useRef({ layout, limits, storageKey, canContinue, onViewChange, topInset, onApply });
@@ -181,6 +194,11 @@ export function useCamera({
     });
     const zooming = cam.scale !== camera.current.scale;
     camera.current = cam;
+    const edge = zoomEdgeOf(cam.scale, limits);
+    if (edge !== zoomEdgeRef.current) {
+      zoomEdgeRef.current = edge;
+      setZoomEdge(edge);
+    }
     latest.current.onApply?.(cam, size.current);
 
     const world = worldRef.current;
@@ -397,6 +415,7 @@ export function useCamera({
     viewportRef,
     worldRef,
     view,
+    zoomEdge,
     camera,
     size,
     apply,

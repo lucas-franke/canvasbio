@@ -86,7 +86,18 @@ export function ViewToggle({ active }: { active: View }) {
 
   return (
     <>
-      <div ref={root} className="js-only relative">
+      {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions -- only notices focus leaving; the controls inside are native */}
+      <div
+        ref={root}
+        className="js-only relative"
+        // Tab out of the open list closes it. Only when focus moves to something else: a click
+        // that focuses nothing (Safari doesn't focus links) is handled by the pointerdown
+        // listener above, and must not close the list before the link has been followed.
+        onBlur={(event) => {
+          const next = event.relatedTarget;
+          if (open && next instanceof Node && !root.current?.contains(next)) setOpen(false);
+        }}
+      >
         <button
           ref={button}
           type="button"

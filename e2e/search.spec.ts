@@ -158,11 +158,14 @@ test("filter chips show how many people each would find", async ({ page }) => {
   await page.goto("/personen/liste");
   const dialog = await openPanel(page);
   const politics = dialog.locator("label", { hasText: "Politik" });
-  const before = Number(await politics.locator("span").last().textContent());
+  // The number shown (screen readers get "12 Personen" instead).
+  const shown = politics.locator("[aria-hidden=true]").last();
+  const before = Number(await shown.textContent());
   expect(before).toBeGreaterThan(10);
   // Narrowing by name updates the counts live.
   await dialog.getByLabel("Nach Namen suchen").fill("zetkin");
-  await expect(politics.locator("span").last()).toHaveText("1");
+  await expect(shown).toHaveText("1");
+  await expect(dialog.getByRole("checkbox", { name: "Politik (1 Person)" })).toBeAttached();
 });
 
 test("a search keeps the wall; screen readers and arrow keys get only the matches", async ({ page }) => {
@@ -193,4 +196,31 @@ test("places with the same name stay apart: Hamburg in Germany and in the United
   await dialog.getByRole("combobox", { name: "Ort" }).fill("hamburg");
   const options = dialog.getByRole("listbox", { name: "Ort" }).getByRole("option");
   await expect(options.filter({ hasText: /^Hamburg/ })).toHaveCount(2);
+});
+
+test("a suggestion opened from the start page lands on the biography's name", async ({ page }) => {
+  await page.goto("/");
+  await waitForHydration(page);
+  const dialog = await openPanel(page);
+  await dialog.getByLabel("Nach Namen suchen").fill("zetkin");
+  await dialog.getByRole("link", { name: /Clara Zetkin/ }).click();
+  await expect(page.getByRole("heading", { level: 1, name: "Clara Zetkin" })).toBeFocused();
+});
+
+test("after applying a search, focus is on the results heading", async ({ page }) => {
+  await page.goto("/personen/liste");
+  await waitForHydration(page);
+  const dialog = await openPanel(page);
+  await dialog.getByLabel("Nach Namen suchen").fill("zetkin");
+  await submit(dialog).click();
+  await expect(page.getByRole("heading", { name: "Ergebnisse (1)" })).toBeFocused();
+});
+
+test("the two clear buttons in the search panel have distinct names", async ({ page }) => {
+  await page.goto("/personen/liste");
+  const dialog = await openPanel(page);
+  await dialog.getByLabel("Nach Namen suchen").fill("a");
+  await dialog.getByRole("combobox", { name: "Ort" }).fill("b");
+  await expect(dialog.getByRole("button", { name: "Name löschen" })).toBeVisible();
+  await expect(dialog.getByRole("button", { name: "„Ort“ löschen" })).toBeVisible();
 });

@@ -257,7 +257,9 @@ test("a new visit opens in the middle of the wall at reading size", async ({ pag
 test("seen from afar, a tap zooms in instead of opening", async ({ page }) => {
   await openCanvas(page);
   const zoomOut = page.getByRole("button", { name: "Verkleinern" });
-  for (let i = 0; i < 9; i++) await zoomOut.click();
+  // As far out as it goes. On small screens the limit comes sooner: the button is then
+  // aria-disabled (Playwright would wait for it), and a click there does nothing.
+  for (let i = 0; i < 9; i++) await zoomOut.click({ force: true });
   await expect(page.locator(".canvas-world")).toHaveAttribute("data-far", "");
   await settledCamera(page);
   const box = (await tabbableTile(page).boundingBox())!;
@@ -273,4 +275,18 @@ test("screen readers hear first what the wall is and that the list is easier", a
   );
   // No extra region around the wall (the page's h1 names it).
   await expect(page.getByRole("region", { name: "Mosaik" })).toHaveCount(0);
+});
+
+test("at the zoom limits the zoom buttons say they can't do more, and keep focus", async ({ page }) => {
+  await openCanvas(page);
+  const zoomIn = page.getByRole("button", { name: "Vergrößern" });
+  const zoomOut = page.getByRole("button", { name: "Verkleinern" });
+  await zoomIn.focus();
+  for (let i = 0; i < 20 && (await zoomIn.getAttribute("aria-disabled")) !== "true"; i++) {
+    await page.keyboard.press("Enter");
+    await page.waitForTimeout(150);
+  }
+  await expect(zoomIn).toHaveAttribute("aria-disabled", "true");
+  await expect(zoomIn).toBeFocused();
+  await expect(zoomOut).not.toHaveAttribute("aria-disabled");
 });

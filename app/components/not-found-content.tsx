@@ -10,7 +10,7 @@ export function NotFoundContent({ headingId }: { headingId?: string }) {
   const m = useMessages();
   return (
     <div className="mx-auto flex max-w-xl flex-col items-start gap-6">
-      <h1 id={headingId} tabIndex={headingId ? -1 : undefined} className="text-h1 focus-target">
+      <h1 id={headingId} tabIndex={-1} className="text-h1 focus-target">
         {m.notFound.title}
       </h1>
       <p>{m.notFound.text}</p>

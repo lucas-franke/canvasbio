@@ -10,6 +10,8 @@ import { NavIconButton } from "~/components/shell/nav";
 import { Button } from "~/components/ui/button";
 import { Drawer, DrawerClose, DrawerContent, DrawerTitle, DrawerTrigger } from "~/components/ui/drawer";
 import { siteConfig } from "~/lib/config";
+import { focusPageHeading } from "~/lib/route-focus";
+import { afterViewTransition } from "~/lib/view-transition";
 import { WIDE_QUERY, useMediaQuery } from "~/lib/hooks";
 import type { FacetConfig } from "~/lib/config/schema";
 import { lifeYears } from "~/lib/content/format";
@@ -30,6 +32,12 @@ import {
  * Text fields. Focused, the focus ring takes the place of the border (one ring, not the
  * border plus the ring 2 px apart); the halo stays outside.
  */
+/**
+ * Where focus goes once the panel has closed, if not back to the search button: the page a
+ * suggestion opened, or the results of the search just applied. Set right before closing.
+ */
+let focusAfterClose: "page" | "results" | null = null;
+
 const fieldClass =
   "min-h-11 w-full rounded-xl border-2 border-control bg-surface px-4 text-body text-emphasis placeholder:text-muted-text focus-visible:border-focus focus-visible:outline-offset-[-2px]";
 
@@ -61,10 +69,27 @@ export function SearchDrawer() {
         }}
         tabIndex={-1}
         // The name field gets focus, not the close button: whoever opens the search wants to
-        // type (on phones the keyboard covers the filters until it is closed).
+        // type (on phones the keyboard covers the filters until it is closed). While the index
+        // is still loading there is no field yet: the close button gets focus, and the form
+        // takes it over once it is there (SearchForm).
         onOpenAutoFocus={(event) => {
+          const name = document.getElementById("search-name");
+          if (!name) return;
           event.preventDefault();
-          document.getElementById("search-name")?.focus({ preventScroll: true });
+          name.focus({ preventScroll: true });
+        }}
+        onCloseAutoFocus={(event) => {
+          const target = focusAfterClose;
+          focusAfterClose = null;
+          if (target === "page") {
+            event.preventDefault();
+            afterViewTransition(focusPageHeading);
+          } else if (target === "results") {
+            const heading = document.querySelector<HTMLElement>("[data-search-results]");
+            if (!heading) return;
+            event.preventDefault();
+            heading.focus();
+          }
         }}
       >
         <div className="flex items-center justify-between px-6 pt-2">
@@ -140,14 +165,27 @@ function SearchForm({ index }: { index: PeopleIndex }) {
     setDraft((state) => ({ ...state, facets: { ...state.facets, [key]: values } }));
 
   const nameInput = useRef<HTMLInputElement>(null);
+  const form = useRef<HTMLFormElement>(null);
+  // Loaded after the panel opened (focus went to the close button meanwhile): the name field
+  // takes focus, as when the panel opens with the form ready.
+  useEffect(() => {
+    const drawer = form.current?.closest("[data-vaul-drawer]");
+    const active = document.activeElement;
+    if (drawer && active && drawer.contains(active) && !form.current!.contains(active)) {
+      nameInput.current?.focus({ preventScroll: true });
+    }
+  }, []);
+
   const onSubmit = (event: FormEvent) => {
     event.preventDefault();
     applySearch(draft);
+    focusAfterClose = "results";
     setSearchPanelOpen(false);
   };
 
   return (
     <form
+      ref={form}
       onSubmit={onSubmit}
       role="search"
       className="flex min-h-0 flex-1 flex-col"
@@ -257,7 +295,10 @@ function PersonSuggestions({ index, query }: { index: PeopleIndex; query: string
           <li key={person.slug}>
             <Link
               to={pagePath(locale, "people", person.slug) + suffix}
-              onClick={() => setSearchPanelOpen(false)}
+              onClick={() => {
+                focusAfterClose = "page";
+                setSearchPanelOpen(false);
+              }}
               className="flex min-h-12 items-center gap-3 rounded-xl px-2 py-1 hover:bg-emphasis/5"
             >
               <span className="size-10 shrink-0 overflow-hidden rounded-md">
@@ -295,6 +336,7 @@ function MultiFacet({
   selected: string[];
   onChange: (values: string[]) => void;
 }) {
+  const m = useMessages();
   const locale = useLocale();
   const options = Object.entries(labels).sort(([, a], [, b]) => a.localeCompare(b, locale));
 
@@ -329,7 +371,10 @@ function MultiFacet({
               {/* The check mark shows the state without relying on colour (WCAG 1.4.1). */}
               {checked && <Check aria-hidden="true" className="-ml-1 size-4" />}
               {label}
-              <span className="text-body-xs tabular-nums">{count}</span>
+              <span className="text-body-xs tabular-nums">
+                <span aria-hidden="true">{count}</span>
+                <span className="sr-only"> ({m.search.peopleCount(count)})</span>
+              </span>
             </label>
           );
         })}
@@ -539,7 +584,7 @@ function AutocompleteFacet({
         {value && (
           <button
             type="button"
-            aria-label={m.search.clearName}
+            aria-label={m.search.clearField(localize(facet.label, locale))}
             onClick={() => {
               onChange("");
               input.current?.focus();

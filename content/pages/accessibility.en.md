@@ -16,7 +16,7 @@ This website is **partially compliant** with these requirements. The limitations
 
 ## Non-accessible content
 
-- **Easy-to-read German (Leichte Sprache):** information in Leichte Sprache is not offered at the moment.
+- **Easy-to-read German (Leichte Sprache):** information in Leichte Sprache is not offered. The biographies come from Wikipedia, which has no easy-to-read versions, and we are not able to create them ourselves.
 - **Life stories:** the texts are automatically imported extracts from Wikipedia. Words and quotations in other languages are not marked up as such, so screen readers may pronounce them as English.
 - **Image descriptions:** portraits have an alternative text with the person's name, but no detailed description of the picture.
 - **Sign language:** information in German Sign Language is not offered at the moment.
