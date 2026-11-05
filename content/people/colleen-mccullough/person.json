@@ -6,7 +6,7 @@
   },
   "born": {
     "date": "1937-06-01",
-    "place": "wellington"
+    "place": "wellington-australia"
   },
   "died": {
     "date": "2015-01-29",
@@ -26,7 +26,7 @@
       "medicine"
     ],
     "place": [
-      "wellington",
+      "wellington-australia",
       "burnt-pine",
       "australia",
       "oceania"

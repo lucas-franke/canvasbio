@@ -6,7 +6,7 @@
   },
   "born": {
     "date": "1846-09-16",
-    "place": "maryland"
+    "place": "maryland-united-kingdom"
   },
   "died": {
     "date": "1888-02-22",
@@ -27,7 +27,7 @@
       "science"
     ],
     "place": [
-      "maryland",
+      "maryland-united-kingdom",
       "london",
       "united-kingdom",
       "europe"

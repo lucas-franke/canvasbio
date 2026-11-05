@@ -21,11 +21,13 @@ import { parseFrontmatter } from "../app/lib/content/frontmatter";
 import type { Person, PersonText, Taxonomy } from "../app/lib/content/schema";
 import { getFreeImages, type CommonsImage } from "./import/commons";
 import { cleanDescription, feminine } from "./import/descriptions";
+import { qualifierOf, samePlace } from "./import/place-keys";
 import { fetchBinary } from "./import/http";
 import {
   dateOf,
   CONTINENT_IDS,
   continentsOf,
+  coordsOf,
   countriesOf,
   countriesOn,
   findRegionalCandidates,
@@ -532,6 +534,12 @@ async function main() {
   const regions: Record<string, string[]> = ADD
     ? JSON.parse(await readFile(regionsFile, "utf8").catch(() => "{}"))
     : {};
+  // Which Wikidata place each place key stands for, so places with the same name stay apart
+  // (Hamburg in Germany and in South Carolina; see scripts/split-places.ts).
+  const placeIdsFile = path.join(CONTENT, "place-ids.json");
+  const placeIds: Record<string, string> = ADD
+    ? JSON.parse(await readFile(placeIdsFile, "utf8").catch(() => "{}"))
+    : {};
   // Countries too, so searching "Deutschland" finds everyone born or died there.
   const cityEntities = withFreeImage.flatMap((c) =>
     ["P19", "P20"].flatMap((prop) => {
@@ -580,12 +588,27 @@ async function main() {
 
     const countryKeys: string[] = [];
     const countryOfPlace: Record<string, string | undefined> = {};
-    const placeKey = (prop: string) => {
+    const placeKey = async (prop: string) => {
       const place = cityOf(refs.get(entityIds(e, prop)[0]));
       const en = label(place, "en");
       if (!place || !en) return undefined;
-      const key = slugify(en) || slugify(label(place, "de") ?? "") || place.id.toLowerCase();
-      taxonomy.place[key] ??= { de: label(place, "de")!, en };
+      let key = slugify(en) || slugify(label(place, "de") ?? "") || place.id.toLowerCase();
+      let names = { de: label(place, "de") ?? en, en };
+      // The key already stands for another place of that name: this one gets its own,
+      // e.g. "hamburg-united-states", "Hamburg (Vereinigte Staaten)".
+      const known = placeIds[key] && (await getEntities([placeIds[key]])).get(placeIds[key]);
+      if (
+        known &&
+        !samePlace({ id: known.id, coords: coordsOf(known) }, { id: place.id, coords: coordsOf(place) })
+      ) {
+        const qualifier = await qualifierOf(place, known);
+        if (qualifier) {
+          key = `${key}-${slugify(qualifier.en)}`;
+          names = { de: `${names.de} (${qualifier.de})`, en: `${en} (${qualifier.en})` };
+        }
+      }
+      placeIds[key] ??= place.id;
+      taxonomy.place[key] ??= names;
       const country = countryKey(place);
       if (country) countryKeys.push(country);
       // … and the continents, so "Afrika" finds everyone born or died in Africa.
@@ -598,8 +621,8 @@ async function main() {
       countryOfPlace[key] = country;
       return key;
     };
-    const bornPlace = placeKey("P19");
-    const diedPlace = placeKey("P20");
+    const bornPlace = await placeKey("P19");
+    const diedPlace = await placeKey("P20");
     const occupations = entityIds(e, "P106").map((id) => refs.get(id));
     const born = dateOf(e, "P569");
     const died = dateOf(e, "P570");
@@ -698,6 +721,11 @@ async function main() {
   console.log("5/5 Writing taxonomy and cleaning up …");
   await writeFile(path.join(CONTENT, "taxonomy.json"), `${JSON.stringify(taxonomy, null, 2)}\n`);
   const sortedRegions = Object.fromEntries(Object.entries(regions).sort(([a], [b]) => a.localeCompare(b)));
+  await writeFile(
+    placeIdsFile,
+    `${JSON.stringify(Object.fromEntries(Object.entries(placeIds).sort(([a], [b]) => a.localeCompare(b))), null, 2)}
+`,
+  );
   await writeFile(regionsFile, `${JSON.stringify(sortedRegions, null, 2)}\n`);
   const removed = ADD ? [] : await removeStaleFolders(usedSlugs);
 

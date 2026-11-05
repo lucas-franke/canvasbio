@@ -165,9 +165,7 @@ test("filter chips show how many people each would find", async ({ page }) => {
   await expect(politics.locator("span").last()).toHaveText("1");
 });
 
-test("a search keeps the wall; screen readers and arrow keys get only the matches", async ({
-  page,
-}) => {
+test("a search keeps the wall; screen readers and arrow keys get only the matches", async ({ page }) => {
   await page.goto("/personen?q=pankhurst");
   await page.locator("[data-cell]").first().waitFor({ state: "attached" });
   // The whole shape stays (the rest is dimmed) …
@@ -181,4 +179,18 @@ test("a search keeps the wall; screen readers and arrow keys get only the matche
     await page.keyboard.press(key);
     await expect(page.locator("[data-cell]:focus")).toHaveAttribute("data-match", "hit");
   }
+});
+
+test("places with the same name stay apart: Hamburg in Germany and in the United States", async ({
+  page,
+}) => {
+  await page.goto("/personen/liste?place=Hamburg");
+  await expect(page.locator("main article h3")).toHaveText(["Clara Gertrud Wichmann"]);
+  await page.goto("/personen/liste?place=Hamburg+(Vereinigte+Staaten)");
+  await expect(page.locator("main article h3")).toHaveText(["A. Viola Neblett"]);
+  // Both are suggested, told apart by the country.
+  const dialog = await openPanel(page);
+  await dialog.getByRole("combobox", { name: "Ort" }).fill("hamburg");
+  const options = dialog.getByRole("listbox", { name: "Ort" }).getByRole("option");
+  await expect(options.filter({ hasText: /^Hamburg/ })).toHaveCount(2);
 });

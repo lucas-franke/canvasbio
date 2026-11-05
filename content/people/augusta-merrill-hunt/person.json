@@ -6,7 +6,7 @@
   },
   "born": {
     "date": "1842-06-06",
-    "place": "portland"
+    "place": "portland-maine"
   },
   "died": {
     "date": "1932-06-15"
@@ -24,7 +24,7 @@
       "activism"
     ],
     "place": [
-      "portland",
+      "portland-maine",
       "united-states",
       "north-america"
     ]

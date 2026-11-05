@@ -6,7 +6,7 @@
   },
   "born": {
     "date": "1871-09-02",
-    "place": "hartford"
+    "place": "hartford-vermont"
   },
   "died": {
     "date": "1950-02-03",
@@ -25,7 +25,7 @@
       "medicine"
     ],
     "place": [
-      "hartford",
+      "hartford-vermont",
       "brattleboro-retreat",
       "united-states",
       "north-america"

@@ -10,7 +10,7 @@
   },
   "died": {
     "date": "1963-07-24",
-    "place": "paddington"
+    "place": "paddington-australia"
   },
   "portrait": {
     "file": "portrait.jpg",
@@ -26,7 +26,7 @@
     ],
     "place": [
       "petersham",
-      "paddington",
+      "paddington-australia",
       "australia",
       "oceania"
     ]

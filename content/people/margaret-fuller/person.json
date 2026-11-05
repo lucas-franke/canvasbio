@@ -6,7 +6,7 @@
   },
   "born": {
     "date": "1810-05-23",
-    "place": "cambridge"
+    "place": "cambridge-united-states"
   },
   "died": {
     "date": "1850-07-19",
@@ -26,7 +26,7 @@
       "science"
     ],
     "place": [
-      "cambridge",
+      "cambridge-united-states",
       "fire-island",
       "united-states",
       "north-america"

@@ -6,7 +6,7 @@
   },
   "born": {
     "date": "1850-06-18",
-    "place": "paris"
+    "place": "paris-united-states"
   },
   "died": {
     "date": "1919-12-19",
@@ -26,7 +26,7 @@
       "social"
     ],
     "place": [
-      "paris",
+      "paris-united-states",
       "los-angeles",
       "united-states",
       "north-america"

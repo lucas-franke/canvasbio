@@ -10,7 +10,7 @@
   },
   "died": {
     "date": "1971-10-18",
-    "place": "ryde"
+    "place": "ryde-australia"
   },
   "portrait": {
     "file": "portrait.jpg",
@@ -27,7 +27,7 @@
     ],
     "place": [
       "adelaide",
-      "ryde",
+      "ryde-australia",
       "australia",
       "oceania"
     ]

@@ -4121,6 +4121,78 @@
     "peters-hill": {
       "de": "Peters Hill",
       "en": "Peters Hill"
+    },
+    "hamburg-united-states": {
+      "de": "Hamburg (Vereinigte Staaten)",
+      "en": "Hamburg (United States)"
+    },
+    "wellington-australia": {
+      "de": "Wellington (Australien)",
+      "en": "Wellington (Australia)"
+    },
+    "london-canada": {
+      "de": "London (Kanada)",
+      "en": "London (Canada)"
+    },
+    "paris-united-states": {
+      "de": "Paris (Vereinigte Staaten)",
+      "en": "Paris (United States)"
+    },
+    "cambridge-united-states": {
+      "de": "Cambridge (Vereinigte Staaten)",
+      "en": "Cambridge (United States)"
+    },
+    "homer-ohio": {
+      "de": "Homer (Ohio)",
+      "en": "Homer (Ohio)"
+    },
+    "boston-united-kingdom": {
+      "de": "Boston (Vereinigtes Königreich)",
+      "en": "Boston (United Kingdom)"
+    },
+    "maryland-united-kingdom": {
+      "de": "Maryland (Vereinigtes Königreich)",
+      "en": "Maryland (United Kingdom)"
+    },
+    "alexandria-canada": {
+      "de": "Alexandria (Kanada)",
+      "en": "Alexandria (Canada)"
+    },
+    "portland-maine": {
+      "de": "Portland (Maine)",
+      "en": "Portland (Maine)"
+    },
+    "portland-australia": {
+      "de": "Portland (Australien)",
+      "en": "Portland (Australia)"
+    },
+    "hartford-vermont": {
+      "de": "Hartford (Vermont)",
+      "en": "Hartford (Vermont)"
+    },
+    "athens-united-states": {
+      "de": "Athen (Vereinigte Staaten)",
+      "en": "Athens (United States)"
+    },
+    "dorchester-united-states": {
+      "de": "Dorchester (Vereinigte Staaten)",
+      "en": "Dorchester (United States)"
+    },
+    "auburn-kansas": {
+      "de": "Auburn (Kansas)",
+      "en": "Auburn (Kansas)"
+    },
+    "paddington-australia": {
+      "de": "Paddington (Australien)",
+      "en": "Paddington (Australia)"
+    },
+    "san-carlos-uruguay": {
+      "de": "San Carlos (Uruguay)",
+      "en": "San Carlos (Uruguay)"
+    },
+    "ryde-australia": {
+      "de": "Ryde (Australien)",
+      "en": "Ryde (Australia)"
     }
   }
 }

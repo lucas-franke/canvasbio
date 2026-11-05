@@ -6,7 +6,7 @@
   },
   "born": {
     "date": "1842-03-05",
-    "place": "hamburg"
+    "place": "hamburg-united-states"
   },
   "died": {
     "date": "1897-04-30"
@@ -24,7 +24,7 @@
       "social"
     ],
     "place": [
-      "hamburg",
+      "hamburg-united-states",
       "united-states",
       "north-america"
     ]
