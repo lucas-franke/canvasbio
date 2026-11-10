@@ -114,6 +114,26 @@ test("the portraits on the map don't cover each other", async ({ page }) => {
   expect(overlapping).toBe(0);
 });
 
+test("the list of places is grouped by continent and country, alphabetically", async ({ page }) => {
+  await page.goto("/personen/karte");
+  await expect(page.locator(".maplibregl-marker").first()).toBeAttached({ timeout: 20_000 });
+  await page.getByRole("button", { name: "Ortsliste" }).click();
+  const places = page.getByRole("region", { name: "Orte" });
+  const continents = places.getByRole("list", { name: "Orte" }).locator(":scope > li > details > summary");
+  const names = (await continents.allTextContents()).map((t) => t.replace(/\d+.*$/, "").trim());
+  // Alphabetical, the places without a known country last.
+  const sorted = names.filter((n) => n !== "Weitere Orte");
+  expect(sorted).toEqual([...sorted].sort((a, b) => a.localeCompare(b, "de")));
+  expect(sorted).toContain("Europa");
+
+  await places.locator("summary", { hasText: /^Europa/ }).click();
+  await places.locator("summary", { hasText: /^Deutschland/ }).click();
+  const berlin = places.getByRole("button", { name: /^Berlin\b/ });
+  await expect(berlin).toBeVisible();
+  await berlin.click();
+  await expect(page.getByRole("heading", { name: "Biografien aus Berlin" })).toBeFocused();
+});
+
 test.describe("map focus (WCAG 2.4.3)", () => {
   test("the list of places takes focus, Escape returns it to its button", async ({ page }) => {
     await page.goto("/personen/karte");
@@ -122,13 +142,10 @@ test.describe("map focus (WCAG 2.4.3)", () => {
     await button.click();
     await expect(page.getByRole("heading", { name: "Orte" })).toBeFocused();
     // Picking a place: focus moves to the people there, not to the page.
-    await page
-      .getByRole("region", { name: "Orte" })
-      .getByRole("listitem")
-      .first()
-      .getByRole("button")
-      .click();
-    await expect(page.getByRole("heading", { name: /^Biografien aus / })).toBeFocused();
+    const places = page.getByRole("region", { name: "Orte" });
+    await places.getByLabel("Ort suchen").fill("berlin");
+    await places.getByRole("button", { name: /^Berlin · Deutschland/ }).click();
+    await expect(page.getByRole("heading", { name: "Biografien aus Berlin" })).toBeFocused();
     await page.keyboard.press("Escape");
     await expect(page.getByRole("region", { name: /^Biografien aus / })).toHaveCount(0);
     await expect(button).toBeFocused();
@@ -168,4 +185,71 @@ test("Tab goes through the markers as seen: in rows from top to bottom, each fro
     const [a, b] = [rows[i - 1]!, rows[i]!];
     expect(a.row < b.row || (a.row === b.row && a.x <= b.x)).toBe(true);
   }
+});
+
+/** Whether the focused marker is fully in the part of the map nothing floats over. */
+const focusedMarkerInView = (page: Page) =>
+  page.evaluate(() => {
+    const marker = document.activeElement?.closest(".maplibregl-marker");
+    if (!marker) return "no marker focused";
+    const box = marker.getBoundingClientRect();
+    const map = document.querySelector<HTMLElement>(".maplibregl-map")!;
+    if (map.scrollTop !== 0 || map.scrollLeft !== 0) return "map container scrolled";
+    const covers = [
+      ...document.querySelectorAll('nav[aria-label="Hauptnavigation"] > div > *'),
+      ...document.querySelectorAll('[data-map-overlay], [role="group"][aria-label="Karte steuern"] > *'),
+    ].filter((el) => {
+      const r = el.getBoundingClientRect();
+      return (
+        r.width > 0 && r.left < box.right && box.left < r.right && r.top < box.bottom && box.top < r.bottom
+      );
+    });
+    if (covers.length > 0) return "covered";
+    const inside = box.left >= 0 && box.top >= 0 && box.right <= innerWidth && box.bottom <= innerHeight;
+    return inside ? "ok" : "off screen";
+  });
+
+test.describe("markers that get focus come into view (WCAG 2.4.11)", () => {
+  async function zoomedIn(page: Page) {
+    await page.goto("/personen/karte");
+    await visibleCluster(page);
+    const zoomIn = page.getByRole("button", { name: "Vergrößern", exact: true });
+    for (let i = 0; i < 3; i++) {
+      await zoomIn.click();
+      await page.waitForTimeout(600);
+    }
+    // Many markers now lie outside the view.
+    const offScreen = await page.locator(".maplibregl-marker").evaluateAll(
+      (all) =>
+        all.filter((el) => {
+          const r = el.getBoundingClientRect();
+          return r.right < 0 || r.left > innerWidth || r.bottom < 0 || r.top > innerHeight;
+        }).length,
+    );
+    expect(offScreen).toBeGreaterThan(3);
+  }
+
+  test("a marker outside the view, focused, is panned into view", async ({ page }) => {
+    await zoomedIn(page);
+    const index = await page
+      .locator(".maplibregl-marker")
+      .evaluateAll((all) => all.findIndex((el) => el.getBoundingClientRect().left > innerWidth));
+    expect(index).toBeGreaterThanOrEqual(0);
+    await page.locator(".maplibregl-marker").nth(index).focus();
+    await expect.poll(() => focusedMarkerInView(page)).toBe("ok");
+  });
+
+  test("tabbing through the markers keeps each one in view", async ({ page, browserName }) => {
+    test.skip(browserName === "webkit", "Tab skips links in WebKit unless set otherwise");
+    await zoomedIn(page);
+    await page.locator(".maplibregl-marker").first().focus();
+    for (let i = 0; i < 12; i++) {
+      await page.keyboard.press("Tab");
+      const onMarker = await page.evaluate(() =>
+        Boolean(document.activeElement?.closest(".maplibregl-marker")),
+      );
+      if (!onMarker) break;
+      await expect.poll(() => focusedMarkerInView(page)).toBe("ok");
+    }
+  });
 });

@@ -2,7 +2,7 @@ import { useOutletContext } from "react-router";
 
 import type { Route } from "./+types/person";
 import { PERSON_HEADING_ID } from "~/components/detail/ids";
-import { PersonDetail, type RelatedPerson } from "~/components/detail/person-detail";
+import { DetailBar, PersonDetail, type RelatedPerson } from "~/components/detail/person-detail";
 import { NotFoundContent } from "~/components/not-found-content";
 import { requestPath } from "~/lib/base-path";
 import { content } from "~/lib/content/index.server";
@@ -101,21 +101,31 @@ export function meta({ loaderData, location }: Route.MetaArgs) {
  * cause, show "not found" in the detail panel — the overview next to it stays usable.
  */
 export function ErrorBoundary() {
+  const { closeHref, close } = useOutletContext<PeopleLayoutContext>();
   return (
-    <div className="px-5 pt-16 pb-28 sm:px-10">
-      <NotFoundContent headingId={PERSON_HEADING_ID} />
+    <div className="px-5 pb-28 sm:px-10">
+      {/* The same bar as a biography, so the sheet can be closed on phones too. */}
+      <DetailBar closeHref={closeHref} onClose={close} solid />
+      <div className="pt-10">
+        <NotFoundContent headingId={PERSON_HEADING_ID} />
+      </div>
     </div>
   );
 }
 
 export default function Person({ loaderData }: Route.ComponentProps) {
-  const { closeHref, close, sequence, hrefFor } = useOutletContext<PeopleLayoutContext>();
+  const { closeHref, close, sequence, orderLabel, pool, resultCount, total, hrefFor } =
+    useOutletContext<PeopleLayoutContext>();
   return (
     <PersonDetail
       {...loaderData}
       closeHref={closeHref}
       onClose={close}
       sequence={sequence}
+      orderLabel={orderLabel}
+      pool={pool}
+      resultCount={resultCount}
+      total={total}
       hrefFor={hrefFor}
     />
   );

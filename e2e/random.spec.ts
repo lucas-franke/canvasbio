@@ -29,12 +29,12 @@ test("with reduced motion it opens right away, without pulsing", async ({ page }
 test("with a search, the random pick comes from the results", async ({ page }) => {
   await page.goto("/personen?q=zetkin");
   await waitForCanvas(page);
-  await page.getByRole("button", { name: "Zufällige Biografie" }).click();
+  await page.getByRole("button", { name: "Zufällige Biografie aus den Ergebnissen" }).click();
   await expect(page).toHaveURL(/\/personen\/clara-zetkin\?q=zetkin$/);
 
   await page.goto("/personen/liste?q=zetkin");
   await expect(page.getByRole("heading", { name: "Ergebnisse (1)" })).toBeVisible();
-  await page.getByRole("button", { name: "Zufällige Biografie" }).click();
+  await page.getByRole("button", { name: "Zufällige Biografie aus den Ergebnissen" }).click();
   await expect(page).toHaveURL(/\/personen\/clara-zetkin\?q=zetkin$/);
 });
 

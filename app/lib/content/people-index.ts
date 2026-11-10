@@ -19,6 +19,8 @@ export interface PeopleIndex {
   placeCoords: PlaceCoords;
   /** Continents with their countries (place keys), sorted by name: the place suggestions. */
   placeGroups?: { key: string; countries: string[] }[];
+  /** Country (place key) of each place on the map, for the grouped list of places. */
+  placeCountry?: Record<string, string>;
 }
 
 export interface PeopleIndexState {

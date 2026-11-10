@@ -12,6 +12,9 @@ import Supercluster from "supercluster";
 import { CanvasControls } from "~/components/canvas/canvas-controls";
 import { PersonRow } from "~/components/people/person-row";
 import { SearchSummary } from "~/components/search/search-summary";
+import { closeButtonClass } from "~/components/ui/button";
+import { segmentedItem, segmentedTrack } from "~/components/ui/segmented";
+import { PlaceList, type MapPlace } from "./place-list";
 import type { PersonListItem, PlaceCoords } from "~/lib/content/adapter";
 import { lifeYears } from "~/lib/content/format";
 import { portraitUrl } from "~/lib/content/images";
@@ -58,6 +61,42 @@ const toCluster = (lng: number, seam: number) => fromSeam(lng, seam) - seam - 18
 /** Back from clustering to the shown range. */
 const fromCluster = (x: number, seam: number) => x + 180 + seam;
 
+/** Room kept between a revealed marker and whatever floats over the map (px). */
+const REVEAL_GAP = 12;
+
+/**
+ * The part of the map not covered by the navigation and the overlays (search results, the
+ * controls at the bottom, the panel at the side), in viewport coordinates. Overlays in the
+ * upper half push the top edge down, those in the lower half the bottom edge up; the panel
+ * narrows the area from the right where it is a side panel (from sm), not where it covers
+ * the map (phones).
+ */
+function freeArea(map: HTMLElement, view: HTMLElement | null, navLabel: string, controlsLabel: string) {
+  const box = map.getBoundingClientRect();
+  const free = { top: box.top, bottom: box.bottom, left: box.left, right: box.right };
+  const middle = box.top + box.height / 2;
+  const overlays = [
+    ...document.querySelectorAll<HTMLElement>(`nav[aria-label="${CSS.escape(navLabel)}"]`),
+    ...(view?.querySelectorAll<HTMLElement>(
+      `[data-map-overlay], [role="group"][aria-label="${CSS.escape(controlsLabel)}"] > *`,
+    ) ?? []),
+  ];
+  for (const overlay of overlays) {
+    const r = overlay.getBoundingClientRect();
+    if (r.width === 0 || r.height === 0) continue;
+    if (r.top + r.height / 2 < middle) free.top = Math.max(free.top, r.bottom);
+    else free.bottom = Math.min(free.bottom, r.top);
+  }
+  const panel = view?.querySelector<HTMLElement>("[data-map-panel]")?.getBoundingClientRect();
+  if (panel && panel.width < box.width * 0.6) free.right = Math.min(free.right, panel.left);
+  return {
+    top: free.top + REVEAL_GAP,
+    bottom: free.bottom - REVEAL_GAP,
+    left: free.left + REVEAL_GAP,
+    right: free.right - REVEAL_GAP,
+  };
+}
+
 interface PointProps {
   slug: string;
   /** Stable pseudo-random rank: picks the cluster's face without favouring the best known. */
@@ -91,6 +130,10 @@ export interface PeopleMapProps {
   hits: PersonListItem[] | null;
   search: SearchState;
   placeCoords: PlaceCoords;
+  /** Continents with their countries, for the grouped list of places. */
+  placeGroups: { key: string; countries: string[] }[];
+  /** Country of each place on the map. */
+  placeCountry: Record<string, string>;
   facetLabels: FacetLabels;
   tagLabels: Record<string, string>;
   tagFacet?: string;
@@ -110,6 +153,8 @@ export default function PeopleMap({
   hits,
   search,
   placeCoords,
+  placeGroups,
+  placeCountry,
   facetLabels,
   tagLabels,
   tagFacet,
@@ -120,6 +165,8 @@ export default function PeopleMap({
   const locale = useLocale();
   const navigate = useNavigate();
   const container = useRef<HTMLDivElement>(null);
+  /** The whole map view with its overlays (navigation aside), for keeping focus in sight. */
+  const viewRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
   const [ready, setReady] = useState(false);
   /** At the closest or farthest zoom: the zoom buttons say so. */
@@ -216,10 +263,18 @@ export default function PeopleMap({
       list.push(point.properties.slug);
       counts.set(point.properties.place, list);
     }
-    return [...counts]
-      .map(([key, slugs]) => ({ key, label: placeLabels[key] ?? key, slugs }))
-      .sort((a, b) => b.slugs.length - a.slugs.length || a.label.localeCompare(b.label, locale));
-  }, [points, placeLabels, locale]);
+    return [...counts].map(([key, slugs]): MapPlace => ({ key, label: placeLabels[key] ?? key, slugs }));
+  }, [points, placeLabels]);
+
+  const choosePlace = (place: MapPlace) => {
+    openPanel({ kind: "people", title: m.map.peopleHere(place.label), slugs: place.slugs });
+    const coords = placeCoords[place.key];
+    if (coords)
+      mapRef.current?.easeTo({
+        center: [fromSeam(coords[0], seam), coords[1]],
+        zoom: Math.max(5, mapRef.current.getZoom()),
+      });
+  };
 
   // ---- The map itself, created once ----
   useEffect(() => {
@@ -281,6 +336,44 @@ export default function PeopleMap({
     });
     mapRef.current = map;
 
+    // Keyboard focus on a marker (Tab, focus returning from a biography) brings it into view,
+    // clear of the navigation and the controls floating over the map (WCAG 2.4.11). The map
+    // pans by as little as needed; without motion with reduced motion.
+    const root = container.current;
+    const reveal = (event: FocusEvent) => {
+      const marker = (event.target as Element | null)?.closest?.<HTMLElement>(".maplibregl-marker");
+      if (!marker) return;
+      // Chrome has already scrolled the container to the marker by now: undo that first, so
+      // the marker is measured where the map really shows it.
+      for (let el: HTMLElement | null = marker.parentElement; el; el = el.parentElement) {
+        if (el.scrollTop !== 0 || el.scrollLeft !== 0) {
+          el.scrollTop = 0;
+          el.scrollLeft = 0;
+        }
+        if (el === root) break;
+      }
+      const free = freeArea(root, viewRef.current, m.nav.label, m.map.controls);
+      const box = marker.getBoundingClientRect();
+      const dx =
+        box.left < free.left ? box.left - free.left : box.right > free.right ? box.right - free.right : 0;
+      const dy =
+        box.top < free.top ? box.top - free.top : box.bottom > free.bottom ? box.bottom - free.bottom : 0;
+      if (dx === 0 && dy === 0) return;
+      const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      map.panBy([dx, dy], { duration: still ? 0 : 300 });
+    };
+    // Focusing a marker outside the view makes the browser scroll the map's container (it
+    // clips, but can still scroll), which shifts the whole map. The map pans instead.
+    const unscroll = (event: Event) => {
+      const target = event.target;
+      if (target instanceof HTMLElement && (target.scrollTop !== 0 || target.scrollLeft !== 0)) {
+        target.scrollTop = 0;
+        target.scrollLeft = 0;
+      }
+    };
+    root.addEventListener("focusin", reveal);
+    root.addEventListener("scroll", unscroll, true);
+
     // Follow light/dark: the theme is a data attribute on <html> or the system setting.
     const repaint = () => {
       if (!map.isStyleLoaded()) return;
@@ -294,6 +387,8 @@ export default function PeopleMap({
     scheme.addEventListener("change", repaint);
 
     return () => {
+      root.removeEventListener("focusin", reveal);
+      root.removeEventListener("scroll", unscroll, true);
       observer.disconnect();
       scheme.removeEventListener("change", repaint);
       map.remove();
@@ -377,7 +472,7 @@ export default function PeopleMap({
         element.className = cn("group block size-11 rounded-full", isCluster && "size-13");
         const face = document.createElement("span");
         face.className = cn(
-          "relative block size-full rounded-full border-2 border-surface bg-surface shadow-[0_2px_8px_rgb(0_0_0/0.25)] transition-transform group-hover:scale-110 group-focus-visible:scale-110 motion-reduce:transition-none",
+          "relative block size-full rounded-full border-2 border-surface bg-surface shadow-float transition-transform group-hover:scale-110 group-focus-visible:scale-110 motion-reduce:transition-none",
           slug === activeSlug && "border-brand",
         );
         face.append(portrait(person));
@@ -485,7 +580,7 @@ export default function PeopleMap({
     tagFacet ? (person.facets[tagFacet] ?? []).flatMap((v) => tagLabels[v] ?? []) : [];
 
   return (
-    <div className="relative h-full bg-page">
+    <div ref={viewRef} className="relative h-full bg-page">
       <p className="sr-only">{m.map.intro(points.length)}</p>
       {/* MapLibre makes its container position: relative, so it sits in a sized wrapper. */}
       <div className="absolute inset-0">
@@ -503,25 +598,24 @@ export default function PeopleMap({
       )}
 
       {hits && (
-        <div className="absolute inset-x-3 top-24 z-20 mx-auto max-w-xl lg:top-28">
-          <SearchSummary state={search} count={hits.length} labels={facetLabels} collapsible />
+        <div data-map-overlay="" className="absolute inset-x-3 top-24 z-20 mx-auto max-w-xl lg:top-28">
+          <SearchSummary state={search} count={hits.length} labels={facetLabels} collapsible asList />
         </div>
       )}
 
       {/* Birth or death places, and the list of places (the way around the map). */}
-      <div className="absolute bottom-[max(1.5rem,env(safe-area-inset-bottom))] left-3 z-20 flex flex-col items-start gap-2 sm:left-6 lg:bottom-8 lg:left-8">
-        <div
-          role="group"
-          aria-label={m.map.showBy}
-          className="flex gap-0.5 rounded-full bg-nav p-0.5 text-nav-foreground shadow-[0_2px_10px_rgb(0_0_0/0.12)]"
-        >
+      <div
+        data-map-overlay=""
+        className="absolute bottom-[max(1.5rem,env(safe-area-inset-bottom))] left-3 z-20 flex flex-col items-start gap-2 sm:left-6 lg:bottom-8 lg:left-8"
+      >
+        <div role="group" aria-label={m.map.showBy} className={cn(segmentedTrack, "bg-nav shadow-float")}>
           {(["born", "died"] as const).map((value) => (
             <button
               key={value}
               type="button"
               aria-pressed={mode === value}
               onClick={() => setMode(value)}
-              className="hit-44 min-h-10 rounded-full px-3.5 text-body-sm font-medium transition-colors hover:bg-nav-foreground/10 aria-pressed:bg-nav-foreground aria-pressed:text-nav sm:px-4 sm:text-label"
+              className={cn(segmentedItem, "sm:px-4 sm:text-label")}
             >
               {m.map[value]}
             </button>
@@ -532,7 +626,7 @@ export default function PeopleMap({
           type="button"
           aria-expanded={panel?.kind === "places"}
           onClick={() => (panel?.kind === "places" ? closePanel() : openPanel({ kind: "places" }))}
-          className="hit-44 inline-flex min-h-10 items-center gap-2 rounded-full bg-nav px-3.5 text-body-sm font-medium text-nav-foreground shadow-[0_2px_10px_rgb(0_0_0/0.12)] hover:bg-nav/90 sm:px-4 sm:text-label"
+          className="hit-44 inline-flex min-h-10 items-center gap-2 rounded-full bg-nav px-3.5 text-body-sm font-medium text-nav-foreground shadow-float ring-1 ring-line hover:bg-nav/90 sm:px-4 sm:text-label"
         >
           <List aria-hidden="true" className="size-4 sm:size-5" />
           {m.map.places}
@@ -544,6 +638,7 @@ export default function PeopleMap({
           onZoomIn={() => mapRef.current?.zoomIn()}
           onZoomOut={() => mapRef.current?.zoomOut()}
           zoomEdge={zoomEdge}
+          label={m.map.controls}
         />
       )}
 
@@ -552,6 +647,7 @@ export default function PeopleMap({
         // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
         <section
           ref={panelRef}
+          data-map-panel=""
           aria-labelledby="map-panel-title"
           onKeyDown={(event) => {
             if (event.key !== "Escape") return;
@@ -559,7 +655,7 @@ export default function PeopleMap({
             event.stopPropagation();
             closePanel();
           }}
-          className="absolute inset-x-3 top-24 bottom-44 z-30 flex flex-col overflow-hidden rounded-card bg-surface shadow-[0_12px_40px_rgb(0_0_0/0.25)] sm:right-6 sm:left-auto sm:w-96 lg:top-28 lg:bottom-28"
+          className="absolute inset-x-3 top-24 bottom-44 z-30 flex flex-col overflow-hidden rounded-card bg-surface shadow-panel sm:right-6 sm:left-auto sm:w-96 lg:top-28 lg:bottom-28"
         >
           <div className="flex items-center justify-between gap-2 border-b border-line px-4 py-2">
             <h2 ref={panelHeading} id="map-panel-title" tabIndex={-1} className="text-h3 focus-target">
@@ -569,7 +665,7 @@ export default function PeopleMap({
               type="button"
               aria-label={m.map.closePlaces}
               onClick={closePanel}
-              className="hit-44 grid size-10 place-items-center rounded-full text-emphasis hover:bg-emphasis/5"
+              className={closeButtonClass}
             >
               <X aria-hidden="true" className="size-5" />
             </button>
@@ -577,34 +673,13 @@ export default function PeopleMap({
           <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain p-2">
             {panel.kind === "places" ? (
               <>
-                <ul className="flex flex-col">
-                  {places.map((place) => (
-                    <li key={place.key}>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          openPanel({
-                            kind: "people",
-                            title: m.map.peopleHere(place.label),
-                            slugs: place.slugs,
-                          });
-                          const coords = placeCoords[place.key];
-                          if (coords)
-                            mapRef.current?.easeTo({
-                              center: [fromSeam(coords[0], seam), coords[1]],
-                              zoom: Math.max(5, mapRef.current.getZoom()),
-                            });
-                        }}
-                        className="flex min-h-11 w-full items-center justify-between gap-3 rounded-lg px-3 text-left text-body text-emphasis hover:bg-emphasis/5"
-                      >
-                        {place.label}
-                        <span className="text-body-xs text-muted-text tabular-nums">
-                          {place.slugs.length}
-                        </span>
-                      </button>
-                    </li>
-                  ))}
-                </ul>
+                <PlaceList
+                  places={places}
+                  groups={placeGroups}
+                  countryOf={placeCountry}
+                  labels={placeLabels}
+                  onChoose={choosePlace}
+                />
                 {unplaced > 0 && (
                   <p className="px-3 py-2 text-body-sm text-muted-text">{m.map.unplaced(unplaced)}</p>
                 )}

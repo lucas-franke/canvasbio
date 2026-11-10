@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
-import { Outlet, useMatches, useNavigate, useParams } from "react-router";
+import { Outlet, useLocation, useMatches, useNavigate, useParams } from "react-router";
 
 import { LoadFailed } from "~/components/people/load-failed";
 import { PeopleOverview, type OverviewView } from "~/components/people/people-overview";
@@ -26,10 +26,27 @@ export interface PeopleLayoutContext {
   closeHref: string;
   /** Closes the biography (on phones after the sheet has slid down). */
   close: () => void;
-  /** People in overview order (search results when searching), for previous/next; null while loading. */
+  /**
+   * People in an order the reader chose or sees, for previous/next: list and timeline in
+   * their order, search results in any view. Null otherwise (mosaic, map, a direct link).
+   */
   sequence: PersonListItem[] | null;
+  /** Name of that order ("Name A–Z"), if the view has one. */
+  orderLabel: string | null;
+  /** Everyone the overview shows (search results when searching), for the random biography; null while loading. */
+  pool: PersonListItem[] | null;
+  /** Number of search results, or null without a search. */
+  resultCount: number | null;
+  /** Number of people in the collection; null while loading. */
+  total: number | null;
   hrefFor: (slug: string) => string;
 }
+
+/** Position of the current entry in the session history (kept by React Router). */
+const historyIndex = (): number | null => {
+  const idx = (window.history.state as { idx?: unknown } | null)?.idx;
+  return typeof idx === "number" ? idx : null;
+};
 
 /**
  * Shared frame of overview and biography. The overview (portrait wall, list or timeline)
@@ -81,6 +98,15 @@ export default function PeopleLayout() {
     [index, search],
   );
   const modal = isDetail;
+
+  // The history entry of the overview a biography was opened from. Closing goes back to it
+  // instead of adding an entry, so the back button never reopens what was just closed.
+  // Unknown (null) when the biography is the first people page of the visit.
+  const { key: locationKey } = useLocation();
+  const overviewEntry = useRef<number | null>(null);
+  useEffect(() => {
+    if (!isDetail) overviewEntry.current = historyIndex();
+  }, [isDetail, locationKey]);
   // From `lg` the dialog is a centred card (no swipe-down sheet).
   const wide = useMediaQuery(WIDE_QUERY, false);
   // Canvas and map fill the screen (the canvas also pre-rendered); the list scrolls like a normal page.
@@ -118,13 +144,17 @@ export default function PeopleLayout() {
     if (slug) markSeen(slug);
   }, [slug]);
 
-  // Previous/next in the biography follow the overview as shown: search results, in the
-  // order chosen for list or timeline.
+  // Previous/next in the biography only follow an order the reader chose or sees: list and
+  // timeline in their order, search results in any view. The mosaic's and the map's own order
+  // means nothing to a reader, so there is no previous/next from there.
+  const pool = hits ?? index?.people ?? null;
+  const ordered = routeView === null && (view === "list" || view === "timeline");
   const sequence = useMemo(() => {
-    const people = hits ?? index?.people ?? null;
-    if (!people || view === "canvas" || view === "map") return people;
-    return sortPeople(people, sortFor(view, search.sort));
-  }, [hits, index, view, search.sort]);
+    if (!pool) return null;
+    if (view === "list" || view === "timeline") return sortPeople(pool, sortFor(view, search.sort));
+    return hits ? pool : null;
+  }, [pool, hits, view, search.sort]);
+  const orderLabel = ordered ? m.sort[sortFor(view as "list" | "timeline", search.sort)] : null;
 
   // Phones: the sheet slides up when a biography opens (not on a page load) and back down
   // before it closes, from wherever a swipe left it. No view transition there (see
@@ -145,7 +175,14 @@ export default function PeopleLayout() {
   }, [isDetail, animateSheet]);
 
   const close = () => {
-    const leave = () => navigate(overviewHref, { preventScrollReset: true, viewTransition: true });
+    const leave = () => {
+      const here = historyIndex();
+      const origin = overviewEntry.current;
+      // Back to the overview's own entry (also past biographies opened one after another) …
+      if (origin !== null && here !== null && origin < here) return navigate(origin - here);
+      // … or, without one, the overview takes this entry's place.
+      return navigate(overviewHref, { replace: true, preventScrollReset: true, viewTransition: true });
+    };
     const sheet = sheetRef.current;
     if (!sheet || !animateSheet) return leave();
     if (closing.current) return;
@@ -159,34 +196,44 @@ export default function PeopleLayout() {
       .finished.then(leave, leave);
   };
   const closeRef = useRef(close);
+  const detailOpen = useRef(isDetail);
   useLayoutEffect(() => {
     closeRef.current = close;
+    detailOpen.current = isDetail;
   });
 
-  // Escape closes the biography (unless another dialog, e.g. the menu, handles it).
+  // Escape closes the biography (unless another dialog, e.g. the menu, handles it). The
+  // listener is always there and asks whether a biography is open: attached only once one
+  // has opened, it missed a key pressed right as the dialog appeared.
   useEffect(() => {
-    if (!isDetail) return;
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key !== "Escape" || event.defaultPrevented) return;
+      if (!detailOpen.current || event.key !== "Escape" || event.defaultPrevented) return;
       if (document.querySelector('[role="dialog"][data-state="open"]')) return;
       closeRef.current();
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [isDetail]);
+  }, []);
 
   const hrefFor = (personSlug: string) => pagePath(locale, "people", personSlug) + suffix;
   const context: PeopleLayoutContext = {
     closeHref: overviewHref,
     close,
     sequence,
+    orderLabel,
+    pool,
+    resultCount: hits ? hits.length : null,
+    total: index ? index.people.length : null,
     hrefFor,
   };
 
-  // Another person opened in the dialog: start reading at the top.
+  // Another person opened in the dialog: start reading at the top. Not on the first one: a
+  // link to a section ("#geschichte") has already scrolled there.
   const asideRef = useRef<HTMLDivElement>(null);
+  const shownSlug = useRef(slug);
   useLayoutEffect(() => {
-    asideRef.current?.scrollTo({ top: 0 });
+    if (shownSlug.current && slug && shownSlug.current !== slug) asideRef.current?.scrollTo({ top: 0 });
+    shownSlug.current = slug;
   }, [slug]);
   // Phones: swipe the biography sheet down to close it.
   useSwipeToClose(asideRef, modal && !wide, close);
@@ -194,6 +241,7 @@ export default function PeopleLayout() {
   return (
     <PageShell
       navEnd={<ViewToggle active={view} />}
+      compactBrand
       inert={modal}
       fullBleed={fullBleed}
       aside={
@@ -213,7 +261,7 @@ export default function PeopleLayout() {
               aria-labelledby={PERSON_HEADING_ID}
               role="dialog"
               aria-modal="true"
-              className="relative flex h-full flex-col [view-transition-name:detail-panel] lg:h-auto lg:max-h-[calc(100dvh-4rem)] lg:w-[min(100%,60rem)] lg:overflow-hidden lg:rounded-card lg:bg-surface lg:shadow-[0_24px_64px_rgb(0_0_0/0.35)] print:static print:block print:h-auto print:max-h-none print:w-full print:overflow-visible print:rounded-none print:shadow-none"
+              className="relative flex h-full flex-col [view-transition-name:detail-panel] lg:h-auto lg:max-h-[calc(100dvh-4rem)] lg:w-[min(100%,60rem)] lg:overflow-hidden lg:rounded-card lg:bg-surface lg:shadow-dialog print:static print:block print:h-auto print:max-h-none print:w-full print:overflow-visible print:rounded-none print:shadow-none"
             >
               <div
                 ref={asideRef}

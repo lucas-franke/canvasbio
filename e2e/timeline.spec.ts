@@ -54,12 +54,26 @@ test("language switch keeps the timeline (desktop)", async ({ page, isMobile }) 
   await expect(page.locator('main h2[id^="jahrzehnt-"]').first()).toHaveText(/^\d{4}s$/);
 });
 
+test("phones fold the key dates into one line, so the first screen shows people", async ({
+  page,
+  isMobile,
+}) => {
+  test.skip(!isMobile, "wide screens list the key dates open");
+  await page.goto("/personen/zeitstrahl");
+  const fold = page.locator("summary", { hasText: /^Wichtige Daten \(\d+\)$/ });
+  await expect(fold).toBeVisible();
+  await expect(page.getByText("Frauenwahlrecht in Deutschland").filter({ visible: true })).toBeHidden();
+  await expect(page.locator("main article a[data-person]").first()).toBeInViewport();
+  await fold.click();
+  await expect(page.getByText("Frauenwahlrecht in Deutschland").filter({ visible: true })).toBeVisible();
+});
+
 test("pointing at a person highlights who lived at the same time (desktop)", async ({ page, isMobile }) => {
   test.skip(isMobile, "hover needs a mouse");
   await page.goto("/personen/zeitstrahl");
   // Key dates are listed as text (the marks on the axis are decoration).
   await expect(page.getByRole("heading", { name: "Wichtige Daten" })).toBeVisible();
-  await expect(page.getByText("Frauenwahlrecht in Deutschland")).toBeVisible();
+  await expect(page.getByText("Frauenwahlrecht in Deutschland").filter({ visible: true })).toBeVisible();
 
   const bar = (name: string) =>
     page

@@ -15,6 +15,8 @@ export const de = {
     privacy: "Datenschutz",
     legal: "Rechtliches",
     search: "Suche",
+    /** Added to the search button's name while a search is active. */
+    searchActive: (n: number) => (n === 1 ? "1 Ergebnis" : `${n} Ergebnisse`),
     menu: "Menü",
     closeMenu: "Menü schließen",
   },
@@ -102,6 +104,9 @@ export const de = {
     found: (n: number) =>
       n === 0 ? "Keine Personen gefunden" : n === 1 ? "1 Person gefunden" : `${n} Personen gefunden`,
     reset: "Zurücksetzen",
+    /** The submit button with nothing entered, and the last row of the name suggestions. */
+    showAll: (n: number) => `Alle ${n} anzeigen`,
+    asList: "Als Liste zeigen",
     results: (n: number) => `Ergebnisse (${n})`,
     change: "Suche ändern",
     filters: (n: number) => `Filter (${n})`,
@@ -120,6 +125,9 @@ export const de = {
   },
   random: {
     label: "Zufällige Biografie",
+    inResults: "Zufällige Biografie aus den Ergebnissen",
+    /** What `inResults` adds to `label`. */
+    fromResults: "aus den Ergebnissen",
   },
   canvas: {
     intro: (count: number) =>
@@ -133,6 +141,7 @@ export const de = {
   },
   map: {
     label: "Karte der Lebensorte",
+    controls: "Karte steuern",
     intro: (count: number) =>
       `${count} Biografien auf der Karte. Mit Screenreader ist die Ortsliste übersichtlicher.`,
     born: "Geburtsorte",
@@ -140,6 +149,9 @@ export const de = {
     showBy: "Orte zeigen",
     places: "Ortsliste",
     placesTitle: "Orte",
+    filterPlaces: "Ort suchen",
+    noPlace: "Kein Ort gefunden",
+    otherPlaces: "Weitere Orte",
     closePlaces: "Ortsliste schließen",
     peopleHere: (place: string) => `Biografien aus ${place}`,
     cluster: (count: number) => `${count} Biografien hier, vergrößern`,
@@ -168,6 +180,16 @@ export const de = {
     outline: "Inhalt",
     storyOnlyIn: (language: string) => `Dieser Text liegt nur auf ${language} vor.`,
     sameEra: "Zur selben Zeit",
+    share: "Teilen",
+    linkCopied: "Link kopiert",
+    /** Shown when a biography is the first page of a visit. */
+    partOf: (count: number | null, site: string) =>
+      count ? `Eine von ${count} Biografien bei ${site}` : `Eine Biografie bei ${site}`,
+    discoverAll: "Alle Biografien entdecken",
+    /** Above previous/next while they move within search results. */
+    withinResults: (count: number) =>
+      count === 1 ? "Sie blättern in 1 Suchergebnis." : `Sie blättern in ${count} Suchergebnissen.`,
+    leaveResults: "Alle Biografien",
   },
   error: {
     title: "Fehler",

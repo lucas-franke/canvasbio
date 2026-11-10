@@ -8,21 +8,23 @@ import { Slot } from "radix-ui";
  * project standard): smaller sizes look 40 px and extend their tap area (`hit-44`).
  * Focus styling comes from the global :focus-visible rule.
  */
+// Each variant sets its own border colour: a transparent one in the base would come later in
+// the generated CSS (utilities are sorted) and hide the outline of secondary and control buttons.
 const buttonVariants = cva(
-  "group/button inline-flex shrink-0 items-center justify-center gap-2 rounded-full border border-transparent font-medium whitespace-nowrap transition-colors select-none disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-5",
+  "group/button inline-flex shrink-0 items-center justify-center gap-2 rounded-full border font-medium whitespace-nowrap transition-colors select-none disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-5",
   {
     variants: {
       variant: {
-        default: "bg-brand text-brand-foreground hover:bg-brand/90",
+        default: "border-transparent bg-brand text-brand-foreground hover:bg-brand/90",
         outline: "border-brand bg-transparent text-brand hover:bg-brand/10 aria-expanded:bg-brand/10",
         /** Secondary actions: a quiet outline, so only the primary action (default) stands out. */
-        secondary: "border-control/60 bg-transparent text-emphasis hover:border-control hover:bg-emphasis/5",
+        secondary: "border-control bg-transparent text-emphasis hover:bg-emphasis/5",
         control:
           "border-control bg-transparent text-emphasis hover:bg-emphasis/5 aria-pressed:border-brand aria-pressed:bg-brand aria-pressed:text-brand-foreground",
-        inverse: "bg-emphasis text-surface hover:bg-emphasis/90",
-        nav: "bg-transparent text-nav-foreground hover:bg-nav-foreground/10",
-        ghost: "text-emphasis hover:bg-emphasis/5 aria-expanded:bg-emphasis/5",
-        link: "rounded-sm text-brand underline underline-offset-4 hover:decoration-2",
+        inverse: "border-transparent bg-emphasis text-surface hover:bg-emphasis/90",
+        nav: "border-transparent bg-transparent text-nav-foreground hover:bg-nav-foreground/10",
+        ghost: "border-transparent text-emphasis hover:bg-emphasis/5 aria-expanded:bg-emphasis/5",
+        link: "rounded-sm border-transparent text-brand underline underline-offset-4 hover:decoration-2",
       },
       size: {
         default: "min-h-11 px-5 py-2 text-body-sm sm:text-label",
@@ -62,4 +64,8 @@ function Button({
   );
 }
 
-export { Button, buttonVariants };
+/** The one close button (drawers, panels): 40 px round, outlined, 44 px tap area. */
+const closeButtonClass =
+  "hit-44 grid size-10 shrink-0 place-items-center rounded-full border border-control text-emphasis hover:bg-emphasis/5";
+
+export { Button, buttonVariants, closeButtonClass };

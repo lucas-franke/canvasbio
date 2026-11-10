@@ -12,6 +12,7 @@ export const en: Messages = {
     privacy: "Privacy",
     legal: "Legal",
     search: "Search",
+    searchActive: (n: number) => (n === 1 ? "1 result" : `${n} results`),
     menu: "Menu",
     closeMenu: "Close menu",
   },
@@ -97,6 +98,8 @@ export const en: Messages = {
     show: (n: number) => (n === 0 ? "No matches" : n === 1 ? "Show 1 result" : `Show ${n} results`),
     found: (n: number) => (n === 0 ? "No people found" : n === 1 ? "1 person found" : `${n} people found`),
     reset: "Reset",
+    showAll: (n: number) => `Show all ${n}`,
+    asList: "Show as list",
     results: (n: number) => `Results (${n})`,
     change: "Change search",
     filters: (n: number) => `Filters (${n})`,
@@ -115,6 +118,8 @@ export const en: Messages = {
   },
   random: {
     label: "Random biography",
+    inResults: "Random biography from the results",
+    fromResults: "from the results",
   },
   canvas: {
     intro: (count: number) =>
@@ -128,6 +133,7 @@ export const en: Messages = {
   },
   map: {
     label: "Map of life places",
+    controls: "Map controls",
     intro: (count: number) =>
       `${count} biographies on the map. With a screen reader, the list of places is easier to use.`,
     born: "Places of birth",
@@ -135,6 +141,9 @@ export const en: Messages = {
     showBy: "Show places",
     places: "List of places",
     placesTitle: "Places",
+    filterPlaces: "Find a place",
+    noPlace: "No place found",
+    otherPlaces: "Other places",
     closePlaces: "Close list of places",
     peopleHere: (place: string) => `Biographies from ${place}`,
     cluster: (count: number) => `${count} biographies here, zoom in`,
@@ -163,6 +172,14 @@ export const en: Messages = {
     outline: "Contents",
     storyOnlyIn: (language: string) => `This text is only available in ${language}.`,
     sameEra: "Same era",
+    share: "Share",
+    linkCopied: "Link copied",
+    partOf: (count: number | null, site: string) =>
+      count ? `One of ${count} biographies at ${site}` : `A biography at ${site}`,
+    discoverAll: "Discover all biographies",
+    withinResults: (count: number) =>
+      count === 1 ? "You are browsing 1 search result." : `You are browsing ${count} search results.`,
+    leaveResults: "All biographies",
   },
   error: {
     title: "Error",

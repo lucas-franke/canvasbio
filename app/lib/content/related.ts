@@ -17,6 +17,13 @@ export interface Related<T> {
   reasons: RelatedReason[];
 }
 
+/** FNV-1a hash of the slug: a stable order for ties that says nothing about the person. */
+function mix(slug: string): number {
+  let hash = 0x811c9dc5;
+  for (let i = 0; i < slug.length; i++) hash = Math.imul(hash ^ slug.charCodeAt(i), 0x01000193);
+  return hash >>> 0;
+}
+
 /** Lifetimes have to overlap by this many years to count as "same era". */
 const ERA_MIN_OVERLAP = 20;
 /** Assumed lifespan when the year of death is unknown. */
@@ -77,8 +84,8 @@ export function relatedPeople<T extends RelatedCandidate>(
   scored.sort(
     (a, b) =>
       b.score - a.score ||
-      // Ties: lesser-known people first (discovery), then by slug for a stable order.
-      a.person.prominence - b.person.prominence ||
+      // Ties: a fixed mix (the same on every build), neither by fame nor by alphabet.
+      mix(a.person.slug) - mix(b.person.slug) ||
       a.person.slug.localeCompare(b.person.slug),
   );
   return scored

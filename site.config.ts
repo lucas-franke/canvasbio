@@ -121,6 +121,8 @@ export default defineSiteConfig({
         de: "Hedwig Dohm, „Der Frauen Natur und Recht“, 1876",
         en: "Hedwig Dohm, “Der Frauen Natur und Recht”, 1876",
       },
+      // Her biography: the source links there.
+      person: "hedwig-dohm",
     },
   },
 
@@ -138,10 +140,12 @@ export default defineSiteConfig({
   ],
 
   detail: {
+    // The sections of a biography, in reading order. "story" and "timeline" have an address
+    // ("#geschichte"); the first section is the top of the page.
     tabs: [
       {
         id: "facts",
-        label: { de: "Biografie", en: "Biography" },
+        label: { de: "Überblick", en: "Overview" },
         slug: { de: "", en: "" },
       },
       {
@@ -152,7 +156,7 @@ export default defineSiteConfig({
       },
       {
         id: "timeline",
-        label: { de: "Lebenslauf", en: "Timeline" },
+        label: { de: "Lebenslauf", en: "Life in dates" },
         slug: { de: "lebenslauf", en: "timeline" },
       },
     ],

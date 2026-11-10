@@ -71,6 +71,8 @@ interface PageShellProps {
   inert?: boolean;
   /** Main content fills the screen without page scrolling (the canvas); no page header. */
   fullBleed?: boolean;
+  /** Narrow screens show the brand's monogram (the overview's view switch needs the room). */
+  compactBrand?: boolean;
 }
 
 /**
@@ -78,7 +80,14 @@ interface PageShellProps {
  * The navigation keeps one order everywhere: the brand (start page) on the left; view,
  * search and menu on the right. The main column is a size container.
  */
-export function PageShell({ children, navEnd, aside, inert = false, fullBleed = false }: PageShellProps) {
+export function PageShell({
+  children,
+  navEnd,
+  aside,
+  inert = false,
+  fullBleed = false,
+  compactBrand = false,
+}: PageShellProps) {
   const m = useMessages();
   // Over the mosaic and the map, and once a page has scrolled, the brand gets a pill like the
   // controls on the right; at the top of a page it stands free on the page colour.
@@ -100,7 +109,7 @@ export function PageShell({ children, navEnd, aside, inert = false, fullBleed = 
         label={m.nav.label}
         start={
           <NavPill bare={!contained}>
-            <BrandLink contained={contained} />
+            <BrandLink contained={contained} compact={compactBrand} />
           </NavPill>
         }
         end={

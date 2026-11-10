@@ -136,10 +136,10 @@ export function nameMatches(query: string, name: string): boolean {
 
 /**
  * People for the type-ahead list under the name field, best first: the name starts with the
- * query ("clara z…"), then every query word starts a name word, then typo matches. Ties go
- * to the better known person, then alphabetically. Needs at least two characters.
+ * query ("clara z…"), then every query word starts a name word, then typo matches. Ties are
+ * alphabetical: nobody is put first for being better known. Needs at least two characters.
  */
-export function suggestPeople<T extends { name: { display: string; sort: string }; prominence: number }>(
+export function suggestPeople<T extends { name: { display: string; sort: string } }>(
   people: readonly T[],
   query: string,
   limit = 5,
@@ -157,12 +157,7 @@ export function suggestPeople<T extends { name: { display: string; sort: string 
   return people
     .map((person) => ({ person, score: rank(person) }))
     .filter(({ score }) => score >= 0)
-    .sort(
-      (a, b) =>
-        a.score - b.score ||
-        b.person.prominence - a.person.prominence ||
-        a.person.name.sort.localeCompare(b.person.name.sort),
-    )
+    .sort((a, b) => a.score - b.score || a.person.name.sort.localeCompare(b.person.name.sort))
     .slice(0, limit)
     .map(({ person }) => person);
 }

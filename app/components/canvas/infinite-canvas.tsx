@@ -614,6 +614,7 @@ export function InfiniteCanvas({
             count={hits.length}
             labels={facetLabels}
             collapsible
+            asList
             actions={
               hits.length > 0 && (
                 <div className="flex gap-1">
@@ -655,7 +656,7 @@ export function InfiniteCanvas({
         <div
           className={`pointer-events-none absolute inset-x-0 z-20 flex justify-center ${RANDOM_BUTTON_BOTTOM}`}
         >
-          <RandomButton onClick={showRandom} />
+          <RandomButton onClick={showRandom} inResults={hits !== null} />
         </div>
       )}
     </div>

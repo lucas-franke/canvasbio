@@ -106,11 +106,11 @@ export function ViewToggle({ active }: { active: View }) {
           aria-label={`${m.view.label}: ${current.label}`}
           title={m.view.label}
           onClick={() => setOpen((value) => !value)}
-          // The chevron (and from md the view's name) shows that it opens.
-          className="hit-44 inline-flex h-10 shrink-0 items-center gap-1.5 rounded-full px-3 text-nav-foreground transition-colors hover:bg-nav-foreground/10 aria-expanded:bg-nav-foreground/10 [&_svg]:size-5"
+          // The view's name says which one is open, the chevron that it opens.
+          className="hit-44 inline-flex h-10 shrink-0 items-center gap-1.5 rounded-full px-2.5 text-nav-foreground transition-colors hover:bg-nav-foreground/10 aria-expanded:bg-nav-foreground/10 sm:px-3 [&_svg]:size-5"
         >
           <span aria-hidden="true">{current.icon}</span>
-          <span aria-hidden="true" className="hidden text-label font-medium md:inline">
+          <span aria-hidden="true" className="text-body-sm font-medium whitespace-nowrap sm:text-label">
             {current.label}
           </span>
           <ChevronDown
@@ -126,7 +126,7 @@ export function ViewToggle({ active }: { active: View }) {
             role="group"
             aria-labelledby={labelId}
             onKeyDown={onListKeyDown}
-            className="absolute top-full right-0 z-50 mt-2 flex min-w-48 animate-in flex-col gap-0.5 rounded-3xl bg-nav p-1.5 text-nav-foreground shadow-[0_8px_30px_rgb(0_0_0/0.18)] duration-150 zoom-in-95 fade-in"
+            className="absolute top-full right-0 z-50 mt-2 flex min-w-48 animate-in flex-col gap-0.5 rounded-card bg-nav p-1.5 text-nav-foreground shadow-panel ring-1 ring-line duration-150 zoom-in-95 fade-in"
           >
             <span id={labelId} className="sr-only">
               {m.view.label}

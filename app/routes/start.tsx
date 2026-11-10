@@ -79,7 +79,7 @@ export default function Start({ loaderData }: Route.ComponentProps) {
           <h1
             id="start-title"
             tabIndex={-1}
-            className="font-heading text-[clamp(2rem,1.4rem+2.4vw,3.25rem)] leading-[1.08] tracking-[-0.025em] text-balance text-emphasis focus-target"
+            className="font-heading text-display text-balance text-emphasis focus-target"
           >
             {t(start.subtitle)}
           </h1>
@@ -101,12 +101,22 @@ export default function Start({ loaderData }: Route.ComponentProps) {
           <figure className="flex flex-col gap-3 lg:col-start-1 lg:row-start-2">
             {/* Lucide only ships the closing "99" mark; rotated it becomes the opening "66" from the design. */}
             <Quote aria-hidden="true" className="size-8 rotate-180 fill-brand stroke-none" />
-            <blockquote className="font-quote text-[clamp(1.25rem,1.1rem+0.6vw,1.625rem)] leading-tight tracking-[-0.04em] text-emphasis italic">
+            <blockquote className="font-quote text-quote text-emphasis italic">
               <p>„{t(start.quote.text)}“</p>
             </blockquote>
             <figcaption className="flex items-start gap-3 text-body-sm text-muted-text">
               <span aria-hidden="true" className="mt-[0.775em] h-px w-6 shrink-0 bg-muted-text" />
-              {t(start.quote.source)}
+              {/* The quoted person's biography, if the collection has it (start.quote.person). */}
+              {start.quote.person && loaderData.people.some((p) => p.slug === start.quote!.person) ? (
+                <Link
+                  to={pagePath(locale, "people", start.quote.person)}
+                  className="rounded-sm underline underline-offset-4 hover:text-emphasis hover:decoration-2"
+                >
+                  {t(start.quote.source)}
+                </Link>
+              ) : (
+                t(start.quote.source)
+              )}
             </figcaption>
           </figure>
         )}
@@ -197,7 +207,7 @@ function OnThisDay() {
 
   return (
     <section aria-labelledby="on-this-day" className="flex flex-col gap-3">
-      <h2 id="on-this-day" className="font-sans text-body-sm font-medium tracking-normal text-muted-text">
+      <h2 id="on-this-day" className="text-eyebrow">
         {today ? m.start.onThisDay : m.start.comingUp}
       </h2>
       <ul id="on-this-day-list" className="flex flex-col gap-1">

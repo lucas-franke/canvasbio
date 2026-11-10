@@ -1,0 +1,63 @@
+{
+  "slug": "ana-de-castro-osorio",
+  "name": {
+    "display": "Ana de Castro Osório",
+    "sort": "Osório, Ana de Castro"
+  },
+  "born": {
+    "date": "1872-06-18",
+    "place": "mangualde"
+  },
+  "died": {
+    "date": "1935-03-23",
+    "place": "freguesia-da-se"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1900",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ana_de_Castro_Os%C3%B3rio.png"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing"
+    ],
+    "place": [
+      "mangualde",
+      "freguesia-da-se",
+      "portugal",
+      "europe"
+    ]
+  },
+  "prominence": 0.56,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2817249",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Ana de Castro Osório",
+      "url": "https://de.wikipedia.org/wiki/Ana_de_Castro_Os%C3%B3rio",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Ana de Castro Osório",
+      "url": "https://en.wikipedia.org/wiki/Ana_de_Castro_Os%C3%B3rio",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2817249"
+}

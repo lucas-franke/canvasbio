@@ -1,13 +1,22 @@
 import { cn } from "cn";
-import { Check, MapPin, Search, X } from "lucide-react";
-import { useEffect, useId, useMemo, useRef, useState, type FormEvent, type KeyboardEvent } from "react";
-import { Link } from "react-router";
+import { ArrowRight, Check, MapPin, Search, X } from "lucide-react";
+import {
+  useEffect,
+  useId,
+  useMemo,
+  useRef,
+  useState,
+  type ComponentProps,
+  type FormEvent,
+  type KeyboardEvent,
+} from "react";
+import { Link, useLocation, useNavigate } from "react-router";
 
 import { LoadFailed } from "~/components/people/load-failed";
 import { Portrait } from "~/components/portrait";
 import { SIDE_SHEET } from "~/components/shell/menu-drawer";
 import { NavIconButton } from "~/components/shell/nav";
-import { Button } from "~/components/ui/button";
+import { Button, closeButtonClass } from "~/components/ui/button";
 import { Drawer, DrawerClose, DrawerContent, DrawerTitle, DrawerTrigger } from "~/components/ui/drawer";
 import { siteConfig } from "~/lib/config";
 import { focusPageHeading } from "~/lib/route-focus";
@@ -17,9 +26,16 @@ import type { FacetConfig } from "~/lib/config/schema";
 import { lifeYears } from "~/lib/content/format";
 import { usePeopleIndex, type PeopleIndex } from "~/lib/content/people-index";
 import { useLocale, useMessages } from "~/lib/i18n";
-import { pagePath } from "~/lib/i18n/locale";
+import { pagePath, parsePath } from "~/lib/i18n/locale";
 import { localize } from "~/lib/i18n/localize";
-import { emptySearch, filterPeople, normalize, suggestPeople, type SearchState } from "~/lib/search/search";
+import {
+  emptySearch,
+  filterPeople,
+  isSearchActive,
+  normalize,
+  suggestPeople,
+  type SearchState,
+} from "~/lib/search/search";
 import {
   setSearchPanelOpen,
   useApplySearch,
@@ -54,7 +70,7 @@ export function SearchDrawer() {
   return (
     <Drawer open={open} onOpenChange={setSearchPanelOpen} direction={desktop ? "right" : "bottom"}>
       <DrawerTrigger asChild>
-        <NavIconButton label={m.nav.search} icon={<Search />} data-search-trigger />
+        <SearchTrigger />
       </DrawerTrigger>
       <DrawerContent
         className={cn(
@@ -96,16 +112,56 @@ export function SearchDrawer() {
           <DrawerTitle className="font-heading text-h3 font-semibold text-emphasis">
             {m.search.title}
           </DrawerTitle>
-          <DrawerClose
-            className="hit-44 grid size-10 place-items-center rounded-full border border-control text-emphasis hover:bg-emphasis/5"
-            aria-label={m.search.close}
-          >
+          <DrawerClose className={closeButtonClass} aria-label={m.search.close}>
             <X aria-hidden="true" className="size-5" />
           </DrawerClose>
         </div>
         <SearchPanelBody />
       </DrawerContent>
     </Drawer>
+  );
+}
+
+/**
+ * The search button of the navigation. While a search is active on the people pages it
+ * carries a mark (a filled dot: a shape, not only a colour) and its name says how many
+ * results there are, so the filter stays visible when the results bar has scrolled away.
+ */
+function SearchTrigger(props: ComponentProps<"button">) {
+  const m = useMessages();
+  const search = useSearch();
+  const { pathname } = useLocation();
+  const active = isSearchActive(search) && parsePath(pathname).page === "people";
+  const count = useResultCount(active ? search : null);
+  return (
+    <NavIconButton
+      label={m.nav.search}
+      icon={<Search />}
+      nameSuffix={count === null ? "" : `, ${m.nav.searchActive(count)}`}
+      data-search-trigger
+      {...props}
+    >
+      {active && (
+        <span
+          aria-hidden="true"
+          data-search-active=""
+          className="absolute top-1.5 right-1.5 size-2.5 rounded-full bg-brand ring-2 ring-nav"
+        />
+      )}
+    </NavIconButton>
+  );
+}
+
+/** Number of people a search finds, once the overview data is there; null without a search. */
+function useResultCount(search: SearchState | null): number | null {
+  const locale = useLocale();
+  const { index } = usePeopleIndex(locale);
+  return useMemo(
+    () =>
+      search && index
+        ? filterPeople(index.people, search, siteConfig.facets, index.facetLabels).length
+        : null,
+    [index, search],
   );
 }
 
@@ -126,13 +182,18 @@ function SearchPanelBody() {
 
 function SearchForm({ index }: { index: PeopleIndex }) {
   const m = useMessages();
+  const locale = useLocale();
+  const navigate = useNavigate();
   const applySearch = useApplySearch();
   const current = useSearch();
   const [draft, setDraft] = useState<SearchState>(current);
-  const count = useMemo(
-    () => filterPeople(index.people, draft, siteConfig.facets, index.facetLabels).length,
+  const matches = useMemo(
+    () => filterPeople(index.people, draft, siteConfig.facets, index.facetLabels),
     [index, draft],
   );
+  const count = matches.length;
+  const nameOnly =
+    draft.q.trim() !== "" && Object.values(draft.facets).every((values) => values.length === 0);
 
   // Screen readers hear the count once typing pauses, not on every key.
   const [announced, setAnnounced] = useState<number | null>(null);
@@ -178,6 +239,14 @@ function SearchForm({ index }: { index: PeopleIndex }) {
 
   const onSubmit = (event: FormEvent) => {
     event.preventDefault();
+    // A name that fits exactly one person: whoever typed it wants that biography, not a
+    // result list with one entry.
+    if (nameOnly && count === 1) {
+      focusAfterClose = "page";
+      setSearchPanelOpen(false);
+      navigate(pagePath(locale, "people", matches[0]!.slug));
+      return;
+    }
     applySearch(draft);
     focusAfterClose = "results";
     setSearchPanelOpen(false);
@@ -253,7 +322,7 @@ function SearchForm({ index }: { index: PeopleIndex }) {
 
       <div className="flex flex-wrap items-center gap-3 border-t border-line px-6 pt-4 pb-[max(1.5rem,env(safe-area-inset-bottom))]">
         <Button type="submit" className="grow">
-          {m.search.show(count)}
+          {isSearchActive(draft) ? m.search.show(count) : m.search.showAll(count)}
         </Button>
         <Button
           type="button"
@@ -282,12 +351,23 @@ function PersonSuggestions({ index, query }: { index: PeopleIndex; query: string
   const locale = useLocale();
   const suffix = useSearchSuffix();
   const headingId = useId();
+  const applySearch = useApplySearch();
+  const sort = useSearch().sort;
   const people = useMemo(() => suggestPeople(index.people, query), [index, query]);
+  // Everyone the name fits: the suggestions show a few, the last row leads to all of them.
+  const total = useMemo(
+    () =>
+      people.length === 0
+        ? 0
+        : filterPeople(index.people, { ...emptySearch, q: query }, siteConfig.facets, index.facetLabels)
+            .length,
+    [index, query, people.length],
+  );
   if (people.length === 0) return null;
 
   return (
     <section aria-labelledby={headingId} className="flex flex-col gap-1 pt-1">
-      <h3 id={headingId} className="font-sans text-body-sm font-medium tracking-normal text-muted-text">
+      <h3 id={headingId} className="text-eyebrow">
         {m.search.suggestions}
       </h3>
       <ul className="flex flex-col">
@@ -317,6 +397,22 @@ function PersonSuggestions({ index, query }: { index: PeopleIndex; query: string
             </Link>
           </li>
         ))}
+        {total > people.length && (
+          <li>
+            <button
+              type="button"
+              onClick={() => {
+                applySearch({ ...emptySearch, q: query.trim(), sort }, { toList: true });
+                focusAfterClose = "results";
+                setSearchPanelOpen(false);
+              }}
+              className="flex min-h-12 w-full items-center gap-2 rounded-xl px-2 py-1 text-left font-medium text-brand hover:bg-emphasis/5"
+            >
+              {m.search.showAll(total)}
+              <ArrowRight aria-hidden="true" className="size-4" />
+            </button>
+          </li>
+        )}
       </ul>
     </section>
   );
@@ -522,7 +618,7 @@ function AutocompleteFacet({
       onMouseDown={(event) => event.preventDefault()}
       onClick={() => choose(option.label)}
       className={cn(
-        "flex min-h-11 cursor-pointer items-center justify-between gap-3 rounded-lg px-3 text-body text-emphasis hover:bg-emphasis/5",
+        "flex min-h-11 cursor-pointer items-center justify-between gap-3 rounded-xl px-3 text-body text-emphasis hover:bg-emphasis/5",
         // A continent (when grouped) leads its countries; the countries are indented under it.
         grouped && option.level === 0 && "font-semibold",
         option.level === 1 && "ml-3 rounded-l-none border-l-2 border-line pl-4 text-body-sm",

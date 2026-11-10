@@ -1,0 +1,65 @@
+{
+  "slug": "anna-howard-shaw",
+  "name": {
+    "display": "Anna Howard Shaw",
+    "sort": "Shaw, Anna Howard"
+  },
+  "born": {
+    "date": "1847-02-14",
+    "place": "newcastle-upon-tyne"
+  },
+  "died": {
+    "date": "1919-07-02",
+    "place": "nether-providence-township"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Published by S. B. Anthony, NY, 1922, 1922",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anna_Howard_Shaw_1.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "medicine"
+    ],
+    "place": [
+      "newcastle-upon-tyne",
+      "nether-providence-township",
+      "united-kingdom",
+      "europe",
+      "united-states",
+      "north-america"
+    ]
+  },
+  "prominence": 0.6,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q532873",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Anna Howard Shaw",
+      "url": "https://de.wikipedia.org/wiki/Anna_Howard_Shaw",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Anna Howard Shaw",
+      "url": "https://en.wikipedia.org/wiki/Anna_Howard_Shaw",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q532873"
+}

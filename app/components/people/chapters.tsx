@@ -235,7 +235,7 @@ function ChapterIndex({ chapters, sort }: ChapterNavProps) {
             event.preventDefault();
             event.stopPropagation();
           }}
-          className="pointer-events-auto flex max-h-full touch-none flex-col items-center overflow-hidden rounded-full bg-surface/80 px-0.5 py-1 shadow-sm ring-1 ring-line/60 backdrop-blur-sm select-none"
+          className="pointer-events-auto flex max-h-full touch-none flex-col items-center overflow-hidden rounded-full bg-surface/80 px-0.5 py-1 shadow-float ring-1 ring-line backdrop-blur-sm select-none"
         >
           {chapters.map((chapter, i) =>
             shown.has(i) ? (
@@ -266,7 +266,7 @@ function ChapterIndex({ chapters, sort }: ChapterNavProps) {
         {bubble && (
           <span
             aria-hidden="true"
-            className="absolute right-full mr-3 grid min-w-14 -translate-y-1/2 place-items-center rounded-full bg-brand px-3 py-3 font-heading text-h3 font-semibold text-brand-foreground tabular-nums shadow-lg"
+            className="absolute right-full mr-3 grid min-w-14 -translate-y-1/2 place-items-center rounded-full bg-brand px-3 py-3 font-heading text-h3 font-semibold text-brand-foreground tabular-nums shadow-panel"
             style={{ top: bubble.top }}
           >
             {bubble.label}

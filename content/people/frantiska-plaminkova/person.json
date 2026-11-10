@@ -1,0 +1,63 @@
+{
+  "slug": "frantiska-plaminkova",
+  "name": {
+    "display": "Františka Plamínková",
+    "sort": "Plamínková, Františka"
+  },
+  "born": {
+    "date": "1875-02-05",
+    "place": "prague"
+  },
+  "died": {
+    "date": "1942-06-30",
+    "place": "kobylisy-shooting-range"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Langhans Studio",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Franti%C5%A1ka_Plam%C3%ADnkov%C3%A1_1921.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing"
+    ],
+    "place": [
+      "prague",
+      "kobylisy-shooting-range",
+      "czech-republic",
+      "europe"
+    ]
+  },
+  "prominence": 0.62,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q12017742",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Františka Plamínková",
+      "url": "https://de.wikipedia.org/wiki/Franti%C5%A1ka_Plam%C3%ADnkov%C3%A1",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Františka Plamínková",
+      "url": "https://en.wikipedia.org/wiki/Franti%C5%A1ka_Plam%C3%ADnkov%C3%A1",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q12017742"
+}

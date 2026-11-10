@@ -14,22 +14,27 @@ The demo content shows pioneers of the women's movement from around the world (b
   - Only + and − on screen. Without dragging: arrow keys, and the list and timeline views show the same people.
   - Pre-rendered so it appears immediately.
   - Tiles vary slightly in size and position (`canvas.sizeVariance`) for a loose collage.
-- **Navigation:** the brand on the left leads home; on the right always view switch, search, menu. The view switch shows the active view with a chevron and unfolds on click.
-- **List:** sorted by name (A–Z, Z–A) or year of birth, in chapters (letters or decades). The chapters are in an index at the right edge, as in a phone's contacts app: tap a letter to jump, or slide along it to scroll with it.
-- **Timeline ("Zeitstrahl"):** people by year of birth, grouped by decade, each with a bar for their life span on a shared scale. Grid lines and key dates from the configuration (e.g. when women got the vote) run through the list; pointing at a person or opening one highlights who lived at the same time. Sorted by birth, death or life span; the chapters (decades, life spans) are in the same index at the right edge. The order is part of the URL (`?sort=`) and decides previous/next in a biography.
+- **Navigation:** the brand on the left leads home; on the right always view switch, search, menu. The view switch shows the active view by icon and name, with a chevron, and unfolds on click. On the overview pages below 480 px the brand shows its monogram (`brand.monogram`, default: initials) so the switch keeps its label; the link keeps the full name.
+- **List:** sorted by name (A–Z, Z–A) or year of birth, in chapters (letters or decades). The chapters are in an index at the right edge, as in a phone's contacts app: tap a letter to jump, or slide along it to scroll with it. On narrow screens the rows are compact (small portrait, one line per summary, tags only for screen readers), about six people per phone screen.
+- **Timeline ("Zeitstrahl"):** people by year of birth, grouped by decade, each with a bar for their life span on a shared scale. Grid lines and key dates from the configuration (e.g. when women got the vote) run through the list; pointing at a person or opening one highlights who lived at the same time. Sorted by birth, death or life span; the chapters (decades, life spans) are in the same index at the right edge. The order is part of the URL (`?sort=`) and decides previous/next in a biography. On narrow screens the key dates fold into one line that opens in place, so the first screen shows people.
+- **Map:** portraits at the places of birth or death, clustered when zoomed out. The list of places next to it is grouped by continent and country, alphabetically, with a field to find a place. The country of each place is derived from the content at build time (`app/lib/content/place-countries.server.ts`).
 - **Biography:**
   - Opens as a modal dialog over the overview: a centred card from 1024 px (a click outside, Escape or "Close" closes it), a full-screen sheet that starts with the portrait on smaller screens.
-  - Name, close and the tabs stay visible while scrolling.
-  - Tabs: biography, life story and timeline, each with a shareable link (`#lebenslauf` / `#timeline`).
-  - Life story with reading time and, for longer texts, a table of contents.
-  - At the end: related biographies (shared field, place or era), previous/next biography and "another random one".
+  - One page: key facts, life story, life in dates (shown from three entries), sources. A top bar with the section links, share and close stays in reach while reading.
+  - Each section has a shareable link (`#lebenslauf` / `#timeline`). "Share" opens the system's share sheet or copies the link.
+  - Life story with a table of contents for longer texts.
+  - At the end: related biographies (shared field, place or era) and "another random one". Previous/next follow the order of list or timeline, or the search results; the mosaic and the map have no order to follow.
+  - Closing goes back in the browser history, so the back button never reopens a closed biography.
+  - Opened from a shared link, the page says which collection it belongs to and leads into it.
   - On phones, swipe the sheet down to close it. Printing gives all sections without navigation.
 - **Search and filters:**
-  - Name search tolerates typos and suggests matching people directly while typing.
+  - Name search tolerates typos and suggests matching people directly while typing, alphabetically within the same match quality; with more matches, the last row shows all of them.
+  - A name that fits exactly one person opens her biography. A search started outside the people pages lands in the list, where the results are together.
   - Filters for place (with suggestions and counts) and for the facets from the configuration.
-  - Matches are highlighted in the mosaic, and the search state lives in the URL.
+  - Matches are highlighted in the mosaic and on the map, both with a link to the same results as a list. The search state lives in the URL.
+  - While a search is active, the search button carries a dot and its name says how many results there are. Previous/next and the random biography stay within the results and say so.
 - **Random biography:** favours lesser-known people and people not opened yet. Floating on the mosaic; a quiet button at the top of list and timeline.
-- **Start page:** a close-up of the mosaic drifts slowly behind the welcome card (no drift with reduced motion), two equal ways in, "Mosaic" (continues right there) and "List", a random entry point and "On this day" (people whose birthday or day of death is today; if there is nobody, those of the next few days under "Coming up").
+- **Start page:** the title, a preview card that opens the mosaic (it continues right where the preview was; no drift with reduced motion), the four views as direct links below it (from 1024 px pointing at one previews it in the card), a random entry point and "On this day" (people whose birthday or day of death is today; if there is nobody, those of the next few days under "Coming up").
 - **Also:** light/dark theme, German and English. Transitions use the View Transitions API and are disabled with "reduce motion".
 
 ## Requirements
@@ -63,9 +68,9 @@ Everything project-specific lives in one typed file. It is validated on load. Er
 | `paths`                    | Translated URL segments (`/personen`, `/en/people` …)                                                                                                                           |
 | `operator`                 | Operator with address, phone (optional), contact email and date of the accessibility statement; fills legal notice, privacy and statement                                       |
 | `theme`                    | Colour tokens light/dark, fonts, radius, image tone (`sepia`, `grayscale`, `none`), tile edge, paper texture (`paperTexture`), portrait tint with a blend mode (`portraitTint`) |
-| `start`                    | Title, subtitle, quote and button of the start page                                                                                                                             |
+| `start`                    | Title, subtitle and quote of the start page; `quote.person` (a slug) links the quote's source to that biography                                                                 |
 | `facets`                   | Search filters: `multi` (chips) or `autocomplete` (free text with suggestions), each with a label and an optional hint                                                          |
-| `detail.tabs`              | Biography tabs and their URL names                                                                                                                                              |
+| `detail.tabs`              | Biography sections and their URL names                                                                                                                                          |
 | `timeline`                 | Key dates of the subject, marked on the timeline axis and listed above it (`events`: year + label per language)                                                                 |
 | `canvas`                   | Tile size, gap, offset, endless repetition, zoom limits, size variation of the tiles (`sizeVariance`)                                                                           |
 | `features`                 | Random biography, theme switch                                                                                                                                                  |

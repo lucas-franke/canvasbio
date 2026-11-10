@@ -6,13 +6,12 @@ import { CanvasBackdrop } from "~/components/canvas/canvas-backdrop";
 import { continueFromLastCamera } from "~/components/canvas/use-camera";
 import { Portrait } from "~/components/portrait";
 import { buttonVariants } from "~/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
 import { withBase } from "~/lib/base-path";
 import { seededShuffle } from "~/lib/canvas/layout";
 import type { PersonListItem, PlaceCoords } from "~/lib/content/adapter";
 import { rowFor, scaleOfRows, scalePercent } from "~/lib/content/chronology";
 import { lifeYears } from "~/lib/content/format";
-import { useMediaQuery } from "~/lib/hooks";
+import { WIDE_QUERY, useMediaQuery } from "~/lib/hooks";
 import { useLocale, useMessages } from "~/lib/i18n";
 import { listPath, mapPath, pagePath, timelinePath } from "~/lib/i18n/locale";
 
@@ -45,9 +44,10 @@ interface StartPreviewProps {
 }
 
 /**
- * A look into the four views (tabs), and the start page's way in: one link covers each
- * preview, named by the button in its corner ("Mosaik öffnen"). The previews themselves are
- * pictures only.
+ * The start page's way in: a look into one view, the whole card a link to it ("Mosaik öffnen"),
+ * and below it the four views as links, each opening its view with one tap. From `lg`
+ * pointing at or focusing one of them shows its preview in the card; phones always show the
+ * mosaic. The previews themselves are pictures only.
  */
 export function StartPreview({ people, placeCoords, view, onViewChange }: StartPreviewProps) {
   const m = useMessages();
@@ -56,105 +56,119 @@ export function StartPreview({ people, placeCoords, view, onViewChange }: StartP
   // there is no button then.
   const [paused, setPaused] = useState(false);
   const still = useMediaQuery("(prefers-reduced-motion: reduce)", false);
+  const wide = useMediaQuery(WIDE_QUERY, false);
+  const shown: StartView = wide ? view : "canvas";
 
   return (
-    <Tabs value={view} onValueChange={(value) => onViewChange(value as StartView)} className="gap-3">
-      <TabsList aria-label={m.start.previews} className="bg-surface">
-        {/* Phones: the chosen view with icon and label, the others as icons only (their
-            label stays for screen readers), so the tabs take less room and attention. */}
-        {START_VIEWS.map((v) => (
-          <TabsTrigger
-            key={v}
-            value={v}
-            className="group/tab inline-flex items-center gap-2 max-sm:data-[state=inactive]:px-3 [&_svg]:size-4"
-          >
-            {ICONS[v]}
-            <span className="max-sm:group-data-[state=inactive]/tab:sr-only">{m.view[v]}</span>
-          </TabsTrigger>
-        ))}
-      </TabsList>
-      {START_VIEWS.map((v) => (
-        <TabsContent key={v} value={v} className="flex flex-col gap-3">
-          <div className="group/card relative h-[clamp(13rem,32svh,22rem)] overflow-hidden rounded-card bg-surface shadow-[0_12px_40px_rgb(0_0_0/0.12)] ring-1 ring-line/70 lg:h-[min(36rem,calc(100dvh-16rem))]">
-            {/* A picture of the view, not its content: muted, and it moves closer when pointed
-                at, so a click reads as "open this view" rather than "open this person". */}
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 opacity-80 saturate-[0.85] transition-transform duration-500 ease-out group-hover/card:scale-[1.03] motion-reduce:transition-none"
-            >
-              {v === "canvas" && (
-                <CanvasBackdrop
-                  people={people}
-                  hrefFor={(slug) => pagePath(locale, "people", slug)}
-                  paused={paused}
-                />
-              )}
-              {v === "list" && <ListPreview people={people} />}
-              {v === "timeline" && <TimelinePreview people={people} />}
-              {v === "map" && <MapPreview people={people} placeCoords={placeCoords} />}
-            </div>
-            {/* Wall and map: a vignette, the edges fade into the card like a view through a
-                window (list and timeline have clear edges of their own). The bottom fades for
-                all, behind the button. */}
-            {(v === "canvas" || v === "map") && (
-              <span
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,var(--c-surface)_100%)]"
-              />
-            )}
-            <span
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-linear-to-t from-surface via-surface/60 to-transparent"
+    <div className="flex flex-col gap-4">
+      <div className="group/card relative h-[clamp(13rem,32svh,22rem)] overflow-hidden rounded-card bg-surface shadow-panel ring-1 ring-line lg:h-[min(36rem,calc(100dvh-16rem))]">
+        {/* A picture of the view, not its content: muted, and it moves closer when pointed
+            at, so a click reads as "open this view" rather than "open this person". */}
+        <div
+          key={shown}
+          aria-hidden="true"
+          className="absolute inset-0 animate-in opacity-80 saturate-[0.85] transition-transform duration-500 ease-out fade-in group-hover/card:scale-[1.03] motion-reduce:transition-none"
+        >
+          {shown === "canvas" && (
+            <CanvasBackdrop
+              people={people}
+              hrefFor={(slug) => pagePath(locale, "people", slug)}
+              paused={paused}
             />
-            {/* Laid over the picture, not around it: the mosaic preview has links of its own
-                (its tiles), and a link inside a link is invalid HTML. The whole card is the
-                click area; the corner shows what it does. */}
-            <Link
-              to={viewHref(locale, v)}
-              viewTransition
-              onClick={v === "canvas" ? continueFromLastCamera : undefined}
-              aria-describedby={v === "canvas" ? "start-list-hint" : undefined}
-              className="group absolute inset-0 rounded-card"
-            >
-              <span
-                className={buttonVariants({
-                  size: "lg",
-                  className:
-                    "absolute bottom-4 left-4 shadow-[0_8px_24px_rgb(0_0_0/0.25)] group-hover:bg-brand/90",
-                })}
-              >
-                {m.start.open[v]}
-                <ArrowRight aria-hidden="true" />
-              </span>
-            </Link>
-            {v === "canvas" && !still && (
-              <button
-                type="button"
-                onClick={() => setPaused((value) => !value)}
-                aria-label={paused ? m.start.play : m.start.pause}
-                title={paused ? m.start.play : m.start.pause}
+          )}
+          {shown === "list" && <ListPreview people={people} />}
+          {shown === "timeline" && <TimelinePreview people={people} />}
+          {shown === "map" && <MapPreview people={people} placeCoords={placeCoords} />}
+        </div>
+        {/* Wall and map: a vignette, the edges fade into the card like a view through a
+            window (list and timeline have clear edges of their own). The bottom fades for
+            all, behind the button. */}
+        {(shown === "canvas" || shown === "map") && (
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,var(--c-surface)_100%)]"
+          />
+        )}
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-linear-to-t from-surface via-surface/60 to-transparent"
+        />
+        {/* Laid over the picture, not around it: the mosaic preview has links of its own
+            (its tiles), and a link inside a link is invalid HTML. The whole card is the
+            click area; the corner shows what it does. */}
+        <Link
+          to={viewHref(locale, shown)}
+          viewTransition
+          onClick={shown === "canvas" ? continueFromLastCamera : undefined}
+          aria-describedby={shown === "canvas" ? "start-list-hint" : undefined}
+          className="group absolute inset-0 rounded-card"
+        >
+          <span
+            className={buttonVariants({
+              size: "lg",
+              className: "absolute bottom-4 left-4 shadow-float group-hover:bg-brand/90",
+            })}
+          >
+            {m.start.open[shown]}
+            <ArrowRight aria-hidden="true" />
+          </span>
+        </Link>
+        {shown === "canvas" && !still && (
+          <button
+            type="button"
+            onClick={() => setPaused((value) => !value)}
+            aria-label={paused ? m.start.play : m.start.pause}
+            title={paused ? m.start.play : m.start.pause}
+            className={buttonVariants({
+              variant: "secondary",
+              size: "icon-sm",
+              className:
+                "absolute top-3 right-3 bg-surface/90 shadow-float backdrop-blur-sm hover:bg-surface",
+            })}
+          >
+            {paused ? (
+              <Play aria-hidden="true" className="size-4" />
+            ) : (
+              <Pause aria-hidden="true" className="size-4" />
+            )}
+          </button>
+        )}
+      </div>
+
+      {/* The four views, each one tap away. */}
+      <nav aria-labelledby="start-views" className="flex flex-col gap-2">
+        <h2 id="start-views" className="text-eyebrow">
+          {m.start.previews}
+        </h2>
+        <ul className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+          {START_VIEWS.map((v) => (
+            <li key={v} className="flex">
+              <Link
+                to={viewHref(locale, v)}
+                viewTransition
+                onClick={v === "canvas" ? continueFromLastCamera : undefined}
+                aria-describedby={v === "canvas" ? "start-list-hint" : undefined}
+                onPointerEnter={() => onViewChange(v)}
+                onFocus={() => onViewChange(v)}
+                data-shown={wide && v === shown ? "" : undefined}
                 className={buttonVariants({
                   variant: "secondary",
-                  size: "icon-sm",
                   className:
-                    "absolute top-3 right-3 bg-surface/90 shadow-sm backdrop-blur-sm hover:bg-surface",
+                    "flex-1 justify-start data-shown:border-control data-shown:bg-emphasis/5 [&_svg]:size-5",
                 })}
               >
-                {paused ? (
-                  <Play aria-hidden="true" className="size-4" />
-                ) : (
-                  <Pause aria-hidden="true" className="size-4" />
-                )}
-              </button>
-            )}
-          </div>
-        </TabsContent>
-      ))}
-      {/* Read with the mosaic link (aria-describedby). */}
+                {ICONS[v]}
+                {m.view[v]}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      {/* Read with the mosaic links (aria-describedby). */}
       <p id="start-list-hint" hidden>
         {m.start.listHint}
       </p>
-    </Tabs>
+    </div>
   );
 }
 

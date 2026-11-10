@@ -62,43 +62,70 @@ test("direct load renders the biography and loads the overview", async ({ page, 
   }
 });
 
-test("tabs switch sections, sync the URL hash and support arrow keys", async ({ page }) => {
+/** Scrolls the biography (the sheet or card scrolls, not the page). */
+const scrollBiography = (page: import("@playwright/test").Page, top: number) =>
+  page.locator(".detail-scroller").evaluate((el, y) => el.scrollTo(0, y), top);
+
+test("the biography is one page; section links jump there and name the section in the address", async ({
+  page,
+}) => {
   await page.goto("/personen/clara-zetkin");
-  const tabs = page.getByRole("tablist", { name: "Abschnitte" });
-  await expect(tabs.getByRole("tab", { name: "Biografie" })).toHaveAttribute("aria-selected", "true");
+  await waitForHydration(page);
+  // Everything can be read without choosing a section first.
+  await expect(page.getByRole("tablist")).toHaveCount(0);
+  for (const name of ["Lebensgeschichte", "Lebenslauf", "Quellen"]) {
+    await expect(page.getByRole("heading", { level: 2, name, exact: true })).toBeVisible();
+  }
 
-  await tabs.getByRole("tab", { name: "Lebenslauf" }).click();
+  // Phones show the section links once the portrait has scrolled away.
+  await scrollBiography(page, 600);
+  const sections = page.getByRole("navigation", { name: "Abschnitte" });
+  await sections.getByRole("link", { name: "Lebenslauf" }).click();
   await expect(page).toHaveURL(/#lebenslauf$/);
-  await expect(page.getByRole("tabpanel", { name: "Lebenslauf" })).toBeVisible();
-  await expect(page.getByRole("heading", { level: 2, name: "Biografie", exact: true })).toBeHidden();
+  const heading = page.getByRole("heading", { level: 2, name: "Lebenslauf", exact: true });
+  await expect(heading).toBeFocused();
+  await expect(heading).toBeInViewport();
+  await expect(sections.getByRole("link", { name: "Lebenslauf" })).toHaveAttribute("aria-current", "true");
 
-  await tabs.getByRole("tab", { name: "Lebenslauf" }).focus();
-  await page.keyboard.press("ArrowLeft");
-  await expect(tabs.getByRole("tab", { name: "Lebensgeschichte" })).toBeFocused();
+  await sections.getByRole("link", { name: "Überblick" }).click();
+  await expect(page).toHaveURL(/\/personen\/clara-zetkin$/);
+  await expect(page.getByRole("heading", { level: 1, name: "Clara Zetkin" })).toBeFocused();
 });
 
-test("a deep link with hash opens that tab", async ({ page }) => {
+test("a deep link with hash starts at that section", async ({ page }) => {
   await page.goto("/personen/clara-zetkin#geschichte");
-  await expect(page.getByRole("tab", { name: "Lebensgeschichte" })).toHaveAttribute("aria-selected", "true");
-  await expect(page.getByRole("heading", { level: 2, name: "Lebensgeschichte" })).toBeVisible();
-  await expect(page.getByRole("heading", { level: 3, name: "Quellen" })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 2, name: "Lebensgeschichte" })).toBeInViewport();
+  await expect(page.getByRole("heading", { level: 2, name: "Quellen" })).toBeVisible();
 });
 
-test("unknown person shows the not-found page", async ({ page }) => {
+test("a life in dates that only repeats birth and death is left out", async ({ page }) => {
+  // Two entries (born, died): the key facts already say that.
+  await page.goto("/personen/ada-wells");
+  await expect(page.getByRole("heading", { level: 2, name: "Lebensgeschichte" })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 2, name: "Lebenslauf" })).toHaveCount(0);
+  await expect(
+    page.getByRole("navigation", { name: "Abschnitte" }).getByRole("link", { name: "Lebenslauf" }),
+  ).toHaveCount(0);
+});
+
+test("unknown person shows the not-found page, which can be closed", async ({ page }) => {
   await page.goto("/personen/gibt-es-nicht");
   await expect(page.getByRole("heading", { level: 1, name: "Seite nicht gefunden" })).toBeVisible();
+  await page.getByRole("link", { name: "Schließen" }).click();
+  await expect(page).toHaveURL(/\/personen$/);
+  await expect(page.getByRole("dialog")).toHaveCount(0);
 });
 
-test("while reading, the tabs stay in reach in one line with the close button", async ({ page }) => {
+test("while reading, the section links stay in reach in one opaque line with share and close", async ({
+  page,
+}) => {
   for (const width of [360, 375, page.viewportSize()!.width]) {
     await page.setViewportSize({ width, height: page.viewportSize()!.height });
     await page.goto("/personen/clara-zetkin#geschichte");
-    await expect(page.getByRole("tab", { name: "Lebensgeschichte" })).toHaveAttribute(
-      "aria-selected",
-      "true",
-    );
+    await waitForHydration(page);
     const close = page.getByRole("link", { name: "Schließen" });
-    const tabs = page.getByRole("tablist", { name: "Abschnitte" });
+    const share = page.getByRole("button", { name: "Teilen" });
+    const sections = page.getByRole("navigation", { name: "Abschnitte" });
     const centre = async (l: typeof close) => {
       const box = (await l.boundingBox())!;
       return box.y + box.height / 2;
@@ -106,16 +133,24 @@ test("while reading, the tabs stay in reach in one line with the close button", 
     // Same line once scrolled (scrolled again while the page may still reset it on load).
     await expect
       .poll(async () => {
-        await page.locator(".detail-scroller").evaluate((el) => el.scrollTo(0, 2000));
-        return Math.abs((await centre(close)) - (await centre(tabs)));
+        await scrollBiography(page, 2000);
+        return Math.abs((await centre(close)) - (await centre(sections)));
       })
       .toBeLessThan(6);
+    const bar = page.locator(".detail-bar");
+    await expect(bar).toHaveAttribute("data-solid", "");
+    // Opaque: the text below does not show through.
+    expect(await bar.evaluate((el) => getComputedStyle(el).backgroundColor)).not.toMatch(
+      /, 0\)$|transparent/,
+    );
+    const s = (await share.boundingBox())!;
     const c = (await close.boundingBox())!;
-    const t = (await tabs.boundingBox())!;
-    // Side by side: the tabs end before the button.
-    expect(t.x + t.width).toBeLessThanOrEqual(c.x);
-    // From 375 px (iPhone SE) all tabs fit; narrower, the list scrolls sideways a little.
-    if (width >= 375) expect(await tabs.evaluate((el) => el.scrollWidth <= el.clientWidth)).toBe(true);
+    const n = (await sections.boundingBox())!;
+    // Side by side: the links end before share, share before close.
+    expect(n.x + n.width).toBeLessThanOrEqual(s.x);
+    expect(s.x + s.width).toBeLessThanOrEqual(c.x);
+    // From 375 px (iPhone SE) all links fit; narrower, the row scrolls sideways a little.
+    if (width >= 375) expect(await sections.evaluate((el) => el.scrollWidth <= el.clientWidth)).toBe(true);
   }
 });
 
@@ -146,15 +181,124 @@ test("the search panel offers a retry when the overview data cannot be loaded", 
   await expect(panel.getByLabel("Nach Namen suchen")).toBeVisible();
 });
 
-test("previous and next continue in list order", async ({ page }) => {
+test("previous and next continue in list order and say which order that is", async ({ page }) => {
+  await page.goto("/personen/liste");
+  await page.getByRole("link", { name: "Clara Zetkin", exact: true }).click();
+  const more = page.getByRole("navigation", { name: "Weitere Biografien" });
+  await expect(more.getByText("Name A–Z", { exact: true })).toBeVisible();
+  await expect(more.getByRole("link", { name: /Vorherige/ })).toBeVisible();
+  await expect(more.getByRole("link", { name: /Nächste/ })).toBeVisible();
+  await expect(more.getByRole("button", { name: "Zufällige Biografie", exact: true })).toBeVisible();
+});
+
+test("within a search, previous and next stay in the results and say so", async ({ page }) => {
   await page.goto("/personen/liste?q=clara");
   await expect(page.getByRole("heading", { name: /^Ergebnisse/ })).toBeVisible();
   await page.getByRole("link", { name: "Clara Zetkin", exact: true }).click();
   const more = page.getByRole("navigation", { name: "Weitere Biografien" });
+  await expect(more.getByText(/^Sie blättern in \d+ Suchergebnissen\./)).toBeVisible();
+  await expect(more.getByRole("button", { name: "Zufällige Biografie aus den Ergebnissen" })).toBeVisible();
   // Within the search results: the next one is also a "Clara".
   await more.getByRole("link", { name: /Nächste/ }).click();
   await expect(page).toHaveURL(/\/personen\/[a-z-]+\?q=clara$/);
   await expect(page.getByRole("heading", { level: 1 })).toContainText(/Clara|Klara|Klára/);
+  // The way out keeps the biography open and drops the search.
+  await page
+    .getByRole("navigation", { name: "Weitere Biografien" })
+    .getByRole("link", { name: "Alle Biografien" })
+    .click();
+  await expect(page).toHaveURL(/\/personen\/[a-z-]+$/);
+});
+
+test("from the mosaic there is no previous or next: its order means nothing to a reader", async ({
+  page,
+}) => {
+  await page.goto("/personen");
+  await page.locator("[data-cell]").first().waitFor({ state: "attached" });
+  await waitForHydration(page);
+  await page.getByRole("button", { name: "Zufällige Biografie" }).click();
+  await expect(page.getByRole("heading", { level: 1 })).toBeFocused();
+  const more = page.getByRole("navigation", { name: "Weitere Biografien" });
+  await expect(more.getByRole("button", { name: "Zufällige Biografie", exact: true })).toBeVisible();
+  await expect(more.getByRole("link", { name: /Vorherige|Nächste/ })).toHaveCount(0);
+  await expect(page.getByRole("region", { name: "Ähnliche Biografien" })).toBeVisible();
+});
+
+test("closing goes back in history: the back button does not reopen the biography", async ({ page }) => {
+  await page.goto("/ueber");
+  await page.goto("/personen/liste");
+  await waitForHydration(page);
+  await page.getByRole("link", { name: "Clara Zetkin", exact: true }).click();
+  await expect(heading(page, "Clara Zetkin")).toBeFocused();
+  await page.getByRole("link", { name: "Schließen" }).click();
+  await expect(page).toHaveURL(/\/personen\/liste$/);
+  await expect(page.getByRole("dialog")).toHaveCount(0);
+  // Back leaves the list for the page before it.
+  await page.goBack();
+  await expect(page).toHaveURL(/\/ueber$/);
+});
+
+test("after several biographies in a row, closing returns to the overview in one step", async ({ page }) => {
+  await page.goto("/ueber");
+  await page.goto("/personen/liste");
+  await waitForHydration(page);
+  await page.getByRole("link", { name: "Clara Zetkin", exact: true }).click();
+  await expect(heading(page, "Clara Zetkin")).toBeFocused();
+  const more = page.getByRole("navigation", { name: "Weitere Biografien" });
+  for (let i = 0; i < 2; i++) {
+    const before = page.url();
+    await more.getByRole("link", { name: /Nächste/ }).click();
+    await expect(page).not.toHaveURL(before);
+    await expect(page.getByRole("heading", { level: 1 })).toBeFocused();
+  }
+  // The back button steps through the biographies read …
+  const third = page.url();
+  await page.goBack();
+  await expect(page).not.toHaveURL(third);
+  await expect(page.getByRole("dialog")).toBeVisible();
+  // … and closing returns to the list, with the page before it one step back.
+  await page.getByRole("link", { name: "Schließen" }).click();
+  await expect(page).toHaveURL(/\/personen\/liste$/);
+  await expect(page.getByRole("dialog")).toHaveCount(0);
+  await page.goBack();
+  await expect(page).toHaveURL(/\/ueber$/);
+});
+
+test("a biography opened directly says which collection it belongs to; closing replaces it", async ({
+  page,
+}) => {
+  await page.goto("/ueber");
+  await page.goto("/personen/clara-zetkin");
+  await waitForHydration(page);
+  const arrival = page.getByRole("complementary", { name: "Lauter Frauen" });
+  await expect(arrival).toContainText(/Eine von \d+ Biografien bei Lauter Frauen/);
+  await arrival.getByRole("link", { name: "Alle Biografien entdecken" }).click();
+  await expect(page).toHaveURL(/\/personen$/);
+  await expect(page.getByRole("dialog")).toHaveCount(0);
+  await page.goBack();
+  await expect(page).toHaveURL(/\/ueber$/);
+
+  // Opened from an overview, the reader knows where they are: no such note.
+  await page.goto("/personen/liste");
+  await waitForHydration(page);
+  await page.getByRole("link", { name: "Clara Zetkin", exact: true }).click();
+  await expect(heading(page, "Clara Zetkin")).toBeFocused();
+  await expect(page.getByRole("complementary", { name: "Lauter Frauen" })).toHaveCount(0);
+});
+
+test("share copies the address where there is no share sheet", async ({ page, browserName, context }) => {
+  test.skip(browserName !== "chromium", "clipboard permission can only be granted in Chromium");
+  await context.grantPermissions(["clipboard-read", "clipboard-write"]);
+  await page.addInitScript(() => {
+    Object.defineProperty(navigator, "share", { value: undefined, configurable: true });
+  });
+  await page.goto("/personen/clara-zetkin#lebenslauf");
+  await waitForHydration(page);
+  await page.getByRole("button", { name: "Teilen" }).click();
+  await expect(page.getByRole("status").filter({ hasText: "Link kopiert" })).toBeAttached();
+  expect(await page.evaluate(() => navigator.clipboard.readText())).toMatch(
+    /\/personen\/clara-zetkin#lebenslauf$/,
+  );
 });
 
 test("closing animation ends off screen and stays there (no flash)", async ({
@@ -224,7 +368,7 @@ test("related biographies link to people with something in common", async ({ pag
 
 test("life story shows a table of contents for longer stories", async ({ page }) => {
   await page.goto("/personen/ada-wells#geschichte");
-  const panel = page.getByRole("tabpanel", { name: "Lebensgeschichte" });
+  const panel = page.getByRole("region", { name: "Lebensgeschichte" });
   const outline = panel.getByRole("navigation", { name: "Inhalt" });
   await expect(outline).toBeVisible();
   const entries = outline.getByRole("link");
@@ -232,7 +376,7 @@ test("life story shows a table of contents for longer stories", async ({ page })
 
   const target = (await entries.nth(1).textContent())!;
   await entries.nth(1).click();
-  // Jumps without changing the tab (the hash selects tabs) and moves focus to the section.
+  // Jumps without changing the address (the hash names the section) and moves focus there.
   await expect(page).toHaveURL(/#geschichte$/);
   await expect(panel.getByRole("heading", { name: target, exact: true })).toBeFocused();
   await expect(panel.getByRole("heading", { name: target, exact: true })).toBeInViewport();
@@ -243,11 +387,12 @@ test("printing a biography prints all sections without navigation", async ({ pag
   await page.goto("/personen/clara-zetkin");
   await expect(heading(page, "Clara Zetkin")).toBeVisible();
   await page.emulateMedia({ media: "print" });
-  for (const name of ["Biografie", "Lebensgeschichte", "Lebenslauf"]) {
+  for (const name of ["Lebensgeschichte", "Lebenslauf", "Quellen"]) {
     await expect(page.getByRole("heading", { level: 2, name, exact: true })).toBeVisible();
   }
   await expect(page.getByRole("navigation", { name: "Hauptnavigation" })).toBeHidden();
-  await expect(page.getByRole("tablist")).toBeHidden();
+  await expect(page.getByRole("navigation", { name: "Abschnitte" })).toBeHidden();
+  await expect(page.getByRole("link", { name: "Schließen" })).toBeHidden();
   await expect(page.locator("#main")).toBeHidden();
 });
 
@@ -297,7 +442,6 @@ test("desktop: the dialog scrolls inside its rounded card, with a thin scrollbar
 test("a life story only in another language says so in the page's language", async ({ page }) => {
   await page.goto("/personen/a-viola-neblett");
   await waitForHydration(page);
-  await page.getByRole("tab", { name: "Lebensgeschichte" }).click();
   await expect(page.getByText("Dieser Text liegt nur auf Englisch vor.")).toBeVisible();
   await page.goto("/en/people/a-viola-neblett");
   await expect(page.getByText(/only available in/)).toHaveCount(0);

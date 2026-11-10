@@ -13,7 +13,7 @@ export function NavPill({ bare = false, className, ...props }: ComponentProps<"d
     <div
       className={cn(
         "pointer-events-auto flex items-center gap-1 rounded-full p-0.5 lg:p-1",
-        !bare && "bg-nav text-nav-foreground shadow-[0_2px_12px_rgb(0_0_0/0.12)] ring-1 ring-line/70",
+        !bare && "bg-nav text-nav-foreground shadow-float ring-1 ring-line",
         className,
       )}
       {...props}
@@ -42,6 +42,8 @@ interface IconActionProps {
   /** Accessible name, also shown as the tooltip. */
   label: string;
   icon: ReactNode;
+  /** Added to the accessible name, not to the tooltip (e.g. ", 3 Ergebnisse"). */
+  nameSuffix?: string;
 }
 
 /**
@@ -52,9 +54,11 @@ interface IconActionProps {
 export function NavIconButton({
   label,
   icon,
+  nameSuffix = "",
   className,
+  children,
   ...props
-}: IconActionProps & Omit<ComponentProps<"button">, "children">) {
+}: IconActionProps & ComponentProps<"button">) {
   return (
     <button
       type="button"
@@ -69,7 +73,10 @@ export function NavIconButton({
       <span aria-hidden="true" className="contents">
         {icon}
       </span>
-      <span className="sr-only">{label}</span>
+      {/* One text node, so the name reads "Suche, 3 Ergebnisse" without a stray space. */}
+      <span className="sr-only">{`${label}${nameSuffix}`}</span>
+      {/* A mark on the button (e.g. an active search). */}
+      {children}
     </button>
   );
 }

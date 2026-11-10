@@ -19,23 +19,17 @@ import { WIDE_QUERY, useMediaQuery } from "~/lib/hooks";
 import { focusPageHeading } from "~/lib/route-focus";
 import { useTheme, type ThemeChoice } from "~/lib/theme/use-theme";
 import { afterViewTransition } from "~/lib/view-transition";
+import { closeButtonClass } from "~/components/ui/button";
+import { segmentedItem, segmentedTrack } from "~/components/ui/segmented";
 import { NavIconButton } from "./nav";
 
 const THEME_ICONS = { system: Monitor, light: Sun, dark: Moon } as const;
-
-/** Language and appearance: the same segmented control, the chosen one in the accent colour. */
-const segmentsClass = "grid gap-1 rounded-full border border-control/55 p-1";
-const segmentClass =
-  "hit-44 flex min-h-10 items-center justify-center gap-1.5 rounded-full px-2 text-body-sm font-medium text-emphasis hover:bg-emphasis/5";
 
 function Section({ title, icon, children }: { title: string; icon?: ReactNode; children: ReactNode }) {
   const id = `menu-${title.toLowerCase().replace(/\W+/g, "-")}`;
   return (
     <section aria-labelledby={id} className="flex flex-col gap-3">
-      <h3
-        id={id}
-        className="flex items-center gap-2 font-sans text-body-sm font-medium tracking-normal text-muted-text"
-      >
+      <h3 id={id} className="flex items-center gap-2 text-eyebrow">
         {icon && (
           <span aria-hidden="true" className="contents [&_svg]:size-4">
             {icon}
@@ -102,10 +96,7 @@ export function MenuDrawer() {
       >
         <div className="flex items-center justify-between px-6 pt-2">
           <DrawerTitle className="font-heading text-h3 font-semibold text-emphasis">{m.nav.menu}</DrawerTitle>
-          <DrawerClose
-            className="hit-44 grid size-10 place-items-center rounded-full border border-control text-emphasis hover:bg-emphasis/5"
-            aria-label={m.nav.closeMenu}
-          >
+          <DrawerClose className={closeButtonClass} aria-label={m.nav.closeMenu}>
             <X aria-hidden="true" className="size-5" />
           </DrawerClose>
         </div>
@@ -132,10 +123,7 @@ export function MenuDrawer() {
           {siteConfig.locales.length > 1 && (
             <Section title={m.language.label} icon={<Globe />}>
               {/* Links, not radios: each language has its own address. */}
-              <ul
-                className={segmentsClass}
-                style={{ gridTemplateColumns: `repeat(${siteConfig.locales.length}, minmax(0, 1fr))` }}
-              >
+              <ul className={segmentedTrack}>
                 {siteConfig.locales.map((l) => (
                   <li key={l.code} className="flex">
                     <Link
@@ -146,10 +134,7 @@ export function MenuDrawer() {
                       lang={l.htmlLang}
                       hrefLang={l.htmlLang}
                       aria-current={l.code === locale ? "page" : undefined}
-                      className={cn(
-                        segmentClass,
-                        "flex-1 aria-[current=page]:bg-brand aria-[current=page]:text-brand-foreground",
-                      )}
+                      className={cn(segmentedItem, "flex-1")}
                     >
                       {l.label}
                     </Link>
@@ -165,7 +150,7 @@ export function MenuDrawer() {
                 value={theme}
                 onValueChange={(value) => setTheme(value as ThemeChoice)}
                 aria-label={m.theme.label}
-                className={cn(segmentsClass, "grid-cols-3")}
+                className={segmentedTrack}
               >
                 {(["system", "light", "dark"] as const).map((choice) => {
                   const Icon = THEME_ICONS[choice];
@@ -174,10 +159,7 @@ export function MenuDrawer() {
                       key={choice}
                       value={choice}
                       title={m.theme[choice]}
-                      className={cn(
-                        segmentClass,
-                        "data-[state=checked]:bg-brand data-[state=checked]:text-brand-foreground",
-                      )}
+                      className={segmentedItem}
                     >
                       <Icon aria-hidden="true" className="size-4 shrink-0" />
                       <span className="sr-only min-[24rem]:not-sr-only">{m.theme[choice]}</span>

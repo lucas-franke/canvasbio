@@ -1,0 +1,65 @@
+{
+  "slug": "helene-lange",
+  "name": {
+    "display": "Helene Lange",
+    "sort": "Lange, Helene"
+  },
+  "born": {
+    "date": "1848-04-09",
+    "place": "oldenburg"
+  },
+  "died": {
+    "date": "1930-05-13",
+    "place": "berlin"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Atelier Elvira, 1893",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Helene_Lange_vor_1899.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "education",
+      "social"
+    ],
+    "place": [
+      "oldenburg",
+      "berlin",
+      "germany",
+      "europe"
+    ]
+  },
+  "prominence": 0.6,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q75209",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Helene Lange",
+      "url": "https://de.wikipedia.org/wiki/Helene_Lange",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Helene Lange",
+      "url": "https://en.wikipedia.org/wiki/Helene_Lange",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q75209"
+}
