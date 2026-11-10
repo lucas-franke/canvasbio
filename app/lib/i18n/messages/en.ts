@@ -128,6 +128,7 @@ export const en: Messages = {
   },
   map: {
     label: "Map of life places",
+    controls: "Map controls",
     intro: (count: number) =>
       `${count} biographies on the map. With a screen reader, the list of places is easier to use.`,
     born: "Places of birth",

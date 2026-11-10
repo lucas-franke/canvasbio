@@ -133,6 +133,7 @@ export const de = {
   },
   map: {
     label: "Karte der Lebensorte",
+    controls: "Karte steuern",
     intro: (count: number) =>
       `${count} Biografien auf der Karte. Mit Screenreader ist die Ortsliste übersichtlicher.`,
     born: "Geburtsorte",
