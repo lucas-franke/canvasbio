@@ -1,0 +1,60 @@
+{
+  "slug": "marie-popelin",
+  "name": {
+    "display": "Marie Popelin",
+    "sort": "Popelin, Marie"
+  },
+  "born": {
+    "date": "1846-12-16"
+  },
+  "died": {
+    "date": "1913-06-05",
+    "place": "brussels"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marie_Popelin_(1846-1923).jpg"
+  },
+  "facets": {
+    "field": [
+      "science"
+    ],
+    "place": [
+      "brussels",
+      "belgium",
+      "europe"
+    ]
+  },
+  "prominence": 0.62,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q2627259",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Marie Popelin",
+      "url": "https://de.wikipedia.org/wiki/Marie_Popelin",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Marie Popelin",
+      "url": "https://en.wikipedia.org/wiki/Marie_Popelin",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q2627259"
+}

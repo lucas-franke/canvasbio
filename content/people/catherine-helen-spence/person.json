@@ -1,0 +1,64 @@
+{
+  "slug": "catherine-helen-spence",
+  "name": {
+    "display": "Catherine Helen Spence",
+    "sort": "Spence, Catherine Helen"
+  },
+  "born": {
+    "date": "1825-10-31",
+    "place": "melrose-united-kingdom"
+  },
+  "died": {
+    "date": "1910-04-03",
+    "place": "norwood"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Bond & Co., Adelaide, 1890",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Catherine_Helen_Spence_-_Bond_%26_Co_(cropped).jpg"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "melrose-united-kingdom",
+      "norwood",
+      "united-kingdom",
+      "europe",
+      "australia",
+      "oceania"
+    ]
+  },
+  "prominence": 0.49,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q542217",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Catherine Helen Spence",
+      "url": "https://de.wikipedia.org/wiki/Catherine_Helen_Spence",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Catherine Helen Spence",
+      "url": "https://en.wikipedia.org/wiki/Catherine_Helen_Spence",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q542217"
+}

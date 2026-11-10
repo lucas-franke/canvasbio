@@ -4,6 +4,10 @@
  *
  *   npx tsx scripts/import-wikidata.ts [--limit 200] [--to-year 1950] [--full]
  *     [--focus "Africa,Asia,South America,Oceania"]
+ *   npx tsx scripts/import-wikidata.ts --qids Q71507,Q71491
+ *
+ * --qids adds exactly these people (Wikidata ids), e.g. ones the sampling passed by. The same
+ * rules apply (free portrait, English article); --limit is ignored.
  *
  * This is a one-off generator for demo data, not part of the build. It overwrites
  * person.json, de.md, en.md and portrait.jpg of imported people, but never touches
@@ -51,8 +55,15 @@ const { values: args } = parseArgs({
     /** Continents (English, comma-separated) to add people from, with broader occupations. */
     focus: { type: "string" },
     full: { type: "boolean", default: false },
+    /** Wikidata ids (comma-separated) to add, instead of a sample of the candidates. */
+    qids: { type: "string" },
   },
 });
+/** People to add by Wikidata id; empty: a sample of the candidates. */
+const QIDS = (args.qids ?? "")
+  .split(",")
+  .map((q) => q.trim())
+  .filter(Boolean);
 /** Total number of people. By default the import only adds to the existing ones; --full starts over. */
 const LIMIT = Number(args.limit);
 const ADD = !args.full;
@@ -408,7 +419,9 @@ async function main() {
     .sort((a, b) => b.sitelinks - a.sitelinks);
   const need = LIMIT - existing.slugs.size;
   console.log(`    ${candidates.length} candidates found, ${existing.slugs.size} people already present`);
-  if (ADD && need <= 0) {
+  if (QIDS.length > 0 && !ADD)
+    throw new Error("--qids adds to the existing people; it can't be combined with --full");
+  if (ADD && need <= 0 && QIDS.length === 0) {
     console.log("Nothing to add (raise --limit).");
     return;
   }
@@ -426,7 +439,20 @@ async function main() {
   let sample: Candidate[];
   let entities: Map<string, Entity>;
   let regionOf: (c: Candidate) => string = () => "Unknown";
-  if (ADD) {
+  if (QIDS.length > 0) {
+    for (const qid of QIDS.filter((q) => existing.qids.has(q)))
+      console.log(`    ${qid} is already present or excluded: skipped`);
+    const wanted = QIDS.filter((q) => !existing.qids.has(q));
+    entities = await getEntities(wanted);
+    sample = wanted.flatMap((qid) => {
+      const e = entities.get(qid);
+      if (!e?.sitelinks.enwiki) {
+        console.warn(`    ${qid}: ${e ? "no English article" : "not found"}, skipped`);
+        return [];
+      }
+      return [{ qid, sitelinks: Object.keys(e.sitelinks).length }];
+    });
+  } else if (ADD) {
     entities = await getEntities([...candidates.map((c) => c.qid), ...regional.keys()]);
     // The regional ones: same rules as the main search (born in range, English article).
     for (const qid of regional.keys()) {
@@ -470,13 +496,17 @@ async function main() {
     const file = entities.get(c.qid) && imageFile(entities.get(c.qid)!);
     return file && images.has(file);
   });
-  const selected = !ADD
-    ? spreadSample(withFreeImage, LIMIT)
-    : focus.length
-      ? focusSample(withFreeImage, regionOf, need, focus)
-      : regionalSample(withFreeImage, regionOf, need, MIN_PER_CONTINENT);
+  for (const c of sample.filter((c) => !withFreeImage.includes(c)))
+    if (QIDS.length > 0) console.warn(`    ${c.qid}: no public-domain portrait, skipped`);
+  const selected = QIDS.length
+    ? withFreeImage
+    : !ADD
+      ? spreadSample(withFreeImage, LIMIT)
+      : focus.length
+        ? focusSample(withFreeImage, regionOf, need, focus)
+        : regionalSample(withFreeImage, regionOf, need, MIN_PER_CONTINENT);
   // Stand-ins in case a portrait can't be downloaded, closest in prominence first.
-  const reserves = withFreeImage.filter((c) => !selected.includes(c));
+  const reserves = QIDS.length ? [] : withFreeImage.filter((c) => !selected.includes(c));
   console.log(`    ${withFreeImage.length} with a free portrait, ${selected.length} selected`);
 
   console.log("3/5 Resolving places, occupations and other references …");
@@ -520,8 +550,13 @@ async function main() {
     return place;
   };
 
-  const maxLog = Math.log(withFreeImage[0]?.sitelinks ?? 1);
-  const minLog = Math.log(withFreeImage[withFreeImage.length - 1]?.sitelinks ?? 1);
+  // Prominence (0–1) on the log scale of the people considered. Named people are measured
+  // against all candidates, so their value fits in with the people already there.
+  const scale = QIDS.length
+    ? [...candidates, ...withFreeImage].sort((a, b) => b.sitelinks - a.sitelinks)
+    : withFreeImage;
+  const maxLog = Math.log(scale[0]?.sitelinks ?? 1);
+  const minLog = Math.log(scale[scale.length - 1]?.sitelinks ?? 1);
   const previous: Taxonomy = ADD
     ? JSON.parse(await readFile(path.join(CONTENT, "taxonomy.json"), "utf8"))
     : {};
@@ -562,7 +597,8 @@ async function main() {
 
   console.log("4/5 Writing biographies …");
   const queue = [...selected];
-  while (queue.length > 0 && usedSlugs.size < LIMIT) {
+  const cap = QIDS.length ? Infinity : LIMIT;
+  while (queue.length > 0 && usedSlugs.size < cap) {
     const candidate = queue.shift()!;
     const e = entities.get(candidate.qid)!;
     const name = label(e, "de") ?? e.sitelinks.enwiki?.title ?? e.id;
@@ -715,7 +751,7 @@ async function main() {
       await writeFile(path.join(dir, `${lang}.md`), frontmatterDoc(text, story));
     }
 
-    console.log(`    [${usedSlugs.size}/${LIMIT}] ${name}`);
+    console.log(`    [${usedSlugs.size}/${QIDS.length ? usedSlugs.size : LIMIT}] ${name}`);
   }
 
   console.log("5/5 Writing taxonomy and cleaning up …");

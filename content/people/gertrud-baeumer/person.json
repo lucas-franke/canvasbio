@@ -1,0 +1,65 @@
+{
+  "slug": "gertrud-baeumer",
+  "name": {
+    "display": "Gertrud Bäumer",
+    "sort": "Bäumer, Gertrud"
+  },
+  "born": {
+    "date": "1873-09-12",
+    "place": "hohenlimburg"
+  },
+  "died": {
+    "date": "1954-03-25",
+    "place": "gadderbaum"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Ukjent, Tysklands riksdag 1930 eller før, 1930",
+    "license": {
+      "name": "CC0",
+      "url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:B%C3%A4umerGertrud.jpg"
+  },
+  "facets": {
+    "field": [
+      "politics",
+      "writing",
+      "education"
+    ],
+    "place": [
+      "hohenlimburg",
+      "gadderbaum",
+      "germany",
+      "europe"
+    ]
+  },
+  "prominence": 0.52,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q71416",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Gertrud Bäumer",
+      "url": "https://de.wikipedia.org/wiki/Gertrud_B%C3%A4umer",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Gertrud Bäumer",
+      "url": "https://en.wikipedia.org/wiki/Gertrud_B%C3%A4umer",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q71416"
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "hedwig-dohm",
+  "name": {
+    "display": "Hedwig Dohm",
+    "sort": "Dohm, Hedwig"
+  },
+  "born": {
+    "date": "1831-09-20",
+    "place": "berlin"
+  },
+  "died": {
+    "date": "1919-06-01",
+    "place": "berlin"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Unknown author, 1898",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hedwig_Dohm,_c._1898.png"
+  },
+  "facets": {
+    "field": [
+      "writing"
+    ],
+    "place": [
+      "berlin",
+      "germany",
+      "europe"
+    ]
+  },
+  "prominence": 0.62,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q71491",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Hedwig Dohm",
+      "url": "https://de.wikipedia.org/wiki/Hedwig_Dohm",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Hedwig Dohm",
+      "url": "https://en.wikipedia.org/wiki/Hedwig_Dohm",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q71491"
+}

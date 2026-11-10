@@ -121,6 +121,8 @@ export default defineSiteConfig({
         de: "Hedwig Dohm, „Der Frauen Natur und Recht“, 1876",
         en: "Hedwig Dohm, “Der Frauen Natur und Recht”, 1876",
       },
+      // Her biography: the source links there.
+      person: "hedwig-dohm",
     },
   },
 

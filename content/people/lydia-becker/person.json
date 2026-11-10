@@ -1,0 +1,64 @@
+{
+  "slug": "lydia-becker",
+  "name": {
+    "display": "Lydia Becker",
+    "sort": "Becker, Lydia"
+  },
+  "born": {
+    "date": "1827-02-24",
+    "place": "manchester"
+  },
+  "died": {
+    "date": "1890-07-18",
+    "place": "geneva"
+  },
+  "portrait": {
+    "file": "portrait.jpg",
+    "credit": "Susan Isabel Dacre (1844-1933), 1890",
+    "license": {
+      "name": "Public domain"
+    },
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dacre-Becker.jpg"
+  },
+  "facets": {
+    "field": [
+      "writing",
+      "science"
+    ],
+    "place": [
+      "manchester",
+      "geneva",
+      "united-kingdom",
+      "europe",
+      "switzerland"
+    ]
+  },
+  "prominence": 0.61,
+  "sources": [
+    {
+      "label": "Wikidata",
+      "url": "https://www.wikidata.org/wiki/Q276466",
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (de): Lydia Becker",
+      "url": "https://de.wikipedia.org/wiki/Lydia_Becker",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    },
+    {
+      "label": "Wikipedia (en): Lydia Becker",
+      "url": "https://en.wikipedia.org/wiki/Lydia_Becker",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+    }
+  ],
+  "externalId": "Q276466"
+}
