@@ -9,7 +9,7 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/root";
-import "./theme/fonts";
+import { sansLatinUrl } from "./theme/fonts";
 import "./app.css";
 import { withBase } from "~/lib/base-path";
 import { siteConfig } from "~/lib/config";
@@ -23,6 +23,10 @@ import { themeToCss } from "~/lib/theme/css";
 
 // Theme tokens, plus the torn-edge masks for portraits (canvas, list, biography).
 const themeCss = themeToCss(siteConfig.theme) + (siteConfig.theme.tileEdge === "torn" ? tornEdgeCss() : "");
+
+export const links: Route.LinksFunction = () => [
+  { rel: "preload", href: sansLatinUrl, as: "font", type: "font/woff2", crossOrigin: "anonymous" },
+];
 
 /** Applies a stored light/dark choice before first paint to avoid a flash. */
 const themeInitScript = `try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}`;

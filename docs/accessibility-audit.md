@@ -118,14 +118,28 @@ Legende: ✅ erfüllt · ◐ teilweise · — nicht anwendbar
 
 ## Performance
 
-Lighthouse 13.5 (Mobil, simuliertes langsames 4G), lokaler statischer Server mit vorkomprimierten Dateien, ohne HTTP/2 und Caching-Header:
+Gemessen am 11.11.2026 mit Lighthouse 13 (Mobil, simuliertes langsames 4G), Median aus drei Läufen, lokaler statischer Server (sirv) mit vorkomprimierten Dateien, ohne HTTP/2 und Caching-Header. In Klammern: vorher, am selben Tag.
 
-| Seite            | Performance | LCP   | Accessibility | Best Practices | SEO |
-| ---------------- | ----------- | ----- | ------------- | -------------- | --- |
-| Startseite       | 90          | 3,0 s | 100           | 100            | 100 |
-| Bildwand         | 84          | 3,5 s | 100           | 100            | 100 |
-| Liste            | 85          | 3,3 s | 100           | 100            | 100 |
-| Biografie        | 85          | 3,6 s | 100           | 100            | 100 |
-| Über das Projekt | 90          | 2,9 s | 100           | 100            | 100 |
+| Seite            | Performance | LCP         | TBT          | CLS           | Accessibility | Best Practices | SEO      |
+| ---------------- | ----------- | ----------- | ------------ | ------------- | ------------- | -------------- | -------- |
+| Startseite       | 100 (85)    | 1,5 s       | 32 ms (413)  | 0,001 (0,124) | 100           | 100            | 100      |
+| Bildwand         | 88 (86)     | 3,8 s (4,1) | 42 ms        | 0             | 100           | 100            | 100 (91) |
+| Liste            | 90 (89)     | 1,9 s       | 325 ms       | 0             | 100           | 100            | 100 (91) |
+| Zeitstrahl       | 93 (96)     | 1,9 s       | 257 ms       | 0             | 100           | 100            | 100 (91) |
+| Karte            | 65 (68)     | 5,1 s       | 625 ms (475) | 0             | 100           | 100            | 100 (92) |
+| Biografie        | 92 (79)     | 3,3 s (5,5) | 85 ms        | 0             | 100           | 100            | 100 (92) |
+| Über das Projekt | 100 (100)   | 0,8 s       | 0 ms         | 0             | 100           | 100            | 100 (91) |
 
-Umgesetzt: Zod aus dem Browser-Bundle entfernt (Konfiguration als Daten), Brotli/Gzip-Vorkomprimierung, Bildwand vorgerendert (LCP der Bildwand von 10,2 s auf 3,5 s). Weitere Hebel: Menü und Suchpanel (vaul/Radix, ~22 KB) erst bei Bedarf laden, Schriften auf die benötigten Zeichen reduzieren, beim Hosting `Cache-Control: immutable` für `/assets/` und HTTP/2 bzw. HTTP/3.
+TBT schwankt zwischen Läufen um ±150 ms; Unterschiede in dieser Größe bei Liste, Zeitstrahl und Karte sind Rauschen.
+
+Umgesetzt (frühere Runden): Zod aus dem Browser-Bundle entfernt (Konfiguration als Daten), Brotli/Gzip-Vorkomprimierung, Bildwand vorgerendert (LCP der Bildwand von 10,2 s auf 3,5 s).
+
+Umgesetzt (diese Runde):
+
+- **Kanonische URL:** Vorgerendert hatte sie einen Schrägstrich am Ende, nach der Hydration nicht; Lighthouse meldete zwei widersprüchliche Adressen (SEO 91). Jetzt immer mit Schrägstrich, wie GitHub Pages weiterleitet und wie die Sitemap sie nennt.
+- **Startseite, Layout-Verschiebung:** Der Browser zeichnet, bevor er alles nach dem Vorschau-Mosaik gelesen hat. Das Raster dehnte diese ersten Zeilen auf Bildschirmhöhe (bzw. zentrierte sie), danach sprang alles ~130 px nach oben. Unter `lg` beginnen die Zeilen jetzt oben.
+- **Biografie, LCP:** Das Porträt lädt mit `fetchpriority="high"`. Die Personendaten (~100 KB) werden erst nach `load` und dem ersten Bild geholt; vorher konkurrierten sie und die Porträts der Übersicht hinter der Biografie (~500 KB) mit dem Porträt.
+- **Schrift:** Libre Franklin wird vorgeladen; bis sie da ist, steht eine an ihre Maße angepasste Arial (`app/theme/font-fallbacks.css`), damit Text beim Wechsel nicht umbricht.
+- **Karte:** MapLibre (~1 MB, 290 KB gzip) liegt in einem eigenen Chunk, der bei App-Änderungen im Cache bleibt; die Chunk-Warnung gilt erst ab 1100 kB, damit sie für alles andere weiter greift.
+
+Weitere Hebel: Die Karte bleibt der langsamste Teil, weil MapLibre geparst werden muss; ein statisches Vorschaubild bis zur ersten Interaktion würde LCP und TBT dort senken. Die Übersicht hinter einer direkt geöffneten Biografie lädt auf Telefonen Porträts, die unter dem Blatt nicht zu sehen sind (jetzt erst nach dem Laden der Seite); sie erst beim Schließen zu zeigen, berührt die View Transitions und ist daher offen. Außerdem: Menü und Suchpanel (vaul/Radix, ~22 KB) erst bei Bedarf laden, beim Hosting `Cache-Control: immutable` für `/assets/` (auf GitHub Pages nicht einstellbar).

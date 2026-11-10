@@ -92,10 +92,13 @@ export default defineSiteConfig({
     },
     fonts: {
       // One sans for everything (Libre Franklin, after Franklin Gothic, 1902); the serif
-      // only for quotes.
-      heading: '"Libre Franklin Variable", "Libre Franklin", ui-sans-serif, system-ui, sans-serif',
-      body: '"Libre Franklin Variable", "Libre Franklin", ui-sans-serif, system-ui, sans-serif',
-      wordmark: '"Libre Franklin Variable", "Libre Franklin", ui-sans-serif, system-ui, sans-serif',
+      // only for quotes. "Libre Franklin Fallback" is Arial scaled to its metrics while it
+      // loads (app/theme/font-fallbacks.css), so text doesn't reflow when it arrives.
+      heading:
+        '"Libre Franklin Variable", "Libre Franklin", "Libre Franklin Fallback", ui-sans-serif, system-ui, sans-serif',
+      body: '"Libre Franklin Variable", "Libre Franklin", "Libre Franklin Fallback", ui-sans-serif, system-ui, sans-serif',
+      wordmark:
+        '"Libre Franklin Variable", "Libre Franklin", "Libre Franklin Fallback", ui-sans-serif, system-ui, sans-serif',
       quote: '"IBM Plex Serif", ui-serif, Georgia, serif',
     },
     radius: 0.75,

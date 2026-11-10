@@ -16,6 +16,14 @@ interface PageMetaOptions {
 const absolute = (path: string) => (siteConfig.siteUrl ? new URL(path, siteConfig.siteUrl).href : undefined);
 
 /**
+ * Pages are pre-rendered as folders (<path>/index.html), and static hosts like GitHub Pages
+ * redirect "/personen/x" to "/personen/x/". The pre-render sees the slash, the browser
+ * after a client-side navigation doesn't: without this the canonical URL changed on
+ * hydration, and search engines saw two conflicting ones.
+ */
+const withTrailingSlash = (path: string) => (path.endsWith("/") ? path : `${path}/`);
+
+/**
  * Standard meta tags: "<page> – <brand>" title, description, Open Graph and Twitter card.
  * URLs in these tags must be absolute, so canonical, og:url and og:image need
  * `siteUrl` in site.config.ts; without it they are left out.
@@ -33,7 +41,7 @@ export function pageMeta({ title, description, locale, path, image: own }: PageM
   const brand = localize(siteConfig.brand.name, locale);
   const fullTitle = title ? `${title} – ${brand}` : brand;
   const text = description ?? localize(siteConfig.brand.description, locale);
-  const url = path ? absolute(withBase(path)) : undefined;
+  const url = path ? absolute(withTrailingSlash(withBase(path))) : undefined;
   const imageUrl = image ? absolute(image.path) : undefined;
 
   return [

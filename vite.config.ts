@@ -48,8 +48,27 @@ export default defineConfig({
       // module graph): tens of thousands of files. Watching them made the pre-render's
       // preview server (React Router starts a watching child dev server) so slow to answer
       // its first request that it ran into the fixed 10 s timeout.
-      ignored: ["**/build/**", "**/.cache/**", "**/public/portraits/**", "**/.generated/**", "**/content/people/**"],
+      ignored: [
+        "**/build/**",
+        "**/.cache/**",
+        "**/public/portraits/**",
+        "**/.generated/**",
+        "**/content/people/**",
+      ],
     },
+  },
+  build: {
+    // MapLibre (~1 MB) is the one large dependency, loaded only by the map view (lazy in
+    // people-overview.tsx). Its own chunk stays cached when the app code changes.
+    rolldownOptions: {
+      output: {
+        codeSplitting: {
+          groups: [{ name: "maplibre", test: /node_modules[\\/]maplibre-gl[\\/]/ }],
+        },
+      },
+    },
+    // Just above MapLibre, so the warning still catches any other chunk that grows too big.
+    chunkSizeWarningLimit: 1100,
   },
   resolve: {
     tsconfigPaths: true,

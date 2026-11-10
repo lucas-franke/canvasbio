@@ -38,6 +38,42 @@ const isPeopleIndex = (data: unknown): data is PeopleIndex =>
   typeof (data as PeopleIndex).facetLabels === "object";
 
 const cache = new Map<string, PeopleIndex>();
+/** One request per locale, shared by every component that asks for it. */
+const pending = new Map<string, Promise<PeopleIndex>>();
+
+/**
+ * Resolves once the page has loaded (its images included) and painted: after `load`, the
+ * second animation frame (the first frame has been drawn by then). After client-side
+ * navigation that is two frames.
+ */
+const afterPageLoad = () =>
+  new Promise<void>((resolve) => {
+    const painted = () => requestAnimationFrame(() => requestAnimationFrame(() => resolve()));
+    if (document.readyState === "complete") painted();
+    else window.addEventListener("load", painted, { once: true });
+  });
+
+/**
+ * Fetches the static people data. On a biography opened directly, it waits for the page to
+ * load and paint first: the data (~100 KB) and the portraits of the overview behind the biography
+ * (which need it) otherwise competed with the biography's own portrait, its largest paint.
+ */
+function loadPeopleIndex(locale: string): Promise<PeopleIndex> {
+  let promise = pending.get(locale);
+  if (!promise) {
+    promise = afterPageLoad()
+      .then(() => fetch(withBase(peopleDataPath(locale))))
+      .then((res) => (res.ok ? res.json() : Promise.reject(new Error(`HTTP ${res.status}`))))
+      .then((data: PeopleIndex) => {
+        cache.set(locale, data);
+        return data;
+      });
+    // A failed request is not kept, so `retry` asks again.
+    promise.catch(() => pending.delete(locale));
+    pending.set(locale, promise);
+  }
+  return promise;
+}
 
 /**
  * People overview data for the current locale. Uses the loader data of an overview route
@@ -61,10 +97,8 @@ export function usePeopleIndex(locale: string): PeopleIndexState {
   useEffect(() => {
     if (fromRoute || cache.has(locale)) return;
     let cancelled = false;
-    fetch(withBase(peopleDataPath(locale)))
-      .then((res) => (res.ok ? res.json() : Promise.reject(new Error(`HTTP ${res.status}`))))
-      .then((data: PeopleIndex) => {
-        cache.set(locale, data);
+    loadPeopleIndex(locale)
+      .then((data) => {
         if (!cancelled) setFetched(data);
       })
       .catch((error) => {

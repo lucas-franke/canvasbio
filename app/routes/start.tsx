@@ -69,10 +69,13 @@ export default function Start({ loaderData }: Route.ComponentProps) {
       />
       {/* Phones: title, the preview (with the button that opens it), quote, anniversaries.
           From lg two columns: title, quote and anniversaries on the left, the preview on the
-          right. */}
+          right. Rows start at the top below lg (centred from lg): the browser paints before
+          it has parsed what follows the preview (its mosaic is long HTML), and centring or
+          stretching those first rows over the full screen height moved everything up by
+          ~130 px once the rest arrived (layout shift 0.11 on phones). */}
       <main
         id="main"
-        className="mx-auto grid min-h-dvh w-full max-w-7xl content-center gap-6 px-4 pt-20 pb-12 sm:gap-8 sm:px-8 sm:pt-24 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] lg:grid-rows-[auto_auto_1fr] lg:gap-x-16 lg:gap-y-10 lg:pt-28"
+        className="mx-auto grid min-h-dvh w-full max-w-7xl content-start gap-6 px-4 pt-20 pb-12 sm:gap-8 sm:px-8 sm:pt-24 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] lg:grid-rows-[auto_auto_1fr] lg:content-center lg:gap-x-16 lg:gap-y-10 lg:pt-28"
       >
         {/* The title says what the site is about; the name is in the navigation (only once). */}
         <header className="flex flex-col gap-4 lg:col-start-1 lg:row-start-1">
