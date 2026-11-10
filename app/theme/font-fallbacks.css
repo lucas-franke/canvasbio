@@ -1,0 +1,29 @@
+/*
+ * Metric-matched stand-in for Libre Franklin while it loads (font-display: swap).
+ * Arial, scaled to Libre Franklin's width and vertical metrics, wraps text onto the same
+ * lines, so the page doesn't jump when the web font arrives (the start page's title moved
+ * everything below it by ~130 px: a layout shift of 0.11).
+ *
+ * Measured in Chromium against the loaded font (width of a mixed German/English sample at
+ * 100px): regular 3.7 % wider than Arial, semibold 0.9 % narrower than Arial Bold.
+ * Ascent 0.97 em, descent 0.25 em, divided by the size-adjust. Re-measure when the font changes.
+ */
+@font-face {
+  font-family: "Libre Franklin Fallback";
+  src: local("Arial"), local("ArialMT");
+  font-weight: 100 500;
+  size-adjust: 103.68%;
+  ascent-override: 93.56%;
+  descent-override: 24.11%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: "Libre Franklin Fallback";
+  src: local("Arial Bold"), local("Arial-BoldMT");
+  font-weight: 501 900;
+  size-adjust: 99.11%;
+  ascent-override: 97.87%;
+  descent-override: 25.22%;
+  line-gap-override: 0%;
+}

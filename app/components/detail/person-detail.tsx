@@ -323,6 +323,9 @@ export function PersonDetail({
           alt={text.portraitAlt}
           sizes="100vw"
           loading="eager"
+          // The page's largest paint: ahead of the scripts, not behind them (only the
+          // visible one of the two portraits is fetched; the other is display: none).
+          fetchPriority="high"
           className="block aspect-4/3 max-h-[45dvh] w-full object-cover object-[50%_25%]"
         />
         <div
@@ -605,6 +608,7 @@ function FactsPanel({ person }: { person: PersonDetailProps["person"] }) {
               alt={text.portraitAlt}
               sizes="(min-width: 1024px) 18rem, 24rem"
               loading="eager"
+              fetchPriority="high"
               className="h-auto w-full"
             />
           </div>
