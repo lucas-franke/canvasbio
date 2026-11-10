@@ -42,6 +42,8 @@ interface IconActionProps {
   /** Accessible name, also shown as the tooltip. */
   label: string;
   icon: ReactNode;
+  /** Added to the accessible name, not to the tooltip (e.g. ", 3 Ergebnisse"). */
+  nameSuffix?: string;
 }
 
 /**
@@ -52,9 +54,11 @@ interface IconActionProps {
 export function NavIconButton({
   label,
   icon,
+  nameSuffix = "",
   className,
+  children,
   ...props
-}: IconActionProps & Omit<ComponentProps<"button">, "children">) {
+}: IconActionProps & ComponentProps<"button">) {
   return (
     <button
       type="button"
@@ -69,7 +73,10 @@ export function NavIconButton({
       <span aria-hidden="true" className="contents">
         {icon}
       </span>
-      <span className="sr-only">{label}</span>
+      {/* One text node, so the name reads "Suche, 3 Ergebnisse" without a stray space. */}
+      <span className="sr-only">{`${label}${nameSuffix}`}</span>
+      {/* A mark on the button (e.g. an active search). */}
+      {children}
     </button>
   );
 }

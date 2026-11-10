@@ -156,7 +156,8 @@ describe("suggestPeople", () => {
 
   it("ranks name starts first, then word starts, then typos", () => {
     // "Klara" is one typo away and comes last.
-    expect(names("clar")).toEqual(["Clara Zetkin", "Clara Schumann", "Anna Clarke", "Klara Lövey"]);
+    // Within a rank alphabetical by sort name, never by how well known someone is.
+    expect(names("clar")).toEqual(["Clara Schumann", "Clara Zetkin", "Anna Clarke", "Klara Lövey"]);
     expect(names("zetkin")).toEqual(["Clara Zetkin"]);
     expect(names("klara")[0]).toBe("Klara Lövey");
     // Typo tolerance reaches "Clara" from "klara" (one edit) after the exact match.

@@ -4,7 +4,7 @@ import { useLocation, useNavigate, useSearchParams } from "react-router";
 import { siteConfig } from "~/lib/config";
 import { useHydrated } from "~/lib/hooks";
 import { useLocale } from "~/lib/i18n";
-import { pagePath, parsePath } from "~/lib/i18n/locale";
+import { listPath, parsePath } from "~/lib/i18n/locale";
 import { emptySearch, parseSearch, searchSuffix, toSearchParams, type SearchState } from "./search";
 
 /**
@@ -23,18 +23,19 @@ export function useSearchSuffix(): string {
 }
 
 /**
- * Applies a search: on the people pages it stays on the current page (overview or biography),
- * elsewhere it opens the people overview.
+ * Applies a search: on the people pages it stays on the current page (overview or biography);
+ * elsewhere, or with `toList`, it opens the list, which gathers the results in one place
+ * (in the mosaic they stay scattered over the wall).
  */
 export function useApplySearch() {
   const navigate = useNavigate();
   const locale = useLocale();
   const { pathname, search } = useLocation();
-  return (state: SearchState) => {
-    const onPeople = parsePath(pathname).page === "people";
+  return (state: SearchState, options: { toList?: boolean } = {}) => {
+    const onPeople = parsePath(pathname).page === "people" && !options.toList;
     const params = toSearchParams(state, siteConfig.facets, new URLSearchParams(search));
     const query = params.toString();
-    navigate(`${onPeople ? pathname : pagePath(locale, "people")}${query ? `?${query}` : ""}`, {
+    navigate(`${onPeople ? pathname : listPath(locale)}${query ? `?${query}` : ""}`, {
       preventScrollReset: onPeople,
     });
   };

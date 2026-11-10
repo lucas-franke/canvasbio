@@ -106,11 +106,11 @@ export function ViewToggle({ active }: { active: View }) {
           aria-label={`${m.view.label}: ${current.label}`}
           title={m.view.label}
           onClick={() => setOpen((value) => !value)}
-          // The chevron (and from md the view's name) shows that it opens.
-          className="hit-44 inline-flex h-10 shrink-0 items-center gap-1.5 rounded-full px-3 text-nav-foreground transition-colors hover:bg-nav-foreground/10 aria-expanded:bg-nav-foreground/10 [&_svg]:size-5"
+          // The view's name says which one is open, the chevron that it opens.
+          className="hit-44 inline-flex h-10 shrink-0 items-center gap-1.5 rounded-full px-2.5 text-nav-foreground transition-colors hover:bg-nav-foreground/10 aria-expanded:bg-nav-foreground/10 sm:px-3 [&_svg]:size-5"
         >
           <span aria-hidden="true">{current.icon}</span>
-          <span aria-hidden="true" className="hidden text-label font-medium md:inline">
+          <span aria-hidden="true" className="text-body-sm font-medium whitespace-nowrap sm:text-label">
             {current.label}
           </span>
           <ChevronDown

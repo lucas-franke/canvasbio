@@ -106,7 +106,17 @@ export default function Start({ loaderData }: Route.ComponentProps) {
             </blockquote>
             <figcaption className="flex items-start gap-3 text-body-sm text-muted-text">
               <span aria-hidden="true" className="mt-[0.775em] h-px w-6 shrink-0 bg-muted-text" />
-              {t(start.quote.source)}
+              {/* The quoted person's biography, if the collection has it (start.quote.person). */}
+              {start.quote.person && loaderData.people.some((p) => p.slug === start.quote!.person) ? (
+                <Link
+                  to={pagePath(locale, "people", start.quote.person)}
+                  className="rounded-sm underline underline-offset-4 hover:text-emphasis hover:decoration-2"
+                >
+                  {t(start.quote.source)}
+                </Link>
+              ) : (
+                t(start.quote.source)
+              )}
             </figcaption>
           </figure>
         )}

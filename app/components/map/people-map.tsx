@@ -12,6 +12,7 @@ import Supercluster from "supercluster";
 import { CanvasControls } from "~/components/canvas/canvas-controls";
 import { PersonRow } from "~/components/people/person-row";
 import { SearchSummary } from "~/components/search/search-summary";
+import { PlaceList, type MapPlace } from "./place-list";
 import type { PersonListItem, PlaceCoords } from "~/lib/content/adapter";
 import { lifeYears } from "~/lib/content/format";
 import { portraitUrl } from "~/lib/content/images";
@@ -127,6 +128,10 @@ export interface PeopleMapProps {
   hits: PersonListItem[] | null;
   search: SearchState;
   placeCoords: PlaceCoords;
+  /** Continents with their countries, for the grouped list of places. */
+  placeGroups: { key: string; countries: string[] }[];
+  /** Country of each place on the map. */
+  placeCountry: Record<string, string>;
   facetLabels: FacetLabels;
   tagLabels: Record<string, string>;
   tagFacet?: string;
@@ -146,6 +151,8 @@ export default function PeopleMap({
   hits,
   search,
   placeCoords,
+  placeGroups,
+  placeCountry,
   facetLabels,
   tagLabels,
   tagFacet,
@@ -254,10 +261,18 @@ export default function PeopleMap({
       list.push(point.properties.slug);
       counts.set(point.properties.place, list);
     }
-    return [...counts]
-      .map(([key, slugs]) => ({ key, label: placeLabels[key] ?? key, slugs }))
-      .sort((a, b) => b.slugs.length - a.slugs.length || a.label.localeCompare(b.label, locale));
-  }, [points, placeLabels, locale]);
+    return [...counts].map(([key, slugs]): MapPlace => ({ key, label: placeLabels[key] ?? key, slugs }));
+  }, [points, placeLabels]);
+
+  const choosePlace = (place: MapPlace) => {
+    openPanel({ kind: "people", title: m.map.peopleHere(place.label), slugs: place.slugs });
+    const coords = placeCoords[place.key];
+    if (coords)
+      mapRef.current?.easeTo({
+        center: [fromSeam(coords[0], seam), coords[1]],
+        zoom: Math.max(5, mapRef.current.getZoom()),
+      });
+  };
 
   // ---- The map itself, created once ----
   useEffect(() => {
@@ -582,7 +597,7 @@ export default function PeopleMap({
 
       {hits && (
         <div data-map-overlay="" className="absolute inset-x-3 top-24 z-20 mx-auto max-w-xl lg:top-28">
-          <SearchSummary state={search} count={hits.length} labels={facetLabels} collapsible />
+          <SearchSummary state={search} count={hits.length} labels={facetLabels} collapsible asList />
         </div>
       )}
 
@@ -660,34 +675,13 @@ export default function PeopleMap({
           <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain p-2">
             {panel.kind === "places" ? (
               <>
-                <ul className="flex flex-col">
-                  {places.map((place) => (
-                    <li key={place.key}>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          openPanel({
-                            kind: "people",
-                            title: m.map.peopleHere(place.label),
-                            slugs: place.slugs,
-                          });
-                          const coords = placeCoords[place.key];
-                          if (coords)
-                            mapRef.current?.easeTo({
-                              center: [fromSeam(coords[0], seam), coords[1]],
-                              zoom: Math.max(5, mapRef.current.getZoom()),
-                            });
-                        }}
-                        className="flex min-h-11 w-full items-center justify-between gap-3 rounded-lg px-3 text-left text-body text-emphasis hover:bg-emphasis/5"
-                      >
-                        {place.label}
-                        <span className="text-body-xs text-muted-text tabular-nums">
-                          {place.slugs.length}
-                        </span>
-                      </button>
-                    </li>
-                  ))}
-                </ul>
+                <PlaceList
+                  places={places}
+                  groups={placeGroups}
+                  countryOf={placeCountry}
+                  labels={placeLabels}
+                  onChoose={choosePlace}
+                />
                 {unplaced > 0 && (
                   <p className="px-3 py-2 text-body-sm text-muted-text">{m.map.unplaced(unplaced)}</p>
                 )}

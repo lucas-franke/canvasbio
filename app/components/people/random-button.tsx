@@ -7,7 +7,16 @@ import { useMessages } from "~/lib/i18n";
  * "Random biography" button (Figma FAB): floats centred at the bottom of the canvas.
  * The surrounding element positions it; this is just the button.
  */
-export function RandomButton({ onClick, className }: { onClick: () => void; className?: string }) {
+export function RandomButton({
+  onClick,
+  inResults = false,
+  className,
+}: {
+  onClick: () => void;
+  /** A search is active: the pick comes from its results, and the button says so. */
+  inResults?: boolean;
+  className?: string;
+}) {
   const m = useMessages();
   return (
     <button
@@ -19,7 +28,11 @@ export function RandomButton({ onClick, className }: { onClick: () => void; clas
         className,
       )}
     >
-      {m.random.label}
+      <span>
+        {m.random.label}
+        {/* Phones: no room next to the zoom buttons; the name still says it. */}
+        {inResults && <span className="max-sm:sr-only"> {m.random.fromResults}</span>}
+      </span>
       <Shuffle aria-hidden="true" />
     </button>
   );

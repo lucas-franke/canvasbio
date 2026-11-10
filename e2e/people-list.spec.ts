@@ -1,7 +1,7 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 
-import { overlaps, waitForHydration } from "./helpers";
+import { overlaps, waitForHydration, navPillBoxes } from "./helpers";
 
 test("list groups people under letter headings", async ({ page }) => {
   await page.goto("/personen/liste");
@@ -125,6 +125,42 @@ test("the view switch shows the active view and opens a dropdown to change it", 
   await page.getByRole("button", { name: "Ansicht: Liste" }).click();
   await page.keyboard.press("Escape");
   await expect(page.getByRole("button", { name: "Ansicht: Liste" })).toBeFocused();
+});
+
+test("the view switch names the open view on every screen; narrow phones show the monogram", async ({
+  page,
+}) => {
+  for (const width of [360, 393, 1280]) {
+    await page.setViewportSize({ width, height: 800 });
+    await page.goto("/personen/zeitstrahl");
+    const button = page.getByRole("button", { name: "Ansicht: Zeitstrahl" });
+    await expect(button).toContainText("Zeitstrahl");
+    await expect(button).toBeInViewport({ ratio: 1 });
+    // The brand keeps its full name; below 480 px it shows the monogram.
+    const brand = page.getByRole("link", { name: "Lauter Frauen – Startseite" });
+    await expect(brand.locator("[data-monogram]")).toBeVisible({ visible: width < 480 });
+    // Brand and controls stay side by side, each fully on screen.
+    const [left, right] = await navPillBoxes(page);
+    expect(left!.x + left!.width).toBeLessThanOrEqual(right!.x);
+    expect(right!.x + right!.width).toBeLessThanOrEqual(width);
+  }
+});
+
+test("phones: compact rows, about six people per screen; tags still reach screen readers", async ({
+  page,
+  isMobile,
+}) => {
+  test.skip(!isMobile, "wider layouts keep the large rows");
+  await page.goto("/personen/liste");
+  const rows = page.locator("main article");
+  const heights = await rows.evaluateAll((all) =>
+    all.slice(0, 12).map((el) => el.getBoundingClientRect().height),
+  );
+  expect(Math.max(...heights)).toBeLessThan(110);
+  // The tags are not on screen, but in the row for assistive tech.
+  const tags = rows.first().locator("ul");
+  await expect(tags).toHaveClass(/sr-only/);
+  expect((await tags.textContent())!.length).toBeGreaterThan(0);
 });
 
 test("language switch keeps the list view", async ({ page }) => {

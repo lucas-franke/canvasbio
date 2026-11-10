@@ -55,7 +55,7 @@ test("the mosaic button continues the wall where it was, without a camera flight
   await page.getByRole("link", { name: "Mosaik öffnen", exact: true }).click();
   await expect(page).toHaveURL(/\/personen$/);
   // The start page (with its preview wall) is gone, so this is the mosaic's own wall.
-  await expect(page.getByRole("tablist", { name: "Ansichten" })).toHaveCount(0);
+  await expect(page.getByRole("navigation", { name: "Ansichten" })).toHaveCount(0);
   const wall = page.locator("main .canvas-world");
   await expect(wall).toBeAttached();
   // Same zoom as the backdrop, and it stays put.
@@ -66,33 +66,47 @@ test("the mosaic button continues the wall where it was, without a camera flight
   expect(await page.evaluate(() => sessionStorage.getItem("canvas:continue"))).toBeNull();
 });
 
-test("the preview tabs choose the view the main button opens", async ({ page }) => {
+test("each view is one tap away from the start page", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByText(/^\d+ Biografien aus \d Kontinenten$/)).toBeVisible();
-  await expect(page.getByRole("region", { name: "Lauter Frauen" })).toHaveCount(0);
-  const tabs = page.getByRole("tablist", { name: "Ansichten" });
-  // The mosaic first; with a screen reader the list is the easier one.
+  await expect(page.getByRole("tablist")).toHaveCount(0);
+  const views = page.getByRole("navigation", { name: "Ansichten" });
+  await expect(views.getByRole("link")).toHaveText(["Mosaik", "Liste", "Zeitstrahl", "Karte"]);
+  // With a screen reader the list is the easier one: the mosaic links say so.
+  await expect(views.getByRole("link", { name: "Mosaik" })).toHaveAccessibleDescription(
+    "Mit Screenreader ist die Listenansicht übersichtlicher.",
+  );
+  for (const [name, href] of [
+    ["Liste", "/personen/liste"],
+    ["Zeitstrahl", "/personen/zeitstrahl"],
+    ["Karte", "/personen/karte"],
+  ] as const) {
+    await expect(views.getByRole("link", { name })).toHaveAttribute("href", href);
+  }
+  await views.getByRole("link", { name: "Liste" }).click();
+  await expect(page).toHaveURL(/\/personen\/liste$/);
+});
+
+test("the preview card opens the mosaic; from 1024 px pointing at a view previews it", async ({
+  page,
+  isMobile,
+}) => {
+  await page.goto("/");
   const mosaic = page.getByRole("link", { name: "Mosaik öffnen", exact: true });
   await expect(mosaic).toHaveAttribute("href", "/personen");
-  await expect(mosaic).toHaveAccessibleDescription("Mit Screenreader ist die Listenansicht übersichtlicher.");
-  for (const [tab, button, href] of [
-    ["Liste", "Liste öffnen", "/personen/liste"],
-    ["Zeitstrahl", "Zeitstrahl öffnen", "/personen/zeitstrahl"],
-    ["Karte", "Karte öffnen", "/personen/karte"],
-  ] as const) {
-    await tabs.getByRole("tab", { name: tab }).click();
-    await expect(tabs.getByRole("tab", { name: tab })).toHaveAttribute("aria-selected", "true");
-    await expect(page.getByRole("link", { name: button, exact: true })).toHaveAttribute("href", href);
-  }
-  // The button is part of the preview, and the whole preview is its click area: a click in
-  // the top left corner, away from the button (top right is the pause button), opens the view as well.
-  const link = page.getByRole("link", { name: "Karte öffnen", exact: true });
-  const card = (await link.boundingBox())!;
-  const button = (await link.locator("span").first().boundingBox())!;
-  expect(button.x).toBeGreaterThanOrEqual(card.x);
-  expect(button.y + button.height).toBeLessThanOrEqual(card.y + card.height);
+  // The whole preview is the button's click area.
+  const card = (await mosaic.boundingBox())!;
+  const button = (await mosaic.locator("span").first().boundingBox())!;
   expect(card.height).toBeGreaterThan(button.height * 3);
-  await page.mouse.click(card.x + 20, card.y + 20);
+  if (isMobile) return;
+  const views = page.getByRole("navigation", { name: "Ansichten" });
+  await views.getByRole("link", { name: "Karte" }).hover();
+  const map = page.getByRole("link", { name: "Karte öffnen", exact: true });
+  await expect(map).toHaveAttribute("href", "/personen/karte");
+  // A click in the top left corner, away from the button, opens the view as well.
+  const box = (await map.boundingBox())!;
+  await page.mouse.move(box.x + 20, box.y + 20);
+  await page.mouse.click(box.x + 20, box.y + 20);
   await expect(page).toHaveURL(/\/personen\/karte$/);
 });
 

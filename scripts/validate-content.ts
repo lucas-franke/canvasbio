@@ -9,6 +9,16 @@ import siteConfig from "../site.config";
 
 const { people, taxonomy, issues } = await loadContent(path.resolve("content"), siteConfig);
 
+// The start page quote links to the quoted person's biography if it names one.
+const quoted = siteConfig.start.quote?.person;
+if (quoted && !people.has(quoted)) {
+  issues.push({
+    level: "warning",
+    file: "site.config.ts",
+    message: `start.quote.person "${quoted}" has no biography in content/people; the quote is shown without a link`,
+  });
+}
+
 const errors = issues.filter((i) => i.level === "error");
 const warnings = issues.filter((i) => i.level === "warning");
 

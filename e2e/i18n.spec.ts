@@ -1,14 +1,14 @@
 import { expect, test } from "@playwright/test";
 
-test("a translated tab link opens the same tab in the other language", async ({ page }) => {
-  // The menu is behind the modal biography; the translated hash (see switchLocaleHash) still opens the tab.
+test("a translated section link opens the same section in the other language", async ({ page }) => {
+  // The menu is behind the modal biography; the translated hash (see switchLocaleHash) still leads to the section.
   await page.goto("/en/people/clara-zetkin#timeline");
-  await expect(page.getByRole("tab", { name: "Timeline" })).toHaveAttribute("aria-selected", "true");
+  await expect(page.getByRole("heading", { level: 2, name: "Life in dates" })).toBeInViewport();
 });
 
 test("English life stories have no leftover pronunciation markup", async ({ page }) => {
   await page.goto("/en/people/clara-zetkin#story");
-  const story = page.getByRole("tabpanel", { name: "Life story" });
+  const story = page.getByRole("region", { name: "Life story" });
   await expect(story).toContainText("Clara Zetkin (née Eißner; 5 July 1857");
   await expect(story).not.toContainText("(;");
 });

@@ -3,7 +3,8 @@ import { expect, test, type Page } from "@playwright/test";
 import { switchView, waitForHydration, peopleCount } from "./helpers";
 
 const openPanel = async (page: Page) => {
-  await page.getByRole("button", { name: "Suche", exact: true }).click();
+  // "Suche", or "Suche, 3 Ergebnisse" while a search is active.
+  await page.getByRole("button", { name: /^Suche(, |$)/ }).click();
   const dialog = page.getByRole("dialog", { name: "Suche" });
   await expect(dialog).toBeVisible();
   return dialog;
@@ -11,7 +12,7 @@ const openPanel = async (page: Page) => {
 
 const submit = (dialog: ReturnType<Page["getByRole"]>) => dialog.locator('button[type="submit"]');
 
-test("name search on the canvas highlights the match and counts live", async ({ page }) => {
+test("a name that fits exactly one person opens her biography", async ({ page }) => {
   await page.goto("/personen");
   await page.locator("[data-cell]").first().waitFor({ state: "attached" });
   const dialog = await openPanel(page);
@@ -19,16 +20,65 @@ test("name search on the canvas highlights the match and counts live", async ({ 
   await expect(dialog.getByLabel("Nach Namen suchen")).toBeFocused();
   await dialog.getByLabel("Nach Namen suchen").fill("zetkin");
   await expect(submit(dialog)).toHaveText("1 Ergebnis anzeigen");
+  await dialog.getByLabel("Nach Namen suchen").press("Enter");
+  await expect(page).toHaveURL(/\/personen\/clara-zetkin$/);
+  await expect(page.getByRole("heading", { level: 1, name: "Clara Zetkin" })).toBeFocused();
+});
+
+test("a search on the canvas highlights the matches and counts live", async ({ page }) => {
+  await page.goto("/personen");
+  await page.locator("[data-cell]").first().waitFor({ state: "attached" });
+  const dialog = await openPanel(page);
+  await dialog.getByLabel("Nach Namen suchen").fill("pankhurst");
+  await expect(submit(dialog)).toHaveText("3 Ergebnisse anzeigen");
   await submit(dialog).click();
 
-  await expect(page).toHaveURL(/\/personen\?q=zetkin$/);
-  await expect(page.getByRole("heading", { name: "Ergebnisse (1)" })).toBeVisible();
-  await expect(page.locator("#main").getByRole("status").first()).toHaveText("1 Person gefunden");
-  // The match is lifted and becomes the tile in the tab order; the rest is dimmed.
-  const hit = page.locator('[data-person="clara-zetkin"]');
-  await expect(hit).toHaveAttribute("data-match", "hit");
-  await expect(hit).toHaveAttribute("tabindex", "0");
+  await expect(page).toHaveURL(/\/personen\?q=pankhurst$/);
+  await expect(page.getByRole("heading", { name: "Ergebnisse (3)" })).toBeVisible();
+  await expect(page.locator("#main").getByRole("status").first()).toHaveText("3 Personen gefunden");
+  // The matches are lifted, one of them is the tile in the tab order; the rest is dimmed.
+  const tile = page.locator('[data-cell][tabindex="0"]');
+  await expect(tile).toHaveAttribute("data-match", "hit");
   await expect(page.locator('[data-match="miss"]').first()).toBeAttached();
+});
+
+test("the results on the canvas and the map lead to the list with the same search", async ({ page }) => {
+  for (const path of ["/personen?field=medicine", "/personen/karte?field=medicine"]) {
+    await page.goto(path);
+    await expect(page.getByRole("heading", { name: /^Ergebnisse \(\d+\)$/ })).toBeVisible();
+    await page.getByRole("link", { name: "Als Liste zeigen" }).click();
+    await expect(page).toHaveURL(/\/personen\/liste\?field=medicine$/);
+    await expect(page.locator("main article").first()).toBeVisible();
+  }
+  // The list itself needs no such link.
+  await expect(page.getByRole("link", { name: "Als Liste zeigen" })).toHaveCount(0);
+});
+
+test("an active search marks the search button and names the number of results", async ({ page }) => {
+  await page.goto("/personen/liste");
+  await waitForHydration(page);
+  await expect(page.locator("[data-search-active]")).toHaveCount(0);
+  await expect(page.getByRole("button", { name: "Suche", exact: true })).toBeVisible();
+
+  await page.goto("/personen/liste?field=politics");
+  const results = page.getByRole("heading", { name: /^Ergebnisse \(\d+\)$/ });
+  await expect(results).toBeVisible();
+  const count = (await results.textContent())!.match(/\d+/)![0];
+  await expect(page.locator("[data-search-active]")).toBeVisible();
+  // Still there once the results bar has scrolled away (phones hide the navigation while
+  // scrolling down and bring it back on the way up).
+  await page.evaluate(() => window.scrollTo(0, 1500));
+  await page.evaluate(() => window.scrollBy(0, -60));
+  await expect(results).not.toBeInViewport();
+  const button = page.getByRole("button", { name: `Suche, ${count} Ergebnisse` });
+  await expect(button).toBeInViewport();
+  // The panel opens with the search, as before. (From the top: on phones a click's own
+  // scrolling would send the navigation away again.)
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await button.click();
+  await expect(
+    page.getByRole("dialog", { name: "Suche" }).getByRole("checkbox", { name: /^Politik/ }),
+  ).toBeChecked();
 });
 
 test("field filter narrows the list; typos and umlauts are forgiven", async ({ page }) => {
@@ -124,13 +174,25 @@ test("the search survives opening and closing a biography and switching views", 
   await expect(page).toHaveURL(/\/personen\?q=zetkin$/);
 });
 
-test("searching from the start page opens the overview", async ({ page }) => {
+test("searching from the start page lands in the list, where the results are together", async ({ page }) => {
   await page.goto("/");
   await waitForHydration(page);
   const dialog = await openPanel(page);
-  await dialog.getByLabel("Nach Namen suchen").fill("dohm");
+  await dialog.locator("label", { hasText: "Medizin" }).click();
   await submit(dialog).click();
-  await expect(page).toHaveURL(/\/personen\?q=dohm$/);
+  await expect(page).toHaveURL(/\/personen\/liste\?field=medicine$/);
+  await expect(page.getByRole("heading", { name: /^Ergebnisse \(\d+\)$/ })).toBeFocused();
+});
+
+test("with nothing entered the panel offers all, and applying it clears a search", async ({ page }) => {
+  await page.goto("/personen/liste?q=pankhurst");
+  await expect(page.getByRole("heading", { name: "Ergebnisse (3)" })).toBeVisible();
+  const dialog = await openPanel(page);
+  await dialog.getByRole("button", { name: "Zurücksetzen" }).click();
+  await expect(submit(dialog)).toHaveText(`Alle ${await peopleCount(page)} anzeigen`);
+  await submit(dialog).click();
+  await expect(page).toHaveURL(/\/personen\/liste$/);
+  await expect(page.getByRole("heading", { name: /^Ergebnisse/ })).toHaveCount(0);
 });
 
 test("previous/next match move through the results on the canvas", async ({ page }) => {
@@ -142,6 +204,20 @@ test("previous/next match move through the results on the canvas", async ({ page
   await expect(page.getByText(/^Treffer 2 von \d+: /)).toBeAttached();
   await page.getByRole("button", { name: "Vorheriger Treffer" }).click();
   await expect(page.getByText(/^Treffer 1 von \d+: /)).toBeAttached();
+});
+
+test("name suggestions are alphabetical and lead to all matches when there are more", async ({ page }) => {
+  await page.goto("/personen/liste");
+  const dialog = await openPanel(page);
+  await dialog.getByLabel("Nach Namen suchen").fill("clara");
+  const suggestions = dialog.getByRole("region", { name: "Passende Personen" });
+  const all = suggestions.getByRole("button", { name: /^Alle \d+ anzeigen$/ });
+  await expect(all).toBeVisible();
+  const total = Number((await all.textContent())!.match(/\d+/)![0]);
+  expect(total).toBeGreaterThan(5);
+  await all.click();
+  await expect(page).toHaveURL(/\/personen\/liste\?q=clara$/);
+  await expect(page.getByRole("heading", { name: `Ergebnisse (${total})` })).toBeFocused();
 });
 
 test("typing a name suggests people to open directly", async ({ page }) => {
@@ -211,9 +287,9 @@ test("after applying a search, focus is on the results heading", async ({ page }
   await page.goto("/personen/liste");
   await waitForHydration(page);
   const dialog = await openPanel(page);
-  await dialog.getByLabel("Nach Namen suchen").fill("zetkin");
+  await dialog.getByLabel("Nach Namen suchen").fill("pankhurst");
   await submit(dialog).click();
-  await expect(page.getByRole("heading", { name: "Ergebnisse (1)" })).toBeFocused();
+  await expect(page.getByRole("heading", { name: "Ergebnisse (3)" })).toBeFocused();
 });
 
 test("the two clear buttons in the search panel have distinct names", async ({ page }) => {

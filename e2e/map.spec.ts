@@ -114,6 +114,26 @@ test("the portraits on the map don't cover each other", async ({ page }) => {
   expect(overlapping).toBe(0);
 });
 
+test("the list of places is grouped by continent and country, alphabetically", async ({ page }) => {
+  await page.goto("/personen/karte");
+  await expect(page.locator(".maplibregl-marker").first()).toBeAttached({ timeout: 20_000 });
+  await page.getByRole("button", { name: "Ortsliste" }).click();
+  const places = page.getByRole("region", { name: "Orte" });
+  const continents = places.getByRole("list", { name: "Orte" }).locator(":scope > li > details > summary");
+  const names = (await continents.allTextContents()).map((t) => t.replace(/\d+.*$/, "").trim());
+  // Alphabetical, the places without a known country last.
+  const sorted = names.filter((n) => n !== "Weitere Orte");
+  expect(sorted).toEqual([...sorted].sort((a, b) => a.localeCompare(b, "de")));
+  expect(sorted).toContain("Europa");
+
+  await places.locator("summary", { hasText: /^Europa/ }).click();
+  await places.locator("summary", { hasText: /^Deutschland/ }).click();
+  const berlin = places.getByRole("button", { name: /^Berlin\b/ });
+  await expect(berlin).toBeVisible();
+  await berlin.click();
+  await expect(page.getByRole("heading", { name: "Biografien aus Berlin" })).toBeFocused();
+});
+
 test.describe("map focus (WCAG 2.4.3)", () => {
   test("the list of places takes focus, Escape returns it to its button", async ({ page }) => {
     await page.goto("/personen/karte");
@@ -122,13 +142,10 @@ test.describe("map focus (WCAG 2.4.3)", () => {
     await button.click();
     await expect(page.getByRole("heading", { name: "Orte" })).toBeFocused();
     // Picking a place: focus moves to the people there, not to the page.
-    await page
-      .getByRole("region", { name: "Orte" })
-      .getByRole("listitem")
-      .first()
-      .getByRole("button")
-      .click();
-    await expect(page.getByRole("heading", { name: /^Biografien aus / })).toBeFocused();
+    const places = page.getByRole("region", { name: "Orte" });
+    await places.getByLabel("Ort suchen").fill("berlin");
+    await places.getByRole("button", { name: /^Berlin · Deutschland/ }).click();
+    await expect(page.getByRole("heading", { name: "Biografien aus Berlin" })).toBeFocused();
     await page.keyboard.press("Escape");
     await expect(page.getByRole("region", { name: /^Biografien aus / })).toHaveCount(0);
     await expect(button).toBeFocused();

@@ -18,6 +18,30 @@ import type { Chapter, SortKey } from "~/lib/content/sort";
 import { lifeYears } from "~/lib/content/format";
 import { useLocale, useMessages } from "~/lib/i18n";
 import { localize } from "~/lib/i18n/localize";
+import { ChevronDown } from "lucide-react";
+
+/** The configured key dates as a list (two columns where there is room). */
+function EventList({
+  events,
+  locale,
+}: {
+  events: (typeof siteConfig.timeline.events)[number][];
+  locale: string;
+}) {
+  return (
+    <ul className="grid gap-x-6 gap-y-1 @xl:grid-cols-2">
+      {events.map((event) => (
+        <li key={event.year} className="flex gap-3">
+          <span aria-hidden="true" className="mt-2 size-2 shrink-0 rotate-45 bg-brand" />
+          <span>
+            <span className="font-semibold text-emphasis tabular-nums">{event.year}</span>{" "}
+            {localize(event.label, locale)}
+          </span>
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 /**
  * Row columns, shared by axis and rows so the years line up. Narrow: portrait, then name
@@ -95,30 +119,35 @@ export function TimelineView({ chapters, sort, hrefFor, activeSlug }: TimelineVi
 
   return (
     <>
-      {/* The key dates, explaining the diamonds on the axis. */}
+      {/* The key dates, explaining the diamonds on the axis. Wide: listed open. Narrow: folded
+          into one line that opens in place, so the first screen shows people, not dates. Two
+          forms switched by the container width (no script, no jump after loading); the
+          hidden one is display: none, so assistive tech gets only one. */}
       {scale && events.length > 0 && (
-        <section
-          aria-labelledby="timeline-events"
-          className="flex flex-col gap-2 px-2 text-body-sm text-text"
-        >
-          <h2
-            id="timeline-events"
-            className="font-sans text-body-sm font-semibold tracking-normal text-emphasis"
+        <>
+          <section
+            aria-labelledby="timeline-events"
+            className="flex flex-col gap-2 px-2 text-body-sm text-text @max-xl:hidden"
           >
-            {m.timeline.events}
-          </h2>
-          <ul className="grid gap-x-6 gap-y-1 @xl:grid-cols-2">
-            {events.map((event) => (
-              <li key={event.year} className="flex gap-3">
-                <span aria-hidden="true" className="mt-2 size-2 shrink-0 rotate-45 bg-brand" />
-                <span>
-                  <span className="font-semibold text-emphasis tabular-nums">{event.year}</span>{" "}
-                  {localize(event.label, locale)}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </section>
+            <h2 id="timeline-events" className="text-eyebrow font-semibold text-emphasis">
+              {m.timeline.events}
+            </h2>
+            <EventList events={events} locale={locale} />
+          </section>
+          <details className="group/events px-2 text-body-sm text-text @xl:hidden">
+            <summary className="-mx-2 flex min-h-11 w-fit cursor-pointer list-none items-center gap-2 rounded-lg px-2 font-semibold text-emphasis hover:bg-emphasis/5 [&::-webkit-details-marker]:hidden">
+              <span aria-hidden="true" className="size-2 shrink-0 rotate-45 bg-brand" />
+              {m.timeline.events} ({events.length})
+              <ChevronDown
+                aria-hidden="true"
+                className="size-4 text-muted-text transition-transform group-open/events:rotate-180 motion-reduce:transition-none"
+              />
+            </summary>
+            <div className="pt-2 pb-1">
+              <EventList events={events} locale={locale} />
+            </div>
+          </details>
+        </>
       )}
 
       <div className="relative flex flex-col gap-10">

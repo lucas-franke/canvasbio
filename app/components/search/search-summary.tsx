@@ -1,11 +1,19 @@
 import { cn } from "cn";
-import { ChevronDown, X } from "lucide-react";
+import { ChevronDown, List, X } from "lucide-react";
 import { useId, useRef, useState, type ReactNode } from "react";
+import { Link } from "react-router";
 
-import { Button } from "~/components/ui/button";
+import { Button, buttonVariants } from "~/components/ui/button";
 import { siteConfig } from "~/lib/config";
-import { useMessages } from "~/lib/i18n";
-import { emptySearch, isSearchActive, type FacetLabels, type SearchState } from "~/lib/search/search";
+import { useLocale, useMessages } from "~/lib/i18n";
+import { listPath } from "~/lib/i18n/locale";
+import {
+  emptySearch,
+  isSearchActive,
+  searchSuffix,
+  type FacetLabels,
+  type SearchState,
+} from "~/lib/search/search";
 import { setSearchPanelOpen, useApplySearch } from "~/lib/search/use-search";
 
 interface Filter {
@@ -47,6 +55,8 @@ interface SearchSummaryProps {
   actions?: ReactNode;
   /** On phones, fold the filter chips behind a "Filter (n)" button (floating on the canvas). */
   collapsible?: boolean;
+  /** Offer the list with the same search (mosaic and map, where the results stay scattered). */
+  asList?: boolean;
   className?: string;
 }
 
@@ -60,9 +70,11 @@ export function SearchSummary({
   labels,
   actions,
   collapsible = false,
+  asList = false,
   className,
 }: SearchSummaryProps) {
   const m = useMessages();
+  const locale = useLocale();
   const headingId = useId();
   const chipsId = useId();
   const [chipsOpen, setChipsOpen] = useState(false);
@@ -143,6 +155,16 @@ export function SearchSummary({
           </Button>
         </li>
       </ul>
+
+      {asList && count > 0 && (
+        <Link
+          to={listPath(locale) + searchSuffix(state, siteConfig.facets)}
+          className={buttonVariants({ size: "sm", className: "self-start" })}
+        >
+          <List aria-hidden="true" className="size-4" />
+          {m.search.asList}
+        </Link>
+      )}
     </section>
   );
 }

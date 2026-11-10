@@ -114,12 +114,12 @@ export function PeopleOverview({
           size="sm"
           variant="ghost"
           onClick={showRandom}
-          title={m.random.label}
+          title={hits ? m.random.inResults : m.random.label}
           className="-mr-3 shrink-0"
         >
           <Shuffle aria-hidden="true" className="size-4" />
           {/* Phones: the symbol only, so the chosen order keeps room. */}
-          <span className="sr-only sm:not-sr-only">{m.random.label}</span>
+          <span className="sr-only sm:not-sr-only">{hits ? m.random.inResults : m.random.label}</span>
         </Button>
       )}
     </div>
@@ -189,6 +189,8 @@ function MapView({
         hits={hits}
         search={search}
         placeCoords={index.placeCoords ?? {}}
+        placeGroups={index.placeGroups ?? []}
+        placeCountry={index.placeCountry ?? {}}
         facetLabels={index.facetLabels}
         tagLabels={index.tagLabels}
         tagFacet={index.tagFacet}

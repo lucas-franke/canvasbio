@@ -50,13 +50,18 @@ describe("relatedPeople", () => {
     expect(relatedPeople(anna, pool).map((r) => r.person.slug)).toEqual(["same", "old"]);
   });
 
-  it("breaks ties by lower prominence, then slug, and respects the limit", () => {
-    const pool = [
+  it("breaks ties in a fixed order that ignores prominence, and respects the limit", () => {
+    const pool = (prominence: number[]) => [
       anna,
-      person("z", { field: ["politics"] }, "1850", "1920", 0.2),
-      person("y", { field: ["politics"] }, "1850", "1920", 0.9),
-      person("x", { field: ["politics"] }, "1850", "1920", 0.2),
+      person("z", { field: ["politics"] }, "1850", "1920", prominence[0]),
+      person("y", { field: ["politics"] }, "1850", "1920", prominence[1]),
+      person("x", { field: ["politics"] }, "1850", "1920", prominence[2]),
     ];
-    expect(relatedPeople(anna, pool, 2).map((r) => r.person.slug)).toEqual(["x", "z"]);
+    const slugs = (prominence: number[]) =>
+      relatedPeople(anna, pool(prominence), 2).map((r) => r.person.slug);
+    expect(slugs([0.2, 0.9, 0.2])).toHaveLength(2);
+    // The same two, in the same order, however well known each of them is.
+    expect(slugs([0.9, 0.1, 0.5])).toEqual(slugs([0.2, 0.9, 0.2]));
+    expect(slugs([0.1, 0.5, 0.9])).toEqual(slugs([0.2, 0.9, 0.2]));
   });
 });

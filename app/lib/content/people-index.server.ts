@@ -1,6 +1,7 @@
 import { siteConfig } from "~/lib/config";
 import type { FacetLabels } from "~/lib/search/search";
 import { content } from "./index.server";
+import { placeCountries } from "./place-countries.server";
 
 /**
  * Data for the people overview (canvas, list and search): all people plus the translated
@@ -42,6 +43,11 @@ export async function loadPeopleIndex(locale: string) {
       countries: countries.filter((country) => placeLabels[country]).sort(byName),
     }))
     .sort((a, b) => byName(a.key, b.key));
+  // The country of each place on the map, for the grouped list of places next to it.
+  const countries = await placeCountries(people, taxonomy, regions);
+  const placeCountry = Object.fromEntries(
+    Object.keys(placeCoords).flatMap((key) => (countries[key] ? [[key, countries[key]!]] : [])),
+  );
   return {
     people,
     tagFacet,
@@ -49,5 +55,6 @@ export async function loadPeopleIndex(locale: string) {
     facetLabels,
     placeCoords,
     placeGroups,
+    placeCountry,
   };
 }

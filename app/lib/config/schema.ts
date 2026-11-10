@@ -162,7 +162,14 @@ export const siteConfigSchema = z.object({
   start: z.object({
     /** The start page's title: what the site is about (the name is in the navigation). */
     subtitle: localized,
-    quote: z.object({ text: localized, source: localized }).optional(),
+    quote: z
+      .object({
+        text: localized,
+        source: localized,
+        /** Slug of the quoted person, if the collection has her biography: the source links there. */
+        person: z.string().optional(),
+      })
+      .optional(),
   }),
 
   /**
@@ -185,16 +192,20 @@ export const siteConfigSchema = z.object({
   ),
 
   detail: z.object({
+    /**
+     * Sections of a biography, in reading order (the name is historical: they used to be
+     * tabs). A biography shows the ones it has content for; "timeline" needs three entries.
+     */
     tabs: z.array(
       z.object({
         id: z.enum(["facts", "story", "timeline"]),
         label: localized,
         /**
-         * Shorter label shown on phones, where the tabs share a line with the close button. Part
+         * Shorter label shown on phones, where the section links share a line with share and close. Part
          * of `label`, which stays the accessible name (WCAG 2.5.3).
          */
         shortLabel: localized.optional(),
-        /** URL segment for the tab; the first tab has none. */
+        /** URL hash of the section; the first section has none. */
         slug: localizedOptional,
       }),
     ),

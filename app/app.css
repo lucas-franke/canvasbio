@@ -204,6 +204,16 @@
   }
 }
 
+/* Small heading above a group ("Sprache", "An diesem Tag", the order above previous/next). */
+@utility text-eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-sm);
+  line-height: var(--text-body-sm--line-height);
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--c-muted);
+}
+
 @utility wordmark {
   font-family: var(--font-wordmark);
   font-weight: 700;
@@ -418,6 +428,90 @@
 /* The dialog stays above the nav while it appears or goes. */
 ::view-transition-group(detail-panel) {
   z-index: 1;
+}
+
+/*
+ * Top bar of the biography (DetailBar): section links, share and close.
+ * Phones start with the portrait at the top edge: the bar is transparent, its links are
+ * out of the way, and share and close float on the picture. Once the name passes under it
+ * ([data-solid]), when a section link has keyboard focus, and always from `lg`, it is one
+ * opaque line.
+ */
+.detail-bar {
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease;
+}
+.detail-bar-nav {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 150ms ease;
+}
+.detail-bar-button {
+  border: 1px solid color-mix(in srgb, var(--c-border) 70%, transparent);
+  background: color-mix(in srgb, var(--c-surface) 88%, transparent);
+  backdrop-filter: blur(4px);
+  transition: background-color 150ms ease;
+}
+.detail-bar-button:not(:focus-visible) {
+  box-shadow: 0 2px 10px rgb(0 0 0 / 0.12);
+}
+.detail-bar-button:hover {
+  background: var(--c-surface);
+}
+.detail-bar-link[aria-current="true"] {
+  color: var(--c-accent);
+  text-decoration: underline 2px;
+  text-underline-offset: 0.5em;
+}
+.detail-bar:is([data-solid], :has(.detail-bar-nav :focus-visible)) {
+  border-bottom-color: var(--c-border);
+  background: var(--c-surface);
+
+  & .detail-bar-nav {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  & .detail-bar-button {
+    border-color: transparent;
+    background: transparent;
+    backdrop-filter: none;
+  }
+  & .detail-bar-button:not(:focus-visible) {
+    box-shadow: none;
+  }
+  & .detail-bar-button:hover {
+    background: color-mix(in srgb, var(--c-emphasis) 5%, transparent);
+  }
+  & .detail-bar-close {
+    border-color: var(--c-border-control);
+  }
+}
+@media (min-width: 64rem) {
+  .detail-bar {
+    border-bottom-color: var(--c-border);
+    background: var(--c-surface);
+
+    & .detail-bar-nav {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    & .detail-bar-button {
+      border-color: transparent;
+      background: transparent;
+      backdrop-filter: none;
+    }
+    & .detail-bar-button:not(:focus-visible) {
+      box-shadow: none;
+    }
+    & .detail-bar-button:hover {
+      background: color-mix(in srgb, var(--c-emphasis) 5%, transparent);
+    }
+    & .detail-bar-close {
+      border-color: var(--c-border-control);
+    }
+  }
 }
 
 /* The scrollbar inside the biography card: thin, on a transparent track. */
