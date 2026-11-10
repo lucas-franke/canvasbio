@@ -80,7 +80,9 @@ const WIKIDATA_LICENSE = { name: "CC0", url: "https://creativecommons.org/public
 
 /* ---------------------------------------------------------------- fields */
 
-/** Facet "field": derived from occupations via their English label. "activism" is the fallback. */
+/** Facet "field": derived from occupations via their English label. "activism" is the fallback
+ * for people with no other recognised field (everyone was imported for a movement occupation,
+ * so the tag means "activism only", not "part of the movement"). */
 const FIELDS: { key: string; match: RegExp; label: Record<string, string> }[] = [
   {
     key: "politics",
@@ -121,7 +123,7 @@ const FIELDS: { key: string; match: RegExp; label: Record<string, string> }[] = 
 ];
 const ACTIVISM = {
   key: "activism",
-  label: { de: "Frauenbewegung", en: "Women's movement" },
+  label: { de: "Aktivismus", en: "Activism" },
 };
 
 function fieldsOf(occupations: (Entity | undefined)[]): string[] {
