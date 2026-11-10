@@ -261,7 +261,7 @@ export default function PeopleLayout() {
               aria-labelledby={PERSON_HEADING_ID}
               role="dialog"
               aria-modal="true"
-              className="relative flex h-full flex-col [view-transition-name:detail-panel] lg:h-auto lg:max-h-[calc(100dvh-4rem)] lg:w-[min(100%,60rem)] lg:overflow-hidden lg:rounded-card lg:bg-surface lg:shadow-[0_24px_64px_rgb(0_0_0/0.35)] print:static print:block print:h-auto print:max-h-none print:w-full print:overflow-visible print:rounded-none print:shadow-none"
+              className="relative flex h-full flex-col [view-transition-name:detail-panel] lg:h-auto lg:max-h-[calc(100dvh-4rem)] lg:w-[min(100%,60rem)] lg:overflow-hidden lg:rounded-card lg:bg-surface lg:shadow-dialog print:static print:block print:h-auto print:max-h-none print:w-full print:overflow-visible print:rounded-none print:shadow-none"
             >
               <div
                 ref={asideRef}

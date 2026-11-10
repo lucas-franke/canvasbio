@@ -163,7 +163,7 @@ export function DetailBar({
       <span
         aria-hidden="true"
         // Light with a dark ring: visible on the portrait and on the page colour alike.
-        className="absolute top-1.5 left-1/2 h-1 w-10 -translate-x-1/2 rounded-full bg-surface shadow-sm ring-1 ring-emphasis/25 lg:hidden"
+        className="absolute top-1.5 left-1/2 h-1 w-10 -translate-x-1/2 rounded-full bg-surface shadow-float ring-1 ring-emphasis/25 lg:hidden"
       />
       <div className="detail-bar-nav flex min-w-0 flex-1">{children}</div>
       {shareTitle && <ShareButton title={shareTitle} />}

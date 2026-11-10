@@ -86,7 +86,7 @@ export function SearchSummary({
     <section
       aria-labelledby={headingId}
       className={cn(
-        "flex flex-col gap-3 rounded-card bg-surface p-3 text-text shadow-[0_2px_4px_rgb(0_0_0/0.25)] sm:p-4",
+        "flex flex-col gap-3 rounded-card bg-surface p-3 text-text shadow-float ring-1 ring-line sm:p-4",
         className,
       )}
     >

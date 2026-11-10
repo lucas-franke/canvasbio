@@ -18,7 +18,7 @@ const buttonVariants = cva(
         default: "border-transparent bg-brand text-brand-foreground hover:bg-brand/90",
         outline: "border-brand bg-transparent text-brand hover:bg-brand/10 aria-expanded:bg-brand/10",
         /** Secondary actions: a quiet outline, so only the primary action (default) stands out. */
-        secondary: "border-control/60 bg-transparent text-emphasis hover:border-control hover:bg-emphasis/5",
+        secondary: "border-control bg-transparent text-emphasis hover:bg-emphasis/5",
         control:
           "border-control bg-transparent text-emphasis hover:bg-emphasis/5 aria-pressed:border-brand aria-pressed:bg-brand aria-pressed:text-brand-foreground",
         inverse: "border-transparent bg-emphasis text-surface hover:bg-emphasis/90",
@@ -64,4 +64,8 @@ function Button({
   );
 }
 
-export { Button, buttonVariants };
+/** The one close button (drawers, panels): 40 px round, outlined, 44 px tap area. */
+const closeButtonClass =
+  "hit-44 grid size-10 shrink-0 place-items-center rounded-full border border-control text-emphasis hover:bg-emphasis/5";
+
+export { Button, buttonVariants, closeButtonClass };

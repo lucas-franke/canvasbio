@@ -61,7 +61,7 @@ export function StartPreview({ people, placeCoords, view, onViewChange }: StartP
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="group/card relative h-[clamp(13rem,32svh,22rem)] overflow-hidden rounded-card bg-surface shadow-[0_12px_40px_rgb(0_0_0/0.12)] ring-1 ring-line/70 lg:h-[min(36rem,calc(100dvh-16rem))]">
+      <div className="group/card relative h-[clamp(13rem,32svh,22rem)] overflow-hidden rounded-card bg-surface shadow-panel ring-1 ring-line lg:h-[min(36rem,calc(100dvh-16rem))]">
         {/* A picture of the view, not its content: muted, and it moves closer when pointed
             at, so a click reads as "open this view" rather than "open this person". */}
         <div
@@ -106,8 +106,7 @@ export function StartPreview({ people, placeCoords, view, onViewChange }: StartP
           <span
             className={buttonVariants({
               size: "lg",
-              className:
-                "absolute bottom-4 left-4 shadow-[0_8px_24px_rgb(0_0_0/0.25)] group-hover:bg-brand/90",
+              className: "absolute bottom-4 left-4 shadow-float group-hover:bg-brand/90",
             })}
           >
             {m.start.open[shown]}
@@ -123,7 +122,8 @@ export function StartPreview({ people, placeCoords, view, onViewChange }: StartP
             className={buttonVariants({
               variant: "secondary",
               size: "icon-sm",
-              className: "absolute top-3 right-3 bg-surface/90 shadow-sm backdrop-blur-sm hover:bg-surface",
+              className:
+                "absolute top-3 right-3 bg-surface/90 shadow-float backdrop-blur-sm hover:bg-surface",
             })}
           >
             {paused ? (

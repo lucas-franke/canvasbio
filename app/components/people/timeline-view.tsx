@@ -135,7 +135,7 @@ export function TimelineView({ chapters, sort, hrefFor, activeSlug }: TimelineVi
             <EventList events={events} locale={locale} />
           </section>
           <details className="group/events px-2 text-body-sm text-text @xl:hidden">
-            <summary className="-mx-2 flex min-h-11 w-fit cursor-pointer list-none items-center gap-2 rounded-lg px-2 font-semibold text-emphasis hover:bg-emphasis/5 [&::-webkit-details-marker]:hidden">
+            <summary className="-mx-2 flex min-h-11 w-fit cursor-pointer list-none items-center gap-2 rounded-xl px-2 font-semibold text-emphasis hover:bg-emphasis/5 [&::-webkit-details-marker]:hidden">
               <span aria-hidden="true" className="size-2 shrink-0 rotate-45 bg-brand" />
               {m.timeline.events} ({events.length})
               <ChevronDown
@@ -298,7 +298,7 @@ function Axis({
           ROW_GRID,
           // Floats like the navigation pills: same light surface, soft shadow, thin ring.
           // Opaque: the rows sliding under it would show through.
-          "relative items-center gap-y-0.5 rounded-xl bg-surface px-2 py-2 shadow-[0_2px_12px_rgb(0_0_0/0.12)] ring-1 ring-line/70",
+          "relative items-center gap-y-0.5 rounded-xl bg-surface px-2 py-2 shadow-float ring-1 ring-line",
         )}
       >
         {/* For the eye only: screen readers have the chapter headings (and the index marks
@@ -381,7 +381,7 @@ const TimelineRow = memo(function TimelineRow({
       onBlur={() => onPoint(null)}
       className={cn(
         ROW_GRID,
-        "group relative items-center rounded-2xl p-2 transition-colors focus-within:bg-emphasis/5 hover:bg-emphasis/5",
+        "group relative items-center rounded-xl p-2 transition-colors focus-within:bg-emphasis/5 hover:bg-emphasis/5",
         active && "bg-brand/10 hover:bg-brand/10",
       )}
     >
@@ -412,7 +412,7 @@ const TimelineRow = memo(function TimelineRow({
               aria-current={active ? "page" : undefined}
               className={
                 // Same pattern as the list rows: the whole row is the link's target, with its focus ring.
-                "inline-block min-h-6 after:absolute after:inset-0 after:rounded-2xl after:content-[''] " +
+                "inline-block min-h-6 after:absolute after:inset-0 after:rounded-xl after:content-[''] " +
                 "focus-visible:shadow-none focus-visible:outline-none focus-visible:after:shadow-[0_0_0_6px_var(--c-focus-halo)] focus-visible:after:outline-3 focus-visible:after:outline-offset-2 focus-visible:after:outline-focus"
               }
             >

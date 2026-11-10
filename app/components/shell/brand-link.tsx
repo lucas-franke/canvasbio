@@ -61,14 +61,14 @@ export function BrandLink({
             <span
               aria-hidden="true"
               data-monogram=""
-              className="px-3 wordmark text-[1.25rem] whitespace-nowrap text-brand min-[30rem]:hidden"
+              className="px-3 wordmark text-wordmark whitespace-nowrap text-brand min-[30rem]:hidden"
             >
               {monogram}
             </span>
           )}
           <span
             className={cn(
-              "px-2 wordmark text-[1.125rem] whitespace-nowrap text-brand min-[24rem]:text-[1.25rem] sm:text-[1.375rem]",
+              "px-2 wordmark text-wordmark whitespace-nowrap text-brand",
               contained
                 ? "px-3"
                 : "[text-shadow:0_0_6px_var(--c-page),0_0_14px_var(--c-page),0_0_24px_var(--c-page)]",

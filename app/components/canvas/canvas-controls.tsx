@@ -57,7 +57,7 @@ export function CanvasControls({ onZoomIn, onZoomOut, zoomEdge = null, label }: 
       aria-label={label ?? m.canvas.controls}
       className="pointer-events-none absolute right-3 bottom-[max(1.5rem,env(safe-area-inset-bottom))] z-20 flex flex-col items-end sm:right-6 lg:right-8 lg:bottom-8"
     >
-      <div className="pointer-events-auto flex flex-col gap-0.5 rounded-full bg-nav p-0.5 shadow-[0_2px_10px_rgb(0_0_0/0.12)]">
+      <div className="pointer-events-auto flex flex-col gap-0.5 rounded-full bg-nav p-0.5 shadow-float ring-1 ring-line">
         <ControlButton
           label={m.canvas.zoomIn}
           icon={<Plus />}

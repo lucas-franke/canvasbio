@@ -88,7 +88,7 @@ export function PlaceList({ places, groups, countryOf, labels, onChoose }: Place
       <button
         type="button"
         onClick={() => onChoose(place)}
-        className="flex min-h-11 w-full items-center justify-between gap-3 rounded-lg px-3 text-left text-body-sm text-emphasis hover:bg-emphasis/5"
+        className="flex min-h-11 w-full items-center justify-between gap-3 rounded-xl px-3 text-left text-body-sm text-emphasis hover:bg-emphasis/5"
       >
         <span className="min-w-0">
           {place.label}
@@ -103,7 +103,7 @@ export function PlaceList({ places, groups, countryOf, labels, onChoose }: Place
   );
 
   const summaryClass =
-    "flex min-h-11 cursor-pointer list-none items-center gap-2 rounded-lg px-2 text-emphasis hover:bg-emphasis/5 [&::-webkit-details-marker]:hidden";
+    "flex min-h-11 cursor-pointer list-none items-center gap-2 rounded-xl px-2 text-emphasis hover:bg-emphasis/5 [&::-webkit-details-marker]:hidden";
   // Each level has its own group name: an open continent must not turn the chevrons of its
   // closed countries.
   const chevron = (level: "continent" | "country") => (

@@ -16,7 +16,7 @@ import { LoadFailed } from "~/components/people/load-failed";
 import { Portrait } from "~/components/portrait";
 import { SIDE_SHEET } from "~/components/shell/menu-drawer";
 import { NavIconButton } from "~/components/shell/nav";
-import { Button } from "~/components/ui/button";
+import { Button, closeButtonClass } from "~/components/ui/button";
 import { Drawer, DrawerClose, DrawerContent, DrawerTitle, DrawerTrigger } from "~/components/ui/drawer";
 import { siteConfig } from "~/lib/config";
 import { focusPageHeading } from "~/lib/route-focus";
@@ -112,10 +112,7 @@ export function SearchDrawer() {
           <DrawerTitle className="font-heading text-h3 font-semibold text-emphasis">
             {m.search.title}
           </DrawerTitle>
-          <DrawerClose
-            className="hit-44 grid size-10 place-items-center rounded-full border border-control text-emphasis hover:bg-emphasis/5"
-            aria-label={m.search.close}
-          >
+          <DrawerClose className={closeButtonClass} aria-label={m.search.close}>
             <X aria-hidden="true" className="size-5" />
           </DrawerClose>
         </div>
@@ -370,7 +367,7 @@ function PersonSuggestions({ index, query }: { index: PeopleIndex; query: string
 
   return (
     <section aria-labelledby={headingId} className="flex flex-col gap-1 pt-1">
-      <h3 id={headingId} className="font-sans text-body-sm font-medium tracking-normal text-muted-text">
+      <h3 id={headingId} className="text-eyebrow">
         {m.search.suggestions}
       </h3>
       <ul className="flex flex-col">
@@ -621,7 +618,7 @@ function AutocompleteFacet({
       onMouseDown={(event) => event.preventDefault()}
       onClick={() => choose(option.label)}
       className={cn(
-        "flex min-h-11 cursor-pointer items-center justify-between gap-3 rounded-lg px-3 text-body text-emphasis hover:bg-emphasis/5",
+        "flex min-h-11 cursor-pointer items-center justify-between gap-3 rounded-xl px-3 text-body text-emphasis hover:bg-emphasis/5",
         // A continent (when grouped) leads its countries; the countries are indented under it.
         grouped && option.level === 0 && "font-semibold",
         option.level === 1 && "ml-3 rounded-l-none border-l-2 border-line pl-4 text-body-sm",

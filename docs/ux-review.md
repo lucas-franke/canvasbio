@@ -219,7 +219,7 @@ Target: six people on a 659 px screen instead of three. Wider layouts keep today
 
 ## Open points
 
-1. **Visual proposal:** done in Phase 3. Applied to the changed components; the shadow, radius and segmented-control standards are not yet rolled out across the rest of the app.
+1. **Visual proposal:** done in Phase 3 and rolled out across the app: three elevation levels (`shadow-float`, `shadow-panel`, `shadow-dialog`), corner radius by role (full, card, xl, md), one segmented control (`app/components/ui/segmented.ts`; the map toggle now uses the accent colour), one close button, `text-eyebrow` for small headings, `text-display`, `text-quote` and `text-wordmark` for the sizes off the scale, outlines without opacity variants. The style guide page (`/styleguide`) shows them. Not adopted: a check mark in the chosen segment; the fill already marks it (accepted under 1.4.1 in the audit report).
 2. **Monogram in the navigation (U7):** implemented on the four overview pages below 480 px; documented as an exception under WCAG 2.5.3 in the audit report.
 3. **Place hierarchy (U10):** resolved without new content. A place belongs to the country all people linked to it share; where that is ambiguous, the key facts name it ("in Königshain-Wiederau, Deutschland"). This assigns 916 of 918 map places, with no disagreement between the two; the other two are listed under "Weitere Orte".
 4. **Real devices and screen readers** after implementation, as in the audit report.

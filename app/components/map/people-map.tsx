@@ -12,6 +12,8 @@ import Supercluster from "supercluster";
 import { CanvasControls } from "~/components/canvas/canvas-controls";
 import { PersonRow } from "~/components/people/person-row";
 import { SearchSummary } from "~/components/search/search-summary";
+import { closeButtonClass } from "~/components/ui/button";
+import { segmentedItem, segmentedTrack } from "~/components/ui/segmented";
 import { PlaceList, type MapPlace } from "./place-list";
 import type { PersonListItem, PlaceCoords } from "~/lib/content/adapter";
 import { lifeYears } from "~/lib/content/format";
@@ -470,7 +472,7 @@ export default function PeopleMap({
         element.className = cn("group block size-11 rounded-full", isCluster && "size-13");
         const face = document.createElement("span");
         face.className = cn(
-          "relative block size-full rounded-full border-2 border-surface bg-surface shadow-[0_2px_8px_rgb(0_0_0/0.25)] transition-transform group-hover:scale-110 group-focus-visible:scale-110 motion-reduce:transition-none",
+          "relative block size-full rounded-full border-2 border-surface bg-surface shadow-float transition-transform group-hover:scale-110 group-focus-visible:scale-110 motion-reduce:transition-none",
           slug === activeSlug && "border-brand",
         );
         face.append(portrait(person));
@@ -606,18 +608,14 @@ export default function PeopleMap({
         data-map-overlay=""
         className="absolute bottom-[max(1.5rem,env(safe-area-inset-bottom))] left-3 z-20 flex flex-col items-start gap-2 sm:left-6 lg:bottom-8 lg:left-8"
       >
-        <div
-          role="group"
-          aria-label={m.map.showBy}
-          className="flex gap-0.5 rounded-full bg-nav p-0.5 text-nav-foreground shadow-[0_2px_10px_rgb(0_0_0/0.12)]"
-        >
+        <div role="group" aria-label={m.map.showBy} className={cn(segmentedTrack, "bg-nav shadow-float")}>
           {(["born", "died"] as const).map((value) => (
             <button
               key={value}
               type="button"
               aria-pressed={mode === value}
               onClick={() => setMode(value)}
-              className="hit-44 min-h-10 rounded-full px-3.5 text-body-sm font-medium transition-colors hover:bg-nav-foreground/10 aria-pressed:bg-nav-foreground aria-pressed:text-nav sm:px-4 sm:text-label"
+              className={cn(segmentedItem, "sm:px-4 sm:text-label")}
             >
               {m.map[value]}
             </button>
@@ -628,7 +626,7 @@ export default function PeopleMap({
           type="button"
           aria-expanded={panel?.kind === "places"}
           onClick={() => (panel?.kind === "places" ? closePanel() : openPanel({ kind: "places" }))}
-          className="hit-44 inline-flex min-h-10 items-center gap-2 rounded-full bg-nav px-3.5 text-body-sm font-medium text-nav-foreground shadow-[0_2px_10px_rgb(0_0_0/0.12)] hover:bg-nav/90 sm:px-4 sm:text-label"
+          className="hit-44 inline-flex min-h-10 items-center gap-2 rounded-full bg-nav px-3.5 text-body-sm font-medium text-nav-foreground shadow-float ring-1 ring-line hover:bg-nav/90 sm:px-4 sm:text-label"
         >
           <List aria-hidden="true" className="size-4 sm:size-5" />
           {m.map.places}
@@ -657,7 +655,7 @@ export default function PeopleMap({
             event.stopPropagation();
             closePanel();
           }}
-          className="absolute inset-x-3 top-24 bottom-44 z-30 flex flex-col overflow-hidden rounded-card bg-surface shadow-[0_12px_40px_rgb(0_0_0/0.25)] sm:right-6 sm:left-auto sm:w-96 lg:top-28 lg:bottom-28"
+          className="absolute inset-x-3 top-24 bottom-44 z-30 flex flex-col overflow-hidden rounded-card bg-surface shadow-panel sm:right-6 sm:left-auto sm:w-96 lg:top-28 lg:bottom-28"
         >
           <div className="flex items-center justify-between gap-2 border-b border-line px-4 py-2">
             <h2 ref={panelHeading} id="map-panel-title" tabIndex={-1} className="text-h3 focus-target">
@@ -667,7 +665,7 @@ export default function PeopleMap({
               type="button"
               aria-label={m.map.closePlaces}
               onClick={closePanel}
-              className="hit-44 grid size-10 place-items-center rounded-full text-emphasis hover:bg-emphasis/5"
+              className={closeButtonClass}
             >
               <X aria-hidden="true" className="size-5" />
             </button>

@@ -126,7 +126,7 @@ export function ViewToggle({ active }: { active: View }) {
             role="group"
             aria-labelledby={labelId}
             onKeyDown={onListKeyDown}
-            className="absolute top-full right-0 z-50 mt-2 flex min-w-48 animate-in flex-col gap-0.5 rounded-3xl bg-nav p-1.5 text-nav-foreground shadow-[0_8px_30px_rgb(0_0_0/0.18)] duration-150 zoom-in-95 fade-in"
+            className="absolute top-full right-0 z-50 mt-2 flex min-w-48 animate-in flex-col gap-0.5 rounded-card bg-nav p-1.5 text-nav-foreground shadow-panel ring-1 ring-line duration-150 zoom-in-95 fade-in"
           >
             <span id={labelId} className="sr-only">
               {m.view.label}

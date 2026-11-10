@@ -26,7 +26,7 @@ export function PersonRow({ person, href, tags, active = false, badge }: PersonR
   return (
     <article
       className={cn(
-        "group relative flex items-center gap-3 rounded-2xl p-2 transition-colors focus-within:bg-emphasis/5 hover:bg-emphasis/5 @lg:items-start @lg:gap-5",
+        "group relative flex items-center gap-3 rounded-xl p-2 transition-colors focus-within:bg-emphasis/5 hover:bg-emphasis/5 @lg:items-start @lg:gap-5",
         active && "bg-brand/10 hover:bg-brand/10",
       )}
     >
@@ -56,7 +56,7 @@ export function PersonRow({ person, href, tags, active = false, badge }: PersonR
             aria-current={active ? "page" : undefined}
             className={
               // min-h keeps the link itself ≥ 24 px (WCAG 2.5.8); the ::after makes the whole row clickable.
-              "inline-block min-h-6 after:absolute after:inset-0 after:rounded-2xl after:content-[''] @lg:min-h-7 " +
+              "inline-block min-h-6 after:absolute after:inset-0 after:rounded-xl after:content-[''] @lg:min-h-7 " +
               // Draw the focus indicator around the whole row instead of just the name.
               "focus-visible:shadow-none focus-visible:outline-none focus-visible:after:shadow-[0_0_0_6px_var(--c-focus-halo)] focus-visible:after:outline-3 focus-visible:after:outline-offset-2 focus-visible:after:outline-focus"
             }
@@ -65,7 +65,7 @@ export function PersonRow({ person, href, tags, active = false, badge }: PersonR
           </Link>
         </h3>
         {badge && (
-          <p className="w-fit rounded-lg bg-brand px-2 py-0.5 text-body-xs font-medium text-brand-foreground">
+          <p className="w-fit rounded-md bg-brand px-2 py-0.5 text-body-xs font-medium text-brand-foreground">
             {badge}
           </p>
         )}

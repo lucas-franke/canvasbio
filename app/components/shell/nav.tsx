@@ -13,7 +13,7 @@ export function NavPill({ bare = false, className, ...props }: ComponentProps<"d
     <div
       className={cn(
         "pointer-events-auto flex items-center gap-1 rounded-full p-0.5 lg:p-1",
-        !bare && "bg-nav text-nav-foreground shadow-[0_2px_12px_rgb(0_0_0/0.12)] ring-1 ring-line/70",
+        !bare && "bg-nav text-nav-foreground shadow-float ring-1 ring-line",
         className,
       )}
       {...props}
