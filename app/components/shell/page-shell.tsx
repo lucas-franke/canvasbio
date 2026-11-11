@@ -1,11 +1,14 @@
 import { cn } from "cn";
 import { useEffect, useState, type ReactNode } from "react";
 
-import { useMessages } from "~/lib/i18n";
+import { House } from "lucide-react";
+
+import { useLocale, useMessages } from "~/lib/i18n";
+import { pagePath } from "~/lib/i18n/locale";
 import { SearchDrawer } from "~/components/search/search-drawer";
 import { BrandLink } from "./brand-link";
 import { MenuDrawer } from "./menu-drawer";
-import { TopNav, NavPill } from "./nav";
+import { TopNav, NavIconLink, NavPill } from "./nav";
 
 /**
  * Top of the scrolling pages: room for the floating navigation at the start. No background:
@@ -71,8 +74,11 @@ interface PageShellProps {
   inert?: boolean;
   /** Main content fills the screen without page scrolling (the canvas); no page header. */
   fullBleed?: boolean;
-  /** Narrow screens show the brand's monogram (the overview's view switch needs the room). */
-  compactBrand?: boolean;
+  /**
+   * A house icon leads to the start page instead of the brand (the people views): it says
+   * where it goes, also next to the view switch, and leaves the switch room on phones.
+   */
+  homeIcon?: boolean;
 }
 
 /**
@@ -86,9 +92,10 @@ export function PageShell({
   aside,
   inert = false,
   fullBleed = false,
-  compactBrand = false,
+  homeIcon = false,
 }: PageShellProps) {
   const m = useMessages();
+  const locale = useLocale();
   // Over the mosaic and the map, and once a page has scrolled, the brand gets a pill like the
   // controls on the right; at the top of a page it stands free on the page colour.
   const { scrolled, hidden } = useNavScroll(!fullBleed);
@@ -108,9 +115,15 @@ export function PageShell({
         hidden={hidden}
         label={m.nav.label}
         start={
-          <NavPill bare={!contained}>
-            <BrandLink contained={contained} compact={compactBrand} />
-          </NavPill>
+          homeIcon ? (
+            <NavPill>
+              <NavIconLink to={pagePath(locale, "start")} label={m.nav.home} icon={<House />} />
+            </NavPill>
+          ) : (
+            <NavPill bare={!contained}>
+              <BrandLink contained={contained} />
+            </NavPill>
+          )
         }
         end={
           <NavPill>
