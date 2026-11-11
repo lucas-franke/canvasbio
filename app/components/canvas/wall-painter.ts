@@ -162,6 +162,12 @@ export class WallPainter {
     this.invalidate();
   }
 
+  /** While the wall is covered (a biography on phones): no portrait downloads, colours only. */
+  setPaused(paused: boolean) {
+    this.images.setPaused(paused);
+    if (!paused) this.invalidate();
+  }
+
   /** "Random biography": the tile pulses once. */
   startPulse(cell: Cell) {
     this.pulse = { cell, start: performance.now() };

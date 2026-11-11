@@ -174,7 +174,14 @@ export default function PeopleLayout() {
     closing.current = false;
   }, [isDetail, animateSheet]);
 
+  // Phones: the sheet covers the overview completely, so the wall behind loads no portraits
+  // (~500 KB on a biography opened directly) until the sheet is pulled or starts closing.
+  const [revealed, setRevealed] = useState(false);
+  if (!isDetail && revealed) setRevealed(false);
+  const covered = modal && !wide && !revealed;
+
   const close = () => {
+    setRevealed(true);
     const leave = () => {
       const here = historyIndex();
       const origin = overviewEntry.current;
@@ -236,12 +243,12 @@ export default function PeopleLayout() {
     shownSlug.current = slug;
   }, [slug]);
   // Phones: swipe the biography sheet down to close it.
-  useSwipeToClose(asideRef, modal && !wide, close);
+  useSwipeToClose(asideRef, modal && !wide, close, () => setRevealed(true));
 
   return (
     <PageShell
       navEnd={<ViewToggle active={view} />}
-      compactBrand
+      homeIcon
       inert={modal}
       fullBleed={fullBleed}
       aside={
@@ -284,6 +291,7 @@ export default function PeopleLayout() {
           listHref={listPath(locale) + suffix}
           search={search}
           hits={hits}
+          covered={covered}
         />
       ) : failed ? (
         <LoadFailed onRetry={retry} />

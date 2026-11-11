@@ -62,6 +62,34 @@ test("direct load renders the biography and loads the overview", async ({ page, 
   }
 });
 
+test("phones: the wall behind an open biography loads no portraits until it is closed", async ({
+  page,
+  isMobile,
+}) => {
+  test.skip(!isMobile, "the sheet covers the wall on phones only");
+  const thumbnails = new Set<string>();
+  page.on("request", (request) => {
+    const { pathname } = new URL(request.url());
+    if (/\/portraits\/[^/]+\/sq-/.test(pathname)) thumbnails.add(pathname);
+  });
+  await page.goto("/personen/anita-augspurg");
+  await expect(heading(page, "Anita Augspurg")).toBeVisible();
+  // The wall behind is there (its tiles are links), only without pictures.
+  await expect(page.locator("[data-person]").first()).toBeAttached();
+  await page.waitForTimeout(1500);
+  // The biography's own small portraits (related people) don't count, only the wall's.
+  const own = await page
+    .getByRole("dialog")
+    .locator("img")
+    .evaluateAll((imgs) => imgs.map((img) => (img as HTMLImageElement).currentSrc).filter(Boolean));
+  const ownPaths = new Set(own.map((src) => new URL(src).pathname));
+  const wall = () => [...thumbnails].filter((path) => !ownPaths.has(path)).length;
+  expect(wall()).toBe(0);
+  await page.keyboard.press("Escape");
+  await expect(page).toHaveURL(/\/personen$/);
+  await expect.poll(wall).toBeGreaterThan(0);
+});
+
 /** Scrolls the biography (the sheet or card scrolls, not the page). */
 const scrollBiography = (page: import("@playwright/test").Page, top: number) =>
   page.locator(".detail-scroller").evaluate((el, y) => el.scrollTo(0, y), top);
