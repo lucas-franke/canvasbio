@@ -8,6 +8,7 @@ import { SearchDrawer } from "~/components/search/search-drawer";
 import { TopNav, NavPill, NavTextLink } from "~/components/shell/nav";
 import { BrandLink } from "~/components/shell/brand-link";
 import { MenuDrawer } from "~/components/shell/menu-drawer";
+import { useNavScroll } from "~/components/shell/page-shell";
 import { Portrait } from "~/components/portrait";
 import { StartPreview, type StartView } from "~/components/start/start-preview";
 import { Button } from "~/components/ui/button";
@@ -44,17 +45,25 @@ export default function Start({ loaderData }: Route.ComponentProps) {
 
   // The chosen preview tab (its card holds the button that opens the view).
   const [view, setView] = useState<StartView>("canvas");
+  const quoted = start.quote?.person
+    ? loaderData.people.find((p) => p.slug === start.quote!.person)
+    : undefined;
+
+  // As on the other pages: once the page scrolls beneath it, the brand gets its pill (else
+  // the title ran through the wordmark), and on phones the navigation makes room going down.
+  const { scrolled, hidden } = useNavScroll(true);
 
   return (
     <div className="relative min-h-dvh bg-page">
       {/* First in the DOM, as on screen: Tab and screen readers reach it before the content (WCAG 2.4.3). */}
       <TopNav
         label={m.nav.label}
+        hidden={hidden}
         // Same order as on every page: brand on the left; about, search and menu on the right.
         // "Biografien" needs no nav link here: the main button leads there.
         start={
-          <NavPill bare>
-            <BrandLink />
+          <NavPill bare={!scrolled}>
+            <BrandLink contained={scrolled} />
           </NavPill>
         }
         end={
@@ -108,17 +117,31 @@ export default function Start({ loaderData }: Route.ComponentProps) {
               <p>„{t(start.quote.text)}“</p>
             </blockquote>
             <figcaption className="flex items-start gap-3 text-body-sm text-muted-text">
-              <span aria-hidden="true" className="mt-[0.775em] h-px w-6 shrink-0 bg-muted-text" />
-              {/* The quoted person's biography, if the collection has it (start.quote.person). */}
-              {start.quote.person && loaderData.people.some((p) => p.slug === start.quote!.person) ? (
+              {/* The quoted person's biography, if the collection has it (start.quote.person):
+                  her portrait and the source, one link (like the anniversaries below). */}
+              {quoted ? (
                 <Link
-                  to={pagePath(locale, "people", start.quote.person)}
-                  className="rounded-sm underline underline-offset-4 hover:text-emphasis hover:decoration-2"
+                  to={pagePath(locale, "people", quoted.slug)}
+                  className="group -mx-2 flex min-h-14 items-center gap-3 rounded-xl px-2 py-1 hover:bg-emphasis/5"
                 >
-                  {t(start.quote.source)}
+                  <span className="size-12 shrink-0 overflow-hidden rounded-md">
+                    <Portrait
+                      slug={quoted.slug}
+                      image={quoted.image}
+                      alt=""
+                      sizes="48px"
+                      className="size-full object-cover"
+                    />
+                  </span>
+                  <span className="underline underline-offset-4 group-hover:text-emphasis group-hover:decoration-2">
+                    {t(start.quote.source)}
+                  </span>
                 </Link>
               ) : (
-                t(start.quote.source)
+                <>
+                  <span aria-hidden="true" className="mt-[0.775em] h-px w-6 shrink-0 bg-muted-text" />
+                  {t(start.quote.source)}
+                </>
               )}
             </figcaption>
           </figure>

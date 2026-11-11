@@ -33,7 +33,7 @@ const HIDE_AFTER = 120;
  * `hidden`: the reader scrolls down, so on phones the navigation makes room; any scroll back
  * up brings it back. Also marked on <html> (`data-nav-hidden`) for bars that stick below it.
  */
-function useNavScroll(enabled: boolean): { scrolled: boolean; hidden: boolean } {
+export function useNavScroll(enabled: boolean): { scrolled: boolean; hidden: boolean } {
   const [state, setState] = useState({ scrolled: false, hidden: false });
   useEffect(() => {
     if (!enabled) return;
