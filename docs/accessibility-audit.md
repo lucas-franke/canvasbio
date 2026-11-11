@@ -114,7 +114,7 @@ Legende: ✅ erfüllt · ◐ teilweise · — nicht anwendbar
 
 1. **Screenreader-Tests** mit VoiceOver (iOS/Safari), TalkBack (Android/Chrome) und NVDA (Windows/Firefox) nach der [Protokollvorlage](screenreader-protokoll.md) – je Meilenstein und vor dem Livegang.
 2. **3.1.2 Sprache von Teilen:** bei redaktionell gepflegten Texten fremdsprachige Passagen auszeichnen. Die Markdown-Pipeline lässt derzeit kein HTML durch; für `lang`-Auszeichnung braucht sie eine Erweiterung (z. B. eine Markdown-Direktive oder `rehype-raw` vor dem Sanitizer, der `lang` bereits erlaubt).
-3. **Echte Geräte:** Gesten, Safe Areas und Bottom-Sheets auf einem aktuellen iPhone und Android-Gerät prüfen (Playwrights WebKit unter Windows ist nur eine Annäherung an Safari).
+3. **Echte Geräte:** Gesten, Safe Areas und Seitenpanels (die Suche mit geöffneter Bildschirmtastatur: Suchfeld und Ergebnis-Schaltfläche müssen sichtbar bleiben) auf einem aktuellen iPhone und Android-Gerät prüfen (Playwrights WebKit unter Windows ist nur eine Annäherung an Safari).
 
 ## Performance
 

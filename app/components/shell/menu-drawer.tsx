@@ -15,7 +15,6 @@ import {
 import { siteConfig } from "~/lib/config";
 import { useLocale, useMessages } from "~/lib/i18n";
 import { pagePath, parsePath, switchLocaleHash, switchLocalePath, type Page } from "~/lib/i18n/locale";
-import { WIDE_QUERY, useMediaQuery } from "~/lib/hooks";
 import { focusPageHeading } from "~/lib/route-focus";
 import { useTheme, type ThemeChoice } from "~/lib/theme/use-theme";
 import { afterViewTransition } from "~/lib/view-transition";
@@ -42,9 +41,9 @@ function Section({ title, icon, children }: { title: string; icon?: ReactNode; c
   );
 }
 
-/** Side panel from `lg` (menu from the left, search from the right). */
+/** Side panel from the right, full height (menu and search, on every screen). */
 export const SIDE_SHEET =
-  "h-full w-full max-w-md data-[vaul-drawer-direction=left]:rounded-r-card data-[vaul-drawer-direction=left]:sm:max-w-md data-[vaul-drawer-direction=right]:rounded-l-card data-[vaul-drawer-direction=right]:sm:max-w-md";
+  "h-full w-full max-w-md data-[vaul-drawer-direction=right]:w-full data-[vaul-drawer-direction=left]:rounded-r-card data-[vaul-drawer-direction=left]:sm:max-w-md data-[vaul-drawer-direction=right]:rounded-l-card data-[vaul-drawer-direction=right]:sm:max-w-md";
 
 /** Menu entries; the current one is marked calmly (accent text and a bar), not filled. */
 const itemClass =
@@ -57,8 +56,6 @@ export function MenuDrawer() {
   const { pathname, search, hash } = useLocation();
   const current = parsePath(pathname).page;
   const [theme, setTheme] = useTheme();
-  // Desktop: the menu button is at the top right, so the menu slides in from the right.
-  const desktop = useMediaQuery(WIDE_QUERY, false);
   // A link to another page was followed: focus goes to that page once the menu has closed,
   // not back to the menu button (which belonged to the page that was left, or no longer
   // leads anywhere new).
@@ -76,14 +73,17 @@ export function MenuDrawer() {
   ];
 
   return (
-    <Drawer open={open} onOpenChange={setOpen} direction={desktop ? "right" : "bottom"}>
+    // A side panel from the right on every screen (the menu button is at the top right). On
+    // phones a strip of the page stays visible beside it: the menu is over the page, not a page.
+    <Drawer open={open} onOpenChange={setOpen} direction="right">
       <DrawerTrigger asChild>
         <NavIconButton label={m.nav.menu} icon={<Menu />} />
       </DrawerTrigger>
       <DrawerContent
         className={cn(
           "bg-surface text-text",
-          desktop ? SIDE_SHEET : "mx-auto max-h-[90dvh] w-full rounded-t-card md:max-w-lg",
+          SIDE_SHEET,
+          "data-[vaul-drawer-direction=right]:max-sm:w-[calc(100%-3rem)]",
         )}
         // Runs once the menu has gone (also when its page was replaced), after the rest of the
         // page is no longer hidden from assistive tech.
@@ -94,7 +94,7 @@ export function MenuDrawer() {
           afterViewTransition(focusPageHeading);
         }}
       >
-        <div className="flex items-center justify-between px-6 pt-2">
+        <div className="flex items-center justify-between px-6 pt-[max(1rem,env(safe-area-inset-top))]">
           <DrawerTitle className="font-heading text-h3 font-semibold text-emphasis">{m.nav.menu}</DrawerTitle>
           <DrawerClose className={closeButtonClass} aria-label={m.nav.closeMenu}>
             <X aria-hidden="true" className="size-5" />
@@ -102,7 +102,7 @@ export function MenuDrawer() {
         </div>
         <DrawerDescription className="sr-only">{siteConfig.brand.name[locale]}</DrawerDescription>
 
-        <div className="flex flex-col gap-8 overflow-y-auto px-6 pt-6 pb-[max(1.5rem,env(safe-area-inset-bottom))]">
+        <div className="@container flex flex-col gap-8 overflow-y-auto px-6 pt-6 pb-[max(1.5rem,env(safe-area-inset-bottom))]">
           <nav aria-label={m.nav.label}>
             <ul className="flex flex-col gap-1">
               {pages.map(({ page, label }) => (
@@ -150,7 +150,8 @@ export function MenuDrawer() {
                 value={theme}
                 onValueChange={(value) => setTheme(value as ThemeChoice)}
                 aria-label={m.theme.label}
-                className={segmentedTrack}
+                // Segments as wide as their label ("Wie Gerät" is longer than "Hell").
+                className={cn(segmentedTrack, "flex")}
               >
                 {(["system", "light", "dark"] as const).map((choice) => {
                   const Icon = THEME_ICONS[choice];
@@ -159,10 +160,11 @@ export function MenuDrawer() {
                       key={choice}
                       value={choice}
                       title={m.theme[choice]}
-                      className={segmentedItem}
+                      className={cn(segmentedItem, "grow")}
                     >
                       <Icon aria-hidden="true" className="size-4 shrink-0" />
-                      <span className="sr-only min-[24rem]:not-sr-only">{m.theme[choice]}</span>
+                      {/* By the panel's width, not the screen's: below it only the icons show. */}
+                      <span className="sr-only @min-[18rem]:not-sr-only">{m.theme[choice]}</span>
                     </RadioGroupPrimitive.Item>
                   );
                 })}

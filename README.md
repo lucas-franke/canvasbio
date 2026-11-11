@@ -106,7 +106,7 @@ Placeholders are filled from `operator`: `{{organisation}}`, `{{operatorBlock}}`
 - [ ] Fill `operator` with real details (address, monitored contact email); have the legal notice and privacy policy reviewed
 - [ ] Accessibility statement reviewed and dated
 - [ ] Image rights and licence details of all portraits checked
-- [ ] Tested on real devices (iPhone, Android): gestures, safe areas, bottom sheets
+- [ ] Tested on real devices (iPhone, Android): gestures, safe areas, side panels (search with the on-screen keyboard open)
 
 ## Hosting
 

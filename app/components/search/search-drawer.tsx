@@ -21,7 +21,7 @@ import { Drawer, DrawerClose, DrawerContent, DrawerTitle, DrawerTrigger } from "
 import { siteConfig } from "~/lib/config";
 import { focusPageHeading } from "~/lib/route-focus";
 import { afterViewTransition } from "~/lib/view-transition";
-import { WIDE_QUERY, useMediaQuery } from "~/lib/hooks";
+import { useKeyboardFit } from "~/lib/use-keyboard-fit";
 import type { FacetConfig } from "~/lib/config/schema";
 import { lifeYears } from "~/lib/content/format";
 import { usePeopleIndex, type PeopleIndex } from "~/lib/content/people-index";
@@ -64,19 +64,26 @@ const fieldClass =
 export function SearchDrawer() {
   const m = useMessages();
   const open = useSearchPanelOpen();
-  // Desktop: the search button is at the top right, so the panel slides in from the right.
-  const desktop = useMediaQuery(WIDE_QUERY, false);
+  // On phones the keyboard covers part of the screen: the panel fits into the rest, so the
+  // name field (top) and the button showing the results (bottom) both stay in view.
+  const keyboardFit = useKeyboardFit(open);
 
   return (
-    <Drawer open={open} onOpenChange={setSearchPanelOpen} direction={desktop ? "right" : "bottom"}>
+    // From the right on every screen (the search button is at the top right). A full-height
+    // panel instead of a bottom sheet: the field stays at the top of the screen when the
+    // keyboard opens. vaul's own input repositioning moved the sheet away from the keyboard
+    // and the field with it out of view, so it is off; useKeyboardFit does that job.
+    <Drawer open={open} onOpenChange={setSearchPanelOpen} direction="right" repositionInputs={false}>
       <DrawerTrigger asChild>
         <SearchTrigger />
       </DrawerTrigger>
       <DrawerContent
         className={cn(
           "bg-surface text-text",
-          desktop ? SIDE_SHEET : "mx-auto max-h-[90dvh] w-full rounded-t-card md:max-w-xl",
+          SIDE_SHEET,
+          "data-[vaul-drawer-direction=right]:max-sm:rounded-none",
         )}
+        style={keyboardFit}
         aria-describedby={undefined}
         // Escape in an open suggestion list closes the list, not the panel (the panel listens first).
         onEscapeKeyDown={(event) => {
@@ -108,7 +115,7 @@ export function SearchDrawer() {
           }
         }}
       >
-        <div className="flex items-center justify-between px-6 pt-2">
+        <div className="flex items-center justify-between px-6 pt-[max(1rem,env(safe-area-inset-top))]">
           <DrawerTitle className="font-heading text-h3 font-semibold text-emphasis">
             {m.search.title}
           </DrawerTitle>
