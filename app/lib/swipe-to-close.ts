@@ -14,10 +14,18 @@ const SLOP = 8;
  * scrolls as usual. The close button stays the alternative without a gesture (WCAG 2.5.7).
  * Touch only; mouse and keyboard are unaffected.
  */
-export function useSwipeToClose(ref: RefObject<HTMLElement | null>, enabled: boolean, onClose: () => void) {
+export function useSwipeToClose(
+  ref: RefObject<HTMLElement | null>,
+  enabled: boolean,
+  onClose: () => void,
+  /** The panel starts to follow the finger: what is behind it comes into view. */
+  onPull?: () => void,
+) {
   const close = useRef(onClose);
+  const pull = useRef(onPull);
   useEffect(() => {
     close.current = onClose;
+    pull.current = onPull;
   });
 
   useEffect(() => {
@@ -57,6 +65,7 @@ export function useSwipeToClose(ref: RefObject<HTMLElement | null>, enabled: boo
         // Down and mostly vertical: pull. Anything else (scrolling up, the tab row sideways): leave it.
         state = dy > 0 && Math.abs(dy) > Math.abs(dx) ? "pull" : "scroll";
         if (state === "scroll") return;
+        pull.current?.();
       }
       event.preventDefault();
       distance = Math.max(0, dy);

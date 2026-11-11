@@ -14,6 +14,7 @@ import { PersonRow } from "~/components/people/person-row";
 import { SearchSummary } from "~/components/search/search-summary";
 import { closeButtonClass } from "~/components/ui/button";
 import { segmentedItem, segmentedTrack } from "~/components/ui/segmented";
+import { INITIAL_VIEW, MapPlaceholder } from "./map-placeholder";
 import { PlaceList, type MapPlace } from "./place-list";
 import type { PersonListItem, PlaceCoords } from "~/lib/content/adapter";
 import { lifeYears } from "~/lib/content/format";
@@ -282,8 +283,9 @@ export default function PeopleMap({
     const map = new maplibregl.Map({
       container: container.current,
       style: mapStyle(readMapColors()),
-      center: [12, 30],
-      zoom: 1.2,
+      // The placeholder shows the same view, so the map appears exactly over it.
+      center: INITIAL_VIEW.center,
+      zoom: INITIAL_VIEW.zoom,
       minZoom: 0.5,
       maxZoom: MAX_ZOOM,
       // The world continues past 180° up to the seam (land drawn from the next copy); the
@@ -586,11 +588,8 @@ export default function PeopleMap({
       <div className="absolute inset-0">
         <div ref={container} className="size-full" />
       </div>
-      {!ready && !failed && (
-        <p role="status" className="absolute inset-0 grid place-items-center text-muted-text">
-          {m.map.loading}
-        </p>
-      )}
+      {/* Over the map until it has drawn its basemap (aligned with its first view). */}
+      {!ready && !failed && <MapPlaceholder status={m.map.loading} />}
       {failed && (
         <p role="alert" className="absolute inset-x-4 top-28 text-center text-muted-text">
           {m.map.failed}

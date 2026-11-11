@@ -44,18 +44,22 @@ test("theme choice is applied and persisted", async ({ page }) => {
   await expect(page.locator("html")).not.toHaveAttribute("data-theme", /.+/);
 });
 
-test("the brand in the navigation leads to the start page, in the same place everywhere", async ({
+test("the way home is in the same place everywhere: the brand, on the people views a house", async ({
   page,
 }) => {
-  const brand = page
-    .getByRole("navigation", { name: "Main navigation" })
-    .getByRole("link", { name: /Lauter Frauen – Home$/ });
-  for (const path of ["/en/about", "/en/people", "/en/people/list"]) {
+  const nav = page.getByRole("navigation", { name: "Main navigation" });
+  const brand = nav.getByRole("link", { name: /Lauter Frauen – Home$/ });
+  const house = nav.getByRole("link", { name: "Home", exact: true });
+  for (const [path, home] of [
+    ["/en/about", brand],
+    ["/en/people", house],
+    ["/en/people/list", house],
+  ] as const) {
     await page.goto(path);
-    // At the left edge (top on desktop, bottom on phones).
-    expect((await brand.boundingBox())!.x).toBeLessThan(80);
+    // At the left edge.
+    expect((await home.boundingBox())!.x).toBeLessThan(80);
   }
-  await brand.click();
+  await house.click();
   await expect(page).toHaveURL(/\/en$/);
 });
 

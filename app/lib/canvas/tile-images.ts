@@ -36,6 +36,8 @@ export class TileImages {
   private pixels = 0;
   private frame = 0;
   private disposed = false;
+  /** No downloads while the wall can't be seen (behind a biography on phones). */
+  private paused = false;
 
   constructor(
     private compose: ComposeTile,
@@ -79,9 +81,18 @@ export class TileImages {
     if (!current || priority < current.priority) this.wanted.set(key, { slug, hash, width, priority });
   }
 
+  /**
+   * Holds back new downloads (those running finish); the tiles keep their colour meanwhile.
+   * Resuming starts the most urgent ones of the last frame.
+   */
+  setPaused(paused: boolean) {
+    this.paused = paused;
+    if (!paused) this.endFrame();
+  }
+
   /** Ends a frame: starts the most urgent downloads. */
   endFrame() {
-    if (this.loading.size >= this.maxLoading || this.wanted.size === 0) return;
+    if (this.paused || this.loading.size >= this.maxLoading || this.wanted.size === 0) return;
     const queue = [...this.wanted].sort(([, a], [, b]) => a.priority - b.priority);
     for (const [key, item] of queue) {
       if (this.loading.size >= this.maxLoading) break;

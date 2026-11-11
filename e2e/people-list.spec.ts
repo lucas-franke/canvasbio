@@ -127,19 +127,19 @@ test("the view switch shows the active view and opens a dropdown to change it", 
   await expect(page.getByRole("button", { name: "Ansicht: Liste" })).toBeFocused();
 });
 
-test("the view switch names the open view on every screen; narrow phones show the monogram", async ({
-  page,
-}) => {
+test("the view switch names the open view on every screen; a house icon leads home", async ({ page }) => {
   for (const width of [360, 393, 1280]) {
     await page.setViewportSize({ width, height: 800 });
     await page.goto("/personen/zeitstrahl");
     const button = page.getByRole("button", { name: "Ansicht: Zeitstrahl" });
     await expect(button).toContainText("Zeitstrahl");
     await expect(button).toBeInViewport({ ratio: 1 });
-    // The brand keeps its full name; below 480 px it shows the monogram.
-    const brand = page.getByRole("link", { name: "Lauter Frauen – Startseite" });
-    await expect(brand.locator("[data-monogram]")).toBeVisible({ visible: width < 480 });
-    // Brand and controls stay side by side, each fully on screen.
+    // No brand on the views: a house icon named "Startseite" (also its tooltip).
+    await expect(page.getByRole("link", { name: "Lauter Frauen – Startseite" })).toHaveCount(0);
+    const home = page.getByRole("link", { name: "Startseite", exact: true });
+    await expect(home).toHaveAttribute("href", "/");
+    await expect(home).toHaveAttribute("title", "Startseite");
+    // Home and controls stay side by side, each fully on screen.
     const [left, right] = await navPillBoxes(page);
     expect(left!.x + left!.width).toBeLessThanOrEqual(right!.x);
     expect(right!.x + right!.width).toBeLessThanOrEqual(width);
@@ -198,8 +198,8 @@ test("phones: the navigation makes room while scrolling down and returns on scro
   // Keyboard focus brings a hidden navigation back.
   await scrollBy(1500);
   await expect(nav).toHaveAttribute("data-hidden", "true");
-  await page.getByRole("link", { name: "Lauter Frauen – Startseite" }).focus();
-  await expect(page.getByRole("link", { name: "Lauter Frauen – Startseite" })).toBeInViewport();
+  await page.getByRole("link", { name: "Startseite", exact: true }).focus();
+  await expect(page.getByRole("link", { name: "Startseite", exact: true })).toBeInViewport();
 });
 
 test("phones: the navigation's controls look 40 px but take taps across 44 px", async ({ page }) => {

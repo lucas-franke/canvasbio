@@ -1,3 +1,4 @@
+import { cn } from "cn";
 import { ArrowRight, ChartGantt, LayoutDashboard, List, MapIcon, Pause, Play } from "lucide-react";
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { Link } from "react-router";
@@ -11,7 +12,8 @@ import { seededShuffle } from "~/lib/canvas/layout";
 import type { PersonListItem, PlaceCoords } from "~/lib/content/adapter";
 import { rowFor, scaleOfRows, scalePercent } from "~/lib/content/chronology";
 import { lifeYears } from "~/lib/content/format";
-import { WIDE_QUERY, useMediaQuery } from "~/lib/hooks";
+import { segmentedItem, segmentedTrack } from "~/components/ui/segmented";
+import { useMediaQuery } from "~/lib/hooks";
 import { useLocale, useMessages } from "~/lib/i18n";
 import { listPath, mapPath, pagePath, timelinePath } from "~/lib/i18n/locale";
 
@@ -44,10 +46,11 @@ interface StartPreviewProps {
 }
 
 /**
- * The start page's way in: a look into one view, the whole card a link to it ("Mosaik öffnen"),
- * and below it the four views as links, each opening its view with one tap. From `lg`
- * pointing at or focusing one of them shows its preview in the card; phones always show the
- * mosaic. The previews themselves are pictures only.
+ * The start page's way in: a look into one view, the whole card a link to it ("Mosaik öffnen").
+ * Below `lg` a compact switch above the card chooses the preview (the chosen view with its
+ * label, the others as icons); from `lg` the four views are links below the card, and
+ * pointing at or focusing one shows its preview. Both are in the HTML and CSS picks one, so
+ * nothing moves when the page hydrates. The previews themselves are pictures only.
  */
 export function StartPreview({ people, placeCoords, view, onViewChange }: StartPreviewProps) {
   const m = useMessages();
@@ -56,11 +59,30 @@ export function StartPreview({ people, placeCoords, view, onViewChange }: StartP
   // there is no button then.
   const [paused, setPaused] = useState(false);
   const still = useMediaQuery("(prefers-reduced-motion: reduce)", false);
-  const wide = useMediaQuery(WIDE_QUERY, false);
-  const shown: StartView = wide ? view : "canvas";
+  const shown = view;
 
   return (
     <div className="flex flex-col gap-4">
+      {/* Phones and tablets: which view the card shows. Labelled for screen readers only. */}
+      <div
+        role="group"
+        aria-label={m.start.previews}
+        className={cn(segmentedTrack, "flex self-start lg:hidden")}
+      >
+        {START_VIEWS.map((v) => (
+          <button
+            key={v}
+            type="button"
+            aria-pressed={v === view}
+            onClick={() => onViewChange(v)}
+            className={cn(segmentedItem, "[&_svg]:size-4", v !== view && "max-sm:px-2.5")}
+          >
+            {ICONS[v]}
+            {/* Phones: only the chosen view says its name; the others keep it for screen readers. */}
+            <span className={cn(v !== view && "max-sm:sr-only")}>{m.view[v]}</span>
+          </button>
+        ))}
+      </div>
       <div className="group/card relative h-[clamp(13rem,32svh,22rem)] overflow-hidden rounded-card bg-surface shadow-panel ring-1 ring-line lg:h-[min(36rem,calc(100dvh-16rem))]">
         {/* A picture of the view, not its content: muted, and it moves closer when pointed
             at, so a click reads as "open this view" rather than "open this person". */}
@@ -135,8 +157,8 @@ export function StartPreview({ people, placeCoords, view, onViewChange }: StartP
         )}
       </div>
 
-      {/* The four views, each one tap away. */}
-      <nav aria-labelledby="start-views" className="flex flex-col gap-2">
+      {/* From lg: the four views, each one click away. */}
+      <nav aria-labelledby="start-views" className="hidden flex-col gap-2 lg:flex">
         <h2 id="start-views" className="text-eyebrow">
           {m.start.previews}
         </h2>
@@ -150,7 +172,7 @@ export function StartPreview({ people, placeCoords, view, onViewChange }: StartP
                 aria-describedby={v === "canvas" ? "start-list-hint" : undefined}
                 onPointerEnter={() => onViewChange(v)}
                 onFocus={() => onViewChange(v)}
-                data-shown={wide && v === shown ? "" : undefined}
+                data-shown={v === shown ? "" : undefined}
                 className={buttonVariants({
                   variant: "secondary",
                   className:

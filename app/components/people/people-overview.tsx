@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 import { useNavigate } from "react-router";
 
 import { InfiniteCanvas } from "~/components/canvas/infinite-canvas";
+import { MapPlaceholder } from "~/components/map/map-placeholder";
 import { ChapterLayout, chapterText } from "~/components/people/chapters";
 import { PersonRow } from "~/components/people/person-row";
 import { SortSelect } from "~/components/people/sort-select";
@@ -19,9 +20,11 @@ import { useHydrated } from "~/lib/hooks";
 import { readSeen } from "~/lib/preferences";
 import { pickRandom } from "~/lib/random";
 import type { SearchState } from "~/lib/search/search";
+import { afterPageLoad } from "~/lib/after-page-load";
 
-// MapLibre is large: loaded only when the map is opened, and only in the browser.
-const PeopleMap = lazy(() => import("~/components/map/people-map"));
+// MapLibre is large (~1 MB): loaded only when the map is opened, in the browser, and once
+// the page has loaded and painted (the placeholder shows the world meanwhile).
+const PeopleMap = lazy(() => afterPageLoad().then(() => import("~/components/map/people-map")));
 
 export type OverviewView = "canvas" | "list" | "timeline" | "map";
 
@@ -35,6 +38,8 @@ interface PeopleOverviewProps {
   search: SearchState;
   /** People matching the search, or null without a search. */
   hits: PersonListItem[] | null;
+  /** Hidden behind the biography sheet (phones): the wall loads no portraits meanwhile. */
+  covered?: boolean;
 }
 
 /**
@@ -50,6 +55,7 @@ export function PeopleOverview({
   listHref,
   search,
   hits,
+  covered,
 }: PeopleOverviewProps) {
   const m = useMessages();
   const locale = useLocale();
@@ -75,6 +81,7 @@ export function PeopleOverview({
           search={search}
           hits={hits}
           facetLabels={index.facetLabels}
+          covered={covered}
         />
       </>
     );
@@ -174,12 +181,12 @@ function MapView({
   activeSlug,
 }: Pick<PeopleOverviewProps, "index" | "hits" | "search" | "hrefFor" | "activeSlug">) {
   const m = useMessages();
-  // Pre-rendered pages show the loading line; the map itself needs the browser (WebGL).
+  // Pre-rendered pages show the placeholder; the map itself needs the browser (WebGL).
   const mounted = useHydrated();
   const loading = (
-    <p role="status" className="grid h-full place-items-center bg-page text-muted-text">
-      {m.map.loading}
-    </p>
+    <div className="relative h-full">
+      <MapPlaceholder status={m.map.loading} />
+    </div>
   );
   if (!mounted) return loading;
   return (

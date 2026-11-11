@@ -84,6 +84,11 @@ interface InfiniteCanvasProps {
   /** People matching the search (highlighted, the rest is dimmed), or null without a search. */
   hits: PersonListItem[] | null;
   facetLabels: FacetLabels;
+  /**
+   * Hidden behind something opaque (a biography sheet on phones): no portraits are loaded
+   * until it isn't, the tiles keep their colour. Nothing else changes (layout, focus, camera).
+   */
+  covered?: boolean;
 }
 
 /**
@@ -107,6 +112,7 @@ export function InfiniteCanvas({
   search,
   hits,
   facetLabels,
+  covered = false,
 }: InfiniteCanvasProps) {
   const m = useMessages();
   const location = useLocation();
@@ -168,6 +174,11 @@ export function InfiniteCanvas({
   // Pre-rendered tiles keep their <img> until the canvas has painted the view completely,
   // so nothing flickers when it takes over.
   const [painted, setPainted] = useState(false);
+  const coveredRef = useRef(covered);
+  useEffect(() => {
+    coveredRef.current = covered;
+    painter.current?.setPaused(covered);
+  }, [covered]);
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -178,6 +189,8 @@ export function InfiniteCanvas({
       torn: tornEdges,
       names: true,
     });
+    // Covered from the start (a biography opened directly): not a single download yet.
+    wall.setPaused(coveredRef.current);
     wall.onComplete = () => setPainted(true);
     wall.setCamera(camera.camera.current, camera.size.current);
     painter.current = wall;
@@ -590,7 +603,8 @@ export function InfiniteCanvas({
                 primary={primary}
                 tabbable={tabbable}
                 near={near}
-                painted={painted}
+                // Covered: no <img> of their own either (they would load the same files).
+                painted={painted || covered}
                 active={person.slug === activeSlug}
                 match={hitSet ? hitSet.has(person.slug) : undefined}
                 variation={tileVariation(layout, cell, config.sizeVariance)}

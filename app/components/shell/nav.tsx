@@ -81,6 +81,31 @@ export function NavIconButton({
   );
 }
 
+/** The same round icon control as a link (the start page from the people views). */
+export function NavIconLink({
+  label,
+  icon,
+  className,
+  ...props
+}: Omit<IconActionProps, "nameSuffix"> & ComponentProps<typeof Link>) {
+  return (
+    <Link
+      title={label}
+      className={cn(
+        "hit-44 grid size-10 shrink-0 place-items-center rounded-full [&_svg]:size-5",
+        outlined,
+        className,
+      )}
+      {...props}
+    >
+      <span aria-hidden="true" className="contents">
+        {icon}
+      </span>
+      <span className="sr-only">{label}</span>
+    </Link>
+  );
+}
+
 /**
  * The site navigation with a left and right group (and an optional center slot), fixed at
  * the top of the screen (the safe area of notched phones is respected). The bottom stays free
