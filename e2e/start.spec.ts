@@ -55,7 +55,8 @@ test("the mosaic button continues the wall where it was, without a camera flight
   await page.getByRole("link", { name: "Mosaik öffnen", exact: true }).click();
   await expect(page).toHaveURL(/\/personen$/);
   // The start page (with its preview wall) is gone, so this is the mosaic's own wall.
-  await expect(page.getByRole("navigation", { name: "Ansichten" })).toHaveCount(0);
+  // (Its title is there at every width; the view links are hidden on phones.)
+  await expect(page.locator("#start-title")).toHaveCount(0);
   const wall = page.locator("main .canvas-world");
   await expect(wall).toBeAttached();
   // Same zoom as the backdrop, and it stays put.
@@ -66,10 +67,46 @@ test("the mosaic button continues the wall where it was, without a camera flight
   expect(await page.evaluate(() => sessionStorage.getItem("canvas:continue"))).toBeNull();
 });
 
-test("each view is one tap away from the start page", async ({ page }) => {
+test("phones: a compact switch above the card previews each view, the card opens it", async ({
+  page,
+  isMobile,
+}) => {
+  test.skip(!isMobile, "below 1024 px only");
+  await page.goto("/");
+  // The desktop links are not shown; the switch has no visible heading, only its name.
+  await expect(page.getByRole("navigation", { name: "Ansichten" })).toBeHidden();
+  await expect(page.getByText("Ansichten", { exact: true })).toBeHidden();
+  const views = page.getByRole("group", { name: "Ansichten" });
+  await expect(views.getByRole("button")).toHaveCount(4);
+  await expect(views.getByRole("button", { name: "Mosaik" })).toHaveAttribute("aria-pressed", "true");
+  // Only the chosen view shows its name; the others are icons (named for screen readers).
+  await expect(views.getByRole("button", { name: "Mosaik" })).toContainText("Mosaik");
+  await expect(views.getByRole("button", { name: "Karte" }).getByText("Karte")).toHaveClass(/sr-only/);
+  await expect(page.getByRole("link", { name: "Mosaik öffnen", exact: true })).toHaveAccessibleDescription(
+    "Mit Screenreader ist die Listenansicht übersichtlicher.",
+  );
+  for (const [name, href] of [
+    ["Liste", "/personen/liste"],
+    ["Zeitstrahl", "/personen/zeitstrahl"],
+    ["Karte", "/personen/karte"],
+  ] as const) {
+    await views.getByRole("button", { name }).click();
+    await expect(views.getByRole("button", { name })).toHaveAttribute("aria-pressed", "true");
+    await expect(page.getByRole("link", { name: `${name} öffnen`, exact: true })).toHaveAttribute(
+      "href",
+      href,
+    );
+  }
+  await page.getByRole("link", { name: "Karte öffnen", exact: true }).click();
+  await expect(page).toHaveURL(/\/personen\/karte$/);
+});
+
+test("from 1024 px each view is one click away from the start page", async ({ page, isMobile }) => {
+  test.skip(isMobile, "1024 px and wider");
   await page.goto("/");
   await expect(page.getByText(/^\d+ Biografien aus \d Kontinenten$/)).toBeVisible();
   await expect(page.getByRole("tablist")).toHaveCount(0);
+  await expect(page.getByRole("group", { name: "Ansichten" })).toBeHidden();
   const views = page.getByRole("navigation", { name: "Ansichten" });
   await expect(views.getByRole("link")).toHaveText(["Mosaik", "Liste", "Zeitstrahl", "Karte"]);
   // With a screen reader the list is the easier one: the mosaic links say so.
@@ -143,20 +180,21 @@ test("the title doesn't move when the anniversaries appear", async ({ page, brow
   expect(Math.abs(after!.y - before!.y)).toBeLessThan(8);
 });
 
-test("over the mosaic and the map the brand sits in a pill, on the list it stands free", async ({ page }) => {
-  const pill = () => page.getByRole("link", { name: "Lauter Frauen – Startseite" }).locator("xpath=..");
-  for (const [path, contained] of [
-    ["/personen", true],
-    ["/personen/karte", true],
-    ["/personen/liste", false],
-  ] as const) {
+test("on the views the house sits in a pill; on a page the brand stands free until it scrolls", async ({
+  page,
+}) => {
+  const house = () => page.getByRole("link", { name: "Startseite", exact: true }).locator("xpath=..");
+  for (const path of ["/personen", "/personen/karte", "/personen/liste"]) {
     await page.goto(path);
     await expect(page.getByRole("main")).toBeVisible();
-    await expect(pill()).toHaveClass(contained ? /\bbg-nav\b/ : /^(?!.*\bbg-nav\b)/);
+    await expect(house()).toHaveClass(/\bbg-nav\b/);
   }
-  // Once the list scrolls beneath it, the brand gets its pill there too.
+  const brand = () => page.getByRole("link", { name: "Lauter Frauen – Startseite" }).locator("xpath=..");
+  await page.goto("/datenschutz");
+  await expect(brand()).toHaveClass(/^(?!.*\bbg-nav\b)/);
+  // Once the page scrolls beneath it, the brand gets its pill.
   await page.evaluate(() => window.scrollTo(0, 600));
-  await expect(pill()).toHaveClass(/\bbg-nav\b/);
+  await expect(brand()).toHaveClass(/\bbg-nav\b/);
 });
 
 test("the brand shows the full name on phones too", async ({ page }) => {
