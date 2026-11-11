@@ -300,3 +300,52 @@ test("the two clear buttons in the search panel have distinct names", async ({ p
   await expect(dialog.getByRole("button", { name: "Name löschen" })).toBeVisible();
   await expect(dialog.getByRole("button", { name: "„Ort“ löschen" })).toBeVisible();
 });
+
+test("phones: with the keyboard open, the name field and the results button stay above it", async ({
+  page,
+  isMobile,
+}) => {
+  test.skip(!isMobile, "on-screen keyboards are a phone matter");
+  // Playwright opens no on-screen keyboard: a stand-in visual viewport shrinks like one.
+  await page.addInitScript(() => {
+    const target = new EventTarget();
+    const state = { height: window.innerHeight, offsetTop: 0 };
+    // Getters, not values (Object.assign would copy today's height once).
+    const fake = Object.defineProperties(target, {
+      height: { get: () => state.height },
+      offsetTop: { get: () => state.offsetTop },
+      width: { value: window.innerWidth },
+      offsetLeft: { value: 0 },
+      pageLeft: { value: 0 },
+      pageTop: { value: 0 },
+      scale: { value: 1 },
+    });
+    Object.defineProperty(window, "visualViewport", { get: () => fake });
+    (window as unknown as { keyboard: (height: number) => void }).keyboard = (height) => {
+      state.height = window.innerHeight - height;
+      target.dispatchEvent(new Event("resize"));
+    };
+  });
+  await page.goto("/personen/liste");
+  await waitForHydration(page);
+  const dialog = await openPanel(page);
+  const name = dialog.locator("#search-name");
+  await expect(name).toBeFocused();
+  const visible = await page.evaluate(() => {
+    (window as unknown as { keyboard: (height: number) => void }).keyboard(340);
+    return window.innerHeight - 340;
+  });
+  // The panel fits into what the keyboard leaves free: field at the top, button at the bottom.
+  await expect(async () => {
+    const field = (await name.boundingBox())!;
+    const button = (await submit(dialog).boundingBox())!;
+    expect(field.y).toBeGreaterThanOrEqual(0);
+    expect(button.y + button.height).toBeLessThanOrEqual(visible);
+  }).toPass();
+  // Keyboard closed: the panel takes the whole height again.
+  await page.evaluate(() => (window as unknown as { keyboard: (height: number) => void }).keyboard(0));
+  await expect(async () => {
+    const panel = (await dialog.boundingBox())!;
+    expect(panel.height).toBeGreaterThan(visible + 100);
+  }).toPass();
+});
