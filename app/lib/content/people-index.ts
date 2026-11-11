@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useMatches } from "react-router";
 
+import { afterPageLoad } from "~/lib/after-page-load";
 import { withBase } from "~/lib/base-path";
 import type { FacetLabels } from "~/lib/search/search";
 import type { PersonListItem, PlaceCoords } from "./adapter";
@@ -40,18 +41,6 @@ const isPeopleIndex = (data: unknown): data is PeopleIndex =>
 const cache = new Map<string, PeopleIndex>();
 /** One request per locale, shared by every component that asks for it. */
 const pending = new Map<string, Promise<PeopleIndex>>();
-
-/**
- * Resolves once the page has loaded (its images included) and painted: after `load`, the
- * second animation frame (the first frame has been drawn by then). After client-side
- * navigation that is two frames.
- */
-const afterPageLoad = () =>
-  new Promise<void>((resolve) => {
-    const painted = () => requestAnimationFrame(() => requestAnimationFrame(() => resolve()));
-    if (document.readyState === "complete") painted();
-    else window.addEventListener("load", painted, { once: true });
-  });
 
 /**
  * Fetches the static people data. On a biography opened directly, it waits for the page to
